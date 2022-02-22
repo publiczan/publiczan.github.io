@@ -2,30 +2,6 @@
 
 @import "_layout";
 
-@media screen and (max-width: 1440px) and (max-width:980px) {
-    #wrap {
-        .inner {}
-
-        .content {
-            .box {
-                section {}
-
-                &.step02 {
-                    section {
-
-                        .left {
-                            .textWrap {
-                                z-index: 3;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-    }
-}
-
 @media screen and (max-width: 979px) {
     #wrap {
         min-width: 100%;
@@ -196,6 +172,130 @@
     }
 }
 
+@media screen and (max-width: 1440px) and (min-width:980px) {
+    #wrap {
+        .inner {}
+
+        .content {
+            .box {
+                section {}
+
+                &.step02 {
+                    section {
+
+                        .left {
+                            .textWrap {
+                                z-index: 3;
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) and (min-width:769px) {
+    #wrap {
+        .inner {}
+
+        .content {
+            .box {
+                section {}
+
+                // &.step01 {
+
+                //     .textWrap {}
+
+                //     &.active {
+                //         .textWrap {
+                //             h1 {
+                //                 font-size: 50px;
+                //                 margin-bottom: 35px;
+                //             }
+
+                //             span {
+                //                 width: 80%;
+                //                 display: none;
+                //                 font-size: 30px;
+                //                 line-height: 51px;
+                //             }
+                //         }
+                //     }
+                // }
+
+                &.step02 {
+                    section {
+
+                        .left,
+                        .right {
+                            width: 60%;
+                        }
+
+                        .left {
+                            .img {}
+
+                            .textWrap {}
+                        }
+
+                        .right {
+                            top: 49.6%;
+
+                            .textWrap {
+                                ul {
+                                    li {}
+                                }
+                            }
+
+                            .progressWrap {
+                                max-width: 300px;
+                            }
+                        }
+                    }
+
+                }
+
+                &.step03 {
+                    section {
+
+                        .tabbtnWrap {
+
+                            .tabMenu_btn {
+                                li {
+                                    font-size: 26px;
+                                }
+                            }
+
+                            .tabMenu_select {}
+                        }
+
+                        .tabconWrap {
+
+                            .tabCon {
+                                .slides {
+
+                                    .slide {
+                                        .bodytext {
+                                            padding-left: 10%;
+                                        }
+                                    }
+
+                                    &.photo {
+                                        top: 20%;
+                                    }
+                                }
+                            }
+
+                            .navigation-wrapper {}
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 768px) {
     #wrap {
         .inner {
@@ -235,6 +335,7 @@
                     section {
                         width: 100%;
                         padding: 0;
+                        height: 100vh;
 
                         .left,
                         .right {
@@ -243,9 +344,10 @@
 
                         .left {
                             position: relative;
+                            height: 100vh;
 
                             .img {
-                                top: 35%;
+                                top: 50%;
                             }
 
                             .textWrap {
@@ -254,14 +356,13 @@
                         }
 
                         .right {
-                            top: 73%;
+                            top: 90%;
                             justify-content: center;
                             padding: 0;
-                            height: 80vh;
                             background: rgba(255, 255, 255, 0.9);
 
                             .textWrap {
-                                top: -15%;
+                                top: -20%;
 
                                 ul {
                                     li {
@@ -274,7 +375,7 @@
 
                             .progressWrap {
                                 padding: 0 7%;
-                                top: 50%;
+                                top: 45%;
                             }
                         }
                     }
@@ -285,9 +386,12 @@
                     section {
                         width: 100%;
                         padding: 0;
+                        height: 100vh;
 
                         .tabbtnWrap {
                             margin-top: 0;
+                            position: relative;
+                            top: 10%;
 
                             .tabMenu_btn {
                                 display: none;
@@ -315,6 +419,8 @@
 
                         .tabconWrap {
                             max-height: auto;
+                            margin-top: 0;
+                            top: 15%;
 
                             .tabCon {
                                 .slides {
