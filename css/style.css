@@ -774,8 +774,6 @@ body { background: #f1f1f1; }
 
 #wrap .content .box.footer.active .textWrap .typing ul li.splittxt span { opacity: 0; display: inline-block; min-width: 1vw; transform: translateY(30px); }
 
-@media screen and (max-width: 1440px) and (max-width: 980px) { #wrap .content .box.step02 section .left .textWrap { z-index: 3; } }
-
 @media screen and (max-width: 979px) { #wrap { min-width: 100%; }
   #wrap header { height: 60px; }
   #wrap header .inner { position: relative; width: 100%; max-width: 100%; }
@@ -801,24 +799,33 @@ body { background: #f1f1f1; }
   #wrap header.open .inner nav.menu .menuWrap li { display: block; transform: scale(1) translateY(0px); opacity: 1; }
   #wrap header.open .inner nav.menu .menuWrap li a.active { color: #ffdd3f; } }
 
+@media screen and (max-width: 1440px) and (min-width: 980px) { #wrap .content .box.step02 section .left .textWrap { z-index: 3; } }
+
+@media screen and (max-width: 1200px) and (min-width: 769px) { #wrap .content .box.step02 section .left, #wrap .content .box.step02 section .right { width: 60%; }
+  #wrap .content .box.step02 section .right { top: 49.6%; }
+  #wrap .content .box.step02 section .right .progressWrap { max-width: 300px; }
+  #wrap .content .box.step03 section .tabbtnWrap .tabMenu_btn li { font-size: 26px; }
+  #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext { padding-left: 10%; }
+  #wrap .content .box.step03 section .tabconWrap .tabCon .slides.photo { top: 20%; } }
+
 @media screen and (max-width: 768px) { #wrap .inner { max-width: 100%; }
   #wrap .content .box section { width: 100%; margin: 0 auto; padding: 0 10%; }
   #wrap .content .box.step01.active .textWrap h1 { font-size: 50px; margin-bottom: 35px; }
   #wrap .content .box.step01.active .textWrap span { width: 80%; display: none; font-size: 30px; line-height: 51px; }
-  #wrap .content .box.step02 section { width: 100%; padding: 0; }
+  #wrap .content .box.step02 section { width: 100%; padding: 0; height: 100vh; }
   #wrap .content .box.step02 section .left, #wrap .content .box.step02 section .right { width: 100%; }
-  #wrap .content .box.step02 section .left { position: relative; }
-  #wrap .content .box.step02 section .left .img { top: 35%; }
+  #wrap .content .box.step02 section .left { position: relative; height: 100vh; }
+  #wrap .content .box.step02 section .left .img { top: 50%; }
   #wrap .content .box.step02 section .left .textWrap { display: none; }
-  #wrap .content .box.step02 section .right { top: 73%; justify-content: center; padding: 0; height: 80vh; background: rgba(255, 255, 255, 0.9); }
-  #wrap .content .box.step02 section .right .textWrap { top: -15%; }
+  #wrap .content .box.step02 section .right { top: 90%; justify-content: center; padding: 0; background: rgba(255, 255, 255, 0.9); }
+  #wrap .content .box.step02 section .right .textWrap { top: -20%; }
   #wrap .content .box.step02 section .right .textWrap ul li { text-align: center; font-size: 20px; line-height: 36px; }
-  #wrap .content .box.step02 section .right .progressWrap { padding: 0 7%; top: 50%; }
-  #wrap .content .box.step03 section { width: 100%; padding: 0; }
-  #wrap .content .box.step03 section .tabbtnWrap { margin-top: 0; }
+  #wrap .content .box.step02 section .right .progressWrap { padding: 0 7%; top: 45%; }
+  #wrap .content .box.step03 section { width: 100%; padding: 0; height: 100vh; }
+  #wrap .content .box.step03 section .tabbtnWrap { margin-top: 0; position: relative; top: 10%; }
   #wrap .content .box.step03 section .tabbtnWrap .tabMenu_btn { display: none; }
   #wrap .content .box.step03 section .tabbtnWrap .tabMenu_select { display: block; width: 80%; height: 50px; margin: 0 auto; padding-left: 15px; -webkit-appearance: none; -moz-appearance: none; text-indent: 1px; text-overflow: ""; border-radius: 0; background: #fff url(https://d114xt1mltdkik.cloudfront.net/static/template/images/misc/select-box-bg.jpg) right 5px no-repeat; border: 1px solid #232323; font-size: 14px !important; text-transform: uppercase; }
-  #wrap .content .box.step03 section .tabconWrap { max-height: auto; }
+  #wrap .content .box.step03 section .tabconWrap { max-height: auto; margin-top: 0; top: 15%; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext { max-width: 100%; text-align: center; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext button { transform: translate(-50%, -50%); left: 50%; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides.photo .image { background-position: center; background-size: 150%; }
