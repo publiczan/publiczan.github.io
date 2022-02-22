@@ -1,0 +1,731 @@
+<html lang="ko">
+
+<!-- meta -->
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+<meta name="description" content="zan2portfolio" />
+<meta name="keywords" content="zan2portfolio" />
+<meta name="author" content="zan2" />
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+<link rel="shortcut icon" type="image/x-icon" href="./images/favicon.ico" />
+<!--css-->
+<link rel="stylesheet" href="./css/style.css">
+<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+
+<!--js-->
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+<script src="./js/zan2pp.js?var=123" type="text/javascript"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+
+<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        console.log("ready!");
+    });
+</script>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="other">
+            <div class="inner">
+                <nav class="navigator">
+                    <h1><a href=""></a></h1>
+                    <ul>
+                        <li><a href="" class="active"><span>ABOUTME</span></a></li>
+                        <li><a href=""><span>PORTFOLIO</span></a></li>
+                        <li><a href=""><span>CONTACT</span></a></li>
+                    </ul>
+                </nav>
+                <nav class="menu">
+                    <div class="menuBox">
+                        <h1><a href=""></a></h1>
+                        <div class="lineWrap">
+                            <span class="line"></span>
+                            <span class="line"></span>
+                        </div>
+                    </div>
+                    <div class="navigator">
+                        <ul class="menuWrap">
+                            <li><a href=""><span>ABOUTME</span></a></li>
+                            <li><a href=""><span>PORTFOLIO</span></a></li>
+                            <li><a href=""><span>CONTACT</span></a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <div class="container">
+            <div class="content">
+                <div class="box step01 active">
+                    <section>
+                        <div class="textWrap">
+                            <h1>[WEB PORTFOLIO!]#</h1>
+                            <div class="typingText">
+                                <span>Wellcome to,</span>
+                                <span>WEB’Publisher KIM JI AN</span>
+                                <span>WEB SITE.</span>
+                                <span>|</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="box step02">
+                    <section>
+                        <div class="left">
+                            <div class="img"></div>
+                            <div class="textWrap">
+                                <ul>
+                                    <li>Name</li>
+                                    <li>Birth</li>
+                                    <li>Phone</li>
+                                    <li>E-mail</li>
+                                    <li>Skill</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <div class="textWrap">
+                                <ul>
+                                    <li>KIM JI AN</li>
+                                    <li>1988. 10. 23</li>
+                                    <li>010. 2222. 0720</li>
+                                    <li>zohnnyzz@gmail.com</li>
+                                </ul>
+                            </div>
+                            <div class="progressWrap">
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="85%"><span>HTML</span></div>
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="75%"><span>CSS & SCSS</span></div>
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="50%"><span>JS & jQuery</span></div>
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="40%"><span>Bootstrap</span></div>
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="90%"><span>Photoshop</span></div>
+                                <div class="progress-bar" aria-valuemin="0" aria-valuemax="100" role="progressbar"
+                                    aria-valuenow="90%"><span>Illustrator</span></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="box step03">
+                    <section>
+                        <div class="tabbtnWrap">
+                            <div class="tab-button-outer">
+                                <ul id="tab-button" class="tabMenu_btn">
+                                    <li>
+                                        <a href="#web_p">Web Publishing</a>
+                                    </li>
+                                    <li>
+                                        <a href="#web_d">Web Design</a>
+                                    </li>
+                                    <li>
+                                        <a href="#art">Art</a>
+                                    </li>
+                                    <li>
+                                        <a href="#in">InDesign</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="tab-button-select">
+                                <select id="tab-select" class="tabMenu_select">
+                                    <option value="#web_p">Web Publishing</option>
+                                    <option value="#web_d">Web Design</option>
+                                    <option value="#art">Art</option>
+                                    <option value="#in">InDesign</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="tabconWrap">
+                            <div class="tabcon active " id="web_p">
+                                <div class="split myCarousel">
+                                    <div class="inner-wrapper">
+                                        <div class="slides-wrapper">
+                                            <div class="slides content">
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Publishing</p>
+                                                        <p class="text">Reactsite htmlsite 리뉴얼</p>
+                                                        <p class="text">HTML / SCSS / JQUERY</p>
+                                                        <button type="button"
+                                                            onclick="window.open('https://brand.istore.camp/');">
+                                                            <span></span>SITE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Publishing</p>
+                                                        <p class="text">HTML / SCSS / JQUERY</p>
+                                                        <button type="button"
+                                                            onclick="window.open('https://ivisor.ibot.camp/');">
+                                                            <span></span>SITE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Publishing</p>
+                                                        <p class="text">HTML / SCSS / JQUERY</p>
+                                                        <button type="button"
+                                                            onclick="window.open('https://www.aiadhub.com/');">
+                                                            <span></span>SITE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Publishing</p>
+                                                        <p class="text">HTML / SCSS / JQUERY</p>
+                                                        <button type="button"
+                                                            onclick="window.open('https://www.aiadhub.com/');">
+                                                            <span></span>SITE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slides photo">
+                                                <div class="slide">
+                                                    <div class="image"
+                                                        style="background-image:url('./images/w_pub/item01.png')">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image"
+                                                        style="background-image:url('./images/w_pub/item02.png')">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image"
+                                                        style="background-image:url('./images/w_pub/item03.png')">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image"
+                                                        style="background-image:url('./images/w_pub/item04.png')">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="arrows" class="navigation-wrapper">
+                                            <a href="#" class="navigation-arrow prev"><span></span></a>
+                                            <a href="#" class="navigation-arrow next"><span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabcon" id="web_d">
+                                <div class="split myCarousel">
+                                    <div class="inner-wrapper">
+                                        <div class="slides-wrapper">
+                                            <div class="slides content">
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">펜션 SITE</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_01">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">LOGO Design</p>
+                                                        <p class="text">쇼핑몰 LOGO</p>
+                                                        <p class="text">ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">소아과 SITE</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">PAGE Design</p>
+                                                        <p class="text">일경험 포스터</p>
+                                                        <p class="text">ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">성형외과 SITE</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_03">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">LOGO Design</p>
+                                                        <p class="text">금융거래소 LOGO</p>
+                                                        <p class="text">ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">기업홍보 site</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_04">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">기업홍보 site</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_05">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">기업홍보 site</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_06">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">기업홍보 site</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_07">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">SITE Design</p>
+                                                        <p class="text">쇼핑몰 site</p>
+                                                        <p class="text">PHOTOSHOP / ILLUSTRATOR / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_07">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">APP Design</p>
+                                                        <p class="text">PAY APP</p>
+                                                        <p class="text">PHOTOSHOP / 단독</p>
+                                                        <button type="button" class="modalBtn" data-name="art_07">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slides photo theme-bottom-to-top-zoom-in">
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item01.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item02.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item03.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item04.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item05.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item06.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item07.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="arrows" class="navigation-wrapper">
+                                            <a href="#" class="navigation-arrow prev"><span></span></a>
+                                            <a href="#" class="navigation-arrow next"><span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabcon" id="art">
+                                <div class="split myCarousel">
+                                    <div class="inner-wrapper">
+                                        <div class="slides-wrapper">
+                                            <div class="slides content">
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">초현실주의느낌 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_01">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">동양화느낌 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">지그포스터스타일 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_03">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">트랜디한패션 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_04">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">프리스타일페인팅 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_05">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">샤이닝사파리 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_06">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">ARTWORK</p>
+                                                        <p class="text">눈내리는나라 ARTWORK</p>
+                                                        <p class="text">PHOTOSHOP</p>
+                                                        <button type="button" class="modalBtn" data-name="art_07">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slides photo theme-bottom-to-top-zoom-in">
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item01.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item02.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item03.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item04.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item05.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item06.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/art/item07.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="arrows" class="navigation-wrapper">
+                                            <a href="#" class="navigation-arrow prev"><span></span></a>
+                                            <a href="#" class="navigation-arrow next"><span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tabcon" id="in">
+                                <div class="split myCarousel">
+                                    <div class="inner-wrapper">
+                                        <div class="slides-wrapper">
+                                            <div class="slides content theme-bottom-to-top-fade-out">
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit"> INDESIGN</p>
+                                                        <p class="text">콘서트 포스터</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+
+                                                        <button type="button" class="modalBtn" data-name="in_01">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">디자인포스터</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_02">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">화장품 잡지</p>
+                                                        <p class="text">Macintosh</p>
+                                                        <button type="button" class="modalBtn" data-name="in_03">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">누들소개 잡지</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_04">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">3단 리플렛</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_05">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">음식 레시피 잡지</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_06">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">옷스타일 잡지</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_07">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">잡지</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_08">
+                                                            <span></span>MORE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="bodytext">
+                                                        <p class="tit">INDESIGN</p>
+                                                        <p class="text">북커버</p>
+                                                        <p class="text">PHOTOSHOP / INDESIGN / ILLUSTRATOR</p>
+                                                        <button type="button" class="modalBtn" data-name="in_09">
+                                                            <span></span>SITE
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="slides photo theme-bottom-to-top-zoom-in">
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item01.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item02.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item03.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item04.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item05.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item06.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item07.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item08.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                                <div class="slide">
+                                                    <div class="image" style="background:url('./images/in/item09.png') top right
+                                                        no-repeat">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="arrows" class="navigation-wrapper">
+                                            <a href="#" class="navigation-arrow prev"><span></span></a>
+                                            <a href="#" class="navigation-arrow next"><span></span></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <footer id="footer" class="box footer">
+                    <section>
+                        <div class="textWrap">
+                            <h1>[THANK]#</h1>
+                            <div class="typing">
+                                <ul>
+                                    <li class="splittxt">ou for your time and consideration.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </section>
+                </footer>
+            </div>
+        </div>
+        <div class="modalWrap">
+            <div class="modalContent">
+                <span class="close"></span>
+                <div class="modalCon">
+                    <img src="./images/art/item01_view.png" id="art_01">
+                    <img src="./images/art/item02_view.png" id="art_02">
+                    <img src="./images/art/item03_view.png" id="art_03">
+                    <img src="./images/art/item04_view.png" id="art_04">
+                    <img src="./images/art/item05_view.png" id="art_05">
+                    <img src="./images/art/item06_view.png" id="art_06">
+                    <img src="./images/art/item07_view.png" id="art_07">
+                    <img src="./images/in/item01_view.png" id="in_01">
+                    <img src="./images/in/item02_view.png" id="in_02">
+                    <img src="./images/in/item03_view.png" id="in_03">
+                    <img src="./images/in/item04_view.png" id="in_04">
+                    <img src="./images/in/item05_view.png" id="in_05">
+                    <img src="./images/in/item06_view.png" id="in_06">
+                    <img src="./images/in/item07_view.png" id="in_07">
+                    <img src="./images/in/item08_view.png" id="in_08">
+                    <img src="./images/in/item09_view.png" id="in_09">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/slider.js"></script>
+    </script>
+    <script>
+        $('.myCarousel').split({
+            theme: 'bottom-to-top-fade-out,bottom-to-top-zoom-in,bottom-to-top-fade-out,fade-in-out,fade-in-out',
+            delay: '50',
+            height: '600',
+            infinite: 'true'
+        });
+    </script>
+</body>
+
+</html>
