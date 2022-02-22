@@ -1,0 +1,113 @@
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+
+@keyframes blink-caret {
+
+  0%,
+  100% {
+    border-color: transparent
+  }
+
+  50% {
+    border-color: black
+  }
+}
+
+@keyframes step02_box_bg_l {
+  0% {
+    left: -100%;
+  }
+
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes step02_box_bg_r {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes step02_box_item_01 {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes progress1 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.85);
+    background: #ffdd3f;
+  }
+}
+
+@keyframes progress2 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.75);
+    background: #ffdd3f;
+  }
+}
+
+@keyframes progress3 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.5);
+    background: #ffdd3f;
+  }
+}
+
+@keyframes progress4 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.4);
+    background: #ffdd3f;
+  }
+}
+
+@keyframes progress5 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.85);
+    background: #ffdd3f;
+  }
+}
+
+@keyframes progress6 {
+  0% {
+    transform: scaleX(0);
+  }
+
+  100% {
+    transform: scaleX(.85);
+    background: #ffdd3f;
+  }
+}

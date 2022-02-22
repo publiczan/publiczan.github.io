@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+@mixin flex{
+    display: flex;
+    align-items: center;
+}
+@mixin flex_center {
+    @include flex;
+    justify-content: center;
+}
+
+@mixin flex_start {
+    @include flex;
+    justify-content:flex-start;
+}
+
+@mixin flex_end {
+    @include flex;
+    justify-content:flex-end;
+}
+
+@mixin flex_between {
+    @include flex;
+    justify-content: space-between;
+}
+
+@mixin flex_space-evenly{
+    display:  flex;
+    justify-content: space-evenly;
+}
+@mixin flex_column_sta{
+    @include flex_start;
+    flex-direction: column;
+}
+@mixin flex_column_c{
+    @include flex_center;
+    flex-direction: column;
+}
+@mixin font_gmaket_m{
+    font-family: 'GmarketSansMedium';
+}
+
+@mixin font_gmaket_b{
+    font-family: 'GmarketSansBold';
+}
+
+@mixin font_gmaket_l{
+    font-family: 'GmarketSansLight';
+}
