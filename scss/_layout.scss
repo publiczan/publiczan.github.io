@@ -152,6 +152,12 @@ $poingcolor:#ffdd3f;
                             &:last-child {
                                 padding-right: 0;
                             }
+
+                            &.active {
+                                a {
+                                    color: #ffdd3f;
+                                }
+                            }
                         }
                     }
                 }

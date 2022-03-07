@@ -133,6 +133,8 @@ body { background: #f1f1f1; }
 
 #wrap header .inner nav.navigator ul li:last-child { padding-right: 0; }
 
+#wrap header .inner nav.navigator ul li.active a { color: #ffdd3f; }
+
 #wrap header .inner nav.menu { display: none; }
 
 #wrap .inner { width: 100%; max-width: 1440px; margin: 0 auto; height: 100%; }
@@ -629,6 +631,8 @@ body { background: #f1f1f1; }
 #wrap header .inner nav.navigator ul li a { font-size: 20px; font-family: "Play"; font-weight: bold; }
 
 #wrap header .inner nav.navigator ul li:last-child { padding-right: 0; }
+
+#wrap header .inner nav.navigator ul li.active a { color: #ffdd3f; }
 
 #wrap header .inner nav.menu { display: none; }
 
