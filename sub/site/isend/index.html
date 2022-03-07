@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>아이봇 아웃바이저</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+    <link rel="stylesheet" href="../css/main/main.css">
+    <link rel="stylesheet" type="text/css" href="../css/main/slick.css">
+    <link rel="stylesheet" type="text/css" href="../css/main/slick-theme.css">
+    <link href="//db.onlinewebfonts.com/c/00d5a78493aed4b11e2584ad7cceee49?family=Gilroy+ExtraBold" rel="stylesheet"
+        type="text/css" />
+
+</head>
+
+<body>
+    <div class='wrap main'>
+        <div class='nav'>
+            <div class='gnb'>
+                <div class='logo'>ibot visor</div>
+                <div class='menu'>
+                    <ul>
+                        <li><a href="javascript:goFamilySite('ibot');">CHAT BOT</a></li>
+                        <li><a href="javascript:void(0);">VISOR</a></li>
+                        <li><a href="javascript:goFamilySite('istore');">STORE</a></li>
+                    </ul>
+                </div>
+                <div class='user-group'>
+                    <a class='btn-login'>로그인</a>
+                    <a class='btn-join'>회원가입</a>
+                </div>
+            </div>
+        </div>
+
+        <div class='scroll-left'></div>
+        <div class='scroll-down'>
+            <div><span class='ball'></span></div>
+            <span class='vertical-rl'>SCROLL DOWN</span>
+        </div>
+        <!-- <div class='scroll'>
+            <div></div>
+            <span>SCROLL</span>
+        </div> -->
+
+        <div class='page-container'>
+            <!-- page1 -->
+            <div class='page page0' id='page0'>
+                <div class='inner'>
+                    <div class='advise'>
+                        <h3>ADVISE Targeting</h3>
+                        <span></span>
+                    </div>
+                    <h1>떠나는 98%와 머무는 2%를 모두 잡는 캠페인</h1>
+
+                    <div class='img-service-container' id="img-service-container">
+                        <img id="advise-img_01" src="../images/main/img_main_2_page_1.png">
+                        <img id="advise-img_02" src="../images/main/img_main_2_page_2.png">
+                        <img id="advise-img_03" src="../images/main/img_main_2_page_3.png">
+                    </div>
+                    <div class='link-container'>
+                        <ul class='btn-box accordion'>
+                            <li id='btn-advise_01'>일반관리<span></span></li>
+                            <div class="text">
+                                모비튠과 함께 다양한 고객 데이터 기반으로 대상 타겟의 세분화가 가능합니다.
+                            </div>
+                            <li id='btn-advise_02'>타겟관리<span></span></li>
+                            <div class='text'>
+                                조건에 맞는 캠페인을 생성하기만 하면 타겟 고객이 발견되는 즉시 맞춤형 메시지를 자동으로 발송합니다.
+                            </div>
+                            <li id='btn-advise_03'>연동관리<span></span></li>
+                            <div class='text'>
+                                캠페인별 통계 정보를 제공합니다.</br>다양한 형태의 리포트로 캠페인을 쉽고 효율적으로 관리할 수 있습니다.
+                            </div>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- <div class='inner'>
+                    <h1>아웃바이저, 단 하나로</h1>
+                    <h3>알림톡 / 문자메세지 / 앱 푸쉬 / 메일을 하나로 통합 관리</h3>
+                </div> -->
+            </div>
+            <!-- page2 -->
+            <div class='page page1' id='page1'>
+                <div class='visual_banner'>
+                    <div class='visual visual_bg_01'>
+                        <div class='inner'>
+                            <h1>아웃바이저, 단 하나로</h1>
+                            <h3>알림톡 / 문자메세지 / 앱 푸쉬 / 메일을 하나로 통합 관리</h3>
+                            <div class='cnt'>
+                                <span>01</span> / <span>02</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='visual visual_bg_02'>
+                        <div class='inner'>
+                            <h1>마케팅,</br>이제는 자동화 하세요</h1>
+                            <h3>최적의 순간에 최적의 마케팅 메시지로 이탈을 막고 높은 성과를 경험해 보세요</h3>
+                            <div class='cnt'>
+                                <span>02</span> / <span>02</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page2 -->
+            <div class='page page2' id='page2'>
+                <div class='inner'>
+                    <div class='btn-wrap'>
+                        <h1>다양한 템플릿</h1>
+                        <p>
+                            템플릿은 저희가 제공해 드릴게요,</br>필요하신 내용을 가져다 쓰시면 됩니다.
+                        </p>
+                        <ul class='btn-box'>
+                            <li id='btn-temp_01' class="btn-temp">&#35;장바구니 리마인딩</li>
+                            <li id='btn-temp_02' class="btn-temp">&#35;회원가입</li>
+                            <li id='btn-temp_03' class="btn-temp">&#35;결제이탈</li>
+                            <li id='btn-temp_04' class="btn-temp">&#35;구매완료</li>
+                            <li id='btn-temp_05' class="btn-temp">&#35;리뷰유도</li>
+                        </ul>
+                        <div class='service-btn'>
+                            <form name="sampleForm" id="sampleForm" method="POST" style=""
+                                action="./serviceDocument.do">
+                                <button type="submit" class="downbtn">샘플 다운로드</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class='phone-container' id="phone-container">
+                        <img id="temp-img_01" src="../images/main/img_template_01.png">
+                        <img id="temp-img_02" src="../images/main/img_template_02.png">
+                        <img id="temp-img_03" src="../images/main/img_template_03.png">
+                        <img id="temp-img_04" src="../images/main/img_template_04.png">
+                        <img id="temp-img_05" src="../images/main/img_template_05.png">
+                    </div>
+                </div>
+            </div>
+
+            <!-- page3 -->
+            <div class='page page3' id='page3'>
+                <div class='inner'>
+
+                    <h1>i-VISOR는 쉽고 간단합니다</h1>
+                    <div class='guide'>
+                        <div class='step'>
+                            <div class='title'>Step 1</div>
+                            <div class='box' cx="95" cy="95" r="85" transform="rotate(-90, 95, 95)">
+                                <img src='../images/main/img_sign up.png'>
+                                <p>회원가입</p>
+                            </div>
+                        </div>
+                        <ul class="arrow">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class='step'>
+                            <div class='title'>Step 2</div>
+                            <div class='box'>
+                                <img src='../images/main/img_mobtune.png' />
+                                <p>모비튠</br>간편 연동</p>
+                            </div>
+                        </div>
+                        <ul class="arrow">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class='step'>
+                            <div class='title'>Step 3</div>
+                            <div class='box'>
+                                <img src='../images/main/img_campaign.png' />
+                                <p>캠페인 세팅</p>
+                            </div>
+                        </div>
+                        <ul class="arrow">
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                        <div class='step'>
+                            <div class='title'>Step 4</div>
+                            <div class='box'>
+                                <img src='../images/main/img_payment.png' />
+                                <p>캠페인 라이브</br> (금액 충전)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='banner_wrap'>
+                        <div class='left'>
+                            <dl>
+                                <dt>
+                                    모비온과 함께 모든 비즈니스를 ON 하라
+                                </dt>
+                                <dd>
+                                    최적의 타켓팅 광고 모비온의 신규 서비스,</br>모비튠 CRM을 연동하여 더 좋은</br>비즈니스 세계를 경험하세요.
+                                </dd>
+                                <dd>
+                                    <button class="">연동하기</button>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class='right'>
+                            <dl>
+                                <dt>
+                                    아이바이저, 서비스의 안과 밖을 책임지다.
+                                </dt>
+                                <dd>
+                                    전환율을 높이기 위한 최고의 발송 수단,</br>아이바이저와 함께 고객 유치를 위한</br>다양한 솔루션을 만나보세요.
+                                </dd>
+                                <dd>
+                                    <button>문의하기</button>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class='page page4' id='page4'>
+                <div class='inner'>
+                    <div class='f_logo'></div>
+                    <div class='f_info'>
+                        <ul class='f_menu'>
+                            <li><a href="http://enliple.com/doc/corp" target="_blank">회사소개</a></li>
+                            <li><a href="/agree.do">이용약관</a></li>
+                            <li><a href="javascript:alertReady();">개인정보처리방침</a></li>
+                        </ul>
+                        <p>
+                            주소 : 서울특별시 구로구 구로동 디지털로 272 한신아이티타워 501~504호 (우)08389</br>
+                            대표 : 한경훈, 이근옥<span></span>사업자등록번호 : 113-86-60934<span></span>이메일 : ibot@enliple.com
+                            </br></br>
+                            Copyright © ENLIPLE All Right Reserved.
+                        </p>
+                    </div>
+                    <div class='f_site'>
+                        <div class="site">
+                            <a><span>family site</span></a>
+                            <ul class="depth2">
+                                <li><a href="http://enliple.com/doc/mobon" target="_blank">MOBON</a></li>
+                                <li><a href="http://www.ad-vantage.co.kr/" target="_blank">Advantage</a></li>
+                                <li><a href="https://www.shop-tree.com/" target="_blank">샵트리</a></li>
+                                <li><a href="https://tinyurl.com/y9ylftvj" target="_blank">스타일썸</a></li>
+                                <li><a href="https://tinyurl.com/y8lxe765" target="_blank">스타일룩</a></li>
+                                <li><a href="https://tinyurl.com/y7rlctzb" target="_blank">옷잘남</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+    <script src="../js/main/slick.js" type="text/javascript"></script>
+    <script src="../js/main/main.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(document).on('ready', function () {
+
+            $(".visual_banner").slick({
+                dots: false,
+                autoplay: true,
+                infinite: true,
+                autoplaySpeed: 10000,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+            });
+        });
+    </script>
+
+    <script>
+        function documentDown() {
+            var form = $("#sampleForm");
+            form.submit();
+        }
+    </script>
+
+</body>
+
+</html>
