@@ -1,0 +1,702 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    min-width: 940px;
+    font-size: 15px;
+}
+
+body {
+    font: normal 15px Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #fff;
+    color: #222;
+    font-family: 'Montserrat', sans-serif;
+}
+
+section,
+header,
+footer {
+    padding: 0;
+}
+
+
+#wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: url('../images/main/main_bg.jpg') center top no-repeat;
+}
+
+#wrapper>.active {
+    -webkit-transition: color 0.4s;
+    transition: color 0.4s;
+    color: #fff
+}
+
+#wrapper>:nth-child(even) {}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+h7 {
+    font-weight: normal;
+}
+
+.fltL {
+    float: left;
+    line-height: 94px
+}
+
+.fltR {
+    float: right;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
+}
+
+strong {
+    font-weight: bold;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0
+}
+
+ul li {
+    float: left
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+p {
+    line-height: 1.5em;
+    margin: 1em 0;
+}
+
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6em;
+    padding: 1em 0;
+    color: #fff;
+    overflow: visible;
+    z-index: 2;
+}
+
+nav.sticky {
+    position: fixed;
+    height: 4em;
+    padding: 0;
+    background: #354ca3;
+    background: rgba(31, 57, 153, 0.9);
+}
+
+#navTrigger {
+    display: none
+}
+
+label {
+    display: none
+}
+
+nav h1 {
+    margin: 0;
+}
+
+
+nav ul {
+    position: relative;
+    top: 0;
+    display: block;
+    float: right;
+    margin: -1em 0;
+}
+
+nav ul li {
+    float: left;
+    margin: 0 0.5em;
+}
+
+nav ul li a {
+    display: block;
+    height: 75px;
+    line-height: 90px;
+    background: none;
+    color: #fff;
+    border: 0;
+    font-size: 14px;
+    padding: 0px 14px
+}
+
+nav ul li a.active {
+    background: #fff;
+    color: #222;
+}
+
+
+/* Responsive styles */
+
+html {
+    min-width: 320px;
+    font-family: 'KoPub Dotum';
+}
+
+
+nav .inner {
+    width: 62.8%;
+    margin: 0 auto;
+}
+
+
+section .inner {
+    width: 62.8%;
+    margin: 0 auto;
+    padding: 150px 0px;
+}
+
+
+#header {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 1000px;
+}
+
+#header .inner {
+    width: 55%;
+    margin: 0 auto;
+}
+
+#header .text_box {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 80px;
+    margin-top: 250px;
+    color: #fff
+}
+
+
+#section-1 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: #f9f9f9;
+}
+
+
+#section-2 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: url('../images/main/section_02_bg.jpg') center center no-repeat;
+}
+
+.section-3 .inner {
+    padding-top: 0;
+}
+
+.section-3 .con_icon {
+    position: relative;
+    overflow: hidden;
+    display: block;
+    clear: both;
+    width: 100%;
+    margin: 50px auto;
+    text-align: center
+}
+
+.section-3 .con_icon ul {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.section-3 .con_icon ul li {
+    float: left;
+    text-align: center;
+    display: inline-block;
+}
+
+.section-3 .con_icon img {
+    max-width: 100%;
+}
+
+.section-3 .arrow {
+    padding: 0 5%;
+}
+
+.section-3 .box ul {}
+
+.section-3 ul li {
+    float: left;
+}
+
+.section-3 dl {
+    margin: 0;
+}
+
+.section-3 dd {
+    margin-left: 0;
+    margin-top: 50px;
+}
+
+.section-3 .num {
+    width: 15%;
+}
+
+.section-3 .text_in {
+    width: 75%;
+}
+
+.section-3 .m_img {
+    display: none;
+}
+
+#section-4 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: linear-gradient(to right, #34b9d5, #4e2388);
+}
+
+#section-4 .box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#section-4 .box .left_box {
+    position: relative;
+    float: left;
+    width: 46%;
+    height: auto;
+    display: table;
+    height: 450px;
+}
+
+#section-4 .box .right_box {
+    position: relative;
+    float: right;
+    width: 46%;
+    height: auto;
+    display: table;
+    height: 450px;
+}
+
+#section-4 .box .con_box {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    margin: 150px 0px;
+    height: 450px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+
+.section-5 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    padding: 0
+}
+
+.section-5 .img_ {
+    position: absolute;
+    top: 32px;
+    left: 250px;
+    right: 0;
+    max-width: 100%;
+}
+
+.section-5 .img_01 {
+    position: absolute;
+    top: 27px;
+    left: 200px;
+    max-width: 100%;
+}
+
+.section-5 .img_02 {
+    position: absolute;
+    top: 35px;
+    left: 195px;
+    max-width: 100%;
+}
+
+.section-5 .img_03 {
+    position: absolute;
+    top: 89px;
+    left: 348px;
+    max-width: 100%;
+}
+
+.section-5 .img_04 {
+    position: absolute;
+    top: 230px;
+    left: 410px;
+    max-width: 100%;
+}
+
+.section-5 .img_05 {
+    position: absolute;
+    top: 410px;
+    left: 407px;
+    max-width: 100%;
+}
+
+.section-5 .img_06 {
+    position: absolute;
+    top: 510px;
+    left: 345px;
+    max-width: 100%;
+}
+
+.section-5 .img_07 {
+    position: absolute;
+    top: 550px;
+    left: 195px;
+    max-width: 100%;
+}
+
+.section-5 .m_img {
+    display: none;
+}
+
+#section-7 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: url('../images/main/section_07_bg.jpg') center center no-repeat;
+}
+
+#section-8 {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    background: url('../images/main/section_08_bg.jpg') center center no-repeat;
+    background-size: cover;
+}
+
+#section-8 .box .left_box {
+    float: left;
+    width: 70%
+}
+
+#section-8 .box .right_box {
+    float: right;
+    width: 30%
+}
+
+
+
+
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 50px 0px;
+    text-align: center;
+    background: #0d031e;
+}
+
+.footer .copy p {
+    margin-top: 20px;
+    font-size: 14px;
+    line-height: 22px;
+    color: #757575
+}
+
+
+
+.box {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.box .left_box {
+    float: left;
+    width: 46%
+}
+
+.box .right_box {
+    float: right;
+    width: 46%
+}
+
+
+.box_left {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: auto;
+    background: #f9f9f9;
+    display: table;
+    height: 750px;
+}
+
+.box_right {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: auto;
+    display: table;
+    height: 750px;
+}
+
+.box_left_02 {
+    position: relative;
+    float: left;
+    width: 50%;
+    height: auto;
+    background: #4b2f8e;
+    display: table;
+    height: 750px;
+}
+
+.box_right_02 {
+    position: relative;
+    float: right;
+    width: 50%;
+    height: auto;
+    background: #f9f9f9;
+    display: table;
+    height: 750px;
+}
+
+.con_in_left {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    margin: 150px 0px;
+    height: 750px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.con_in_right {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 750px;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.con_in_left_02 {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    margin: 150px 0px;
+    height: 750px;
+    line-height: 750px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.con_in_right_02 {
+    overflow: hidden;
+    position: relative;
+    height: auto;
+    margin: 150px 0px;
+    height: 750px;
+    display: table-cell;
+    vertical-align: middle;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.text_in_box {
+    display: block;
+    margin: 0 auto;
+    width: 50%;
+}
+
+
+.con_box {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.img_center {
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    max-width: 100%;
+}
+
+.verticality_img_01 {
+    position: absolute;
+    top: 50%;
+    height: 501px;
+    margin-top: -300px;
+}
+
+.tit_line {
+    background: url('../images/main/tit_line_w.png') no-repeat;
+    width: 46px;
+    height: 80px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.tit_line_left {
+    background: url('../images/main/tit_line_w.png') no-repeat;
+    width: 46px;
+    height: 80px;
+    position: relative;
+    left: 0;
+}
+
+.tit_line_left_b {
+    background: url('../images/main/tit_line_b.png') no-repeat;
+    width: 46px;
+    height: 80px;
+    position: relative;
+    left: 0;
+}
+
+.tit_line_02 {
+    position: relative;
+    width: 63px;
+    height: 2px;
+    background-color: #c6c6c6;
+    display: block;
+}
+
+.tit_circle {
+    background: url('../images/main/tit_circle.png') no-repeat;
+    width: 64px;
+    height: 80px;
+    position: relative;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+}
+
+
+.color_b {
+    color: #333
+}
+
+.color_g {
+    color: #7b7b7b
+}
+
+.color_bl {
+    color: #37a7cc
+}
+
+.color_w {
+    color: #fff
+}
+
+
+.text_center {
+    text-align: center;
+}
+
+.text_left {
+    text-align: left;
+}
+
+.tit_01 {
+    font-size: 40px;
+    font-weight: bold;
+    margin: 0;
+    line-height: 50px;
+}
+
+.tit_02 {
+    font-size: 20px;
+    margin: 0;
+    line-height: 60px;
+    letter-spacing: -1px
+}
+
+.text_01 {
+    font-size: 16px;
+}
+
+
+
+.padding {
+    height: 200px
+}
+
+.padding_5 {
+    height: 5px;
+}
+
+.padding_10 {
+    height: 20px;
+}
+
+.padding_30 {
+    height: 50px;
+}
+
+.padding_60 {
+    height: 60px;
+}
+
+.padding_80 {
+    height: 80px;
+}
+
+.padding_50 {
+    height: 150px;
+}
+
+.padding_100 {
+    height: 300px;
+}
