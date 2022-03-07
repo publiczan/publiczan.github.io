@@ -1,18 +1,12 @@
-@keyframes typing {
-  from {
-    width: 0
+@keyframes texttyping {
+  0% {
+    top: -100%;
+    opacity: 0;
   }
-}
 
-@keyframes blink-caret {
-
-  0%,
   100% {
-    border-color: transparent
-  }
-
-  50% {
-    border-color: black
+    top: 50%;
+    opacity: 1;
   }
 }
 
@@ -109,5 +103,17 @@
   100% {
     transform: scaleX(.85);
     background: #ffdd3f;
+  }
+}
+
+@keyframes footer_icon {
+  0% {
+    bottom: -100%;
+    opacity: 0;
+  }
+
+  100% {
+    bottom: 33%;
+    opacity: 1;
   }
 }

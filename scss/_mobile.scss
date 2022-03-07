@@ -302,6 +302,41 @@
             max-width: 100%;
         }
 
+        .modalWrap {
+            .modalContent {
+                transform: translate(-50%, -50%) scale(1.5);
+
+                .close {
+                    width: 10px;
+                    height: 10px;
+
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        background: #fff;
+                        width: 10px;
+                        height: 1px;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        top: 50%;
+                        left: 50%;
+                    }
+
+                    &::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        background: #fff;
+                        width: 1px;
+                        height: 10px;
+                        transform: translate(-50%, -50%) rotate(45deg);
+                        top: 50%;
+                        left: 50%;
+                    }
+                }
+            }
+        }
+
         .content {
             .box {
                 section {
@@ -312,23 +347,23 @@
 
                 &.step01 {
 
-                    .textWrap {}
+                    .textWrap {
+                        width: 100%;
 
-                    &.active {
-                        .textWrap {
-                            h1 {
-                                font-size: 50px;
-                                margin-bottom: 35px;
-                            }
+                        h1 {
+                            font-size: 30px;
+                            letter-spacing: -1px;
+                            line-height: 50px;
 
                             span {
-                                width: 80%;
-                                display: none;
-                                font-size: 30px;
-                                line-height: 51px;
+                                &.teletype-text {
+                                    font-size: 30px;
+                                }
                             }
                         }
                     }
+
+                    &.active {}
                 }
 
                 &.step02 {
@@ -449,6 +484,26 @@
                             .navigation-wrapper {
                                 left: 50%;
                                 top: 70%;
+                            }
+                        }
+                    }
+                }
+
+                &.footer {
+                    section {
+                        .textWrap {
+                            width: 100%;
+
+                            h1 {
+                                font-size: 30px;
+                                letter-spacing: -1px;
+                                line-height: 50px;
+
+                                span {
+                                    &.teletype-text {
+                                        font-size: 30px;
+                                    }
+                                }
                             }
                         }
                     }

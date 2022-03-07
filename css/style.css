@@ -50,10 +50,10 @@ body { background: #f1f1f1; }
 
 @font-face { font-family: 'GmarketSansLight'; src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff") format("woff"); font-weight: normal; font-style: normal; }
 
-@keyframes typing { from { width: 0; } }
-
-@keyframes blink-caret { 0%, 100% { border-color: transparent; }
-  50% { border-color: black; } }
+@keyframes texttyping { 0% { top: -100%;
+    opacity: 0; }
+  100% { top: 50%;
+    opacity: 1; } }
 
 @keyframes step02_box_bg_l { 0% { left: -100%; }
   100% { left: 0; } }
@@ -88,15 +88,20 @@ body { background: #f1f1f1; }
   100% { transform: scaleX(0.85);
     background: #ffdd3f; } }
 
+@keyframes footer_icon { 0% { bottom: -100%;
+    opacity: 0; }
+  100% { bottom: 33%;
+    opacity: 1; } }
+
 #wrap { width: 100%; height: 100%; margin: 0 auto; background: #fff; min-width: 100%; position: relative; overflow: hidden; font-family: 'GmarketSansMedium'; color: #121212; }
 
 #wrap .modalWrap { display: none; position: absolute; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: black; background-color: rgba(0, 0, 0, 0.7); }
 
 #wrap .modalWrap.active { display: block; }
 
-#wrap .modalWrap .modalContent { background-color: #fff; margin: 0 auto 10%; border: 1px solid #888; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); border-radius: 10px; color: #000; padding: 10px; }
+#wrap .modalWrap .modalContent { background-color: #fff; margin: 0 auto; border: 1px solid #888; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); border-radius: 10px; color: #000; padding: 10px; }
 
-#wrap .modalWrap .modalContent .close { position: absolute; right: 20px; transform: translateY(50%); width: 20px; height: 20px; cursor: pointer; }
+#wrap .modalWrap .modalContent .close { position: absolute; right: 20px; transform: translateY(50%); width: 20px; height: 20px; cursor: pointer; z-index: 1; }
 
 #wrap .modalWrap .modalContent .close::before { content: ""; display: block; position: absolute; background: #fff; width: 20px; height: 2px; transform: translate(-50%, -50%) rotate(45deg); top: 50%; left: 50%; }
 
@@ -142,19 +147,13 @@ body { background: #f1f1f1; }
 
 #wrap .content .box.step01 { background: #fff url("../images/step_01_bg.png") center center no-repeat; position: relative; text-align: center; }
 
-#wrap .content .box.step01 .textWrap { font-family: 'Gloria Hallelujah', cursive, sans-serif; }
+#wrap .content .box.step01 .textWrap { opacity: 0; position: absolute; top: -100%; transform: translate(-50%, -50%); left: 50%; }
 
-#wrap .content .box.step01 .textWrap .typingText span { font-size: 50px; line-height: 100px; font-weight: bold; margin: 10px 0 0 10px; white-space: nowrap; overflow: hidden; width: 30em; }
+#wrap .content .box.step01 .textWrap h1 { font-family: 'Gloria Hallelujah', cursive, sans-serif; font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; line-height: 80px; }
 
-#wrap .content .box.step01.active .textWrap h1 { font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 70px; }
+#wrap .content .box.step01 .textWrap h1 span.teletype-text { margin-top: 20px; font-size: 60px; }
 
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(1) { animation: type 2s steps(15), blink 1s linear infinite; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(2) { animation: typing 8s steps(60, end) forwards; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(3) { animation: typing 12s steps(60, end) forwards; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(4) { animation: blink-caret 1s infinite; }
+#wrap .content .box.step01.active .textWrap { opacity: 1; animation: texttyping 1s .5s ease forwards; }
 
 #wrap .content .box.step02 { position: relative; align-items: flex-start; }
 
@@ -280,13 +279,25 @@ body { background: #f1f1f1; }
 
 #wrap .content .box.footer { background: #ffdd3f; text-align: center; }
 
-#wrap .content .box.footer.active .textWrap h1 { font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 70px; }
+#wrap .content .box.footer .textWrap { opacity: 0; position: absolute; top: -100%; transform: translate(-50%, -50%); left: 50%; }
 
-#wrap .content .box.footer.active .textWrap .typing { opacity: 1; }
+#wrap .content .box.footer .textWrap h1 { font-size: 40px; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 70px; line-height: 60px; }
 
-#wrap .content .box.footer.active .textWrap .typing ul li { font-size: 50px; font-weight: bold; line-height: 100px; }
+#wrap .content .box.footer .iconWrap { position: absolute; bottom: -100%; transform: translate(-50%, -50%); left: 50%; display: flex; align-items: center; justify-content: center; align-items: center; }
 
-#wrap .content .box.footer.active .textWrap .typing ul li.splittxt span { opacity: 0; display: inline-block; min-width: 1vw; transform: translateY(30px); }
+#wrap .content .box.footer .iconWrap button { bottom: -100%; opacity: 0; color: #000; margin: 0 15px; transition: all 0.2s ease; border-radius: 100%; border: solid 1px rgba(255, 255, 255, 0.25); background-color: rgba(255, 255, 255, 0.075); padding: 10px; }
+
+#wrap .content .box.footer .iconWrap button:hover { background-color: rgba(255, 255, 255, 0.25); }
+
+#wrap .content .box.footer.active .textWrap { opacity: 1; animation: texttyping 1s .5s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap { bottom: 33%; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(1) { animation: footer_icon 1s 3.5s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(2) { animation: footer_icon 1s 4.0s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(3) { animation: footer_icon 1s 4.5s ease forwards; }
 
 .split { position: relative; }
 
@@ -536,10 +547,10 @@ body { background: #f1f1f1; }
 
 .myCarousel #arrows .prev { width: 36px; height: 36px; border: 1px solid #ccc; background: url("./../images/pp_arrow.png") 9px 12px no-repeat; }
 
-@keyframes typing { from { width: 0; } }
-
-@keyframes blink-caret { 0%, 100% { border-color: transparent; }
-  50% { border-color: black; } }
+@keyframes texttyping { 0% { top: -100%;
+    opacity: 0; }
+  100% { top: 50%;
+    opacity: 1; } }
 
 @keyframes step02_box_bg_l { 0% { left: -100%; }
   100% { left: 0; } }
@@ -574,15 +585,20 @@ body { background: #f1f1f1; }
   100% { transform: scaleX(0.85);
     background: #ffdd3f; } }
 
+@keyframes footer_icon { 0% { bottom: -100%;
+    opacity: 0; }
+  100% { bottom: 33%;
+    opacity: 1; } }
+
 #wrap { width: 100%; height: 100%; margin: 0 auto; background: #fff; min-width: 100%; position: relative; overflow: hidden; font-family: 'GmarketSansMedium'; color: #121212; }
 
 #wrap .modalWrap { display: none; position: absolute; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: black; background-color: rgba(0, 0, 0, 0.7); }
 
 #wrap .modalWrap.active { display: block; }
 
-#wrap .modalWrap .modalContent { background-color: #fff; margin: 0 auto 10%; border: 1px solid #888; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); border-radius: 10px; color: #000; padding: 10px; }
+#wrap .modalWrap .modalContent { background-color: #fff; margin: 0 auto; border: 1px solid #888; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0.9); border-radius: 10px; color: #000; padding: 10px; }
 
-#wrap .modalWrap .modalContent .close { position: absolute; right: 20px; transform: translateY(50%); width: 20px; height: 20px; cursor: pointer; }
+#wrap .modalWrap .modalContent .close { position: absolute; right: 20px; transform: translateY(50%); width: 20px; height: 20px; cursor: pointer; z-index: 1; }
 
 #wrap .modalWrap .modalContent .close::before { content: ""; display: block; position: absolute; background: #fff; width: 20px; height: 2px; transform: translate(-50%, -50%) rotate(45deg); top: 50%; left: 50%; }
 
@@ -628,19 +644,13 @@ body { background: #f1f1f1; }
 
 #wrap .content .box.step01 { background: #fff url("../images/step_01_bg.png") center center no-repeat; position: relative; text-align: center; }
 
-#wrap .content .box.step01 .textWrap { font-family: 'Gloria Hallelujah', cursive, sans-serif; }
+#wrap .content .box.step01 .textWrap { opacity: 0; position: absolute; top: -100%; transform: translate(-50%, -50%); left: 50%; }
 
-#wrap .content .box.step01 .textWrap .typingText span { font-size: 50px; line-height: 100px; font-weight: bold; margin: 10px 0 0 10px; white-space: nowrap; overflow: hidden; width: 30em; }
+#wrap .content .box.step01 .textWrap h1 { font-family: 'Gloria Hallelujah', cursive, sans-serif; font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; line-height: 80px; }
 
-#wrap .content .box.step01.active .textWrap h1 { font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 70px; }
+#wrap .content .box.step01 .textWrap h1 span.teletype-text { margin-top: 20px; font-size: 60px; }
 
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(1) { animation: type 2s steps(15), blink 1s linear infinite; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(2) { animation: typing 8s steps(60, end) forwards; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(3) { animation: typing 12s steps(60, end) forwards; }
-
-#wrap .content .box.step01.active .textWrap .typingText span:nth-child(4) { animation: blink-caret 1s infinite; }
+#wrap .content .box.step01.active .textWrap { opacity: 1; animation: texttyping 1s .5s ease forwards; }
 
 #wrap .content .box.step02 { position: relative; align-items: flex-start; }
 
@@ -766,13 +776,25 @@ body { background: #f1f1f1; }
 
 #wrap .content .box.footer { background: #ffdd3f; text-align: center; }
 
-#wrap .content .box.footer.active .textWrap h1 { font-size: 80px; text-transform: uppercase; letter-spacing: 1pt; margin-bottom: 70px; }
+#wrap .content .box.footer .textWrap { opacity: 0; position: absolute; top: -100%; transform: translate(-50%, -50%); left: 50%; }
 
-#wrap .content .box.footer.active .textWrap .typing { opacity: 1; }
+#wrap .content .box.footer .textWrap h1 { font-size: 40px; text-transform: uppercase; letter-spacing: -1px; margin-bottom: 70px; line-height: 60px; }
 
-#wrap .content .box.footer.active .textWrap .typing ul li { font-size: 50px; font-weight: bold; line-height: 100px; }
+#wrap .content .box.footer .iconWrap { position: absolute; bottom: -100%; transform: translate(-50%, -50%); left: 50%; display: flex; align-items: center; justify-content: center; align-items: center; }
 
-#wrap .content .box.footer.active .textWrap .typing ul li.splittxt span { opacity: 0; display: inline-block; min-width: 1vw; transform: translateY(30px); }
+#wrap .content .box.footer .iconWrap button { bottom: -100%; opacity: 0; color: #000; margin: 0 15px; transition: all 0.2s ease; border-radius: 100%; border: solid 1px rgba(255, 255, 255, 0.25); background-color: rgba(255, 255, 255, 0.075); padding: 10px; }
+
+#wrap .content .box.footer .iconWrap button:hover { background-color: rgba(255, 255, 255, 0.25); }
+
+#wrap .content .box.footer.active .textWrap { opacity: 1; animation: texttyping 1s .5s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap { bottom: 33%; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(1) { animation: footer_icon 1s 3.5s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(2) { animation: footer_icon 1s 4.0s ease forwards; }
+
+#wrap .content .box.footer.active .iconWrap button:nth-child(3) { animation: footer_icon 1s 4.5s ease forwards; }
 
 @media screen and (max-width: 979px) { #wrap { min-width: 100%; }
   #wrap header { height: 60px; }
@@ -809,9 +831,14 @@ body { background: #f1f1f1; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides.photo { top: 20%; } }
 
 @media screen and (max-width: 768px) { #wrap .inner { max-width: 100%; }
+  #wrap .modalWrap .modalContent { transform: translate(-50%, -50%) scale(1.5); }
+  #wrap .modalWrap .modalContent .close { width: 10px; height: 10px; }
+  #wrap .modalWrap .modalContent .close::before { content: ""; display: block; position: absolute; background: #fff; width: 10px; height: 1px; transform: translate(-50%, -50%) rotate(45deg); top: 50%; left: 50%; }
+  #wrap .modalWrap .modalContent .close::after { content: ""; display: block; position: absolute; background: #fff; width: 1px; height: 10px; transform: translate(-50%, -50%) rotate(45deg); top: 50%; left: 50%; }
   #wrap .content .box section { width: 100%; margin: 0 auto; padding: 0 10%; }
-  #wrap .content .box.step01.active .textWrap h1 { font-size: 50px; margin-bottom: 35px; }
-  #wrap .content .box.step01.active .textWrap span { width: 80%; display: none; font-size: 30px; line-height: 51px; }
+  #wrap .content .box.step01 .textWrap { width: 100%; }
+  #wrap .content .box.step01 .textWrap h1 { font-size: 30px; letter-spacing: -1px; line-height: 50px; }
+  #wrap .content .box.step01 .textWrap h1 span.teletype-text { font-size: 30px; }
   #wrap .content .box.step02 section { width: 100%; padding: 0; height: 100vh; }
   #wrap .content .box.step02 section .left, #wrap .content .box.step02 section .right { width: 100%; }
   #wrap .content .box.step02 section .left { position: relative; height: 100vh; }
@@ -829,5 +856,8 @@ body { background: #f1f1f1; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext { max-width: 100%; text-align: center; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext button { transform: translate(-50%, -50%); left: 50%; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides.photo .image { background-position: center; background-size: 150%; }
-  #wrap .content .box.step03 section .tabconWrap .navigation-wrapper { left: 50%; top: 70%; } }
+  #wrap .content .box.step03 section .tabconWrap .navigation-wrapper { left: 50%; top: 70%; }
+  #wrap .content .box.footer section .textWrap { width: 100%; }
+  #wrap .content .box.footer section .textWrap h1 { font-size: 30px; letter-spacing: -1px; line-height: 50px; }
+  #wrap .content .box.footer section .textWrap h1 span.teletype-text { font-size: 30px; } }
 /*# sourceMappingURL=style.css.map */
