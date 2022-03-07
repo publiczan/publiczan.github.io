@@ -219,12 +219,12 @@
 .theme-bottom-to-top-zoom-in>.slide {
   top: 100%;
   left: 0;
-  transition: transform 0.8s;
+  transition: transform 2s;
   overflow: hidden;
 
   .image {
     transform: scale(1.05);
-    transition: transform 0.8s;
+    transition: transform 2s;
   }
 
   &.init {
@@ -257,7 +257,7 @@
 .theme-bottom-to-top-fade-out>.slide {
   top: 100%;
   left: 0;
-  transition: transform 1s;
+  transition: transform 2s;
 
   .bodytext {
     opacity: 0;

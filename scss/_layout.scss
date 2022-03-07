@@ -311,6 +311,7 @@ $poingcolor:#ffdd3f;
                             position: relative;
                             transform: translateY(-50%);
                             top: 0%;
+                            opacity: 0;
 
                             ul {
 
@@ -330,6 +331,7 @@ $poingcolor:#ffdd3f;
                             transform: translateY(-50%);
                             top: 67%;
                             max-width: 600px;
+                            opacity: 0;
 
                             .progress-bar {
                                 background: #f0f0f0;
@@ -406,6 +408,8 @@ $poingcolor:#ffdd3f;
                             animation: step02_box_bg_r 1s 1.3s ease-in forwards;
 
                             .textWrap {
+                                opacity: 1;
+
                                 ul {
                                     li {
                                         &:nth-child(1) {
@@ -428,6 +432,8 @@ $poingcolor:#ffdd3f;
                             }
 
                             .progressWrap {
+                                opacity: 1;
+
                                 .progress-bar {
                                     &:nth-child(1) {
                                         animation: step02_box_item_01 1s 5.3s ease-in forwards;
