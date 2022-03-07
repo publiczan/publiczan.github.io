@@ -848,7 +848,7 @@ body { background: #f1f1f1; }
   #wrap .content .box.step02 section .left { position: relative; height: 100vh; }
   #wrap .content .box.step02 section .left .img { top: 50%; }
   #wrap .content .box.step02 section .left .textWrap { display: none; }
-  #wrap .content .box.step02 section .right { top: 90%; justify-content: center; padding: 0; background: rgba(255, 255, 255, 0.9); }
+  #wrap .content .box.step02 section .right { top: 80%; justify-content: center; padding: 0; background: rgba(255, 255, 255, 0.9); }
   #wrap .content .box.step02 section .right .textWrap { top: -20%; }
   #wrap .content .box.step02 section .right .textWrap ul li { text-align: center; font-size: 20px; line-height: 36px; }
   #wrap .content .box.step02 section .right .progressWrap { padding: 0 7%; top: 45%; }
@@ -860,7 +860,7 @@ body { background: #f1f1f1; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext { max-width: 100%; text-align: center; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides .slide .bodytext button { transform: translate(-50%, -50%); left: 50%; }
   #wrap .content .box.step03 section .tabconWrap .tabCon .slides.photo .image { background-position: center; background-size: 150%; }
-  #wrap .content .box.step03 section .tabconWrap .navigation-wrapper { left: 50%; top: 70%; }
+  #wrap .content .box.step03 section .tabconWrap .navigation-wrapper { left: 50%; top: 60%; }
   #wrap .content .box.footer section .textWrap { width: 100%; }
   #wrap .content .box.footer section .textWrap h1 { font-size: 30px; letter-spacing: -1px; line-height: 50px; }
   #wrap .content .box.footer section .textWrap h1 span.teletype-text { font-size: 30px; } }
