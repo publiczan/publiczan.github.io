@@ -198,22 +198,33 @@ window.onload = function () {
 }
 
 $(document).ready(function () {
-    $(".splittxt").each(function () {
-        var text = $(this).text();
-        var splittxt = text.split('').join("</span><span aria-hidden='true'>");
-        splittxt = "<span aria-hidden='true'>" + splittxt + "</span>";
-
-        $(this).html(splittxt).attr("aria-label", text);
+    $('.type-text01').each(function () {
+        var items = $(this).attr('title') + ';' + $(this).text();
+        $(this).empty().attr('title', '').teletype({
+            text: $.map(items.split(';'), $.trim),
+            typeDelay: 120,
+            backDelay: 120,
+            cursor: '▋',
+            delay: 80000,
+            preserve: false,
+            prefix: '[WEB PORTFOLIO!]#',
+            loop: 0
+        });
     });
 
-    setInterval(function () {
-        gsap.to(".splittxt span", {
-            duration: 0.3,
-            opacity: 1,
-            y: 0,
-            stagger: 0.1
-        })
-    }, 1000)
+    $('.type-text02').each(function () {
+        var items = $(this).attr('title') + ';' + $(this).text();
+        $(this).empty().attr('title', '').teletype({
+            text: $.map(items.split(';'), $.trim),
+            typeDelay: 100,
+            backDelay: 100,
+            cursor: '▋',
+            delay: 80000,
+            preserve: false,
+            prefix: '[THANK]#',
+            loop: 0
+        });
+    });
 
     var $tabButtonItem = $('#tab-button li'),
         $tabSelect = $('#tab-select'),
