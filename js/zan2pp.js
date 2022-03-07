@@ -202,8 +202,8 @@ $(document).ready(function () {
         var items = $(this).attr('title') + ';' + $(this).text();
         $(this).empty().attr('title', '').teletype({
             text: $.map(items.split(';'), $.trim),
-            typeDelay: 120,
-            backDelay: 120,
+            typeDelay: 50,
+            backDelay: 50,
             cursor: '▋',
             delay: 80000,
             preserve: false,
@@ -216,8 +216,8 @@ $(document).ready(function () {
         var items = $(this).attr('title') + ';' + $(this).text();
         $(this).empty().attr('title', '').teletype({
             text: $.map(items.split(';'), $.trim),
-            typeDelay: 100,
-            backDelay: 100,
+            typeDelay: 50,
+            backDelay: 50,
             cursor: '▋',
             delay: 80000,
             preserve: false,
