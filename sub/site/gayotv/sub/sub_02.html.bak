@@ -1,0 +1,561 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>가요TV</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">
+<meta name="title" content="가요TV">
+<meta name="publisher" content="가요TV">
+<meta name="author" content="가요TV">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="가요TV">
+<meta property="og:title" content="가요TV">
+<meta property="og:description" content="가요TV,">
+<meta property="og:image" content="/image/favicon.png">
+<meta property="og:url" content="http://seoulgumjung.com">
+<meta name="description" content="가요TV,성인가요,쇼,버라이어티,포크매니아,7090음악,음악토크,휴먼다큐,노래교실,교양강좌" />
+<meta name="keywords" content="가요TV,성인가요,쇼,버라이어티,포크매니아,7090음악,음악토크,휴먼다큐,노래교실,교양강좌" />
+<meta name="author" content="가요TV,성인가요,쇼,버라이어티,포크매니아,7090음악,음악토크,휴먼다큐,노래교실,교양강좌" />
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+<link href="./../css/default.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="./../css/slick.css">
+<link rel="stylesheet" type="text/css" href="./../css/slick-theme.css">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+</head>
+
+<body>
+
+	<!--start-->
+	<div id="wrapper">
+		
+		<!--header-->
+		<section class="header w_menu sub">
+			<div class="gnbwrap">
+				<ul>
+					<li><a href="" target="blank">가요tv앱</a></li>
+					<li><a href="" target="blank">채널번호안내</a></li>
+					<li><a href="" target="blank">로그인</a></li>
+					<li><a href="" target="blank">회원가입</a></li>
+				</ul>
+			</div>
+			<div class="menuwrap">
+				<div class="left">
+					<ul>
+						<li><a href="./../sub/sub_02.html" target="blank">프로그램</a></li>
+						<li><a href="" target="blank">채널소개</a></li>
+						<li><a href="" target="blank">채널뉴스</a></li>
+					</ul>
+				</div>
+				<h1><a href="./../index.html"><img src="./../images/common/s_logo.png"></a></h1>
+				<div class="right">
+					<ul>
+						<li><a href="./../sub/sub_01.html" target="blank">편성표</a></li>
+						<li><a href="" target="blank">이벤트</a></li>
+						<li><a href="" target="blank">온에어</a></li>
+						<li class="topbar"><a class="btn-search search-icon" href="#"><i class="fa fa-search"></i></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!--//header-->
+		
+		<!--header-->
+		<section class="header m_menu  sub">
+			<div class="momenu">
+				<div class="navigation">
+					<div class="toggle-wrapper">
+						<span class="show">&#9776;</span>
+						<span class="hide">&#10006;</span>
+					</div>
+					<!--
+					<div class="heading">Site Logo</div>-->
+					<ul class="menu">
+						<li><a href="#!">프로그램</a></li>
+						<li class="active"><a href="#!">채널소개</a></li>
+						<li class="has-menu">
+							<a href="#!">채널뉴스</a>
+							<ul class="menu">
+								<li><a href="#!">jQuery</a></li>
+								<li><a href="#!">HTML5</a></li>
+								<li><a href="#!">CSS/CSS3</a></li>
+							</ul>
+						</li>
+						<li><a href="#!">편성표</a></li>
+						<li><a href="#!">이벤트</a></li>
+						<li><a href="#!">온에어</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="m_logo"><a href=""><img src="./../images/common/s_logo.png"></a></div>
+			<div class="m_search"><i class="fa fa-search"></i></div>
+		</section>
+		<!--//header-->
+		
+		<section class="sub_menu_wrapper">
+			<div class="inner">
+				<div class="menu_list">
+					<ul>
+						<li class="on"><a href=""><span>금주의 프로그램</span></a></li>
+						<li><a href=""><span>금주의 탐방영상</span></a></li>
+						<li><a href=""><span>최신방송영상</span></a></li>
+						<li><a href=""><span>예고편</span></a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+		<!--container-->
+		<section class="container common_t">
+			<div class="inner">
+				<div class="con_left">
+					<div class="con_01">
+						<a href="./sub_03.html">
+						<div class="left"><img src="./../images/sub/program.jpg"></div>
+						<div class="right">
+							<div class="info">
+								<p class="tit">금주의 프로그램</p>
+								<p class="tit_01">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+								<p class="hidden">
+									처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+								</p>
+								<p class="day">2020.09.25</p>
+							</div>
+						</div>
+						</a>
+					</div>
+					
+					<!--//con_01-->
+
+					<div class="con_02">
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="con_box">
+							<div class="left"><img src="./../images/sub/chart_time_list.jpg"></div>
+							<div class="right">
+								<div class="info">
+									<p class="tit">류지광·김수찬·노지훈, '트로트의 민족' 응원 부단장 출격 </p>
+									<p class="hidden">
+										처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트 시상식을 개최한 가요TV에서는 풍성하며  처음으로 트로트...
+									</p>
+									<p class="day">2020.09.25</p>
+								</div>
+							</div>
+						</div>
+						<!--//list-->
+
+						<div class="page">
+							<ul>
+								<li class="l_arrow mobile"><a href="#"></a></li>
+								<li class="on  mobile"><a>1</a></li>
+								<li><a>2</a></li>
+								<li><a>3</a></li>
+								<li><a>4</a></li>
+								<li><a>5</a></li>
+								<li><a>6</a></li>
+								<li><a>7</a></li>
+								<li><a>8</a></li>
+								<li><a>9</a></li>
+								<li class="r_arrow  mobile"><a href="#" ></a></li>
+							</ul>
+						</div>
+						<!--//page-->
+
+					</div>
+					<!--//page-->
+
+				</div>
+				<!--//con_left-->
+
+				<div class="con_right sub_arrow">
+					
+					<div class="con_list">
+						<p class="tit">금주의 프로그램</p>
+						<div class="sub_program_01 slider">
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//con_list-->
+
+					<div class="con_ad">
+						<img src="./../images/sub/ad.jpg">
+					</div>
+					<!--//con_ad-->
+						
+					<div class="con_list">
+						<p class="tit">금주의 프로그램</p>
+						<div class="sub_program_01 slider">
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//con_list-->
+
+					<div class="con_ad">
+						<img src="./../images/sub/ad.jpg">
+					</div>
+					<!--//con_ad-->
+
+					<div class="con_list">
+						<p class="tit">금주의 프로그램</p>
+						<div class="sub_program_01 slider">
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+								<div class="con_box">
+									<div class="left"><img src="./../images/sub/program_01.jpg"></div>
+									<div class="right">
+										<div class="info">
+											<p class="tit_01">'트롯신2' 진성팀, 역...</p>
+											<p>처음으로 트로트 시상식을 개최한 가요TV에 ...</p>
+											<p class="day">2020.09.25</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!--//con_list-->
+				</div>
+				<!--//con_right-->
+			</div>
+		</section>
+
+
+		<!--//container-->
+		
+		<!--footer-->
+		<footer>
+			<div class="f_menu">
+				<div class="inner">
+					<div class="con_box">
+						<div class="con">
+							<ul>
+								<li><a href="">가요tv소개</a></li>
+								<li><a href="">이용약관</a></li>
+								<li><a href="">개인정보처리방침</a></li>
+								<li><a href="">기타운영정책</a></li>
+								<li><a href="">광고/제휴문의</a></li>
+								<li><a href="">고객센터</a></li>
+								<li><a href="">사이트맵</a></li>
+							</ul>
+						</div>
+						<div class="con">
+							<div class="site">
+								<a data-toggle="dropdown" data-target="#" href="javascript:;" class="curr"><span>관련사이트 바로가기</span></a>
+								<ul class="depth2">
+									<li><a href="../ko">DANDIMALL</a></li>
+								</ul>
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="f_con">
+				<div class="inner">
+					<h1><a href=""><img src="./../images/common/f_logo.png"></a></h1>
+					<div class="info">
+						<address>
+							가요TV 회장 : 안영일 주소 : 서울특별시 영등포구 여의대방로 379, 814호(여의도동, 제일빌딩</br>
+							전화 : 02-3665-6268 팩스 : 02-3665-6269 사업자등록번호 : 607-81-75806 방송채널사업등록번호 : 제2003-42-6호
+						</address>
+						<p>
+							가요TV 의 모든 기사 및 영상(콘텐츠)은 저작권법의 보호를 받으며, 무단 전재, 복사, 배포를 금합니다.</br>
+							<span>COPYRIGHT (C) 2020 가요TV. ALL RIGHTS RESERVED.</span>
+						</p>
+					</div>
+				</div>
+			</div>
+		</footer>
+	<!--//footer-->			
+	</div>
+	<!--end-->
+
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="./../js/slick.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    $(document).on('ready', function() {
+
+      $(".sub_program_01").slick({
+        lazyLoad: 'ondemand', // ondemand progressive anticipated
+        infinite: true
+       });
+     
+    });
+</script>
+
+
+<script  src="./../js/menu.js"></script>
+</body>
+</html>

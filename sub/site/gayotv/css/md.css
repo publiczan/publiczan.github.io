@@ -1,0 +1,119 @@
+@charset "utf-8";
+
+@media screen and (max-width:1299px) and (min-width:1024px){
+.m_menu{display:none;}
+.w_menu{display:block;}
+
+.container{position:relative; overflow:hidden; width:100%;height:auto; color:#050505;margin:0 auto;}
+.container .inner{padding:80px 10px; max-width:1024px; }
+
+footer .inner{max-width:1024px;  padding:30px 10px;}	
+footer .f_menu .inner{padding:10px}
+
+/*
+.all_con .con_02 .tit_01{margin-top:0}
+.all_con .con_02 .program_btn{top:20px}
+.all_con .con_02 .right .info p{display:none}
+.all_con .con_02 .right .info .tit_01{display:block}
+.all_con .con_02 .right .info .day{display:block}
+.con_03 .page ul li{margin:4px}
+*/
+.con_right .con_list .day{display:none}
+.con_right .con_list .left{width:36%}
+.con_left .con_02 .page ul li{margin:5px}
+
+}
+
+@media screen and (max-width: 1023px) and (min-width: 768px){
+
+
+.container .inner{width:85%; padding:30px 10px;}
+
+.container .content_04 .left{width:100%;}
+.container .content_04 .right{width:100%;margin-top:50px}
+
+.container .content_05 .swiper-slide {width:50% !important; text-align: center;display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;-webkit-justify-content: center;justify-content: center;-webkit-box-align: center;-ms-flex-align: center; -webkit-align-items: center;align-items: center;}
+
+.container .content_06 dd{font-size:16px}
+
+.container .content_07{margin-top:0}
+.container .content_07 .left{margin-top:0}
+.container .content_07 .left ul li{margin-right:3%}
+.container .content_07 .right{margin-top:30px}
+
+
+.container .content_08 .con_box .con{width:50%}
+.container .content_08 .con_box .con:nth-child(1){border-bottom:1px solid #d7d7d7;border-left:1px solid #d7d7d7}
+.container .content_08 .con_box .con:nth-child(2){border-bottom:1px solid #d7d7d7}
+.container .content_08 .con_box .con:nth-child(3){border-left:1px solid #d7d7d7}
+.container .content_08 .con_box .con:nth-child(4){border-right:1px solid #d7d7d7}
+
+.container .content_10 .left{display:none}
+.container .content_10 .right{width:100%; margin:0}
+
+.sub_tit .date{margin-top:40px;width:20%;}
+.sub_tit .print{margin-top:40px;width:20%;}
+
+.add_service .con_box{margin-bottom:0;display:block}
+.add_service .con_box li{width:20%;margin-top:10px}
+.add_service .con_box li:nth-child(7){width:20%}
+.add_service .con_box li:nth-child(9){width:20%}
+
+.day_box .con_box{margin-bottom:10px}
+.day_box .con_box .info .con{display:none;}
+.day_box .con_box .info .on{display:block;width:100%;}
+.day_box .con_box .prev{padding:20px 0 0}
+.day_box .con_box .next{padding:20px 0 0}
+
+.chart_time_list{margin-top:0}
+.chart_time_list .con_box{margin-bottom:0}
+.chart_time_list .img{display:none;}
+.chart_time_list .info {font-size:20px;width:90%;padding:0 20px}
+.chart_time_list .info .tit{width:92%;float:left}
+.chart_time_list .info .hidden{display:none}
+.chart_time_list .info .list{width:5%; float:right}
+.chart_time_list .info .list li{display:none;}
+.chart_time_list .info .list .on{display:block}
+.chart_time_list .time{padding:0}
+.chart_time_list .time p{font-size:20px}
+.chart_time_list .btn{display:none}
+.chart_time_list .info .tit{line-height:22px}
+
+
+
+.con_left{width:100%}
+
+
+.con_right{width:100%;margin-top:30px}
+.con_right .con_list .left{width:22%}
+.con_right .con_list .right{width:78%}
+
+.con_ad{text-align:center;}
+.con_ad img{display:inline-block}
+
+.con_left{width:100%}
+.con_left .l_con_02 .con{width:50%;float:left;text-align:center;margin-bottom:25px}
+.con_left .l_con_02 .con img{display:inline-block}
+.con_left .info{text-align:left}
+.con_left .l_con_02 .con_box{margin-bottom:0}
+
+
+.con_right{width:100%;margin-top:30px}
+.con_right .con_list .left{width:22%}
+.con_right .con_list .right{width:78%}
+
+.con_ad{text-align:center;}
+.con_ad img{display:inline-block}
+
+.con_left .con_01 .left{width:100%;text-align:center}
+.con_left .con_01 .left img{display:inline-block}
+.con_left .con_01 .right{width:100%;margin-top:25px}
+
+.con_left .con_02 .right .info .day{margin-top:10px}
+.con_left .con_02 .left{width:30%}
+.con_left .con_02 .right{width:68%;}
+.con_left .con_02 .right .info .hidden{display:none}
+.con_left .con_02 .page ul li{display:none;}
+.con_left .con_02 .page .mobile{display:block}
+
+}
