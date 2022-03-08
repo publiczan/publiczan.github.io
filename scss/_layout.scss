@@ -147,6 +147,10 @@ $poingcolor:#ffdd3f;
                                 font-size: 20px;
                                 font-family: "Play";
                                 font-weight: bold;
+
+                                &.active {
+                                    color: #ffdd3f;
+                                }
                             }
 
                             &:last-child {
@@ -154,6 +158,7 @@ $poingcolor:#ffdd3f;
                             }
 
                             &.active {
+
                                 a {
                                     color: #ffdd3f;
                                 }

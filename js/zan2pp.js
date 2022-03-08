@@ -161,6 +161,10 @@ window.onload = function () {
                 navigatorA[i].classList.remove("active");
             }
 
+            if (now != 4) {
+                navigatorA[now].classList.add("active");
+            }
+
             if (now == 0) {
                 header.classList.add("other");
             } else {
