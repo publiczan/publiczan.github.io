@@ -1,0 +1,50 @@
+@charset "utf-8";
+
+// Color
+$black: #000;
+$black-matte: #111;
+
+$white: #fff;
+$white-opacity-20: rgba(255, 255, 255, 0.2);
+$white-opacity-60: rgba(255, 255, 255, 0.6);
+
+$gray: #999;
+$gray-2: #aaa;
+$gray-3: #bbb;
+$gray-4: #b9b9b9;
+$gray-5: #ccc;
+$gray-6: #eee;
+
+$purple: #3c1a7e;
+$purple-light: #6e4eb1;
+
+$yellow: #ffc410;
+$yellow-light: #ffd110;
+
+// Break Point
+$media-phone: 767px;
+$media-tablet: 1279px;
+$media-large: 0px;
+$media-wide: 0px;
+
+// Font Family
+$font-name: NanumSquare,
+"Noto Sans KR",
+"맑은 고딕",
+"Malgun Gothic",
+돋움,
+Dotum,
+sans-serif;
+
+// Route
+$common: "/img/common";
+$overview: "/img/overview";
+$contactus: "/img/contactus";
+$experience: "/img/experience";
+$price: "/img/price";
+$products: "/img/products";
+
+
+$breakpoint-mobile: 335px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1360px;

@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+/* Common */
+.lock,
+.lock body,
+.gnb-lock,
+.gnb-lock body {
+  overflow: hidden;
+}
+
+.cf:after {
+  display: block;
+  content: "";
+  clear: both;
+}
+
+.inner {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+
+.ellipsis {
+  overflow: hidden;
+  display: inline-block;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  vertical-align: middle;
+}
