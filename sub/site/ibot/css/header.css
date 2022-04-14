@@ -1,0 +1,532 @@
+@charset "utf-8";
+
+/* Reset */
+[id^="iBotSite"] * {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: inherit;
+    line-height: 1;
+    box-sizing: border-box;
+}
+
+[id^="iBotSite"] a {
+    text-decoration: none;
+}
+
+[id^="iBotSite"] button {
+    background-color: transparent;
+    border-width: 0;
+    outline: 0;
+    color: inherit;
+    cursor: pointer;
+}
+
+/* Header */
+.iBot-lock,
+.iBot-lock body {
+    overflow: hidden;
+}
+
+.iBot-inner {
+    width: 100%;
+    max-width: calc(100% - 40px);
+    margin: 0 auto;
+}
+
+.iBot-inner:after {
+    display: block;
+    content: '';
+    clear: both;
+}
+
+#iBotSiteHeader {
+    position: fixed;
+    top: 0;
+    z-index: 99999;
+    width: 100%;
+    min-width: 320px;
+    background-color: #181c27;
+}
+
+#iBotSiteHeader .header-logo {
+    float: left;
+}
+
+#iBotSiteHeader .header-logo a {
+    display: block;
+    width: 135px;
+    height: 100px;
+    background-image: url(./../img/common/logo.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: auto 30px;
+    text-indent: -9999px;
+}
+
+#iBotSiteHeader .global-navigation-bar {
+    float: left;
+}
+
+#iBotSiteHeader .global-navigation-bar ul {
+    font-size: 0;
+}
+
+#iBotSiteHeader .global-navigation-bar ul li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#iBotSiteHeader .global-navigation-bar ul li a {
+    display: block;
+    height: 100px;
+    padding: 0 25px;
+    font-family: 'Gilroy ExtraBold', NanumSquare, 'Noto Sans KR', '맑은 고딕', 'Malgun Gothic', 돋움, Dotum, sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    color: #fff;
+    line-height: 100px;
+    transition: color 0.3s;
+}
+
+#iBotSiteHeader .global-navigation-bar ul li.active a {
+    color: #ffd110;
+}
+
+#iBotSiteHeader .header-link {
+    float: right;
+    margin: 26px 0;
+    font-size: 0;
+}
+
+#iBotSiteHeader .header-link a {
+    display: inline-block;
+    width: 120px;
+    height: 48px;
+    margin-right: 20px;
+    border: 1px solid #6f45bf;
+    border-radius: 24px;
+    color: #fff;
+    text-align: center;
+    line-height: 46px;
+    vertical-align: top;
+    transition: 0.3s;
+}
+
+#iBotSiteHeader .header-link a:last-child {
+    margin-right: 0;
+}
+
+#iBotSiteHeader .header-link .btn-header-login {
+    background-color: #6f45bf;
+}
+
+/* Mobile Navigation */
+#iBotSiteHeader .mobile-navigation {
+    overflow-y: auto;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+    color: #fff;
+}
+
+#iBotSiteHeader .mobile-navigation-inner {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    min-height: 520px;
+    padding: 0 15px;
+    background-color: #181c27;
+}
+
+#iBotSiteHeader .btn-hamburger {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: calc(50% - 24px);
+    z-index: 50;
+    width: 48px;
+    height: 48px;
+    padding: 16px 14px;
+    background-color: transparent;
+    border-width: 0;
+    outline: 0;
+    cursor: pointer;
+}
+
+#iBotSiteHeader .btn-hamburger span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    margin-bottom: 5px;
+    background-color: #fff;
+    transition: 0.3s;
+}
+
+#iBotSiteHeader .btn-hamburger span:last-child {
+    margin-bottom: 0;
+}
+
+#iBotSiteHeader .btn-hamburger.active {
+    left: 70%;
+    transition: 0.3s;
+}
+
+#iBotSiteHeader .btn-hamburger.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+}
+
+#iBotSiteHeader .btn-hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+#iBotSiteHeader .btn-hamburger.active span:nth-child(3) {
+    transform: translateY(-5px) rotate(-45deg);
+}
+
+#iBotSiteHeader .btn-hamburger.active+.mobile-navigation {
+    display: block;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+#iBotSiteHeader .mobile-header-link {
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#iBotSiteHeader .mobile-header-link a {
+    display: block;
+    font-family: "Noto Sans KR", NanumSquare, "맑은 고딕", "Malgun Gothic", 돋움, Dotum, sans-serif;
+    font-weight: 500;
+}
+
+#iBotSiteHeader .mobile-header-link .btn-header-login {
+    position: relative;
+    min-height: 48px;
+    margin-bottom: 10px;
+    line-height: 48px;
+}
+
+#iBotSiteHeader .mobile-header-link .btn-header-join,
+#iBotSiteHeader .mobile-header-link .btn-header-logout {
+    width: 100%;
+    height: 34px;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    color: #fff;
+    text-align: center;
+    line-height: 32px;
+}
+
+#iBotSiteHeader .mobile-header-link .btn-header-logout {
+    background: url(../img/common/icon-logout.png) 0 50% no-repeat;
+}
+
+#iBotSiteHeader .mobile-header-link .btn-header-login:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 22px;
+    width: 7px;
+    height: 7px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+}
+
+#iBotSiteHeader .login-success .btn-header-login {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+#iBotSiteHeader .login-success .btn-header-login .btn-header-login-inner {
+    display: table-cell;
+    width: 100%;
+    padding-right: 15px;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+#iBotSiteHeader .login-success .btn-header-login .login-user-name,
+#iBotSiteHeader .login-success .btn-header-login span {
+    line-height: 1.3;
+}
+
+#iBotSiteHeader .login-success .btn-header-login .login-user-name {
+    font-size: 16px;
+    color: #fff;
+}
+
+#iBotSiteHeader .login-success .btn-header-login span {
+    font-size: 14px;
+    color: #999;
+}
+
+#iBotSiteHeader .mobile-gnb ul li a {
+    display: block;
+    padding: 17px 15px 17px 35px;
+    background-position: 0 50%;
+    background-repeat: no-repeat;
+}
+
+#iBotSiteHeader .mobile-gnb ul li:nth-child(1) a {
+    background-image: url(../img/ibot/icon-overview.png);
+}
+
+#iBotSiteHeader .mobile-gnb ul li:nth-child(2) a {
+    background-image: url(../img/ibot/icon-products.png);
+}
+
+#iBotSiteHeader .mobile-gnb ul li:nth-child(3) a {
+    background-image: url(../img/ibot/icon-experience.png);
+}
+
+#iBotSiteHeader .mobile-gnb ul li:nth-child(4) a {
+    background-image: url(../img/ibot/icon-reference.png);
+}
+
+#iBotSiteHeader .mobile-gnb ul li:nth-child(5) a {
+    background-image: url(../img/ibot/icon-contactus.png);
+}
+
+#iBotSiteHeader .mobile-gnb ul.none-icon li a {
+    padding: 17px 0;
+    background-image: none;
+}
+
+#iBotSiteHeader .mobile-sites {
+    position: absolute;
+    bottom: 15px;
+    width: calc(100% - 30px);
+}
+
+#iBotSiteHeader .mobile-sites [class*="ternal-sites"] {
+    font-size: 0;
+}
+
+#iBotSiteHeader .mobile-sites .internal-sites {
+    margin-bottom: 10px;
+}
+
+#iBotSiteHeader .mobile-sites .external-sites {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+#iBotSiteHeader .mobile-sites .internal-sites {
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #555
+}
+
+#iBotSiteHeader .mobile-sites a {
+    display: inline-block;
+    position: relative;
+    width: 50%;
+    height: 52px;
+    font-family: "Noto Sans KR", NanumSquare, "맑은 고딕", "Malgun Gothic", 돋움, Dotum, sans-serif;
+    font-weight: 500;
+    text-align: center;
+    line-height: 52px;
+    vertical-align: top;
+}
+
+#iBotSiteHeader .mobile-sites a:first-child:after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: calc(50% - 9px);
+    width: 1px;
+    height: 18px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+#iBotSiteHeader .mobile-sites .external-sites a {
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 50px;
+    text-indent: -9999px;
+}
+
+#iBotSiteHeader .mobile-sites .external-sites .btn-external-iStore {
+    background-image: url(../img/ibot/icon-store.png);
+}
+
+#iBotSiteHeader .mobile-sites .external-sites .btn-external-iBotAdmin {
+    background-image: url(../img/ibot/icon-admin.png);
+}
+
+/* Login Success */
+#iBotSiteHeader .header-user-information {
+    float: right;
+    display: table;
+    position: relative;
+    height: 100px;
+    table-layout: fixed;
+}
+
+#iBotSiteHeader .user-information-inner {
+    display: table-cell;
+    font-size: 0;
+    vertical-align: middle;
+}
+
+#iBotSiteHeader .user-information-inner strong,
+#iBotSiteHeader .user-information-inner span {
+    display: inline-block;
+    font-size: 14px;
+    color: #cbaaff;
+    line-height: 40px;
+    vertical-align: top;
+}
+
+#iBotSiteHeader .user-information-inner .login-user-point {
+    margin-right: 10px;
+    color: #cbaaff;
+}
+
+#iBotSiteHeader .user-information-inner .login-user-point:after {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 40px;
+    margin-left: 5px;
+    background: url(../img/common/icon-user-point.png) 50% 49% no-repeat;
+    background-size: 100%;
+    vertical-align: top;
+}
+
+#iBotSiteHeader .user-information-inner span {
+    color: #fff;
+}
+
+#iBotSiteHeader .btn-user-information {
+    width: 40px;
+    height: 40px;
+    margin: 30px 0;
+    background: url(../img/common/btn-top-user.png) 100% 50% no-repeat;
+    background-size: 30px
+}
+
+#iBotSiteHeader .user-information-link {
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: calc(50% + 20px);
+    z-index: 100;
+    height: 0;
+    background-color: #fff;
+    box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.15);
+    transition: 0.3s ease-in-out;
+}
+
+#iBotSiteHeader .user-information-link a {
+    display: block;
+    width: 110px;
+    border-bottom: 1px solid #e9e9f0;
+    font-size: 14px;
+    color: #3b3b53;
+    font-weight: 500;
+    text-align: center;
+    line-height: 60px;
+}
+
+#iBotSiteHeader .user-information-link a:last-child {
+    border-bottom-width: 0;
+}
+
+#iBotSiteHeader .btn-user-information.active+.user-information-link {
+    height: auto;
+}
+
+@media screen and (max-width: 768px) {
+    #iBotSiteHeader .header-logo {
+        float: none;
+    }
+
+    #iBotSiteHeader .header-logo a {
+        height: 48px;
+        margin: 0 auto;
+        background-image: url(../img/common/mogile-iBot-logo.png);
+        background-size: auto 25px;
+    }
+
+    #iBotSiteHeader .global-navigation-bar {
+        display: none;
+    }
+
+    #iBotSiteHeader .header-link {
+        display: none;
+    }
+
+    /* Mobile Navigation */
+    #iBotSiteHeader .btn-hamburger {
+        display: block;
+    }
+
+    /* Login Success */
+    #iBotSiteHeader .header-user-information {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1359px) {
+    #iBotSiteHeader .header-logo a {
+        width: 80px;
+        height: 70px;
+        margin-right: 10px;
+        background-size: 100%;
+    }
+
+    #iBotSiteHeader .global-navigation-bar ul li a {
+        height: 70px;
+        padding: 0 10px;
+        font-size: 18px;
+        line-height: 70px;
+    }
+
+    #iBotSiteHeader .header-link {
+        margin: 17px 0;
+    }
+
+    #iBotSiteHeader .header-link a {
+        width: 80px;
+        height: 36px;
+        margin-right: 10px;
+        border-radius: 18px;
+        font-size: 13px;
+        line-height: 36px;
+    }
+
+    /* Login Success */
+    #iBotSiteHeader .header-user-information {
+        height: 70px;
+    }
+
+    #iBotSiteHeader .btn-user-information {
+        margin: 15px 0;
+    }
+}
+
+@media screen and (min-width: 1360px) {
+    .iBot-inner {
+        max-width: 90%;
+    }
+
+    #iBotSiteHeader .global-navigation-bar ul li a:hover {
+        color: #ffd110;
+    }
+
+    #iBotSiteHeader .header-link a:hover {
+        background-color: #39167b;
+        border-color: #39167b;
+    }
+}
