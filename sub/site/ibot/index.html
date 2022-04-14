@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="ibot" />
+    <meta name="keywords" content="ibot" />
+    <meta name="author" content="인라이플" />
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>I-BOT</title>
+    <link rel="shortcut icon" type="image/x-icon" href="img/common/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <script src="assets/main_ibot.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">
+
+    <style>
+        .products_03_img_01 span {
+            display: inline-block;
+            margin: 0 1px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.3);
+            vertical-align: top;
+            transform: scale(1, 1);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="wrap">
+        <header class="" id="iBotSiteHeader">
+            <div class="iBot-inner">
+                <button type="button" class="btn-hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <div class="mobile-navigation">
+                    <!--TODO: 로그인 시 .login-success 클래스 추가 필요-->
+                    <div class="mobile-navigation-inner">
+                        <div class="mobile-header-link">
+
+                            <!--TODO: 비로그인 시 노출-->
+                            <a href="#" class="btn-header-login">로그인을 해주세요.</a>
+                            <a href="#" class="btn-header-join">회원가입</a>
+
+                            <!--TODO: 로그인 시 노출 필요-->
+                            <!--<a href="#" class="btn-header-login">
+                  <span class="btn-header-login-inner">
+                    <strong class="login-user-name">홍길동</strong>
+                    <span>님 환영합니다.</span>
+                  </span>
+                </a>
+                <button type="button" class="btn-header-logout">로그아웃</button>-->
+
+                        </div>
+                        <nav class="mobile-gnb">
+                            <ul id="menu">
+                                <li><a href="">아이봇 소개</a></li>
+                                <li><a href="">상품소개</a></li>
+                                <li><a href="">체험하기</a></li>
+                                <li><a href="">고객사</a></li>
+                                <li><a href="">고객센터</a></li>
+                            </ul>
+                        </nav>
+                        <div class="mobile-sites">
+                            <div class="internal-sites">
+                                <a href="notice.html" class="btn-internal-notice">공지사항</a>
+                                <a href="event.html" class="btn-internal-event">이벤트</a>
+                            </div>
+                            <div class="external-sites">
+                                <a href="https://istore.ibot.camp/shop/" target="_blank"
+                                    class="btn-external-iStore">iStore</a>
+                                <a href="https://admin.istore.camp/view/home/main.html" target="_blank"
+                                    class="btn-external-iBotAdmin">iBot Admin</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="header-logo">
+                    <a href="/">iBot</a>
+                </h1>
+                <nav class="global-navigation-bar">
+                    <ul id="menu">
+                        <li class="active"><a href="">아이봇 소개</a></li>
+                        <li><a href="">상품소개</a></li>
+                        <li><a href="">체험하기</a></li>
+                        <li><a href="">고객사</a></li>
+                        <li><a href="">고객센터</a></li>
+                    </ul>
+                </nav>
+                <!--TODO: 비로그인 시 노출-->
+                <div class="header-link">
+                    <a href="#" class="btn-header-login">로그인</a>
+                    <a href="#" class="btn-header-join">회원가입</a>
+                </div>
+
+                <!--TODO: 로그인 시 노출 필요
+          <div class="header-user-information">
+            <div class="user-information-inner">
+              <strong class="login-user-name">홍길동</strong>
+              <span>님</span>
+            </div>
+            <button type="button" class="btn-user-information"></button>
+            <div class="user-information-link">
+              <a href="#">마이페이지</a>
+              <a href="#" class="btn-alert">로그아웃</a>
+            </div>
+          </div>-->
+            </div>
+        </header>
+        <nav class="right_nav">
+            <div class="top">
+                <a class="i-store_btn">I-Store</a>
+                <a class="i-bot_btn">ibot Admin</a>
+            </div>
+            <div class="bottom">
+                <a class="notice_btn">공지사항</a>
+                <a class="event_btn">이벤트</a>
+            </div>
+        </nav>
+        <div class="navigator other">
+            <li class="active"><a href=""><span>아이봇 소개</span></a></li>
+            <li><a href=""><span>상품소개</span></a></li>
+            <li><a href=""><span>체험하기</span></a></li>
+            <li><a href=""><span>고객사</span></a></li>
+            <li><a href=""><span>고객센터</span></a></li>
+            <span class="circle"></span>
+        </div>
+        <div class="container">
+            <div class="content">
+                <div class="box step01" id="overview">
+                    <section>
+                        <div class="swiper-container overview_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="text_box">
+                                        <strong>All in one</strong>
+                                        <h2> 인공지능 챗봇</h2>
+                                        <p>
+                                            개발자/디자이너/CS담당자 없이</br>무료로 시작할 수 있는 인공지능 챗봇
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="text_box">
+                                        <strong>Easy, simple</strong>
+                                        <h2> 아이봇 관리</h2>
+                                        <p>
+                                            최적화된 상담 시나리오를 쉽게 구축하여</br>손쉽게 관리할 수 있는 관리자 페이지 제공
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="text_box">
+                                        <strong>24/365</strong>
+                                        <h2> 실시간 상담</h2>
+                                        <p>
+                                            하이브리드형 인공지능 기술 탑재로</br>쉬지 않는 실시간 응대 서비스 제공
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="text_box">
+                                        <strong>Professional</strong>
+                                        <h2> 치밀한 구성</h2>
+                                        <p>
+                                            유사 질문에 대한 학습 능력을 동반,</br>전문적인 서비스 제공
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="text_box">
+                                        <strong>The Best</strong>
+                                        <h2> 최고의 선택, 아이봇</h2>
+                                        <p>
+                                            고객에게는 최고의 편의성을</br>기업에게는 최고의 만족도를
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="box step02" id="products">
+                    <section>
+                        <div class="swiper-container product_swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <div class="page con_01">
+                                        <div class="left">
+                                            <div class="products_01_img_01"></div>
+                                            <div class="products_01_img_02"></div>
+                                            <div class="products_01_img_03"></div>
+                                            <div class="products_01_img_04"></div>
+                                            <div class="products_01_img_05"></div>
+                                            <div class="products_01_img_06"></div>
+                                        </div>
+                                        <div class="right">
+                                            <strong>i SKIN</strong>
+                                            <h2>스타일리시한 채팅 스킨</h2>
+                                            <p>
+                                                스타일리시 하면서 나만의 아이덴티티!</br>채팅봇의 분위기를 손쉽게 체인지
+                                            </p>
+                                            <ul>
+                                                <li>&#35;개성있는 채팅 스킨</li>
+                                                <li>&#35;커스텀</li>
+                                            </ul>
+                                            <button class="more">더 알아보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page con_02">
+                                        <div class="left">
+                                            <div class="products_02_img_01"></div>
+                                            <div class="products_02_img_02"></div>
+                                            <div class="products_02_img_03"></div>
+                                            <div class="products_02_img_04"></div>
+                                        </div>
+                                        <div class="right">
+                                            <strong>i BLOCK</strong>
+                                            <h2>간결하고 체계적인 메세지 전달</h2>
+                                            <p>
+                                                마케팅/쇼핑몰/병의원/학교 등 다양한 분야</br>업종분야별 특화 질문들을 쉽게 정보전달
+                                            </p>
+                                            <ul>
+                                                <li>&#35;다양한 메세지 전달</li>
+                                                <li>&#35;업종별 특화 내용</li>
+                                            </ul>
+                                            <button class="more">더 알아보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page con_03">
+                                        <div class="left">
+                                            <div class="products_03_img_01"></div>
+                                            <div class="products_03_img_02"></div>
+                                            <div class="products_03_img_03"></div>
+                                            <div class="products_03_img_04"></div>
+                                            <div class="products_03_img_05"></div>
+                                        </div>
+                                        <div class="right">
+                                            <strong>i VOICE</strong>
+                                            <h2>익숙하고 친근한 목소리로 음성지원</h2>
+                                            <p>
+                                                채팅창 내 고객의 질문에 음성으로 답변</br>남녀노소 다양한 목소리로 TTS기술 도입
+                                            </p>
+                                            <ul>
+                                                <li>&#35;TTS 기술 도입</li>
+                                                <li>&#35;다양한 목소리</li>
+                                            </ul>
+                                            <button class="more">더 알아보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page con_04">
+                                        <div class="left">
+                                            <button class="product_btn"></button>
+                                            <strong>
+                                                이탈 타이밍 감지</br>
+                                                추천상품 노출
+                                                <mark>(마우스를 올려보세요)</mark>
+                                            </strong>
+                                            <div class="item"></div>
+                                        </div>
+                                        <div class="right">
+                                            <strong>i VISER</strong>
+                                            <h2>고객 패턴별 맞춤 정보제공</h2>
+                                            <p>
+                                                쇼핑의 모든 순간, 고객의 행동 예측하여</br>필요한 정보를 적시에 맞춤 제공
+                                            </p>
+                                            <ul>
+                                                <li>&#35;맞춤 정보 마케팅</li>
+                                                <li>&#35;사업주 매출 상승효과</li>
+                                            </ul>
+                                            <button class="more">더 알아보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide">
+                                    <div class="page con_05">
+                                        <div class="left">
+                                            <div class="left_wrap">
+                                                <div class="center_img"></div>
+                                                <div class="rabbit"></div>
+                                                <div class="hend"></div>
+                                                <div class="bubble"></div>
+                                            </div>
+                                        </div>
+                                        <div class="right">
+                                            <strong>i TICON</strong>
+                                            <h2>감정까지 시각적으로 전달</h2>
+                                            <p>
+                                                챗봇계에서 최초 시행 이모티콘 서비스!</br>때론 말 한마디보다 진하게 전해요
+                                            </p>
+                                            <ul>
+                                                <li>&#35;센스있는 전달력</li>
+                                                <li>&#35;자연스러운 커뮤니케이션</li>
+                                            </ul>
+                                            <button class="more">더 알아보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next arrow"></div>
+                            <div class="swiper-button-prev arrow"></div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </section>
+                </div>
+                <div class="box step03" id="experience">
+                    <section>
+                        <div class="svgwrap">
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24"
+                                class="svg" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 7.77L18.39 18H5.61L12 7.77M12 4L2 20h20L12 4z"></path>
+                            </svg>
+                            <span class="svg_line"></span>
+                            <span class="svg_line"></span>
+                            <span class="svg_line"></span>
+                            <span class="svg_line"></span>
+                            <span class="svg_line"></span>
+                            <span class="svg_line"></span>
+                        </div>
+                        <div class="left">
+                            <strong>365일 24시간!</strong>
+                            <h2>All in one 인공지능 챗봇</h2>
+                            <p>
+                                상품문의, 방문예약 등 고객의 어떤 요구사항도</br>
+                                아이봇으로 간편하게 처리 할 수 있어요!</br>
+                                게다가 이런 챗봇이 무료!
+                            </p>
+                            <button class="more">사용자 가이드 보기</button>
+                        </div>
+                        <div class="right">
+                            <div class="animation_img">
+                                <div class="img_01"></div>
+                                <div class="img_02"></div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <div class="box step04" id="reference">
+                    <section>
+                        <div class=" conWrap">
+                            <div class="left">
+                                <strong>아이봇 파트너스</strong>
+                                <h2>다양한 분야에서 함께 합니다.</h2>
+                                <p>
+                                    쇼핑/병원/자동차/홍보마케팅 등</br>
+                                    다양한 분야에서 아이봇을 통해</br>
+                                    고객 상담관리에 활용되고있습니다.
+                                </p>
+                                <button class="more">더 알아보기</button>
+                            </div>
+                            <div class="right">
+                                <div class="swiper-container reference_swiper">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://ahnlabad.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_01"></span>
+                                                        <dl class="con_text">
+                                                            <dt>안랩AD</dt>
+                                                            <dd>광고업체</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://m.jbbank.co.kr/P_M_NMW_NFF_LOAN.act"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_02"></span>
+                                                        <dl class="con_text">
+                                                            <dt>전북은행</dt>
+                                                            <dd>은행</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://www.kboat.or.kr/contents/main/mainPage.do"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_03"></span>
+                                                        <dl class="con_text">
+                                                            <dt>Kboat경정</dt>
+                                                            <dd>공공기관</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.kcycle.or.kr/contents/main/mainPage.do"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_04"></span>
+                                                        <dl class="con_text">
+                                                            <dt>Kcycle경륜</dt>
+                                                            <dd>공공기관</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://www.krace.or.kr/contents/main/index.do"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_05"></span>
+                                                        <dl class="con_text">
+                                                            <dt>경륜경정총괄본부</dt>
+                                                            <dd>공공기관</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://likeps.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_06"></span>
+                                                        <dl class="con_text">
+                                                            <dt>라이크성형외과</dt>
+                                                            <dd>병원</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://xn--6j1bx5ov0iqe021as4n.com/main/main.php"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_07"></span>
+                                                        <dl class="con_text">
+                                                            <dt>첨단미용학원</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.xn--9i1bs4k19hu9c7vgyunusc.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_08"></span>
+                                                        <dl class="con_text">
+                                                            <dt>지니어스팩토리</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://pta-1.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_09"></span>
+                                                        <dl class="con_text">
+                                                            <dt>평택타일기술학원</dt>
+                                                            <dd>학원</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://ai.konyang.ac.kr/ai.do"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_10"></span>
+                                                        <dl class="con_text">
+                                                            <dt>건양대학교(의료공과대학)</dt>
+                                                            <dd>대학교</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://sbca.co.kr/main/main.html"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_11"></span>
+                                                        <dl class="con_text">
+                                                            <dt>중소기업상담센터</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://teachingsaem.cmass21.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_12"></span>
+                                                        <dl class="con_text">
+                                                            <dt>씨마스</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://www.purmi.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_13"></span>
+                                                        <dl class="con_text">
+                                                            <dt>푸름이닷컴</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://www.shesmadam.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_14"></span>
+                                                        <dl class="con_text">
+                                                            <dt>쉬즈마담</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://www.naturecollection.com/mall/customer/index.jsp"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_15"></span>
+                                                        <dl class="con_text">
+                                                            <dt>네이처컬렉션</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://www.bonadea.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_16"></span>
+                                                        <dl class="con_text">
+                                                            <dt>보나데아</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://beuison.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_17"></span>
+                                                        <dl class="con_text">
+                                                            <dt>뷰이스온</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://www.i-boss.co.kr/ab-3138"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_18"></span>
+                                                        <dl class="con_text">
+                                                            <dt>아이보스</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://onlineadedu.or.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_19"></span>
+                                                        <dl class="con_text">
+                                                            <dt>한국온라인광고협회</dt>
+                                                            <dd>광고협회</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://cssharing.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_20"></span>
+                                                        <dl class="con_text">
+                                                            <dt>CS쉐어링</dt>
+                                                            <dd>통신서비스</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://www.enliple.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_21"></span>
+                                                        <dl class="con_text">
+                                                            <dt>인라이플</dt>
+                                                            <dd>IT/통신</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.forbiz.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_22"></span>
+                                                        <dl class="con_text">
+                                                            <dt>포비즈코리아</dt>
+                                                            <dd>IT/통신</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://uinkin.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_23"></span>
+                                                        <dl class="con_text">
+                                                            <dt>행복한 발효세상</dt>
+                                                            <dd>식음료/가공식품</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.seoulps.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_24"></span>
+                                                        <dl class="con_text">
+                                                            <dt>김헌곤성형외과</dt>
+                                                            <dd>병의원</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://svoucher.kspo.or.kr/main.do"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_25"></span>
+                                                        <dl class="con_text">
+                                                            <dt>국민체육진흥공단</dt>
+                                                            <dd>공공기관</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.baronmedia.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_26"></span>
+                                                        <dl class="con_text">
+                                                            <dt>바론미디어</dt>
+                                                            <dd>광고</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://play.google.com/store/apps/details?id=com.apps.shopul1"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_27"></span>
+                                                        <dl class="con_text">
+                                                            <dt>망고쇼핑</dt>
+                                                            <dd>대형쇼핑몰</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://www.istore.camp/shop/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_28"></span>
+                                                        <dl class="con_text">
+                                                            <dt>아이스토어</dt>
+                                                            <dd>홍보마케팅</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://www.hansclubhouse.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_29"></span>
+                                                        <dl class="con_text">
+                                                            <dt>한스클럽하우스</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://mobon.net/main/m2/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_30"></span>
+                                                        <dl class="con_text">
+                                                            <dt>모비온</dt>
+                                                            <dd>광고</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="http://ad-vantage.co.kr/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_31"></span>
+                                                        <dl class="con_text">
+                                                            <dt>애드밴티지</dt>
+                                                            <dd>광고</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="https://trend.mobon.net/mediatrend/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_32"></span>
+                                                        <dl class="con_text">
+                                                            <dt>모비트렌드</dt>
+                                                            <dd>광고</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="swiper-slide">
+                                            <div class="conbox">
+                                                <div class="con_img">
+                                                    <a href="https://mobsense.mobon.net/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_33"></span>
+                                                        <dl class="con_text">
+                                                            <dt>모비센스</dt>
+                                                            <dd>광고</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+
+                                                <div class="con_img">
+                                                    <a href="http://www.superbeeracing.com/"
+                                                        onclick="window.open(this.href); return false">
+                                                        <span class="img reference_34"></span>
+                                                        <dl class="con_text">
+                                                            <dt>슈퍼비</dt>
+                                                            <dd>쇼핑</dd>
+                                                        </dl>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-button-next arrow"></div>
+                                    <div class="swiper-button-prev arrow"></div>
+                                    <div class="swiper-pagination"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+                <!--20210909수정-->
+                <div class="box step05" id="contactus">
+                    <section>
+                        <div class="left">
+                            <strong>Contact us</strong>
+                            <h2>지능형 고객센터</h2>
+                            <p>
+                                무엇이든 문의해주세요.</br>아이봇은 항상 열려있습니다. :)
+                            </p>
+                            <button class="more">챗봇으로 상담하기</button>
+                        </div>
+                        <div class="right"></div>
+                    </section>
+                </div>
+                <footer id="iBotSiteFooter" class="box">
+                    <div class="iBot-inner">
+                        <div class="footer-information">
+                            <ul class="footer-information-link">
+                                <li><a href="http://enliple.com/" target="_blank">회사소개</a></li>
+                                <li><button id="agree_btn" class="btn">이용약관</button></li>
+                                <li><button id="policy_btn" class="btn">개인정보처리방침</button></li>
+                            </ul>
+                            <div class="footer-information-details">
+                                <p class="footer-address">주소 : 서울특별시 구로구 구로동 디지털로 272 한신아이티타워 505호 (우)08389</p>
+                                <ul class="footer-details-list">
+                                    <li>대표 : 한경훈, 이근옥</li>
+                                    <li>사업자등록번호 : 113-86-60934</li>
+                                    <li>이메일 : <a href="mailto:ibot@enliple.com">ibot@enliple.com</a></li>
+                                </ul>
+                            </div>
+                            <p class="footer-copy">Copyright © ENLIPLE All Right Reserved.</p>
+                        </div>
+                        <div class="iBot-familySite">
+                            <button type="button" class="btn-iBot-familySite">family site</button>
+                            <ul class="iBot-familySite-link">
+                                <li><a href="http://enliple.com/doc/mobon" target="_blank">MOBON</a></li>
+                                <li><a href="http://ad-vantage.co.kr" target="_blank">Advantage</a></li>
+                                <li><a href="https://shop-tree.com" target="_blank">샵트리</a></li>
+                                <li><a href="https://tinyurl.com/y8lxe765" target="_blank">스타일룩</a></li>
+                            </ul>
+                        </div>
+                        <div class="mobile-iBot-familySite-wrap">
+                            <select class="mobile-iBot-familySite" onchange="this.value && window.open(this.value)">
+                                <option value="">family site</option>
+                                <option value="http://enliple.com/doc/mobon">MOBON</option>
+                                <option value="http://ad-vantage.co.kr">Advantage</option>
+                                <option value="https://shop-tree.com">샵트리</option>
+                                <option value="https://tinyurl.com/y8lxe765">스타일룩</option>
+                            </select>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+        </div>
+        <div id="agree_pop" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="pop_header">
+                    <h3>아이봇 이용약관</h3>
+                </div>
+                <div class="pop_con">
+                    <p class="coninfo">
+                        제 1 조 (목적)
+                        본 약관은 주식회사 인라이플(이하 “회사”라 한다)이 회원을 대상으로 인공지능 채팅 상담 아이봇서비스(이하 “서비스”라 한다)를 제공함에 있어 따르는 이용조건 및 절차
+                        그리고 회원과 회사의
+                        권리, 의무 및 책임사항에 관한 규정을 정함에 목적이 있습니다.
+
+                        제 2 조 (용어의 정의)
+                        ①“서비스”라 함은 brand.istore.camp 이 외에 istore.camp, admin.istore.camp, i-Bot app과 직접 연동되어 온라인에서 이용할 수
+                        있는 서비스를
+                        의미합니다.
+                        ②“클라이언트”이라 함은 본 서비스 이용약관에 동의하고, 서비스를 제공받는 주체를 의미하며, 법인 또는 개인 및 개인사업자에 제한을 두지 않고 계약 체결 및 회원가입 후
+                        서비스를 이용하는
+                        고객사를 의미합니다.
+                        ③“유저”이라 함은 회원이 운영하는 서비스 내에 방문하여 실질적인 구매 및 쇼핑을 하며, 서비스를 이용하여 채팅상담을 받는 자를 의미합니다.
+                        ④“시스템 관리자”라 함은 회사의 서비스 교육, 고객지원, 정산, 시스템 운영/유지보수 등의 전반적인 운영을 관리하는 담당자를 의미합니다.
+                        ⑤“아이봇어드민센터”라 함은 이용자가 서비스를 이용하여 챗봇 상담 및 후처리 관리, 시나리오 편집 등을 관리하는 어드민 시스템을 의미합니다.
+                        ⑥“시나리오 빌더”란 아이봇어드민센터 내의 아이봇 시스템의 시나리오 편집 기능으로 제공된 시나리오 패키지를 회원의 내부 정책과 효율성에 맞추어 편집할 수 있는 기능을
+                        의미합니다.
+                        ⑦“스토어”란 서비스의 상품(아이스킨, 아이블럭 등) 거래가 이루어질 수 있도록 회사에서 제공하는 거래 중개 서비스 및 관련 정보 제공, 유통 서비스를 말합니다.
+                        - “상품”이라 함은 회사가 제공한 양식에 따라서 서비스에 적합한 형태로 편집, 가공하여 등록한 콘텐츠(아이스킨, 아이블럭 등)를 의미합니다.
+                        - “구매회원”이라 함은 서비스를 이용하여 상품을 구매하는 고객을 의미합니다.
+                        - “판매회원”이라 함은 개발자 센터(디벨로퍼 센터)를 통하여 상품을 판매하는 개인이나 법인을 의미합니다.
+                        - “전자상거래 서비스”이라 함은 회사가 이용자에게 상품을 판매하거나, 회원 간에 상품 거래가 이루어질 수 있도록 회사가 온라인 거래장소를 제공하는 서비스 및 관련 부가
+                        서비스를 의미합니다.
+                        1) 상품 거래 지원 서비스
+                        2) 계약 체결, 결제 지원 서비스
+                        3) 기타 전자상거래 관련 서비스
+                        4) 서비스의 광고 및 프로모션
+                        제 3 조 (약관의 효력 및 변경)
+                        ①본 약관은 서비스 홈페이지를 통하여 이를 공지하거나 전자우편, 유선 등 기타의 방법으로 회원에게 공표함으로써 약관 시행 일로부터 그 효력이 발생합니다.
+                        ②회사는 개인정보보호법, 정보통신망 이용 촉진 및 정보보호 등에 관한 법률, 정보통신윤리위원회의 심의 규정, 정보통신윤리강령, 전자상거래 등에서의 소비자 보호에 관한 법률
+                        등의 관계법령을
+                        위배하지 않는 범위 내에서 본 약관을 개정할 수 있습니다.
+                        ③회사는 본 약관을 개정할 경우 적용일자와 개정 사유를 명확하게 명시하여 현행 약관과 함께 회사의 홈페이지 또는 기타의 방법으로 적용하기 7일 전부터 적용하기 전일까지
+                        내용을 공지합니다.
+                        ④회사가 전항에 따라 공지 또는 통지를 하면서 공지 또는 통지일로부터 개정 약관 시행일 30일후까지 거부 의사를 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게
+                        고지하였음에도 회원이
+                        의사표시가 없는 경우에는 변경된 약관을 승인한 것으로 간주합니다.
+                        ⑤회원이 본 약관의 개정사항에 대해 동의하지 않은 경우 회사에 명시적 거부 의사를 표하여 제 7 조 제 1 항에 따라 회원 탈퇴를 할 수 있습니다. 단, 채무 또는 채권
+                        관계가 있는 경우에는
+                        채권, 채무가 완료되는 시점까지 이전 약관을 적용하며 채권, 채무관계가 완료 시 회원 탈퇴 하는 것을 원칙으로 합니다.
+                        제 4 조 (회원가입 및 이용신청)
+                        ①회원가입을 원하는 회원은 서비스 홈페이지 내에서 회원가입을 할 수 있으며, 본 약관과 회사의 개인정보 취급방침 및 개인정보보호 동의 부분에 체크 후 서비스 이용 신청서를
+                        작성하여
+                        제출합니다.
+                        ②회원가입 이전 또는 회원가입 이후 회사가 제공하는 서비스의 이용 절차와 정산 등의 내용에 대하여 안내 및 협의 후 회원이 가입 시 설정한 계정에 마스터 권한을 부여함으로써
+                        서비스 사용이
+                        가능합니다.
+                        ③회원가입을 완료하여 서비스 사용 권한이 부여된 회원은 즉시 서비스 이용이 가능합니다. 단, 서비스는 무료/유료 서비스로 구분되어 제공되며 유료 서비스 전환은 회원이 선택
+                        가능합니다.
+                        ④회원가입의 완료는 회원가입에 필요한 제반 절차가 모두 진행된 후 홈페이지 상 통지 또는 전자우편, 유선을 통하여 회원에게 통지된 시점으로 합니다.
+                        ⑤회사는 회원이 회원가입 후 서비스 신청 시 아래 각 호에 해당하는 경우에는 승낙을 하지 않을 수 있으며, 이미 가입된 이후에는 강제 탈퇴 사유를 통보 후 서비스 해지
+                        조치를 할 수 있습니다
+                        가.약관 위반 등 회원의 귀책사유로 회원자격의 박탈 이력이 있는 경우
+                        나.회원의 가입 명의가 실명이 아닌 경우(이로 인하여 발생하는 모든 책임은 명의를 도용한 회원에게 있습니다.)
+                        다.회원정보에 허위로 정보 사실을 기재한 경우
+                        라.서비스의 제공 목적 외의 용도로 운영한 사실이 발각된 경우
+                        마.기타 회사가 회원자격 박탈이 필요하다고 인정하는 경우.
+                        ⑥아래의 각 호에 해당하는 자는 서비스를 신청할 수 없습니다.
+                        가.만 14세 미만의 미성년자
+                        나.사업자등록증 취득 능력이 부족한 자
+                        다.체류 자격이 불충분한 외국인
+                        ⑦회사는 회원이 회원가입 시 기재한 모든 정보를 사실에 입각하여 작성한 것으로 간주합니다. 따라서 허위정보를 기재한 회원은 그 고의 및 과실 여부와 관계없이 서비스 이용
+                        중에 허위 정보와
+                        관련하여 발생한 모든 분쟁에 있어 법적인 보호를 받을 수 없으며, 회사 및 제 3자에게 야기한 손해를 배상할 책임이 있습니다.
+                        ⑧만 19세 미만의 회원은 반드시 법정대리인의 동의가 있어야 본 서비스 가입신청이 가능합니다. 법정대리인의 동의 표시를 위하여 별도 동의서를 작성하며, 이외에
+                        가족관계증명서,
+                        법정대리인증명서, 후견인증명서 등의 추가 서류를 요청할 수 있습니다.
+                        제 5 조 (회원가입 신청에 대한 승낙 및 거부)
+                        ①회사는 본 약관 제4조 회원가입 및 이용신청에 의거하여 회원의 회원가입 자격 결격사유가 없는 한 서비스의 제공 및 이용을 위한 제반 절차가 완료됨과 동시에 서비스 신청을
+                        승낙합니다.
+                        ②회사는 다음 각 호에 해당하는 경우 회원가입 신청에 대한 승낙을 제한하며, 그 사유가 해소될 때까지 승낙을 보류할 수 있습니다.
+                        가.서비스 관련 설비 용량이 부족한 경우
+                        나.기술상 장애사유가 있는 경우
+                        다.회원이 본 약관 7조 2항에 의거하여 회원자격을 박탈한 이력이 있는 경우
+                        라.서비스 신청 과정에서 회원의 거짓 정보 기재 사실이 발각되는 경우
+                        마.회원인증 절차를 위하여 회사에서 요구한 별도 서류를 제출하지 않는 경우
+                        바.기타 회사에서 필요하다고 인정하는 경우
+                        제 6 조 (회원정보의 변경)
+                        회원은 아이봇 서비스를 이용함에 있어 기존에 등록한 정보의 변경이 필요한 경우에는 언제든지 홈페이지 또는 회사의 시스템관리자를 통하여 회원정보를 변경할 수 있습니다. 본
+                        조항의 회원정보
+                        변경사항을 수정하지 않아 발생하는 불이익에 대해서 회사는 책임지지 않습니다.
+
+                        제 7 조 (회원탈퇴 및 자격상실 등)
+                        ①회원은 더 이상 회사가 제공하는 서비스를 이용할 의사가 없다고 판단되는 경우에는 언제든지 홈페이지에서 회원탈퇴를 요청할 수 있으며, 회사는 회원의 요청을 수락하여 탈퇴처리
+                        합니다.
+                        ②회원탈퇴를 요구하는 경우에는 서비스 이용 해지의 성격을 가지므로 회사는 회원과의 아이봇 이용료 정산 및 서비스 이용 해지에 따르는 제반 절차를 완료한 이후 해당 회원을
+                        탈퇴처리 합니다.
+                        ③회원이 탈퇴를 요구한 시점에 회사와의 채권, 채무관계가 있을 경우 회원탈퇴 시점은 회사와의 채권, 채무관계가 모두 완료된 시점으로 합니다.
+                        ④회사는 다음 각 호에 해당하는 경우 회원의 자격을 제한 및 박탈하거나 회원에게 제공하는 서비스를 중단할 수 있습니다. 단, 이 경우에 회사는 회원에게 해당 내용을 사전
+                        통지하고 소명할
+                        기회를 부여합니다.
+                        가.회원가입 절차에서 허위 정보를 기입한 사살이 발각된 경우
+                        나.타인의 서비스 이용을 방해하거나 그 정보를 도용하는 등 전자거래 질서를 위협하는 경우
+                        다.본 약관과 관계법령에서 위반하는 행위를 하는 경우
+                        라.유료서비스의 이용료를 2개월 이상 체납하는 경우
+                        마.서비스를 이용하여 얻게 되는 기업 기밀을 타인에게 발설한 경우
+                        바.기술설비에 여유가 없거나 회원사의 기술상 지장이 있는 경우
+                        사.기타 회사가 필요하다고 인정하는 경우
+                        제 8 조 (회원의 의무)
+                        ①회원은 서비스를 제공받으며 회원으로써의 의무를 이행합니다.
+                        ②회원은 서비스의 시스템관리자로부터 부여 받은 아이봇어드민센터, 정산센터, 홈페이지 등의 계정을 관리할 의무를 가지며, 해당 계정에 대한 관리책임은 회원에게 있습니다.
+                        ③회원은 부여 받은 계정을 제 3자가 이용하도록 하여서는 안되며, 이로 인하여 발생하는 모든 분쟁 및 책임은 회원에게 있습니다.
+                        ④회원의 주 운영자에게만 부여한 권한을 제 3자가 사용한 사실이 적발되거나, 타인의 사용여부를 확인한 경우에는 즉시 회사에 통보해야 하며 이후 회사의 조치에 따라야 합니다.
+                        ⑤회원은 다음의 각 호에 해당하는 행위를 하여서는 안됩니다.
+                        가.서비스신청 또는 변경 시 허위내용을 등록하는 행위
+                        나.타인의 정보를 도용하는 행위
+                        다.다른 회원의 개인정보를 그 동의 없이 수집, 저장, 공개하는 행위
+                        라.회사가 게시판 정보를 변경하거나 회사의 동의 없이 제 3자에게 제공하는 행위
+                        마.회사와 기타 제 3자의 저작권 등 지적재산권에 대한 침해 행위
+                        바.회사 및 기타 제 3자의 명예를 훼손하거나 업무를 방해하는 행위
+                        사.서비스 상담 시 외설 또는 폭력적인 메시지, 팩스, 음성, 메일 기타 공서양속 에 반하는 정보를 서비스에 공개 또는 게시하는 행위
+                        아.회사의 동의 없이 영리목적의 서비스를 사용하는 행위
+                        자.타인의 의사에 반하는 내용을 지속적으로 전송하는 행위
+                        차.서비스를 이용하여 범죄행위를 도모하거나 교사하는 행위
+                        카.회사가 제공하는 서비스의 이용약관, 지침, 주의사항 등 서비스와 관련 된 규정을 위반하는 행위
+                        타.회사의 동의 없이 제 3자에게 서비스를 임대하는 행위
+                        파.기타 회사가 부당하다고 판단하는 행위
+                        ⑥회원은 정보통신망법 제44조 7항(불법정보의 유통금지)에 의거하여 다음 각 호의 내용을 직접 발송하거나 상담사가 발송하도록 방조해서는 안됩니다.
+                        가.타인을 비방할 목적으로 공공연하게 사실이나 거짓을 드러내어 타인의 명예를 훼 손하는 내용의 정보
+                        나.공포심이나 불안감을 유발하는 부호, 문언, 음향, 화상 또는 영상을 반복적으로 고 객에게 유포
+                        ⑦회원사의 휴업 또는 폐업 상태가 되었을 경우 회원은 즉시 그 사실을 회사에 통보하고, 홈페이지에 등록한 회원정보를 수정합니다.
+                        ⑧회원이 본 조항의 약관을 준수하지 않아 발생하는 모든 분쟁과 책임에 있어서 회사는 면책 받을 수 있습니다.
+                        제 9 조 (회사의 의무)
+                        ①회사는 본 약관과 관계법령을 준수하며, 지속적이고 안정적으로 서비스를 제공하기 위하여 최선을 다하여 노력할 것입니다.
+                        ②회사는 회원에게 제공하는 서비스를 지속적이고 안정적으로 제공하기 위하여 설비에 장애가 발생하거나 멸실 되었을 때 지체 없이 이를 수리 또는 복구합니다. 단, 천재지변이나
+                        비상사태 등
+                        부득이한 경우에는 서비스를 일시 중단하거나 영구 중지할 수 있습니다.
+                        ③회사는 회원이 등록한 회원정보를 본인의 승낙 없이 제 3자에게 누설, 배포하지 않습니다. 단, 회사의 서비스 제공범위 내에서 그 관계법령을 준수하는 절차에 따라 회사가
+                        필요하다고 판단하는
+                        경우에는 그러하지 않습니다.
+                        ④회사는 회원의 고객이 서비스 이용 중 영리목적의 허용되지 않은 불법광고, 스매싱 전송, 음란물의 유포 등 위반행위를 한 사실이 확인될 경우 고객ID의 서비스 이용을
+                        차단하거나 해당내용을
+                        첨부하여 관계법령에 의거하여 한국인터넷진흥원, 불법스팸대응센터 등의 관계기관에 신고할 수 있습니다.
+                        ⑤회사는 회원과 서비스를 제공함에 있어 수집되는 대화내용, 이전상담이력, 고객ID, 상담원ID, 고객식별정보, 상담 메시지 별 전송시간 등의 정보를 양사간의 협의가 된
+                        기간만큼 서버에 저장할
+                        수 있습니다. 일정 기간이 지난 이후 저장된 정보는 폐기처리 하며, 회원의 별도 요청이 있거나 회사가 협의기간 이후에도 저장해야 한다고 판단하는 경우에는 그러하지 않습니다.
+                        ⑥회사는 서비스의 원활한 제공여부를 확인하기 위하여 상시적으로 서비스 모니터링을 실시합니다.
+                        ⑦회사는 회원이 안전하게 서비스를 이용할 수 있도록 개인정보보호를 위하여 별도 보안시스템을 갖추어야 하며, 회사 내부의 개인정보 취급방침을 공시하고 준수합니다.
+                        ⑧회사는 회원 및 고객의 의견을 수렴하고 불만을 처리하기 위하여 유선, 전자우편, 의견남기기 등 불만사항을 처리할 수 있는 절차를 마련하여야 합니다.
+                        제 10 조 (회원에 대한 통지)
+                        회사는 회원 가입 신청 시 등록한 유선, 전자우편 등을 통하여 회원에 대한 통지를 할 수 있습니다. 회원이 아닌 불특정 다수에게 통지할 경우 서비스 홈페이지 초기화면에
+                        일정기간 동안 해당
+                        내용을 기재함으로써 개별통지에 갈음할 수 있습니다.
+
+                        제 11 조 (권한설정)
+                        ①회원은 주 운영자가 서비스를 운영함에 있어서 “고객계정”의 접근과 관리 권한을 설정할 수 있습니다.
+                        ②주 운영자는 부 운영자 또는 그 외의 적합하다고 판단하는 회원사의 다른 사람에게 관리권한의 일부 또는 전부를 위임할 수 있습니다.
+                        ③권한을 위탁한 회원의 고객계정의 권한을 위탁 받은 회원의 행위는 모두 권한을 위탁한 회원의 행위로 인정합니다
+                        제 12 조 (서비스 제공 내용 및 범위)
+                        ①회사에서 제공하는 서비스의 이용은 회원가입을 완료한 회원이 사업자 인증절차 및 서비스 이용료 납부 등의 회사가 요구하는 기타 제반 요건이 충족된 시점부터 즉시 가능합니다.
+                        ②회사에서 제공하는 서비스는 다음 각 호와 같은 기능들이 제공되며, 이용 방법과 절차는 서비스의 운영정책에 따릅니다.
+                        가.인공지능 채팅상담
+                        나.아이봇어드민 시스템
+                        다.시나리오 빌더
+                        라.AI Q&amp;A 추천
+                        마.쇼핑 어드바이저
+                        바.정산 시스템
+                        ③회사는 회원이 운영하는 쇼핑몰 사이트 방문고객의 ID, 쿠키정보, 이용정보, 상품정보 등을 수집할 수 있습니다.
+                        ④회사가 제공하는 서비스의 이용시간은 회사의 업무상 또는 기술상 장애 등의 기타 특별한 사유가 발생하지 않는 한 365일 24시간 이용할 수 있습니다. 단, 본 약관에
+                        의거하여 회사가 서비스
+                        제공 중단이 필요하다고 판단하는 경우에는 서비스 이용이 제한될 수 있습니다.
+                        ⑤회사는 시스템점검 등 기술적 요인으로 인하여 일정기간 서비스 제공이 불가한 경우에는 서비스 일시 정지 사유와 기간 등을 명시하여 회원에게 공지합니다.
+                        ⑥서비스 이용 중 일부 회원의 상품광고 또는 회사의 개별적인 광고가 포함될 수 있으며, 해당 내용을 열람함으로써 발생하는 데이터 통화료는 가입한 통신사업자와의 이용 계약에
+                        따라 고객이
+                        부담합니다.
+                        ⑦서비스를 이용하며 수집된 정보는 아이봇의 모 서비스인 루빅 에게 연동되며, 수집된 정보를 관리함에 있어 회사는 정보의 기술적, 관리적 조치 방안을 마련합니다.
+                        제 13 조 (서비스 이용 요금)
+                        ①회사에서 제공하는 서비스의 이용요금은 무료와 유료 서비스로 구분하며, 유료서비스는 회원이 회원가입 또는 무료서비스 이용 중간에 별도 선택하여 신청함으로써 제공됩니다.
+                        ②회원이 결제한 유료서비스의 신청 내역은 별도 정산 전용 서비스 웹 페이지를 통하여 열람할 수 있습니다.
+                        ③서비스 이용요금은 회사의 정책에 의하여 변경될 수 있으며, 변경된 내용은 서비스 홈페이지 또는 별도 방법으로 회원에게 통지합니다.
+                        ④서비스 이용 계약을 중도 해지하고자 하는 회원은 최소 1개월 이전 서면으로 회사에 서비스 계약 해지의사를 표시하여야 합니다.
+                        ⑤계약해지 의사표시 시점에 유료서비스의 사용기간이 남아있다면 서비스 사용기간이 종료되는 시점때까지 계약기간은 연장됩니다.
+                        제 14 조 (요금 등의 반환 및 이의신청)
+                        ①회사는 요금의 과납 또는 오납이 생겼을 경우 그 과납 또는 오납된 요금을 회원이 지정하는 계좌로 반환합니다.
+                        ②회원은 이용요금의 정산내용에 대하여 이의가 있는 경우 전자우편, 서면, 유선 등으로 이의신청을 할 수 있습니다.
+                        ③회사는 회원의 요금청구 이의신청이 접수될 경우 2주 이내에 해당 이의신청의 타당성 여부를 조사하여 그 결과를 회원에게 통지하여야 합니다. 단, 소명기간 이내에 결과통지가
+                        어려운 경우 그
+                        사유와 처리기한을 명시하여 회원에게 통지합니다.
+                        제 15 조 (서비스 제공의 중지)
+                        ①회사는 본 약관에 의거하여 아래 각 호에 해당하는 경우 서비스 제공을 일시 또는 영구적으로 중지할 수 있습니다.
+                        가.서비스 설비의 보수, 점검, 교체, 고장, 통신두절 등 공사로 인한 경우
+                        나.전기통신사업법령에 의거하여 기간통신사업자가 전기통신서비스를 중지했을 경우
+                        다.국가비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 서비스 제공에 지장이 있을 경우
+                        라.네트워크상의 위험성에 기초한 타인의 서비스 제공 음해 행위가 있는 경우
+                        마.서비스 제공을 위해 필요한 업데이트 및 신규 서비스로의 전환 등을 위하여 운영상 합리적인 사유가 있다고 회사가 판단하는 경우
+                        제 16조 (개인정보보호의 의무)
+                        회사는 회원이 등록한 가입정보와 회원으로부터 제공받은 회원의 고객정보에 대하여 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 전자상거래법, 정보통신망법
+                        등의 관계 법령이
+                        정하는 바에 따라 개인정보 취급방침을 수립하고 적용하여 개인정보보호를 준수합니다. 단, 본 약관에 의거하여 수집되는 개인정보 및 행동이력 로그 등을 포함하는 데이터는
+                        아이봇의 모서비스인
+                        모비온에도 제공될 수 있으며 적용하는 개인정보 취급방침은 서비스와 동일하게 적용됩니다.
+                        제 17 조 (개인정보의 수집 및 위탁)
+                        ①회사는 공정하고 적접한 수단에 의하여 서비스 이용계약의 체결 및 이행에 필요한 최소한의 개인정보를 수집합니다.
+                        ②회사는 회원 또는 회원의 고객 개인정보를 수집 시 관계법령과 법규를 준수하여 회사에서 지침 하는 개인정보 취급방침에 그 수집 범위 및 목적을 사전 고지합니다.
+                        ③회사는 개인정보 수탁업체와 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제 3자 제공의 금지, 사고시의 책임 및 손해배상 등에 대한 사항을 개인정보 위탁계약서를
+                        통하여 명확히
+                        규정하고 있으며, 당해 계약내용을 서면 또는 전자적 기록으로 보존합니다.
+                        제 18 조 (저작권의 귀속)
+                        ①회사가 작성한 저작물의 대한 저작재산권은 회사에 있습니다.
+                        ②서비스의 디자인, 시나리오 스크립트, 그래픽, 전송기능, 컨텐츠, 등 회사가 개발하여 제공하는 서비스에 관련된 상표와 마크, 로고, 등에 관한 저작권 및 지적재산권은
+                        회사에 있습니다.
+                        ③회사는 회원이 홈페이지 및 어드민 시스템에 기재한 저작물에 대한 열람권한이 있으며, 추후 서비스 품질향상을 위하여 해당 내용을 활용할 수 있습니다.
+                        ④회원은 회사가 제공하는 서비스의 이용권한을 부여 받게 되며, 서비스의 실 소유 및 저작권은 회사에게 있습니다.
+                        제 19 조 (손해배상과 면책)
+                        ①회사는 서비스의 이용과 관련하여 발생하는 회원의 손해에 대하여 관계법령이 정하는 범위 내에서 배상 책임을 집니다. 단, 본 약관을 위반하거나 및 회원에게 그 과실이 있는
+                        경우에는 해당
+                        부분에 대한 책임이 면제됩니다.
+                        ②회원이 고의 또는 과실로 다른 회원에게 손해를 입히거나 계약관계에 대한 의무를 불이행하여 발생한 손해에 대하여 회원은 즉시 이를 배상할 책임이 있습니다.
+                        ③회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에 발생한 손해에 대하여 책임이 면제됩니다.
+                        ④회사는 회원의 고객의 귀책사유로 인한 서비스 이용 장애에 대하여 책임을 지지 않습니다.
+                        ⑤회사가 회원에게 부여한 이용 권한 및 자료에 대한 책임은 전적으로 회원에게 있으며, 회원의 관리 소홀로 일어난 불이익과 결과에 대하여 회사는 책임을 지지 않습니다.
+                        제 20 조 (권리의 양도금지)
+                        회원은 회사의 서면동의 없이 본 약관상의 권리와 의무를 제 3자에게 양도, 증여하거나 담보로 제공할 수 없습니다.
+
+                        제 21 조 (준거법 및 재판관할)
+                        ①회사와 회원간에 발생한 분쟁에 대하여는 대한민국법을 준거법으로 합니다.
+                        ②본 약관으로 발생한 분쟁에 대하여 소송이 제기될 경우 민사소송법 상의 법원을 관할 법원으로 합니다.
+                        제 22 조 (기타사항)
+                        ①회사는 본 약관 외에 별도의 운영정책을 둘 수 있습니다.
+                        ②본 약관에서 정하지 않은 규정에 대하여는 관계법령 및 일반적인 상관례에 따릅니다.
+
+                        부칙
+
+                        본 약관은 2020년 06월 01일부터 시행합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="policy_pop" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="pop_header">
+                    <h3>개인정보처리방침</h3>
+                </div>
+                <div class="pop_con">
+                    <p class="coninfo">
+                        제 1 조 (목적)
+                        본 약관은 주식회사 인라이플(이하 “회사”라 한다)이 회원을 대상으로 인공지능 채팅 상담 아이봇서비스(이하 “서비스”라 한다)를 제공함에 있어 따르는 이용조건 및 절차
+                        그리고 회원과 회사의
+                        권리, 의무 및 책임사항에 관한 규정을 정함에 목적이 있습니다.
+
+                        제 2 조 (용어의 정의)
+                        ①“서비스”라 함은 brand.istore.camp 이 외에 istore.camp, admin.istore.camp, i-Bot app과 직접 연동되어 온라인에서 이용할 수
+                        있는 서비스를
+                        의미합니다.
+                        ②“클라이언트”이라 함은 본 서비스 이용약관에 동의하고, 서비스를 제공받는 주체를 의미하며, 법인 또는 개인 및 개인사업자에 제한을 두지 않고 계약 체결 및 회원가입 후
+                        서비스를 이용하는
+                        고객사를 의미합니다.
+                        ③“유저”이라 함은 회원이 운영하는 서비스 내에 방문하여 실질적인 구매 및 쇼핑을 하며, 서비스를 이용하여 채팅상담을 받는 자를 의미합니다.
+                        ④“시스템 관리자”라 함은 회사의 서비스 교육, 고객지원, 정산, 시스템 운영/유지보수 등의 전반적인 운영을 관리하는 담당자를 의미합니다.
+                        ⑤“아이봇어드민센터”라 함은 이용자가 서비스를 이용하여 챗봇 상담 및 후처리 관리, 시나리오 편집 등을 관리하는 어드민 시스템을 의미합니다.
+                        ⑥“시나리오 빌더”란 아이봇어드민센터 내의 아이봇 시스템의 시나리오 편집 기능으로 제공된 시나리오 패키지를 회원의 내부 정책과 효율성에 맞추어 편집할 수 있는 기능을
+                        의미합니다.
+                        ⑦“스토어”란 서비스의 상품(아이스킨, 아이블럭 등) 거래가 이루어질 수 있도록 회사에서 제공하는 거래 중개 서비스 및 관련 정보 제공, 유통 서비스를 말합니다.
+                        - “상품”이라 함은 회사가 제공한 양식에 따라서 서비스에 적합한 형태로 편집, 가공하여 등록한 콘텐츠(아이스킨, 아이블럭 등)를 의미합니다.
+                        - “구매회원”이라 함은 서비스를 이용하여 상품을 구매하는 고객을 의미합니다.
+                        - “판매회원”이라 함은 개발자 센터(디벨로퍼 센터)를 통하여 상품을 판매하는 개인이나 법인을 의미합니다.
+                        - “전자상거래 서비스”이라 함은 회사가 이용자에게 상품을 판매하거나, 회원 간에 상품 거래가 이루어질 수 있도록 회사가 온라인 거래장소를 제공하는 서비스 및 관련 부가
+                        서비스를 의미합니다.
+                        1) 상품 거래 지원 서비스
+                        2) 계약 체결, 결제 지원 서비스
+                        3) 기타 전자상거래 관련 서비스
+                        4) 서비스의 광고 및 프로모션
+                        제 3 조 (약관의 효력 및 변경)
+                        ①본 약관은 서비스 홈페이지를 통하여 이를 공지하거나 전자우편, 유선 등 기타의 방법으로 회원에게 공표함으로써 약관 시행 일로부터 그 효력이 발생합니다.
+                        ②회사는 개인정보보호법, 정보통신망 이용 촉진 및 정보보호 등에 관한 법률, 정보통신윤리위원회의 심의 규정, 정보통신윤리강령, 전자상거래 등에서의 소비자 보호에 관한 법률
+                        등의 관계법령을
+                        위배하지 않는 범위 내에서 본 약관을 개정할 수 있습니다.
+                        ③회사는 본 약관을 개정할 경우 적용일자와 개정 사유를 명확하게 명시하여 현행 약관과 함께 회사의 홈페이지 또는 기타의 방법으로 적용하기 7일 전부터 적용하기 전일까지
+                        내용을 공지합니다.
+                        ④회사가 전항에 따라 공지 또는 통지를 하면서 공지 또는 통지일로부터 개정 약관 시행일 30일후까지 거부 의사를 표시하지 아니하면 승인한 것으로 본다는 뜻을 명확하게
+                        고지하였음에도 회원이
+                        의사표시가 없는 경우에는 변경된 약관을 승인한 것으로 간주합니다.
+                        ⑤회원이 본 약관의 개정사항에 대해 동의하지 않은 경우 회사에 명시적 거부 의사를 표하여 제 7 조 제 1 항에 따라 회원 탈퇴를 할 수 있습니다. 단, 채무 또는 채권
+                        관계가 있는 경우에는
+                        채권, 채무가 완료되는 시점까지 이전 약관을 적용하며 채권, 채무관계가 완료 시 회원 탈퇴 하는 것을 원칙으로 합니다.
+                        제 4 조 (회원가입 및 이용신청)
+                        ①회원가입을 원하는 회원은 서비스 홈페이지 내에서 회원가입을 할 수 있으며, 본 약관과 회사의 개인정보 취급방침 및 개인정보보호 동의 부분에 체크 후 서비스 이용 신청서를
+                        작성하여
+                        제출합니다.
+                        ②회원가입 이전 또는 회원가입 이후 회사가 제공하는 서비스의 이용 절차와 정산 등의 내용에 대하여 안내 및 협의 후 회원이 가입 시 설정한 계정에 마스터 권한을 부여함으로써
+                        서비스 사용이
+                        가능합니다.
+                        ③회원가입을 완료하여 서비스 사용 권한이 부여된 회원은 즉시 서비스 이용이 가능합니다. 단, 서비스는 무료/유료 서비스로 구분되어 제공되며 유료 서비스 전환은 회원이 선택
+                        가능합니다.
+                        ④회원가입의 완료는 회원가입에 필요한 제반 절차가 모두 진행된 후 홈페이지 상 통지 또는 전자우편, 유선을 통하여 회원에게 통지된 시점으로 합니다.
+                        ⑤회사는 회원이 회원가입 후 서비스 신청 시 아래 각 호에 해당하는 경우에는 승낙을 하지 않을 수 있으며, 이미 가입된 이후에는 강제 탈퇴 사유를 통보 후 서비스 해지
+                        조치를 할 수 있습니다
+                        가.약관 위반 등 회원의 귀책사유로 회원자격의 박탈 이력이 있는 경우
+                        나.회원의 가입 명의가 실명이 아닌 경우(이로 인하여 발생하는 모든 책임은 명의를 도용한 회원에게 있습니다.)
+                        다.회원정보에 허위로 정보 사실을 기재한 경우
+                        라.서비스의 제공 목적 외의 용도로 운영한 사실이 발각된 경우
+                        마.기타 회사가 회원자격 박탈이 필요하다고 인정하는 경우.
+                        ⑥아래의 각 호에 해당하는 자는 서비스를 신청할 수 없습니다.
+                        가.만 14세 미만의 미성년자
+                        나.사업자등록증 취득 능력이 부족한 자
+                        다.체류 자격이 불충분한 외국인
+                        ⑦회사는 회원이 회원가입 시 기재한 모든 정보를 사실에 입각하여 작성한 것으로 간주합니다. 따라서 허위정보를 기재한 회원은 그 고의 및 과실 여부와 관계없이 서비스 이용
+                        중에 허위 정보와
+                        관련하여 발생한 모든 분쟁에 있어 법적인 보호를 받을 수 없으며, 회사 및 제 3자에게 야기한 손해를 배상할 책임이 있습니다.
+                        ⑧만 19세 미만의 회원은 반드시 법정대리인의 동의가 있어야 본 서비스 가입신청이 가능합니다. 법정대리인의 동의 표시를 위하여 별도 동의서를 작성하며, 이외에
+                        가족관계증명서,
+                        법정대리인증명서, 후견인증명서 등의 추가 서류를 요청할 수 있습니다.
+                        제 5 조 (회원가입 신청에 대한 승낙 및 거부)
+                        ①회사는 본 약관 제4조 회원가입 및 이용신청에 의거하여 회원의 회원가입 자격 결격사유가 없는 한 서비스의 제공 및 이용을 위한 제반 절차가 완료됨과 동시에 서비스 신청을
+                        승낙합니다.
+                        ②회사는 다음 각 호에 해당하는 경우 회원가입 신청에 대한 승낙을 제한하며, 그 사유가 해소될 때까지 승낙을 보류할 수 있습니다.
+                        가.서비스 관련 설비 용량이 부족한 경우
+                        나.기술상 장애사유가 있는 경우
+                        다.회원이 본 약관 7조 2항에 의거하여 회원자격을 박탈한 이력이 있는 경우
+                        라.서비스 신청 과정에서 회원의 거짓 정보 기재 사실이 발각되는 경우
+                        마.회원인증 절차를 위하여 회사에서 요구한 별도 서류를 제출하지 않는 경우
+                        바.기타 회사에서 필요하다고 인정하는 경우
+                        제 6 조 (회원정보의 변경)
+                        회원은 아이봇 서비스를 이용함에 있어 기존에 등록한 정보의 변경이 필요한 경우에는 언제든지 홈페이지 또는 회사의 시스템관리자를 통하여 회원정보를 변경할 수 있습니다. 본
+                        조항의 회원정보
+                        변경사항을 수정하지 않아 발생하는 불이익에 대해서 회사는 책임지지 않습니다.
+
+                        제 7 조 (회원탈퇴 및 자격상실 등)
+                        ①회원은 더 이상 회사가 제공하는 서비스를 이용할 의사가 없다고 판단되는 경우에는 언제든지 홈페이지에서 회원탈퇴를 요청할 수 있으며, 회사는 회원의 요청을 수락하여 탈퇴처리
+                        합니다.
+                        ②회원탈퇴를 요구하는 경우에는 서비스 이용 해지의 성격을 가지므로 회사는 회원과의 아이봇 이용료 정산 및 서비스 이용 해지에 따르는 제반 절차를 완료한 이후 해당 회원을
+                        탈퇴처리 합니다.
+                        ③회원이 탈퇴를 요구한 시점에 회사와의 채권, 채무관계가 있을 경우 회원탈퇴 시점은 회사와의 채권, 채무관계가 모두 완료된 시점으로 합니다.
+                        ④회사는 다음 각 호에 해당하는 경우 회원의 자격을 제한 및 박탈하거나 회원에게 제공하는 서비스를 중단할 수 있습니다. 단, 이 경우에 회사는 회원에게 해당 내용을 사전
+                        통지하고 소명할
+                        기회를 부여합니다.
+                        가.회원가입 절차에서 허위 정보를 기입한 사살이 발각된 경우
+                        나.타인의 서비스 이용을 방해하거나 그 정보를 도용하는 등 전자거래 질서를 위협하는 경우
+                        다.본 약관과 관계법령에서 위반하는 행위를 하는 경우
+                        라.유료서비스의 이용료를 2개월 이상 체납하는 경우
+                        마.서비스를 이용하여 얻게 되는 기업 기밀을 타인에게 발설한 경우
+                        바.기술설비에 여유가 없거나 회원사의 기술상 지장이 있는 경우
+                        사.기타 회사가 필요하다고 인정하는 경우
+                        제 8 조 (회원의 의무)
+                        ①회원은 서비스를 제공받으며 회원으로써의 의무를 이행합니다.
+                        ②회원은 서비스의 시스템관리자로부터 부여 받은 아이봇어드민센터, 정산센터, 홈페이지 등의 계정을 관리할 의무를 가지며, 해당 계정에 대한 관리책임은 회원에게 있습니다.
+                        ③회원은 부여 받은 계정을 제 3자가 이용하도록 하여서는 안되며, 이로 인하여 발생하는 모든 분쟁 및 책임은 회원에게 있습니다.
+                        ④회원의 주 운영자에게만 부여한 권한을 제 3자가 사용한 사실이 적발되거나, 타인의 사용여부를 확인한 경우에는 즉시 회사에 통보해야 하며 이후 회사의 조치에 따라야 합니다.
+                        ⑤회원은 다음의 각 호에 해당하는 행위를 하여서는 안됩니다.
+                        가.서비스신청 또는 변경 시 허위내용을 등록하는 행위
+                        나.타인의 정보를 도용하는 행위
+                        다.다른 회원의 개인정보를 그 동의 없이 수집, 저장, 공개하는 행위
+                        라.회사가 게시판 정보를 변경하거나 회사의 동의 없이 제 3자에게 제공하는 행위
+                        마.회사와 기타 제 3자의 저작권 등 지적재산권에 대한 침해 행위
+                        바.회사 및 기타 제 3자의 명예를 훼손하거나 업무를 방해하는 행위
+                        사.서비스 상담 시 외설 또는 폭력적인 메시지, 팩스, 음성, 메일 기타 공서양속 에 반하는 정보를 서비스에 공개 또는 게시하는 행위
+                        아.회사의 동의 없이 영리목적의 서비스를 사용하는 행위
+                        자.타인의 의사에 반하는 내용을 지속적으로 전송하는 행위
+                        차.서비스를 이용하여 범죄행위를 도모하거나 교사하는 행위
+                        카.회사가 제공하는 서비스의 이용약관, 지침, 주의사항 등 서비스와 관련 된 규정을 위반하는 행위
+                        타.회사의 동의 없이 제 3자에게 서비스를 임대하는 행위
+                        파.기타 회사가 부당하다고 판단하는 행위
+                        ⑥회원은 정보통신망법 제44조 7항(불법정보의 유통금지)에 의거하여 다음 각 호의 내용을 직접 발송하거나 상담사가 발송하도록 방조해서는 안됩니다.
+                        가.타인을 비방할 목적으로 공공연하게 사실이나 거짓을 드러내어 타인의 명예를 훼 손하는 내용의 정보
+                        나.공포심이나 불안감을 유발하는 부호, 문언, 음향, 화상 또는 영상을 반복적으로 고 객에게 유포
+                        ⑦회원사의 휴업 또는 폐업 상태가 되었을 경우 회원은 즉시 그 사실을 회사에 통보하고, 홈페이지에 등록한 회원정보를 수정합니다.
+                        ⑧회원이 본 조항의 약관을 준수하지 않아 발생하는 모든 분쟁과 책임에 있어서 회사는 면책 받을 수 있습니다.
+                        제 9 조 (회사의 의무)
+                        ①회사는 본 약관과 관계법령을 준수하며, 지속적이고 안정적으로 서비스를 제공하기 위하여 최선을 다하여 노력할 것입니다.
+                        ②회사는 회원에게 제공하는 서비스를 지속적이고 안정적으로 제공하기 위하여 설비에 장애가 발생하거나 멸실 되었을 때 지체 없이 이를 수리 또는 복구합니다. 단, 천재지변이나
+                        비상사태 등
+                        부득이한 경우에는 서비스를 일시 중단하거나 영구 중지할 수 있습니다.
+                        ③회사는 회원이 등록한 회원정보를 본인의 승낙 없이 제 3자에게 누설, 배포하지 않습니다. 단, 회사의 서비스 제공범위 내에서 그 관계법령을 준수하는 절차에 따라 회사가
+                        필요하다고 판단하는
+                        경우에는 그러하지 않습니다.
+                        ④회사는 회원의 고객이 서비스 이용 중 영리목적의 허용되지 않은 불법광고, 스매싱 전송, 음란물의 유포 등 위반행위를 한 사실이 확인될 경우 고객ID의 서비스 이용을
+                        차단하거나 해당내용을
+                        첨부하여 관계법령에 의거하여 한국인터넷진흥원, 불법스팸대응센터 등의 관계기관에 신고할 수 있습니다.
+                        ⑤회사는 회원과 서비스를 제공함에 있어 수집되는 대화내용, 이전상담이력, 고객ID, 상담원ID, 고객식별정보, 상담 메시지 별 전송시간 등의 정보를 양사간의 협의가 된
+                        기간만큼 서버에 저장할
+                        수 있습니다. 일정 기간이 지난 이후 저장된 정보는 폐기처리 하며, 회원의 별도 요청이 있거나 회사가 협의기간 이후에도 저장해야 한다고 판단하는 경우에는 그러하지 않습니다.
+                        ⑥회사는 서비스의 원활한 제공여부를 확인하기 위하여 상시적으로 서비스 모니터링을 실시합니다.
+                        ⑦회사는 회원이 안전하게 서비스를 이용할 수 있도록 개인정보보호를 위하여 별도 보안시스템을 갖추어야 하며, 회사 내부의 개인정보 취급방침을 공시하고 준수합니다.
+                        ⑧회사는 회원 및 고객의 의견을 수렴하고 불만을 처리하기 위하여 유선, 전자우편, 의견남기기 등 불만사항을 처리할 수 있는 절차를 마련하여야 합니다.
+                        제 10 조 (회원에 대한 통지)
+                        회사는 회원 가입 신청 시 등록한 유선, 전자우편 등을 통하여 회원에 대한 통지를 할 수 있습니다. 회원이 아닌 불특정 다수에게 통지할 경우 서비스 홈페이지 초기화면에
+                        일정기간 동안 해당
+                        내용을 기재함으로써 개별통지에 갈음할 수 있습니다.
+
+                        제 11 조 (권한설정)
+                        ①회원은 주 운영자가 서비스를 운영함에 있어서 “고객계정”의 접근과 관리 권한을 설정할 수 있습니다.
+                        ②주 운영자는 부 운영자 또는 그 외의 적합하다고 판단하는 회원사의 다른 사람에게 관리권한의 일부 또는 전부를 위임할 수 있습니다.
+                        ③권한을 위탁한 회원의 고객계정의 권한을 위탁 받은 회원의 행위는 모두 권한을 위탁한 회원의 행위로 인정합니다
+                        제 12 조 (서비스 제공 내용 및 범위)
+                        ①회사에서 제공하는 서비스의 이용은 회원가입을 완료한 회원이 사업자 인증절차 및 서비스 이용료 납부 등의 회사가 요구하는 기타 제반 요건이 충족된 시점부터 즉시 가능합니다.
+                        ②회사에서 제공하는 서비스는 다음 각 호와 같은 기능들이 제공되며, 이용 방법과 절차는 서비스의 운영정책에 따릅니다.
+                        가.인공지능 채팅상담
+                        나.아이봇어드민 시스템
+                        다.시나리오 빌더
+                        라.AI Q&amp;A 추천
+                        마.쇼핑 어드바이저
+                        바.정산 시스템
+                        ③회사는 회원이 운영하는 쇼핑몰 사이트 방문고객의 ID, 쿠키정보, 이용정보, 상품정보 등을 수집할 수 있습니다.
+                        ④회사가 제공하는 서비스의 이용시간은 회사의 업무상 또는 기술상 장애 등의 기타 특별한 사유가 발생하지 않는 한 365일 24시간 이용할 수 있습니다. 단, 본 약관에
+                        의거하여 회사가 서비스
+                        제공 중단이 필요하다고 판단하는 경우에는 서비스 이용이 제한될 수 있습니다.
+                        ⑤회사는 시스템점검 등 기술적 요인으로 인하여 일정기간 서비스 제공이 불가한 경우에는 서비스 일시 정지 사유와 기간 등을 명시하여 회원에게 공지합니다.
+                        ⑥서비스 이용 중 일부 회원의 상품광고 또는 회사의 개별적인 광고가 포함될 수 있으며, 해당 내용을 열람함으로써 발생하는 데이터 통화료는 가입한 통신사업자와의 이용 계약에
+                        따라 고객이
+                        부담합니다.
+                        ⑦서비스를 이용하며 수집된 정보는 아이봇의 모 서비스인 루빅 에게 연동되며, 수집된 정보를 관리함에 있어 회사는 정보의 기술적, 관리적 조치 방안을 마련합니다.
+                        제 13 조 (서비스 이용 요금)
+                        ①회사에서 제공하는 서비스의 이용요금은 무료와 유료 서비스로 구분하며, 유료서비스는 회원이 회원가입 또는 무료서비스 이용 중간에 별도 선택하여 신청함으로써 제공됩니다.
+                        ②회원이 결제한 유료서비스의 신청 내역은 별도 정산 전용 서비스 웹 페이지를 통하여 열람할 수 있습니다.
+                        ③서비스 이용요금은 회사의 정책에 의하여 변경될 수 있으며, 변경된 내용은 서비스 홈페이지 또는 별도 방법으로 회원에게 통지합니다.
+                        ④서비스 이용 계약을 중도 해지하고자 하는 회원은 최소 1개월 이전 서면으로 회사에 서비스 계약 해지의사를 표시하여야 합니다.
+                        ⑤계약해지 의사표시 시점에 유료서비스의 사용기간이 남아있다면 서비스 사용기간이 종료되는 시점때까지 계약기간은 연장됩니다.
+                        제 14 조 (요금 등의 반환 및 이의신청)
+                        ①회사는 요금의 과납 또는 오납이 생겼을 경우 그 과납 또는 오납된 요금을 회원이 지정하는 계좌로 반환합니다.
+                        ②회원은 이용요금의 정산내용에 대하여 이의가 있는 경우 전자우편, 서면, 유선 등으로 이의신청을 할 수 있습니다.
+                        ③회사는 회원의 요금청구 이의신청이 접수될 경우 2주 이내에 해당 이의신청의 타당성 여부를 조사하여 그 결과를 회원에게 통지하여야 합니다. 단, 소명기간 이내에 결과통지가
+                        어려운 경우 그
+                        사유와 처리기한을 명시하여 회원에게 통지합니다.
+                        제 15 조 (서비스 제공의 중지)
+                        ①회사는 본 약관에 의거하여 아래 각 호에 해당하는 경우 서비스 제공을 일시 또는 영구적으로 중지할 수 있습니다.
+                        가.서비스 설비의 보수, 점검, 교체, 고장, 통신두절 등 공사로 인한 경우
+                        나.전기통신사업법령에 의거하여 기간통신사업자가 전기통신서비스를 중지했을 경우
+                        다.국가비상사태, 정전, 서비스 설비의 장애 또는 서비스 이용의 폭주 등으로 정상적인 서비스 제공에 지장이 있을 경우
+                        라.네트워크상의 위험성에 기초한 타인의 서비스 제공 음해 행위가 있는 경우
+                        마.서비스 제공을 위해 필요한 업데이트 및 신규 서비스로의 전환 등을 위하여 운영상 합리적인 사유가 있다고 회사가 판단하는 경우
+                        제 16조 (개인정보보호의 의무)
+                        회사는 회원이 등록한 가입정보와 회원으로부터 제공받은 회원의 고객정보에 대하여 개인정보보호법, 정보통신망 이용촉진 및 정보보호 등에 관한 법률, 전자상거래법, 정보통신망법
+                        등의 관계 법령이
+                        정하는 바에 따라 개인정보 취급방침을 수립하고 적용하여 개인정보보호를 준수합니다. 단, 본 약관에 의거하여 수집되는 개인정보 및 행동이력 로그 등을 포함하는 데이터는
+                        아이봇의 모서비스인
+                        모비온에도 제공될 수 있으며 적용하는 개인정보 취급방침은 서비스와 동일하게 적용됩니다.
+                        제 17 조 (개인정보의 수집 및 위탁)
+                        ①회사는 공정하고 적접한 수단에 의하여 서비스 이용계약의 체결 및 이행에 필요한 최소한의 개인정보를 수집합니다.
+                        ②회사는 회원 또는 회원의 고객 개인정보를 수집 시 관계법령과 법규를 준수하여 회사에서 지침 하는 개인정보 취급방침에 그 수집 범위 및 목적을 사전 고지합니다.
+                        ③회사는 개인정보 수탁업체와 개인정보보호 관련 지시엄수, 개인정보에 관한 비밀유지, 제 3자 제공의 금지, 사고시의 책임 및 손해배상 등에 대한 사항을 개인정보 위탁계약서를
+                        통하여 명확히
+                        규정하고 있으며, 당해 계약내용을 서면 또는 전자적 기록으로 보존합니다.
+                        제 18 조 (저작권의 귀속)
+                        ①회사가 작성한 저작물의 대한 저작재산권은 회사에 있습니다.
+                        ②서비스의 디자인, 시나리오 스크립트, 그래픽, 전송기능, 컨텐츠, 등 회사가 개발하여 제공하는 서비스에 관련된 상표와 마크, 로고, 등에 관한 저작권 및 지적재산권은
+                        회사에 있습니다.
+                        ③회사는 회원이 홈페이지 및 어드민 시스템에 기재한 저작물에 대한 열람권한이 있으며, 추후 서비스 품질향상을 위하여 해당 내용을 활용할 수 있습니다.
+                        ④회원은 회사가 제공하는 서비스의 이용권한을 부여 받게 되며, 서비스의 실 소유 및 저작권은 회사에게 있습니다.
+                        제 19 조 (손해배상과 면책)
+                        ①회사는 서비스의 이용과 관련하여 발생하는 회원의 손해에 대하여 관계법령이 정하는 범위 내에서 배상 책임을 집니다. 단, 본 약관을 위반하거나 및 회원에게 그 과실이 있는
+                        경우에는 해당
+                        부분에 대한 책임이 면제됩니다.
+                        ②회원이 고의 또는 과실로 다른 회원에게 손해를 입히거나 계약관계에 대한 의무를 불이행하여 발생한 손해에 대하여 회원은 즉시 이를 배상할 책임이 있습니다.
+                        ③회사는 천재지변 또는 이에 준하는 불가항력으로 인하여 서비스를 제공할 수 없는 경우에 발생한 손해에 대하여 책임이 면제됩니다.
+                        ④회사는 회원의 고객의 귀책사유로 인한 서비스 이용 장애에 대하여 책임을 지지 않습니다.
+                        ⑤회사가 회원에게 부여한 이용 권한 및 자료에 대한 책임은 전적으로 회원에게 있으며, 회원의 관리 소홀로 일어난 불이익과 결과에 대하여 회사는 책임을 지지 않습니다.
+                        제 20 조 (권리의 양도금지)
+                        회원은 회사의 서면동의 없이 본 약관상의 권리와 의무를 제 3자에게 양도, 증여하거나 담보로 제공할 수 없습니다.
+
+                        제 21 조 (준거법 및 재판관할)
+                        ①회사와 회원간에 발생한 분쟁에 대하여는 대한민국법을 준거법으로 합니다.
+                        ②본 약관으로 발생한 분쟁에 대하여 소송이 제기될 경우 민사소송법 상의 법원을 관할 법원으로 합니다.
+                        제 22 조 (기타사항)
+                        ①회사는 본 약관 외에 별도의 운영정책을 둘 수 있습니다.
+                        ②본 약관에서 정하지 않은 규정에 대하여는 관계법령 및 일반적인 상관례에 따릅니다.
+
+                        부칙
+
+                        본 약관은 2020년 06월 01일부터 시행합니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/modal.js"></script>
+    <script src="assets/swiper_custom.js"></script>
+    <script src="assets/ivoice.js"></script>
+
+    <script>
+        // 모바일 메뉴
+        $(".btn-hamburger").on("click", function () {
+            $(this).toggleClass("active");
+            $("html").toggleClass("iBot-lock");
+        });
+
+        // 리사이징 시 모바일 메뉴 숨김 처리
+        $(window).on('resize', function () {
+            const media = matchMedia("(min-width:769px)").matches;
+            const $html = $("html");
+            const $hamburger = $(".btn-hamburger");
+
+            if (media === true) {
+                $hamburger.hasClass("active") && $hamburger.removeClass("active");
+                $html.hasClass("iBot-lock") && $html.removeClass("iBot-lock");
+            }
+        });
+
+        // GNB 클릭 시
+        $(".global-navigation-bar li").on("click", function () {
+            $(this).toggleClass("active").siblings().removeClass("active");
+        });
+
+        // 모바일 GNB 클릭 시
+        $(".mobile-gnb li").on("click", function () {
+            $(this).toggleClass("active").siblings().removeClass("active");
+            $(".btn-hamburger").removeClass("active");
+            $("html").removeClass("iBot-lock");
+        });
+
+        // 로그인 후
+        $(".btn-user-information").on("click", function () {
+            $(this).toggleClass("active");
+        });
+    </script>
+
+    <script>
+        var waveBg = document.querySelector('.products_03_img_01')
+        var head = document.querySelector('head')
+        var style = document.createElement('style')
+        head.appendChild(style)
+
+        function random(max, min) {
+            var count = Math.floor(Math.random() * max + min)
+            return count
+        }
+        var styles = ''
+        var keyframes = ''
+        for (i = 0; i < 86; i++) {
+            styles += '.waves-' + i + '{animation: wave-' + i + ' ' + random(5, 0.5) + 's linear ' + random(3, 0.1) +
+                's infinite alternate;}'
+            keyframes += '@keyframes wave-' + i + ' {0% {transform: scale(1, 1);}100% {transform: scale(1, ' + random(
+                    30, 1) +
+                ');}}'
+
+        }
+        style.innerText = styles + keyframes
+        for (s = 0; s < 86; s++) {
+            span = document.createElement('span')
+            span.classList.add('waves-' + s)
+            waveBg.appendChild(span)
+        }
+    </script>
+</body>
+
+</html>
