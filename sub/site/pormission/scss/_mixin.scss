@@ -1,0 +1,151 @@
+@charset 'utf-8';
+
+@mixin transition {
+    transition: all 0.2s ease-in-out;
+}
+
+/********** common **********/
+$textcolor:#333;
+$pointcolor:#85b74e;
+$subtextcolor:#999;
+
+$font-r:'NotoSansR';
+$font-m:'NotoSansM';
+$font-b:'NotoSansB';
+
+$breakpoint-mobile_s:279px;
+$breakpoint-mobile:359px;
+
+$breakpoint-tablet-ver01:1024px;
+$breakpoint-tablet-ver02: 767px;
+$breakpoint-mobile-ver01:359px;
+$breakpoint-mobile-ver02:319px;
+$breakpoint-mobile-ver03:279px;
+
+
+@mixin mobile-v01 {
+    @media (max-width: #{$breakpoint-tablet-ver01}) and (min-width: #{$breakpoint-tablet-ver02}) {
+        @content;
+    }
+}
+
+@mixin mobile-v02 {
+    @media (max-width: #{$breakpoint-tablet-ver02}) and (min-width: #{$breakpoint-mobile-ver01}) {
+        @content;
+    }
+}
+
+@mixin mobile-v03 {
+    @media (max-width: #{$breakpoint-mobile-ver01}) and (min-width: #{$breakpoint-mobile-ver02}) {
+        @content;
+    }
+}
+
+@mixin mobile-v04 {
+    @media (max-width: #{$breakpoint-mobile-ver02}) {
+        @content;
+    }
+}
+
+@mixin mobile-pull {
+    @media (max-width: #{$breakpoint-tablet-ver02}) and (min-width: #{$breakpoint-mobile-ver03}) {
+        @content;
+    }
+}
+
+@mixin mobile-t-m {
+    @media (max-width: #{$breakpoint-tablet-ver01}) and (min-width: #{$breakpoint-mobile-ver03}) {
+        @content;
+    }
+}
+
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin flex-item {
+    display: flex;
+    align-items: center;
+}
+
+@keyframes step02_img_bg {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    40% {
+        transform: translate(0, 0) scale(1)
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: .5;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(0)
+    }
+}
+
+@keyframes step02_img {
+    0% {
+        opacity: 0;
+        transform: scale(0)
+    }
+
+    30% {
+        opacity: .7;
+        transform: scale(1.1)
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1)
+    }
+}
+
+@keyframes op-ani {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes particle {
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    40% {
+        transform: translate(0, 0) scale(1)
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(0, 0) scale(0)
+    }
+}
+
+$duration: 1.8s;
