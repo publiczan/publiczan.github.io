@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimun-seale=1.0, user-scalable=no" />
+    <meta name="description" content="mobon" />
+    <meta name="keywords" content="mobon" />
+    <meta name="author" content="mobon" />
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-title" content="mobon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOBON</title>
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/daterangepicker_popup.js"></script>
+    <!--//날짜선택관련-->
+
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!--//slider-->
+
+</head>
+
+<body>
+    <div id="Wrap">
+        <div class="header type-align-bt">
+            <div class="type-align-st">
+                <button type="button" onClick="history.back();" class="btn-prev frist"><i
+                        class="ico-arrow-l-bk"></i></button>
+                <strong>알림</strong>
+            </div>
+            <button type="button" class="alarm-del MDbtn" data-MD="alarm-del"><i class="ico-del"></i></button>
+        </div>
+        <!--//header-->
+
+        <nav>
+            <!--하단 fixed nav-->
+            <ul class="fx-list">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-home"></i>
+                        홈
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-ad"></i>
+                        광고 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-report"></i>
+                        보고서
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="javascript:void(0);" class="btn-hamburger" data-hd="allmenu">
+                        <i class="navico-all"></i>
+                        전체
+                    </a>
+                </li>
+            </ul>
+            <!--//fx-list-->
+
+            <!--하단 대행사 fixed nav-->
+            <ul class="aduser-list" style="display: none;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-admgt"></i>
+                        광고주 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-user"></i>
+                        정보수정
+                    </a>
+                </li>
+            </ul>
+            <!--//aduser-list-->
+        </nav>
+        <!--//nav-->
+        <article class="contents-wrapper alarm">
+            <section class="contents-hd">
+                <div class="select type-align-bt">
+                    <select>
+                        <option value="1" selected="">전체</option>
+                        <option value="2">예산</option>
+                        <option value="3">캠페인 성과</option>
+                    </select>
+                </div>
+                <!--//select-->
+            </section>
+            <!--//contents-hd-->
+            <section class="contents-con">
+                <div class="sec-row">
+                    <div class="alarm-list">
+                        <div class="listItem">
+                            <a href="naver.com" class="type-align-bt">
+                                <dl>
+                                    <dt>캠페인 성과</dt>
+                                    <dd>소재 품질지수가 다른 그룹에 비해
+                                        현저히 낮습니다. 소재를 변경해보세요!</dd>
+                                    <dd class="day">2022.03.22</dd>
+                                </dl>
+                                <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                            </a>
+                            <!--drag 삭제-->
+                            <button type="button" class="btn-drag-del">삭제</button>
+                        </div>
+                        <!--//listItem-->
+                        <div class="listItem">
+                            <a href="javascript:void(0);" class="type-align-bt">
+                                <dl>
+                                    <dt>캠페인 성과</dt>
+                                    <dd>KPI미달성 캠페인이 있습니다.
+                                        UV 캠페인을 점검해 보세요.</dd>
+                                    <dd class="day">2022.03.22</dd>
+                                </dl>
+                                <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                            </a>
+                            <!--drag 삭제-->
+                            <button type="button" class="btn-drag-del">삭제</button>
+                        </div>
+                        <!--//listItem-->
+                        <div class="listItem">
+                            <a href="javascript:void(0);" class="type-align-bt">
+                                <dl>
+                                    <dt>예산</dt>
+                                    <dd>총 ROAS_1,500%의 금액(-56%) 미소진
+                                        되었습니다.</dd>
+                                    <dd class="day">2022.03.22</dd>
+                                </dl>
+                                <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                            </a>
+                            <!--drag 삭제-->
+                            <button type="button" class="btn-drag-del">삭제</button>
+                        </div>
+                        <!--//listItem-->
+                        <div class="listItem ui-content">
+                            <a href="javascript:void(0);" class="type-align-bt listview">
+                                <dl>
+                                    <dt>캠페인 성과</dt>
+                                    <dd>소재 품질지수가 다른 그룹에 비해
+                                        현저히 낮습니다. 소재를 변경해보세요!</dd>
+                                    <dd class="day">2022.03.22</dd>
+                                </dl>
+                                <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                            </a>
+                            <!--drag 삭제-->
+                            <button type="button" class="btn-drag-del">삭제</button>
+                        </div>
+                        <!--//listItem-->
+                    </div>
+                    <!--//alarm-list-->
+                </div>
+                <!--//sec-row-->
+            </section>
+            <!--//contents-con-->
+        </article>
+        <!--//contents-wrapper-->
+    </div>
+
+    <!--알림삭제-->
+    <div class="MDwrap ct-md" id="alarm-del">
+        <div class="md-con">
+            <p>알림을 전체 삭제하시겠습니까?</p>
+        </div>
+        <!--//hd-con-->
+        <div class="md-btn">
+            <button type="button" class="btn-lightgray ico-none">아니오</button>
+            <button type="button" class="btn-blue alarmmd-del">예</button>
+        </div>
+    </div>
+    <!--//MDwrap-->
+
+    <!--알림 swipe js-->
+    <script src="../../js/lib/swipecus.js"></script>
+    <script src="../../js/lib/swipeTo.min.js"></script>
+    <!--//알림 swipe js-->
+</body>
+
+</html>
