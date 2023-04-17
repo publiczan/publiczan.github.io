@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimun-seale=1.0, user-scalable=no" />
+    <meta name="description" content="mobon" />
+    <meta name="keywords" content="mobon" />
+    <meta name="author" content="mobon" />
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-title" content="mobon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOBON</title>
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/daterangepicker_popup.js"></script>
+    <!--//날짜선택관련-->
+
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!--//slider-->
+
+</head>
+
+<body>
+    <div id="Wrap">
+        <header class="header">
+            <strong>보고서</strong>
+            <!--//title-->
+            <div class="hd-btn type-align-en">
+                <button type="button" class="btn-alarm MDbtn" data-MD="hd-alarm">
+                    <i class="ico-alarm"></i>
+                    <em id="alarm-badge">3</em>
+                </button>
+            </div>
+            <!--//hd-btn-->
+        </header>
+        <!--//header-->
+        <nav>
+            <!--하단 fixed nav-->
+            <ul class="fx-list">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-home"></i>
+                        홈
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-ad"></i>
+                        광고 관리
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="javascript:void(0);">
+                        <i class="navico-report"></i>
+                        보고서
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" class="btn-hamburger" data-hd="allmenu">
+                        <i class="navico-all"></i>
+                        전체
+                    </a>
+                </li>
+            </ul>
+            <!--//fx-list-->
+
+            <!--하단 대행사 fixed nav-->
+            <ul class="aduser-list" style="display: none;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-admgt"></i>
+                        광고주 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-user"></i>
+                        정보수정
+                    </a>
+                </li>
+            </ul>
+            <!--//aduser-list-->
+        </nav>
+        <!--//nav-->
+        <article class="contents-wrapper report">
+            <section class="contents-con">
+                <div class="con-hd">
+                    <div class="calendarBox type-align-st" id="datePicker">
+                        <div class="calendar">
+                            <i class="ico-arrow-black"></i>
+                            <div class="dateChoice">
+                                <input type="text" id="df-input" name="df-input" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <!--//calendarBox-->
+
+                    <!--
+                        체크박스 > 하단 모바일,온라인 내용 x
+                        체크박스 checked > 하단 모바일,온라인 내용 active
+                    -->
+                    <div class="btn-wrap type-align-bt">
+                        <button type="button" class="btn-s-s btn-blue MDbtn" data-MD="ch-filter">필터</button>
+                        <div class="checkBox rp-ck">
+                            <input type="checkbox" name="device" id="device">
+                            <label for="device">디바이스 데이터 포함</label>
+                        </div>
+                    </div>
+                    <!--//btn-wrap-->
+                </div>
+                <!--//con-hd-->
+                <div class="sec-row first">
+                    <div class="tableBox df-tb">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>합계</th>
+                                    <th></th>
+                                    <th class="show">모바일</th>
+                                    <th class="show">온라인</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!--
+                                    btn-sortb 클릭 > 03.report_sortable.html작업
+                                -->
+                                <tr>
+                                    <td class="fx" colspan="4"><button type="button" class="btn-sortb"><i
+                                                class="ico-sortb"></i></button></td>
+                                </tr>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//tableBox-->
+                    <button type="button" class="btn-drop"><i class="ico-arrow-black"></i></button>
+                </div>
+                <!--//sec-row-->
+
+                <div class="sec-row">
+                    <span class="badge-mark red">12.25</span>
+                    <div class="tableBox df-tb">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//tableBox-->
+                    <button type="button" class="btn-drop"><i class="ico-arrow-black"></i></button>
+                </div>
+                <!--//sec-row-->
+
+                <div class="sec-row">
+                    <span class="badge-mark blue">12.25</span>
+                    <div class="tableBox df-tb">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td>2,668%</td>
+                                    <td class="show">2,668%</td>
+                                    <td class="show">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td>263.645.555</td>
+                                    <td class="show">263.645.555</td>
+                                    <td class="show">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//tableBox-->
+                    <button type="button" class="btn-drop"><i class="ico-arrow-black"></i></button>
+                </div>
+                <!--//sec-row-->
+
+                <div class="sec-row">
+                    <span class="badge-mark">12.25</span>
+                    <div class="tableBox df-tb">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                                <tr>
+                                    <td>노출수</td>
+                                    <td>220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                    <td class="show">220,901,555</td>
+                                </tr>
+                                <tr>
+                                    <td>클릭율</td>
+                                    <td class="txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                    <td class="show txt-blue">2,668%</td>
+                                </tr>
+                                <tr>
+                                    <td>소진금액</td>
+                                    <td class="txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                    <td class="show txt-red-df">263.645.555</td>
+                                </tr>
+                                <tr>
+                                    <td>평균소진</td>
+                                    <td>81.2</td>
+                                    <td class="show">81.2</td>
+                                    <td class="show">81.2</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//tableBox-->
+                    <button type="button" class="btn-drop"><i class="ico-arrow-black"></i></button>
+                </div>
+                <!--//sec-row-->
+
+            </section>
+            <!--//contents-con-->
+        </article>
+        <!--//contents-wrapper-->
+    </div>
+
+    <!--필터 모달-->
+    <div class="MDwrap df-md rp-filter" id="ch-filter">
+        <div class="md-con">
+            <div class="sec-row">
+                <div>
+                    <strong>집계날짜</strong>
+                    <div class="select">
+                        <select>
+                            <option value="1" selected="">일자별</option>
+                            <option value="2">주차별</option>
+                            <option value="3">월별</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <strong>유형설정</strong>
+                    <div class="select">
+                        <select>
+                            <option value="1" selected="">전체</option>
+                            <option value="2">온라인</option>
+                            <option value="3">모바일</option>
+                            <option value="4">APP</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <strong>카카오 유형설정</strong>
+                    <div class="select">
+                        <select>
+                            <option value="1" selected="">전체</option>
+                            <option value="2">RTB</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="textcheckBox type-wr-align-bt-st">
+                        <input type="checkbox" name="filter-rp" id="ft-rp00" value="00">
+                        <label for="ft-rp00">배너</label>
+                    </div>
+                    <div class="select">
+                        <select disabled>
+                            <option value="00" selected>전체</option>
+                            <option value="01">투데이카트매칭</option>
+                            <option value="02">위클리카트매칭</option>
+                            <option value="03">먼슬리카트매칭</option>
+                            <option value="04">헤비쇼퍼매칭</option>
+                            <option value="05">커스텀하이매칭</option>
+                            <option value="06">커스텀리타겟팅매칭</option>
+                            <option value="07">투데이본상품매칭</option>
+                            <option value="08">위클리본상품매칭</option>
+                            <option value="09">먼슬리본상품매칭</option>
+                            <option value="10">관심상품매칭</option>
+                            <option value="11">본상품매칭</option>
+                            <option value="12">위클리보완재매칭</option>
+                            <option value="13">보완재매칭</option>
+                            <option value="14">투데이리턴매칭</option>
+                            <option value="15">위클리리턴매칭</option>
+                            <option value="16">먼슬리리턴매칭</option>
+                            <option value="17">헤비유저매칭</option>
+                            <option value="18">리턴매칭</option>
+                            <option value="19">투데이베스트</option>
+                            <option value="20">문맥매칭</option>
+                            <option value="21">휴면유저매칭</option>
+                            <option value="22">파워베이스광고</option>
+                            <option value="23">소비성향매칭</option>
+                            <option value="24">발신이력매칭</option>
+                            <option value="25">성향매칭</option>
+                            <option value="26">검색어매칭</option>
+                            <option value="27">앱프로파일매칭</option>
+                            <option value="28">오디언스매칭</option>
+                            <option value="29">(구)문맥매칭</option>
+                            <option value="30">소셜오디언스매칭</option>
+                            <option value="31">카테고리매칭</option>
+                            <option value="32">베이스광고</option>
+                            <option value="33">덤프매칭</option>
+                            <option value="34">브랜드박스</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="textcheckBox type-wr-align-bt-st">
+                        <input type="checkbox" name="filter-rp" id="ft-rp01" value="01">
+                        <label for="ft-rp01">아이커버</label>
+                    </div>
+                    <div class="select">
+                        <select disabled>
+                            <option value="00" selected>전체</option>
+                            <option value="01">투데이카트매칭</option>
+                            <option value="02">위클리카트매칭</option>
+                            <option value="03">먼슬리카트매칭</option>
+                            <option value="04">헤비쇼퍼매칭</option>
+                            <option value="05">보완재매칭</option>
+                            <option value="06">관심상품매칭</option>
+                            <option value="07">본상품매칭</option>
+                            <option value="08">리턴매칭</option>
+                            <option value="09">문맥매칭</option>
+                            <option value="10">검색어매칭</option>
+                            <option value="11">소비성향매칭</option>
+                            <option value="12">성향매칭</option>
+                            <option value="13">오디언스매칭</option>
+                            <option value="14">카테고리매칭</option>
+                            <option value="15">베이스광고</option>
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <div class="textcheckBox type-wr-align-bt-st">
+                        <input type="checkbox" name="filter-rp" id="ft-rp02" value="02">
+                        <label for="ft-rp02">네이티브</label>
+                    </div>
+                    <div class="select">
+                        <select disabled>
+                            <option value="1" selected="">전체</option>
+                            <option value="2">플러스콜매칭</option>
+                            <option value="3">콜리턴매칭</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <!--//sec-row-->
+            <div class="btn-wrap">
+                <button type="button" class="btn-l-m btn-blue">적용</button>
+            </div>
+            <!--//btn-wrap-->
+        </div>
+        <!--//hd-con-->
+    </div>
+    <!--//MDwrap-->
+
+    <!--알림 모달-->
+    <div class="MDwrap hd-alarm" id="hd-alarm">
+        <div class="header type-align-bt">
+            <div class="type-align-st">
+                <button type="button" class="btn-prev frist"><i class="ico-arrow-l-bk"></i></button>
+                <strong>알림</strong>
+            </div>
+            <button type="button" class=""><i class="ico-del"></i></button>
+        </div>
+        <!--//header-->
+        <div class="hd-con">
+            <div class="select type-align-bt">
+                <select>
+                    <option value="1" selected="">전체</option>
+                    <option value="2">예산</option>
+                    <option value="3">캠페인 성과</option>
+                </select>
+            </div>
+            <!--//select-->
+            <div class="alarm-list">
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>소재 품질지수가 다른 그룹에 비해
+                                현저히 낮습니다. 소재를 변경해보세요!</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>KPI미달성 캠페인이 있습니다.
+                                UV 캠페인을 점검해 보세요.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>예산</dt>
+                            <dd>총 ROAS_1,500%의 금액(-56%) 미소진
+                                되었습니다.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>소재 품질지수가 다른 그룹에 비해
+                                현저히 낮습니다. 소재를 변경해보세요!</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>KPI미달성 캠페인이 있습니다.
+                                UV 캠페인을 점검해 보세요.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>예산</dt>
+                            <dd>총 ROAS_1,500%의 금액(-56%) 미소진
+                                되었습니다.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>소재 품질지수가 다른 그룹에 비해
+                                현저히 낮습니다. 소재를 변경해보세요!</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>캠페인 성과</dt>
+                            <dd>KPI미달성 캠페인이 있습니다.
+                                UV 캠페인을 점검해 보세요.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+                <div class="listItem">
+                    <div>
+                        <dl>
+                            <dt>예산</dt>
+                            <dd>총 ROAS_1,500%의 금액(-56%) 미소진
+                                되었습니다.</dd>
+                            <dd class="day">2022.03.22</dd>
+                        </dl>
+                    </div>
+                    <button type="button"><i class="ico-arrow-r-bk"></i></button>
+                    <!--drag 삭제-->
+                    <button type="button" class="btn-drag-del" style="display:none">삭제</button>
+                </div>
+                <!--//listItem-->
+            </div>
+            <!--//alarm-list-->
+        </div>
+        <!--//hd-con-->
+    </div>
+    <!--//MDwrap-->
+</body>
+
+</html>
