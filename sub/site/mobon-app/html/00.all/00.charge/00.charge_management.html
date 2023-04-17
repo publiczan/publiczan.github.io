@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimun-seale=1.0, user-scalable=no" />
+    <meta name="description" content="mobon" />
+    <meta name="keywords" content="mobon" />
+    <meta name="author" content="mobon" />
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-title" content="mobon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOBON</title>
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../../../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/daterangepicker_popup.js"></script>
+    <!--//날짜선택관련-->
+
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!--//slider-->
+
+</head>
+
+<body>
+    <div id="Wrap">
+        <header class="header">
+            <div class="type-align-st">
+                <button type="button" class="btn-prev"><i class="ico-arrow-l-bk"></i></button>
+                <strong>결제하기</strong>
+            </div>
+            <!--//title-->
+        </header>
+        <!--//header-->
+        <nav>
+            <!--하단 fixed nav-->
+            <ul class="fx-list">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-home"></i>
+                        홈
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-ad"></i>
+                        광고 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-report"></i>
+                        보고서
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="javascript:void(0);" class="btn-hamburger" data-hd="allmenu">
+                        <i class="navico-all"></i>
+                        전체
+                    </a>
+                </li>
+            </ul>
+            <!--//fx-list-->
+
+            <!--하단 대행사 fixed nav-->
+            <ul class="aduser-list" style="display: none;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-admgt"></i>
+                        광고주 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-user"></i>
+                        정보수정
+                    </a>
+                </li>
+            </ul>
+            <!--//aduser-list-->
+        </nav>
+        <!--//nav-->
+        <article class="contents-wrapper charge">
+            <section class="contents-con line-type">
+                <div class="sec-row">
+                    <div class="sec-hd">
+                        <strong>결제 유형</strong>
+                    </div>
+                    <!--//sec-hd-->
+                    <div class="sec-con">
+                        <div class="select">
+                            <select>
+                                <option value="1" selected="">신용카드</option>
+                                <option value="2">무통장입금</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--//sec-con-->
+                </div>
+                <!--//sec-row-->
+                <!--결제유형 > 신용카드-->
+                <div>
+                    <div class="sec-row">
+                        <div class="sec-hd">
+                            <strong>결제/충전 금액 확인하기</strong>
+                        </div>
+                        <!--//sec-hd-->
+                        <div class="sec-con">
+                            <div class="type-align-st">
+                                <strong>결제금액</strong>
+                                <div class="type01 type-col-align-bt-st">
+                                    <div class="select">
+                                        <select>
+                                            <option value="1" selected="">55만원</option>
+                                            <option value="2">110만원</option>
+                                            <option value="3">165만원</option>
+                                            <option value="4">220만원</option>
+                                            <option value="5">직접입력</option>
+                                        </select>
+                                    </div>
+                                    <!--
+                                    select값 직접입력 일때  display:blcok
+                                -->
+                                    <div class="inputBox" style="display:none">
+                                        <input type="text" class="size-df">
+                                    </div>
+                                </div>
+                            </div>
+                            <!--//div-->
+
+                            <div class="type-align-st">
+                                <strong>충전 예정 금액</strong>
+                                <div class="inputBox disabled-txt">
+                                    <input type="text" class="size-df" placeholder="5500" disabled>
+                                </div>
+                            </div>
+                            <!--//div-->
+                            <div>
+                                <em class="g-style">
+                                    ※ 결제금액은 부가세(10%)를 포함한 금액입니다.
+                                    실제 충전금액은 결제금액에서 부가세 10%를 제외한 금액이
+                                    충전됩니다.
+                                </em>
+                                <em class="g-style">
+                                    ※ 카드 결제는 세금계산서가 발행되지 않습니다.
+                                    결제 현황 페이지에서 매출전표로 확인 바랍니다.
+                                </em>
+                            </div>
+                            <!--//div-->
+                        </div>
+                        <!--//sec-con-->
+                    </div>
+                    <!--//sec-row-->
+                    <div class="sec-row">
+                        <div class="sec-hd type-align-bt">
+                            <div class="type-align-st">
+                                <strong>결제자 정보</strong>
+                                <div class="tooltip">
+                                    <i class="ico-question"></i>
+                                    <span>결제자 정보의 메일로 영수증이 발송되니 결제하시는 분의 정보를 정확하게 입력 부탁드립니다.</span>
+                                </div>
+                            </div>
+                            <button type="button" class="txt-btn ev-btn">저장</button>
+                            <!--스낵바 노출-->
+                            <div class="copied">
+                                <span>
+                                    저장되었습니다.
+                                </span>
+                            </div>
+                            <!--//copied-->
+                        </div>
+                        <!--//sec-hd-->
+                        <div class="sec-con">
+                            <div class="type-align-st">
+                                <strong>결제자명</strong>
+                                <div class="inputBox">
+                                    <input type="text" class="size-df" placeholder="인라이플">
+                                </div>
+                            </div>
+                            <!--//div-->
+                            <div class="type-align-st">
+                                <strong>이메일</strong>
+                                <div class="inputBox">
+                                    <input type="email" class="size-df" placeholder="enliple@mobon.net">
+                                </div>
+                            </div>
+                            <!--//div-->
+                            <div class="type-align-st">
+                                <strong>휴대폰번호</strong>
+                                <div class="inputBox">
+                                    <input type="number" class="size-df" placeholder="‘-’ 빼고 숫자만 입력하세요.">
+                                </div>
+                            </div>
+                            <!--//div-->
+                        </div>
+                        <!--//sec-con-->
+                    </div>
+                    <!--//sec-row-->
+                    <div class="btn-wrap">
+                        <button type="button" class="btn-l-m btn-blue">결제하기</button>
+                    </div>
+                    <!--//btn-wrap-->
+                </div>
+                <!--//div-->
+                <!--결제유형 > 신용카드-->
+                <div>
+                    <div class="sec-row">
+                        <div class="sec-hd">
+                            <strong>결제/충전 금액 확인하기</strong>
+                        </div>
+                        <!--//sec-hd-->
+                        <div class="sec-con">
+                            <div>
+                                <em class="g-style">
+                                    ※ 전용계좌로 입금하시면 자동으로 계정 내 포인트 충전이
+                                    완료됩니다.
+                                </em>
+                                <em class="g-style">
+                                    ※ 결제금액은 부가세(10%)를 포함한 금액입니다.
+                                    실제 충전금액은 결제금액에서 부가세 10%를 제외한 금액이
+                                    충전됩니다.
+                                </em>
+                            </div>
+                            <!--//div-->
+                        </div>
+                        <!--//sec-con-->
+                    </div>
+                    <!--//sec-row-->
+                    <div class="sec-row type01">
+                        <div class="sec-hd">
+                            <strong>전용 계좌 발급여부</strong>
+                        </div>
+                        <!--//sec-hd-->
+                        <div class="sec-con">
+                            <div class="ch-acc">
+                                <p class="txt-red-df">발급된 계좌정보가 없습니다.</p>
+                                <!--발급완료-->
+                                <span class="badge-mark blue" style="display: none;">발급완료</span>
+                            </div>
+                        </div>
+                        <!--//sec-con-->
+                    </div>
+                    <!--//sec-row-->
+                    <div class="sec-row">
+                        <div class="sec-hd">
+                            <strong>전용 계좌 정보</strong>
+                        </div>
+                        <!--//sec-hd-->
+                        <div class="sec-con">
+                            <div class="ch-acc">
+                                <!--전용계좌 신규발급-->
+                                <div>
+                                    <p>(계좌명 : 광고주명_MOBON)</p>
+                                    <div class="btn-wrap">
+                                        <button type="button" class="btn-l-m btn-blue ev-btn">전용 계좌 신규발급</button>
+                                        <!--스낵바 노출-->
+                                        <div class="copied">
+                                            <span>
+                                                홍길동 전용 계좌가 발급되었습니다
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <!--//btn-wrap-->
+                                </div>
+                                <!--//div-->
+
+                                <!--계좌번호 복사-->
+                                <div class="type-col-align-st-st" style="display:none">
+                                    <p>
+                                        <span>국민은행 72189-01-409421</span><br>
+                                        계좌명 : 광고주명 MOBON
+                                    </p>
+                                    <!--계좌복사하기-->
+                                    <div>
+                                        <button type="button" onclick="copyToClipboard('국민은행 72189-01-409421')"
+                                            class=" btn-s-s btn-blue ev-btn">복사
+                                        </button>
+                                        <span class="copied">전용 계좌 정보가
+                                            복사 되었습니다
+                                        </span>
+                                    </div>
+                                </div>
+                                <!--//div-->
+                            </div>
+                            <!--//"ch-acc-->
+                        </div>
+                        <!--//sec-con-->
+
+                        <!--복사 js-->
+                        <script>
+                            function copyToClipboard(val) {
+                                const t = document.createElement("textarea");
+                                document.body.appendChild(t);
+                                t.value = val;
+                                t.select();
+                                document.execCommand('copy');
+                                document.body.removeChild(t);
+                            }
+                        </script>
+                    </div>
+                    <!--//sec-row-->
+                </div>
+                <!--//div-->
+            </section>
+            <!--//contents-con-->
+        </article>
+        <!--//contents-wrapper-->
+        <footer></footer>
+        <!--//footer-->
+    </div>
+    <div class="MDwrap df-md ch-filter" id="ch-filter">
+        <div class="md-con">
+            <div class="sec-row">
+                <strong>결제 유형</strong>
+                <div class="textcheckBox type-wr-align-bt-st">
+                    <input type="checkbox" name="filter-ch" id="ft-ch00" value="00">
+                    <label for="ft-ch00">신용카드</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch01" value="01">
+                    <label for="ft-ch01">가장계좌</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch02" value="02">
+                    <label for="ft-ch02">무통장<br>입금</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch03" value="03">
+                    <label for="ft-ch03">포인트<br>충전</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch04" value="05">
+                    <label for="ft-ch04">후불</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch05" value="05">
+                    <label for="ft-ch05">환불</label>
+                    <input type="checkbox" name="filter-ch" id="ft-ch06" value="06">
+                    <label for="ft-ch06">카드 환불</label>
+                </div>
+            </div>
+            <!--//sec-row-->
+            <div class="btn-wrap">
+                <button type="button" class="btn-l-m btn-blue">적용</button>
+            </div>
+            <!--//btn-wrap-->
+        </div>
+        <!--//hd-con-->
+    </div>
+    <!--//MDwrap-->
+    <!--slider js-->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                renderBullet: function (index, className) {
+                    return '<span class="' + className + '">' + (index + 1) + "</span>";
+                },
+            },
+        });
+    </script>
+    <!--//slider js-->
+</body>
+
+</html>

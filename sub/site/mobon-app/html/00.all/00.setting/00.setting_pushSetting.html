@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimun-seale=1.0, user-scalable=no" />
+    <meta name="description" content="mobon" />
+    <meta name="keywords" content="mobon" />
+    <meta name="author" content="mobon" />
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-title" content="mobon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOBON</title>
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../../js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../../../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../../js/lib/daterangepicker_popup.js"></script>
+    <!--//날짜선택관련-->
+
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!--//slider-->
+
+</head>
+
+<body>
+    <div id="Wrap">
+        <header class="header">
+            <div class="type-align-st">
+                <button type="button" class="btn-prev frist"><i class="ico-arrow-l-bk"></i></button>
+                <strong>알림 설정</strong>
+            </div>
+        </header>
+        <!--//header-->
+
+        <nav>
+            <!--하단 fixed nav-->
+            <ul class="fx-list">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-home"></i>
+                        홈
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-ad"></i>
+                        광고 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-report"></i>
+                        보고서
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="javascript:void(0);" class="btn-hamburger" data-hd="allmenu">
+                        <i class="navico-all"></i>
+                        전체
+                    </a>
+                </li>
+            </ul>
+            <!--//fx-list-->
+
+            <!--하단 대행사 fixed nav-->
+            <ul class="aduser-list" style="display: none;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-admgt"></i>
+                        광고주 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-user"></i>
+                        정보수정
+                    </a>
+                </li>
+            </ul>
+            <!--//aduser-list-->
+        </nav>
+        <!--//nav-->
+        <article class="contents-wrapper all">
+            <div class="contents-con menu">
+                <ul class="gnbMenu push">
+                    <!--푸시알림 checked > 푸시알림모달-->
+                    <li class="push-alarm non-list">
+                        <span>모비온 알림</span>
+                        <div class="switchbox type-align-st">
+                            <input type="checkbox" name="switch" id="gnb-onoff00">
+                            <label for="gnb-onoff00"></label>
+                        </div>
+                        <!--//switchbox-->
+                    </li>
+                    <!--//li-->
+                    <li class="add-kakao">
+                        <span>카카오 알림 사용여부</span>
+                        <div class="switchbox type-align-st">
+                            <input type="checkbox" name="switch" id="gnb-onoff01">
+                            <label for="gnb-onoff01"></label>
+                        </div>
+                        <!--//switchbox-->
+
+                        <!--카카오 알림 사용여부 on일때 button style="display:block"-->
+                        <button type="button" class="kakao-push" style="display: none;">
+                            <i class="ico-arrow-r-bk"></i>
+                        </button>
+                    </li>
+                    <!--//li-->
+                    <li>
+                        <span>예산</span>
+                        <div class="switchbox type-align-st">
+                            <input type="checkbox" name="switch" id="gnb-onoff02">
+                            <label for="gnb-onoff02"></label>
+                        </div>
+                        <!--//switchbox-->
+                    </li>
+                    <!--//li-->
+                    <li>
+                        <span>캠페인 성과</span>
+                        <div class="switchbox type-align-st">
+                            <input type="checkbox" name="switch" id="gnb-onoff03">
+                            <label for="gnb-onoff03"></label>
+                        </div>
+                        <!--//switchbox-->
+                    </li>
+                    <!--//li-->
+                </ul>
+                <!--//gnbmenu-->
+                <em class="g-style">
+                    * 기기의 알림 설정은 휴대폰 설정 > 알림 >모비온 에서 진행해주세요.
+                </em>
+            </div>
+            <!--//allmenu-gnb-->
+        </article>
+        <!--//contents-wrapper-->
+    </div>
+
+    <!--푸시알림모달--->
+    <div class="MDwrap ct-md" id="push-alarm">
+        <div class="md-con">
+            <p>기기 알림 에서 설정 할 수 있어요</p>
+        </div>
+        <!--//hd-con-->
+        <div class="md-btn">
+            <button type="button" class="btn-lightgray ico-none">아니오</button>
+            <button type="button" class="btn-blue">설정</button>
+        </div>
+    </div>
+    <!--//MDwrap-->
+</body>
+
+</html>

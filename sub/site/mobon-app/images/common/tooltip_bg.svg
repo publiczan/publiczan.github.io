@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="286" height="123.899" viewBox="0 0 286 123.899">
+    <defs>
+        <filter id="9cu3has2da" x="0" y="0" width="286" height="123.899" filterUnits="userSpaceOnUse">
+            <feOffset dx="3" dy="3"/>
+            <feGaussianBlur stdDeviation="3" result="blur"/>
+            <feFlood flood-opacity=".102"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#9cu3has2da)" data-name="그룹 1000">
+        <g data-name="합치기 3" style="fill:#fff" transform="translate(0 -.005)">
+            <path d="M-1830.5-3818.93h-238a14.405 14.405 0 0 1-10.253-4.247 14.405 14.405 0 0 1-4.247-10.253v-63.932c0-3.873 1.509-7.515 4.247-10.253a14.404 14.404 0 0 1 10.253-4.248h38.79l.149-.219 7.71-11.357 7.709 11.357.149.22h183.494c3.872 0 7.513 1.508 10.252 4.247a14.406 14.406 0 0 1 4.247 10.253v63.932c0 3.873-1.508 7.514-4.247 10.253a14.404 14.404 0 0 1-10.253 4.247z" style="stroke:none" transform="translate(2089.5 3930.33)"/>
+            <path d="M-1830.5-3819.43c3.74 0 7.255-1.456 9.9-4.1a13.908 13.908 0 0 0 4.1-9.9v-63.932c0-3.74-1.456-7.256-4.1-9.9a13.908 13.908 0 0 0-9.9-4.1h-183.758l-7.593-11.186-7.594 11.185h-39.055c-3.74 0-7.255 1.457-9.9 4.101a13.909 13.909 0 0 0-4.1 9.9v63.932c0 3.74 1.457 7.255 4.1 9.9a13.908 13.908 0 0 0 9.9 4.1h238m0 1h-238c-8.284 0-15-6.716-15-15v-63.932c0-8.285 6.716-15 15-15h38.525l8.124-11.967 8.122 11.966h183.23c8.283 0 14.999 6.716 14.999 15v63.933c0 8.284-6.716 15-15 15z" style="fill:#ebebeb;stroke:none" transform="translate(2089.5 3930.33)"/>
+        </g>
+    </g>
+</svg>

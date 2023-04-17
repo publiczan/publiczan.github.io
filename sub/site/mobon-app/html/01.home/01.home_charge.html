@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0,minimun-seale=1.0, user-scalable=no" />
+    <meta name="description" content="mobon" />
+    <meta name="keywords" content="mobon" />
+    <meta name="author" content="mobon" />
+    <!-- mobile -->
+    <meta name="apple-mobile-web-app-title" content="mobon">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <link rel="apple-touch-icon" type="image/x-icon" href="/">
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOBON</title>
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/common.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../../js/lib/daterangepicker_popup.js"></script>
+    <!--//날짜선택관련-->
+    <!--slider-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+    <!--//slider-->
+
+</head>
+
+<body>
+    <div id="Wrap">
+        <header class="header">
+            <strong>결제 충전하기</strong>
+            <!--//title-->
+            <div class="hd-btn type-align-en">
+                <button type="button" class="btn-alarm" >
+                    <i class="ico-alarm"></i>
+                    <em id="alarm-badge">3</em>
+                </button>
+            </div>
+            <!--//hd-btn-->
+        </header>
+        <!--//header-->
+        <nav>
+            <!--하단 fixed nav-->
+            <ul class="fx-list">
+                <li class="on">
+                    <a href="javascript:void(0);">
+                        <i class="navico-home"></i>
+                        홈
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-ad"></i>
+                        광고 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-report"></i>
+                        보고서
+                    </a>
+                </li>
+                <li class="on">
+                    <a href="javascript:void(0);" class="btn-hamburger" data-hd="allmenu">
+                        <i class="navico-all"></i>
+                        전체
+                    </a>
+                </li>
+            </ul>
+            <!--//fx-list-->
+
+            <!--하단 대행사 fixed nav-->
+            <ul class="aduser-list" style="display: none;">
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-admgt"></i>
+                        광고주 관리
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);">
+                        <i class="navico-user"></i>
+                        정보수정
+                    </a>
+                </li>
+            </ul>
+            <!--//aduser-list-->
+        </nav>
+        <!--//nav-->
+        <article class="contents-wrapper home">
+            <section class="contents-con line-type">
+                <div class="sec-row">
+                    <div class="sec-hd">
+                        <strong>결제 유형</strong>
+                    </div>
+                    <!--//sec-hd-->
+                    <div class="sec-con">
+                        <div class="select">
+                            <select>
+                                <option value="1" selected="">신용카드</option>
+                                <option value="2">무통장입금</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--//sec-con-->
+                </div>
+                <!--//sec-row-->
+
+                <div class="sec-row">
+                    <div class="sec-hd type-align-bt">
+                        <div class="type-align-st">
+                            <strong>결제자 정보</strong>
+                        </div>
+                        <button type="button" class="txt-btn">저장</button>
+                    </div>
+                    <!--//sec-hd-->
+                    <div class="sec-con">
+                        <div class="type-align-st">
+                            <strong>결제자명</strong>
+                            <div class="inputBox">
+                                <input type="text" class="size-df" placeholder="결제자명을 입력하세요.">
+                            </div>
+                        </div>
+                        <!--//div-->
+                        <div class="type-align-st">
+                            <strong>이메일</strong>
+                            <div class="inputBox">
+                                <input type="email" class="size-df" placeholder="enliple@mobon.net">
+                            </div>
+                        </div>
+                        <!--//div-->
+                        <div class="type-align-st">
+                            <strong>휴대폰번호</strong>
+                            <div class="inputBox">
+                                <input type="number" class="size-df" placeholder="‘-’ 빼고 숫자만 입력하세요.">
+                            </div>
+                        </div>
+                        <!--//div-->
+                    </div>
+                    <!--//sec-con-->
+                </div>
+                <!--//sec-row-->
+                <div class="sec-row">
+                    <div class="sec-hd">
+                        <strong>결제/충전 금액 확인하기</strong>
+                    </div>
+                    <!--//sec-hd-->
+                    <div class="sec-con">
+                        <div class="type-align-st">
+                            <strong>결제금액</strong>
+                            <div class="type01 type-col-align-bt-st">
+                                <div class="select">
+                                    <select>
+                                        <option value="1" selected="">55만원</option>
+                                        <option value="2">110만원</option>
+                                        <option value="3">165만원</option>
+                                        <option value="4">220만원</option>
+                                        <option value="5">직접입력</option>
+                                    </select>
+                                </div>
+                                <!--
+                                    select값 직접입력 일때  display:blcok
+                                -->
+                                <div class="inputBox" style="display:none">
+                                    <input type="text" class="size-df">
+                                </div>
+                            </div>
+                        </div>
+                        <!--//div-->
+
+                        <div class="type-align-st">
+                            <strong>충전 예정 금액</strong>
+                            <div class="inputBox disabled-txt">
+                                <input type="text" class="size-df" placeholder="5500" disabled>
+                            </div>
+                        </div>
+                        <!--//div-->
+                    </div>
+                    <!--//sec-con-->
+                </div>
+                <!--//sec-row-->
+
+                <div class="btn-wrap">
+                    <button type="button" class="btn-l-m btn-blue">결제하기</button>
+                </div>
+                <!--//btn-wrap-->
+
+            </section>
+            <!--//contents-con-->
+        </article>
+        <!--//contents-wrapper-->
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="그룹 5508">
+        <g data-name="타원 259" style="fill:#fff;stroke:#85b74e">
+            <circle cx="12" cy="12" r="12" style="stroke:none"/>
+            <circle cx="12" cy="12" r="11.5" style="fill:none"/>
+        </g>
+        <path d="M12.911 11.905 9.828 8.823a.3.3 0 0 0-.216-.089h-.335a5.28 5.28 0 1 0-.543.543v.335a.312.312 0 0 0 .089.216l3.082 3.082a.3.3 0 0 0 .432 0l.574-.574a.3.3 0 0 0 0-.431zm-7.63-2.562a4.062 4.062 0 1 1 4.062-4.062 4.061 4.061 0 0 1-4.062 4.062z" transform="translate(5 6)" style="fill:#7ca74e"/>
+    </g>
+</svg>
