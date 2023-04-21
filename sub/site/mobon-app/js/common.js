@@ -177,7 +177,7 @@ var clickcommon = function () {
 
 
     $('.calendar').on('click', function () {
-        $(".daterangepicker").css('bottom', '5.5rem');
+        $(".daterangepicker").css('bottom', '0');
         $('body').append('<div class="dim">').css('overflow', 'hidden')
     });
     //캘린더 애니메이션        
@@ -346,12 +346,15 @@ var setting = function () {
 
 //툴팁 이벤트
 var tooltip = function () {
-    $('.tooltip').hover(function () {
-        $(this).parent('div,dt').css('position', 'relative').find('span').css('display', 'block')
-    }, function () {
-        $(this).parent('div,dt').css('position', '').find('span').css('display', 'none')
-    });
+    // $('.tooltip').hover(function () {
+    //     $(this).parent('div,dt').css('position', 'relative').find('span').css('display', 'block')
+    // }, function () {
+    //     $(this).parent('div,dt').css('position', '').find('span').css('display', 'none')
+    // });
     //tooltip hover
+    $('.tooltip').on('click', function () {
+        $(this).toggleClass('active')
+    });
 }
 
 //달력

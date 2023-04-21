@@ -411,8 +411,8 @@
         //
 
         this.container.find('.drp-calendar')
-            //.on('click.daterangepicker', '.prev', $.proxy(this.clickPrev, this))
-            //.on('click.daterangepicker', '.next', $.proxy(this.clickNext, this))
+            .on('click.daterangepicker', '.prev', $.proxy(this.clickPrev, this))
+            .on('click.daterangepicker', '.next', $.proxy(this.clickNext, this))
             .on('mousedown.daterangepicker', 'td.available', $.proxy(this.clickDate, this))
             .on('mouseenter.daterangepicker', 'td.available', $.proxy(this.hoverDate, this))
             .on('change.daterangepicker', 'select.yearselect', $.proxy(this.monthOrYearChanged, this))
@@ -695,13 +695,13 @@
 
             // add empty cell for week number
             if (this.showWeekNumbers || this.showISOWeekNumbers)
-                //html += '<th></th>';
+                html += '<th></th>';
 
-                if ((!minDate || minDate.isBefore(calendar.firstDay)) && (!this.linkedCalendars || side == 'left')) {
-                    // html += '<th class="prev available"><span></span></th>';
-                } else {
-                    //html += '<th></th>';
-                }
+            if ((!minDate || minDate.isBefore(calendar.firstDay)) && (!this.linkedCalendars || side == 'left')) {
+                html += '<th class="prev available"><span></span></th>';
+            } else {
+                html += '<th></th>';
+            }
 
             var dateHtml = calendar[1][1].format(" YYYY") + '-' + this.locale.monthNames[calendar[1][1].month()];
 
@@ -738,9 +738,9 @@
                 dateHtml = monthHtml + yearHtml;
             }
 
-            html += '<th colspan="7" class="month">' + dateHtml + '</th>';
+            html += '<th colspan="5" class="month">' + dateHtml + '</th>';
             if ((!maxDate || maxDate.isAfter(calendar.lastDay)) && (!this.linkedCalendars || side == 'right' || this.singleDatePicker)) {
-                // html += '<th class="next available"><span></span></th>';
+                html += '<th class="next available"><span></span></th>';
             } else {
                 html += '<th></th>';
             }
@@ -1194,29 +1194,29 @@
             }
         },
 
-        // clickPrev: function (e) {
-        //     var cal = $(e.target).parents('.drp-calendar');
-        //     if (cal.hasClass('left')) {
-        //         this.leftCalendar.month.subtract(1, 'month');
-        //         if (this.linkedCalendars)
-        //             this.rightCalendar.month.subtract(1, 'month');
-        //     } else {
-        //         this.rightCalendar.month.subtract(1, 'month');
-        //     }
-        //     this.updateCalendars();
-        // },
+        clickPrev: function (e) {
+            var cal = $(e.target).parents('.drp-calendar');
+            if (cal.hasClass('left')) {
+                this.leftCalendar.month.subtract(1, 'month');
+                if (this.linkedCalendars)
+                    this.rightCalendar.month.subtract(1, 'month');
+            } else {
+                this.rightCalendar.month.subtract(1, 'month');
+            }
+            this.updateCalendars();
+        },
 
-        // clickNext: function (e) {
-        //     var cal = $(e.target).parents('.drp-calendar');
-        //     if (cal.hasClass('left')) {
-        //         this.leftCalendar.month.add(1, 'month');
-        //     } else {
-        //         this.rightCalendar.month.add(1, 'month');
-        //         if (this.linkedCalendars)
-        //             this.leftCalendar.month.add(1, 'month');
-        //     }
-        //     this.updateCalendars();
-        // },
+        clickNext: function (e) {
+            var cal = $(e.target).parents('.drp-calendar');
+            if (cal.hasClass('left')) {
+                this.leftCalendar.month.add(1, 'month');
+            } else {
+                this.rightCalendar.month.add(1, 'month');
+                if (this.linkedCalendars)
+                    this.leftCalendar.month.add(1, 'month');
+            }
+            this.updateCalendars();
+        },
 
         hoverDate: function (e) {
 

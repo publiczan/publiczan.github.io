@@ -40,7 +40,7 @@
         max-height: 55rem;
 
         &.active {
-            bottom: 5.5rem;
+            bottom: 0;
             opacity: 1;
             animation: modal 0.3s ease forwards;
         }

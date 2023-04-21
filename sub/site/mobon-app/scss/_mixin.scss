@@ -79,7 +79,7 @@ $loading-item-transform-origin: ($loading-item-translate - 50%) * -1;
     }
 
     100% {
-        bottom: 5.5rem;
+        bottom: 0;
     }
 }
 
@@ -459,8 +459,8 @@ $loading-item-transform-origin: ($loading-item-translate - 50%) * -1;
     input[type="checkbox"]+label:before {
         @include checkbox-off;
         @include checkbox-label-bf;
-        width: 2rem;
-        height: 2rem;
+        width: 2.1rem;
+        height: 2.1rem;
     }
 
     input[type="checkbox"]:checked+label:before {

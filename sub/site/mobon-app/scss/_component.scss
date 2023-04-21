@@ -1016,6 +1016,15 @@ span {
 .tooltip {
     margin-left: 1rem;
 
+    &.active {
+
+        position: relative;
+
+        span {
+            display: block;
+        }
+    }
+
     i {
         cursor: pointer;
 
@@ -1040,6 +1049,7 @@ span {
         // }
 
         @include tooltip;
+
 
     }
 
@@ -1541,14 +1551,14 @@ i {
 
     &.ico-question {
         position: relative;
-        width: 1.7rem;
+        width: 1.8rem;
         height: 1.8rem;
         cursor: pointer;
 
         &::before {
             @include beforeIco;
             @include ico-question;
-            width: 1.7rem;
+            width: 1.8rem;
             height: 1.8rem;
         }
     }

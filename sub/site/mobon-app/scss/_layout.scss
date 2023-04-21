@@ -164,6 +164,7 @@
 }
 
 nav {
+    display: none;
     position: fixed;
     z-index: 9999;
     bottom: 0;
@@ -486,7 +487,7 @@ nav {
 .adfx-btn {
     position: fixed;
     z-index: 999;
-    bottom: 6rem;
+    bottom: 1rem;
     right: 1rem;
     width: 7.3rem;
     height: 7.3rem;
@@ -500,7 +501,7 @@ nav {
     position: relative;
     overflow: hidden;
     width: 100%;
-    height: calc(100vh - 5.5rem);
+    height: 100vh;
     padding: 1.5rem;
     font-size: $font-15;
     font-family: $font-r;
@@ -807,7 +808,7 @@ nav {
 
                         ul {
                             @include ul-list01;
-                            width: 16vh;
+                            width: 20vh;
 
                             li {
                                 width: calc(50%);
@@ -880,4 +881,15 @@ nav {
 
         //sec-row line-type
     }
+
+    footer {
+        margin: 1.5rem auto 2rem;
+    }
+}
+
+address {
+    font-size: 1.2rem;
+    line-height: 3rem;
+    color: #999;
+    text-align: center;
 }

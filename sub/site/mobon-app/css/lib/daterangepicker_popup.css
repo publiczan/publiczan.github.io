@@ -138,7 +138,31 @@
 
 .daterangepicker .calendar-table .next span,
 .daterangepicker .calendar-table .prev span {
-    display: none;
+    color: #fff;
+    border: solid black;
+    border-width: 0 2px 2px 0;
+    border-radius: 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.daterangepicker .calendar-table .next span {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+.daterangepicker .calendar-table .prev span {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.daterangepicker .calendar-table .next span,
+.daterangepicker .calendar-table .prev span {
+    border: solid #222;
+    border-width: 0 2px 2px 0;
+    border-radius: 0;
+    display: inline-block;
+    padding: 3px;
 }
 
 .daterangepicker .calendar-table thead tr:first-of-type th {
