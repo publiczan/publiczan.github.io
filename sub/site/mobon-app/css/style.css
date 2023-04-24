@@ -91,6 +91,10 @@ html, body { width: 100%; font-family: "NotoSansR"; font-size: 14px; color: #222
 /*ico*/
 html { font-size: 62.5%; }
 
+@media screen and (min-width: 375px) { html { font-size: 65%; } }
+
+@media screen and (min-width: 412px) { html { font-size: 70%; } }
+
 a, button { transition: all 0.2s ease-in-out; }
 
 /********** scrollbar **********/
@@ -209,7 +213,7 @@ input[type="checkbox"]:checked + label:before { content: ""; }
 
 .checkBox input[type="checkbox"] + label { margin: 0; display: flex; justify-content: flex-start; display: flex; align-items: center; font-size: 1.4rem; cursor: pointer; }
 
-.checkBox input[type="checkbox"] + label:before { background-image: url("../images/common/check_off.svg"); content: ""; display: block; margin: 5px 10px 5px 0; width: 2.1rem; height: 2.1rem; }
+.checkBox input[type="checkbox"] + label:before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; background-image: url("../images/common/check_off.svg"); content: ""; display: block; margin: 5px 10px 5px 0; width: 2.1rem; height: 2.1rem; }
 
 .checkBox input[type="checkbox"]:checked + label:before { content: ""; background-image: url("../images/common/check_on.svg"); }
 
@@ -581,7 +585,9 @@ button.btn-camlist { position: relative; }
 
 button.btn-camlist i { width: 2.4rem; height: 2.4rem; background-image: url("../images/btn_list.svg"); background-size: 100%; }
 
-i { position: relative; }
+i { position: relative; background-repeat: no-repeat; }
+
+i::before { background-repeat: no-repeat; }
 
 i.ico-search { width: 1.5rem; height: 1.5rem; }
 

@@ -1,7 +1,19 @@
 @charset 'utf-8';
 
 html {
-    font-size: 62.5%
+    font-size: 62.5%;
+}
+
+@media screen and(min-width: 375px) {
+    html {
+        font-size: 65%;
+    }
+}
+
+@media screen and(min-width: 412px) {
+    html {
+        font-size: 70%;
+    }
 }
 
 a,
@@ -1378,6 +1390,11 @@ button {
 
 i {
     position: relative;
+    background-repeat: no-repeat;
+
+    &::before {
+        background-repeat: no-repeat;
+    }
 
     &.ico-search {
         width: 1.5rem;

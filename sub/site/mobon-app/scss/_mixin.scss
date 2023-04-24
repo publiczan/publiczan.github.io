@@ -457,6 +457,7 @@ $loading-item-transform-origin: ($loading-item-translate - 50%) * -1;
     }
 
     input[type="checkbox"]+label:before {
+        @include beforeIco;
         @include checkbox-off;
         @include checkbox-label-bf;
         width: 2.1rem;
