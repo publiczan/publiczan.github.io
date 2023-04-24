@@ -268,13 +268,12 @@ var check = function () {
 
 //보고서 이벤트
 var report = function () {
-    $('.report .btn-drop').on("click", function (e) {
-        e.stopPropagation()
+    $('.report .btn-drop').on("click", function () {
         $(this).toggleClass('active')
         if ($(this).hasClass("active") == true) {
-            $(this).closest('.listItem').css('max-height', '100%');
+            $(this).closest('.listItem').css('max-height', '100%').addClass('open');
         } else {
-            $(this).closest('.listItem').css('max-height', '');
+            $(this).closest('.listItem').css('max-height', '').removeClass('open');
         }
     });
     //보고서 more버튼 이벤트

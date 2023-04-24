@@ -146,15 +146,25 @@
                             position: relative;
                             overflow: hidden;
                             overflow-x: auto;
-                            max-height: 17rem;
                             padding: 0;
                             margin-top: 2rem;
 
+                            &:not(.total) {
+                                dl {
+                                    &:nth-child(n+7) {
+                                        display: none
+                                    }
+                                }
+                            }
+
                             &.total {
-                                max-height: 22rem;
                                 border-bottom: 3px solid #eaeaea;
 
                                 dl {
+                                    &:nth-child(n+8) {
+                                        display: none
+                                    }
+
                                     &.tit {
                                         background: #f2f4f8;
                                         padding: 1.5rem 0;
@@ -165,18 +175,11 @@
                                         }
                                     }
                                 }
-
-                                .btn-drop {
-                                    top: 19rem;
-
-                                    &.active {
-                                        top: 0
-                                    }
-                                }
                             }
 
                             dl {
                                 @include flex-bt-item;
+
 
                                 dt {
                                     text-align: left;
@@ -202,6 +205,15 @@
                                     border-bottom: 1rem;
                                 }
                             }
+
+                            &.open {
+                                dl {
+                                    &:nth-child(n+7) {
+                                        display: flex;
+                                    }
+                                }
+                            }
+
                         }
                     }
                 }
@@ -220,11 +232,11 @@
                 }
 
                 .btn-drop {
-                    position: absolute;
+                    position: relative;
                     width: 100%;
                     height: 3rem;
                     background: #fff;
-                    top: 14rem;
+                    top: 0;
                     transition: none;
 
                     &.active {
