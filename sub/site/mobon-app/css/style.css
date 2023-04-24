@@ -91,9 +91,13 @@ html, body { width: 100%; font-family: "NotoSansR"; font-size: 14px; color: #222
 /*ico*/
 html { font-size: 62.5%; }
 
-@media screen and (min-width: 375px) { html { font-size: 65%; } }
+@media screen and (min-width: 375px) and (orientation: portrait) { html { font-size: 65%; } }
 
-@media screen and (min-width: 412px) { html { font-size: 70%; } }
+@media screen and (min-width: 412px) and (orientation: portrait) { html { font-size: 70%; } }
+
+@media screen and (min-width: 320px) and (orientation: portrait) { html { font-size: 61%; } }
+
+@media screen and (max-width: 319px) and (orientation: portrait) { html { font-size: 60%; } }
 
 a, button { transition: all 0.2s ease-in-out; }
 
@@ -204,7 +208,7 @@ input[type="checkbox"] + label { font-size: 1.5rem; vertical-align: middle; }
 
 input[type="checkbox"] + label:last-child { margin-right: 0; }
 
-input[type="checkbox"] + label:before { content: ""; display: inline-block; width: 2rem; height: 2rem; margin: 0 7px 3px 0; vertical-align: middle; }
+input[type="checkbox"] + label:before { content: ""; display: inline-block; width: 2rem; height: 2rem; vertical-align: middle; }
 
 input[type="checkbox"]:checked + label:before { content: ""; }
 
@@ -213,7 +217,7 @@ input[type="checkbox"]:checked + label:before { content: ""; }
 
 .checkBox input[type="checkbox"] + label { margin: 0; display: flex; justify-content: flex-start; display: flex; align-items: center; font-size: 1.4rem; cursor: pointer; }
 
-.checkBox input[type="checkbox"] + label:before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; background-image: url("../images/common/check_off.svg"); content: ""; display: block; margin: 5px 10px 5px 0; width: 2.1rem; height: 2.1rem; }
+.checkBox input[type="checkbox"] + label:before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; background-image: url("../images/common/check_off.svg"); content: ""; display: block; width: 2.1rem; height: 2.1rem; margin-right: 5px; }
 
 .checkBox input[type="checkbox"]:checked + label:before { content: ""; background-image: url("../images/common/check_on.svg"); }
 
@@ -234,7 +238,7 @@ input[type="checkbox"]:checked + label:before { content: ""; }
 
 .select { width: 100%; }
 
-.select select { display: inline-block; vertical-align: middle; min-width: 100%; height: 3.6rem; padding: 0.4rem 4rem 0.4rem 1.5rem; font-size: 1.4rem; color: #3e3e3e; line-height: 1; border-radius: 4px; border: 1px solid #d0d0d0; box-shadow: none; appearance: none; cursor: pointer; outline: none; font-family: "NotoSansR"; background: #fff url("../images/common/arrow_black.svg") no-repeat right 1rem center/1rem; }
+.select select { display: inline-block; vertical-align: middle; min-width: 100%; height: 3.6rem; padding: 0.4rem 4rem 0.4rem 1.5rem; font-size: 1.4rem; color: #3e3e3e; border-radius: 4px; border: 1px solid #d0d0d0; box-shadow: none; appearance: none; cursor: pointer; outline: none; font-family: "NotoSansR"; background: #fff url("../images/common/arrow_black.svg") no-repeat right 1rem center/1rem; }
 
 .select select:disabled { color: #bbb; border: 1px solid #d0d0d0; background-color: #f8f8f8; }
 
@@ -714,7 +718,7 @@ i.ico-time::before { content: ""; display: block; background-repeat: no-repeat; 
 
 .header button.alarm-del { display: none; }
 
-nav { position: fixed; z-index: 9999; bottom: 0; width: 100%; height: 5.5rem; border-top: 0.1rem solid #e4e3df; background: #fff; }
+nav { display: none; position: fixed; z-index: 9999; bottom: 0; width: 100%; height: 5.5rem; border-top: 0.1rem solid #e4e3df; background: #fff; }
 
 nav > ul { width: 100%; display: flex; justify-content: space-between; display: flex; align-items: center; height: 5.5rem; }
 
@@ -1030,7 +1034,7 @@ address { font-size: 1.2rem; line-height: 3rem; color: #999; text-align: center;
 
 .contents-wrapper.charge .btn-wrap { margin: 2rem 0 1.5rem; }
 
-.contents-wrapper.charge .contents-con .sec-row .sec-con strong { width: 18vh; }
+.contents-wrapper.charge .contents-con .sec-row .sec-con strong { width: 20vh; }
 
 .contents-wrapper.charge .contents-con .sec-row .sec-con .ch-acc p { font-size: 1.4rem; }
 
@@ -1118,6 +1122,8 @@ address { font-size: 1.2rem; line-height: 3rem; color: #999; text-align: center;
 
 .contents-wrapper.report .contents-con .sec-row.first table thead th { background: #f2f4f8 !important; }
 
+.contents-wrapper.report .contents-con .sec-row .tb-list.type02.show .listItem.total dl.tit dt { padding-left: 0rem; }
+
 .contents-wrapper.report .contents-con .sec-row .tb-list.type02.show .listItem dl { display: flex; justify-content: flex-end; display: flex; align-items: center; }
 
 .contents-wrapper.report .contents-con .sec-row .tb-list.type02.show .listItem dl.tit { display: flex; justify-content: center; display: flex; align-items: center; }
@@ -1134,7 +1140,7 @@ address { font-size: 1.2rem; line-height: 3rem; color: #999; text-align: center;
 
 .contents-wrapper.report .contents-con .sec-row .tb-list.type02 .listItem.total dl.tit { background: #f2f4f8; padding: 1.5rem 0; }
 
-.contents-wrapper.report .contents-con .sec-row .tb-list.type02 .listItem.total dl.tit dt { width: 44%; padding-left: 1.9rem; }
+.contents-wrapper.report .contents-con .sec-row .tb-list.type02 .listItem.total dl.tit dt { width: 44%; padding-left: 1rem; }
 
 .contents-wrapper.report .contents-con .sec-row .tb-list.type02 .listItem dl { display: flex; justify-content: space-between; display: flex; align-items: center; }
 

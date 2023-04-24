@@ -126,6 +126,16 @@
                     &.type02 {
                         &.show {
                             .listItem {
+                                &.total {
+                                    dl {
+                                        &.tit {
+                                            dt {
+                                                padding-left: 0rem;
+                                            }
+                                        }
+                                    }
+                                }
+
                                 dl {
                                     @include flex-en-item;
 
@@ -171,7 +181,7 @@
 
                                         dt {
                                             width: 44%;
-                                            padding-left: 1.9rem;
+                                            padding-left: 1rem;
                                         }
                                     }
                                 }
