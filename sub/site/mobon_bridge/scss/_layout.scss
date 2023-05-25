@@ -1078,11 +1078,27 @@
 
 }
 
-@media screen and(max-width: 767px) {
+@media screen and(max-width: 767px) and (min-width:576px) {
     html {
         font-size: 54%;
 
     }
+}
+
+@media screen and(max-width: 575px) and (min-width:361px) {
+    html {
+        font-size: 48%;
+    }
+}
+
+@media screen and(max-width: 360px) {
+    html {
+        font-size: 40%;
+    }
+}
+
+@media screen and(max-width: 767px) {
+
 
     #Wrap {
         .wrapper {
@@ -1287,17 +1303,5 @@
                 }
             }
         }
-    }
-}
-
-@media screen and(max-width: 575px) and (min-width:361px) {
-    html {
-        font-size: 48%;
-    }
-}
-
-@media screen and(max-width: 360px) {
-    html {
-        font-size: 40%;
     }
 }
