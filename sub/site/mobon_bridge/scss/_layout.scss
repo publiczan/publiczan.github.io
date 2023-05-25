@@ -1289,3 +1289,9 @@
         }
     }
 }
+
+@media screen and(max-width: 360px) {
+    html {
+        font-size: 40%;
+    }
+}

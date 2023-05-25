@@ -674,3 +674,5 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; } }
+
+@media screen and (max-width: 360px) { html { font-size: 40%; } }
