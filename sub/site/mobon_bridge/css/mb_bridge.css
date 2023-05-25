@@ -268,8 +268,8 @@ em.data-ck, span.data-ck { text-align: center; margin: 1rem auto; }
 
 .txtBox p { font-family: "Pretendard-Bold"; font-size: 2.8rem; line-height: 4.5rem; }
 
-@media screen and (max-width: 768px) { .txtBox strong { font-size: 3.6rem; line-height: 5.76rem; }
-  .txtBox p { font-size: 2rem; line-height: 4rem; } }
+@media screen and (max-width: 767px) { .txtBox strong { font-size: 2rem; line-height: 3.2rem; }
+  .txtBox p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; } }
 
 .list.type01 { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
@@ -279,7 +279,7 @@ em.data-ck, span.data-ck { text-align: center; margin: 1rem auto; }
 
 @media screen and (max-width: 1024px) and (min-width: 480px) { .list.type01 .item { width: calc(33.3% - 1rem); } }
 
-@media screen and (max-width: 479px) { .list.type01 .item { width: calc(100%); margin-bottom: 5rem; } }
+@media screen and (max-width: 479px) { .list.type01 .item { width: calc(80%); margin-bottom: 5rem; } }
 
 .list.type01 .item strong { font-size: 3.2rem; color: #010012; }
 
@@ -297,7 +297,7 @@ button { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-
 
 button.df-btn { width: 100%; height: 7rem; border-radius: 3.5rem; font-size: 2.2rem; font-family: "Pretendard-ExtraBold"; }
 
-@media screen and (max-width: 479px) { button.df-btn { font-size: 1.5rem; } }
+@media screen and (max-width: 767px) { button.df-btn { font-size: 1.5rem; height: 3.5rem; } }
 
 button.btn-blue { background: #0063e3; color: #fff; }
 
@@ -445,7 +445,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 @media screen and (max-width: 1024px) and (min-width: 480px) { #Wrap .wrapper .content .box.step03 .row:last-of-type .list.type01 .item { width: calc(50% - 1rem); } }
 
-@media screen and (max-width: 479px) { #Wrap .wrapper .content .box.step03 .row:last-of-type .list.type01 .item { width: calc(100%); margin-bottom: 5rem; height: 100%; } }
+@media screen and (max-width: 479px) { #Wrap .wrapper .content .box.step03 .row:last-of-type .list.type01 .item { width: calc(80%); margin-bottom: 5rem; height: 100%; } }
 
 #Wrap .wrapper .content .box.step03 .row:last-of-type .list.type01 .item p { width: 100%; max-width: 30rem; height: 3.4rem; border-radius: 1.7rem; background: #f5f5f5; margin: 0 auto; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 1.4rem; }
 
@@ -595,6 +595,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step08 .inner { width: 45rem; }
 
+#Wrap .wrapper .content .box.step08 .inner.scroll { height: 100vh; overflow-y: hidden; padding: 12rem 0; }
+
 #Wrap .wrapper .content .box.step08 strong { display: block; font-size: 3.2rem; text-align: center; }
 
 #Wrap .wrapper .content .box.step08 .inputBox { margin-top: 4.9rem; }
@@ -640,42 +642,49 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box .inner { width: 98rem; }
   #Wrap .wrapper .content .box.step03 .txtBox span { display: block; } }
 
-@media screen and (max-width: 1024px) { #Wrap header .mainAdBtn { width: 100% !important; height: 10rem !important; top: 91vh !important; -webkit-box-orient: inherit; -webkit-box-direction: inherit; -ms-flex-direction: inherit; flex-direction: inherit; right: auto !important; border-radius: 0 !important; font-size: 3rem; }
-  #Wrap header .mainAdBtn::after { margin-top: 0; } }
+@media screen and (max-width: 1024px) { #Wrap header .mainAdBtn { width: 100% !important; height: 5rem !important; top: auto !important; bottom: 0; -webkit-box-orient: inherit; -webkit-box-direction: inherit; -ms-flex-direction: inherit; flex-direction: inherit; right: auto !important; border-radius: 0 !important; font-size: 2rem; }
+  #Wrap header .mainAdBtn::after { margin-top: 0; background-size: 50%; } }
 
-@media screen and (max-width: 767px) and (min-width: 576px) { html { font-size: 54%; } }
-
-@media screen and (max-width: 575px) and (min-width: 361px) { html { font-size: 48%; } }
-
-@media screen and (max-width: 360px) { html { font-size: 40%; } }
-
-@media screen and (max-width: 767px) { #Wrap .wrapper .content .box .inner { width: 100%; max-width: 100%; padding: 0 2%; }
-  #Wrap .wrapper .content .box .inner.scroll { padding: 18rem 2%; }
-  #Wrap .wrapper .content .box.step01 .txtBox .tit { font-size: 3.6rem; line-height: 5.2rem; }
-  #Wrap .wrapper .content .box.step01 .txtBox .txt { font-family: "Pretendard-Bold"; font-size: 2rem; line-height: 4rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type01 .txt { font-size: 3.6rem; line-height: 5.2rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type02 p { font-family: "Pretendard-Bold"; font-size: 2rem; line-height: 4rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 p { font-family: "Pretendard-Bold"; font-size: 2rem; line-height: 4rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 strong { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 3.6rem; line-height: 5.2rem; }
+@media screen and (max-width: 767px) { #Wrap header h1 { left: 0; top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 7rem; background: rgba(0, 1, 31, 0.9); }
+  #Wrap header h1 a { padding-left: 1rem; }
+  #Wrap header.other h1 { background: rgba(255, 255, 255, 0.9); }
+  #Wrap nav { right: 1rem; }
+  #Wrap .wrapper .content .box .inner { width: 100%; max-width: 100%; padding: 0 2%; }
+  #Wrap .wrapper .content .box .inner.scroll { padding: 10rem 2%; }
+  #Wrap .wrapper .content .box.step01 .firstArrow { display: none; }
+  #Wrap .wrapper .content .box.step01 .txtBox .tit { font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step01 .txtBox .txt { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox i.badgeico { right: 0; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox i.badgeico::before { background-size: 70%; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type01 .txt { font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type02 p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 strong { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 2rem; line-height: 3.2rem; }
   #Wrap .wrapper .content .box.step02 .row .imgBox.type01 { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   #Wrap .wrapper .content .box.step02 .row .imgBox.type01 > div:first-of-type { margin-bottom: 10rem; }
   #Wrap .wrapper .content .box.step02 .row:nth-of-type(2) { padding-top: 10rem; }
   #Wrap .wrapper .content .box.step03 .txtBox strong span { display: block; }
   #Wrap .wrapper .content .box.step04 .row .txtBox { padding-left: 0; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step04 .row .progressBox > div { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
-  #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar span { font-family: "Pretendard-Bold"; font-size: 2rem; line-height: 4rem; }
-  #Wrap .wrapper .content .box.step04 .row .progressBox > div p { margin-left: 0; font-family: "Pretendard-Bold"; font-size: 2rem; line-height: 4rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar { height: 5rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar span { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div p { margin-left: 0; font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step04 .row:last-of-type { margin-top: 5rem; }
+  #Wrap .wrapper .content .box.step05 .row .txtBox strong { line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step05 .row .txtBox.type strong { font-size: 2rem; line-height: 3.2rem; }
   #Wrap .wrapper .content .box.step05 .row:last-of-type { margin-top: 10rem; }
   #Wrap .wrapper .content .box.step05 .row:last-of-type .videoBox { padding: 1%; }
   #Wrap .wrapper .content .box.step06 .list.type02 { margin-top: 10rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
-  #Wrap .wrapper .content .box.step06 .list.type02 .item .txt strong { font-size: 2.6rem; line-height: 3.6rem; }
-  #Wrap .wrapper .content .box.step06 .list.type02 .item .txt p { font-size: 1.8rem; line-height: 2.6rem; }
+  #Wrap .wrapper .content .box.step06 .list.type02 .item .txt strong { font-size: 1.8rem; line-height: 2.8rem; }
+  #Wrap .wrapper .content .box.step06 .list.type02 .item .txt p { font-size: 1.4rem; line-height: 2rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .bg { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .txt { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; margin-right: 0; }
-  #Wrap .wrapper .content .box.step07 .txtBox strong { font-size: 3rem; line-height: 4.2rem; }
-  #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div { height: 7.8rem; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  #Wrap .wrapper .content .box.step07 .txtBox strong { font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step08 .inner { height: 100% !important; overflow-y: scroll !important; padding: 10rem 2% !important; }
+  #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; } }

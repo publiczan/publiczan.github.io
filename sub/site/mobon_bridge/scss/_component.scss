@@ -342,7 +342,7 @@ span {
 .txtBox {
     @include txtBox;
 
-    @media screen and(max-width: 768px) {
+    @media screen and(max-width: 767px) {
         @include txtBox_m;
     }
 }
@@ -369,7 +369,7 @@ span {
             }
 
             @media screen and(max-width: 479px) {
-                width: calc(100%);
+                width: calc(80%);
                 margin-bottom: 5rem;
             }
 
@@ -425,8 +425,9 @@ button {
         font-size: 2.2rem;
         font-family: $font-eb;
 
-        @media screen and(max-width: 479px) {
+        @media screen and(max-width: 767px) {
             font-size: 1.5rem;
+            height: 3.5rem;
         }
     }
 

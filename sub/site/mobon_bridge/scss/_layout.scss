@@ -408,7 +408,7 @@
                                         }
 
                                         @media screen and(max-width: 479px) {
-                                            width: calc(100%);
+                                            width: calc(80%);
                                             margin-bottom: 5rem;
                                             height: 100%;
                                         }
@@ -855,6 +855,12 @@
                 &.step08 {
                     .inner {
                         width: 45rem;
+
+                        &.scroll {
+                            height: 100vh;
+                            overflow-y: hidden;
+                            padding: 12rem 0;
+                        }
                     }
 
                     strong {
@@ -1067,15 +1073,17 @@
         header {
             .mainAdBtn {
                 width: 100% !important;
-                height: 10rem !important;
-                top: 91vh !important;
+                height: 5rem !important;
+                top: auto !important;
+                bottom: 0;
                 flex-direction: inherit;
                 right: auto !important;
                 border-radius: 0 !important;
-                font-size: 3rem;
+                font-size: 2rem;
 
                 &::after {
                     margin-top: 0;
+                    background-size: 50%;
                 }
             }
         }
@@ -1083,29 +1091,41 @@
 
 }
 
-@media screen and(max-width: 767px) and (min-width:576px) {
-    html {
-        font-size: 54%;
+@media screen and(max-width: 767px) and (min-width:576px) {}
 
-    }
-}
+@media screen and(max-width: 575px) and (min-width:361px) {}
 
-@media screen and(max-width: 575px) and (min-width:361px) {
-    html {
-        font-size: 48%;
-    }
-}
-
-@media screen and(max-width: 360px) {
-    html {
-        font-size: 40%;
-    }
-}
+@media screen and(max-width: 360px) {}
 
 @media screen and(max-width: 767px) {
 
-
     #Wrap {
+        header {
+            h1 {
+                left: 0;
+                top: 0;
+                @include flex-item;
+                height: 7rem;
+                background: rgba(0, 1, 31, 0.9);
+
+                a {
+                    padding-left: 1rem;
+                }
+            }
+
+            &.other {
+                h1 {
+                    background: rgba(255, 255, 255, 0.9);
+
+
+                }
+            }
+        }
+
+        nav {
+            right: 1rem
+        }
+
         .wrapper {
             .content {
                 .box {
@@ -1116,11 +1136,15 @@
                         padding: 0 2%;
 
                         &.scroll {
-                            padding: 18rem 2%;
+                            padding: 10rem 2%;
                         }
                     }
 
                     &.step01 {
+                        .firstArrow {
+                            display: none;
+                        }
+
                         .txtBox {
                             .tit {
                                 @include strong_m
@@ -1135,6 +1159,16 @@
                     &.step02 {
                         .row {
                             .txtBox {
+                                i {
+                                    &.badgeico {
+                                        right: 0;
+
+                                        &::before {
+                                            background-size: 70%;
+                                        }
+                                    }
+                                }
+
                                 &.type01 {
                                     .txt {
                                         @include strong_m
@@ -1195,11 +1229,15 @@
                             }
 
                             .progressBox {
+                                margin-top: 5rem;
+
                                 >div {
                                     flex-direction: column;
                                     align-items: flex-start;
 
                                     .progress-bar {
+                                        height: 5rem;
+
                                         span {
                                             @include txt_m
                                         }
@@ -1212,11 +1250,27 @@
                                     }
                                 }
                             }
+
+                            &:last-of-type {
+                                margin-top: 5rem;
+                            }
                         }
                     }
 
                     &.step05 {
                         .row {
+                            .txtBox {
+                                strong {
+                                    line-height: 3.2rem;
+                                }
+
+                                &.type {
+                                    strong {
+                                        @include strong_m;
+                                    }
+                                }
+                            }
+
                             &:last-of-type {
                                 margin-top: 10rem;
 
@@ -1237,13 +1291,13 @@
 
                                     .txt {
                                         strong {
-                                            font-size: 2.6rem;
-                                            line-height: 3.6rem;
+                                            font-size: 1.8rem;
+                                            line-height: 2.8rem;
                                         }
 
                                         p {
-                                            font-size: 1.8rem;
-                                            line-height: 2.6rem;
+                                            font-size: 1.4rem;
+                                            line-height: 2rem;
                                         }
                                     }
 
@@ -1267,18 +1321,23 @@
                     &.step07 {
                         .txtBox {
                             strong {
-                                font-size: 3rem;
-                                line-height: 4.2rem;
+                                @include strong_m;
                             }
                         }
                     }
 
                     &.step08 {
+                        .inner {
+                            height: 100% !important;
+                            overflow-y: scroll !important;
+                            padding: 10rem 2% !important;
+                        }
+
                         .inputBox {
                             .row {
                                 &:first-of-type {
                                     >div {
-                                        height: 7.8rem;
+                                        height: 100%;
                                         flex-direction: column;
                                         align-items: flex-start;
                                         justify-content: center;

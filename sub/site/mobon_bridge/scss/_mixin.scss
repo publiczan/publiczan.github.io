@@ -295,13 +295,13 @@ $animationSpeed: 10s; //40s
 
 @mixin txt_m {
     font-family: $font-b;
-    font-size: 2rem;
-    line-height: 4rem;
+    font-size: 1.4rem;
+    line-height: 2rem;
 }
 
 @mixin strong_m {
-    font-size: 3.6rem;
-    line-height: 5.2rem;
+    font-size: 2rem;
+    line-height: 3.2rem;
 }
 
 @mixin txtBox {
@@ -316,13 +316,11 @@ $animationSpeed: 10s; //40s
 
 @mixin txtBox_m {
     strong {
-        font-size: 3.6rem;
-        line-height: 5.76rem;
+        @include strong_m
     }
 
     p {
-        font-size: 2rem;
-        line-height: 4rem;
+        @include txt_m;
     }
 }
 
