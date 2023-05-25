@@ -549,8 +549,14 @@ $(document).ready(function () {
             $(this).removeClass('active');
             $('body').css('overflow', '')
         });
+        $(".firstArrow").on("click", function () {
+            $("#firstArrow").trigger("click");
+        });
         $(".mainAdBtn").on("click", function () {
-            $("#mainAdBtn").trigger("click");
+            $(".adWrap").addClass('active')
+        });
+        $(".adClose").on("click", function () {
+            $(".adWrap").removeClass('active')
         });
     }
 

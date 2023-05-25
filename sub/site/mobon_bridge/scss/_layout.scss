@@ -180,9 +180,8 @@
                         overflow-y: auto;
                         height: 100%;
                         width: 100%;
+                        max-width: 100%;
                     }
-
-                    .scroll {}
                 }
 
                 &.step01 {
@@ -244,6 +243,15 @@
                 &.step02 {
                     text-align: center;
                     margin: 0 auto;
+
+                    .inner {
+                        &.scrollW {
+                            .scroll {
+                                max-width: 110rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
 
                     .row {
                         &:nth-of-type(2) {
@@ -385,6 +393,15 @@
                     margin: 0 auto;
                     background: url($url-images + 'img_bg_02.svg') center center no-repeat;
                     background-size: cover;
+
+                    .inner {
+                        &.scrollW {
+                            .scroll {
+                                max-width: 110rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
 
                     .txtBox {
                         margin-bottom: 11.5rem;
@@ -682,6 +699,15 @@
                     background: url($url-images + 'img_bg_03.svg') center center no-repeat;
                     background-size: cover;
 
+                    .inner {
+                        &.scrollW {
+                            .scroll {
+                                max-width: 110rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+
                     .row {
                         .txtBox {
                             strong {
@@ -748,6 +774,14 @@
                 }
 
                 &.step06 {
+                    .inner {
+                        &.scrollW {
+                            .scroll {
+                                max-width: 110rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
 
                     .txtBox {
                         text-align: center;
@@ -873,74 +907,11 @@
                     }
 
                     .inputBox {
-                        margin-top: 4.9rem;
-
-                        .row {
-                            >div {
-                                @include flex-st-item;
-                            }
-
-                            &:first-of-type {
-                                >div {
-                                    width: 100%;
-                                    height: 4.8rem;
-                                    border: 1px solid #ccc;
-                                    border-radius: 1rem;
-                                    padding: 0 1.6rem;
-
-                                    p {
-                                        width: 13rem;
-                                    }
-
-                                    &:not(:last-of-type) {
-                                        margin-bottom: 2rem;
-                                    }
-                                }
-                            }
-
-                            .checkBox {
-                                input[type="checkbox"]+label {
-                                    button {
-                                        font-family: $font-b;
-                                        color: #3523c7;
-                                        text-decoration: underline;
-                                    }
-                                }
-                            }
-
-                            &:last-of-type {
-                                margin-top: 6.2rem;
-
-                                >div {
-                                    &:first-of-type {
-                                        .checkBox {
-                                            width: 14rem;
-                                        }
-
-                                        input[type="text"] {
-                                            border: 1px solid #ccc;
-                                            height: 3rem;
-                                            border-radius: 0.5rem;
-                                        }
-                                    }
-
-                                    &:not(:first-of-type) {
-                                        margin-top: 1.6rem;
-                                    }
-                                }
-                            }
-                        }
+                        @include inputBox;
                     }
 
                     .btn-application {
-                        width: 100%;
-                        height: 5.3rem;
-                        margin-top: 8.5rem;
-                        border-radius: 1rem;
-                        background-image: linear-gradient(81deg, #20149d, #2d0098 100%);
-                        color: #fff;
-                        font-size: 1.6rem;
-                        font-family: $font-eb;
+                        @include btn-application;
                     }
                 }
             }
@@ -973,6 +944,58 @@
     }
 }
 
+.adWrap {
+    position: fixed;
+    width: 50rem;
+    height: 100vh;
+    display: none;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background: #fff;
+
+    &.active {
+        display: block;
+    }
+
+    .ad-hd {
+        width: 100%;
+        height: 12.4rem;
+        background-image: url($url-images + 'img_top.png');
+        @include flex-ct-item;
+
+        strong {
+            @include strong;
+            color: #fff
+        }
+
+        button {
+            &.adClose {
+                width: 2.1rem;
+                height: 2.1rem;
+                position: absolute;
+                right: 2rem;
+                top: 2rem;
+
+                i {
+                    display: block;
+                    width: 2.1rem;
+                    height: 2.1rem;
+                    background-image: url($url-images + 'ad_close.svg');
+                }
+            }
+        }
+    }
+
+    .ad-con {
+        padding: 0 5rem;
+        @include inputBox;
+
+        .btn-application {
+            @include btn-application;
+        }
+    }
+}
 
 @media screen and(max-width: 1260px) {
     #Wrap {
@@ -1092,13 +1115,10 @@
         }
     }
 
+    .adWrap {
+        width: 100%;
+    }
 }
-
-@media screen and(max-width: 767px) and (min-width:576px) {}
-
-@media screen and(max-width: 575px) and (min-width:361px) {}
-
-@media screen and(max-width: 360px) {}
 
 @media screen and(max-width: 767px) {
 
@@ -1339,37 +1359,43 @@
                         }
 
                         .inputBox {
-                            .row {
-                                &:first-of-type {
-                                    >div {
-                                        height: 100%;
-                                        flex-direction: column;
-                                        align-items: flex-start;
-                                        justify-content: center;
-
-                                        p {
-                                            width: 100%;
-                                            padding: 1rem;
-                                        }
-                                    }
-                                }
-
-                                &:last-of-type {
-                                    >div {
-                                        &:first-of-type {
-                                            flex-direction: column;
-                                            align-items: flex-start;
-
-                                            .checkBox {
-                                                margin-bottom: 1rem;
-                                            }
-                                        }
-                                    }
-                                }
-                            }
+                            @include inputBox_m;
                         }
                     }
                 }
+            }
+        }
+    }
+
+    .adWrap {
+        .ad-hd {
+            height: 10vh;
+
+            strong {
+                @include strong_m
+            }
+        }
+
+        .ad-con {
+            padding: 0 5%;
+            overflow-y: auto;
+            height: 90vh;
+
+            .inputBox {
+                @include inputBox_m;
+                margin: 1rem 0;
+
+                .row {
+                    .checkBox {
+                        input[type="checkbox"]+label {
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+            }
+
+            .btn-application {
+                margin-top: 1rem;
             }
         }
     }

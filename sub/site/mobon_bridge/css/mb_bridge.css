@@ -375,7 +375,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box .inner { width: 100%; max-width: 110rem; }
 
-#Wrap .wrapper .content .box .inner.scrollW { padding: 24rem 0; overflow-y: auto; height: 100%; width: 100%; }
+#Wrap .wrapper .content .box .inner.scrollW { padding: 24rem 0; overflow-y: auto; height: 100%; width: 100%; max-width: 100%; }
 
 #Wrap .wrapper .content .box.step01 { width: 100%; background: url("../images/img_bg_01.svg") center center no-repeat; background-size: cover; }
 
@@ -394,6 +394,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 #Wrap .wrapper .content .box.step01 .txtBox .txt::before { content: ""; position: relative; display: block; width: 1px; height: 5rem; background: #fff; margin: 4rem 0; }
 
 #Wrap .wrapper .content .box.step02 { text-align: center; margin: 0 auto; }
+
+#Wrap .wrapper .content .box.step02 .inner.scrollW .scroll { max-width: 110rem; margin: 0 auto; }
 
 #Wrap .wrapper .content .box.step02 .row:nth-of-type(2) { padding-top: 23rem; }
 
@@ -434,6 +436,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 #Wrap .wrapper .content .box.step02 .row .imgBox.type01 > div:nth-of-type(2) span::before { background-image: url("../images/img_02_arrow_b.png"); }
 
 #Wrap .wrapper .content .box.step03 { text-align: center; margin: 0 auto; background: url("../images/img_bg_02.svg") center center no-repeat; background-size: cover; }
+
+#Wrap .wrapper .content .box.step03 .inner.scrollW .scroll { max-width: 110rem; margin: 0 auto; }
 
 #Wrap .wrapper .content .box.step03 .txtBox { margin-bottom: 11.5rem; color: #fff; }
 
@@ -533,6 +537,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step05 { background: url("../images/img_bg_03.svg") center center no-repeat; background-size: cover; }
 
+#Wrap .wrapper .content .box.step05 .inner.scrollW .scroll { max-width: 110rem; margin: 0 auto; }
+
 #Wrap .wrapper .content .box.step05 .row .txtBox strong { color: #fff; line-height: 6rem; }
 
 #Wrap .wrapper .content .box.step05 .row .txtBox.type { text-align: center; }
@@ -554,6 +560,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 #Wrap .wrapper .content .box.step05 .row:last-of-type .videoBox { width: 100%; max-width: 114rem; border-radius: 3rem; background: #0a072b; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 4rem; }
 
 #Wrap .wrapper .content .box.step05 .row:last-of-type button { max-width: 61rem; margin: 6.4rem auto 0; }
+
+#Wrap .wrapper .content .box.step06 .inner.scrollW .scroll { max-width: 110rem; margin: 0 auto; }
 
 #Wrap .wrapper .content .box.step06 .txtBox { text-align: center; }
 
@@ -629,6 +637,40 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content footer address::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; width: 1.7rem; height: 1.7rem; background: url("../images/common/img_copyright_black.svg") center center no-repeat; margin-right: 1rem; }
 
+.adWrap { position: fixed; width: 50rem; height: 100vh; display: none; z-index: 999; top: 0; right: 0; background: #fff; }
+
+.adWrap.active { display: block; }
+
+.adWrap .ad-hd { width: 100%; height: 12.4rem; background-image: url("../images/img_top.png"); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.adWrap .ad-hd strong { font-size: 4rem; line-height: 6rem; color: #fff; }
+
+.adWrap .ad-hd button.adClose { width: 2.1rem; height: 2.1rem; position: absolute; right: 2rem; top: 2rem; }
+
+.adWrap .ad-hd button.adClose i { display: block; width: 2.1rem; height: 2.1rem; background-image: url("../images/ad_close.svg"); }
+
+.adWrap .ad-con { padding: 0 5rem; margin-top: 4.9rem; }
+
+.adWrap .ad-con .row > div { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+
+.adWrap .ad-con .row:first-of-type > div { width: 100%; height: 4.8rem; border: 1px solid #ccc; border-radius: 1rem; padding: 0 1.6rem; }
+
+.adWrap .ad-con .row:first-of-type > div p { width: 13rem; }
+
+.adWrap .ad-con .row:first-of-type > div:not(:last-of-type) { margin-bottom: 2rem; }
+
+.adWrap .ad-con .row .checkBox input[type="checkbox"] + label button { font-family: "Pretendard-Bold"; color: #3523c7; text-decoration: underline; }
+
+.adWrap .ad-con .row:last-of-type { margin-top: 6.2rem; }
+
+.adWrap .ad-con .row:last-of-type > div:first-of-type .checkBox { width: 14rem; }
+
+.adWrap .ad-con .row:last-of-type > div:first-of-type input[type="text"] { border: 1px solid #ccc; height: 3rem; border-radius: 0.5rem; }
+
+.adWrap .ad-con .row:last-of-type > div:not(:first-of-type) { margin-top: 1.6rem; }
+
+.adWrap .ad-con .btn-application { width: 100%; height: 5.3rem; margin-top: 8.5rem; border-radius: 1rem; background-image: linear-gradient(81deg, #20149d, #2d0098 100%); color: #fff; font-size: 1.6rem; font-family: "Pretendard-ExtraBold"; }
+
 @media screen and (max-width: 1260px) { #Wrap .wrapper .content .box.step04 .row:last-of-type .slider02 { max-width: 100%; } }
 
 @media screen and (max-width: 1110px) and (min-width: 1025px) { html { font-size: 60%; }
@@ -643,7 +685,8 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box.step03 .txtBox span { display: block; } }
 
 @media screen and (max-width: 1024px) { #Wrap header .mainAdBtn { width: 100% !important; height: 5rem !important; top: auto !important; bottom: 0; -webkit-box-orient: inherit; -webkit-box-direction: inherit; -ms-flex-direction: inherit; flex-direction: inherit; right: auto !important; border-radius: 0 !important; font-size: 2rem; }
-  #Wrap header .mainAdBtn::after { margin-top: 0; background-size: 50%; } }
+  #Wrap header .mainAdBtn::after { margin-top: 0; background-size: 50%; }
+  .adWrap { width: 100%; } }
 
 @media screen and (max-width: 767px) { #Wrap header h1 { left: 0; top: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 7rem; background: rgba(0, 1, 31, 0.9); }
   #Wrap header h1 a { padding-left: 1rem; }
@@ -687,4 +730,14 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
-  #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; } }
+  #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; }
+  .adWrap .ad-hd { height: 10vh; }
+  .adWrap .ad-hd strong { font-size: 2rem; line-height: 3.2rem; }
+  .adWrap .ad-con { padding: 0 5%; overflow-y: auto; height: 90vh; }
+  .adWrap .ad-con .inputBox { margin: 1rem 0; }
+  .adWrap .ad-con .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  .adWrap .ad-con .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
+  .adWrap .ad-con .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+  .adWrap .ad-con .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; }
+  .adWrap .ad-con .inputBox .row .checkBox input[type="checkbox"] + label { -ms-flex-wrap: wrap; flex-wrap: wrap; }
+  .adWrap .ad-con .btn-application { margin-top: 1rem; } }
