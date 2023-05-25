@@ -37,7 +37,7 @@ input::-ms-clear { display: none; }
 
 input:-webkit-autofill { background: #fff !important; -webkit-text-fill-color: #333 !important; }
 
-html, body { width: 100%; font-size: 14px; color: #111; font-family: 'Pretendard-Bold'; position: fixed; width: 100%; overflow: hidden; transform: translate3d(0, 0, 0); -webkit-transform: translateZ(0); }
+html, body { width: 100%; height: 100%; font-size: 14px; color: #111; font-family: 'Pretendard-Bold'; position: fixed; overflow: hidden; transform: translate3d(0, 0, 0); -webkit-transform: translateZ(0); }
 
 html { margin: 0; padding: 0; width: 100%; height: 100%; scroll-behavior: smooth; }
 
@@ -375,7 +375,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box .inner { width: 100%; max-width: 110rem; }
 
-#Wrap .wrapper .content .box .inner.scroll { padding: 24rem 0; overflow-y: auto; height: 100%; }
+#Wrap .wrapper .content .box .inner.scrollW { padding: 24rem 0; overflow-y: auto; height: 100%; width: 100%; }
 
 #Wrap .wrapper .content .box.step01 { width: 100%; background: url("../images/img_bg_01.svg") center center no-repeat; background-size: cover; }
 
@@ -595,7 +595,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step08 .inner { width: 45rem; }
 
-#Wrap .wrapper .content .box.step08 .inner.scroll { height: 100vh; overflow-y: hidden; padding: 12rem 0; }
+#Wrap .wrapper .content .box.step08 .inner.scrollW { height: 100vh; overflow-y: hidden; padding: 12rem 0; }
 
 #Wrap .wrapper .content .box.step08 strong { display: block; font-size: 3.2rem; text-align: center; }
 
@@ -683,7 +683,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .bg { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .txt { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; margin-right: 0; }
   #Wrap .wrapper .content .box.step07 .txtBox strong { font-size: 2rem; line-height: 3.2rem; }
-  #Wrap .wrapper .content .box.step08 .inner { height: 100% !important; overflow-y: scroll !important; padding: 10rem 2% !important; }
+  #Wrap .wrapper .content .box.step08 .inner.scrollW { height: 100% !important; overflow-y: scroll !important; padding: 12rem 2% !important; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }

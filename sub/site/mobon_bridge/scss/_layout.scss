@@ -175,11 +175,14 @@
                     width: 100%;
                     max-width: 110rem;
 
-                    &.scroll {
+                    &.scrollW {
                         padding: 24rem 0;
                         overflow-y: auto;
                         height: 100%;
+                        width: 100%;
                     }
+
+                    .scroll {}
                 }
 
                 &.step01 {
@@ -856,7 +859,7 @@
                     .inner {
                         width: 45rem;
 
-                        &.scroll {
+                        &.scrollW {
                             height: 100vh;
                             overflow-y: hidden;
                             padding: 12rem 0;
@@ -1328,9 +1331,11 @@
 
                     &.step08 {
                         .inner {
-                            height: 100% !important;
-                            overflow-y: scroll !important;
-                            padding: 10rem 2% !important;
+                            &.scrollW {
+                                height: 100% !important;
+                                overflow-y: scroll !important;
+                                padding: 12rem 2% !important;
+                            }
                         }
 
                         .inputBox {

@@ -263,7 +263,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step02.active .inner").scrollTop() + $(".step02.active .inner").innerHeight() >= $(".step02.active .inner").prop('scrollHeight')) {
+                    if ($(".step02.active .inner").scrollTop() + $(".step02.active .inner").innerHeight() >= $(".step02.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
@@ -326,7 +326,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step03.active .inner").scrollTop() + $(".step03.active .inner").innerHeight() >= $(".step03.active .inner").prop('scrollHeight')) {
+                    if ($(".step03.active .inner").scrollTop() + $(".step03.active .inner").innerHeight() >= $(".step03.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
@@ -354,7 +354,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step04.active .inner").scrollTop() + $(".step04.active .inner").innerHeight() >= $(".step04.active .inner").prop('scrollHeight')) {
+                    if ($(".step04.active .inner").scrollTop() + $(".step04.active .inner").innerHeight() >= $(".step04.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
@@ -382,7 +382,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step05.active .inner").scrollTop() + $(".step05.active .inner").innerHeight() >= $(".step05.active .inner").prop('scrollHeight')) {
+                    if ($(".step05.active .inner").scrollTop() + $(".step05.active .inner").innerHeight() >= $(".step05.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
@@ -410,7 +410,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step06.active .inner").scrollTop() + $(".step06.active .inner").innerHeight() >= $(".step06.active .inner").prop('scrollHeight')) {
+                    if ($(".step06.active .inner").scrollTop() + $(".step06.active .inner").innerHeight() >= $(".step06.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
@@ -438,7 +438,7 @@ window.onload = function () {
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step08.active .inner").scrollTop() + $(".step08.active .inner").innerHeight() >= $(".step08.active .inner").prop('scrollHeight')) {
+                    if ($(".step08.active .inner").scrollTop() + $(".step08.active .inner").innerHeight() >= $(".step08.active .inner .scroll").prop('scrollHeight')) {
                         // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
