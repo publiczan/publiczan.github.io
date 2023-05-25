@@ -140,6 +140,12 @@ window.onload = function () {
                         innerscroll5(direction);
                         return false;
 
+                    } else if (now == 8) {
+
+                        // console.log("아래로222222");
+                        innerscroll6(direction);
+                        return false;
+
                     } else {
 
                         move(direction);
@@ -188,6 +194,12 @@ window.onload = function () {
                         innerscroll5(direction);
                         return false;
 
+                    } else if (now == 8) {
+
+                        // console.log("아래로222222");
+                        innerscroll6(direction);
+                        return false;
+
                     } else {
 
                         move(direction);
@@ -220,7 +232,7 @@ window.onload = function () {
                     header.classList.add("first");
                 } else {
                     header.classList.remove("first");
-                }               
+                }
 
                 if (now % 2 == 1 && now < 4 || now % 2 == 1 && now < 6 || now % 2 == 1 && now < 8) {
                     navigator.classList.add("other");
@@ -410,6 +422,33 @@ window.onload = function () {
 
             }
 
+            function innerscroll6(direction) {
+
+
+                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
+                // console.log("스크롤33:" + $(".step03 section").innerHeight());
+                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
+
+                if (direction == "up") {
+                    if ($(".step08.active .inner").scrollTop() == 0) {
+                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
+                        direction = "up";
+                        move(direction);
+                        fun_navi();
+                        return false;
+                    }
+                } else if (direction == "down") {
+                    if ($(".step08.active .inner").scrollTop() + $(".step08.active .inner").innerHeight() >= $(".step08.active .inner").prop('scrollHeight')) {
+                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
+                        direction = "down";
+                        move(direction);
+                        fun_navi();
+                        return false;
+                    }
+                }
+                animation = true;
+
+            }
 
 
         }
