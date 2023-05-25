@@ -1,0 +1,43 @@
+@charset 'utf-8';
+
+@font-face {
+    font-family: "Pretendard-Light";
+    src: url("../font/Pretendard-Light.eot");
+    src: url("../font/Pretendard-Light.eot?#iefix") format("embedded-opentype"),
+        url("../font/Pretendard-Light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Pretendard-Medium";
+    src: url("../font/Pretendard-Medium.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/Pretendard-Medium.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Pretendard-Bold";
+    src: url("../font/Pretendard-Bold.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/Pretendard-Bold?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/Pretendard-Bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Pretendard-ExtraBold";
+    src: url("../font/Pretendard-ExtraBold.eot");
+    src: url("../font/Pretendard-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/Pretendard-ExtraBold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Pretendard-Black";
+    src: url("../font/Pretendard-Black.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/nPretendard-Black.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/Pretendard-Black.woff") format("woff");
+}

@@ -1,0 +1,1291 @@
+@charset 'utf-8';
+
+#Wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+    background: #fff;
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-transition: all 700ms ease 0s;
+    transition: all 700ms ease 0s;
+
+    header {
+        @include transition;
+
+        h1 {
+            position: fixed;
+            z-index: 999;
+            width: 100%;
+            top: 4rem;
+            left: 4rem;
+
+            a {
+                font-size: 0;
+
+                &::before {
+                    @include beforeIco;
+                    background-image: url($url-images-com + 'img_logo_white.png');
+                    width: 10.7rem;
+                    height: 2.1rem;
+                }
+            }
+
+        }
+
+        .mainAdBtn {
+            position: fixed;
+            z-index: 999;
+            top: 8rem;
+            right: 10rem;
+            width: 22rem;
+            height: 22rem;
+            @include flex-ct-item;
+            flex-direction: column;
+            background: #fff;
+            border-radius: 50%;
+            font-size: 4rem;
+            font-family: $font-eb;
+            line-height: 4.8rem;
+
+            span {
+                display: block;
+            }
+
+            &::after {
+                @include beforeIco;
+                background-image: url($url-images-com + 'btn_main_arrow_right.png');
+                width: 3.8rem;
+                height: 2.7rem;
+                margin-top: 2.5rem;
+            }
+        }
+
+        &.first {
+            .mainAdBtn {
+                width: 26rem;
+                height: 100%;
+                border-radius: 0;
+                right: 0;
+                top: 0;
+            }
+        }
+
+        &.other {
+            .mainAdBtn {
+
+                background: #00011f;
+                color: #fff;
+
+                &::after {
+                    background-image: url($url-images-com + 'img_common_arrow_topright_w.png');
+                }
+
+                @media screen and(max-width: 1110px) {
+                    right: 4rem;
+                }
+            }
+
+            h1 {
+                a {
+                    &::before {
+                        background-image: url($url-images-com + 'img_logo_black.png');
+                    }
+                }
+            }
+        }
+    }
+
+    nav {
+        position: fixed;
+        z-index: 99;
+        right: 8rem;
+        transform: translateY(-50%);
+        top: 50%;
+        @include flex-column;
+
+        &.other {
+            a {
+                &.active {
+                    background: #00011f;
+                }
+            }
+        }
+
+        @media screen and(max-width: 1110px) {
+            right: 4rem;
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0.6rem;
+            background-color: transparent;
+            border: 1px solid #c1c1c1;
+            text-indent: -9999px;
+            transition: all 1s;
+            margin-bottom: 3rem;
+
+            &.active {
+                opacity: 1;
+                background-color: #fff;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -ms-touch-action: none;
+            touch-action: none;
+            -webkit-transition: all 700ms ease 0s;
+            transition: all 700ms ease 0s;
+
+            .box {
+                // position: relative;
+                // width: 100%;
+                // height: 100%;
+                // @include flex-item;
+                // padding: 24rem 0;
+                position: relative;
+                width: 100%;
+                height: 100%;
+                height: 100vh;
+                @include flex-ct-item;
+                overflow: hidden;
+
+                .inner {
+                    width: 100%;
+                    max-width: 110rem;
+
+                    &.scroll {
+                        padding: 24rem 0;
+                        overflow-y: auto;
+                        height: 100%;
+                    }
+                }
+
+                &.step01 {
+                    width: 100%;
+                    background: url($url-images + 'img_bg_01.svg') center center no-repeat;
+                    background-size: cover;
+
+                    //height: auto;
+                    .firstArrow {
+                        width: 6.6rem;
+                        height: 6.6rem;
+                        background: #fff;
+                        position: absolute;
+                        bottom: 1rem;
+                        transform: translateX(-50%);
+                        left: 50%;
+                        border-radius: 50%;
+                        @include flex-ct-item;
+
+                        &::before {
+                            @include beforeIco;
+                            width: 2.7rem;
+                            height: 1.6rem;
+                            background: url($url-images-com + 'img_main_arrow_bottom.svg') center center no-repeat;
+                        }
+                    }
+
+                    .txtBox {
+                        color: $txtColor-w;
+
+                        >div {
+                            font-family: $font-l;
+                            word-break: keep-all;
+                        }
+
+                        .tit {
+                            font-size: 4.8rem;
+                            line-height: 7.2rem;
+                        }
+
+                        .txt {
+                            max-width: 53.3rem;
+                            font-size: 2.4rem;
+                            line-height: 3.6rem;
+
+                            &::before {
+                                content: "";
+                                position: relative;
+                                display: block;
+                                width: 1px;
+                                height: 5rem;
+                                background: #fff;
+                                margin: 4rem 0;
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    text-align: center;
+                    margin: 0 auto;
+
+                    .row {
+                        &:nth-of-type(2) {
+                            padding-top: 23rem
+                        }
+
+                        .txtBox {
+                            @include flex-center;
+                            flex-direction: column;
+
+                            &.type01 {
+                                .badgebox {
+                                    @include flex-center;
+                                    position: relative;
+                                    width: 100%;
+                                    max-width: 50rem;
+                                    margin: 0 auto;
+
+                                    p {
+                                        background: $mainColor;
+                                        height: 5.4rem;
+                                        border-radius: 2.7rem;
+                                        @include flex-ct-item;
+                                        color: $txtColor-w;
+                                        padding: 0 6.4rem 0 4rem;
+                                        font-size: initial;
+                                        line-height: initial;
+                                    }
+                                }
+
+                                .txt {
+                                    margin: 6.5rem auto;
+                                    text-align: center;
+                                    font-size: 4rem;
+                                    line-height: 6rem;
+                                    color: $txtColor02;
+                                    word-break: keep-all;
+                                }
+                            }
+
+                            &.type02 {
+                                p {
+                                    font-size: 3.2rem;
+                                    color: $txtColor02;
+                                }
+                            }
+
+                            &.type03 {
+                                p {
+                                    font-size: 2.2rem;
+                                    line-height: 3.3rem;
+                                    color: $txtColor02;
+                                    font-family: $font-b;
+                                }
+
+                                strong {
+                                    font-size: 4rem;
+                                    line-height: 7.2rem;
+                                    @include flex-ct-item;
+
+                                    i {
+                                        margin-left: 1.2rem;
+                                    }
+                                }
+                            }
+
+                            i {
+                                &.badgeico {
+                                    width: 5.4rem;
+                                    height: 10.1rem;
+                                    position: absolute;
+                                    right: 4rem;
+                                    bottom: -0.5rem;
+
+                                    &::before {
+                                        @include beforeIco;
+                                        background-image: url($url-images + 'img_02_01.png');
+                                        width: 5.4rem;
+                                        height: 10.1rem;
+                                    }
+                                }
+
+                                &.ico-emosad {
+                                    margin: 4.3rem auto 1.6rem;
+                                }
+                            }
+                        }
+
+                        .imgBox {
+                            &.type01 {
+                                margin: 12.2rem 0;
+                                @include flex-between;
+
+                                >div {
+                                    position: relative;
+
+                                    img {
+                                        margin: 0 auto;
+                                    }
+
+                                    span {
+                                        position: absolute;
+                                        top: -7rem;
+                                        right: 0;
+                                        font-size: 2.8rem;
+                                        display: flex;
+                                        align-items: flex-start;
+                                        font-family: $font-eb;
+
+                                        &:not(.txt-blue) {
+                                            color: #030303;
+                                        }
+
+                                        &::before {
+                                            @include beforeIco;
+                                            position: relative;
+                                            width: 4.5rem;
+                                            height: 5.7rem;
+                                            background-image: url($url-images + 'img_02_arrow.png');
+                                            margin-right: 0.76rem;
+                                        }
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        span {
+                                            &::before {
+                                                background-image: url($url-images + 'img_02_arrow_b.png');
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step03 {
+                    text-align: center;
+                    margin: 0 auto;
+                    background: url($url-images + 'img_bg_02.svg') center center no-repeat;
+                    background-size: cover;
+
+                    .txtBox {
+                        margin-bottom: 11.5rem;
+                        color: #fff;
+
+                        p {
+                            margin-top: 3.2rem;
+                        }
+                    }
+
+                    .row {
+                        &:last-of-type {
+                            margin-top: 6rem;
+
+                            .list {
+                                &.type01 {
+                                    .item {
+                                        width: calc(50% - 4rem);
+                                        height: 57rem;
+                                        @include flex-ar-item;
+
+                                        @media screen and(max-width: 1024px) and (min-width:480px) {
+                                            width: calc(50% - 1rem);
+                                        }
+
+                                        @media screen and(max-width: 479px) {
+                                            width: calc(100%);
+                                            margin-bottom: 5rem;
+                                            height: 100%;
+                                        }
+
+                                        p {
+                                            width: 100%;
+                                            max-width: 30rem;
+                                            height: 3.4rem;
+                                            border-radius: 1.7rem;
+                                            background: #f5f5f5;
+                                            margin: 0 auto;
+                                            @include flex-ct-item;
+                                            font-size: 1.4rem;
+                                        }
+                                    }
+                                }
+
+                            }
+                        }
+
+                        .list {
+                            &.type01 {
+                                .item {
+
+                                    &:nth-of-type(1) {
+                                        i {
+                                            background-image: url($url-images + 'img_03_01.png');
+                                        }
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        i {
+                                            background-image: url($url-images + 'img_03_02.png');
+                                        }
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        i {
+                                            background-image: url($url-images + 'img_03_03.png');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step04 {
+                    .inner {
+                        max-width: 100%;
+                    }
+
+                    .row {
+                        .txtBox {
+                            position: relative;
+                            padding-left: 16rem;
+
+                            p {
+                                margin-top: 2.4rem;
+                                font-family: $font-bb;
+                            }
+                        }
+
+                        .progressBox {
+                            width: 100%;
+                            max-width: 130rem;
+                            margin-top: 8rem;
+
+                            >div {
+                                @include flex-item;
+
+                                &:not(:last-of-type) {
+                                    margin-bottom: 2rem;
+                                }
+
+                                .progress-bar {
+                                    width: 100%;
+                                    background-image: linear-gradient(to left, #0063e3, #0091ff);
+                                    height: 7.2rem;
+                                    border-radius: 0 3.63rem 3.6rem 0;
+                                    @include flex-item;
+                                    position: relative;
+
+                                    span {
+                                        font-size: 4rem;
+                                        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+                                        color: #fff;
+                                        position: absolute;
+                                        right: 3rem;
+                                    }
+                                }
+
+                                &:nth-of-type(1) {
+                                    .progress-bar {
+                                        width: 40%;
+                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
+                                    }
+                                }
+
+                                &:nth-of-type(2) {
+                                    .progress-bar {
+                                        width: 70%;
+                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
+                                    }
+                                }
+
+                                &:nth-of-type(3) {
+                                    .progress-bar {
+                                        width: 77%;
+                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
+                                    }
+                                }
+
+                                p {
+                                    @include txt;
+                                    margin-left: 2rem;
+                                }
+                            }
+                        }
+
+
+                        .slider01 {
+                            margin-top: 12rem;
+
+                            .slick-slide {
+                                margin: 0 7rem;
+                            }
+                        }
+
+                        &:last-of-type {
+                            margin-top: 16rem;
+
+                            .txtBox {
+                                text-align: center;
+                                padding-left: 0;
+                            }
+
+                            .slider02 {
+                                max-width: 120rem;
+                                margin: 3.6rem auto 0;
+                                height: 33rem;
+
+                                .slick-slide {
+                                    margin: 0 1rem;
+                                }
+
+                                >div {
+                                    margin: 0 3rem;
+                                }
+
+                                .slick-next,
+                                .slick-prev {
+                                    width: 4rem;
+                                    height: 9rem;
+                                    background-image: url($url-images-com + 'sub_case_arrow_left.png');
+                                    top: 50%
+                                }
+
+                                .slick-next {
+                                    transform: rotate(-180deg);
+                                    top: 40%
+                                }
+
+                                .slick-dots {
+                                    @include flex-ct-item;
+                                    width: 6.6rem;
+                                    transform: translateX(-50%);
+                                    left: 50%;
+
+                                    @media screen and(max-width:767px) {
+                                        bottom: -5.5rem
+                                    }
+
+                                    li {
+                                        width: 3.5rem;
+                                        height: 0.9rem;
+                                        opacity: 1;
+
+                                        button {
+                                            width: 0.9rem;
+                                            height: 0.9rem;
+                                            background: #d4d4d4;
+                                            border-radius: 50%;
+
+                                            &::before {
+                                                display: none;
+                                            }
+
+                                        }
+
+
+                                        &.slick-active {
+                                            margin: 0 1rem;
+
+                                            button {
+                                                background: $mainColor;
+                                                width: 3.5rem;
+                                                height: 0.9rem;
+                                                border-radius: 0.45rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .swiper02 {
+                                max-width: 120rem;
+                                margin-top: 3.6rem;
+
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        height: 30rem;
+                                    }
+                                }
+
+                                .swiper-button-prev {
+                                    left: 0;
+                                }
+
+                                .swiper-button-next,
+                                .swiper-rtl {
+                                    right: 0;
+
+                                    &::after {
+                                        transform: rotate(-180deg);
+                                    }
+                                }
+
+                                .swiper-button-next,
+                                .swiper-button-prev {
+                                    opacity: 1;
+                                    transform: translateY(-50%);
+                                    top: 50%;
+
+                                    &::after {
+                                        content: "";
+                                        font-size: 0;
+                                        width: 4rem;
+                                        height: 9rem;
+                                        background-image: url($url-images-com + 'sub_case_arrow_left.png');
+                                    }
+                                }
+
+                                .swiper-pagination {
+                                    position: relative;
+                                    margin-top: 2rem;
+
+                                    span {
+                                        font-size: 0;
+                                        background: #d4d4d4;
+                                        width: 0.9rem;
+                                        height: 0.9rem;
+
+                                        &.swiper-pagination-bullet-active {
+                                            background: $mainColor;
+                                            width: 3.5rem;
+                                            height: 0.9rem;
+                                            border-radius: 0.45rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step05 {
+                    background: url($url-images + 'img_bg_03.svg') center center no-repeat;
+                    background-size: cover;
+
+                    .row {
+                        .txtBox {
+                            strong {
+                                color: #fff;
+                                line-height: 6rem;
+                            }
+
+                            &.type {
+                                text-align: center;
+
+                                strong {
+                                    font-size: 3rem;
+                                    line-height: 4.5rem;
+                                }
+                            }
+                        }
+
+                        .list {
+                            &.type01 {
+                                margin: 8rem auto;
+
+                                .item {
+                                    text-align: center;
+
+                                    &:nth-of-type(1) {
+                                        i {
+                                            background-image: url($url-images + 'img_05_01.png');
+                                        }
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        i {
+                                            background-image: url($url-images + 'img_05_02.png');
+                                        }
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        i {
+                                            background-image: url($url-images + 'img_05_03.png');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:last-of-type {
+                            margin-top: 33.2rem;
+
+                            .videoBox {
+                                width: 100%;
+                                max-width: 114rem;
+                                border-radius: 3rem;
+                                background: #0a072b;
+                                @include flex-ct-item;
+                                padding: 4rem;
+                            }
+
+                            button {
+                                max-width: 61rem;
+                                margin: 6.4rem auto 0;
+                            }
+                        }
+                    }
+                }
+
+                &.step06 {
+
+                    .txtBox {
+                        text-align: center;
+
+                        i {}
+
+                        p {
+                            margin-top: 3.2rem;
+                        }
+                    }
+
+                    .list {
+                        &.type02 {
+                            margin-top: 19rem;
+
+                            .item {
+                                @include flex-ct-item;
+
+                                .bg {
+                                    position: relative;
+                                    width: 100%;
+                                    max-width: 60rem;
+
+                                    button {
+                                        position: absolute;
+                                        bottom: 0;
+                                        right: 0;
+                                    }
+                                }
+
+                                .txt {
+                                    text-align: left;
+                                    margin-left: 8rem;
+
+                                    @media screen and(max-width: 678px) {
+                                        margin-left: 0;
+                                        margin-top: 3rem;
+
+                                        strong {
+                                            font-size: 2.6rem;
+                                        }
+
+                                        p {
+                                            font-size: 1.6rem;
+                                        }
+                                    }
+
+                                    strong {
+                                        font-size: 3.2rem;
+                                        line-height: 4.8rem;
+                                    }
+
+                                    p {
+                                        margin-top: 2.4rem;
+                                        font-family: $font-m;
+                                        font-size: 2.4rem;
+                                        line-height: 3.6rem;
+                                    }
+                                }
+
+
+
+                                &:last-of-type {
+                                    margin-top: 21.6rem;
+
+                                    .bg {
+                                        order: 2;
+                                    }
+
+                                    .txt {
+                                        order: 1;
+                                        margin-right: 8rem;
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step07 {
+                    background: url($url-images + 'img_bg_04.svg') center center no-repeat;
+                    background-size: cover;
+
+
+
+                    .txtBox {
+                        text-align: center;
+
+                        strong {
+                            display: block;
+                            @include strong;
+                            color: #fff;
+
+                            &:last-of-type {
+                                margin-top: 6rem;
+                            }
+                        }
+
+                        i {
+                            &::before {
+                                margin: 3.2rem auto 0;
+                            }
+                        }
+                    }
+                }
+
+                &.step08 {
+                    .inner {
+                        width: 45rem;
+                    }
+
+                    strong {
+                        display: block;
+                        font-size: 3.2rem;
+                        text-align: center;
+                    }
+
+                    .inputBox {
+                        margin-top: 4.9rem;
+
+                        .row {
+                            >div {
+                                @include flex-st-item;
+                            }
+
+                            &:first-of-type {
+                                >div {
+                                    width: 100%;
+                                    height: 4.8rem;
+                                    border: 1px solid #ccc;
+                                    border-radius: 1rem;
+                                    padding: 0 1.6rem;
+
+                                    p {
+                                        width: 13rem;
+                                    }
+
+                                    &:not(:last-of-type) {
+                                        margin-bottom: 2rem;
+                                    }
+                                }
+                            }
+
+                            .checkBox {
+                                input[type="checkbox"]+label {
+                                    button {
+                                        font-family: $font-b;
+                                        color: #3523c7;
+                                        text-decoration: underline;
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-top: 6.2rem;
+
+                                >div {
+                                    &:first-of-type {
+                                        .checkBox {
+                                            width: 14rem;
+                                        }
+
+                                        input[type="text"] {
+                                            border: 1px solid #ccc;
+                                            height: 3rem;
+                                            border-radius: 0.5rem;
+                                        }
+                                    }
+
+                                    &:not(:first-of-type) {
+                                        margin-top: 1.6rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .btn-application {
+                        width: 100%;
+                        height: 5.3rem;
+                        margin-top: 8.5rem;
+                        border-radius: 1rem;
+                        background-image: linear-gradient(81deg, #20149d, #2d0098 100%);
+                        color: #fff;
+                        font-size: 1.6rem;
+                        font-family: $font-eb;
+                    }
+                }
+            }
+
+            footer {
+                position: fixed;
+                bottom: 4rem;
+                left: 4rem;
+
+                @media screen and(max-width: 678px) {
+                    bottom: 1rem;
+                    transform: translateX(-50%);
+                    left: 50%;
+                }
+
+                address {
+                    font-size: 1.6rem;
+                    @include flex-st-item;
+
+                    &::before {
+                        @include beforeIco;
+                        width: 1.7rem;
+                        height: 1.7rem;
+                        background: url($url-images-com + 'img_copyright_black.svg') center center no-repeat;
+                        margin-right: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width: 1260px) {
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step04 {
+                        .row {
+                            &:last-of-type {
+                                .slider02 {
+                                    max-width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width: 1110px) and (min-width:1025px) {
+    html {
+        font-size: 60%;
+
+        #Wrap {
+            header {
+
+                &.verA,
+                &.verB {
+                    .mainAdBtn {
+                        right: 6rem;
+                    }
+                }
+
+                .mainAdBtn {
+                    width: 21rem;
+                }
+            }
+
+            nav {
+                right: 4rem
+            }
+
+
+            .wrapper {
+                .content {
+                    .box {
+                        .inner {
+                            width: 98rem;
+
+                        }
+
+                        &.step04 {
+                            .row {
+                                .progressBox {
+                                    max-width: 100rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width: 1024px) and (min-width:768px) {
+    html {
+        font-size: 54%;
+    }
+
+    #Wrap {
+
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        width: 98rem;
+
+                    }
+
+                    &.step03 {
+                        .txtBox {
+                            span {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and(max-width: 1024px) {
+    #Wrap {
+        header {
+            .mainAdBtn {
+                width: 100% !important;
+                height: 10rem !important;
+                top: 91vh !important;
+                flex-direction: inherit;
+                right: auto !important;
+                border-radius: 0 !important;
+                font-size: 3rem;
+
+                &::after {
+                    margin-top: 0;
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and(max-width: 767px) {
+    html {
+        font-size: 54%;
+
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+
+                    .inner {
+                        width: 100%;
+                        max-width: 100%;
+                        padding: 0 2%;
+
+                        &.scroll {
+                            padding: 18rem 2%;
+                        }
+                    }
+
+                    &.step01 {
+                        .txtBox {
+                            .tit {
+                                @include strong_m
+                            }
+
+                            .txt {
+                                @include txt_m
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .row {
+                            .txtBox {
+                                &.type01 {
+                                    .txt {
+                                        @include strong_m
+                                    }
+                                }
+
+                                &.type02 {
+                                    p {
+                                        @include txt_m
+                                    }
+                                }
+
+                                &.type03 {
+                                    p {
+                                        @include txt_m
+                                    }
+
+                                    strong {
+                                        flex-direction: column;
+                                        @include strong_m
+                                    }
+                                }
+                            }
+
+                            .imgBox {
+                                &.type01 {
+                                    flex-direction: column;
+
+                                    >div {
+                                        &:first-of-type {
+                                            margin-bottom: 10rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                padding-top: 10rem;
+                            }
+                        }
+
+                    }
+
+                    &.step03 {
+                        .txtBox {
+                            strong {
+                                span {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+
+                    &.step04 {
+                        .row {
+                            .txtBox {
+                                padding-left: 0;
+                            }
+
+                            .progressBox {
+                                >div {
+                                    flex-direction: column;
+                                    align-items: flex-start;
+
+                                    .progress-bar {
+                                        span {
+                                            @include txt_m
+                                        }
+                                    }
+
+
+                                    p {
+                                        margin-left: 0;
+                                        @include txt_m
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step05 {
+                        .row {
+                            &:last-of-type {
+                                margin-top: 10rem;
+
+                                .videoBox {
+                                    padding: 1%;
+                                }
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        .list {
+                            &.type02 {
+                                margin-top: 10rem;
+
+                                .item {
+                                    flex-direction: column;
+
+                                    .txt {
+                                        strong {
+                                            font-size: 2.6rem;
+                                            line-height: 3.6rem;
+                                        }
+
+                                        p {
+                                            font-size: 1.8rem;
+                                            line-height: 2.6rem;
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        margin-top: 5rem;
+
+                                        .bg {
+                                            order: 1;
+                                        }
+
+                                        .txt {
+                                            order: 2;
+                                            margin-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step07 {
+                        .txtBox {
+                            strong {
+                                font-size: 3rem;
+                                line-height: 4.2rem;
+                            }
+                        }
+                    }
+
+                    &.step08 {
+                        .inputBox {
+                            .row {
+                                &:first-of-type {
+                                    >div {
+                                        height: 7.8rem;
+                                        flex-direction: column;
+                                        align-items: flex-start;
+                                        justify-content: center;
+
+                                        p {
+                                            width: 100%;
+                                            padding: 1rem;
+                                        }
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    >div {
+                                        &:first-of-type {
+                                            flex-direction: column;
+                                            align-items: flex-start;
+
+                                            .checkBox {
+                                                margin-bottom: 1rem;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

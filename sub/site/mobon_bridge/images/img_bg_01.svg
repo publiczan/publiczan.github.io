@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="960" viewBox="0 0 1920 960">
+    <defs>
+        <clipPath id="7eu17shkgb">
+            <path style="fill:none" d="M0 131h619v497H0z"/>
+        </clipPath>
+        <clipPath id="chcnloq0yc">
+            <path style="fill:none" d="M118 0h296v257H118z"/>
+        </clipPath>
+        <clipPath id="cjvw6c6zsd">
+            <path style="fill:none" d="M0 207h414v207H0z"/>
+        </clipPath>
+        <linearGradient id="ouq64zo1ia" x1=".5" x2=".5" y2="1" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#010011"/>
+            <stop offset="1" stop-color="#000121"/>
+        </linearGradient>
+    </defs>
+    <path data-name="사각형 12" style="fill:url(#ouq64zo1ia)" d="M0 0h1920v960H0z"/>
+    <g style="clip-path:url(#7eu17shkgb);isolation:isolate">
+        <circle cx="242" cy="242" r="242" transform="translate(1373 -59)" style="fill:#fff;opacity:.1" data-name="스크롤 그룹 9"/>
+    </g>
+    <g style="clip-path:url(#chcnloq0yc);isolation:isolate">
+        <circle cx="135" cy="135" r="135" transform="translate(-46 775)" style="fill:#fff;opacity:.1" data-name="스크롤 그룹 10"/>
+    </g>
+    <g style="clip-path:url(#cjvw6c6zsd);isolation:isolate">
+        <circle cx="135" cy="135" r="135" transform="translate(454 -135)" style="fill:#fff;opacity:.1" data-name="스크롤 그룹 8"/>
+    </g>
+</svg>

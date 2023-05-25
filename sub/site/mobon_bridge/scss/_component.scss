@@ -1,0 +1,520 @@
+@charset 'utf-8';
+
+html {
+    font-size: 62.5%;
+}
+
+// @media screen and(min-width: 375px) and (orientation:portrait) {
+//     html {
+//         font-size: 65%;
+//     }
+// }
+
+// @media screen and(min-width: 412px) and (orientation:portrait) {
+//     html {
+//         font-size: 70%;
+//     }
+// }
+
+// @media screen and(min-width:320px) and (orientation:portrait) {
+//     html {
+//         font-size: 61%;
+//     }
+// }
+
+// @media screen and(max-width:319px) and (orientation:portrait) {
+//     html {
+//         font-size: 60%;
+//     }
+// }
+
+a,
+button {
+    @include transition
+}
+
+/********** scrollbar **********/
+::-webkit-scrollbar {
+    @include scrollbar
+}
+
+::-webkit-scrollbar-thumb {
+    @include scrollbar-thumb;
+}
+
+/********** layout **********/
+
+/********** input **********/
+/* input */
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+textarea {
+    display: inline-block;
+    height: 4rem;
+    padding: 1rem;
+    line-height: 1.5;
+    letter-spacing: -0.02rem;
+    box-sizing: border-box;
+    border: 0;
+    font-size: 1.4rem;
+    background-color: #fff;
+
+    &:disabled {
+        color: #777;
+        background-color: #f9f9f9;
+    }
+
+    &:focus {
+        outline: none;
+    }
+
+    &::placeholder {
+        color: #aaa;
+    }
+}
+
+input[type="search"] {
+    text-align: left;
+    border: none;
+    width: 80%;
+    padding: 0;
+    outline: none;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+/*textarea*/
+textarea {
+    resize: none;
+}
+
+/*input error*/
+input[type="text"].error,
+input[type="password"].error,
+input[type="number"].error,
+input[type="email"].error,
+textarea.error {
+    border: 1px solid #f07171;
+    color: #f07171 !important;
+    position: relative;
+    background: url("/contents/images/common/icon_problem_red.png") 99% center no-repeat;
+    background-size: 12px 12px;
+}
+
+/* radio basic */
+input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"]+label {
+    margin-right: 20px;
+    font-size: 15px;
+    vertical-align: middle;
+
+    &:last-of-type {
+        margin-right: 0;
+    }
+}
+
+input[type="radio"]+label:before {
+    //@include ico_radio_off;
+    content: "";
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin: 0 7px 2px 0;
+    vertical-align: middle;
+}
+
+input[type="radio"]:checked+label:before {
+    content: "";
+    //@include ico_radio_on;
+}
+
+input[type="number"] {
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+}
+
+/*input*/
+.inputBox {
+    width: 100%;
+    position: relative;
+
+    input {
+        width: 100%;
+
+        &.size-df {
+            width: 100%;
+        }
+
+        &.size01 {
+            width: 1rem
+        }
+
+        &.size02 {
+            width: 2rem
+        }
+
+        &.size03 {
+            width: 3rem
+        }
+
+        &.size04 {
+            width: 4rem
+        }
+
+        &.size05 {
+            width: 5rem
+        }
+
+        &.size06 {
+            width: 6rem
+        }
+
+        &.size07 {
+            width: 7rem
+        }
+
+        &.size08 {
+            width: 8rem
+        }
+
+        &.size09 {
+            width: 9rem
+        }
+
+        &.size10 {
+            width: 10rem
+        }
+    }
+}
+
+.checkBox {
+    width: 100%;
+    @include checkbox;
+}
+
+/* checkbox basic */
+input[type="checkbox"] {
+    @include ckbox-type;
+}
+
+input[type="checkbox"]+label {
+    font-size: 1.5rem;
+    vertical-align: middle;
+
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+input[type="checkbox"]+label:before {
+    //@include ico_checkbox_off;
+    content: "";
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    vertical-align: middle;
+}
+
+input[type="checkbox"]:checked+label:before {
+    content: "";
+    //@include ico_checkbox_on;
+}
+
+/********** align **********/
+div,
+button,
+ul,
+dt {
+    &.type-align-st {
+        @include flex-st-item;
+    }
+
+    &.type-align-ct {
+        @include flex-ct-item;
+    }
+
+    &.type-align-en {
+        @include flex-en-item;
+    }
+
+    &.type-align-bt {
+        @include flex-bt-item;
+    }
+
+    &.type-align-ev {
+        @include flex-ev-item;
+    }
+
+    &.type-align-ar {
+        @include flex-ar-item;
+    }
+
+    &.type-col-align-bt-st {
+        @include flex-column;
+        justify-content: flex-start
+    }
+
+    &.type-wr-align-bt-st {
+        @include flex-wrap;
+        justify-content: flex-start
+    }
+
+    &.type-col-align-st-st {
+        @include flex-st-item-start;
+    }
+}
+
+p,
+span,
+th,
+td,
+em,
+li,
+strong,
+dd,
+div,
+tr {
+    &.txt-blue {
+        color: $mainColor
+    }
+
+    &.txt-red {
+        color: #dc5858
+    }
+
+    &.txt-red-df {
+        color: #ee3737
+    }
+
+    &.txt-purple {
+        color: #934ba8
+    }
+
+    &.txt-pt {
+        color: $subColor-b
+    }
+
+    &.txt-eb {
+        font-family: $font-eb;
+    }
+
+    &.txt-block {
+        @media screen and(max-width:767px) {
+            display: block;
+        }
+    }
+}
+
+em {
+    font-size: 1.1rem;
+}
+
+em,
+span {
+    &.g-style {
+        display: block;
+        font-size: $font-12;
+        color: #666;
+        letter-spacing: 0.24px;
+        line-height: 1.8rem;
+    }
+
+    &.data-ck {
+        text-align: center;
+        margin: 1rem auto
+    }
+}
+
+
+.txtBox {
+    @include txtBox;
+
+    @media screen and(max-width: 768px) {
+        @include txtBox_m;
+    }
+}
+
+.list {
+    &.type01 {
+        @include flex-bt-item;
+
+        @media screen and(max-width: 479px) {
+            flex-direction: column;
+        }
+
+        .item {
+            width: calc(33.3% - 6rem);
+            border-radius: 2rem;
+            background: #fff;
+            height: 36rem;
+            @include flex-bt-item;
+            flex-direction: column;
+            padding: 4.8rem 0 4.4rem;
+
+            @media screen and(max-width: 1024px) and (min-width:480px) {
+                width: calc(33.3% - 1rem);
+            }
+
+            @media screen and(max-width: 479px) {
+                width: calc(100%);
+                margin-bottom: 5rem;
+            }
+
+            strong {
+                font-size: 3.2rem;
+                color: $txtColor01;
+            }
+
+            p {
+                font-size: 1.8rem;
+                line-height: 2.7rem;
+                color: #333;
+                word-break: keep-all;
+            }
+
+            i {
+                width: 21.2rem;
+                height: 14.8rem;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: 100%;
+            }
+        }
+    }
+}
+
+.img-target {
+    display: none;
+    position: fixed;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+
+
+    &.active {
+        display: block;
+        @include flex-ct-item;
+    }
+}
+
+/********** btn **********/
+/*btn*/
+button {
+    @include flex-ct-item;
+    border-radius: 0.5rem;
+
+    &.df-btn {
+        width: 100%;
+        height: 7rem;
+        border-radius: 3.5rem;
+        font-size: 2.2rem;
+        font-family: $font-eb;
+
+        @media screen and(max-width: 479px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &.btn-blue {
+        background: $mainColor;
+        color: #fff
+    }
+
+    &.btn-white {
+        background: #fff;
+        color: #111
+    }
+
+    &.btn-view {
+        width: 6.6rem;
+        height: 6.6rem;
+        background: $txtColor02;
+        border-radius: 50%;
+    }
+}
+
+i {
+    position: relative;
+    background-repeat: no-repeat;
+
+    &::before {
+        background-repeat: no-repeat;
+    }
+
+    &.ico-emosad {
+        width: 7.8rem;
+        height: 7.8rem;
+
+        &::before {
+            @include beforeIco;
+            background-image: url($url-images-com + 'img_emo_sad.png');
+            width: 7.8rem;
+            height: 7.8rem;
+        }
+    }
+
+    &.ico-emohp {
+        width: 7.8rem;
+        height: 7.8rem;
+
+        &::before {
+            @include beforeIco;
+            background-image: url($url-images-com + 'img_emo_happy.png');
+            width: 7.8rem;
+            height: 7.8rem;
+        }
+    }
+
+    &.ico-Warrowbtn {
+        width: 1.9rem;
+        height: 1.5rem;
+
+        &::before {
+            @include beforeIco;
+            background-image: url($url-images-com + 'btn_arrow_rightW.png');
+            width: 1.9rem;
+            height: 1.5rem;
+            margin-left: 0.83rem;
+        }
+    }
+
+    &.ico-Barrowbtn {
+        width: 1.9rem;
+        height: 1.5rem;
+
+        &::before {
+            @include beforeIco;
+            background-image: url($url-images-com + 'btn_arrow_rightB.png');
+            width: 1.9rem;
+            height: 1.5rem;
+            margin-left: 0.83rem;
+        }
+    }
+
+    &.ico-view {
+        width: 2.5rem;
+        height: 2.5rem;
+
+        &::before {
+            @include beforeIco;
+            background-image: url($url-images-com + 'ico_view.svg');
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+    }
+}
