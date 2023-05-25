@@ -29,7 +29,7 @@ $url-images: "../images/";
 
 /* scroll */
 @mixin scrollbar {
-    width: 10px;
+    width: 0;
     height: 10px;
     background: transparent;
 }
@@ -41,7 +41,7 @@ $url-images: "../images/";
 }
 
 @mixin select-scrollbar {
-    width: 10px;
+    width: 0;
     height: 10px;
     background: #fff;
     border-left: 1px solid transparent

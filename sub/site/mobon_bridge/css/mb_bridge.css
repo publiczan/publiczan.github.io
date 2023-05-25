@@ -133,7 +133,7 @@ html { font-size: 62.5%; }
 a, button { -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
 /********** scrollbar **********/
-::-webkit-scrollbar { width: 10px; height: 10px; background: transparent; }
+::-webkit-scrollbar { width: 0; height: 10px; background: transparent; }
 
 ::-webkit-scrollbar-thumb { height: 12px; background: transparent; border-radius: 8px; }
 
