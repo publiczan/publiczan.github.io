@@ -1,0 +1,496 @@
+@charset 'utf-8';
+
+@mixin transition {
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+/********** common **********/
+$mainColor:#0063e3;
+$subColor-b: #64ffff;
+$txtColor01:#010012;
+$txtColor02:#111;
+$txtColor-w:#fff;
+$font-12:1.2rem;
+$font-13:1.3rem;
+$font-14:1.4rem;
+$font-15:1.5rem;
+$font-16:1.6rem;
+$font-17:1.7rem;
+$font-18:1.8rem;
+$font-l:'Pretendard-Light';
+$font-m:'Pretendard-Medium';
+$font-b:'Pretendard-Bold';
+$font-eb:'Pretendard-ExtraBold';
+$font-bb:'Pretendard-Black';
+$url-images-com: "../images/common/";
+$url-images: "../images/";
+
+/* scroll */
+@mixin scrollbar {
+    width: 0;
+    height: 10px;
+    background: transparent;
+}
+
+@mixin scrollbar-thumb {
+    height: 12px;
+    background: transparent;
+    border-radius: 8px;
+}
+
+@mixin select-scrollbar {
+    width: 0;
+    height: 10px;
+    background: #fff;
+    border-left: 1px solid transparent
+}
+
+@keyframes modal {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+@keyframes intro {
+    0% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes progress1 {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(.50);
+        background-image: linear-gradient(to left, #0063e3, #0091ff);
+    }
+}
+
+@keyframes progress2 {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(.80);
+        background-image: linear-gradient(to left, #0063e3, #0091ff);
+    }
+}
+
+@keyframes progress3 {
+    0% {
+        transform: scaleX(0);
+    }
+
+    100% {
+        transform: scaleX(.89);
+        background-image: linear-gradient(to left, #0063e3, #0091ff);
+    }
+}
+
+@mixin white-gradient {
+    background: linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+$animationSpeed: 10s; //40s
+
+// Animation
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-250px * 7))
+    }
+}
+
+/********** layout **********/
+
+/*bg*/
+
+/*flex*/
+@mixin flex-item {
+    display: flex;
+    align-items: center;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@mixin flex-no-wrap {
+    display: flex;
+    flex-wrap: nowrap;
+}
+
+/*content-center*/
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-ct-item {
+    @include flex-center;
+    @include flex-item;
+}
+
+@mixin flex-ct-item-start {
+    @include flex-center;
+    align-items: flex-start;
+}
+
+@mixin flex-ct-item-end {
+    @include flex-center;
+    align-items: flex-end;
+}
+
+/*content-start*/
+@mixin flex-start {
+    display: flex;
+    justify-content: flex-start;
+}
+
+@mixin flex-st-item {
+    @include flex-start;
+    @include flex-item;
+}
+
+@mixin flex-st-item-start {
+    @include flex-start;
+    align-items: flex-start;
+}
+
+@mixin flex-st-item-end {
+    @include flex-start;
+    align-items: flex-end;
+}
+
+/*content-end*/
+@mixin flex-end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@mixin flex-en-item {
+    @include flex-end;
+    @include flex-item;
+}
+
+@mixin flex-en-item-start {
+    @include flex-end;
+    align-items: flex-start;
+}
+
+@mixin flex-en-item-end {
+    @include flex-end;
+    align-items: flex-end;
+}
+
+/*content-between*/
+@mixin flex-between {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-bt-item {
+    @include flex-between;
+    @include flex-item;
+}
+
+@mixin flex-bt-item-start {
+    @include flex-between;
+    align-items: flex-start;
+}
+
+@mixin flex-bt-item-end {
+    @include flex-between;
+    align-items: flex-end;
+}
+
+/*content-around*/
+@mixin flex-around {
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin flex-ar-item {
+    @include flex-around;
+    @include flex-item;
+}
+
+@mixin flex-ar-item-start {
+    @include flex-around;
+    align-items: flex-start;
+}
+
+@mixin flex-ar-item-end {
+    @include flex-around;
+    align-items: flex-end;
+}
+
+/*content-evenly*/
+@mixin flex-evenly {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+@mixin flex-ev-item {
+    @include flex-evenly;
+    @include flex-item;
+}
+
+@mixin flex-ev-item-start {
+    @include flex-evenly;
+    align-items: flex-start;
+}
+
+@mixin flex-ev-item-end {
+    @include flex-evenly;
+    align-items: flex-end;
+}
+
+/*text*/
+@mixin txtHide {
+    text-indent: -999999px;
+    font-size: 0;
+}
+
+
+@mixin tit {
+    font-size: 4.8rem;
+    line-height: 5.76rem;
+}
+
+@mixin txt {
+    font-family: $font-b;
+    font-size: 2.8rem;
+    line-height: 4.5rem;
+}
+
+@mixin strong {
+    font-size: 4rem;
+    line-height: 6rem;
+}
+
+@mixin txt_m {
+    font-family: $font-b;
+    font-size: 1.6rem;
+    line-height: 2.7rem;
+}
+
+@mixin strong_m {
+    font-size: 2.6rem;
+    line-height: 3.6rem;
+}
+
+@mixin txtBox {
+    strong {
+        @include tit;
+    }
+
+    p {
+        @include txt;
+    }
+}
+
+@mixin txtBox_m {
+    strong {
+        @include strong_m
+    }
+
+    p {
+        @include txt_m;
+    }
+}
+
+@mixin inputBox {
+
+    margin-top: 4.9rem;
+
+    .row {
+        >div {
+            @include flex-st-item;
+        }
+
+        &:first-of-type {
+            >div {
+                width: 100%;
+                height: 4.8rem;
+                border: 1px solid #ccc;
+                border-radius: 1rem;
+                padding: 0 1.6rem;
+
+                p {
+                    width: 13rem;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+        .checkBox {
+            input[type="checkbox"]+label {
+                button {
+                    font-family: $font-b;
+                    color: #3523c7;
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        &:last-of-type {
+            margin-top: 6.2rem;
+
+            >div {
+                &:first-of-type {
+                    .checkBox {
+                        width: 14rem;
+                    }
+
+                    input[type="text"] {
+                        border: 1px solid #ccc;
+                        height: 3rem;
+                        border-radius: 0.5rem;
+                    }
+                }
+
+                &:not(:first-of-type) {
+                    margin-top: 1.6rem;
+                }
+            }
+        }
+    }
+
+}
+
+@mixin inputBox_m {
+    .row {
+        &:first-of-type {
+            >div {
+                height: 100%;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: center;
+
+                p {
+                    width: 100%;
+                    padding: 1rem;
+                }
+            }
+        }
+
+        &:last-of-type {
+            >div {
+                &:first-of-type {
+                    flex-direction: column;
+                    align-items: flex-start;
+
+                    .checkBox {
+                        margin-bottom: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin btn-application {
+    width: 100%;
+    height: 5.3rem;
+    margin-top: 8.5rem;
+    border-radius: 1rem;
+    background-image: linear-gradient(81deg, #20149d, #2d0098 100%);
+    color: #fff;
+    font-size: 1.6rem;
+    font-family: $font-eb;
+}
+
+/********** form custom **********/
+/* checkbox layout */
+@mixin ckbox-type {
+    display: none;
+}
+
+@mixin ckbox-label {
+    @include flex-st-item;
+    font-size: $font-14;
+    cursor: pointer;
+    font-family: $font-l;
+}
+
+@mixin checkbox-label-bf {
+    //@include ico_checkbox_off;
+    content: "";
+    display: block;
+}
+
+@mixin checkbox-cklabel-bf {
+    content: "";
+    //@include ico_checkbox_on;
+}
+
+@mixin checkbox {
+
+    input[type="checkbox"] {
+        @include ckbox-type;
+    }
+
+    input[type="checkbox"]+label {
+        margin: 0;
+        @include ckbox-label;
+    }
+
+    input[type="checkbox"]+label:before {
+        @include beforeIco;
+        @include checkbox-label-bf;
+        width: 1.9rem;
+        height: 1.9rem;
+        margin-right: 5px;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+    }
+
+    input[type="checkbox"]:checked+label:before {
+        @include checkbox-cklabel-bf;
+        background: #20149d url($url-images-com + 'ic_check.svg') no-repeat center center;
+    }
+}
+
+/********** page ************/
+/*nav common*/
+
+/********** img ************/
+/*img-ico-before*/
+@mixin beforeIco {
+    content: "";
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+}
+
+/********** button **********/
+/*btn-row-size*/

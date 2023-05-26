@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1920" height="1701" viewBox="0 0 1920 1701">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3, .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-3 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-4 {
+        fill: #fff;
+        opacity: 0.1;
+      }
+
+      .cls-5 {
+        clip-path: url(#clip-path-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#010011"/>
+      <stop offset="1" stop-color="#000121"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <rect class="cls-1" width="232" height="464"/>
+    </clipPath>
+    <clipPath id="clip-path-2">
+      <rect class="cls-1" x="353" width="354" height="707"/>
+    </clipPath>
+  </defs>
+  <g id="img_bg_02" transform="translate(0 -3714)">
+    <rect id="사각형_5383" data-name="사각형 5383" class="cls-2" width="1920" height="1669" transform="translate(0 3714)"/>
+    <g id="스크롤_그룹_11" data-name="스크롤 그룹 11" class="cls-3" transform="translate(1688 3874)">
+      <circle id="타원_25" data-name="타원 25" class="cls-4" cx="160" cy="160" r="160" transform="translate(72 72)"/>
+    </g>
+    <circle id="타원_28" data-name="타원 28" class="cls-4" cx="160" cy="160" r="160" transform="translate(1340 5023)"/>
+    <g id="스크롤_그룹_12" data-name="스크롤 그룹 12" class="cls-5" transform="translate(-353 4384)">
+      <circle id="타원_26" data-name="타원 26" class="cls-4" cx="281.5" cy="281.5" r="281.5" transform="translate(72 72)"/>
+    </g>
+  </g>
+</svg>
