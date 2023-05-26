@@ -702,8 +702,9 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap header h1 a { padding-left: 1rem; }
   #Wrap header.other h1 { background: rgba(255, 255, 255, 0.9); }
   #Wrap nav { right: 1rem; }
-  #Wrap .wrapper .content .box .inner { width: 100% !important; max-width: 100% !important; padding: 10rem 2rem !important; }
-  #Wrap .wrapper .content .box .inner.scroll { padding: 10rem 2rem !important; }
+  #Wrap nav a { margin-bottom: 2rem; }
+  #Wrap .wrapper .content .box .inner { width: 100% !important; max-width: 100% !important; padding: 10rem 2rem 15rem !important; }
+  #Wrap .wrapper .content .box .inner.scroll { padding: 10rem 2rem 15rem !important; }
   #Wrap .wrapper .content .box.step01 .firstArrow { display: none; }
   #Wrap .wrapper .content .box.step01 .txtBox .tit { font-size: 2.6rem; line-height: 3.6rem; }
   #Wrap .wrapper .content .box.step01 .txtBox .txt { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }

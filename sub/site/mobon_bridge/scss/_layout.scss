@@ -1163,7 +1163,11 @@
         }
 
         nav {
-            right: 1rem
+            right: 1rem;
+
+            a {
+                margin-bottom: 2rem;
+            }
         }
 
         .wrapper {
@@ -1173,10 +1177,10 @@
                     .inner {
                         width: 100% !important;
                         max-width: 100% !important;
-                        padding: 10rem 2rem !important;
+                        padding: 10rem 2rem 15rem !important;
 
                         &.scroll {
-                            padding: 10rem 2rem !important;
+                            padding: 10rem 2rem 15rem !important;
                         }
                     }
 
