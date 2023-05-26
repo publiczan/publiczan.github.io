@@ -15,6 +15,7 @@ window.onresize = function () {
 
 window.onload = function () {
     var header = document.querySelector('header');
+    var adWrap = document.querySelector('.adWrap');
     var navigator = document.querySelector('.navigator');
     var navigatorA = document.querySelectorAll('.navigator a');
     for (var i = 0; i < navigatorA.length; i++) {
@@ -243,6 +244,7 @@ window.onload = function () {
                 }
                 if (now == 7) {
                     header.classList.add("last");
+                    adWrap.classList.remove('active')
                 } else {
                     header.classList.remove("last");
                 }
