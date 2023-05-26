@@ -383,7 +383,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box .inner { width: 100%; max-width: 110rem; }
 
-#Wrap .wrapper .content .box .inner.scrollW { padding: 24rem 0; overflow-y: auto; height: 100%; width: 100%; max-width: 100%; }
+#Wrap .wrapper .content .box .inner.scrollW { padding: 24rem 0; overflow-y: auto; height: 100%; width: 100%; max-width: 100%; padding-bottom: 10rem; }
 
 #Wrap .wrapper .content .box.step01 { width: 100%; background: url("../images/img_bg_01.svg") center center no-repeat; background-size: cover; }
 
@@ -752,7 +752,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   .adWrap { height: calc(var(--vh, 1vh) * 100); }
   .adWrap .ad-hd { height: 10vh; }
   .adWrap .ad-hd strong { font-size: 2.6rem; line-height: 3.6rem; }
-  .adWrap .ad-con { padding: 0 2rem; overflow-y: auto; height: calc(90vh - 1rem); height: calc(var(--vh, 1vh) * 100); margin: 0; }
+  .adWrap .ad-con { padding: 0 2rem; overflow-y: auto; height: calc(100% - 66px); margin: 0; }
   .adWrap .ad-con .inputBox { margin: 1rem 0; }
   .adWrap .ad-con .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   .adWrap .ad-con .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }

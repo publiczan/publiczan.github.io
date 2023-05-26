@@ -190,6 +190,7 @@
                         height: 100%;
                         width: 100%;
                         max-width: 100%;
+                        padding-bottom: 10rem;
                     }
                 }
 
@@ -1439,8 +1440,7 @@
         .ad-con {
             padding: 0 2rem;
             overflow-y: auto;
-            height: calc(90vh - 1rem);
-            height: calc(var(--vh, 1vh) * 100);
+            height: calc(100% - 66px);
             margin: 0;
 
             .inputBox {
