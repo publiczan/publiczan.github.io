@@ -268,8 +268,8 @@ em.data-ck, span.data-ck { text-align: center; margin: 1rem auto; }
 
 .txtBox p { font-family: "Pretendard-Bold"; font-size: 2.8rem; line-height: 4.5rem; }
 
-@media screen and (max-width: 767px) { .txtBox strong { font-size: 2rem; line-height: 3.2rem; }
-  .txtBox p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; } }
+@media screen and (max-width: 767px) { .txtBox strong { font-size: 2.6rem; line-height: 3.6rem; }
+  .txtBox p { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; } }
 
 .list.type01 { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
@@ -283,7 +283,11 @@ em.data-ck, span.data-ck { text-align: center; margin: 1rem auto; }
 
 .list.type01 .item strong { font-size: 3.2rem; color: #010012; }
 
+@media screen and (max-width: 767px) { .list.type01 .item strong { font-size: 2.6rem; line-height: 3.6rem; } }
+
 .list.type01 .item p { font-size: 1.8rem; line-height: 2.7rem; color: #333; word-break: keep-all; }
+
+@media screen and (max-width: 767px) { .list.type01 .item p { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; } }
 
 .list.type01 .item i { width: 21.2rem; height: 14.8rem; background-position: center; background-repeat: no-repeat; background-size: 100%; }
 
@@ -329,7 +333,7 @@ i.ico-view { width: 2.5rem; height: 2.5rem; }
 
 i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; background-image: url("../images/common/ico_view.svg"); width: 2.5rem; height: 2.5rem; }
 
-#Wrap { position: relative; width: 100%; height: 100%; width: 100vw; height: 100vh; transform: translate3d(0, 0, 0); -webkit-transform: translateZ(0); -webkit-overflow-scrolling: touch; margin: 0 auto; background: #fff; -ms-touch-action: none; touch-action: none; -webkit-transition: all 700ms ease 0s; transition: all 700ms ease 0s; }
+#Wrap { position: relative; width: 100%; height: 100%; width: 100vw; height: 100vh; height: calc(var(--vh, 1vh) * 100); transform: translate3d(0, 0, 0); -webkit-transform: translateZ(0); -webkit-overflow-scrolling: touch; margin: 0 auto; background: #fff; -ms-touch-action: none; touch-action: none; -webkit-transition: all 700ms ease 0s; transition: all 700ms ease 0s; }
 
 #Wrap header { -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
@@ -692,52 +696,59 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap header h1 a { padding-left: 1rem; }
   #Wrap header.other h1 { background: rgba(255, 255, 255, 0.9); }
   #Wrap nav { right: 1rem; }
-  #Wrap .wrapper .content .box .inner { width: 100%; max-width: 100%; padding: 0 2%; }
-  #Wrap .wrapper .content .box .inner.scroll { padding: 10rem 2%; }
+  #Wrap .wrapper .content .box .inner { width: 100% !important; max-width: 100% !important; padding: 10rem 2rem !important; }
+  #Wrap .wrapper .content .box .inner.scroll { padding: 10rem 2rem !important; }
   #Wrap .wrapper .content .box.step01 .firstArrow { display: none; }
-  #Wrap .wrapper .content .box.step01 .txtBox .tit { font-size: 2rem; line-height: 3.2rem; }
-  #Wrap .wrapper .content .box.step01 .txtBox .txt { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step01 .txtBox .tit { font-size: 2.6rem; line-height: 3.6rem; }
+  #Wrap .wrapper .content .box.step01 .txtBox .txt { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }
   #Wrap .wrapper .content .box.step02 .row .txtBox i.badgeico { right: 0; }
   #Wrap .wrapper .content .box.step02 .row .txtBox i.badgeico::before { background-size: 70%; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type01 .txt { font-size: 2rem; line-height: 3.2rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type02 p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 p { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
-  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 strong { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type01 .txt { font-size: 2.6rem; line-height: 3.6rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type02 p { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 p { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }
+  #Wrap .wrapper .content .box.step02 .row .txtBox.type03 strong { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; font-size: 2.6rem; line-height: 3.6rem; }
   #Wrap .wrapper .content .box.step02 .row .imgBox.type01 { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   #Wrap .wrapper .content .box.step02 .row .imgBox.type01 > div:first-of-type { margin-bottom: 10rem; }
   #Wrap .wrapper .content .box.step02 .row:nth-of-type(2) { padding-top: 10rem; }
+  #Wrap .wrapper .content .box.step03 .txtBox { margin-bottom: 3rem; }
   #Wrap .wrapper .content .box.step03 .txtBox strong span { display: block; }
+  #Wrap .wrapper .content .box.step03 .row:last-of-type { margin-top: 0; }
   #Wrap .wrapper .content .box.step04 .row .txtBox { padding-left: 0; }
   #Wrap .wrapper .content .box.step04 .row .progressBox { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step04 .row .progressBox > div { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
   #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar { height: 5rem; }
-  #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar span { font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
-  #Wrap .wrapper .content .box.step04 .row .progressBox > div p { margin-left: 0; font-family: "Pretendard-Bold"; font-size: 1.4rem; line-height: 2rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div .progress-bar span { font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div p { margin-left: 0; font-family: "Pretendard-Bold"; font-size: 1.6rem; line-height: 2.7rem; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div:nth-of-type(1) .progress-bar { width: 60%; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div:nth-of-type(2) .progress-bar { width: 90%; }
+  #Wrap .wrapper .content .box.step04 .row .progressBox > div:nth-of-type(3) .progress-bar { width: 93%; }
   #Wrap .wrapper .content .box.step04 .row:last-of-type { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step05 .row .txtBox strong { line-height: 3.2rem; }
-  #Wrap .wrapper .content .box.step05 .row .txtBox.type strong { font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step05 .row .txtBox.type strong { font-size: 2.6rem; line-height: 3.6rem; }
   #Wrap .wrapper .content .box.step05 .row:last-of-type { margin-top: 10rem; }
   #Wrap .wrapper .content .box.step05 .row:last-of-type .videoBox { padding: 1%; }
-  #Wrap .wrapper .content .box.step06 .list.type02 { margin-top: 10rem; }
+  #Wrap .wrapper .content .box.step05 .row .list.type01 { margin: 5rem auto; }
+  #Wrap .wrapper .content .box.step06 .list.type02 { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item .txt strong { font-size: 1.8rem; line-height: 2.8rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item .txt p { font-size: 1.4rem; line-height: 2rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type { margin-top: 5rem; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .bg { -webkit-box-ordinal-group: 2; -ms-flex-order: 1; order: 1; }
   #Wrap .wrapper .content .box.step06 .list.type02 .item:last-of-type .txt { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; margin-right: 0; }
-  #Wrap .wrapper .content .box.step07 .txtBox strong { font-size: 2rem; line-height: 3.2rem; }
+  #Wrap .wrapper .content .box.step07 .txtBox strong { font-size: 2.6rem; line-height: 3.6rem; }
   #Wrap .wrapper .content .box.step08 .inner.scrollW { height: 100% !important; overflow-y: scroll !important; padding: 12rem 2% !important; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
   #Wrap .wrapper .content .box.step08 .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; }
+  .adWrap { height: calc(var(--vh, 1vh) * 100); }
   .adWrap .ad-hd { height: 10vh; }
-  .adWrap .ad-hd strong { font-size: 2rem; line-height: 3.2rem; }
-  .adWrap .ad-con { padding: 0 5%; overflow-y: auto; height: 90vh; }
+  .adWrap .ad-hd strong { font-size: 2.6rem; line-height: 3.6rem; }
+  .adWrap .ad-con { padding: 0 2rem; overflow-y: auto; height: calc(90vh - 1rem); height: calc(var(--vh, 1vh) * 100); margin: 0; }
   .adWrap .ad-con .inputBox { margin: 1rem 0; }
   .adWrap .ad-con .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   .adWrap .ad-con .inputBox .row:first-of-type > div p { width: 100%; padding: 1rem; }
   .adWrap .ad-con .inputBox .row:last-of-type > div:first-of-type { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
   .adWrap .ad-con .inputBox .row:last-of-type > div:first-of-type .checkBox { margin-bottom: 1rem; }
   .adWrap .ad-con .inputBox .row .checkBox input[type="checkbox"] + label { -ms-flex-wrap: wrap; flex-wrap: wrap; }
-  .adWrap .ad-con .btn-application { margin-top: 1rem; } }
+  .adWrap .ad-con .btn-application { margin: 1rem auto 5.3rem; } }

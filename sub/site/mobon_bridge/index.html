@@ -480,60 +480,61 @@
                 </footer>
             </div>
         </article>
-    </div>
-    <!--수정추가-->
-    <div class="adWrap">
-        <div class="ad-hd">
-            <strong>광고 문의</strong>
-            <button type="button" class="adClose"><i></i></button>
-        </div>
-        <div class="ad-con">
-            <div class="inputBox">
-                <div class="row">
-                    <div>
-                        <p>담당자명</p>
-                        <input type="text" placeholder="담당자명 입력">
-                    </div>
-                    <div>
-                        <p>연락처</p>
-                        <input type="number" placeholder="&quot;_&quot; 없이 숫자만 입력">
-                    </div>
-                    <div>
-                        <p>이메일</p>
-                        <input type="email" placeholder="이메일 형식으로 입력 &#10;(ex : mobon@enliple.com)">
-                    </div>
-                    <div>
-                        <p>사이트 URL</p>
-                        <input type="text" placeholder="랜딩 사이트 도메인 URL을 입력하세요.">
-                    </div>
-                    <div>
-                        <p>희망 마케팅 예산</p>
-                        <input type="number" placeholder="1개월 기준, 숫자만 입력하세요.">
-                    </div>
-                </div>
-                <div class="row">
-                    <div>
-                        <div class="checkBox">
-                            <input type="checkbox" name="ad-save" id="adsave">
-                            <label for="adsave">대행사명 입력</label>
+        <!--수정추가-->
+        <div class="adWrap">
+            <div class="ad-hd">
+                <strong>광고 문의</strong>
+                <button type="button" class="adClose"><i></i></button>
+            </div>
+            <div class="ad-con">
+                <div class="inputBox">
+                    <div class="row">
+                        <div>
+                            <p>담당자명</p>
+                            <input type="text" placeholder="담당자명 입력">
                         </div>
-                        <input type="text" placeholder="없을 시 공란">
+                        <div>
+                            <p>연락처</p>
+                            <input type="number" placeholder="&quot;_&quot; 없이 숫자만 입력">
+                        </div>
+                        <div>
+                            <p>이메일</p>
+                            <input type="email" placeholder="이메일 형식으로 입력 &#10;(ex : mobon@enliple.com)">
+                        </div>
+                        <div>
+                            <p>사이트 URL</p>
+                            <input type="text" placeholder="랜딩 사이트 도메인 URL을 입력하세요.">
+                        </div>
+                        <div>
+                            <p>희망 마케팅 예산</p>
+                            <input type="number" placeholder="1개월 기준, 숫자만 입력하세요.">
+                        </div>
                     </div>
-                    <div class="checkBox">
-                        <input type="checkbox" name="privacy" id="privacy">
-                        <label for="privacy">광고신청을 위한 <button type="button">개인정보 수집 및 이용</button>에
-                            동의합니다.</label>
+                    <div class="row">
+                        <div>
+                            <div class="checkBox">
+                                <input type="checkbox" name="ad-save" id="adsave">
+                                <label for="adsave">대행사명 입력</label>
+                            </div>
+                            <input type="text" placeholder="없을 시 공란">
+                        </div>
+                        <div class="checkBox">
+                            <input type="checkbox" name="privacy" id="privacy">
+                            <label for="privacy">광고신청을 위한 <button type="button">개인정보 수집 및 이용</button>에
+                                동의합니다.</label>
+                        </div>
+                        <div class="checkBox">
+                            <input type="checkbox" name="agree" id="agree">
+                            <label for="agree"><button type="button">모비온 이용약관</button>에 동의합니다.</label>
+                        </div>
                     </div>
-                    <div class="checkBox">
-                        <input type="checkbox" name="agree" id="agree">
-                        <label for="agree"><button type="button">모비온 이용약관</button>에 동의합니다.</label>
-                    </div>
+                    <button type="button" class="btn-application">신청하기</button>
                 </div>
-                <button type="button" class="btn-application">신청하기</button>
             </div>
         </div>
+        <!--//end 수정추가-->
     </div>
-    <!--//end 수정추가-->
+
     <script>
         $(function () {
             $('#slider01').slick({

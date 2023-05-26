@@ -376,6 +376,10 @@ span {
             strong {
                 font-size: 3.2rem;
                 color: $txtColor01;
+
+                @media screen and(max-width: 767px) {
+                    @include strong_m
+                }
             }
 
             p {
@@ -383,6 +387,10 @@ span {
                 line-height: 2.7rem;
                 color: #333;
                 word-break: keep-all;
+
+                @media screen and(max-width: 767px) {
+                    @include txt_m
+                }
             }
 
             i {
