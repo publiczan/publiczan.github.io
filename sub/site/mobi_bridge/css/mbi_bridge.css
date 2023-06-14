@@ -440,7 +440,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box { position: relative; width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 
-#Wrap .wrapper .content .box .inner { width: 100%; height: 100%; overflow-y: auto; }
+#Wrap .wrapper .content .box .inner { width: 100%; height: 100%; overflow-y: auto; -ms-touch-action: none; touch-action: none; -webkit-transition: all 700ms ease 0s; transition: all 700ms ease 0s; }
 
 #Wrap .wrapper .content .box .inner .innerW { width: 100%; max-width: 120rem; padding: 13rem 0; margin: 0 auto; }
 
