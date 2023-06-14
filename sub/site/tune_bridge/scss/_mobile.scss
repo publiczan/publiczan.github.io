@@ -328,13 +328,13 @@
 
                             .tit {
                                 h2 {
-                                    font-size: 3.6rem;
-                                    line-height: 5rem;
+                                    font-size: 3.2rem;
+                                    line-height: 4.4rem;
                                 }
 
                                 p {
-                                    font-size: 2.8rem;
-                                    line-height: 4rem;
+                                    font-size: 1.8rem;
+                                    line-height: 2.8rem;
                                 }
                             }
                         }
@@ -386,11 +386,12 @@
                         .txtBox {
 
                             h3 {
-                                font-size: 3.6rem;
-                                line-height: 4.3rem;
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
                             }
 
                             p {
+                                margin-top: 1rem;
                                 font-size: 1.8rem;
                                 line-height: 2.1rem;
                             }
@@ -398,8 +399,8 @@
                             &.type {
 
                                 strong {
-                                    font-size: 3.6rem;
-                                    line-height: 4.3rem;
+                                    font-size: 2.4rem;
+                                    line-height: 3.2rem;
                                 }
                             }
                         }
@@ -421,7 +422,7 @@
 
                                 p {
                                     margin-top: 2.8rem;
-                                    font-size: 2.4rem;
+                                    font-size: 2rem;
                                     line-height: 2.9rem;
                                     font-family: $font-sb;
                                 }
@@ -439,8 +440,8 @@
 
                             .txtBox {
                                 h3 {
-                                    font-size: 3.6rem;
-                                    line-height: 6rem;
+                                    font-size: 3.2rem;
+                                    line-height: 4.8rem;
                                 }
                             }
 
@@ -531,12 +532,12 @@
 
                     &.step03 {
                         .row {
-                            padding: 10rem 2.8rem;
+                            padding: 10rem 2.8rem !important;
 
                             .txtBox {
                                 h3 {
-                                    font-size: 3.6rem;
-                                    line-height: 6rem;
+                                    font-size: 3.2rem;
+                                    line-height: 4.84rem;
                                 }
 
                                 span {
@@ -585,12 +586,11 @@
 
                                         h3 {
                                             img {
-                                                height: 3.3rem;
+                                                height: 2.9rem;
                                             }
                                         }
 
                                         p {
-                                            margin-top: 0;
                                             font-size: 1.6rem;
                                             line-height: 2.8rem;
                                         }
@@ -616,7 +616,9 @@
                             }
 
                             h3 {
-                                font-size: 3.6rem;
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
+                                margin-top: 1rem;
                             }
 
                             &.type {
@@ -636,7 +638,9 @@
                             }
 
                             h3 {
-                                font-size: 3.6rem;
+                                margin-top: 1rem;
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
                             }
 
                         }
@@ -658,6 +662,14 @@
                     }
 
                     &.step06 {
+                        .inner {
+                            .innerW {
+                                height: 100vh;
+                                flex-direction: column;
+                                @include flex-ct-item;
+                            }
+                        }
+
                         .txtBox {
                             p {
                                 font-size: 1.8rem;
@@ -665,7 +677,9 @@
                             }
 
                             h3 {
-                                font-size: 3.6rem;
+                                margin-top: 1rem;
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
                             }
 
                         }
@@ -687,6 +701,14 @@
                     }
 
                     &.step07 {
+                        .inner {
+                            .innerW {
+                                height: 100vh;
+                                flex-direction: column;
+                                @include flex-ct-item;
+                            }
+                        }
+
                         .txtBox {
                             p {
                                 font-size: 1.8rem;
@@ -694,12 +716,15 @@
                             }
 
                             h3 {
-                                font-size: 3.6rem;
+                                margin-top: 1rem;
+                                font-size: 3.2rem;
+                                line-height: 4.4rem;
                             }
 
                         }
 
                         .imgBox {
+                            margin: 3rem auto 1rem;
 
                             img {
                                 margin-bottom: 2rem;
@@ -725,7 +750,8 @@
                         .txtBox {
                             h3 {
                                 font-size: 2.2rem;
-                                line-height: 3.4rem;
+                                line-height: 3rem;
+                                letter-spacing: -0.032rem;
                             }
                         }
 
@@ -736,6 +762,12 @@
                                 flex-direction: column;
                                 height: auto;
                                 padding: 2rem;
+
+                                &:hover {
+                                    &::after {
+                                        top: -0.4rem;
+                                    }
+                                }
 
                                 i {
                                     width: 16.7rem;
