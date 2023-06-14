@@ -116,7 +116,7 @@
             width: 8rem;
             height: 8rem;
             bottom: 2rem;
-            right: 2rem;
+            right: 6rem;
             border-radius: 50%;
             background: url($url-images-com + 'btn_top_wh.png') center center no-repeat;
             background-size: 100%;
@@ -268,17 +268,16 @@
 
                     .inner {
                         .innerW {
-                            padding: 0;
                             position: relative;
                         }
                     }
 
                     .firstArrow {
-                        position: absolute;
-                        width: 5.4rem;
-                        height: 5.4rem;
-                        right: 0;
-                        bottom: 1rem;
+                        position: fixed;
+                        width: 8rem;
+                        height: 8rem;
+                        right: 6rem;
+                        bottom: 2rem;
                         @include flex-ct-item;
                         border-radius: 50%;
                         z-index: 999;
@@ -296,7 +295,7 @@
 
                     .txtBox {
                         color: $txtColor-w;
-                        margin: 11.4rem auto 0;
+                        margin: 0 auto;
 
                         .tit {
                             h2 {
@@ -1004,6 +1003,7 @@
                         height: 100vh;
 
                         .innerW {
+                            max-width: 120rem;
                             @include flex-bt-item;
                             padding: 5rem 2rem
                         }
