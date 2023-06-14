@@ -246,9 +246,7 @@
                     width: 100%;
                     height: 100%;
                     overflow-y: auto;
-                    touch-action: none;
-                    -webkit-transition: all 700ms ease 0s;
-                    transition: all 700ms ease 0s;
+                    -webkit-overflow-scrolling: touch;
 
                     .innerW {
                         width: 100%;

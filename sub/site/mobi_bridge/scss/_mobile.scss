@@ -373,6 +373,7 @@
 
                         .barlist {
                             overflow-x: scroll;
+                            -webkit-overflow-scrolling: touch;
 
                             ul {
                                 width: 291%;
@@ -679,6 +680,7 @@
         .ad-con {
             padding: 0 2rem;
             overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
             height: calc(100% - 10vh);
             margin: 0;
 
