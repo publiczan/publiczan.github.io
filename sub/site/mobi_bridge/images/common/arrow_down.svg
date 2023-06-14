@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="53.053" height="53.053" viewBox="0 0 53.053 53.053">
+    <g data-name="그룹 15954">
+        <g data-name="패스 7118" style="fill:none">
+            <path d="M26.526 0A26.526 26.526 0 1 1 0 26.526 26.526 26.526 0 0 1 26.526 0z" style="stroke:none" transform="rotate(90 26.527 26.527)"/>
+            <path d="M26.526 3A23.452 23.452 0 0 0 9.89 9.89 23.452 23.452 0 0 0 3 26.527a23.452 23.452 0 0 0 6.89 16.636 23.452 23.452 0 0 0 16.636 6.89 23.452 23.452 0 0 0 16.636-6.89 23.452 23.452 0 0 0 6.89-16.636 23.452 23.452 0 0 0-6.89-16.636A23.452 23.452 0 0 0 26.526 3m0-3c14.65 0 26.527 11.876 26.527 26.526S41.177 53.053 26.526 53.053C11.876 53.053 0 41.177 0 26.526 0 11.876 11.876 0 26.526 0z" style="fill:#fff;stroke:none" transform="rotate(90 26.527 26.527)"/>
+        </g>
+        <path data-name="패스 6" d="m1769.286-830.984 6.643 6.643-6.643 6.643" transform="rotate(90 469.936 -1268.54)" style="stroke:#fff;stroke-linecap:square;stroke-width:3px;fill:none"/>
+        <path data-name="패스 7" d="M1772.222-822.517h-20.132" transform="rotate(90 469.528 -1266.306)" style="stroke:#fff;stroke-linecap:square;stroke-width:3px;fill:none"/>
+        <g data-name="btn_arrow">
+            <path data-name="패스 6" d="m1769.286-830.984 6.643 6.643-6.643 6.643" transform="rotate(90 469.936 -1268.54)" style="stroke:#fff;stroke-linecap:square;stroke-width:3px;fill:none"/>
+            <path data-name="패스 7" d="M1772.222-822.517h-20.132" transform="rotate(90 469.528 -1266.306)" style="stroke:#fff;stroke-linecap:square;stroke-width:3px;fill:none"/>
+        </g>
+    </g>
+</svg>

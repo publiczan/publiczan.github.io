@@ -1,0 +1,703 @@
+@charset "utf-8";
+
+@media screen and(max-width: 1260px) {}
+
+@media screen and(max-width: 1110px) {
+    nav {
+        right: 4rem;
+    }
+}
+
+@media screen and(max-width: 1440px) and (min-width:1025px) {
+    html {
+        font-size: 60%;
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step04 {
+                        .inner {
+                            >div {
+                                max-width: 90%;
+                            }
+                        }
+
+                        .tabBox {
+                            .tab-con {
+                                >div {
+                                    &::before {
+                                        height: auto;
+                                        background-size: 70%
+                                    }
+
+                                    .list {
+                                        width: calc(100% - 42rem);
+                                        margin-left: 0;
+                                        margin-right: 5rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+@media screen and(max-width: 1024px) and (min-width:768px) {
+    html {
+        font-size: 54%;
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        .innerW {
+                            padding: 10rem 2rem;
+                        }
+                    }
+
+                    &.step01 {
+                        .barlist {
+
+                            ul {
+
+                                li {
+                                    width: calc(10.92% - 2rem);
+                                }
+                            }
+                        }
+                    }
+
+                    &.step03 {
+
+                        .bannerBox {
+                            .bannerLeft {
+                                width: 37rem;
+
+                                >div {
+                                    &::before {
+                                        width: 87%;
+                                    }
+                                }
+                            }
+
+                            .bannerRight {
+                                width: 50%;
+                            }
+                        }
+                    }
+
+                    &.step04 {
+                        .inner {
+                            .innerW {
+                                >div {
+                                    max-width: 90%;
+                                    padding: 7.2rem 3rem;
+                                }
+                            }
+                        }
+
+                        .tabBox {
+                            .tab-con {
+                                >div {
+                                    &::before {
+                                        width: 100%;
+                                        height: 100%;
+                                        padding: 50% 0;
+                                        background-size: 50%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        strong {
+                            width: 50%;
+
+                            &::after {
+                                max-width: 9rem;
+                                margin: 0 3rem 0 3rem
+                            }
+                        }
+
+                        .inputBox {
+                            .row {
+                                &:first-of-type {
+                                    >div {
+                                        p {
+                                            width: 15rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .adWrap {
+        width: 80%;
+    }
+}
+
+@media screen and(max-width: 1024px) {
+    #Wrap {
+        .btn-fx {
+            .mainAdBtn {
+                width: 100% !important;
+                height: 5rem !important;
+                top: auto !important;
+                bottom: 0;
+                flex-direction: inherit;
+                right: auto !important;
+                border-radius: 0 !important;
+                font-size: 2rem;
+
+                &::after {
+                    margin-top: 0;
+                    background-size: 50%;
+                }
+            }
+
+            .btn-top {
+                bottom: 7rem;
+                width: 6rem;
+                height: 6rem;
+                right: 1rem
+            }
+        }
+
+        .wrapper {
+            .content {
+                .box {
+                    &.step04 {
+                        .tabBox {
+                            .tab-con {
+                                >div {
+                                    flex-direction: column;
+
+                                    .list {
+                                        width: 100%;
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        .inner {
+                            .innerW {
+                                max-width: 100%;
+                                flex-direction: column
+                            }
+                        }
+
+                        strong {
+                            justify-content: center;
+
+                            &::after {
+                                display: none
+                            }
+                        }
+
+                        .inputBox {
+                            @include inputBox_m;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 767px) {
+    #Wrap {
+        .btn-fx {
+            .left {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 7rem;
+                background: rgba(0, 1, 31, 0.9);
+                @include flex-item;
+
+                h1 {
+                    position: absolute;
+                    left: 1rem;
+
+                    a {
+                        &::before {
+                            width: 8.7rem;
+                            height: 3.3rem;
+                        }
+                    }
+                }
+
+                .csNum {
+                    position: absolute;
+                    right: 1rem;
+                    margin-top: 0;
+
+                    p {
+                        font-size: 1.6rem;
+                    }
+
+                    span {
+                        height: 2.8rem;
+                        font-size: 1.4rem
+                    }
+                }
+            }
+
+            &.other {
+                .left {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+            }
+        }
+
+        nav {
+            right: 1rem;
+
+            a {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /*component*/
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        .innerW {
+                            max-width: 100%;
+                            padding: 8.9rem 1.6rem 8.9rem;
+                        }
+                    }
+
+                    &.step00 {
+                        .firstArrow {
+                            bottom: 7rem;
+                            right: 1rem;
+                            position: fixed;
+
+                            &::before {
+                                background-size: 70%;
+                            }
+                        }
+
+                        .txtBox {
+                            .tit {
+                                h2 {
+                                    font-size: 3rem;
+                                    line-height: 4.4rem;
+                                }
+                            }
+                        }
+
+                        .btnBox {
+                            flex-direction: column;
+                            //position: absolute;
+                            width: 100%;
+                            //bottom: 5rem;
+
+                            button {
+                                max-width: 80%;
+                                margin: 0.5rem auto;
+                                border-radius: 0.6rem;
+                            }
+                        }
+                    }
+
+                    &.step01 {
+                        .txtBox {
+
+                            h3 {
+                                font-size: 2.4rem;
+                                line-height: 3.4rem;
+                            }
+
+                            &.type {
+                                strong {
+                                    font-size: 2.4rem;
+                                    line-height: 3.4rem;
+                                }
+                            }
+                        }
+
+                        .list {
+                            .item {
+                                flex-direction: column;
+                                max-width: 80%;
+                                margin: 0 auto;
+                                padding: 2rem;
+                                height: auto;
+
+                                i {
+                                    background-size: 70%;
+                                    height: 10rem;
+                                }
+
+                                >div {
+                                    width: 100%;
+                                    margin-left: 0;
+                                    text-align: center;
+
+
+                                    strong {
+                                        font-size: 2.4rem;
+                                        line-height: 6rem;
+                                        font-family: $font-eb;
+                                    }
+
+                                    p {
+                                        font-size: 1.6rem;
+                                        line-height: 2.2rem;
+                                        font-family: $font-sb;
+                                        margin-top: 0;
+                                    }
+                                }
+                            }
+                        }
+
+                        .barlist {
+                            overflow-x: scroll;
+
+                            ul {
+                                width: 291%;
+
+                                li {
+                                    font-size: 1.6rem;
+                                    width: calc(11% - 2rem);
+
+                                    &::before {
+                                        height: 3.5rem;
+                                    }
+
+                                    &::after {
+                                        width: 4rem;
+                                        height: 4rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .inner {
+                            height: auto;
+                        }
+
+                        .txtBox {
+                            h3 {
+                                font-size: 3rem;
+                            }
+
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.6rem;
+                            }
+                        }
+
+                        .imgBox {
+                            &:not(:last-of-type) {
+                                margin: 4rem auto;
+                            }
+                        }
+                    }
+
+                    &.step03 {
+
+                        .bannerBox {
+                            flex-direction: column;
+
+                            .bannerLeft {
+                                order: 2;
+                                width: 100%;
+                                margin-top: 4rem;
+                                height: 34.2rem;
+
+                                >div {
+                                    height: 34.2rem;
+                                    padding: 4rem 3rem;
+
+                                    &::before {
+                                        width: 80%;
+                                        height: 2.7rem;
+                                    }
+
+                                    &::after {
+                                        width: 80%;
+                                        height: 2.7rem;
+                                    }
+
+                                    .slick-slide {
+                                        height: 7rem;
+                                    }
+
+                                    .slider {
+                                        height: 4.7rem;
+                                        border-radius: 2.35rem;
+                                        font-size: 1.4rem;
+                                    }
+                                }
+                            }
+
+                            .bannerRight {
+                                order: 1;
+                                width: 100%;
+
+                                dl {
+                                    dt {
+                                        font-size: 2.4rem;
+                                        line-height: 6rem;
+                                    }
+
+                                    dd {
+                                        font-size: 1.6rem;
+                                        line-height: 2.2rem;
+                                    }
+                                }
+                            }
+                        }
+
+                        .txtBox {
+                            strong {
+                                font-size: 2.4rem;
+                                line-height: 2.9rem;
+                            }
+                        }
+                    }
+
+                    &.step04 {
+                        .inner {
+                            .innerW {
+                                max-width: 100%;
+                                padding: 0;
+
+                                >div {
+                                    max-width: 100%;
+                                    padding: 10rem 1.6rem;
+                                }
+                            }
+                        }
+
+                        h3 {
+                            font-size: 2.8rem;
+                            line-height: 5.8rem;
+                        }
+
+                        .tabBox {
+                            .tab-hd {
+                                ul {
+                                    li {
+                                        margin: 0 0.5rem;
+                                    }
+                                }
+                            }
+
+                            .tab-con {
+                                >div {
+                                    &::before {
+                                        width: 100%;
+                                        height: 100%;
+                                        background-size: 51%;
+                                        padding: 50% 0;
+                                    }
+
+                                    &:first-of-type {
+                                        &::before {
+                                            background-image: url($url-images + 'step05_img_01_m.png');
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        &::before {
+                                            background-image: url($url-images + 'step05_img_02_m.png');
+                                        }
+                                    }
+
+                                    .list {
+                                        h4 {
+                                            text-align: center;
+                                            font-size: 2.4rem;
+                                            line-height: 2.9rem;
+                                        }
+
+                                        .item {
+                                            h5 {
+                                                font-size: 1.8rem;
+                                                line-height: 5.7rem;
+
+                                                &::before {
+                                                    width: 0.5rem;
+                                                    height: 1.2rem;
+                                                    border-radius: 2.5rem;
+                                                }
+                                            }
+
+                                            &:first-of-type {
+                                                >div {
+                                                    &:first-of-type {
+                                                        height: auto;
+                                                        padding: 2rem;
+                                                    }
+                                                }
+                                            }
+
+                                            >div {
+                                                dl {
+                                                    &:not(:last-of-type) {
+                                                        margin-bottom: 2.5rem;
+                                                    }
+
+                                                    dt {
+                                                        font-size: 1.8rem;
+                                                    }
+
+                                                    dd {
+                                                        font-size: 1.5rem;
+                                                        line-height: 2rem;
+
+                                                        &:not(:last-of-type) {
+                                                            margin-bottom: 1rem;
+                                                        }
+                                                    }
+                                                }
+
+                                                &.grid {
+                                                    grid-template-areas: "grid01""grid02""grid03""grid04""grid05";
+                                                    grid-template-columns: auto;
+
+                                                    span {
+                                                        height: 5rem !important;
+                                                        font-size: 1.8rem;
+
+                                                        &:nth-of-type(1) {
+                                                            br {
+                                                                display: none;
+                                                            }
+                                                        }
+
+                                                        &:nth-of-type(2) {
+                                                            width: 50%;
+                                                        }
+
+                                                        &:nth-of-type(3) {
+                                                            width: 80%;
+                                                        }
+
+                                                        &:nth-of-type(4) {
+                                                            width: 90%;
+                                                        }
+
+                                                        &:nth-of-type(5) {
+                                                            font-size: 2.2rem;
+                                                            font-family: $font-eb;
+                                                        }
+
+                                                        &:nth-of-type(n+2):nth-of-type(-n+4) {
+                                                            font-family: $font-r;
+                                                            font-size: 1.6rem;
+                                                            text-align: left;
+                                                            justify-content: flex-start;
+                                                            padding-left: 1.6rem;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step05 {
+                        .txtBox {
+                            @include flex-ct-item;
+                            flex-direction: column;
+                            height: 100%;
+
+                            &::before {
+                                height: 27.7rem;
+                                margin: 0 auto;
+                                background-size: 55%;
+                            }
+
+                            strong {
+                                font-size: 2.4rem;
+                                line-height: 3rem;
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        .inner {}
+
+                        strong {
+                            justify-content: center;
+
+                            &::after {
+                                display: none
+                            }
+                        }
+
+                        .inputBox {
+                            @include inputBox_m;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .adWrap {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+
+        .ad-hd {
+            height: 10vh;
+
+            strong {
+                //@include strong_m
+            }
+        }
+
+        .ad-con {
+            padding: 0 2rem;
+            overflow-y: auto;
+            height: calc(100% - 10vh);
+            margin: 0;
+
+            .inputBox {
+                @include inputBox_m;
+                margin: 1rem 0;
+
+                .row {
+                    .checkBox {
+                        input[type="checkbox"]+label {
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+            }
+
+            .btn-application {
+                margin: 3rem auto 5.3rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="3317.563" height="3425.004" viewBox="0 0 3317.563 3425.004">
+    <defs>
+        <linearGradient id="4mdlea3nha" x1=".964" y1=".183" x2="-.033" y2=".863" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#64ffff"/>
+            <stop offset="1" stop-color="#64ffff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="zj5jwz582b" x1=".964" y1=".183" x2="-.033" y2=".863" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#64ffff"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <linearGradient id="tqkmwd54mc" x1=".964" y1=".183" x2="-.033" y2=".863" gradientUnits="objectBoundingBox">
+            <stop offset="0" stop-color="#64ffff"/>
+            <stop offset="1" stop-color="#64ffff"/>
+        </linearGradient>
+    </defs>
+    <g data-name="그룹 16083" transform="translate(844.938 -2376.498)">
+        <rect data-name="사각형 5479" width="1301.596" height="594.87" rx="297.435" transform="rotate(-45 6072.81 3710.363)" style="fill:url(#4mdlea3nha);opacity:.04"/>
+        <rect data-name="사각형 5483" width="827.596" height="378.87" rx="189.435" transform="rotate(-45 7133.547 967.823)" style="fill:url(#4mdlea3nha);opacity:.04"/>
+        <rect data-name="사각형 5474" width="670.168" height="306.288" rx="153.144" transform="rotate(-45 5328.756 2666.097)" style="fill:url(#zj5jwz582b);opacity:.05"/>
+        <rect data-name="사각형 5475" width="1301.596" height="594.87" rx="297.435" transform="rotate(-45 3979.668 1648.432)" style="opacity:.02;fill:url(#tqkmwd54mc)"/>
+        <rect data-name="사각형 5476" width="794.428" height="271.1" rx="135.55" transform="rotate(-45 5056.548 -336.801)" style="opacity:.11;fill:url(#zj5jwz582b)"/>
+        <rect data-name="사각형 5477" width="512.551" height="234.97" rx="117.485" transform="rotate(-45 4776.312 -59.32)" style="opacity:.03;fill:url(#zj5jwz582b)"/>
+        <rect data-name="사각형 5481" width="512.551" height="234.97" rx="117.485" transform="rotate(-45 6166.627 348.127)" style="fill:url(#zj5jwz582b);opacity:.04"/>
+    </g>
+</svg>

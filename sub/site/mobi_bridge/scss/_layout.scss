@@ -1,0 +1,1072 @@
+@charset 'utf-8';
+
+#Wrap {
+    position: relative;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    margin: 0 auto;
+    background: $txtColor-w;
+    -ms-touch-action: none;
+    touch-action: none;
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+
+    .btn-fx {
+        .left {
+            position: fixed;
+            z-index: 999;
+            top: 4rem;
+            left: 4rem;
+
+            h1 {
+                width: 100%;
+
+                a {
+                    font-size: 0;
+                    transition: none;
+
+                    &::before {
+                        @include beforeIco;
+                        width: 10.7rem;
+                        height: 3.9rem;
+                        background-image: url($url-images-com + 'mbi_logo.png');
+                        background-size: 100%;
+                    }
+                }
+            }
+
+            .csNum {
+                margin-top: 3rem;
+                text-align: center;
+
+                p {
+                    font-size: 2.2rem;
+                    color: $subColor-b;
+                }
+
+                span {
+                    @include flex-ct-item;
+                    width: 100%;
+                    max-width: 17.1rem;
+                    height: 3.3rem;
+                    margin-top: 0.8rem;
+                    border-radius: 1.7rem;
+                    font-size: 1.8rem;
+                    background: $subColor-b;
+                    color: #000016;
+                }
+            }
+        }
+
+        .mainAdBtn {
+            position: fixed;
+            z-index: 999;
+            width: 25.9rem;
+            height: 25.9rem;
+            top: 8rem;
+            right: 8rem;
+            @include flex-ct-item;
+            flex-direction: column;
+            background: $subColor-b;
+            border-radius: 50%;
+            font-size: 4rem;
+            font-family: $font-eb;
+            line-height: 4.8rem;
+
+            span {
+                display: block;
+            }
+
+            &::after {
+                @include beforeIco;
+                width: 3.8rem;
+                height: 2.7rem;
+                margin-top: 2.5rem;
+                background-image: url($url-images-com + 'btn_main_arrow_right.png');
+            }
+        }
+
+        address {
+            position: fixed;
+            z-index: 999;
+            bottom: 4rem;
+            left: 4rem;
+            color: #fff;
+            font-size: 1.6rem;
+            @include flex-st-item;
+
+            @media screen and(max-width: 1024px) {
+                display: none;
+            }
+
+            &::before {
+                @include beforeIco;
+                width: 1.7rem;
+                height: 1.7rem;
+                background: url($url-images-com + 'img_copyright_w.svg') center center no-repeat;
+                margin-right: 1rem;
+            }
+        }
+
+        .btn-top {
+            position: fixed;
+            z-index: 999;
+            width: 8rem;
+            height: 8rem;
+            bottom: 2rem;
+            right: 2rem;
+            border-radius: 50%;
+            background: url($url-images-com + 'btn_top_wh.png') center center no-repeat;
+            background-size: 100%;
+        }
+
+        &.first {
+            .btn-top {
+                display: none;
+            }
+        }
+
+        &.other {
+            .left {
+                h1 {
+                    a {
+                        &::before {
+                            background-image: url($url-images-com + 'mbi_logo_bk.png');
+                        }
+                    }
+                }
+
+                .csNum {
+                    p {
+                        color: #00011f;
+                    }
+
+                    span {
+                        background: #00011f;
+                        color: $txtColor-w
+                    }
+                }
+            }
+
+            .mainAdBtn {
+                background: #00011f;
+                color: $txtColor-w;
+
+                &::after {
+                    background-image: url($url-images-com + 'img_common_arrow_topright_w.png');
+                }
+            }
+
+            address {
+                color: #000;
+
+                &::before {
+                    background: url($url-images-com + 'img_copyright_black.svg') center center no-repeat;
+                }
+            }
+
+            .btn-top {
+                background: url($url-images-com + 'btn_top_bk.png') center center no-repeat;
+                background-size: 100%;
+            }
+        }
+
+        &.last {
+            .mainAdBtn {
+                display: none;
+            }
+        }
+    }
+
+    nav {
+        position: fixed;
+        z-index: 99;
+        right: 8rem;
+        transform: translateY(-50%);
+        top: 50%;
+        @include flex-column;
+
+        &.other {
+            a {
+                &.active {
+                    background: #00011f;
+                }
+            }
+
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0.6rem;
+            background-color: transparent;
+            border: 1px solid #c1c1c1;
+            text-indent: -9999px;
+            transition: all 1s;
+            margin-bottom: 3rem;
+
+            &.active {
+                opacity: 1;
+                background-color: $txtColor-w;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+        transform: translate3d(0, 0, 0);
+        -webkit-transform: translateZ(0);
+        -webkit-overflow-scrolling: touch;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -ms-touch-action: none;
+            touch-action: none;
+            -webkit-transition: all 700ms ease 0s;
+            transition: all 700ms ease 0s;
+
+            .box {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                @include flex-ct-item;
+                overflow: hidden;
+
+                .inner {
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;
+
+                    .innerW {
+                        width: 100%;
+                        max-width: 120rem;
+                        padding: 13rem 0;
+                        margin: 0 auto;
+                    }
+                }
+
+                &.step00 {
+                    background: url($url-images + 'step01_bg.png') center center no-repeat;
+                    background-image: linear-gradient(to bottom, #010011, #000121);
+                    background-size: cover;
+
+                    .inner {
+                        .innerW {
+                            padding-top: 0;
+                            position: relative;
+                        }
+                    }
+
+                    .firstArrow {
+                        position: absolute;
+                        width: 5.4rem;
+                        height: 5.4rem;
+                        right: 0;
+                        bottom: 1rem;
+                        @include flex-ct-item;
+                        border-radius: 50%;
+                        z-index: 999;
+
+                        &::before {
+                            @include beforeIco;
+                            width: 5.4rem;
+                            height: 5.4rem;
+                            background: url($url-images-com + 'firstdown.svg') center center no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+
+                    //height: auto;                    
+
+                    .txtBox {
+                        color: $txtColor-w;
+                        margin-top: 11rem;
+
+                        .tit {
+                            h2 {
+                                text-align: center;
+                                @include h3;
+                            }
+                        }
+                    }
+
+                    .btnBox {
+                        @include flex-ct-item;
+                        margin: 5.3rem auto 4rem;
+
+                        button {
+                            max-width: 42rem;
+                            margin: 0 0.5rem;
+
+                            &::after {
+                                @include beforeIco;
+                                width: 2.2rem;
+                                height: 1.8rem;
+                                margin-left: 1.3rem;
+                            }
+
+                            &:first-of-type {
+                                background: $subColor-b;
+                                color: #345bbd;
+
+                                &::after {
+                                    background-image: url($url-images-com + 'btn_arrow_blue.svg');
+                                }
+                            }
+
+                            &:last-of-type {
+                                border: 1px solid $subColor-b;
+                                color: $subColor-b;
+
+                                &::after {
+                                    background-image: url($url-images-com + 'btn_arrow_pt.svg');
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step01 {
+                    text-align: center;
+                    margin: 0 auto;
+
+                    .txtBox {
+                        text-align: center;
+
+                        h3 {
+                            @include h3;
+                            font-family: $font-eb;
+
+                            span {
+                                display: block;
+                            }
+                        }
+
+                        &.type {
+                            margin-top: 10rem;
+
+                            strong {
+                                font-family: $font-eb;
+                                @include h3;
+                                letter-spacing: -0.1rem;
+                            }
+                        }
+                    }
+
+                    .list {
+                        margin: 6rem auto;
+
+                        .item {
+                            width: 100%;
+                            height: 24rem;
+                            border-radius: 2.8rem;
+                            padding: 0 5rem;
+                            @include flex-st-item;
+
+                            &:not(:last-of-type) {
+                                margin-bottom: 2rem;
+                            }
+
+                            i {
+                                width: 18rem;
+                                height: 21rem;
+                                display: block;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+
+                            >div {
+                                text-align: left;
+                                width: calc(100% - 20rem);
+                                margin-left: 7rem;
+
+                                strong {
+                                    font-size: 2.8rem;
+                                    color: $mainColor;
+                                    font-family: $font-bb;
+                                }
+
+                                p {
+                                    margin-top: 2rem;
+                                    font-size: 2rem;
+                                    line-height: 3.2rem;
+                                    font-family: $font-eb;
+                                }
+                            }
+
+                            &:nth-of-type(1) {
+                                background: #ebf9fb;
+
+                                i {
+                                    background-image: url($url-images + 'step02_ico_01.png');
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                background: #ceecf3;
+
+                                i {
+                                    background-image: url($url-images + 'step02_ico_02.png');
+                                }
+                            }
+
+                            &:nth-of-type(3) {
+                                background: #cdeafc;
+
+                                i {
+                                    background-image: url($url-images + 'step02_ico_03.png');
+                                }
+                            }
+
+                            &:nth-of-type(4) {
+                                background: #abd8ff;
+
+                                i {
+                                    background-image: url($url-images + 'step02_ico_04.png');
+                                }
+                            }
+
+                            &:nth-of-type(5) {
+                                background: #b7cfff;
+
+                                i {
+                                    background-image: url($url-images + 'step02_ico_05.png');
+                                }
+                            }
+                        }
+                    }
+
+                    .barlist {
+                        width: 100%;
+                        padding-top: 5rem;
+
+                        ul {
+                            @include flex-bt-item;
+                            flex-wrap: nowrap;
+
+                            li {
+                                position: relative;
+                                font-family: $font-m;
+                                font-size: 1.8rem;
+                                line-height: 3.2rem;
+                                flex-direction: column;
+                                width: calc(9.92% - 2rem);
+
+
+                                &::before {
+                                    content: "";
+                                    display: block;
+                                    width: 100%;
+                                    height: 3.9rem;
+                                    border-right: 2px dotted #acacac;
+                                    margin-bottom: 0.9rem;
+                                }
+
+                                &:first-of-type {
+                                    &::before {
+                                        border-radius: 3rem 0 0 3rem;
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    &::before {
+                                        border-radius: 0 3rem 3rem 0;
+                                        background: #b7cfff;
+                                        border-right: 0;
+                                    }
+
+                                    &::after {
+                                        @include step02after;
+                                        background: #b7cfff;
+                                    }
+                                }
+
+                                &:nth-of-type(2) {
+                                    &::after {
+                                        @include step02after;
+                                        background: #ebf9fb;
+                                    }
+                                }
+
+                                &:nth-of-type(5) {
+                                    &::after {
+                                        @include step02after;
+                                        background: #ceecf3;
+                                    }
+                                }
+
+                                &:nth-of-type(9) {
+                                    &::after {
+                                        @include step02after;
+                                        background: #cdeafc;
+                                    }
+                                }
+
+                                &:nth-of-type(11) {
+                                    &::after {
+                                        @include step02after;
+                                        background: #abd8ff;
+                                    }
+                                }
+
+                                &:nth-of-type(-n+2) {
+                                    &::before {
+                                        background: #ebf9fb;
+                                    }
+                                }
+
+                                &:nth-of-type(n+3):nth-of-type(-n+5) {
+                                    &::before {
+                                        background: #ceecf3;
+                                    }
+                                }
+
+                                &:nth-of-type(n+6):nth-of-type(-n+9) {
+                                    &::before {
+                                        background: #cdeafc;
+                                    }
+                                }
+
+                                &:nth-of-type(n+10):nth-of-type(-n+11) {
+                                    &::before {
+                                        background: #abd8ff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    text-align: center;
+                    margin: 0 auto;
+                    background: $txtColor01 url($url-images + 'step06_bg.png');
+                    background-size: cover;
+                    color: $txtColor-w;
+
+                    .txtBox {
+                        text-align: center;
+
+                        h3 {
+                            @include h3;
+                            color: $subColor-b
+                        }
+
+                        p {
+                            @include tit_p;
+                        }
+                    }
+
+                    .imgBox {
+                        &:not(:last-of-type) {
+                            margin: 7rem auto 9rem;
+                        }
+
+                        span {
+                            display: block;
+                            font-size: 1.6rem;
+                            line-height: 1.6rem;
+                            font-family: $font-r;
+                            margin-top: 1.4rem;
+                        }
+                    }
+                }
+
+                &.step03 {
+                    .bannerBox {
+                        width: 100%;
+
+                        @include flex-bt-item;
+
+                        .bannerLeft {
+                            width: 50rem;
+                            height: 60rem;
+                            background: #eeee;
+                            box-shadow: 0 0 20px 0 rgba(100, 255, 255, 0.1);
+                            border-radius: 3.2rem;
+
+                            >div {
+                                display: flex;
+                                justify-content: center;
+                                flex-direction: column;
+                                padding: 8.5rem 3rem;
+                                height: 60rem;
+                                position: relative;
+                                overflow: hidden;
+
+                                &::before {
+                                    @include beforeIco;
+                                    width: 90%;
+                                    height: 5.6rem;
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    border-radius: 0 0 3rem 3rem;
+                                    background-image: linear-gradient(to bottom, #eee, rgba(255, 255, 255, 0));
+                                    position: absolute;
+                                    top: 0;
+                                    transform: translateX(-50%);
+                                    left: 50%;
+                                    z-index: 9999;
+                                }
+
+                                &::after {
+                                    @include beforeIco;
+                                    width: 90%;
+                                    height: 5.6rem;
+                                    background-color: rgba(0, 0, 0, 0.5);
+                                    border-radius: 3rem 3rem 0 0;
+                                    background-image: linear-gradient(to bottom, #eee, rgba(255, 255, 255, 0));
+                                    position: absolute;
+                                    bottom: 0;
+                                    transform: translateX(-50%);
+                                    left: 50%;
+                                    z-index: 9999;
+                                }
+
+                                .slick-center {
+                                    .slider {
+                                        background: $mainColor;
+                                        color: $txtColor-w;
+                                        border: 0;
+                                    }
+                                }
+
+                                .slider {
+                                    width: 100%;
+                                    height: 7rem;
+                                    background: $txtColor-w;
+                                    border: 0.5rem solid $mainColor;
+                                    border-radius: 4.5rem;
+                                    margin: 2rem 0;
+                                    display: flex !important;
+                                    @include flex-ct-item;
+                                    font-size: 2.4rem;
+                                    z-index: 1;
+                                }
+                            }
+
+                            ul {
+
+
+
+
+
+                                li {
+
+
+                                    &.active {}
+                                }
+                            }
+                        }
+
+                        .bannerRight {
+                            width: 40%;
+
+                            dl {
+
+                                dt {
+                                    font-size: 3.2em;
+                                    line-height: 4.8rem;
+                                    color: $mainColor;
+                                    font-family: $font-bb;
+                                }
+
+                                dd {
+                                    margin-top: 3rem;
+                                    font-size: 2.4rem;
+                                    line-height: 3.6rem;
+                                    font-family: $font-m;
+                                }
+                            }
+                        }
+                    }
+
+                    .txtBox {
+                        text-align: center;
+                        margin: 10rem auto 0;
+
+                        strong {
+                            font-family: $font-eb;
+                            @include h3;
+                            letter-spacing: -0.1rem;
+                            display: block;
+                        }
+                    }
+                }
+
+                &.step04 {
+                    .inner {
+                        .innerW {
+                            max-width: 100%;
+                            padding: 8rem 0;
+
+                            >div {
+                                max-width: 80%;
+                                background: #f1f7ff;
+                                margin: 0 auto;
+                                padding: 7.2rem 0
+                            }
+                        }
+                    }
+
+                    h3 {
+                        @include h3;
+                        color: $mainColor;
+                        display: block;
+                        text-align: center;
+                        margin-bottom: 4.2rem
+                    }
+
+                    .tabBox {
+                        .tab-hd {
+                            ul {
+                                li {
+                                    margin: 0 2rem
+                                }
+                            }
+                        }
+
+                        .tab-con {
+                            margin-top: 5.6rem;
+
+                            >div {
+                                @include flex-center;
+
+                                &::before {
+                                    @include beforeIco;
+                                    width: 57.5rem;
+                                    height: 111rem;
+                                    padding: 0;
+                                    margin-top: -5rem;
+                                    background-position: top center;
+                                }
+
+                                &:first-of-type {
+                                    &::before {
+                                        background-image: url($url-images + 'step05_img_01.png');
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    &::before {
+                                        background-image: url($url-images + 'step05_img_02.png');
+                                    }
+                                }
+
+                                .list {
+                                    font-family: $font-sb;
+                                    width: calc(100% - 77rem);
+                                    margin-left: 5rem;
+
+                                    h4 {
+                                        font-family: $font-eb;
+                                        font-size: 3.2rem;
+                                        line-height: 4.8rem;
+                                        color: $mainColor;
+                                    }
+
+                                    .item {
+                                        &:first-of-type {
+                                            >div {
+                                                &:first-of-type {
+                                                    background: #fff;
+                                                    border-radius: 0.9rem;
+                                                    height: 100%;
+                                                    padding: 2.9rem;
+                                                    @include flex-ct-item-start;
+                                                    flex-direction: column;
+                                                }
+                                            }
+                                        }
+
+                                        flex-direction: column;
+
+                                        h5 {
+                                            &::before {
+                                                content: "";
+                                                display: block;
+                                                position: relative;
+                                                width: 1rem;
+                                                height: 2.1rem;
+                                                border-radius: 2rem;
+                                                margin-right: 1rem;
+                                                background: $mainColor;
+                                            }
+
+                                            @include flex-st-item;
+                                            font-family: $font-sb;
+                                            font-size: 2.8rem;
+                                            line-height: 4rem;
+                                            margin-top: 2.7rem;
+                                        }
+
+                                        >div {
+                                            width: 100%;
+                                            margin-top: 1.6rem;
+
+                                            dl {
+                                                &:not(:last-of-type) {
+                                                    margin-bottom: 3.2rem;
+                                                }
+
+                                                dt {
+                                                    @include tit_p;
+                                                    color: #23a0ff;
+                                                }
+
+                                                dd {
+                                                    font-family: $font-r;
+                                                    @include txt;
+
+                                                    &:not(:last-of-type) {
+                                                        margin-bottom: 1.3rem;
+                                                    }
+
+                                                    span {}
+                                                }
+                                            }
+
+                                            &.grid {
+                                                display: grid;
+                                                width: 100%;
+                                                grid-template-areas: "grid01 grid02""grid01 grid03""grid01 grid04""grid05 grid05";
+                                                grid-gap: 1rem 3rem;
+                                                grid-template-columns: 13rem 1fr;
+
+                                                span {
+                                                    @include flex-ct-item;
+                                                    font-size: 2rem;
+                                                    line-height: 3rem;
+                                                    text-align: center;
+                                                    word-break: keep-all;
+
+                                                    &:nth-of-type(1) {
+                                                        grid-area: grid01;
+                                                        background: $mainColor;
+                                                        color: $txtColor-w;
+                                                        height: 18.4rem;
+                                                    }
+
+                                                    &:nth-of-type(2) {
+                                                        grid-area: grid02;
+                                                        background: #dcebff
+                                                    }
+
+                                                    &:nth-of-type(3) {
+                                                        grid-area: grid03;
+                                                        background: #80c8ff
+                                                    }
+
+                                                    &:nth-of-type(4) {
+                                                        grid-area: grid04;
+                                                        background: #29ffe2
+                                                    }
+
+                                                    &:nth-of-type(5) {
+                                                        grid-area: grid05;
+                                                        background: #03306b;
+                                                        color: $txtColor-w;
+                                                        height: 5.4rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                &.step05 {
+                    background: $txtColor01 url($url-images + 'step06_bg.png');
+                    background-size: cover;
+
+                    .txtBox {
+                        text-align: center;
+
+                        &::before {
+                            @include beforeIco;
+                            width: 31.6rem;
+                            height: 35.7rem;
+                            background-image: url($url-images + 'ico_ai.png');
+                            margin: 0 auto 7rem;
+                            background-size: 80%;
+                        }
+
+                        strong {
+                            display: block;
+                            @include strong;
+                            color: $txtColor-w;
+                            font-family: $font-bb;
+                            font-size: 4rem;
+                            line-height: 6rem;
+
+                            &:last-of-type {
+                                margin-top: 6rem;
+                            }
+                        }
+
+                        i {
+                            &::before {
+                                margin: 3.2rem auto 0;
+                            }
+                        }
+                    }
+                }
+
+                &.step06 {
+                    .inner {
+                        .innerW {
+                            @include flex-bt-item;
+                        }
+                    }
+
+                    strong {
+                        @include flex-st-item;
+                        width: 100%;
+                        font-family: $font-bb;
+                        font-size: 3.2rem;
+                        text-align: center;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            max-width: 22rem;
+                            height: 1px;
+                            margin: 0 8.8rem 0 10rem;
+                            background: #ccc;
+                        }
+                    }
+
+                    .inputBox {
+                        margin-top: 5rem;
+                        @include inputBox;
+
+                    }
+
+                    .btn-application {
+                        @include btn-application;
+                        margin-top: 8.5rem;
+                    }
+                }
+            }
+
+            footer {
+                position: relative;
+                width: 100%;
+                height: auto !important;
+                border-top: 1px solid #ededed;
+                text-align: center;
+
+                .inner {
+                    padding: 3.5rem 0 !important;
+
+                    @media screen and(max-width: 767px) {
+                        padding: 3.5rem 2.8rem 10rem !important;
+                    }
+
+                    div {
+                        position: relative;
+                        margin: 10px 0;
+
+                        span {
+                            font-family: $font-r;
+                            font-size: 13px;
+                            color: #111;
+
+                            &::before {
+                                display: inline-block;
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                background: #747474;
+                                margin: 0 5px;
+                            }
+
+                            &:first-child {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        font-family: $font-r;
+                        font-size: 13px;
+                        color: #111;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.adWrap {
+    position: fixed;
+    width: 50rem;
+    height: 100vh;
+    display: none;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background: $txtColor-w;
+
+    &.active {
+        display: block;
+    }
+
+    .ad-hd {
+        width: 100%;
+        height: 12.4rem;
+        background-image: url($url-images + 'img_top.png');
+        @include flex-ct-item;
+
+        strong {
+            @include strong;
+            color: #fff
+        }
+
+        button {
+            &.adClose {
+                position: absolute;
+                right: 2rem;
+                top: 2rem;
+                width: 2.1rem;
+                height: 2.1rem;
+
+                i {
+                    display: block;
+                    width: 2.1rem;
+                    height: 2.1rem;
+                    background-image: url($url-images + 'ad_close.svg');
+                }
+            }
+        }
+    }
+
+    .ad-con {
+        @include inputBox;
+        overflow-y: auto;
+        height: calc(100vh - 12.4rem);
+        padding: 4rem 5rem;
+
+        .btn-application {
+            @include btn-application;
+        }
+    }
+}

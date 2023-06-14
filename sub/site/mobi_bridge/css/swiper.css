@@ -1,0 +1,137 @@
+/**
+ * Swiper 3.4.1
+ * Most modern mobile touch slider and framework with hardware accelerated transitions
+ * 
+ * http://www.idangero.us/swiper/
+ * 
+ * Copyright 2016, Vladimir Kharlampidi
+ * The iDangero.us
+ * http://www.idangero.us/
+ * 
+ * Licensed under MIT
+ * 
+ * Released on: December 13, 2016
+ */
+
+.swiper-pagination {
+    position: absolute !important;
+    transform: translateX(-50%) !important;
+    left: 50% !important;
+    bottom: 0 !important;
+    width: 100%;
+    max-width: 101px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #000;
+    border-radius: 20px;
+    opacity: 69%;
+}
+
+.swiper-pagination .swiper-pagination-bullet {
+    width: 9px;
+    height: 9px;
+    background: #d4d4d4;
+    border-radius: 50%;
+    opacity: 1;
+}
+
+.swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 35px !important;
+    height: 9px;
+    border-radius: 5px;
+    background: #64ffff;
+}
+
+
+.two .swiper-slide {
+    width: 300px;
+    position: relative;
+    height: auto;
+    padding: 0;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.two .swiper-slide:before {
+    position: absolute;
+    top: 36px;
+    left: 45px;
+    display: block;
+    content: '';
+    width: calc(100% - 81px);
+    height: 357px;
+    border-radius: 20px;
+    z-index: 1;
+    background-color: rgba(255, 255, 255, .5);
+}
+
+.two .swiper-slide.swiper-slide-prev,
+.two .swiper-slide.swiper-slide-active,
+.two .swiper-slide.swiper-slide-next {
+    opacity: 1;
+    visibility: visible;
+}
+
+.swiper-slide-active:before {
+    opacity: 0;
+}
+
+.two .swiper-slide.swiper-slide-prev {
+    transform: scale(0.7) translateX(200px) rotate(0) !important;
+}
+
+.two .swiper-slide.swiper-slide-next {
+    transform: scale(0.7) translateX(-200px) rotate(0) !important;
+}
+
+@media screen and (max-width: 767px) and (min-width:513px) {
+    .two .swiper-slide {
+        width: 230px;
+    }
+
+    .two .swiper-slide:before {
+        height: 297px;
+    }
+
+    .two .swiper-slide.swiper-slide-prev {
+        transform: scale(0.7) translateX(150px) rotate(0) !important;
+    }
+
+    .two .swiper-slide.swiper-slide-next {
+        transform: scale(0.7) translateX(-150px) rotate(0) !important;
+    }
+}
+
+@media screen and (max-width: 512px) {
+    .two .swiper-slide {
+        width: 200px;
+    }
+
+    .two .swiper-slide:before {
+        height: 297px;
+    }
+
+    .two .swiper-slide.swiper-slide-prev {
+        transform: scale(0.7) translateX(130px) rotate(0) !important;
+    }
+
+    .two .swiper-slide.swiper-slide-next {
+        transform: scale(0.7) translateX(-130px) rotate(0) !important;
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+    .swiper-container {
+        padding-bottom: 10rem;
+    }
+
+    .swiper-pagination {
+        position: relative !important;
+    }
+}

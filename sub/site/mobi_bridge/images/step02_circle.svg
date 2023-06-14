@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="88" height="88" viewBox="0 0 88 88">
+    <defs>
+        <filter id="dxr9mjodma" x="0" y="0" width="88" height="88" filterUnits="userSpaceOnUse">
+            <feOffset/>
+            <feGaussianBlur stdDeviation="5" result="blur"/>
+            <feFlood flood-color="#45868f" flood-opacity=".369"/>
+            <feComposite operator="in" in2="blur"/>
+            <feComposite in="SourceGraphic"/>
+        </filter>
+    </defs>
+    <g style="filter:url(#dxr9mjodma)">
+        <circle data-name="타원 63" cx="29" cy="29" r="29" transform="translate(15 15)" style="fill:#ebf9fb"/>
+    </g>
+</svg>
