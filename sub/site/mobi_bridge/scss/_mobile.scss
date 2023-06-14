@@ -185,7 +185,7 @@
                             bottom: 7rem;
                             width: 4rem;
                             height: 5rem;
-                            right: 1rem
+                            right: 2rem
                         }
                     }
 
@@ -296,15 +296,6 @@
                     }
 
                     &.step00 {
-                        .firstArrow {
-                            bottom: 7rem;
-                            right: 1rem;
-                            position: fixed;
-
-                            &::before {
-                                background-size: 70%;
-                            }
-                        }
 
                         .txtBox {
                             .tit {
@@ -682,7 +673,6 @@
             height: 10vh;
 
             strong {
-                @include strong_m;
 
                 @media screen and (max-width:767px) {
                     font-size: 3rem;

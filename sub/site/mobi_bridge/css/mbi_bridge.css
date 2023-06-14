@@ -450,7 +450,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step00 .firstArrow { position: fixed; width: 8rem; height: 8rem; right: 6rem; bottom: 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-radius: 50%; z-index: 999; }
 
-#Wrap .wrapper .content .box.step00 .firstArrow::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; width: 5.4rem; height: 5.4rem; background: url("../images/common/firstdown.svg") center center no-repeat; background-size: 100%; }
+#Wrap .wrapper .content .box.step00 .firstArrow::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; width: 8rem; height: 8rem; background: url("../images/common/firstdown.svg") center center no-repeat; background-size: 100%; }
 
 #Wrap .wrapper .content .box.step00 .txtBox { color: #fff; }
 
@@ -761,7 +761,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 @media screen and (max-width: 1024px) { #Wrap .btn-fx .mainAdBtn { width: 100% !important; height: 5rem !important; top: auto !important; bottom: 0; -webkit-box-orient: inherit; -webkit-box-direction: inherit; -ms-flex-direction: inherit; flex-direction: inherit; right: auto !important; border-radius: 0 !important; font-size: 2rem; }
   #Wrap .btn-fx .mainAdBtn::after { margin-top: 0; background-size: 50%; }
   #Wrap .btn-fx .btn-top { bottom: 7rem; width: 6rem; height: 6rem; right: 1rem; }
-  #Wrap .wrapper .content .box.step00 .firstArrow { bottom: 7rem; width: 4rem; height: 5rem; right: 1rem; }
+  #Wrap .wrapper .content .box.step00 .firstArrow { bottom: 7rem; width: 4rem; height: 5rem; right: 2rem; }
   #Wrap .wrapper .content .box.step04 .tabBox .tab-con > div { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   #Wrap .wrapper .content .box.step04 .tabBox .tab-con > div .list { width: 100%; margin-left: 0; }
   #Wrap .wrapper .content .box.step06 .inner .innerW { max-width: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
@@ -788,8 +788,6 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap nav { right: 1rem; }
   #Wrap nav a { margin-bottom: 2rem; }
   #Wrap .wrapper .content .box .inner .innerW { max-width: 100%; padding: 8.9rem 1.6rem 8.9rem; }
-  #Wrap .wrapper .content .box.step00 .firstArrow { bottom: 7rem; right: 1rem; position: fixed; }
-  #Wrap .wrapper .content .box.step00 .firstArrow::before { background-size: 70%; }
   #Wrap .wrapper .content .box.step00 .txtBox .tit h2 { font-size: 3rem; line-height: 4.4rem; }
   #Wrap .wrapper .content .box.step00 .btnBox { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; width: 100%; }
   #Wrap .wrapper .content .box.step00 .btnBox button { max-width: 80%; margin: 0.5rem auto; border-radius: 0.6rem; }
@@ -858,8 +856,11 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
   #Wrap .wrapper .content .box.step06 .inputBox .row:last-of-type > div.checkBox input[type="checkbox"] + label button { font-size: 1.4rem; line-height: 1.6rem; }
   #Wrap .wrapper .content .box.step06 .inputBox .btn-application { margin-top: 3.2rem; }
   .adWrap { width: 100%; height: calc(var(--vh, 1vh) * 100); }
-  .adWrap .ad-hd { height: 10vh; }
-  .adWrap .ad-con { padding: 0 2rem; overflow-y: auto; -webkit-overflow-scrolling: touch; height: calc(100% - 10vh); margin: 0; }
+  .adWrap .ad-hd { height: 10vh; } }
+
+@media screen and (max-width: 767px) and (max-width: 767px) { .adWrap .ad-hd strong { font-size: 3rem; } }
+
+@media screen and (max-width: 767px) { .adWrap .ad-con { padding: 0 2rem; overflow-y: auto; height: calc(100% - 10vh); margin: 0; }
   .adWrap .ad-con .inputBox { margin: 1rem 0; }
   .adWrap .ad-con .inputBox .row:first-of-type > div { height: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   .adWrap .ad-con .inputBox .row:first-of-type > div input { height: 4.8rem; }
