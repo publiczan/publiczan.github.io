@@ -115,7 +115,7 @@
             width: 8rem;
             height: 8rem;
             bottom: 2rem;
-            right: 2rem;
+            right: 6rem;
             border-radius: 50%;
             background: url($url-images-com + 'btn_top_wh.png') center center no-repeat;
             background-size: 100%;
@@ -246,12 +246,12 @@
                     width: 100%;
                     height: 100%;
                     overflow-y: auto;
-                    -webkit-overflow-scrolling: touch;
 
                     .innerW {
                         width: 100%;
+                        height: auto;
                         max-width: 120rem;
-                        padding: 13rem 0;
+                        padding: 13rem 2rem;
                         margin: 0 auto;
                     }
                 }
@@ -263,17 +263,16 @@
 
                     .inner {
                         .innerW {
-                            padding-top: 0;
                             position: relative;
                         }
                     }
 
                     .firstArrow {
-                        position: absolute;
-                        width: 5.4rem;
-                        height: 5.4rem;
-                        right: 0;
-                        bottom: 1rem;
+                        position: fixed;
+                        width: 8rem;
+                        height: 8rem;
+                        right: 6rem;
+                        bottom: 2rem;
                         @include flex-ct-item;
                         border-radius: 50%;
                         z-index: 999;
@@ -291,7 +290,6 @@
 
                     .txtBox {
                         color: $txtColor-w;
-                        margin-top: 11rem;
 
                         .tit {
                             h2 {
@@ -929,8 +927,12 @@
 
                 &.step06 {
                     .inner {
+                        height: 100vh;
+
                         .innerW {
+                            max-width: 120rem;
                             @include flex-bt-item;
+                            padding: 5rem 2rem
                         }
                     }
 

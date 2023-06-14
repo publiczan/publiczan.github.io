@@ -402,7 +402,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .btn-fx address::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; width: 1.7rem; height: 1.7rem; background: url("../images/common/img_copyright_w.svg") center center no-repeat; margin-right: 1rem; }
 
-#Wrap .btn-fx .btn-top { position: fixed; z-index: 999; width: 8rem; height: 8rem; bottom: 2rem; right: 2rem; border-radius: 50%; background: url("../images/common/btn_top_wh.png") center center no-repeat; background-size: 100%; }
+#Wrap .btn-fx .btn-top { position: fixed; z-index: 999; width: 8rem; height: 8rem; bottom: 2rem; right: 6rem; border-radius: 50%; background: url("../images/common/btn_top_wh.png") center center no-repeat; background-size: 100%; }
 
 #Wrap .btn-fx.first .btn-top { display: none; }
 
@@ -440,19 +440,19 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box { position: relative; width: 100%; height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; overflow: hidden; }
 
-#Wrap .wrapper .content .box .inner { width: 100%; height: 100%; overflow-y: auto; -webkit-overflow-scrolling: touch; }
+#Wrap .wrapper .content .box .inner { width: 100%; height: 100%; overflow-y: auto; }
 
-#Wrap .wrapper .content .box .inner .innerW { width: 100%; max-width: 120rem; padding: 13rem 0; margin: 0 auto; }
+#Wrap .wrapper .content .box .inner .innerW { width: 100%; height: auto; max-width: 120rem; padding: 13rem 2rem; margin: 0 auto; }
 
 #Wrap .wrapper .content .box.step00 { background: url("../images/step01_bg.png") center center no-repeat; background-image: -webkit-gradient(linear, left top, left bottom, from(#010011), to(#000121)); background-image: linear-gradient(to bottom, #010011, #000121); background-size: cover; }
 
-#Wrap .wrapper .content .box.step00 .inner .innerW { padding-top: 0; position: relative; }
+#Wrap .wrapper .content .box.step00 .inner .innerW { position: relative; }
 
-#Wrap .wrapper .content .box.step00 .firstArrow { position: absolute; width: 5.4rem; height: 5.4rem; right: 0; bottom: 1rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-radius: 50%; z-index: 999; }
+#Wrap .wrapper .content .box.step00 .firstArrow { position: fixed; width: 8rem; height: 8rem; right: 6rem; bottom: 2rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; border-radius: 50%; z-index: 999; }
 
 #Wrap .wrapper .content .box.step00 .firstArrow::before { content: ""; display: block; background-repeat: no-repeat; background-position: center center; background-size: 100%; width: 5.4rem; height: 5.4rem; background: url("../images/common/firstdown.svg") center center no-repeat; background-size: 100%; }
 
-#Wrap .wrapper .content .box.step00 .txtBox { color: #fff; margin-top: 11rem; }
+#Wrap .wrapper .content .box.step00 .txtBox { color: #fff; }
 
 #Wrap .wrapper .content .box.step00 .txtBox .tit h2 { text-align: center; font-size: 4.8rem; line-height: 7.2rem; }
 
@@ -658,7 +658,9 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step05 .txtBox i::before { margin: 3.2rem auto 0; }
 
-#Wrap .wrapper .content .box.step06 .inner .innerW { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+#Wrap .wrapper .content .box.step06 .inner { height: 100vh; }
+
+#Wrap .wrapper .content .box.step06 .inner .innerW { max-width: 120rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; padding: 5rem 2rem; }
 
 #Wrap .wrapper .content .box.step06 strong { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 100%; font-family: "Pretendard-Black"; font-size: 3.2rem; text-align: center; }
 
@@ -759,6 +761,7 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 @media screen and (max-width: 1024px) { #Wrap .btn-fx .mainAdBtn { width: 100% !important; height: 5rem !important; top: auto !important; bottom: 0; -webkit-box-orient: inherit; -webkit-box-direction: inherit; -ms-flex-direction: inherit; flex-direction: inherit; right: auto !important; border-radius: 0 !important; font-size: 2rem; }
   #Wrap .btn-fx .mainAdBtn::after { margin-top: 0; background-size: 50%; }
   #Wrap .btn-fx .btn-top { bottom: 7rem; width: 6rem; height: 6rem; right: 1rem; }
+  #Wrap .wrapper .content .box.step00 .firstArrow { bottom: 7rem; width: 4rem; height: 5rem; right: 1rem; }
   #Wrap .wrapper .content .box.step04 .tabBox .tab-con > div { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   #Wrap .wrapper .content .box.step04 .tabBox .tab-con > div .list { width: 100%; margin-left: 0; }
   #Wrap .wrapper .content .box.step06 .inner .innerW { max-width: 100%; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }

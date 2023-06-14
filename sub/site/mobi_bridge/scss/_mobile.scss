@@ -180,6 +180,15 @@
         .wrapper {
             .content {
                 .box {
+                    &.step00 {
+                        .firstArrow {
+                            bottom: 7rem;
+                            width: 4rem;
+                            height: 5rem;
+                            right: 1rem
+                        }
+                    }
+
                     &.step04 {
                         .tabBox {
                             .tab-con {
@@ -673,14 +682,17 @@
             height: 10vh;
 
             strong {
-                //@include strong_m
+                @include strong_m;
+
+                @media screen and (max-width:767px) {
+                    font-size: 3rem;
+                }
             }
         }
 
         .ad-con {
             padding: 0 2rem;
             overflow-y: auto;
-            -webkit-overflow-scrolling: touch;
             height: calc(100% - 10vh);
             margin: 0;
 
