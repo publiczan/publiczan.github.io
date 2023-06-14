@@ -1,0 +1,960 @@
+@charset "utf-8";
+
+@media screen and(max-width: 1614px) {
+    #Wrap {
+        nav {
+            right: 4rem;
+        }
+
+        .btn-fx {
+            .mainAdBtn {
+                right: 2rem
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1614px) and (min-width:1261px) {
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step00 {
+                        .txtBox {
+                            .tit {
+                                width: 66rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1260px) and (min-width:1025px) {
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step00 {
+                        .firstArrow {
+                            right: 4rem
+                        }
+
+                        .bgBox {
+                            i {
+                                &.bubble {
+                                    &.Msg01 {
+                                        left: 25%;
+                                    }
+
+                                    &.Msg03 {
+                                        left: 20%;
+                                    }
+                                }
+                            }
+
+                            div {
+                                &.bubble01 {
+                                    left: 20%;
+                                }
+
+                                &.bubble02 {
+                                    right: auto;
+                                    left: 80%;
+                                }
+
+                                &.bubble03 {
+                                    right: auto;
+                                    left: 80%;
+                                }
+                            }
+                        }
+
+                        .txtBox {
+                            .tit {
+                                width: 66rem;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and(max-width: 1024px) and (min-width:768px) {
+    html {
+        font-size: 54%;
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        .innerW {
+                            padding: 10rem 2rem;
+                        }
+                    }
+
+                    &.step00 {
+                        .inner {
+                            .innerW {
+                                padding: 10rem 2rem;
+                            }
+                        }
+
+                        .bgBox {
+                            height: 80rem;
+
+                            i {
+                                &.character {}
+
+                                &.bubble {
+                                    &.Msg01 {
+                                        left: 25%;
+                                    }
+
+                                    &.Msg02 {
+                                        top: 31%;
+                                    }
+
+                                    &.Msg03 {
+                                        left: 20%;
+                                    }
+                                }
+
+                            }
+
+                            div {
+
+                                &.bubble01 {
+                                    left: 50%m;
+                                }
+
+                                &.bubble02 {
+                                    right: auto;
+                                    left: 60%;
+                                }
+
+                                &.bubble03 {
+                                    top: 50%;
+                                    right: auto;
+                                    left: 80%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .adWrap {
+        width: 80%;
+    }
+}
+
+@media screen and(max-width: 1024px) {
+    #Wrap {
+        .btn-fx {
+            .mainAdBtn {
+                width: 100% !important;
+                height: 5rem !important;
+                top: auto !important;
+                bottom: 0;
+                flex-direction: inherit;
+                right: auto !important;
+                border-radius: 0 !important;
+                font-size: 2rem;
+
+                &::after {
+                    margin-top: 0;
+                    background-size: 50%;
+                }
+            }
+
+            .btn-top {
+                bottom: 7rem;
+                width: 6rem;
+                height: 6rem;
+                right: 1rem
+            }
+        }
+
+        .wrapper {
+            .content {
+                .box {
+                    &.step00 {
+                        .firstArrow {
+                            right: auto;
+                            left: 50%;
+                            margin: 5rem 0;
+                            position: relative;
+                            transform: translateX(-50%);
+
+                            &::before {
+                                background-size: 70%;
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .row {
+                            &:last-of-type {
+                                .txtBox {
+                                    padding-left: 2.8rem;
+                                }
+                            }
+                        }
+                    }
+
+                    &.step03 {
+                        .row {
+                            &:last-of-type {
+                                >div {
+                                    .bgBox {
+                                        >div {
+                                            &.bubble01 {
+                                                left: 30%;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step010 {
+                        .inner {
+                            .innerW {
+                                max-width: 100%;
+                                flex-direction: column
+                            }
+                        }
+
+                        strong {
+                            justify-content: center;
+
+                            &::after {
+                                display: none
+                            }
+                        }
+
+                        .inputBox {
+                            @include inputBox_m;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 767px) {
+    #Wrap {
+        .btn-fx {
+            .left {
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 7rem;
+                background: rgba(0, 1, 31, 0.9);
+                @include flex-item;
+
+                h1 {
+                    position: absolute;
+                    left: 1rem;
+                    height: 2.7rem;
+
+                    a {
+                        width: 14.7rem;
+                        height: 2.7rem
+                    }
+                }
+
+                .csNum {
+                    position: absolute;
+                    right: 1rem;
+                    margin-top: 0;
+
+                    p {
+                        font-size: 1.6rem;
+                    }
+
+                    span {
+                        height: 2.8rem;
+                        font-size: 1.4rem
+                    }
+                }
+            }
+
+            &.other {
+                .left {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+            }
+        }
+
+        nav {
+            right: 1rem;
+
+            a {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /*component*/
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        .innerW {
+                            max-width: 100%;
+                            padding: 10rem 1.6rem 10rem;
+                            max-width: 100%;
+                        }
+                    }
+
+                    &.step00 {
+
+                        .txtBox {
+                            max-width: 80%;
+
+                            .tit {
+                                h2 {
+                                    font-size: 3.6rem;
+                                    line-height: 5rem;
+                                }
+
+                                p {
+                                    font-size: 2.8rem;
+                                    line-height: 4rem;
+                                }
+                            }
+                        }
+
+                        .bgBox {
+
+                            i {
+                                &.character {
+                                    width: 23.7rem;
+                                    height: 23.4rem;
+                                }
+
+                                &.bubble {
+                                    display: none;
+                                }
+
+                            }
+
+                            div {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+
+                                &.bubble01 {
+                                    top: 10%;
+                                    left: 28%;
+                                    width: 18.7rem;
+                                    height: 8.6rem;
+                                }
+
+                                &.bubble02 {
+                                    top: 0;
+                                    right: -28%;
+                                    width: 20.6rem;
+                                    height: 10.4rem;
+                                }
+
+                                &.bubble03 {
+                                    top: 30%;
+                                    right: -28%;
+                                    width: 23.2rem;
+                                    height: 10.5rem;
+                                }
+                            }
+                        }
+
+                    }
+
+                    &.step01 {
+                        .txtBox {
+
+                            h3 {
+                                font-size: 3.6rem;
+                                line-height: 4.3rem;
+                            }
+
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.1rem;
+                            }
+
+                            &.type {
+
+                                strong {
+                                    font-size: 3.6rem;
+                                    line-height: 4.3rem;
+                                }
+                            }
+                        }
+
+                        .list {
+                            flex-direction: column;
+                            margin: 3rem auto;
+
+                            .item {
+                                max-width: 80%;
+                                margin: 0 auto;
+                                padding: 2rem;
+                                height: 24rem;
+
+                                i {
+                                    height: 13rem;
+                                    background-size: 60%;
+                                }
+
+                                p {
+                                    margin-top: 2.8rem;
+                                    font-size: 2.4rem;
+                                    line-height: 2.9rem;
+                                    font-family: $font-sb;
+                                }
+
+                                &:nth-of-type(2) {
+                                    margin: 2rem auto;
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .row {
+                            padding: 10rem 2.8rem;
+
+                            .txtBox {
+                                h3 {
+                                    font-size: 3.6rem;
+                                    line-height: 6rem;
+                                }
+                            }
+
+                            &:last-of-type {
+                                height: 100%;
+
+                                .txtBox {
+                                    text-align: center;
+                                }
+
+                                .list {
+                                    flex-direction: column;
+                                    margin: 3rem auto;
+
+                                    .item {
+                                        max-width: 80%;
+                                        margin: 0 auto 1rem;
+                                        height: 24rem;
+                                        height: auto;
+
+                                        &:not(:last-of-type) {
+                                            &::after {
+                                                position: relative;
+                                                display: inline-block;
+                                                transform: translateY(-50%) translateX(-50%) rotate(135deg);
+                                                right: -50%;
+                                                margin: 3rem auto;
+                                                width: 2rem;
+                                                height: 2rem;
+                                                border-width: 0.5rem;
+                                                // 
+                                                // 
+                                                // height: auto;
+                                                // 
+                                                // right: auto;
+                                                // left: 45%;
+                                            }
+                                        }
+
+                                        &:last-of-type {
+                                            margin-bottom: 0;
+                                        }
+
+                                        >div {
+                                            padding: 2rem;
+
+                                            em {
+                                                font-size: 4.5rem;
+                                            }
+
+                                            i {
+                                                height: 16rem;
+                                                background-size: 70%;
+                                            }
+                                        }
+
+                                        p {
+                                            font-family: $font-m;
+                                            font-size: 1.8rem;
+                                        }
+
+                                        &:nth-of-type(1) {
+                                            >div {
+                                                i {}
+                                            }
+                                        }
+
+                                        &:nth-of-type(2) {
+                                            >div {
+                                                i {
+
+                                                    background-size: 60%;
+                                                }
+                                            }
+                                        }
+
+                                        &:nth-of-type(3) {
+                                            >div {
+                                                i {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    &.step03 {
+                        .row {
+                            padding: 10rem 2.8rem;
+
+                            .txtBox {
+                                h3 {
+                                    font-size: 3.6rem;
+                                    line-height: 6rem;
+                                }
+
+                                span {
+                                    &.mark {
+                                        img {
+                                            height: 4rem;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                >div {
+                                    .bgBox {
+                                        height: 50vh;
+                                        background-size: 100%;
+
+                                        >div {
+                                            &.bubble01 {
+                                                width: 34.9rem;
+                                                height: 13.5rem;
+                                                right: auto;
+                                                left: 0;
+                                                transform: scale(-1);
+
+                                                p {
+                                                    transform: rotate(180deg);
+                                                }
+                                            }
+
+                                            &.bubble02 {
+                                                width: 30rem;
+                                                height: 14rem;
+                                                right: auto;
+                                                left: 50%;
+                                            }
+
+                                            p {
+                                                font-size: 1.8rem;
+                                            }
+                                        }
+                                    }
+
+                                    .txtBox {
+                                        margin-top: 5rem;
+
+                                        h3 {
+                                            img {
+                                                height: 3.3rem;
+                                            }
+                                        }
+
+                                        p {
+                                            margin-top: 0;
+                                            font-size: 1.6rem;
+                                            line-height: 2.8rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step04 {
+                        .inner {
+                            .innerW {
+                                height: 100vh;
+                                flex-direction: column;
+                                @include flex-ct-item;
+                            }
+                        }
+
+                        .txtBox {
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.1rem
+                            }
+
+                            h3 {
+                                font-size: 3.6rem;
+                            }
+
+                            &.type {
+                                p {
+                                    font-size: 1.6rem;
+                                    line-height: 2.8rem
+                                }
+                            }
+                        }
+                    }
+
+                    &.step05 {
+                        .txtBox {
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.1rem
+                            }
+
+                            h3 {
+                                font-size: 3.6rem;
+                            }
+
+                        }
+
+                        .imgBox {
+                            span {
+                                font-size: 1.6rem;
+                                line-height: 2.8rem
+                            }
+
+                            img {
+                                margin-bottom: 2rem;
+                            }
+
+                            &:not(:last-of-type) {
+                                margin: 5rem auto;
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        .txtBox {
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.1rem
+                            }
+
+                            h3 {
+                                font-size: 3.6rem;
+                            }
+
+                        }
+
+                        .imgBox {
+                            span {
+                                font-size: 1.6rem;
+                                line-height: 2.8rem
+                            }
+
+                            img {
+                                margin-bottom: 2rem;
+                            }
+
+                            &:not(:last-of-type) {
+                                margin: 5rem auto;
+                            }
+                        }
+                    }
+
+                    &.step07 {
+                        .txtBox {
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 2.1rem
+                            }
+
+                            h3 {
+                                font-size: 3.6rem;
+                            }
+
+                        }
+
+                        .imgBox {
+
+                            img {
+                                margin-bottom: 2rem;
+
+                                &:last-of-type {
+                                    left: 10%;
+                                }
+                            }
+
+                            &:not(:last-of-type) {
+                                margin: 5rem auto;
+                            }
+                        }
+
+                        span {
+                            padding-top: 10%;
+                            font-size: 1.6rem;
+                            line-height: 2.8rem
+                        }
+                    }
+
+                    &.step08 {
+                        .txtBox {
+                            h3 {
+                                font-size: 2.2rem;
+                                line-height: 3.4rem;
+                            }
+                        }
+
+                        .list {
+                            margin-top: 2rem;
+
+                            .item {
+                                flex-direction: column;
+                                height: auto;
+                                padding: 2rem;
+
+                                i {
+                                    width: 16.7rem;
+                                    height: 14.8rem;
+                                }
+
+                                >div {
+                                    width: calc(100%);
+                                    margin-left: 0;
+
+                                    strong {
+                                        font-size: 2.8rem;
+                                    }
+
+                                    p {
+                                        font-size: 1.6rem;
+                                        line-height: 2.6rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step09 {
+                        .txtBox {
+                            @include flex-ct-item;
+                            flex-direction: column;
+                            height: auto;
+
+                            &::before {
+                                height: 27.7rem;
+                                margin: 0 auto;
+                                background-size: 55%;
+                            }
+
+                            strong {
+                                font-size: 2.4rem;
+                                line-height: 3rem;
+                            }
+                        }
+
+                        button {
+                            &.df-btn {
+                                margin: 5rem auto 0;
+                            }
+                        }
+                    }
+
+                    &.step010 {
+                        .inner {}
+
+                        strong {
+                            justify-content: center;
+
+                            &::after {
+                                display: none
+                            }
+                        }
+
+                        .inputBox {
+                            @include inputBox_m;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    .adWrap {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+
+        .ad-hd {
+            height: 10vh;
+
+            strong {
+                //@include strong_m
+            }
+        }
+
+        .ad-con {
+            padding: 0 2rem;
+            overflow-y: auto;
+            height: calc(100% - 10vh);
+            margin: 0;
+
+            .inputBox {
+                @include inputBox_m;
+                margin: 1rem 0;
+
+                .row {
+                    .checkBox {
+                        input[type="checkbox"]+label {
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+            }
+
+            .btn-application {
+                margin: 3rem auto 5.3rem;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 767px) and (min-width:460px) {
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step00 {
+                        .firstArrow {}
+
+                        .bgBox {
+
+                            i {
+                                &.character {
+                                    width: 23.7rem;
+                                    height: 23.4rem;
+                                    background-size: 100%;
+                                }
+
+                                &.bubble {
+                                    display: none;
+                                }
+
+                            }
+
+                            div {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+
+                                &.bubble01 {
+                                    top: 12%;
+                                    left: 35%;
+                                    width: 23rem;
+                                    height: 10.6rem;
+                                }
+
+                                &.bubble02 {
+                                    top: 5%;
+                                    right: auto;
+                                    left: 70%;
+                                    width: 23.6rem;
+                                    height: 11.4rem;
+                                }
+
+                                &.bubble03 {
+                                    top: 30%;
+                                    right: auto;
+                                    left: 63%;
+                                    width: 25.2rem;
+                                    height: 12.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 459px) {
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    &.step00 {
+                        .firstArrow {}
+
+                        .bgBox {
+
+                            i {
+                                &.character {
+                                    width: 23.7rem;
+                                    height: 23.4rem;
+                                    background-size: 100%;
+                                }
+
+                                &.bubble {
+                                    display: none;
+                                }
+
+                            }
+
+                            div {
+                                font-size: 1.4rem;
+                                line-height: 2rem;
+
+                                &.bubble01 {
+                                    top: 12%;
+                                    left: 28%;
+                                    width: 18.7rem;
+                                    height: 8.6rem;
+                                }
+
+                                &.bubble02 {
+                                    top: 5%;
+                                    right: auto;
+                                    left: 70%;
+                                    width: 20.6rem;
+                                    height: 10.4rem;
+                                }
+
+                                &.bubble03 {
+                                    top: 30%;
+                                    right: auto;
+                                    left: 63%;
+                                    width: 23.2rem;
+                                    height: 10.5rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,1148 @@
+@charset 'utf-8';
+
+#Wrap {
+    position: relative;
+    width: 100vw;
+    height: calc(var(--vh, 1vh) * 100);
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
+    -webkit-overflow-scrolling: touch;
+    margin: 0 auto;
+    background: $txtColor-w;
+    -ms-touch-action: none;
+    touch-action: none;
+    -webkit-transition: all 700ms ease 0s;
+    transition: all 700ms ease 0s;
+
+    .btn-fx {
+        .left {
+            position: fixed;
+            z-index: 999;
+            top: 4rem;
+            left: 4rem;
+
+            h1 {
+                width: 100%;
+
+                a {
+                    font-size: 0;
+
+                    &::before {
+                        @include beforeIco;
+                        width: 15.7rem;
+                        height: 2.7rem;
+                        background-image: url($url-images-com + 'tune_logo.png');
+                        background-size: 100%;
+                    }
+                }
+            }
+
+            .csNum {
+                margin-top: 3rem;
+                text-align: center;
+
+                p {
+                    font-size: 2.2rem;
+                    color: $subColor-b;
+                }
+
+                span {
+                    @include flex-ct-item;
+                    width: 100%;
+                    max-width: 17.1rem;
+                    height: 3.3rem;
+                    margin-top: 0.8rem;
+                    border-radius: 1.7rem;
+                    font-size: 1.8rem;
+                    background: $subColor-b;
+                    color: #000016;
+                }
+            }
+        }
+
+        .mainAdBtn {
+            position: fixed;
+            z-index: 999;
+            width: 25.9rem;
+            height: 25.9rem;
+            top: 8rem;
+            right: 8rem;
+            @include flex-ct-item;
+            flex-direction: column;
+            background: $subColor-b;
+            border-radius: 50%;
+            font-size: 4rem;
+            font-family: $font-eb;
+            line-height: 4.8rem;
+
+            span {
+                display: block;
+            }
+
+            &::after {
+                @include beforeIco;
+                width: 3.8rem;
+                height: 2.7rem;
+                margin-top: 2.5rem;
+                background-image: url($url-images-com + 'btn_main_arrow_right.png');
+            }
+        }
+
+        address {
+            position: fixed;
+            z-index: 999;
+            bottom: 4rem;
+            left: 4rem;
+            color: #fff;
+            font-size: 1.6rem;
+            @include flex-st-item;
+
+            @media screen and(max-width: 1024px) {
+                display: none;
+            }
+
+            &::before {
+                @include beforeIco;
+                width: 1.7rem;
+                height: 1.7rem;
+                background: url($url-images-com + 'img_copyright_w.svg') center center no-repeat;
+                margin-right: 1rem;
+            }
+        }
+
+        .btn-top {
+            position: fixed;
+            z-index: 999;
+            width: 8rem;
+            height: 8rem;
+            bottom: 2rem;
+            right: 2rem;
+            border-radius: 50%;
+            background: url($url-images-com + 'btn_top_wh.png') center center no-repeat;
+            background-size: 100%;
+        }
+
+        &.first {
+            .btn-top {
+                display: none;
+            }
+        }
+
+        &.other {
+            .left {
+                h1 {
+                    a {
+                        &::before {
+                            background-image: url($url-images-com + 'tune_logo_bk.png');
+                        }
+                    }
+                }
+
+                .csNum {
+                    p {
+                        color: #00011f;
+                    }
+
+                    span {
+                        background: #00011f;
+                        color: $txtColor-w
+                    }
+                }
+            }
+
+            .mainAdBtn {
+                background: #00011f;
+                color: $txtColor-w;
+
+                &::after {
+                    background-image: url($url-images-com + 'img_common_arrow_topright_w.png');
+                }
+            }
+
+            h1 {
+                a {
+                    &::before {
+                        background-image: url($url-images-com + 'img_logo_black.png');
+                    }
+                }
+            }
+
+            address {
+                color: #000;
+
+                &::before {
+                    background: url($url-images-com + 'img_copyright_black.svg') center center no-repeat;
+                }
+            }
+
+            .btn-top {
+                background: url($url-images-com + 'btn_top_bk.png') center center no-repeat;
+                background-size: 100%;
+            }
+        }
+
+        &.last {
+            .mainAdBtn {
+                display: none;
+            }
+        }
+    }
+
+    nav {
+        position: fixed;
+        z-index: 99;
+        right: 8rem;
+        transform: translateY(-50%);
+        top: 50%;
+        @include flex-column;
+
+        &.other {
+            a {
+                &.active {
+                    background: #00011f;
+                }
+            }
+
+        }
+
+        a {
+            display: inline-block;
+            vertical-align: middle;
+            width: 1.2rem;
+            height: 1.2rem;
+            border-radius: 0.6rem;
+            background-color: transparent;
+            border: 1px solid #c1c1c1;
+            text-indent: -9999px;
+            transition: all 1s;
+            margin-bottom: 3rem;
+
+            &.active {
+                opacity: 1;
+                background-color: $txtColor-w;
+            }
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .wrapper {
+        width: 100%;
+        height: 100%;
+
+        .content {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            -ms-touch-action: none;
+            touch-action: none;
+            -webkit-transition: all 700ms ease 0s;
+            transition: all 700ms ease 0s;
+
+            .box {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                @include flex-ct-item;
+                overflow: hidden;
+
+                .inner {
+                    width: 100%;
+                    height: 100%;
+                    overflow-y: auto;
+
+                    .innerW {
+                        width: 100%;
+                        height: auto;
+                        max-width: 160rem;
+                        padding: 13rem 0;
+                        margin: 0 auto;
+                    }
+                }
+
+                &.step00 {
+                    background: #00011f url($url-images + 'step00_bg.png') center center no-repeat;
+                    background-size: cover;
+
+                    .inner {
+                        .innerW {
+                            padding: 0;
+                            position: relative;
+                        }
+                    }
+
+                    .firstArrow {
+                        position: absolute;
+                        width: 5.4rem;
+                        height: 5.4rem;
+                        right: 0;
+                        bottom: 1rem;
+                        @include flex-ct-item;
+                        border-radius: 50%;
+                        z-index: 999;
+
+                        &::before {
+                            @include beforeIco;
+                            width: 5.4rem;
+                            height: 5.4rem;
+                            background: url($url-images-com + 'firstdown.svg') center center no-repeat;
+                            background-size: 100%;
+                        }
+                    }
+
+                    //height: auto;                    
+
+                    .txtBox {
+                        color: $txtColor-w;
+                        margin: 11.4rem auto 0;
+
+                        .tit {
+                            h2 {
+                                text-align: center;
+                                @include h3;
+                                font-family: $font-b;
+                            }
+
+                            p {
+                                text-align: center;
+                                @include tit_p;
+                                font-family: $font-sb;
+
+                                &:not(:last-child) {
+                                    margin-top: 3rem;
+                                }
+                            }
+                        }
+                    }
+
+                    .bgBox {
+                        position: absolute;
+                        width: 100%;
+                        height: 50rem;
+                        left: 0;
+
+                        i {
+                            position: absolute;
+
+                            &.character {
+                                @include beforeIco;
+                                width: 49.7rem;
+                                height: 48.5rem;
+                                transform: translate(-50%, -50%);
+                                left: 50%;
+                                top: 60%;
+                                background-image: url($url-images + 'step00_ico_01.png');
+                                background-size: 80%;
+                            }
+
+                            &.bubble {
+                                transform: translate(-50%, -50%);
+                                background-image: url($url-images + 'step00_ico_02.png');
+                                background-size: 100%;
+
+                                &.Msg01 {
+                                    top: 55%;
+                                    left: 35%;
+                                    width: 7.7rem;
+                                    height: 5.6rem;
+
+                                }
+
+                                &.Msg02 {
+                                    top: 40%;
+                                    right: 25%;
+                                    width: 10.7rem;
+                                    height: 7.8rem;
+                                    transform: scaleX(-1);
+                                }
+
+                                &.Msg03 {
+                                    top: 75%;
+                                    left: 30%;
+                                    width: 17.2rem;
+                                    height: 12.6rem;
+                                }
+                            }
+
+                        }
+
+                        div {
+                            position: absolute;
+                            color: $txtColor-w;
+                            transform: translate(-50%, -50%);
+                            display: block;
+                            font-size: 2.4rem;
+                            line-height: 3rem;
+                            text-align: center;
+                            z-index: 1;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            font-family: $font-r;
+
+                            &.bubble01 {
+                                top: 28%;
+                                left: 33%;
+                                width: 35rem;
+                                height: 18rem;
+                                background: url($url-images + 'step00_ico_bg_01.png') bottom center no-repeat;
+                                background-size: 100%;
+                            }
+
+                            &.bubble02 {
+                                top: 20%;
+                                right: 10%;
+                                width: 35rem;
+                                height: 18rem;
+                                background: url($url-images + 'step00_ico_bg_02.png') bottom center no-repeat;
+                                background-size: 100%;
+                            }
+
+                            &.bubble03 {
+                                top: 70%;
+                                right: 10rem;
+                                width: 37.4rem;
+                                height: 19.3rem;
+                                background: url($url-images + 'step00_ico_bg_03.png') bottom center no-repeat;
+                                background-size: 100%;
+                            }
+                        }
+                    }
+                }
+
+                &.step01 {
+                    text-align: center;
+                    margin: 0 auto;
+
+                    .txtBox {
+                        text-align: center;
+
+                        h3 {
+                            @include h3;
+                            font-family: $font-sb;
+                        }
+
+                        p {
+                            @include tit_p;
+                            font-family: $font-sb;
+                        }
+
+                        &.type {
+                            margin-top: 6rem;
+
+                            strong {
+                                font-family: $font-eb;
+                                @include h3;
+                                letter-spacing: -0.1rem;
+                            }
+                        }
+                    }
+
+                    .list {
+                        margin: 6rem auto;
+                        width: 100%;
+                        @include flex-center;
+
+                        .item {
+                            width: 32rem;
+                            height: 32rem;
+                            border-radius: 2.8rem;
+                            padding: 0 5rem;
+                            @include flex-ct-item;
+                            flex-direction: column;
+                            border: 1px solid #e5e5e5;
+                            margin: 0 2rem;
+                            cursor: pointer;
+
+                            &:nth-of-type(2) {
+                                margin-top: 10rem;
+                            }
+
+                            &:hover {
+                                border-color: $mainColor;
+
+                                p {
+                                    color: $mainColor
+                                }
+                            }
+
+                            i {
+                                width: 16rem;
+                                height: 22.5rem;
+                                display: block;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+
+                            p {
+                                margin-top: 1rem;
+                                font-size: 2.4rem;
+                            }
+
+
+                            &:nth-of-type(1) {
+                                i {
+                                    background-image: url($url-images + 'step01_ico_01.png');
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                i {
+                                    background-image: url($url-images + 'step01_ico_02.png');
+                                }
+                            }
+
+                            &:nth-of-type(3) {
+                                i {
+                                    background-image: url($url-images + 'step01_ico_03.png');
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    background-image: linear-gradient(to bottom, #010011, #000121);
+
+                    .inner {
+                        .innerW {
+                            max-width: 100%;
+                            padding: 0;
+                        }
+                    }
+
+                    .row {
+                        width: 100%;
+                        padding: 13rem 0;
+                        height: 100vh;
+
+
+                        &:first-of-type {
+                            background-image: url($url-images + 'step02_bg.png');
+                            @include flex-ct-item;
+
+                            .txtBox {
+                                text-align: center;
+                            }
+                        }
+
+                        &:last-of-type {
+                            background-image: url($url-images + 'step02_conbg.png');
+                            @include flex-st-item;
+
+                            >div {
+                                width: 100%;
+                                height: 100%;
+                                max-width: 120rem;
+                                margin: 0 auto;
+                            }
+
+                            .txtBox {
+                                text-align: left;
+                                padding-left: 2rem;
+                            }
+
+                            .list {
+                                width: 100%;
+                                @include flex-ct-item;
+                                margin-top: 8rem;
+
+                                .item {
+                                    position: relative;
+                                    width: 36rem;
+                                    height: 40rem;
+                                    margin: 0 3rem;
+
+                                    &:not(:last-of-type) {
+                                        &::after {
+                                            content: "";
+                                            display: block;
+                                            position: absolute;
+                                            transform: translateY(-50%) rotate(45deg);
+                                            right: -4rem;
+                                            top: 43%;
+                                            width: 3rem;
+                                            height: 3rem;
+                                            border-top: 1rem solid $txtColor-w;
+                                            border-right: 1rem solid $txtColor-w;
+                                            opacity: 0.5;
+                                        }
+                                    }
+
+                                    >div {
+                                        width: 100%;
+                                        border: 1px solid #e5e5e5;
+                                        background: $txtColor-w;
+                                        border-radius: 2.8rem;
+                                        padding: 2rem 5rem;
+                                        @include flex-ct-item-start;
+                                        flex-direction: column;
+
+                                        em {
+                                            font-size: 6rem;
+                                            letter-spacing: -0.06rem;
+                                            font-family: $font-bb;
+                                        }
+
+                                        i {
+                                            width: 100%;
+                                            height: 24.6rem;
+                                            display: block;
+                                            background-size: 80%;
+                                            background-repeat: no-repeat;
+                                            background-position: center;
+                                        }
+                                    }
+
+                                    p {
+                                        margin-top: 2rem;
+                                        @include txt;
+                                        color: $txtColor-w;
+                                        font-family: $font-m;
+                                        text-align: center;
+                                    }
+
+                                    &:nth-of-type(1) {
+                                        >div {
+                                            i {
+                                                display: block;
+                                                background-image: url($url-images + 'step02_ico_01.png');
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        >div {
+                                            i {
+                                                background-image: url($url-images + 'step02_ico_02.png');
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        >div {
+                                            i {
+                                                background-image: url($url-images + 'step02_ico_03.png');
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .txtBox {
+                        color: $txtColor-w;
+
+                        h3 {
+                            @include h3;
+                        }
+                    }
+                }
+
+                &.step03 {
+                    background-image: linear-gradient(to bottom, #010011, #000121);
+
+                    .inner {
+                        .innerW {
+                            max-width: 100%;
+                            padding: 0;
+                        }
+                    }
+
+                    .row {
+                        width: 100%;
+                        height: 100vh;
+                        @include flex-ct-item;
+
+                        .txtBox {
+                            color: $txtColor-w;
+                            text-align: center;
+
+                            h3 {
+                                @include h3;
+                            }
+
+                            span {
+
+                                &.mark {
+                                    position: relative;
+                                    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                                    margin-right: 0.1rem;
+
+                                    img {
+                                        position: relative;
+                                        z-index: 2;
+                                        display: inline-block;
+                                        height: 5rem;
+                                    }
+
+                                    &::before {
+                                        content: "";
+                                        display: block;
+                                        position: absolute;
+                                        z-index: 1;
+                                        width: 100%;
+                                        height: 2.1rem;
+                                        background: rgba(0, 255, 246, 0.45);
+                                        transform: translateX(-50%);
+                                        left: 50%;
+                                        bottom: 0;
+                                    }
+                                }
+
+                            }
+                        }
+
+                        &:first-of-type {
+                            padding: 13rem 0;
+                            background-image: url($url-images + 'step03_bg.png');
+                        }
+
+                        &:last-of-type {
+                            padding: 7rem 0 10rem;
+                            background-image: url($url-images + 'step03_bg02.png');
+
+                            >div {
+                                width: 100%;
+                                height: 100%;
+                                max-width: 120rem;
+                                margin: 0 auto;
+
+                                .bgBox {
+                                    position: relative;
+                                    height: 70vh;
+                                    background: url($url-images + 'step03_conbg.png') center center no-repeat;
+
+                                    >div {
+                                        position: absolute;
+                                        color: $txtColor-w;
+                                        transform: translate(-50%, -50%);
+                                        display: block;
+                                        font-size: 2.4rem;
+                                        line-height: 3rem;
+                                        text-align: center;
+                                        z-index: 1;
+                                        display: flex;
+                                        flex-direction: column;
+                                        justify-content: center;
+                                        font-family: $font-r;
+
+                                        &.bubble01 {
+                                            top: 75%;
+                                            left: 10%;
+                                            width: 48.2rem;
+                                            height: 19rem;
+                                            background: url($url-images + 'step00_ico_bg_01.png') bottom center no-repeat;
+                                            background-size: 80%;
+                                        }
+
+                                        &.bubble02 {
+                                            top: 10%;
+                                            right: -20%;
+                                            width: 41.7rem;
+                                            height: 21rem;
+                                            background: url($url-images + 'step00_ico_bg_03.png') bottom center no-repeat;
+                                            background-size: 100%;
+                                        }
+                                    }
+                                }
+
+                                .txtBox {
+                                    h3 {
+                                        font-family: $font-bb;
+
+                                        img {
+                                            display: inline-block;
+                                            height: 4.3rem;
+                                        }
+                                    }
+
+                                    p {
+                                        @include txt;
+                                        margin-top: 1.6rem;
+                                        font-family: $font-sb;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+                &.step04 {
+                    .txtBox {
+                        text-align: center;
+
+                        p {
+                            @include tit_p;
+                            font-family: $font-sb;
+                        }
+
+                        h3 {
+                            @include h3;
+                            font-family: $font-eb;
+                        }
+
+                        &.type {
+                            p {
+                                font-size: 2.4rem;
+                                line-height: 4rem;
+                            }
+                        }
+                    }
+
+                    .videoBox {
+                        margin: 3.6rem auto 3.5rem;
+                        max-width: 120rem;
+                    }
+                }
+
+                &.step05 {
+                    background: $txtColor01 url($url-images + 'step05_bg.png');
+                    background-size: cover;
+                    color: $txtColor-w;
+                    @include step_img;
+
+                    .imgBox {
+                        &:not(:last-of-type) {
+                            margin: 5rem auto 14rem
+                        }
+                    }
+                }
+
+                &.step06 {
+                    @include step_img;
+
+                    .imgBox {
+                        margin: 5rem auto 0;
+                    }
+                }
+
+                &.step07 {
+                    @include step_img;
+                    background: $txtColor01 url($url-images + 'step05_bg.png');
+                    background-size: cover;
+                    color: $txtColor-w;
+
+                    span {
+                        display: block;
+                        font-family: $font-sb;
+                        font-size: 2.4rem;
+                        line-height: 4rem;
+                        padding-top: 15rem;
+                    }
+
+                    .imgBox {
+                        position: relative;
+
+                        img {
+                            position: relative;
+
+                            &:first-of-type {
+                                position: relative;
+                                z-index: 0;
+                            }
+
+                            &:last-of-type {
+                                position: absolute;
+                                z-index: 1;
+                                top: 30%;
+                                left: 19%
+                            }
+                        }
+                    }
+                }
+
+                &.step08 {
+                    .inner {
+                        .innerW {
+                            max-width: 120rem
+                        }
+                    }
+
+                    .txtBox {
+                        h3 {
+                            @include h3;
+                            font-family: $font-eb;
+                        }
+                    }
+
+                    .list {
+                        @include flex-ct-item-start;
+                        flex-direction: column;
+                        margin-top: 5rem;
+
+                        .item {
+                            width: 100%;
+                            height: 19.8rem;
+                            border: 1px solid #e5e5e5;
+                            border-radius: 2.8rem;
+                            @include flex-st-item;
+                            padding: 0 2.5rem;
+                            cursor: pointer;
+
+                            &:hover {
+                                position: relative;
+
+                                &::after {
+                                    content: "";
+                                    display: block;
+                                    width: calc(100% - 0.8rem);
+                                    height: 100%;
+                                    border: 4px solid $mainColor;
+                                    position: absolute;
+                                    border-radius: 2.8rem;
+                                    left: 0rem;
+                                }
+                            }
+
+                            &:not(:last-of-type) {
+                                margin-bottom: 2rem;
+                            }
+
+                            i {
+                                width: 20.6rem;
+                                height: 18.2rem;
+                                display: block;
+                                background-size: 100%;
+                                background-repeat: no-repeat;
+                                background-position: center;
+                            }
+
+                            >div {
+                                text-align: left;
+                                width: calc(100% - 20rem);
+                                margin-left: 7rem;
+
+                                strong {
+                                    font-size: 2.8rem;
+                                    color: $mainColor;
+                                    font-family: $font-bb;
+                                }
+
+                                p {
+                                    margin-top: 2rem;
+                                    font-size: 2rem;
+                                    line-height: 3.2rem;
+                                    font-family: $font-eb;
+                                }
+                            }
+
+                            &:nth-of-type(1) {
+                                i {
+                                    background-image: url($url-images + 'step08_ico_01.png');
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                i {
+                                    background-image: url($url-images + 'step08_ico_02.png');
+                                }
+                            }
+
+                            &:nth-of-type(3) {
+                                i {
+                                    background-image: url($url-images + 'step08_ico_03.png');
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step09 {
+                    background: $txtColor01 url($url-images + 'step09_bg.png');
+                    background-size: cover;
+
+                    .inner {
+                        .innerW {
+                            height: 100vh;
+                            @include flex-ct-item;
+                            flex-direction: column;
+                        }
+                    }
+
+                    .txtBox {
+                        text-align: center;
+
+                        strong {
+                            display: block;
+                            @include strong;
+                            color: $txtColor-w;
+                            font-family: $font-bb;
+                            font-size: 4rem;
+                            line-height: 6rem;
+
+                            &:last-of-type {
+                                margin-top: 6rem;
+                            }
+                        }
+                    }
+
+                    button {
+                        &.df-btn {
+                            background: $txtColor-w;
+                            max-width: 35rem;
+                            margin: 10.7rem auto 0;
+
+                            &::after {
+                                @include beforeIco;
+                                width: 2.2rem;
+                                height: 1.8rem;
+                                margin-left: 1.3rem;
+                                background-image: url($url-images-com + 'btn_arrow_rightB.png');
+                            }
+                        }
+                    }
+                }
+
+                &.step010 {
+                    .inner {
+                        height: 100vh;
+
+                        .innerW {
+                            @include flex-bt-item;
+                            padding: 5rem 2rem
+                        }
+                    }
+
+                    strong {
+                        @include flex-st-item;
+                        width: 100%;
+                        font-family: $font-bb;
+                        font-size: 3.2rem;
+                        text-align: center;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            max-width: 22rem;
+                            height: 1px;
+                            margin: 0 8.8rem 0 10rem;
+                            background: #ccc;
+                        }
+                    }
+
+                    .inputBox {
+                        margin-top: 5rem;
+                        @include inputBox;
+
+                    }
+
+                    .btn-application {
+                        @include btn-application;
+                        margin-top: 8.5rem;
+                    }
+                }
+            }
+
+            footer {
+                position: relative;
+                width: 100%;
+                height: auto !important;
+                border-top: 1px solid #ededed;
+                text-align: center;
+
+                .inner {
+                    padding: 3.5rem 0 !important;
+
+                    @media screen and(max-width: 767px) {
+                        padding: 3.5rem 2.8rem 10rem !important;
+                    }
+
+                    div {
+                        position: relative;
+                        margin: 10px 0;
+
+                        span {
+                            font-family: $font-r;
+                            font-size: 13px;
+                            color: #111;
+
+                            &::before {
+                                display: inline-block;
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                background: #747474;
+                                margin: 0 5px;
+                            }
+
+                            &:first-child {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        font-family: $font-r;
+                        font-size: 13px;
+                        color: #111;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.adWrap {
+    position: fixed;
+    width: 50rem;
+    height: 100vh;
+    display: none;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    background: $txtColor-w;
+
+    &.active {
+        display: block;
+    }
+
+    .ad-hd {
+        width: 100%;
+        height: 12.4rem;
+        background-image: url($url-images + 'img_top.png');
+        @include flex-ct-item;
+
+        strong {
+            @include strong;
+            color: #fff
+        }
+
+        button {
+            &.adClose {
+                position: absolute;
+                right: 2rem;
+                top: 2rem;
+                width: 2.1rem;
+                height: 2.1rem;
+
+                i {
+                    display: block;
+                    width: 2.1rem;
+                    height: 2.1rem;
+                    background-image: url($url-images + 'ad_close.svg');
+                }
+            }
+        }
+    }
+
+    .ad-con {
+        @include inputBox;
+        overflow-y: auto;
+        height: calc(100vh - 12.4rem);
+        padding: 4rem 5rem;
+
+        .btn-application {
+            @include btn-application;
+        }
+    }
+}
