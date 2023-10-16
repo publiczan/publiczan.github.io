@@ -1300,6 +1300,7 @@ body {
         font-size: 10px;
         line-height: 20px;
         border: 0;
+        text-decoration: none;
     }
 
     #wrap .content .box.step04 footer.main-footer section .area-info ul li:not(:last-of-type) {
