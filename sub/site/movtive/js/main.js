@@ -1,5 +1,10 @@
-window.onload = function () {
+function adjust_height() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty("--vh", `${vh}px`);
+}
 
+window.onload = function () {
+    adjust_height()
 
     var header = document.querySelector('header');
     var menu = document.querySelector('.menu');
