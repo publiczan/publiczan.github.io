@@ -399,10 +399,15 @@ body {
 /*beforeIco*/
 /*icon*/
 /*btn*/
-body {
-    overflow: hidden;
+body,
+html {
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
+}
+
+body {
+    overflow: hidden;
+
 }
 
 html {
@@ -410,7 +415,7 @@ html {
 }
 
 #wrap {
-    width: 100%;
+    width: 100vw;
     height: calc(var(--vh, 1vh) * 100);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
