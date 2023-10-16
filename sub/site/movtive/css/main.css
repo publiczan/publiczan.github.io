@@ -1083,7 +1083,7 @@ body {
 
 @media screen and (max-width: 1024px) {
     #wrap .scrolldown {
-        display: none;
+        display: none !important;
     }
 
     #wrap header .header_area {
@@ -1142,6 +1142,14 @@ body {
     #wrap .content .box.step02 section .swiper .swiper-wrapper .swiper-slide .videoBox {
         width: 100%;
         height: 250px;
+    }
+
+    #wrap .content .box footer.main-footer section .area-info ul li {
+        border: 0;
+    }
+
+    #wrap .content .box footer.main-footer section .area-info ul li::after {
+        display: none !important;
     }
 }
 
