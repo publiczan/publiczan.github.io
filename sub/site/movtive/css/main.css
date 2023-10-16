@@ -875,6 +875,11 @@ body {
     align-items: center;
 }
 
+#wrap .content .box.step03 section .swiper .swiper-wrapper .swiper-slide .videoBox video {
+    width: 100%;
+    height: 100%;
+}
+
 #wrap .content .box.step03.active section .txtBox h2 {
     -webkit-animation: op-ani 1s .1s ease-in forwards;
     animation: op-ani 1s .1s ease-in forwards;
@@ -1055,6 +1060,10 @@ body {
 
 #wrap .content .box.step04 footer.main-footer section .area-info::before {
     background-image: url("../images/main/logo_movtive_wh.png");
+}
+
+#wrap .content .box.step04 footer.main-footer section .area-info ul li {
+    border-bottom: 0;
 }
 
 #wrap .content .box.step04.active section .txtBox h2 {
