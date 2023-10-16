@@ -945,7 +945,11 @@ body {
     margin-bottom: 28px;
 }
 
-#wrap .content .box.step04 footer.main-footer section .area-info ul {
+#wrap .content .box.step04 footer.main-footer section .area-info address {
+    font-style: normal;
+}
+
+#wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -953,7 +957,7 @@ body {
     flex-wrap: wrap;
 }
 
-#wrap .content .box.step04 footer.main-footer section .area-info ul li {
+#wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -966,7 +970,7 @@ body {
     font-size: 13px;
 }
 
-#wrap .content .box.step04 footer.main-footer section .area-info ul li::after {
+#wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span::after {
     content: "";
     width: 1px;
     height: 10px;
@@ -976,11 +980,11 @@ body {
     margin: 0 10px;
 }
 
-#wrap .content .box.step04 footer.main-footer section .area-info ul li:last-of-type::after {
+#wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span:last-of-type::after {
     display: none;
 }
 
-#wrap .content .box.step04 footer.main-footer section .area-info address {
+#wrap .content .box.step04 footer.main-footer section .area-info address.copy {
     margin-top: 25px;
     font-size: 12px;
     color: #999;
@@ -1055,10 +1059,6 @@ body {
 
 #wrap .content .box.step04 footer.main-footer section .area-info::before {
     background-image: url("../images/main/logo_movtive_wh.png");
-}
-
-#wrap .content .box.step04 footer.main-footer section .area-info ul li {
-    border-bottom: 0;
 }
 
 #wrap .content .box.step04.active section .txtBox h2 {
@@ -1137,14 +1137,6 @@ body {
     #wrap .content .box.step02 section .swiper .swiper-wrapper .swiper-slide .videoBox {
         width: 100%;
         height: 250px;
-    }
-
-    #wrap .content .box footer.main-footer section .area-info ul li {
-        border: 0;
-    }
-
-    #wrap .content .box footer.main-footer section .area-info ul li::after {
-        display: none !important;
     }
 }
 
@@ -1289,30 +1281,29 @@ body {
         margin: 10px auto;
     }
 
-    #wrap .content .box.step04 footer.main-footer section .area-info ul {
+    #wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) {
         padding-bottom: 0;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
     }
 
-    #wrap .content .box.step04 footer.main-footer section .area-info ul li {
+    #wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span {
         font-size: 10px;
         line-height: 20px;
         border: 0;
         text-decoration: none;
     }
 
-    #wrap .content .box.step04 footer.main-footer section .area-info ul li:not(:last-of-type) {
+    #wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span:not(:last-of-type) {
         margin-right: 10px;
     }
 
-    #wrap .content .box.step04 footer.main-footer section .area-info ul li::after {
+    #wrap .content .box.step04 footer.main-footer section .area-info address:not(.copy) span:after {
         display: none;
-        border: 0;
     }
 
-    #wrap .content .box.step04 footer.main-footer section .area-info address {
+    #wrap .content .box.step04 footer.main-footer section .area-info address.copy {
         font-size: 10px;
         margin-top: 10px;
         text-align: center;
