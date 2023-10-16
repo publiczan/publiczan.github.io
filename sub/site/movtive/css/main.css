@@ -1178,6 +1178,10 @@ body {
         right: 10px;
     }
 
+    #wrap .scrolldown {
+        display: none;
+    }
+
     #wrap .content .box:not(.step01) section {
         max-width: 100%;
         padding: 3% 10px;
