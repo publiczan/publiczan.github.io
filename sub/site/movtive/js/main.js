@@ -3,8 +3,18 @@ function adjust_height() {
     document.documentElement.style.setProperty("--vh", `${vh}px`);
 }
 
+window.onresize = function () {
+    setTimeout(function () {
+        var content = document.querySelector(".navigator a.active");
+        content.click();
+
+        adjust_height();
+
+    }, 500);
+}
+
+
 window.onload = function () {
-    adjust_height()
 
     var header = document.querySelector('header');
     var menu = document.querySelector('.menu');

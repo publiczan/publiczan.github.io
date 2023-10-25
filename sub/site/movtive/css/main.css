@@ -1195,6 +1195,10 @@ html {
         padding: 3% 10px;
     }
 
+    #wrap .content .box.step01 {
+        height: 100vh;
+    }
+
     #wrap .content .box.step02 section .txtBox {
         -webkit-transform: translateX(-50%);
         transform: translateX(-50%);
