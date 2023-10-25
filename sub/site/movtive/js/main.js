@@ -1,18 +1,11 @@
-function adjust_height() {
+let vh = window.innerHeight * 0.01;
+document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+window.addEventListener("resize", () => {
+    console.log("resize");
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-}
-
-window.onresize = function () {
-    setTimeout(function () {
-        var content = document.querySelector(".navigator a.active");
-        content.click();
-
-        adjust_height();
-
-    }, 500);
-}
-
+});
 
 window.onload = function () {
 
