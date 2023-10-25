@@ -164,6 +164,11 @@ window.onload = function () {
                 header.classList.remove("other");
                 navigator.classList.remove("other");
             }
+            if (now == 0) {
+                header.classList.add("first");
+            } else {
+                header.classList.remove("first");
+            }
             if (now == 1 || now == 2) {
                 navigator.classList.add("other");
                 header.classList.add("other");

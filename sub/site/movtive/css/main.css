@@ -399,15 +399,10 @@ body {
 /*beforeIco*/
 /*icon*/
 /*btn*/
-body,
-html {
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translateZ(0);
-}
-
 body {
     overflow: hidden;
-
+    transform: translate3d(0, 0, 0);
+    -webkit-transform: translateZ(0);
 }
 
 html {
@@ -415,7 +410,7 @@ html {
 }
 
 #wrap {
-    width: 100vw;
+    width: 100%;
     height: calc(var(--vh, 1vh) * 100);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
@@ -495,6 +490,11 @@ html {
 
 #wrap header .header_area ul li:last-of-type {
     margin-left: 10px;
+}
+
+#wrap header.first {
+    position: relative;
+    background: #000;
 }
 
 #wrap .navigator {
@@ -615,12 +615,13 @@ html {
 #wrap .content .box.step01 {
     background-size: cover;
     background: #000;
+    height: calc(100% - 94px);
 }
 
 #wrap .content .box.step01 section .videoBox {
     position: absolute;
     top: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     -webkit-transform: translateX(-50%);
     transform: translateX(-50%);
