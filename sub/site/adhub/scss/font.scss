@@ -1,0 +1,61 @@
+@font-face {
+    font-family: "NotoSansL";
+    src: url("../font/notokr-light.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/notokr-light.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/notokr-light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "NotoSansR";
+    src: url("../font/notokr-regular.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/notokr-regular.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/notokr-regular.woff") format("woff");
+}
+
+@font-face {
+    font-family: "NotoSansM";
+    src: url("../font/notokr-medium.eot");
+    src: url("../font/notokr-medium.eot?#iefix") format("embedded-opentype"),
+        url("../font/notokr-medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "NotoSansB";
+    src: url("../font/notokr-bold.eot");
+    src: url("../font/notokr-bold.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/notokr-bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GiloryL";
+    src: url("../font/gilory_light.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/gilory_light.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/gilory_light.woff") format("woff");
+}
+
+@font-face {
+    font-family: "GiloryB";
+    src: url("../font/gilory_bold.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/gilory_bold.eot?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/gilory_bold.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Gilroy ExtraBold";
+    font-display: swap;
+    src: url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.woff2") format("woff2"),
+        /* chrome firefox */
+        url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.woff") format("woff"),
+        /* chrome firefox */
+        url("//db.onlinewebfonts.com/t/00d5a78493aed4b11e2584ad7cceee49.ttf") format("truetype");
+    /* chrome firefox opera Safari, Android, iOS 4.2+*/
+}

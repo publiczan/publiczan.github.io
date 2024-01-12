@@ -1,6 +1,6 @@
 @charset 'utf-8';
 
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -91,7 +91,6 @@ video {
     border: 0;
     font-size: 100%;
     vertical-align: baseline;
-    font-style: normal;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -148,14 +147,33 @@ a {
     color: inherit;
     text-decoration: none;
     transition: all ease 0.8s;
+    @include transition;
 }
 
 button {
-    font-family: "NotoSansR";
+    // font-family: "NotoSansR";
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
+    @include transition;
+}
+
+i {
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+
+    &::before {
+        font-style: normal
+    }
+}
+
+i,
+strong,
+em,
+p {
+    display: block;
 }
 
 * {
@@ -166,8 +184,8 @@ button {
     -webkit-tap-highlight-color: transparent !important;
 }
 
+i,
 img {
-    display: block;
     max-width: 100%;
 }
 
@@ -197,22 +215,31 @@ input::-ms-clear {
 }
 
 input:-webkit-autofill {
-    background: #fff !important;
+    background: --color-wh01 !important;
     -webkit-text-fill-color: #333 !important;
 }
 
 html,
 body {
     width: 100%;
-    font-family: "NotoSansR";
-    font-size: 14px;
-    color: #222;
+    font-family: $font-g;
+    font-size: 10px;
+    color: #000;
     overflow: hidden;
 }
 
+body {}
 
 ::-moz-selection,
 ::selection {
-    color: #fff;
-    background: #84b54d;
+    color: #000;
+    background: #ff4646;
+}
+
+::-webkit-scrollbar {
+    @include scrollbar
+}
+
+::-webkit-scrollbar-thumb {
+    @include scrollbar-thumb;
 }

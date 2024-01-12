@@ -1,0 +1,208 @@
+@import "./_variables";
+
+
+
+
+@keyframes step01_text {
+    from {
+        top: 0;
+    }
+
+    to {
+        top: 54%;
+    }
+}
+
+@keyframes step01_img {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes step01_conbox {
+    from {
+        bottom: -50%;
+    }
+
+    to {
+        bottom: 0;
+    }
+}
+
+@keyframes step02_tit {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 16.5%;
+        opacity: 1;
+    }
+}
+
+@keyframes step02_text {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 24.5%;
+        opacity: 1;
+    }
+}
+
+@keyframes step02_img {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes step03_tit {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 20%;
+        opacity: 1;
+    }
+}
+
+@keyframes step03_ul {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 28%;
+        opacity: 1;
+    }
+}
+
+@keyframes step03_text {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 40%;
+        opacity: 1;
+    }
+}
+
+@keyframes step03_box_01 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 23%;
+    }
+}
+
+@keyframes step03_box_02 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 36.5%;
+    }
+}
+
+@keyframes step03_box_03 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes step03_box_04 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 63.5%;
+    }
+}
+
+@keyframes step03_box_05 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 77.1%;
+    }
+}
+
+@keyframes step04_tit {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 15%;
+        opacity: 1;
+    }
+}
+
+@keyframes step04_text {
+    from {
+        top: 0;
+        opacity: 0;
+    }
+
+    to {
+        top: 23%;
+        opacity: 1;
+    }
+}
+
+@keyframes step04_box_01 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 15%;
+    }
+}
+
+@keyframes step04_box_02 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 50%;
+    }
+}
+
+@keyframes step04_box_03 {
+    from {
+        left: -100%;
+    }
+
+    to {
+        left: 85.1%;
+    }
+}

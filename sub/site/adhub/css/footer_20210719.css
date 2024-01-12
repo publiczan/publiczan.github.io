@@ -1,0 +1,110 @@
+footer { background-color: #222; font-size: 14px; text-align: center; height: 235px !important; }
+
+footer section { position: relative; display: inline-block; width: 100%; max-width: 1260px; height: 235px; padding: 50px 0; margin: 0 !important; text-align: left; }
+
+footer section ul li { display: inline-block; }
+
+footer section img { position: absolute; left: 0; top: 100px; height: 22px; }
+
+footer section .area-info { color: #fff; }
+
+footer section .area-info .list-info { clear: both; }
+
+footer section .area-info .list-info li { line-height: 27px; font-size: 15px; color: #fff; position: relative; padding: 0 0 0 10px; margin: 0 0 0 6px; }
+
+footer section .area-info .list-info li:after { display: block; content: ""; width: 1px; height: 14px; background: #666; position: absolute; left: 0; top: 7px; }
+
+footer section .area-info .list-info li:first-child { margin: 0; padding: 0; }
+
+footer section .area-info .list-info li:first-child:after { display: none; }
+
+footer section .area-info .list-btn { margin-top: 10px; }
+
+footer section .area-info .list-btn li { position: relative; padding: 0 0 0 10px; margin: 0 0 0 6px; }
+
+footer section .area-info .list-btn li:after { display: block; content: ""; width: 1px; height: 14px; background: #666; position: absolute; left: 0; top: 2px; }
+
+footer section .area-info .list-btn li:first-child { margin: 0; padding: 0; }
+
+footer section .area-info .list-btn li:first-child:after { display: none; }
+
+footer section .area-info .list-btn li a { font-family: "NotoSansM"; color: #262626; font-size: 15px; }
+
+footer section .area-info .area-logo { margin: 25px 0 0 0; }
+
+footer section .area-info .area-logo img, footer section .area-info .area-logo p { display: inline-block; vertical-align: bottom; }
+
+footer section .area-info .area-logo p { font-family: "NotoSansM"; color: #555; font-size: 15px; margin: 0 0 0 5px; }
+
+footer section .footerMenu a, footer section .footerMenu button { position: relative; color: #fff; margin: 0 25px 0 0; background: transparent; }
+
+footer section .footerMenu a::before, footer section .footerMenu button::before { display: block; content: ""; position: absolute; left: -13px; top: 6px; width: 1px; height: 8px; background-color: #fff; }
+
+footer section .footerMenu a:first-child::before, footer section .footerMenu button:first-child::before { display: none; }
+
+footer section .footerText { font-size: 14px; line-height: 2; margin: 25px 0 0; color: #999; }
+
+footer section .footerText span { display: inline-block; margin: 0 20px 0 0; }
+
+footer section .site { position: absolute; top: 38px; right: 0; background: #3f3f3f; overflow: hidden; z-index: 2; }
+
+footer section .site .siteWrap { width: 200px; line-height: 45px; border-radius: 10px; background: transparent; position: relative; display: block; }
+
+footer section .site .siteWrap a { display: block; position: relative; -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 14px; color: #fff; -webkit-transition: all .3s; transition: all .3s; text-align: left; padding-left: 10px; cursor: pointer; font-family: "GiloryL"; }
+
+footer section .site .siteWrap a::after { content: ""; display: inline-block; position: absolute; width: 20px; height: 15px; background: url("../images/btn_next_off.png") center center no-repeat; -webkit-transform: rotate(90deg); transform: rotate(90deg); right: 10px; top: 11px; -webkit-transition: all .3s; transition: all .3s; }
+
+footer section .site .siteWrap:hover > a:after, footer section .site .siteWrap:focus > a:after { -webkit-transform: rotate(270deg); transform: rotate(270deg); }
+
+footer section .site .siteWrap:hover { border-bottom: none; border-radius: 10px 10px 0 0; }
+
+footer section .site .siteWrap:hover .depth2 { height: auto; }
+
+footer section .site .siteWrap .depth2 { height: 0; display: block; background-color: #3f3f3f; }
+
+footer section .site .siteWrap .depth2 > li { width: 100%; padding: 0 0 5px 0; }
+
+footer section .site .siteWrap .depth2 > li:first-child { margin: 0; }
+
+footer section .site .siteWrap .depth2 > li > a { color: #fff; line-height: 20px; display: block; text-align: left; font-weight: normal; font-size: 13px; width: 100%; -webkit-transition: all .3s; transition: all .3s; }
+
+footer section .site .siteWrap .depth2 > li > a::after { display: none; }
+
+footer section .footer_btn { width: 200px; height: 82px; position: absolute; display: block; right: 0; top: 40%; z-index: 1; }
+
+footer section .footer_btn::before { content: ""; background: url(../images/footer_img1.png) center center no-repeat; display: block; width: 200px; height: 82px; }
+
+.modal { display: none; position: fixed; z-index: 999; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: black; background-color: rgba(0, 0, 0, 0.4); }
+
+.modal .modal-content { background-color: #fff; margin: 0 auto 10%; border: 1px solid #888; width: 50%; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border-radius: 20px; color: #000; }
+
+.modal .modal-content .close { color: #fff; font-size: 40px; font-weight: bold; position: absolute; right: 20px; -webkit-transform: translateY(50%); transform: translateY(50%); }
+
+.modal .modal-content .close:hover, .modal .modal-content .close:focus { color: black; text-decoration: none; cursor: pointer; }
+
+.modal .modal-content .pop_header { width: 100%; height: 86px; background: #2f2f2f; text-align: center; border-radius: 20px 20px 0 0; padding: 30px 0 0 0; }
+
+.modal .modal-content .pop_header h1 { font-size: 32px; color: #fff; }
+
+.modal .modal-content .pop_con { padding: 20px; }
+
+.modal .modal-content .pop_con .coninfo { overflow-y: auto; height: 50vh; min-height: 50vh; }
+
+.modal .modal-content .pop_con .coninfo p { font-size: 14px; word-break: keep-all; line-height: 24px; }
+
+.modal .modal-content .pop_con .coninfo .policy-table { width: 100%; margin-bottom: 30px; }
+
+.modal .modal-content .pop_con .coninfo .policy-table caption { visibility: hidden; }
+
+.modal .modal-content .pop_con .coninfo .policy-table th { font-weight: normal; background: #eee; border: 1px #333 solid; border-bottom: 0; text-align: center; vertical-align: middle; }
+
+.modal .modal-content .pop_con .coninfo .policy-table tr td:first-child { text-align: center; }
+
+.modal .modal-content .pop_con .coninfo .policy-table td { vertical-align: middle; border: 1px #333 solid; padding: 5px; }
+
+.modal .modal-content .pop_con .coninfo::-webkit-scrollbar { width: 10px; }
+
+.modal .modal-content .pop_con .coninfo::-webkit-scrollbar-thumb { background-color: rgba(0, 0, 0, 0.3); border-radius: 10px; background-clip: padding-box; border: 2px solid transparent; }
+
+.modal .modal-content .pop_con .coninfo::-webkit-scrollbar-track { background-color: #fafbfb; border-radius: 10px; -webkit-box-shadow: inset 0px 0px 5px white; box-shadow: inset 0px 0px 5px white; }
+/*# sourceMappingURL=footer_20210719.css.map */

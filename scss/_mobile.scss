@@ -1,513 +1,224 @@
-@charset "UTF-8";
+@charset 'utf-8';
 
-@import "_layout";
+@media screen and (max-width:1024px) and (min-width:769px) {
 
-@media screen and (max-width: 979px) {
-    #wrap {
-        min-width: 100%;
+    body,
+    html {
+        font-size: 9px;
+    }
 
-        header {
-            height: 60px;
+    #Wrap {
+        article {
+            >section {
+                &.con {
+                    &.step03 {
+                        .inner {
+                            .tabBox {
+                                .tab-hd {
+                                    gap: 4rem;
 
-            .inner {
-                position: relative;
-                width: 100%;
-                max-width: 100%;
-
-                nav {
-                    &.navigator {
-                        display: none;
-                    }
-
-                    &.menu {
-                        width: 100%;
-                        position: relative;
-                        display: block;
-
-                        .menuBox {
-                            width: 100%;
-                            @include flex_between;
-                            height: 60px;
-
-                            h1 {
-                                position: relative;
-                                left: 10px;
-
-                                a {
-                                    cursor: pointer;
-                                    font-size: 0;
-
-                                    &::before {
-                                        content: "";
-                                        background: url(../images/logo.png) center center no-repeat;
-                                        background-size: 100% 100%;
-                                        width: 101px;
-                                        height: 24px;
-                                        position: relative;
-                                        display: block;
-                                    }
-                                }
-                            }
-
-                            .lineWrap {
-                                position: relative;
-                                @include flex_column_c;
-                                height: 60px;
-                                width: 100%;
-                                cursor: pointer;
-                                transform: translateX(50%);
-                                right: 30px;
-                                transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-                                user-select: none;
-                                -webkit-tap-highlight-color: transparent;
-
-                                span {
-                                    &.line {
-                                        width: 30px;
-                                        height: 2px;
-                                        display: block;
-                                        position: relative;
-                                        background: #121212;
-                                        transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-                                        transition-delay: 0s;
-
-                                        &:nth-child(1) {
-                                            transform: translateY(0px) rotate(0deg);
-                                        }
-
-                                        &:nth-child(2) {
-                                            transform: translateY(6px) rotate(0deg);
-                                        }
-                                    }
-                                }
-                            }
-                        }
-
-                        .menuWrap {
-
-                            margin-top: 50px;
-
-                            li {
-                                display: none;
-                                margin-top: 5px;
-                                transform: scale(1.15) translateY(-30px);
-                                opacity: 0;
-                                transition: transform 0s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-                                text-align: center;
-
-                                a {
-                                    display: block;
-                                    position: relative;
-                                    color: #FFF;
-                                    font-weight: 100;
-                                    text-decoration: none;
-                                    font-size: 22px;
-                                    line-height: 2.35;
-                                    font-weight: 200;
-                                    width: 100%;
-                                }
-                            }
-
-                        }
-                    }
-                }
-            }
-
-            &.open {
-                height: 100%;
-                background-color: #2057e0;
-                transition: all 0.3s ease-in, background 0.5s ease-in;
-                transition-delay: 0.25s;
-
-                .inner {
-                    nav {
-                        &.navigator {
-                            display: none;
-                        }
-
-                        &.menu {
-
-                            .lineWrap {
-
-                                span {
-                                    &.line {
-                                        transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
-                                        transition-delay: 0.2s;
-                                        background: #ffdd3f;
-
-                                        &:nth-child(1) {
-                                            transform: translateY(4px) rotate(45deg);
-                                        }
-
-                                        &:nth-child(2) {
-                                            transform: translateY(3px) rotate(-45deg);
-                                        }
-                                    }
-                                }
-                            }
-
-                            .menuWrap {
-                                display: block;
-                                position: relative;
-                                padding: 0px 48px 0;
-
-                                li {
-                                    display: block;
-                                    transform: scale(1) translateY(0px);
-                                    opacity: 1;
-
-                                    a {
+                                    button {
                                         &.active {
-                                            color: #ffdd3f;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1440px) and (min-width:980px) {
-    #wrap {
-        .inner {}
-
-        .content {
-            .box {
-                section {}
-
-                &.step02 {
-                    section {
-
-                        .left {
-                            .textWrap {
-                                z-index: 3;
-                            }
-                        }
-
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 1200px) and (min-width:769px) {
-    #wrap {
-        .inner {}
-
-        .content {
-            .box {
-                section {}
-
-                // &.step01 {
-
-                //     .textWrap {}
-
-                //     &.active {
-                //         .textWrap {
-                //             h1 {
-                //                 font-size: 50px;
-                //                 margin-bottom: 35px;
-                //             }
-
-                //             span {
-                //                 width: 80%;
-                //                 display: none;
-                //                 font-size: 30px;
-                //                 line-height: 51px;
-                //             }
-                //         }
-                //     }
-                // }
-
-                &.step02 {
-                    section {
-
-                        .left,
-                        .right {
-                            width: 60%;
-                        }
-
-                        .left {
-                            .img {}
-
-                            .textWrap {}
-                        }
-
-                        .right {
-                            top: 49.6%;
-
-                            .textWrap {
-                                ul {
-                                    li {}
-                                }
-                            }
-
-                            .progressWrap {
-                                max-width: 300px;
-                            }
-                        }
-                    }
-
-                }
-
-                &.step03 {
-                    section {
-
-                        .tabbtnWrap {
-
-                            .tabMenu_btn {
-                                li {
-                                    font-size: 26px;
-                                }
-                            }
-
-                            .tabMenu_select {}
-                        }
-
-                        .tabconWrap {
-
-                            .tabCon {
-                                .slides {
-
-                                    .slide {
-                                        .bodytext {
-                                            padding-left: 10%;
-                                        }
-                                    }
-
-                                    &.photo {
-                                        top: 20%;
-                                    }
-                                }
-                            }
-
-                            .navigation-wrapper {}
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 768px) {
-    #wrap {
-        .inner {
-            max-width: 100%;
-        }
-
-        .modalWrap {
-            .modalContent {
-                transform: translate(-50%, -50%) scale(1.5);
-
-                .close {
-                    width: 10px;
-                    height: 10px;
-
-                    &::before {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        background: #fff;
-                        width: 10px;
-                        height: 1px;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                        top: 50%;
-                        left: 50%;
-                    }
-
-                    &::after {
-                        content: "";
-                        display: block;
-                        position: absolute;
-                        background: #fff;
-                        width: 1px;
-                        height: 10px;
-                        transform: translate(-50%, -50%) rotate(45deg);
-                        top: 50%;
-                        left: 50%;
-                    }
-                }
-            }
-        }
-
-        .content {
-            .box {
-                section {
-                    width: 100%;
-                    margin: 0 auto;
-                    padding: 0 10%;
-                }
-
-                &.step01 {
-
-                    .textWrap {
-                        width: 100%;
-
-                        h1 {
-                            font-size: 30px;
-                            letter-spacing: -1px;
-                            line-height: 50px;
-
-                            span {
-                                &.teletype-text {
-                                    font-size: 30px;
-                                }
-                            }
-                        }
-                    }
-
-                    &.active {}
-                }
-
-                &.step02 {
-                    section {
-                        width: 100%;
-                        padding: 0;
-                        height: 100vh;
-
-                        .left,
-                        .right {
-                            width: 100%;
-                        }
-
-                        .left {
-                            position: relative;
-                            height: 100vh;
-
-                            .img {
-                                top: 50%;
-                            }
-
-                            .textWrap {
-                                display: none;
-                            }
-                        }
-
-                        .right {
-                            top: 80%;
-                            justify-content: center;
-                            padding: 0;
-                            background: rgba(255, 255, 255, 0.9);
-
-                            .textWrap {
-                                top: -20%;
-
-                                ul {
-                                    li {
-                                        text-align: center;
-                                        font-size: 20px;
-                                        line-height: 36px;
-                                    }
-                                }
-                            }
-
-                            .progressWrap {
-                                padding: 0 7%;
-                                top: 45%;
-                            }
-                        }
-                    }
-
-                }
-
-                &.step03 {
-                    section {
-                        width: 100%;
-                        padding: 0;
-                        height: 100vh;
-
-                        .tabbtnWrap {
-                            margin-top: 0;
-                            position: relative;
-                            top: 10%;
-
-                            .tabMenu_btn {
-                                display: none;
-                            }
-
-                            .tabMenu_select {
-                                display: block;
-                                width: 80%;
-                                height: 50px;
-                                margin: 0 auto;
-                                padding-left: 15px;
-                                -webkit-appearance: none;
-                                -moz-appearance: none;
-                                text-indent: 1px;
-                                text-overflow: "";
-                                -moz-border-radius: 0;
-                                -webkit-border-radius: 0;
-                                border-radius: 0;
-                                background: #fff url(https://d114xt1mltdkik.cloudfront.net/static/template/images/misc/select-box-bg.jpg) right 5px no-repeat;
-                                border: 1px solid #232323;
-                                font-size: 14px !important;
-                                text-transform: uppercase;
-                            }
-                        }
-
-                        .tabconWrap {
-                            max-height: auto;
-                            margin-top: 0;
-                            top: 15%;
-
-                            .tabCon {
-                                .slides {
-
-                                    .slide {
-                                        .bodytext {
-                                            max-width: 100%;
-                                            text-align: center;
-
-                                            button {
-                                                transform: translate(-50%, -50%);
-                                                left: 50%
+                                            &::before {
+                                                width: 100%
                                             }
                                         }
                                     }
+                                }
 
-                                    &.photo {
-                                        .image {
-                                            background-position: center;
-                                            background-size: 150%;
+                                .tab-con {
+                                    li {
+                                        width: calc(33.3% - 2rem)
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+
+    body,
+    html {
+        font-size: 8px;
+    }
+
+    #Wrap {
+        header {
+            height: 6rem;
+
+            h1 {
+                top: 0.5rem
+            }
+        }
+
+        nav {
+            top: 50%;
+            @include flex($dir:col);
+            gap: 1.5rem;
+
+            >button {
+                top: 0;
+                transform: translate(-50%, -50%);
+                left: 50%;
+                position: relative;
+                width: fit-content;
+
+                &.about {
+                    left: 50%;
+                }
+
+                &.contact {
+                    right: inherit;
+                }
+            }
+
+            >ul {
+                flex-direction: column;
+                gap: 1rem;
+                top: 0;
+                padding-top: 2.5rem;
+
+                &::before {
+                    width: 80%;
+                }
+
+                li {
+                    margin-top: 0;
+                }
+            }
+        }
+
+        article {
+            >section {
+                &.con {
+                    &.step {
+                        .inner {
+                            .txtBox {
+                                height: 100vh;
+                                top: 50%;
+
+                                >div {
+                                    &.logo {
+                                        width: 35rem;
+                                        height: 20rem;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step01 {
+                        .inner {
+                            .intro {
+                                top: 0;
+
+                                &::before {
+                                    width: 70rem;
+                                    height: 68rem;
+                                    transform: rotate(-90deg);
+                                }
+
+                                strong {
+                                    font-size: 3.6rem;
+                                }
+
+                                ul {
+                                    flex-direction: column;
+
+                                    li {
+                                        height: 3rem;
+                                        font-size: 2rem;
+                                    }
+                                }
+                            }
+
+                            .info {
+                                margin-top: 0;
+                                flex-direction: column;
+                                padding: 5rem 10%;
+
+                                >ul {
+                                    li {
+                                        &:nth-of-type(odd) {
+                                            width: 100%;
+                                        }
+
+                                        &:nth-of-type(even) {
+                                            width: 100%;
+                                        }
+                                    }
+                                }
+
+                                .progressBox {
+                                    .progress-bar {
+                                        height: 3rem;
+
+                                        &:not(:last-child) {
+                                            margin-bottom: 1rem;
+                                        }
+
+                                        span {
+                                            font-size: 1.2rem;
                                         }
                                     }
                                 }
                             }
+                        }
+                    }
 
-                            .navigation-wrapper {
-                                left: 50%;
-                                top: 60%;
+                    &.step02 {
+                        .inner {
+                            .txtBox {
+                                strong {
+                                    font-size: 2.4rem;
+                                }
+
+                                .iconBox {
+                                    margin-top: 3rem;
+                                    gap: 2rem;
+                                }
                             }
                         }
                     }
-                }
 
-                &.footer {
-                    section {
-                        .textWrap {
-                            width: 100%;
+                    &.step03 {
+                        .inner {
+                            &::before {
+                                top: 8rem
+                            }
 
-                            h1 {
-                                font-size: 30px;
-                                letter-spacing: -1px;
-                                line-height: 50px;
+                            .tabBox {
+                                .tab-sct {
+                                    width: calc(100% - 2rem);
+                                    height: 5rem;
+                                    border-color: #ddd;
+                                    margin: 0 1rem;
+                                }
 
-                                span {
-                                    &.teletype-text {
-                                        font-size: 30px;
+                                .tab-con {
+                                    li {
+                                        width: 100%;
+                                        height: 100%;
+                                        max-height: 50rem;
                                     }
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
+
+        .ppview {
+            >div {
+                transform: translate(-50%, -50%) scale(1.5);
+
+                .iconone {}
             }
         }
     }

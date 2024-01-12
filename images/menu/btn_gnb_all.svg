@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28">
-    <g transform="translate(5 6)">
-        <rect data-name="사각형 883" width="8" height="8" rx="2" transform="translate(-1 -1)" style="fill:#a5adb5;stroke:#a5adb5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
-        <rect data-name="사각형 884" width="8" height="8" rx="2" transform="translate(10.692 -1)" style="fill:#a5adb5;stroke:#a5adb5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
-        <rect data-name="사각형 885" width="8" height="8" rx="2" transform="translate(-1 10.692)" style="fill:#a5adb5;stroke:#a5adb5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
-        <rect data-name="사각형 886" width="8" height="8" rx="2" transform="translate(10.692 10.692)" style="fill:#a5adb5;stroke:#a5adb5;stroke-linecap:round;stroke-linejoin:round;stroke-width:1.5px"/>
-    </g>
-</svg>
