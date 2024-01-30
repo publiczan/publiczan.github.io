@@ -1,6 +1,4 @@
 var nav = function () {
-
-
     $('body').on('click', '.hv-target, ul.menuBox .hv-target', function () {
         var dataConValue = $(this).data("con");
         var $targetElement = $('#' + dataConValue);
@@ -14,21 +12,33 @@ var nav = function () {
             $('.step03 .tab-hd button').eq(index + 1).trigger('click');
         }
 
-        if (!$targetElement.is('.con.step02')) {
-            $('header').toggleClass('other', $targetElement.hasClass('active'));
-        }
+        // if (!$targetElement.is('.con.step02')) {
+        //     $('header').toggleClass('other', $targetElement.hasClass('active'));
+        // }
     })
 
     $('body').on('click', '.btn-close', function () {
         $('.btn-close').remove()
         $('article').removeClass('active')
         $('.con').removeClass('active')
-        $('header').removeClass('other')
     })
 }
 var content = function () {
     $(document).ready(function () {
         open_menu();
+
+        function windowsc() {
+            var headerTop = $(".header").offset().top;
+
+            if (headerTop > 100) {
+                $(".header").addClass("other");
+            } else {
+                $(".header").removeClass("other");
+            }
+        }
+        $(window).on('scroll', function () {
+            windowsc();
+        });
         $(window).resize(function () {
             open_menu();
         });

@@ -49,10 +49,11 @@
 
     #Wrap {
         header {
-            height: 6rem;
+            height: 10rem;
 
             h1 {
-                top: 0.5rem
+                transform: translateY(-50%);
+                top: 50%;
             }
         }
 

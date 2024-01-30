@@ -179,11 +179,15 @@ h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
 input[type="text"], input[type="password"], input[type="checkbox"], input[type="number"], input[type="tel"], input[type="email"] { outline: none; background: transparent; color: #333; padding: 0 10px; }
 
+input[type="text"]:focus, input[type="password"]:focus, input[type="checkbox"]:focus, input[type="number"]:focus, input[type="tel"]:focus, input[type="email"]:focus { outline: none; }
+
+select:focus { outline: none; }
+
 input::-ms-clear { display: none; }
 
 input:-webkit-autofill { background: --color-wh01 !important; -webkit-text-fill-color: #333 !important; }
 
-html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; color: #000; overflow: hidden; }
+html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; color: #000; }
 
 ::-moz-selection, ::-moz-selection { color: #000; background: #ff4646; }
 
@@ -193,9 +197,11 @@ html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; col
 
 ::-webkit-scrollbar-thumb { height: 12px; background: #eee; border-radius: 8px; }
 
-#Wrap { width: 100%; height: 100vh; overflow: hidden; }
+#Wrap { width: 100%; height: 100%; }
 
 #Wrap header { position: fixed; z-index: 999; width: 100%; height: 12rem; }
+
+#Wrap header.other { background: #fff; }
 
 #Wrap header h1 { position: relative; left: 1rem; top: 3rem; width: 10rem; height: 4.8rem; background-color: #222; -webkit-mask-image: url("../images/logo.svg"); mask-image: url("../images/logo.svg"); background-size: cover; -webkit-background-size: cover; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
 
@@ -209,7 +215,7 @@ html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; col
 
 #Wrap header .btn-close::after { -webkit-transform: rotate(-45deg); transform: rotate(-45deg); }
 
-#Wrap header .btn-close.active { display: block; -webkit-animation: textHidden .3s .3s forwards; animation: textHidden .3s .3s forwards; right: 3rem; }
+#Wrap header .btn-close.active { display: block; -webkit-animation: textHidden .3s .3s forwards; animation: textHidden .3s .3s forwards; right: 1rem; }
 
 #Wrap nav { position: absolute; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); left: 50%; top: 80%; width: 100%; z-index: 1; }
 
@@ -241,7 +247,7 @@ html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; col
 
 #Wrap article > section.con { width: 100%; height: 100%; }
 
-#Wrap article > section.con:not(.step) { display: none; position: absolute; top: 0; z-index: 1; overflow: auto; overflow-x: hidden; }
+#Wrap article > section.con:not(.step) { display: none; position: absolute; top: 0; z-index: 1; }
 
 #Wrap article > section.con:not(.step) .inner { max-width: 100%; }
 
@@ -403,8 +409,6 @@ html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; col
 
 #Wrap article > section.con.step02.active .inner .txtBox .iconBox > button:nth-of-type(3) { -webkit-animation: textHidden 1s 1.8s ease forwards; animation: textHidden 1s 1.8s ease forwards; }
 
-#Wrap article > section.con.step03 .inner::before { content: ""; position: absolute; display: block; background: #222; width: 100%; height: 0.1rem; top: 12rem; }
-
 #Wrap article > section.con.step03 .inner .tabBox { position: relative; top: 16rem; width: 100%; margin: 0 auto; }
 
 #Wrap article > section.con.step03 .inner .tabBox .tab-hd { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 10rem; }
@@ -469,8 +473,8 @@ html, body { width: 100%; font-family: "GmarketSansMedium"; font-size: 10px; col
   #Wrap article > section.con.step03 .inner .tabBox .tab-con li { width: calc(33.3% - 2rem); } }
 
 @media screen and (max-width: 768px) { body, html { font-size: 8px; }
-  #Wrap header { height: 6rem; }
-  #Wrap header h1 { top: 0.5rem; }
+  #Wrap header { height: 10rem; }
+  #Wrap header h1 { -webkit-transform: translateY(-50%); transform: translateY(-50%); top: 50%; }
   #Wrap nav { top: 50%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; gap: 1.5rem; }
   #Wrap nav > button { top: 0; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); left: 50%; position: relative; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; }
   #Wrap nav > button.about { left: 50%; }

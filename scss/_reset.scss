@@ -208,6 +208,16 @@ input[type="email"] {
     background: transparent;
     color: #333;
     padding: 0 10px;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+select {
+    &:focus {
+        outline: none;
+    }
 }
 
 input::-ms-clear {
@@ -225,7 +235,7 @@ body {
     font-family: $font-g;
     font-size: 10px;
     color: #000;
-    overflow: hidden;
+    //overflow: hidden;
 }
 
 body {}
