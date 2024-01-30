@@ -27,9 +27,8 @@ var nav = function () {
     })
 }
 var content = function () {
-
-    $('body').ready(function () {
-
+    $(document).ready(function () {
+        open_menu();
         $(window).resize(function () {
             open_menu();
         });
@@ -40,6 +39,7 @@ var content = function () {
                 // 768px 이하일 때
                 $('.tab-hd').hide(); // 기존 버튼 숨기기
                 // 새로운 셀렉트 메뉴 추가
+                $('.tab-sct').remove();
                 if (!$('.tab-sct').length) {
                     var selectMenu = $('<select class="tab-sct"></select>');
 
@@ -55,11 +55,7 @@ var content = function () {
 
                         selectMenu.append(option);
                     });
-
-                    // 새로운 셀렉트 메뉴를 DOM에 추가
                     $('.tab-hd').after(selectMenu);
-
-                    // 셀렉트 메뉴가 변경될 때 버튼에 대한 처리
                     selectMenu.change(function () {
                         var selectedValue = $(this).val();
                         $('.tab-hd button').removeClass('active');
