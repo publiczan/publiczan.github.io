@@ -193,6 +193,10 @@
                             }
 
                             .tabBox {
+                                .tab-hd {
+                                    display: none;
+                                }
+
                                 .tab-sct {
                                     width: calc(100% - 2rem);
                                     height: 5rem;
