@@ -8,12 +8,28 @@
 }
 
 @font-face {
+    font-family: "Pretendard-Regular";
+    src: url("../font/Pretendard-Regular.eot");
+    src: url("../font/Pretendard-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../font/Pretendard-Regular.woff") format("woff");
+}
+
+@font-face {
     font-family: "Pretendard-Medium";
     src: url("../font/Pretendard-Medium.eot");
     /* IE9 Compat Modes */
     src: url("../font/Pretendard-Medium.eot?#iefix") format("embedded-opentype"),
         /* IE6-IE8 */
         url("../font/Pretendard-Medium.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Pretendard-SemiBold";
+    src: url("../font/Pretendard-SemiBold.eot");
+    /* IE9 Compat Modes */
+    src: url("../font/Pretendard-SemiBold?#iefix") format("embedded-opentype"),
+        /* IE6-IE8 */
+        url("../font/Pretendard-SemiBold.woff") format("woff");
 }
 
 @font-face {

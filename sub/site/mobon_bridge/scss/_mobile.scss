@@ -1,0 +1,699 @@
+@charset "utf-8";
+
+
+@media screen and(max-width: 1110px) {
+    header {
+        &.other {
+            .mainAdBtn {
+                right: 4rem;
+            }
+        }
+    }
+
+    nav {
+        right: 4rem;
+    }
+}
+
+@media screen and(max-width: 1110px) and (min-width:1025px) {
+    html {
+        font-size: 60%;
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        padding: 12rem 2rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1024px) and (min-width:768px) {
+    html {
+        font-size: 54%;
+    }
+
+    #Wrap {
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        padding: 12rem 2rem;
+                    }
+
+                    &.step07 {
+
+                        strong {
+                            width: 50%;
+
+                            &::after {
+                                max-width: 9rem;
+                                margin: 0 3rem 0 3rem
+                            }
+                        }
+
+                        .inputBox {
+                            .row {
+                                &:first-of-type {
+                                    >div {
+                                        p {
+                                            width: 15rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .adWrap {
+        width: 80%;
+    }
+
+    .list {
+        &.type01 {
+            .item {
+                width: calc(33.3% - 1rem);
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 1024px) {
+    #Wrap {
+        header {
+            .mainAdBtn {
+                width: 100% !important;
+                height: 5rem !important;
+                top: auto !important;
+                bottom: 0;
+                flex-direction: inherit;
+                right: auto !important;
+                border-radius: 0 !important;
+                font-size: 2rem;
+
+                &::after {
+                    margin-top: 0;
+                    background-size: 50%;
+                }
+            }
+        }
+    }
+}
+
+@media screen and(max-width: 767px) {
+    #Wrap {
+        header {
+            h1 {
+                left: 0;
+                top: 0;
+                @include flex-item;
+                height: 7rem;
+                background: rgba(0, 1, 31, 0.9);
+
+                a {
+                    padding-left: 1rem;
+                }
+            }
+
+            &.other {
+                h1 {
+                    background: rgba(255, 255, 255, 0.9);
+                }
+            }
+        }
+
+        nav {
+            right: 1rem;
+
+            a {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /*component*/
+        .list {
+            &.type01 {
+                flex-direction: column;
+
+                .item {
+                    width: 26rem;
+                    height: 26rem;
+                    margin-bottom: 4rem;
+                    padding: 3.6rem 1rem;
+
+                    strong {
+                        @include txt_m
+                    }
+
+                    p {
+                        font-size: 1.6rem;
+                        margin-top: 1.2rem;
+                        line-height: 2.4rem;
+                    }
+
+                    i {
+                        background-size: 80%;
+                    }
+                }
+            }
+        }
+
+        .wrapper {
+            .content {
+                .box {
+                    .inner {
+                        max-width: 100%;
+                        padding: 10rem 2rem;
+                    }
+
+                    &.step00 {
+                        .inner {
+                            height: 100%;
+                        }
+
+                        .firstArrow {
+                            width: 4rem;
+                            height: 4rem;
+                            bottom: 7rem;
+
+                            &::before {
+                                background-size: 50%;
+                            }
+                        }
+
+                        .txtBox {
+
+                            .tit {
+                                p {
+                                    @include strong_m
+                                }
+                            }
+
+                            .txt {
+                                @include txt_m;
+
+                                &::before {
+                                    margin: 2.4rem 0;
+                                }
+                            }
+                        }
+                    }
+
+                    &.step01 {
+                        .row {
+                            .txtBox {
+                                i {
+                                    &.badgeico {
+                                        right: -2.5rem;
+                                        bottom: -1.5rem;
+
+                                        &::before {
+                                            background-size: 70%;
+                                        }
+                                    }
+                                }
+
+                                &.type01 {
+
+                                    .badgebox {
+                                        height: 3.8rem;
+                                        max-width: 100%;
+
+                                        p {
+                                            font-size: 1.4rem;
+                                            letter-spacing: -1px;
+                                        }
+                                    }
+
+                                    .txt {
+                                        margin: 4.5rem auto 3.6rem;
+                                        @include txt_m;
+                                        font-family: $font-bb;
+
+                                        span {}
+                                    }
+                                }
+
+                                &.type02 {
+                                    p {
+                                        @include txt_m
+                                    }
+
+                                    i {
+                                        &.ico-emosad {
+                                            margin: 1rem auto 1.6rem;
+                                        }
+                                    }
+                                }
+
+                                &.type03 {
+                                    p {
+                                        @include txt_m;
+
+                                        br {
+                                            display: none;
+                                        }
+                                    }
+
+                                    strong {
+                                        display: block;
+                                        @include txt_m;
+                                        margin-top: 4rem;
+                                    }
+
+                                    i {
+                                        &.ico-emohp {
+
+
+                                            &::before {
+                                                margin: 2.4rem auto 0;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .imgBox {
+                                width: 100%;
+
+                                &::before {
+                                    @include beforeIco;
+                                    width: 100%;
+                                    height: 100%;
+                                    background: url(../images/img_02_02.png) center center no-repeat;
+                                }
+
+                                img {
+                                    &.imgMb {
+                                        display: block;
+                                    }
+
+                                    &.imgWeb {
+                                        display: none;
+                                    }
+                                }
+
+                                &.type01 {
+                                    flex-direction: column;
+
+                                    >div {
+                                        &:first-of-type {
+                                            margin-bottom: 10rem;
+                                        }
+                                    }
+
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                padding-top: 16rem;
+                            }
+                        }
+
+                    }
+
+                    &.step02 {
+                        .txtBox {
+                            margin-bottom: 4rem;
+
+                            strong {
+                                span {
+                                    display: block;
+                                }
+                            }
+
+                            p {
+                                margin-top: 2.4rem;
+                                font-family: $font-sb;
+                            }
+                        }
+
+                        .row {
+                            .list {
+                                &.type01 {
+                                    .item {
+                                        p {
+                                            font-family: $font-sb;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-top: 0;
+
+                                .list {
+                                    &.type01 {
+                                        .item {
+                                            width: 26rem;
+                                            margin-bottom: 4rem;
+                                            height: 100%;
+
+                                            strong {
+                                                margin-bottom: 3.2rem;
+                                            }
+
+                                            >div {
+                                                &:not(:last-of-type) {
+                                                    margin-bottom: 4rem;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    &.step03 {
+                        .inner {
+                            padding: 12rem 0;
+                        }
+
+                        .row {
+                            .txtBox {
+                                padding: 0 2rem;
+
+                                p {
+                                    font-family: $font-sb;
+                                }
+                            }
+
+                            .progressBox {
+                                margin-top: 8rem;
+
+                                >div {
+
+                                    .progress-bar {
+                                        height: 4rem;
+
+                                        span {
+                                            @include txt_m
+                                        }
+                                    }
+
+
+                                    p {
+                                        margin-left: 1.6rem;
+                                        font-size: 1.6rem;
+                                    }
+
+                                    &:nth-of-type(1) {
+                                        .progress-bar {
+                                            width: 36%;
+                                        }
+                                    }
+
+                                    &:nth-of-type(2) {
+                                        .progress-bar {
+                                            width: 55%;
+                                        }
+                                    }
+
+                                    &:nth-of-type(3) {
+                                        .progress-bar {
+                                            width: 68%;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .slider01 {
+                                margin-top: 4rem;
+
+                                .slick-track {
+                                    img {
+                                        max-height: 30px;
+                                    }
+                                }
+
+                            }
+
+                            &:last-of-type {
+                                margin-top: 12rem;
+
+                                .txtBox {
+                                    padding: 0;
+
+                                    p {
+                                        font-family: $font-sb
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step04 {
+                        .row {
+                            .txtBox {
+                                text-align: center;
+
+                                strong {
+                                    @include strong_m;
+
+                                }
+
+                                &.type {
+                                    strong {
+                                        @include txt_m;
+                                    }
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-top: 8rem;
+
+                                button {
+                                    margin: 2.4rem auto 0;
+                                }
+
+                            }
+
+                            .list {
+                                &.type01 {
+                                    margin: 4rem auto;
+
+                                    .item {
+                                        p {
+                                            @include txt_m;
+                                            font-family: $font-sb;
+
+                                            span {
+                                                font-family: $font-bb;
+                                            }
+                                        }
+
+                                        &:nth-of-type(1) {
+                                            i {
+                                                background-size: 58%;
+                                            }
+                                        }
+
+                                        &:nth-of-type(2) {
+                                            i {
+                                                background-size: 58%;
+                                            }
+                                        }
+
+                                        &:nth-of-type(3) {
+                                            i {
+                                                background-size: 58%;
+                                            }
+                                        }
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+
+                    &.step05 {
+                        .txtBox {
+                            i {
+                                width: 8.6rem;
+                                height: 10.2rem;
+                                margin: 0 auto 2.4rem;
+                            }
+
+                            p {
+                                margin-top: 1.7rem;
+                                font-family: $font-sb;
+                            }
+                        }
+
+                        .list {
+                            &.type02 {
+                                margin-top: 8rem;
+
+                                .item {
+                                    flex-direction: column;
+
+                                    .bg {
+                                        button {
+                                            display: none;
+                                        }
+                                    }
+
+                                    .txt {
+                                        margin-left: 0;
+                                        margin-top: 4rem;
+
+                                        strong {
+                                            @include txt_m
+                                        }
+
+                                        p {
+                                            margin-top: 1.8rem;
+                                            font-size: 1.6rem;
+                                            line-height: 2.4rem;
+                                            font-family: $font-sb;
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        margin-top: 5rem;
+
+                                        .bg {
+                                            order: 1;
+                                        }
+
+                                        .txt {
+                                            order: 2;
+                                            margin-top: 4rem;
+                                            margin-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step06 {
+                        .txtBox {
+                            strong {
+                                @include strong_m;
+                            }
+                        }
+                    }
+
+                    &.step07 {
+                        .inner {
+                            flex-direction: column;
+                        }
+
+                        strong {
+                            justify-content: center;
+
+                            &::after {
+                                display: none
+                            }
+                        }
+
+                        .inputBox {
+                            @include inputBox_m;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .adWrap {
+        width: 100%;
+        height: calc(var(--vh, 1vh) * 100);
+
+        .ad-hd {
+            height: 10vh;
+
+            strong {
+                @include strong_m
+            }
+        }
+
+        .ad-con {
+            padding: 0 2rem;
+            overflow-y: auto;
+            height: calc(100% - 10vh);
+            margin: 0;
+
+            .inputBox {
+                @include inputBox_m;
+                margin: 1rem 0;
+
+                .row {
+                    .checkBox {
+                        input[type="checkbox"]+label {
+                            flex-wrap: wrap;
+                        }
+                    }
+                }
+            }
+
+            .btn-application {
+                margin: 3rem auto 5.3rem;
+            }
+        }
+    }
+
+    i {
+        &.ico-emosad {
+            width: 6rem;
+            height: 6rem;
+
+            &::before {
+                @include beforeIco;
+                background-image: url($url-images-com + 'img_emo_sad_m.png');
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+
+        &.ico-emohp {
+            width: 6rem;
+            height: 6rem;
+
+            &::before {
+                @include beforeIco;
+                background-image: url($url-images-com + 'img_emo_happy_m.png');
+                width: 6rem;
+                height: 6rem;
+            }
+        }
+
+        &.ico-Warrowbtn {
+            width: 1.3rem;
+            height: 1rem;
+
+            &::before {
+                @include beforeIco;
+                background-image: url($url-images-com + 'btn_arrow_rightW.png');
+                width: 1.3rem;
+                height: 1rem;
+                margin-left: 0.5rem;
+            }
+        }
+
+        &.ico-Barrowbtn {
+            width: 1.3rem;
+            height: 1rem;
+
+            &::before {
+                @include beforeIco;
+                background-image: url($url-images-com + 'btn_arrow_rightB.png');
+                width: 1.3rem;
+                height: 1rem;
+                margin-left: 0.5rem;
+            }
+        }
+    }
+}

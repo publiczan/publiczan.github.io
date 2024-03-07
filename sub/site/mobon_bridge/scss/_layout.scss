@@ -2,10 +2,7 @@
 
 #Wrap {
     position: relative;
-    width: 100%;
-    height: 100%;
     width: 100vw;
-    height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     transform: translate3d(0, 0, 0);
     -webkit-transform: translateZ(0);
@@ -17,40 +14,67 @@
     -webkit-transition: all 700ms ease 0s;
     transition: all 700ms ease 0s;
 
-
     header {
-        @include transition;
+        display: none;
 
-        h1 {
+        button {
+            @include transition;
+        }
+
+        .left {
             position: fixed;
             z-index: 999;
-            width: 100%;
             top: 4rem;
             left: 4rem;
 
-            a {
-                font-size: 0;
+            h1 {
+                width: 100%;
 
-                &::before {
-                    @include beforeIco;
-                    background-image: url($url-images-com + 'img_logo_white.png');
-                    width: 10.7rem;
-                    height: 2.1rem;
+                a {
+                    font-size: 0;
+
+                    &::before {
+                        @include beforeIco;
+                        width: 10.7rem;
+                        height: 2.1rem;
+                        background-image: url($url-images-com + 'img_logo_white.png');
+                    }
                 }
             }
 
+            .csNum {
+                margin-top: 3rem;
+                text-align: center;
+
+                p {
+                    font-size: 2.2rem;
+                    color: $subColor-b;
+                }
+
+                span {
+                    @include flex-ct-item;
+                    width: 100%;
+                    max-width: 17.1rem;
+                    height: 3.3rem;
+                    margin-top: 0.8rem;
+                    border-radius: 1.7rem;
+                    font-size: 1.8rem;
+                    background: $subColor-b;
+                    color: #000016;
+                }
+            }
         }
 
         .mainAdBtn {
             position: fixed;
             z-index: 999;
-            top: 8rem;
-            right: 10rem;
             width: 22rem;
             height: 22rem;
+            top: 8rem;
+            right: 10rem;
             @include flex-ct-item;
             flex-direction: column;
-            background: #fff;
+            background: $txtColor-w;
             border-radius: 50%;
             font-size: 4rem;
             font-family: $font-eb;
@@ -62,43 +86,89 @@
 
             &::after {
                 @include beforeIco;
-                background-image: url($url-images-com + 'btn_main_arrow_right.png');
                 width: 3.8rem;
                 height: 2.7rem;
                 margin-top: 2.5rem;
+                background-image: url($url-images-com + 'btn_main_arrow_right.png');
             }
         }
 
+        address {
+            position: fixed;
+            z-index: 999;
+            bottom: 4rem;
+            left: 4rem;
+            color: #fff;
+            font-size: 1.6rem;
+            @include flex-st-item;
+
+            @media screen and(max-width: 1024px) {
+                display: none;
+            }
+
+            &::before {
+                @include beforeIco;
+                width: 1.7rem;
+                height: 1.7rem;
+                background: url($url-images-com + 'img_copyright_w.svg') center center no-repeat;
+                margin-right: 1rem;
+            }
+        }
+
+        .btn-top {
+            position: fixed;
+            z-index: 999;
+            width: 8rem;
+            height: 8rem;
+            bottom: 2rem;
+            right: 2rem;
+            border-radius: 50%;
+            background: url($url-images-com + 'btn_top_wh.png') center center no-repeat;
+            background-size: 100%;
+        }
+
         &.first {
-            .mainAdBtn {
-                width: 26rem;
-                height: 100%;
-                border-radius: 0;
-                right: 0;
-                top: 0;
+            // .mainAdBtn {
+            //     width: 26rem;
+            //     height: 100%;
+            //     right: 0;
+            //     top: 0;
+            //     border-radius: 0;
+            // }
+
+            .btn-top {
+                display: none;
             }
         }
 
         &.other {
-            .mainAdBtn {
-
-                background: #00011f;
-                color: #fff;
-
-                &::after {
-                    background-image: url($url-images-com + 'img_common_arrow_topright_w.png');
+            .left {
+                h1 {
+                    a {
+                        &::before {
+                            background-image: url($url-images-com + 'img_logo_black.png');
+                        }
+                    }
                 }
 
-                @media screen and(max-width: 1110px) {
-                    right: 4rem;
+                .csNum {
+                    p {
+                        color: #00011f;
+                    }
+
+                    span {
+                        background: #00011f;
+                        color: $txtColor-w
+                    }
                 }
             }
 
-            h1 {
-                a {
-                    &::before {
-                        background-image: url($url-images-com + 'img_logo_black.png');
-                    }
+            .mainAdBtn {
+                background: #00011f;
+                color: $txtColor-w;
+
+                &::after {
+                    background-image: url($url-images-com + 'img_common_arrow_topright_w.png');
                 }
             }
 
@@ -106,6 +176,19 @@
                 .mainAdBtn {
                     display: none;
                 }
+            }
+
+            address {
+                color: #000;
+
+                &::before {
+                    background: url($url-images-com + 'img_copyright_black.svg') center center no-repeat;
+                }
+            }
+
+            .btn-top {
+                background: url($url-images-com + 'btn_top_bk.png') center center no-repeat;
+                background-size: 100%;
             }
         }
     }
@@ -127,10 +210,6 @@
 
         }
 
-        @media screen and(max-width: 1110px) {
-            right: 4rem;
-        }
-
         a {
             display: inline-block;
             vertical-align: middle;
@@ -145,7 +224,7 @@
 
             &.active {
                 opacity: 1;
-                background-color: #fff;
+                background-color: $txtColor-w;
             }
 
             &:last-of-type {
@@ -168,48 +247,88 @@
             transition: all 700ms ease 0s;
 
             .box {
-                // position: relative;
-                // width: 100%;
-                // height: 100%;
-                // @include flex-item;
-                // padding: 24rem 0;
                 position: relative;
                 width: 100%;
-                height: 100%;
                 height: 100vh;
                 @include flex-ct-item;
-                overflow: hidden;
 
                 .inner {
                     width: 100%;
-                    max-width: 110rem;
+                    height: 100%;
+                    overflow-y: auto;
 
-                    &.scrollW {
-                        padding: 24rem 0;
-                        overflow-y: auto;
-                        height: 100%;
+                    .innerW {
                         width: 100%;
-                        max-width: 100%;
-                        padding-bottom: 10rem;
+                        max-width: 120rem;
+                        padding: 12rem 0;
+                        margin: 0 auto;
+                    }
+                }
+
+                &.step00 {
+                    .inner {
+                        @include flex-ct-item;
+                    }
+
+                    .videoBox {
+                        background: #000;
+                        position: absolute;
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        overflow: hidden;
+
+                        .video,
+                        iframe {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            pointer-events: none;
+                        }
+
+                        @media (min-aspect-ratio: 16/9) {
+                            .video {
+                                height: 300%;
+                                top: -100%;
+                            }
+                        }
+
+                        @media (max-aspect-ratio: 16/9) {
+                            .video {
+                                width: 500%;
+                                left: -200%;
+                            }
+                        }
                     }
                 }
 
                 &.step01 {
-                    width: 100%;
                     background: url($url-images + 'img_bg_01.svg') center center no-repeat;
                     background-size: cover;
 
+                    .inner {
+                        width: 100%;
+                        @include flex-ct-item-start;
+                        flex-direction: column;
+                        height: 100vh;
+
+                        .innerW {}
+                    }
+
                     //height: auto;
                     .firstArrow {
+                        position: absolute;
                         width: 6.6rem;
                         height: 6.6rem;
-                        background: #fff;
-                        position: absolute;
-                        bottom: 1rem;
                         transform: translateX(-50%);
                         left: 50%;
-                        border-radius: 50%;
+                        bottom: 1rem;
+                        background: $txtColor-w;
                         @include flex-ct-item;
+                        border-radius: 50%;
 
                         &::before {
                             @include beforeIco;
@@ -224,18 +343,21 @@
 
                         >div {
                             font-family: $font-l;
-                            word-break: keep-all;
                         }
 
                         .tit {
-                            font-size: 4.8rem;
-                            line-height: 7.2rem;
+                            p {
+                                font-size: 4.8rem;
+                                line-height: 7.2rem;
+                                font-family: $font-l;
+                            }
                         }
 
                         .txt {
                             max-width: 53.3rem;
                             font-size: 2.4rem;
                             line-height: 3.6rem;
+                            font-family: $font-l;
 
                             &::before {
                                 content: "";
@@ -243,7 +365,7 @@
                                 display: block;
                                 width: 1px;
                                 height: 5rem;
-                                background: #fff;
+                                background: $txtColor-w;
                                 margin: 4rem 0;
                             }
                         }
@@ -254,51 +376,37 @@
                     text-align: center;
                     margin: 0 auto;
 
-                    .inner {
-                        &.scrollW {
-                            .scroll {
-                                max-width: 110rem;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-
                     .row {
-                        &:nth-of-type(2) {
-                            padding-top: 23rem
-                        }
-
                         .txtBox {
                             @include flex-center;
                             flex-direction: column;
 
                             &.type01 {
                                 .badgebox {
-                                    @include flex-center;
+                                    @include flex-ct-item;
                                     position: relative;
                                     width: 100%;
                                     max-width: 50rem;
+                                    height: 5.4rem;
                                     margin: 0 auto;
+                                    background: $mainColor;
+                                    border-radius: 2.7rem;
 
                                     p {
-                                        background: $mainColor;
-                                        height: 5.4rem;
-                                        border-radius: 2.7rem;
-                                        @include flex-ct-item;
+                                        font-size: 2rem;
+                                        line-height: 6rem;
                                         color: $txtColor-w;
-                                        padding: 0 6.4rem 0 4rem;
-                                        font-size: initial;
-                                        line-height: initial;
+                                        font-family: $font-b;
                                     }
                                 }
 
                                 .txt {
-                                    margin: 6.5rem auto;
+                                    margin: 6.5rem auto 5.8rem;
                                     text-align: center;
                                     font-size: 4rem;
                                     line-height: 6rem;
                                     color: $txtColor02;
-                                    word-break: keep-all;
+                                    font-family: $font-bb;
                                 }
                             }
 
@@ -306,21 +414,23 @@
                                 p {
                                     font-size: 3.2rem;
                                     color: $txtColor02;
+                                    font-family: $font-bb;
                                 }
                             }
 
                             &.type03 {
+                                font-family: $font-bb;
+
                                 p {
                                     font-size: 2.2rem;
                                     line-height: 3.3rem;
                                     color: $txtColor02;
-                                    font-family: $font-b;
                                 }
 
                                 strong {
+                                    @include flex-ct-item;
                                     font-size: 4rem;
                                     line-height: 7.2rem;
-                                    @include flex-ct-item;
 
                                     i {
                                         margin-left: 1.2rem;
@@ -330,17 +440,17 @@
 
                             i {
                                 &.badgeico {
+                                    position: absolute;
                                     width: 5.4rem;
                                     height: 10.1rem;
-                                    position: absolute;
-                                    right: 4rem;
+                                    right: 0;
                                     bottom: -0.5rem;
 
                                     &::before {
                                         @include beforeIco;
-                                        background-image: url($url-images + 'img_02_01.png');
                                         width: 5.4rem;
                                         height: 10.1rem;
+                                        background-image: url($url-images + 'img_02_01.png');
                                     }
                                 }
 
@@ -351,9 +461,23 @@
                         }
 
                         .imgBox {
+                            width: 100%;
+
+                            img {
+                                margin: 0 auto;
+
+                                &.imgMb {
+                                    display: none
+                                }
+
+                                &.imgWeb {
+                                    display: block
+                                }
+                            }
+
                             &.type01 {
-                                margin: 12.2rem 0;
                                 @include flex-between;
+                                margin: 12.2rem 0;
 
                                 >div {
                                     position: relative;
@@ -366,9 +490,8 @@
                                         position: absolute;
                                         top: -7rem;
                                         right: 0;
+                                        @include flex-start;
                                         font-size: 2.8rem;
-                                        display: flex;
-                                        align-items: flex-start;
                                         font-family: $font-eb;
 
                                         &:not(.txt-blue) {
@@ -395,6 +518,10 @@
                                 }
                             }
                         }
+
+                        &:nth-of-type(2) {
+                            padding-top: 23rem
+                        }
                     }
                 }
 
@@ -404,18 +531,13 @@
                     background: url($url-images + 'img_bg_02.svg') center center no-repeat;
                     background-size: cover;
 
-                    .inner {
-                        &.scrollW {
-                            .scroll {
-                                max-width: 110rem;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-
                     .txtBox {
                         margin-bottom: 11.5rem;
-                        color: #fff;
+                        color: $txtColor-w;
+
+                        strong {
+                            font-family: $font-bb;
+                        }
 
                         p {
                             margin-top: 3.2rem;
@@ -433,14 +555,8 @@
                                         height: 57rem;
                                         @include flex-ar-item;
 
-                                        @media screen and(max-width: 1024px) and (min-width:480px) {
+                                        @media screen and(max-width: 1024px) and (min-width:768px) {
                                             width: calc(50% - 1rem);
-                                        }
-
-                                        @media screen and(max-width: 479px) {
-                                            width: calc(80%);
-                                            margin-bottom: 5rem;
-                                            height: 100%;
                                         }
 
                                         img {
@@ -457,6 +573,7 @@
                                             margin: 0 auto;
                                             @include flex-ct-item;
                                             font-size: 1.4rem;
+                                            font-family: $font-bb;
                                         }
                                     }
                                 }
@@ -493,13 +610,16 @@
 
                 &.step04 {
                     .inner {
-                        max-width: 100%;
+                        .innerW {
+                            max-width: 100%;
+                        }
                     }
 
                     .row {
                         .txtBox {
                             position: relative;
                             padding-left: 16rem;
+                            font-family: $font-bb;
 
                             p {
                                 margin-top: 2.4rem;
@@ -511,6 +631,7 @@
                             width: 100%;
                             max-width: 130rem;
                             margin-top: 8rem;
+                            font-family: $font-bb;
 
                             >div {
                                 @include flex-item;
@@ -520,40 +641,36 @@
                                 }
 
                                 .progress-bar {
-                                    width: 100%;
-                                    background-image: linear-gradient(to left, #0063e3, #0091ff);
-                                    height: 7.2rem;
-                                    border-radius: 0 3.63rem 3.6rem 0;
-                                    @include flex-item;
                                     position: relative;
+                                    height: 7.2rem;
+                                    @include flex-item;
+                                    background-image: linear-gradient(to left, #0063e3, #0091ff);
+                                    border-radius: 0 3.63rem 3.6rem 0;
 
                                     span {
-                                        font-size: 4rem;
-                                        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
-                                        color: #fff;
                                         position: absolute;
                                         right: 3rem;
+                                        font-size: 4rem;
+                                        text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
+                                        color: $txtColor-w;
                                     }
                                 }
 
                                 &:nth-of-type(1) {
                                     .progress-bar {
                                         width: 40%;
-                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
                                     }
                                 }
 
                                 &:nth-of-type(2) {
                                     .progress-bar {
                                         width: 70%;
-                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
                                     }
                                 }
 
                                 &:nth-of-type(3) {
                                     .progress-bar {
                                         width: 77%;
-                                        background-image: linear-gradient(to left, #0063e3, #0091ff);
                                     }
                                 }
 
@@ -568,8 +685,16 @@
                         .slider01 {
                             margin-top: 12rem;
 
+                            .slick-track {
+                                @include flex-item;
+                            }
+
+                            img {
+                                max-width: none;
+                            }
+
                             .slick-slide {
-                                margin: 0 7rem;
+                                margin: 0 10rem;
                             }
                         }
 
@@ -579,15 +704,29 @@
                             .txtBox {
                                 text-align: center;
                                 padding-left: 0;
+
+                                strong {
+                                    font-family: $font-bb;
+                                }
+
+                                p {
+                                    font-family: $font-b;
+                                }
                             }
 
                             .slider02 {
                                 max-width: 120rem;
+                                height: auto;
                                 margin: 3.6rem auto 0;
-                                height: 33rem;
 
                                 .slick-slide {
                                     margin: 0 1rem;
+
+                                    .slider {
+                                        .videoBox {
+                                            padding-top: 70%;
+                                        }
+                                    }
                                 }
 
                                 >div {
@@ -612,9 +751,10 @@
                                     width: 6.6rem;
                                     transform: translateX(-50%);
                                     left: 50%;
+                                    position: relative;
 
                                     @media screen and(max-width:767px) {
-                                        bottom: -5.5rem
+                                        bottom: -1rem
                                     }
 
                                     li {
@@ -648,64 +788,6 @@
                                     }
                                 }
                             }
-
-                            .swiper02 {
-                                max-width: 120rem;
-                                margin-top: 3.6rem;
-
-                                .swiper-wrapper {
-                                    .swiper-slide {
-                                        height: 30rem;
-                                    }
-                                }
-
-                                .swiper-button-prev {
-                                    left: 0;
-                                }
-
-                                .swiper-button-next,
-                                .swiper-rtl {
-                                    right: 0;
-
-                                    &::after {
-                                        transform: rotate(-180deg);
-                                    }
-                                }
-
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    opacity: 1;
-                                    transform: translateY(-50%);
-                                    top: 50%;
-
-                                    &::after {
-                                        content: "";
-                                        font-size: 0;
-                                        width: 4rem;
-                                        height: 9rem;
-                                        background-image: url($url-images-com + 'sub_case_arrow_left.png');
-                                    }
-                                }
-
-                                .swiper-pagination {
-                                    position: relative;
-                                    margin-top: 2rem;
-
-                                    span {
-                                        font-size: 0;
-                                        background: #d4d4d4;
-                                        width: 0.9rem;
-                                        height: 0.9rem;
-
-                                        &.swiper-pagination-bullet-active {
-                                            background: $mainColor;
-                                            width: 3.5rem;
-                                            height: 0.9rem;
-                                            border-radius: 0.45rem;
-                                        }
-                                    }
-                                }
-                            }
                         }
                     }
                 }
@@ -714,19 +796,13 @@
                     background: url($url-images + 'img_bg_03.svg') center center no-repeat;
                     background-size: cover;
 
-                    .inner {
-                        &.scrollW {
-                            .scroll {
-                                max-width: 110rem;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-
                     .row {
                         .txtBox {
+                            font-family: $font-bb;
+
                             strong {
-                                color: #fff;
+                                color: $txtColor-w;
+                                font-size: 4rem;
                                 line-height: 6rem;
                             }
 
@@ -746,6 +822,17 @@
 
                                 .item {
                                     text-align: center;
+
+                                    p {
+                                        margin-top: 0;
+                                        font-family: $font-l;
+                                        font-size: 2.4rem;
+                                        line-height: 3.6rem;
+
+                                        span {
+                                            font-family: $font-eb;
+                                        }
+                                    }
 
                                     &:nth-of-type(1) {
                                         i {
@@ -792,22 +879,25 @@
                 }
 
                 &.step06 {
-                    .inner {
-                        &.scrollW {
-                            .scroll {
-                                max-width: 110rem;
-                                margin: 0 auto;
-                            }
-                        }
-                    }
-
                     .txtBox {
                         text-align: center;
 
-                        i {}
+                        i {
+                            width: 12.1rem;
+                            height: 14.2rem;
+                            display: block;
+                            background: url($url-images + 'img_06_01.png') no-repeat center center;
+                            background-size: 100%;
+                            margin: 0 auto 3rem;
+                        }
+
+                        strong {
+                            font-family: $font-bb;
+                        }
 
                         p {
                             margin-top: 3.2rem;
+                            font-family: $font-b;
                         }
                     }
 
@@ -832,24 +922,12 @@
 
                                 .txt {
                                     text-align: left;
-                                    margin-left: 8rem;
-
-                                    @media screen and(max-width: 678px) {
-                                        margin-left: 0;
-                                        margin-top: 3rem;
-
-                                        strong {
-                                            font-size: 2.6rem;
-                                        }
-
-                                        p {
-                                            font-size: 1.6rem;
-                                        }
-                                    }
+                                    margin-left: 5rem;
 
                                     strong {
                                         font-size: 3.2rem;
                                         line-height: 4.8rem;
+                                        font-family: $font-bb;
                                     }
 
                                     p {
@@ -871,8 +949,7 @@
 
                                     .txt {
                                         order: 1;
-                                        margin-right: 8rem;
-                                        margin-left: 0;
+                                        margin: 0 5rem 0 0;
                                     }
                                 }
                             }
@@ -884,7 +961,14 @@
                     background: url($url-images + 'img_bg_04.svg') center center no-repeat;
                     background-size: cover;
 
-
+                    .inner {
+                        .innerW {
+                            width: 100%;
+                            height: 100vh;
+                            @include flex-ct-item;
+                            flex-direction: column;
+                        }
+                    }
 
                     .txtBox {
                         text-align: center;
@@ -892,7 +976,8 @@
                         strong {
                             display: block;
                             @include strong;
-                            color: #fff;
+                            color: $txtColor-w;
+                            font-family: $font-bb;
 
                             &:last-of-type {
                                 margin-top: 6rem;
@@ -909,52 +994,90 @@
 
                 &.step08 {
                     .inner {
-                        width: 45rem;
+                        height: 100vh;
 
-                        &.scrollW {
-                            height: 100vh;
-                            overflow-y: hidden;
-                            padding: 12rem 0;
+                        .innerW {
+                            @include flex-bt-item;
+                            padding: 5rem 2rem
                         }
                     }
 
                     strong {
-                        display: block;
+                        @include flex-st-item;
+                        width: 100%;
+                        font-family: $font-bb;
                         font-size: 3.2rem;
                         text-align: center;
+
+                        &::after {
+                            content: "";
+                            display: block;
+                            position: relative;
+                            width: 100%;
+                            max-width: 22rem;
+                            height: 1px;
+                            margin: 0 8.8rem 0 10rem;
+                            background: #ccc;
+                        }
                     }
 
                     .inputBox {
+                        margin-top: 3rem;
                         @include inputBox;
+
                     }
 
                     .btn-application {
                         @include btn-application;
+                        margin-top: 4.5rem;
                     }
                 }
             }
 
             footer {
-                position: fixed;
-                bottom: 4rem;
-                left: 4rem;
+                position: relative;
+                width: 100%;
+                height: auto !important;
+                border-top: 1px solid #ededed;
+                text-align: center;
 
-                @media screen and(max-width: 678px) {
-                    bottom: 1rem;
-                    transform: translateX(-50%);
-                    left: 50%;
-                }
+                .inner {
+                    padding: 3.5rem 0 !important;
 
-                address {
-                    font-size: 1.6rem;
-                    @include flex-st-item;
+                    @media screen and(max-width: 767px) {
+                        padding: 3.5rem 2.8rem 5rem !important;
+                    }
 
-                    &::before {
-                        @include beforeIco;
-                        width: 1.7rem;
-                        height: 1.7rem;
-                        background: url($url-images-com + 'img_copyright_black.svg') center center no-repeat;
-                        margin-right: 1rem;
+                    div {
+                        position: relative;
+                        margin: 10px 0;
+
+                        span {
+                            font-family: $font-r;
+                            font-size: 13px;
+                            color: #111;
+
+                            &::before {
+                                display: inline-block;
+                                content: "";
+                                width: 1px;
+                                height: 10px;
+                                background: #747474;
+                                margin: 0 5px;
+                            }
+
+                            &:first-child {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+
+                    p {
+                        font-family: $font-r;
+                        font-size: 13px;
+                        color: #111;
                     }
                 }
             }
@@ -970,7 +1093,7 @@
     z-index: 999;
     top: 0;
     right: 0;
-    background: #fff;
+    background: $txtColor-w;
 
     &.active {
         display: block;
@@ -978,7 +1101,7 @@
 
     .ad-hd {
         width: 100%;
-        height: 12.4rem;
+        height: 10rem;
         background-image: url($url-images + 'img_top.png');
         @include flex-ct-item;
 
@@ -989,11 +1112,11 @@
 
         button {
             &.adClose {
-                width: 2.1rem;
-                height: 2.1rem;
                 position: absolute;
                 right: 2rem;
                 top: 2rem;
+                width: 2.1rem;
+                height: 2.1rem;
 
                 i {
                     display: block;
@@ -1006,459 +1129,37 @@
     }
 
     .ad-con {
-        padding: 0 5rem;
         @include inputBox;
+        overflow-y: auto;
+        height: calc(100vh - 10rem);
+        padding: 2rem;
+
+        .row {
+            &:first-of-type {
+                >div {
+                    p {
+                        width: 16rem;
+
+                        &.hidden {
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+
+            &:last-of-type {
+                >div {
+                    &:first-of-type {
+                        .checkBox {
+                            width: 22rem;
+                        }
+                    }
+                }
+            }
+        }
 
         .btn-application {
             @include btn-application;
-        }
-    }
-}
-
-@media screen and(max-width: 1260px) {
-    #Wrap {
-        .wrapper {
-            .content {
-                .box {
-                    &.step04 {
-                        .row {
-                            &:last-of-type {
-                                .slider02 {
-                                    max-width: 100%;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-@media screen and(max-width: 1110px) and (min-width:1025px) {
-    html {
-        font-size: 60%;
-
-        #Wrap {
-            header {
-
-                &.verA,
-                &.verB {
-                    .mainAdBtn {
-                        right: 6rem;
-                    }
-                }
-
-                .mainAdBtn {
-                    width: 21rem;
-                }
-            }
-
-            nav {
-                right: 4rem
-            }
-
-
-            .wrapper {
-                .content {
-                    .box {
-                        .inner {
-                            width: 98rem;
-
-                        }
-
-                        &.step04 {
-                            .row {
-                                .progressBox {
-                                    max-width: 100rem;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    }
-}
-
-
-@media screen and(max-width: 1024px) and (min-width:768px) {
-    html {
-        font-size: 54%;
-    }
-
-    #Wrap {
-
-        .wrapper {
-            .content {
-                .box {
-                    .inner {
-                        width: 98rem;
-
-                    }
-
-                    &.step03 {
-                        .txtBox {
-                            span {
-                                display: block;
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-    }
-}
-
-@media screen and(max-width: 1024px) {
-    #Wrap {
-        header {
-            .mainAdBtn {
-                width: 100% !important;
-                height: 5rem !important;
-                top: auto !important;
-                bottom: 0;
-                flex-direction: inherit;
-                right: auto !important;
-                border-radius: 0 !important;
-                font-size: 2rem;
-
-                &::after {
-                    margin-top: 0;
-                    background-size: 50%;
-                }
-            }
-        }
-    }
-
-    .adWrap {
-        width: 100%;
-    }
-}
-
-@media screen and(max-width: 767px) {
-
-    #Wrap {
-        header {
-            h1 {
-                left: 0;
-                top: 0;
-                @include flex-item;
-                height: 7rem;
-                background: rgba(0, 1, 31, 0.9);
-
-                a {
-                    padding-left: 1rem;
-                }
-            }
-
-            &.other {
-                h1 {
-                    background: rgba(255, 255, 255, 0.9);
-
-
-                }
-            }
-        }
-
-        nav {
-            right: 1rem;
-
-            a {
-                margin-bottom: 2rem;
-            }
-        }
-
-        .wrapper {
-            .content {
-                .box {
-
-                    .inner {
-                        width: 100% !important;
-                        max-width: 100% !important;
-                        padding: 10rem 2rem 15rem !important;
-
-                        &.scroll {
-                            padding: 10rem 2rem 15rem !important;
-                        }
-                    }
-
-                    &.step01 {
-                        .firstArrow {
-                            display: none;
-                        }
-
-                        .txtBox {
-                            .tit {
-                                @include strong_m
-                            }
-
-                            .txt {
-                                @include txt_m
-                            }
-                        }
-                    }
-
-                    &.step02 {
-                        .row {
-                            .txtBox {
-                                i {
-                                    &.badgeico {
-                                        right: 0;
-
-                                        &::before {
-                                            background-size: 70%;
-                                        }
-                                    }
-                                }
-
-                                &.type01 {
-                                    .txt {
-                                        @include strong_m
-                                    }
-                                }
-
-                                &.type02 {
-                                    p {
-                                        @include txt_m
-                                    }
-                                }
-
-                                &.type03 {
-                                    p {
-                                        @include txt_m
-                                    }
-
-                                    strong {
-                                        flex-direction: column;
-                                        @include strong_m
-                                    }
-                                }
-                            }
-
-                            .imgBox {
-                                &.type01 {
-                                    flex-direction: column;
-
-                                    >div {
-                                        &:first-of-type {
-                                            margin-bottom: 10rem;
-                                        }
-                                    }
-
-                                }
-                            }
-
-                            &:nth-of-type(2) {
-                                padding-top: 10rem;
-                            }
-                        }
-
-                    }
-
-                    &.step03 {
-                        .txtBox {
-                            margin-bottom: 3rem;
-
-                            strong {
-                                span {
-                                    display: block;
-                                }
-                            }
-                        }
-
-                        .row {
-                            &:last-of-type {
-                                margin-top: 0;
-                            }
-                        }
-                    }
-
-                    &.step04 {
-                        .row {
-                            .txtBox {
-                                padding-left: 0;
-                            }
-
-                            .progressBox {
-                                margin-top: 5rem;
-
-                                >div {
-                                    flex-direction: column;
-                                    align-items: flex-start;
-
-                                    .progress-bar {
-                                        height: 5rem;
-
-                                        span {
-                                            @include txt_m
-                                        }
-                                    }
-
-
-                                    p {
-                                        margin-left: 0;
-                                        @include txt_m
-                                    }
-
-                                    &:nth-of-type(1) {
-                                        .progress-bar {
-                                            width: 60%;
-                                        }
-                                    }
-
-                                    &:nth-of-type(2) {
-                                        .progress-bar {
-                                            width: 90%;
-                                        }
-                                    }
-
-                                    &:nth-of-type(3) {
-                                        .progress-bar {
-                                            width: 93%;
-                                        }
-                                    }
-                                }
-                            }
-
-                            &:last-of-type {
-                                margin-top: 5rem;
-                            }
-                        }
-                    }
-
-                    &.step05 {
-                        .row {
-                            .txtBox {
-                                strong {
-                                    line-height: 3.2rem;
-                                }
-
-                                &.type {
-                                    strong {
-                                        @include strong_m;
-                                    }
-                                }
-                            }
-
-                            &:last-of-type {
-                                margin-top: 10rem;
-
-                                .videoBox {
-                                    padding: 1%;
-                                }
-                            }
-
-                            .list {
-                                &.type01 {
-                                    margin: 5rem auto;
-
-                                    p {
-                                        font-size: 2rem;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    &.step06 {
-                        .list {
-                            &.type02 {
-                                margin-top: 5rem;
-
-                                .item {
-                                    flex-direction: column;
-
-                                    .txt {
-                                        strong {
-                                            font-size: 1.8rem;
-                                            line-height: 2.8rem;
-                                        }
-
-                                        p {
-                                            font-size: 1.4rem;
-                                            line-height: 2rem;
-                                        }
-                                    }
-
-                                    &:last-of-type {
-                                        margin-top: 5rem;
-
-                                        .bg {
-                                            order: 1;
-                                        }
-
-                                        .txt {
-                                            order: 2;
-                                            margin-right: 0;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    &.step07 {
-                        .txtBox {
-                            strong {
-                                @include strong_m;
-                            }
-                        }
-                    }
-
-                    &.step08 {
-                        .inner {
-                            &.scrollW {
-                                height: 100% !important;
-                                overflow-y: scroll !important;
-                                padding: 12rem 2% !important;
-                            }
-                        }
-
-                        .inputBox {
-                            @include inputBox_m;
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .adWrap {
-        height: calc(var(--vh, 1vh) * 100);
-
-        .ad-hd {
-            height: 10vh;
-
-            strong {
-                @include strong_m
-            }
-        }
-
-        .ad-con {
-            padding: 0 2rem;
-            overflow-y: auto;
-            height: calc(100% - 66px);
-            margin: 0;
-
-            .inputBox {
-                @include inputBox_m;
-                margin: 1rem 0;
-
-                .row {
-                    .checkBox {
-                        input[type="checkbox"]+label {
-                            flex-wrap: wrap;
-                        }
-                    }
-                }
-            }
-
-            .btn-application {
-                margin: 1rem auto 5.3rem;
-            }
         }
     }
 }

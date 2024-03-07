@@ -1,23 +1,33 @@
-let vh = window.innerHeight * 0.01;
-document.documentElement.style.setProperty("--vh", `${vh}px`);
-
-window.addEventListener("resize", () => {
-    console.log("resize");
+function adjust_height() {
     let vh = window.innerHeight * 0.01;
     document.documentElement.style.setProperty("--vh", `${vh}px`);
-});
+}
+
 window.onresize = function () {
     setTimeout(function () {
         var content = document.querySelector(".navigator a.active");
         content.click();
+
+        adjust_height();
+
     }, 500);
 }
 
+
 window.onload = function () {
+    adjust_height()
     var header = document.querySelector('header');
     var adWrap = document.querySelector('.adWrap');
     var navigator = document.querySelector('.navigator');
     var navigatorA = document.querySelectorAll('.navigator a');
+    var btnfx = document.querySelector('.btn-fx');
+
+    var utube_ifr = document.querySelectorAll(".utube");
+    var utube_link = ["ofeDoAxsklE", "V23s65LJQKg", "fA9mSfNN0UE", "yal_vthlgaI", "9WLO9K3mtZ0", "d3avaZVwhlU"];
+    for (let i = 0; i < utube_ifr.length; i++) {
+        utube_ifr[i].src = "https://www.youtube.com/embed/" + utube_link[i];
+    }
+
     for (var i = 0; i < navigatorA.length; i++) {
         (function (idx) {
             navigatorA[idx].onclick = function (e) {
@@ -78,7 +88,7 @@ window.onload = function () {
     var animation = true;
     var top = 0;
     var delta = 0;
-    //var footerHeight = document.getElementById("footer").offsetHeight;
+    var footerHeight = document.getElementById("footer").offsetHeight;
     var idx;
     var direction;
     // console.log("footerHeight" + footerHeight);
@@ -88,7 +98,7 @@ window.onload = function () {
         //  console.log("animation~~~~~~~idx : " + idx);
         //  if(idx == 4 ) return ;
         // console.log("animation~~~~~~~animation : " + animation);
-        //footerHeight = document.getElementById("footer").offsetHeight;
+        footerHeight = document.getElementById("footer").offsetHeight;
         if (animation == true) {
             animation = false;
 
@@ -119,49 +129,8 @@ window.onload = function () {
                 direction = "up";
                 if (now >= 0) {
 
-                    if (now == 1) {
-
-                        // console.log("위로위로위로위로");
-                        innerscroll(direction);
-                        return false;
-
-                    } else if (now == 2) {
-
-                        // console.log("위로위로위로위로");
-                        innerscroll2(direction);
-                        return false;
-
-                    } else if (now == 3) {
-
-                        // console.log("아래로222222");
-                        innerscroll3(direction);
-                        return false;
-
-                    } else if (now == 4) {
-
-                        // console.log("아래로222222");
-                        innerscroll4(direction);
-                        return false;
-
-                    } else if (now == 5) {
-
-                        // console.log("아래로222222");
-                        innerscroll5(direction);
-                        return false;
-
-                    } else if (now == 8) {
-
-                        // console.log("아래로222222");
-                        innerscroll6(direction);
-                        return false;
-
-                    } else {
-
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-
+                    innerscroll(direction);
+                    return false;
                 }
                 // console.log("위로now : " + now);
                 return false;
@@ -173,48 +142,8 @@ window.onload = function () {
                 if (now < boxList.length) {
                     // console.log("아래로111111");
 
-
-                    if (now == 1) {
-                        // console.log("아래로222222");
-                        innerscroll(direction);
-                        return false;
-
-                    } else if (now == 2) {
-
-                        // console.log("아래로222222");
-                        innerscroll2(direction);
-                        return false;
-
-                    } else if (now == 3) {
-
-                        // console.log("아래로222222");
-                        innerscroll3(direction);
-                        return false;
-
-                    } else if (now == 4) {
-
-                        // console.log("아래로222222");
-                        innerscroll4(direction);
-                        return false;
-
-                    } else if (now == 5) {
-
-                        // console.log("아래로222222");
-                        innerscroll5(direction);
-                        return false;
-
-                    } else if (now == 8) {
-
-                        // console.log("아래로222222");
-                        innerscroll6(direction);
-                        return false;
-
-                    } else {
-
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
+                    innerscroll(direction);
+                    return false;
                 }
                 // console.log("아래로now : " + now);
                 return false;
@@ -234,7 +163,7 @@ window.onload = function () {
                 for (var i = 0; i < navigatorA.length; i++) {
                     navigatorA[i].classList.remove("active");
                 }
-                if (now != 8) {
+                if (now != 9) {
                     navigatorA[now].classList.add("active");
                 }
                 if (now == 0) {
@@ -242,13 +171,17 @@ window.onload = function () {
                 } else {
                     header.classList.remove("first");
                 }
-                if (now == 7) {
+                if (now == 8) {
                     header.classList.add("last");
                     adWrap.classList.remove('active')
                 } else {
                     header.classList.remove("last");
                 }
-                if (now % 2 == 1 && now < 4 || now % 2 == 1 && now < 6 || now % 2 == 1 && now < 8) {
+                if (now == 9) {
+                    header.classList.add('last')
+                    adWrap.classList.remove('active')
+                }
+                if (now == 2 || now == 4 || now == 6 || now == 8 || now == 9) {
                     navigator.classList.add("other");
                     header.classList.add("other");
                 } else {
@@ -258,27 +191,17 @@ window.onload = function () {
             }
 
             function innerscroll(direction) {
-
-                $(".step02 section").scroll(function () {
-                    // console.log("스크롤22:" +  $(".step02 section").scrollTop());
-                    // console.log("스크롤33:" + $(".step02 section").innerHeight());
-                    // console.log("스크롤344:" + $(".step02 section .inner").prop('scrollHeight'));
-
-
-                });
-
-
                 if (direction == "up") {
-                    if ($(".step02.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
+                    if ($(".step0" + now + ".active .inner").scrollTop() == 0) {
+                        //console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
                         direction = "up";
                         move(direction);
                         fun_navi();
                         return false;
                     }
                 } else if (direction == "down") {
-                    if ($(".step02.active .inner").scrollTop() + $(".step02.active .inner").innerHeight() >= $(".step02.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
+                    if ($(".step0" + now + ".active .inner").scrollTop() + $(".step0" + now + ".active .inner").innerHeight() >= $(".step0" + now + ".active .inner").prop('scrollHeight')) {
+                        //console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
                         direction = "down";
                         move(direction);
                         fun_navi();
@@ -286,185 +209,8 @@ window.onload = function () {
                     }
                 }
 
-
-                // if($(".step02 section").scrollTop() + 615 == $(".step02 section .show").height()){
-                //     console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                //     direction = "down";
-                //     move(direction);
-                //     fun_navi();
-                //     return false;
-                // }else if($(".step02 section").scrollTop() == 0){
-                //     console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                //     direction = "up";
-                //     move(direction);
-                //     fun_navi();
-                //     return false;
-                // }
-
-
-
                 animation = true;
-                // $(".step02 section").scroll(function () { 
-                //     console.log("위로22:" + $(this).scrollTop());
-                //     console.log("위로33:" + $(".step02 section .show").height());
-
-                //     if($(this).scrollTop() == 0){
-                //         console.log("위로22:위로22:위로22:위로22:위로22:위로22:위로22:위로22:");
-                //         direction = "up";
-                //         move(direction);
-                //         fun_navi();
-                //         return false;
-                //     }else{
-                //         return false;
-                //     }
-                // });
-
-
-
             }
-
-
-            function innerscroll2(direction) {
-
-
-                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
-                // console.log("스크롤33:" + $(".step03 section").innerHeight());
-                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
-
-                if (direction == "up") {
-                    if ($(".step03.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                        direction = "up";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                } else if (direction == "down") {
-                    if ($(".step03.active .inner").scrollTop() + $(".step03.active .inner").innerHeight() >= $(".step03.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                        direction = "down";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                }
-                animation = true;
-
-            }
-
-            function innerscroll3(direction) {
-
-
-                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
-                // console.log("스크롤33:" + $(".step03 section").innerHeight());
-                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
-
-                if (direction == "up") {
-                    if ($(".step04.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                        direction = "up";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                } else if (direction == "down") {
-                    if ($(".step04.active .inner").scrollTop() + $(".step04.active .inner").innerHeight() >= $(".step04.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                        direction = "down";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                }
-                animation = true;
-
-            }
-
-            function innerscroll4(direction) {
-
-
-                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
-                // console.log("스크롤33:" + $(".step03 section").innerHeight());
-                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
-
-                if (direction == "up") {
-                    if ($(".step05.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                        direction = "up";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                } else if (direction == "down") {
-                    if ($(".step05.active .inner").scrollTop() + $(".step05.active .inner").innerHeight() >= $(".step05.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                        direction = "down";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                }
-                animation = true;
-
-            }
-
-            function innerscroll5(direction) {
-
-
-                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
-                // console.log("스크롤33:" + $(".step03 section").innerHeight());
-                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
-
-                if (direction == "up") {
-                    if ($(".step06.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                        direction = "up";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                } else if (direction == "down") {
-                    if ($(".step06.active .inner").scrollTop() + $(".step06.active .inner").innerHeight() >= $(".step06.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                        direction = "down";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                }
-                animation = true;
-
-            }
-
-            function innerscroll6(direction) {
-
-
-                // console.log("스크롤22:" +  $(".step03 section").scrollTop());
-                // console.log("스크롤33:" + $(".step03 section").innerHeight());
-                // console.log("스크롤344:" + $(".step03 section .inner").prop('scrollHeight'));
-
-                if (direction == "up") {
-                    if ($(".step08.active .inner").scrollTop() == 0) {
-                        // console.log("맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:맨위22:");
-                        direction = "up";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                } else if (direction == "down") {
-                    if ($(".step08.active .inner").scrollTop() + $(".step08.active .inner").innerHeight() >= $(".step08.active .inner .scroll").prop('scrollHeight')) {
-                        // console.log("맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33맨아래33");
-                        direction = "down";
-                        move(direction);
-                        fun_navi();
-                        return false;
-                    }
-                }
-                animation = true;
-
-            }
-
-
         }
     }
 
@@ -503,7 +249,10 @@ window.onload = function () {
             }
 
             var locate = boxList[now].offsetTop;
-
+            if (now == boxList.length - 1) {
+                locate = boxList[now - 1].offsetTop;
+                locate = locate + footerHeight;
+            }
 
 
         } else {
@@ -529,38 +278,18 @@ window.onload = function () {
 
     }
 
-
-
-
-    const to = location.hash;
-    var hash2 = to.replace('#', '');
-    console.log("hansh... " + hash2);
-    if (hash2 == "mobwith") {
-        mouseEvent(0);
-    } else if (hash2 == "whatwedo") {
-        mouseEvent(1);
-    } else if (hash2 == "partner") {
-        mouseEvent(2);
-    } else if (hash2 == "location") {
-        mouseEvent(3);
-    }
-    var uri = window.location.toString();
-    if (uri.indexOf("#") > 0) {
-        var clean_uri = uri.substring(0, uri.indexOf("#"));
-        window.history.replaceState({}, document.title, clean_uri);
-    }
-
-
-
 }
 $(document).ready(function () {
     var click = function () {
+        $('.btn-top').on("click", function () {
+            $("#scrolltop").trigger("click");
+        });
         $('.btn-view').on('click', function () {
             $('#' + $(this).data("img") + '').addClass('active');
             $('body').css('overflow', 'hidden')
         })
-        $('.img-target').on('click', function (e) {
-            $(this).removeClass('active');
+        $('.img-target .close-btn').on('click', function (e) {
+            $(this).closest('.img-target').removeClass('active');
             $('body').css('overflow', '')
         });
         $(".firstArrow").on("click", function () {
@@ -568,13 +297,77 @@ $(document).ready(function () {
         });
         $(".mainAdBtn").on("click", function () {
             $(".adWrap").addClass('active')
+            $('body').css('overflow', 'hidden')
         });
         $(".adClose").on("click", function () {
             $(".adWrap").removeClass('active')
         });
+        $(".agreebtn").on("click", function () {
+            $(this).parents('.checkBox').next('div').toggleClass('active')
+        });
+        $(".privacybtn").on("click", function () {
+            $(this).parents('.checkBox').next('div').toggleClass('active')
+        });
+
+
     }
 
     $(function () {
         click()
     });
+
+    $(function () {
+        $('#slider01').slick({
+            slidesToShow: 8,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 1500,
+            arrows: false,
+            dots: false,
+            pauseOnHover: false,
+            centerMode: true,
+
+        });
+        $('#slider02').slick({
+            infinite: false,
+            slidesToShow: 3,
+            slidesToScroll: 3,
+            autoplay: false,
+            autoplaySpeed: 1500,
+            arrows: true,
+            dots: true,
+            pauseOnHover: false,
+            centerMode: false,
+
+            responsive: [{
+                    breakpoint: 1260,
+                    settings: {
+                        arrows: false,
+                    }
+                },
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 1,
+                        slidesToScroll: 1,
+                        arrows: false,
+                    }
+                }
+            ]
+
+        });
+
+        $('.pop_slick').slick({
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            infinite: true,
+            dots: true,
+            arrows: true,
+            draggable: true,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            variableWidth: false,
+            centerMode: false
+        });
+    })
 });

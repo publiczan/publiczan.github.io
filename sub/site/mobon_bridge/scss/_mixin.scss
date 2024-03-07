@@ -24,6 +24,8 @@ $font-m:'Pretendard-Medium';
 $font-b:'Pretendard-Bold';
 $font-eb:'Pretendard-ExtraBold';
 $font-bb:'Pretendard-Black';
+$font-r:'Pretendard-Regular';
+$font-sb:'Pretendard-SemiBold';
 $url-images-com: "../images/common/";
 $url-images: "../images/";
 
@@ -283,7 +285,6 @@ $animationSpeed: 10s; //40s
 }
 
 @mixin txt {
-    font-family: $font-b;
     font-size: 2.8rem;
     line-height: 4.5rem;
 }
@@ -294,13 +295,12 @@ $animationSpeed: 10s; //40s
 }
 
 @mixin txt_m {
-    font-family: $font-b;
-    font-size: 1.6rem;
-    line-height: 2.7rem;
+    font-size: 2rem;
+    line-height: 3rem;
 }
 
 @mixin strong_m {
-    font-size: 2.6rem;
+    font-size: 2.4rem;
     line-height: 3.6rem;
 }
 
@@ -326,8 +326,6 @@ $animationSpeed: 10s; //40s
 
 @mixin inputBox {
 
-    margin-top: 4.9rem;
-
     .row {
         >div {
             @include flex-st-item;
@@ -336,17 +334,22 @@ $animationSpeed: 10s; //40s
         &:first-of-type {
             >div {
                 width: 100%;
-                height: 4.8rem;
-                border: 1px solid #ccc;
-                border-radius: 1rem;
-                padding: 0 1.6rem;
+                height: auto;
 
                 p {
-                    width: 13rem;
+                    width: 19rem;
+                    font-size: 1.6rem;
+                    line-height: 1.9rem;
+
                 }
 
                 &:not(:last-of-type) {
-                    margin-bottom: 2rem;
+                    margin-bottom: 2.4rem;
+                }
+
+                textarea {
+                    height: 10rem;
+                    width: 100%;
                 }
             }
         }
@@ -357,25 +360,15 @@ $animationSpeed: 10s; //40s
                     font-family: $font-b;
                     color: #3523c7;
                     text-decoration: underline;
+                    margin: 0 0.5rem;
                 }
             }
         }
 
         &:last-of-type {
-            margin-top: 6.2rem;
+            margin-top: 4rem;
 
             >div {
-                &:first-of-type {
-                    .checkBox {
-                        width: 14rem;
-                    }
-
-                    input[type="text"] {
-                        border: 1px solid #ccc;
-                        height: 3rem;
-                        border-radius: 0.5rem;
-                    }
-                }
 
                 &:not(:first-of-type) {
                     margin-top: 1.6rem;
@@ -395,9 +388,19 @@ $animationSpeed: 10s; //40s
                 align-items: flex-start;
                 justify-content: center;
 
+                input {
+                    height: 4.8rem;
+                }
+
                 p {
                     width: 100%;
-                    padding: 1rem;
+                    padding: 1rem 0;
+                    font-size: 1.6rem;
+                    line-height: 1.9rem;
+                }
+
+                &:not(:last-of-type) {
+                    margin-bottom: 2.4rem;
                 }
             }
         }
@@ -405,22 +408,37 @@ $animationSpeed: 10s; //40s
         &:last-of-type {
             >div {
                 &:first-of-type {
-                    flex-direction: column;
-                    align-items: flex-start;
 
                     .checkBox {
-                        margin-bottom: 1rem;
+                        width: 22rem;
+                        line-height: 2.4rem;
+                    }
+                }
+
+                &.checkBox {
+                    input[type="checkbox"]+label {
+                        flex-wrap: wrap;
+                        line-height: 1.6rem;
+
+                        button {
+                            font-size: 1.4rem;
+                            line-height: 1.6rem;
+                        }
                     }
                 }
             }
         }
+    }
+
+    .btn-application {
+        margin-top: 3.2rem;
     }
 }
 
 @mixin btn-application {
     width: 100%;
     height: 5.3rem;
-    margin-top: 8.5rem;
+    margin-top: 3.5rem;
     border-radius: 1rem;
     background-image: linear-gradient(81deg, #20149d, #2d0098 100%);
     color: #fff;
@@ -438,7 +456,7 @@ $animationSpeed: 10s; //40s
     @include flex-st-item;
     font-size: $font-14;
     cursor: pointer;
-    font-family: $font-l;
+    font-family: $font-r;
 }
 
 @mixin checkbox-label-bf {
