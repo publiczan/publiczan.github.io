@@ -28,7 +28,14 @@ input[type="number"],
 input[type="tel"],
 input[type="url"],
 input[type="email"],
-textarea {
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="tel"],
+input[type="url"],
+input[type="email"],
+textarea,
+select {
     display: inline-block;
     height: 4.8rem;
     padding: 1.6rem 2.4rem;
@@ -39,6 +46,7 @@ textarea {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 1rem;
+    font-family: $font-l;
 
     &:disabled {
         color: #777;
@@ -70,6 +78,13 @@ input[type="search"] {
 textarea {
     resize: none;
 }
+
+/*select*/
+select {
+    width: 100%;
+    outline: none;
+}
+
 
 /*input error*/
 input[type="text"].error,

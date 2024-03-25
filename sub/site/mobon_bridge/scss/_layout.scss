@@ -15,8 +15,6 @@
     transition: all 700ms ease 0s;
 
     header {
-        display: none;
-
         button {
             @include transition;
         }
