@@ -47,12 +47,43 @@
                 <section class="box step00 active">
                     <div class="inner">
                         <div class="videoBox">
-                            <div class="video">
+                            <!-- <div class="video">
                                 <iframe
                                     src="https://www.youtube.com/embed/9OEVQfinI04?autoplay=1&mute=1&rel=0&modestbranding=1&controls=0&loop=1&playlist=9OEVQfinI04"
                                     allow="allowfullscreen loop autoplay"></iframe>
-                            </div>
+                            </div> -->
+                            <div id="video" class="video" style="width:100%"></div>
                         </div>
+                        <script src="https://www.youtube.com/iframe_api"></script>
+                        <script>
+                            var player;
+
+                            function onYouTubeIframeAPIReady() {
+                                player = new YT.Player('video', {
+                                    videoId: '9OEVQfinI04', //유튭 영상ID
+                                    playerVars: {
+                                        'autoplay': 1, //자동재생
+                                        'rel': 0,
+                                        'showinfo': 0,
+                                        'modestbranding': 1,
+                                        'playsinline': 1,
+                                        'rel': 0,
+                                        'controls': 0, //youtube 콘트롤 표시
+                                        'color': 'white',
+                                        'loop': 1, //반복 여부  
+                                        'mute': 1
+                                    },
+                                    events: {
+                                        'onReady': onPlayerReady,
+                                    }
+                                });
+                            }
+
+                            function onPlayerReady(event) {
+                                player.playVideo();
+                                player.mute(); //자동재생하려면 mute해야함
+                            }
+                        </script>
                     </div>
                 </section>
                 <section class="box step01">
