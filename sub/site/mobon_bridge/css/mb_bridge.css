@@ -450,10 +450,6 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box.step00 .videoBox .video, #Wrap .wrapper .content .box.step00 .videoBox iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
 
-@media (min-aspect-ratio: 16 / 9) { #Wrap .wrapper .content .box.step00 .videoBox .video { height: 300%; top: -100%; } }
-
-@media (max-aspect-ratio: 16 / 9) { #Wrap .wrapper .content .box.step00 .videoBox .video { width: 500%; left: -200%; } }
-
 #Wrap .wrapper .content .box.step01 { background: url("../images/img_bg_01.svg") center center no-repeat; background-size: cover; }
 
 #Wrap .wrapper .content .box.step01 .inner { width: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 100vh; }
