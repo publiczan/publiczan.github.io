@@ -444,11 +444,13 @@ i.ico-view::before { content: ""; display: block; background-repeat: no-repeat; 
 
 #Wrap .wrapper .content .box .inner .innerW { width: 100%; max-width: 120rem; padding: 12rem 0; margin: 0 auto; }
 
+#Wrap .wrapper .content .box.step00 { background: #000; }
+
 #Wrap .wrapper .content .box.step00 .inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#Wrap .wrapper .content .box.step00 .videoBox { background: #000; position: absolute; top: 0; right: 0; bottom: 0; left: 0; overflow: hidden; }
+#Wrap .wrapper .content .box.step00 .videoBox { position: relative; width: 100%; height: auto; top: 0; right: 0; bottom: 0; left: 0; aspect-ratio: 16 / 9; padding: 0; }
 
-#Wrap .wrapper .content .box.step00 .videoBox .video, #Wrap .wrapper .content .box.step00 .videoBox iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+#Wrap .wrapper .content .box.step00 .videoBox .video, #Wrap .wrapper .content .box.step00 .videoBox iframe { width: 100%; height: 100%; pointer-events: none; }
 
 #Wrap .wrapper .content .box.step01 { background: url("../images/img_bg_01.svg") center center no-repeat; background-size: cover; }
 
