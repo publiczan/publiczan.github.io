@@ -3,15 +3,10 @@
 #Wrap {
     position: relative;
     width: 100vw;
-    height: calc(var(--vh, 1vh) * 100);
-    transform: translate3d(0, 0, 0);
-    -webkit-transform: translateZ(0);
-    -webkit-overflow-scrolling: touch;
+    height: calc(var(--vh, 1vh) * 100);    
     margin: 0 auto;
     background: #fff;
-    -ms-touch-action: none;
-    touch-action: none;
-    -webkit-transition: all 700ms ease 0s;
+       -webkit-transition: all 700ms ease 0s;
     transition: all 700ms ease 0s;
 
     header {
