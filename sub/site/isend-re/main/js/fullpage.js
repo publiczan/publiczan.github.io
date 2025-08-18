@@ -2,7 +2,7 @@ function setViewHt() {
     const vh = window.innerHeight * 0.01;
     const btnHeight = 50;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
-    document.querySelectorAll('section:not(.short)').forEach(el => {
+    document.querySelectorAll('section').forEach(el => {
         el.style.height = `${vh * 100 - btnHeight}px`;
     });
 }
