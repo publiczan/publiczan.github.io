@@ -217,18 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTopButton();
     updateNav();
-
-    if (window.innerWidth <= 768) {
-        const btnQuick = document.querySelector('.sc08 .btn-quick');
-        document.body.appendChild(btnQuick); // body 밖으로 이동
-        btnQuick.style.position = 'fixed';
-        btnQuick.style.bottom = '0';
-        btnQuick.style.left = '50%';
-        btnQuick.style.transform = 'translateX(-50%)';
-        btnQuick.style.width = '100%';
-        btnQuick.style.height = '5rem';
-        btnQuick.style.zIndex = '9999';
-        btnQuick.style.background = '#ffdf0e';
-        btnQuick.style.fontSize = '1.6rem';
-    }
 });
