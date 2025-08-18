@@ -217,4 +217,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTopButton();
     updateNav();
+
+    function isMobile() {
+        return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const btnQuick = document.querySelector('.sc08 .btn-quick');
+
+        if (isMobile()) {
+            // 모바일이면 wrap 밖으로 이동
+            document.body.appendChild(btnQuick);
+            btnQuick.classList.add('btn-quick');
+        }
+    });
 });
