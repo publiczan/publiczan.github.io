@@ -217,4 +217,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTopButton();
     updateNav();
+
+    const btn = document.querySelector('.sc08 .btn-quick');
+    window.addEventListener('scroll', () => {
+        const y = window.scrollY + window.innerHeight - 0; // 화면 하단 기준
+        btn.style.position = ' fixed';
+    });
 });
