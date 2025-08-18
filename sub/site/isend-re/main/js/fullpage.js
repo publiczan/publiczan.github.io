@@ -125,11 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Wheel
     window.addEventListener('wheel', (e) => {
-        setTimeout(() => {
-            if (document.querySelector('.mdBox.on')) return;
-
-        }, 0);
-
+        if (document.querySelector('.mdBox.on')) return;
         const scrollEl = e.target.closest('.scroll-area');
 
         if (scrollEl) {
