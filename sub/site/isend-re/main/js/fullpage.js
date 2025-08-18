@@ -3,7 +3,7 @@ function setViewHt() {
     const btnHeight = 50;
     document.documentElement.style.setProperty('--vh', `${vh}px`);
     document.querySelectorAll('section').forEach(el => {
-        el.style.height = `${vh * 100 - btnHeight}px`;
+        el.style.height = `${vh * 100 - btnHeight}rem`;
     });
 }
 setViewHt();
@@ -126,22 +126,24 @@ document.addEventListener('DOMContentLoaded', () => {
     // Wheel
     window.addEventListener('wheel', (e) => {
         if (document.querySelector('.mdBox.on')) return;
+
         const scrollEl = e.target.closest('.scroll-area');
 
         if (scrollEl) {
-            const scrollTop = scrollEl.scrollTop;
-            const scrollHeight = scrollEl.scrollHeight;
-            const clientHeight = scrollEl.clientHeight;
+            const {
+                scrollTop,
+                scrollHeight,
+                clientHeight
+            } = scrollEl;
             const deltaY = e.deltaY;
-
             const isAtTop = scrollTop === 0;
             const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
 
-            // 내부 스크롤 중이면 풀페이지 스크롤 막음
             if ((deltaY < 0 && !isAtTop) || (deltaY > 0 && !isAtBottom)) {
-                return; // 내부에서 스크롤만 하고 풀페이지 이동 안함
+                return; // 내부 스크롤만 허용
             }
         }
+
 
         // 풀페이지 스크롤
         e.preventDefault();
@@ -157,6 +159,8 @@ document.addEventListener('DOMContentLoaded', () => {
         passive: false
     });
     window.addEventListener('touchmove', e => {
+
+        if (document.querySelector('.mdBox.on')) return;
         const scrollEl = e.target.closest('.scroll-area');
         if (scrollEl) {
             const {
@@ -166,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
             } = scrollEl;
             const currentY = e.touches[0].clientY;
             const deltaY = currentY - startY;
-
             const isAtTop = scrollTop === 0;
             const isAtBottom = scrollTop + clientHeight >= scrollHeight - 1;
 
@@ -174,8 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
         }
-
-        e.preventDefault(); // 풀페이지 넘어감
+        e.preventDefault();
     }, {
         passive: false
     });
@@ -215,10 +217,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateTopButton();
     updateNav();
-
-    const btn = document.querySelector('.sc08 .btn-quick');
-    window.addEventListener('scroll', () => {
-        const y = window.scrollY + window.innerHeight - 0; // 화면 하단 기준
-        btn.style.position = ' fixed';
-    });
 });
