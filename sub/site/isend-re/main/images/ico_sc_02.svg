@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="85" height="85" viewBox="0 0 85 85">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+        stroke: #707070;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3 {
+        fill: #ffdf0e;
+      }
+
+      .cls-4 {
+        fill: #ab7200;
+      }
+
+      .cls-5 {
+        fill: #e6c451;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="사각형_7039" data-name="사각형 7039" class="cls-1" width="85" height="85" transform="translate(0 0)"/>
+    </clipPath>
+  </defs>
+  <g id="img_sec4_01" class="cls-2" transform="translate(0 0)">
+    <g id="그룹_9058" data-name="그룹 9058" transform="translate(3.009 6.594)">
+      <rect id="사각형_7032" data-name="사각형 7032" class="cls-3" width="8.673" height="30.91" transform="translate(34.26 20.937)"/>
+      <path id="패스_13835" data-name="패스 13835" class="cls-3" d="M76.489,73.878H67.816V59.113H18.572V73.878H9.9v-19.1l4.336-4.336H72.153l4.336,4.336Z" transform="translate(-3.767 -19.194)"/>
+      <rect id="사각형_7033" data-name="사각형 7033" class="cls-4" width="43.438" height="20.937" transform="translate(17.708 0)"/>
+      <rect id="사각형_7034" data-name="사각형 7034" class="cls-5" width="20.937" height="20.937" transform="translate(0 50.245)"/>
+      <rect id="사각형_7035" data-name="사각형 7035" class="cls-5" width="20.937" height="20.937" transform="translate(28.959 50.245)"/>
+      <rect id="사각형_7036" data-name="사각형 7036" class="cls-5" width="20.936" height="20.937" transform="translate(57.918 50.245)"/>
+    </g>
+  </g>
+</svg>

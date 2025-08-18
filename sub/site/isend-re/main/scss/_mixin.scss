@@ -1,0 +1,345 @@
+@charset 'utf-8';
+
+$mainColor: #ff7700;
+$ft-12:1.2rem;
+$ft-13:1.3rem;
+$ft-14:1.4rem;
+$ft-15:1.5rem;
+$ft-16:1.6rem;
+$ft-17:1.7rem;
+$ft-18:1.8rem;
+$ft-l:'Pretendard-Light';
+$ft-m:'Pretendard-Medium';
+$ft-b:'Pretendard-Bold';
+$ft-eb:'Pretendard-ExtraBold';
+$ft-bb:'Pretendard-Black';
+$ft-r:'Pretendard-Regular';
+$ft-sb:'Pretendard-SemiBold';
+$cr-gr01:#8e8e8e;
+$cr-gr02:#666;
+$cr-gr03:#d5d5d5;
+$url-images: "../images/";
+
+@mixin transition {
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes ani {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes scale {
+    0% {
+        transform: scale(.2);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes scale2 {
+    0% {
+        transform: scale(.2) translateX(-50%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1) translateX(-50%);
+        opacity: 1;
+    }
+}
+
+@keyframes left {
+    0% {
+        opacity: 0;
+        left: -150%;
+    }
+
+    100% {
+        opacity: 1;
+        left: 29%
+    }
+}
+
+@keyframes right {
+    0% {
+        opacity: 0;
+        right: -200%;
+    }
+
+    100% {
+        opacity: 1;
+        right: -21%
+    }
+}
+
+@keyframes imgup {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translate(-50%);
+    }
+
+    50% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(50%);
+    }
+}
+
+@keyframes slideRe {
+    0% {
+        transform: translate(50%);
+    }
+
+    50% {
+        transform: translate(0);
+    }
+
+    100% {
+        transform: translate(-50%);
+    }
+}
+
+@keyframes modal {
+    0% {
+        top: 150%;
+        transform: translateY(-50%);
+    }
+
+    100% {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes modalM {
+    0% {
+        bottom: -100%;
+    }
+
+    100% {
+        bottom: 0;
+    }
+}
+
+
+/*flex*/
+@mixin flex($dir:null, $wrap:null, $align:null, $con:null) {
+    display: flex;
+
+    @if($dir==row) {
+        flex-direction: row;
+    }
+
+    @if($dir==col) {
+        flex-direction: column;
+    }
+
+    @if($wrap==wr) {
+        flex-wrap: wrap;
+    }
+
+    @if($wrap==nwr) {
+        flex-wrap: nowrap;
+    }
+
+    @if($align==st) {
+        align-items: flex-start;
+    }
+
+    @if($align==ct) {
+        align-items: center;
+    }
+
+    @if($align==en) {
+        align-items: flex-end;
+    }
+
+    @if($align==bl) {
+        align-items: baseline;
+    }
+
+    @if($align==stc) {
+        align-items: stretch;
+    }
+
+    @if($con==bt) {
+        justify-content: space-between;
+    }
+
+    @if($con==st) {
+        justify-content: flex-start;
+    }
+
+    @if($con==ct) {
+        justify-content: center;
+    }
+
+    @if($con==en) {
+        justify-content: flex-end;
+    }
+
+    @if($con==ar) {
+        justify-content: space-around;
+    }
+
+    @if($con==ev) {
+        justify-content: space-evenly;
+    }
+}
+
+@mixin svg($path, $width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    -webkit-mask-image: url($path);
+    mask-image: url($path);
+    background-size: cover;
+    -webkit-background-size: cover;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@mixin scrollbar {
+    width: 0;
+    height: .6rem;
+    background: #fff;
+}
+
+@mixin scrollbar-thumb {
+    height: .6rem;
+    background: #d2d2d2;
+    border-radius: .6rem;
+}
+
+@mixin select-scrollbar {
+    width: .6rem;
+    height: .6rem;
+    background: #fff;
+    border-left: .1rem solid transparent
+}
+
+@mixin scrollbarA {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+}
+
+@mixin scrollbar-thumbA {
+    height: 6px;
+    background: #d2d2d2;
+    border-radius: 3px;
+}
+
+@mixin select-scrollbarA {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-left: 1px solid #9ba0a2
+}
+
+@mixin checkbox {
+    input {
+        &[type="checkBox"] {
+            display: none;
+
+            +label {
+                margin: 0;
+                @include flex($con:st, $align:ct);
+                font-size: $ft-16;
+                cursor: pointer;
+                gap: .8rem;
+
+                // @media screen and(max-width: 767px) {
+                //     align-items: flex-start;
+                //     font-size: $ft-14;
+                // }
+
+                &::before {
+                    content: "";
+                    display: block;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: 100%;
+                    width: 2.4rem;
+                    height: 2.4rem;
+                    flex-shrink: 0;
+                    border-radius: .6rem;
+                    border: .1rem solid #c6c6c6;
+                }
+            }
+
+            &:checked {
+                +label {
+                    &::before {
+                        background-image: url($url-images + "ico_ck_on.svg");
+                    }
+                }
+            }
+
+            &:disabled {
+                +label {
+                    &::before {
+                        background-image: url($url-images + "ico_ck_off.svg");
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin selectBox {
+    display: inline-block;
+    vertical-align: middle;
+    min-width: 100%;
+    height: 4.8rem;
+    padding: 0 $ft-16;
+    font-size: $ft-16;
+    line-height: $ft-16;
+    color: #000;
+    border-radius: 0.6rem;
+    border: .1rem solid #c6c6c6;
+    box-shadow: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    background: #fff url($url-images + "ico_ar_gy.svg") no-repeat right $ft-16 center/2.4rem;
+
+    @media screen and(max-width: 767px) {
+        height: 3.6rem;
+        font-size: $ft-14;
+        border-radius: .8rem;
+        padding: 0 3rem 0 1rem;
+        background-position: right 1rem center;
+    }
+
+    &:disabled {
+        color: #bbb;
+        border: .1rem solid #d0d0d0;
+        background-color: #f8f8f8;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}

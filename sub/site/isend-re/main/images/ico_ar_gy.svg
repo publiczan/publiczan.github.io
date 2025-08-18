@@ -1,0 +1,19 @@
+<svg id="ico_btm" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #444;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <g id="그룹_9084" data-name="그룹 9084" transform="translate(-0.072 -0.072)">
+    <rect id="사각형_6582" data-name="사각형 6582" class="cls-1" width="24" height="24" transform="translate(0.072 0.072)"/>
+    <path id="패스_13263" data-name="패스 13263" class="cls-2" d="M0,0,6.024,5.958,0,11.916" transform="translate(18.03 9.061) rotate(90)"/>
+  </g>
+</svg>

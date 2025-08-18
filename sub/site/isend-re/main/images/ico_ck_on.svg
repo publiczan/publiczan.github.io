@@ -1,0 +1,17 @@
+<svg id="chk_on" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #ffdf0e;
+      }
+
+      .cls-2 {
+        fill: none;
+        stroke: #000;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <rect id="사각형_7" data-name="사각형 7" class="cls-1" width="20" height="20" rx="3"/>
+  <path id="패스_4" data-name="패스 4" class="cls-2" d="M2665.56,682.64l3.753,3.753s5.46-5.153,7.329-7.022" transform="translate(-2661.417 -672.84)"/>
+</svg>
