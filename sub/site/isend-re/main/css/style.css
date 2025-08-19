@@ -144,7 +144,15 @@ img { display: block; max-width: 100%; }
 
 h1, h2, h3, h4, h5, h6 { font-weight: normal; }
 
-input[type="text"], input[type="password"], input[type="checkbox"], input[type="number"], input[type="tel"], input[type="email"], textarea { outline: none; background: #fff; color: #000; padding: 0 1rem; border-radius: .6rem; border: 0.1rem solid #d5d5d5; height: 4.6rem; width: 100%; }
+input[type="text"], input[type="password"], input[type="checkbox"], input[type="number"], input[type="tel"], input[type="email"], textarea { outline: none; background: #fff; color: #8e8e8e; padding: 0 1rem; border-radius: .6rem; border: 0.1rem solid #d5d5d5; height: 4.6rem; width: 100%; font-family: "Pretendard-Regular"; font-size: 1.6rem; }
+
+input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="checkbox"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, textarea::-webkit-input-placeholder { color: #d5d5d5; }
+
+input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="checkbox"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, textarea:-ms-input-placeholder { color: #d5d5d5; }
+
+input[type="text"]::-ms-input-placeholder, input[type="password"]::-ms-input-placeholder, input[type="checkbox"]::-ms-input-placeholder, input[type="number"]::-ms-input-placeholder, input[type="tel"]::-ms-input-placeholder, input[type="email"]::-ms-input-placeholder, textarea::-ms-input-placeholder { color: #d5d5d5; }
+
+input[type="text"]::placeholder, input[type="password"]::placeholder, input[type="checkbox"]::placeholder, input[type="number"]::placeholder, input[type="tel"]::placeholder, input[type="email"]::placeholder, textarea::placeholder { color: #d5d5d5; }
 
 textarea { resize: none; height: 13.4rem; overflow: hidden; overflow-y: auto; padding: 1rem; }
 
@@ -154,17 +162,17 @@ input:-webkit-autofill { background: #fff !important; -webkit-text-fill-color: #
 
 html, body { width: 100%; font-family: "Pretendard-Regular"; font-size: 62.5%; color: #000; }
 
-body { overflow: hidden; }
+body { overflow: hidden; overflow-y: auto; }
 
 ::-moz-selection, ::-moz-selection { color: #fff; background: #ff7700; }
 
 ::-moz-selection, ::selection { color: #fff; background: #ff7700; }
 
-::-webkit-scrollbar { width: 0; height: .6rem; background: #fff; }
+::-webkit-scrollbar { width: 6px; height: 6px; background: #fff; }
 
-::-webkit-scrollbar-thumb { height: .6rem; background: #d2d2d2; border-radius: .6rem; }
+::-webkit-scrollbar-thumb { height: 6px; background: #d2d2d2; border-radius: 3px; }
 
-input[type="text"].error, input[type="password"].error, input[type="number"].error, input[type="email"].error, textarea.error { border: .1rem solid #f07171; color: #f07171 !important; position: relative; background: url("/contents/images/common/icon_problem_red.png") 99% center no-repeat; background-size: 1.2rem 1.2rem; }
+input[type="text"].error, input[type="password"].error, input[type="number"].error, input[type="email"].error, textarea.error { border: .1rem solid #f07171; color: #f07171 !important; position: relative; background: url("/contents/images/common/icon_problem_red.png") 99% center no-repeat; background-size: 1.2rem 1.2rem; font-size: 1.6rem; color: #d5d5d5; }
 
 .selectBox { width: 100%; }
 
@@ -188,7 +196,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .checkBox input[type="checkBox"]:disabled + label::before { background-image: url("../images/ico_ck_off.svg"); }
 
-.wrap { width: 100vw; height: calc(1vh * 100); }
+.wrap { width: 100vw; }
 
 .wrap.other header .inner h1 a { background: url("../images/logo_mibI_wh.svg") no-repeat center/100%; }
 
@@ -236,7 +244,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.main .inner .titBox p { opacity: 0; }
 
-.wrap main section.main .inner .swiper { max-width: 110rem; opacity: 0; }
+.wrap main section.main .inner .swiper { max-width: 120rem; opacity: 0; }
 
 .wrap main section.main .inner .swiper .swiper-slide:not(.swiper-slide-active) { -webkit-transform: scale(0.8); transform: scale(0.8); }
 
@@ -300,7 +308,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc02 .inner .conBox .swiper .swiper-wrapper .swiper-slide p { text-align: center; font-size: 2.2rem; color: #8e8e8e; padding-top: 2rem; }
 
-.wrap main section.sc02 .inner .conBox .swiper .swiper-wrapper .swiper-slide p span { display: contents; color: #000; }
+.wrap main section.sc02 .inner .conBox .swiper .swiper-wrapper .swiper-slide p span { display: contents; color: #000; font-family: "Pretendard-Bold"; }
 
 .wrap main section.sc02.on .inner .titBox h2 { -webkit-animation: ani 1s .1s ease-in forwards; animation: ani 1s .1s ease-in forwards; }
 
@@ -318,7 +326,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc03 .inner .conBox .item * { text-align: center; padding-top: .5rem; }
 
-.wrap main section.sc03 .inner .conBox .item strong { font-size: 1.8rem; }
+.wrap main section.sc03 .inner .conBox .item strong { font-size: 1.8rem; font-family: "Pretendard-Bold"; }
 
 .wrap main section.sc03 .inner .conBox .item .ico-arrow { opacity: 0; width: 3.3rem; height: 3.5rem; background: url("../images/ico_ar_br.svg") no-repeat center/100%; }
 
@@ -328,7 +336,9 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc03 .inner .conBox .item > div:nth-of-type(2) ul li i { width: 7rem; height: 7rem; }
 
-.wrap main section.sc03 .inner .conBox .item > div > p, .wrap main section.sc03 .inner .conBox .item > div span { font-size: 1.4rem; }
+.wrap main section.sc03 .inner .conBox .item > div > p, .wrap main section.sc03 .inner .conBox .item > div span { font-size: 1.4rem; font-family: "Pretendard-Medium"; }
+
+.wrap main section.sc03 .inner .conBox .item > div span:last-of-type { font-family: "Pretendard-Regular"; color: #8e8e8e; }
 
 .wrap main section.sc03 .inner .conBox .item > div ul { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -352,7 +362,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc03.on .inner .conBox .item .ico-arrow { -webkit-animation: ani 1s .5s ease-in forwards; animation: ani 1s .5s ease-in forwards; }
 
-.wrap main section.sc04 { background: #000 url("../images/talkpoint.png") no-repeat center/contain; }
+.wrap main section.sc04 { background: #000 url("../images/talkpoint.png") no-repeat center/75%; }
 
 .wrap main section.sc05 .inner .iframe { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -400,7 +410,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc07 .inner .conBox .item ul { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; gap: 2rem; }
 
-.wrap main section.sc07 .inner .conBox .item ul li { opacity: 0; width: calc(100% / 5); }
+.wrap main section.sc07 .inner .conBox .item ul li { opacity: 0; width: calc(100% / 5 - 1.6rem); }
 
 .wrap main section.sc07 .inner .conBox .item ul li img { margin: 0 auto; }
 
@@ -435,6 +445,32 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 .wrap main section.sc08 .inner .inputBox .checkBox a { color: #ab7200; text-decoration: underline; }
 
 .wrap main section.sc08 .inner .inputBox .checkBox > div { padding-top: 1rem; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox { position: relative; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox > input { margin-top: .5rem; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-btn { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; border: 0.1rem solid #d5d5d5; width: 100%; height: 4.6rem; border-radius: .6rem; background: #fff; color: #d5d5d5; font-size: 1.6rem; padding: 1rem; cursor: pointer; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-btn span { width: calc(100% - 2rem); }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-btn i { position: absolute; z-index: 2; right: 1rem; width: 1.6rem; height: 1.8rem; background: url("../images/ico_ar_gy.svg") no-repeat right center/100%; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-btn.on span { color: #8e8e8e; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt { display: none; position: absolute; width: 100%; background: #fff; border: 0.1rem solid #d5d5d5; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt ul li { height: 4rem; padding: 1rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: #8e8e8e; background: #fff; font-size: 1.6rem; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-btn { border-radius: .6rem .6rem 0 0; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt { display: block; border-radius: 0 0 .6rem .6rem; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt ul li { background: #fff; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt ul li.on { background: #f6f6f6; color: #000; }
+
+.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt ul li:hover { background: #f6f6f6; color: #000; }
 
 .mdBox { display: none; position: fixed; width: 100%; height: 100%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); top: 50%; left: 50%; z-index: 3; background: rgba(0, 0, 0, 0.7); }
 
@@ -505,11 +541,11 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 @media screen and (max-width: 767px) { .wrap .btn-top { bottom: 6rem; right: 1rem; width: 3rem; height: 3rem; }
   .wrap .btn-quick { position: fixed; bottom: 0; -webkit-transform: translateX(-50%); transform: translateX(-50%); left: 50%; width: 100%; border-radius: 0; z-index: 9999; }
-  .wrap main section { padding: 5rem 0; }
-  .wrap main section:not(.sc04):not(.sc05) .inner { width: 100%; max-height: 100vh; overflow: hidden; overflow-y: auto; padding: 8rem 1.5rem 16rem; -webkit-overflow-scrolling: touch; }
+  .wrap main section { padding: 5rem 0; height: 100%; }
+  .wrap main section .inner { max-height: 100%; padding: 5rem 1.5rem; }
   .wrap main section .inner .titBox h2 { font-size: 3rem; line-height: 4rem; word-break: keep-all; }
   .wrap main section .inner .titBox p { padding: 1.2rem 0 4rem; font-size: 1.6rem; line-height: 2rem; }
-  .wrap main section.main .inner { padding: 0; }
+  .wrap main section.main .inner { padding: 10rem 0; }
   .wrap main section.main .inner .titBox h2 { font-size: 4.8rem; line-height: 4.8rem; }
   .wrap main section.main .inner .titBox h2 span { display: block; position: relative; }
   .wrap main section.main .inner .titBox h2 span::after { content: ""; position: absolute; display: inline-block; padding-left: 2rem; width: 5.8rem; height: 5.8rem; top: -2.5rem; background: url("../images/ico_talk_yl.svg") no-repeat center; }
@@ -531,7 +567,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
   .wrap main section.sc03 .inner .conBox .item > div:nth-of-type(2) ul li i { width: 4rem; height: 4rem; }
   .wrap main section.sc03 .inner .conBox .item > div > p, .wrap main section.sc03 .inner .conBox .item > div span { font-size: 1.4rem; }
   .wrap main section.sc03 .inner .conBox .item > div ul li i { width: auto; height: 3rem; background-color: #8e8e8e; -webkit-mask-image: url("../images/ico_user.svg"); mask-image: url("../images/ico_user.svg"); background-size: cover; -webkit-background-size: cover; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
-  .wrap main section.sc04 { background: url("../images/talkpoint_m.png") no-repeat center/cover; }
+  .wrap main section.sc04 { background-size: 100%; padding-top: 50%; }
   .wrap main section.sc05 { background: #000; }
   .wrap main section.sc05 .inner { padding: 0; }
   .wrap main section.sc05 .inner .iframe iframe { border-radius: 0; width: 100%; height: 100%; }

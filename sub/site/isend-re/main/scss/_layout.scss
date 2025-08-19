@@ -10,6 +10,8 @@ textarea.error {
     position: relative;
     background: url("/contents/images/common/icon_problem_red.png") 99% center no-repeat;
     background-size: 1.2rem 1.2rem;
+    font-size: $ft-16;
+    color: $cr-gr03
 }
 
 .selectBox {
@@ -32,7 +34,6 @@ textarea.error {
 
 .wrap {
     width: 100vw;
-    height: calc(1vh * 100);
 
     &.other {
         header {
@@ -214,7 +215,7 @@ textarea.error {
                     }
 
                     .swiper {
-                        max-width: 110rem;
+                        max-width: 120rem;
                         opacity: 0;
 
                         .swiper-slide {
@@ -411,7 +412,8 @@ textarea.error {
 
                                         span {
                                             display: contents;
-                                            color: #000
+                                            color: #000;
+                                            font-family: $ft-b;
                                         }
                                     }
                                 }
@@ -476,6 +478,7 @@ textarea.error {
 
                             strong {
                                 font-size: 1.8rem;
+                                font-family: $ft-b;
                             }
 
                             .ico-arrow {
@@ -506,6 +509,14 @@ textarea.error {
                                 >p,
                                 span {
                                     font-size: $ft-14;
+                                    font-family: $ft-m;
+                                }
+
+                                span {
+                                    &:last-of-type {
+                                        font-family: $ft-r;
+                                        color: $cr-gr01
+                                    }
                                 }
 
                                 ul {
@@ -577,7 +588,7 @@ textarea.error {
             }
 
             &.sc04 {
-                background: #000 url('../images/talkpoint.png') no-repeat center / contain;
+                background: #000 url('../images/talkpoint.png') no-repeat center / 75%;
             }
 
             &.sc05 {
@@ -716,7 +727,7 @@ textarea.error {
 
                                 li {
                                     opacity: 0;
-                                    width: calc(100% / 5);
+                                    width: calc(100% / 5 - 1.6rem);
 
                                     img {
                                         margin: 0 auto;
@@ -794,6 +805,95 @@ textarea.error {
 
                             >div {
                                 padding-top: 1rem;
+                            }
+                        }
+
+                        .comboBox {
+                            position: relative;
+
+                            >input {
+                                margin-top: .5rem;
+                            }
+
+                            .cb-btn {
+                                @include flex($align:ct, $con:bt);
+                                border: .1rem solid $cr-gr03;
+                                width: 100%;
+                                height: 4.6rem;
+                                border-radius: .6rem;
+                                background: #fff;
+                                color: $cr-gr03;
+                                font-size: $ft-16;
+                                padding: 1rem;
+                                cursor: pointer;
+
+                                span {
+                                    width: calc(100% - 2rem);
+                                }
+
+                                i {
+                                    position: absolute;
+                                    z-index: 2;
+                                    right: 1rem;
+                                    width: $ft-16;
+                                    height: $ft-18;
+                                    background: url($url-images + "ico_ar_gy.svg") no-repeat right center/100%;
+                                }
+
+                                &.on {
+                                    span {
+                                        color: $cr-gr01
+                                    }
+                                }
+                            }
+
+                            .cb-dt {
+                                display: none;
+                                position: absolute;
+                                width: 100%;
+                                background: #fff;
+                                border: .1rem solid $cr-gr03;
+
+                                ul {
+                                    li {
+                                        height: 4rem;
+                                        padding: 1rem;
+                                        @include flex($align:ct);
+                                        color: $cr-gr01;
+                                        background: #fff;
+                                        font-size: $ft-16;
+                                    }
+                                }
+                            }
+
+                            &.on {
+                                .cb-btn {
+                                    border-radius: .6rem .6rem 0 0;
+
+
+                                }
+
+                                .cb-dt {
+                                    display: block;
+                                    border-radius: 0 0 .6rem .6rem;
+
+                                    ul {
+                                        li {
+                                            background: #fff;
+
+                                            &.on {
+                                                background: #f6f6f6;
+                                                color: #000;
+
+                                            }
+
+                                            &:hover {
+                                                background: #f6f6f6;
+                                                color: #000;
+                                            }
+                                        }
+                                    }
+                                }
                             }
                         }
                     }
@@ -1100,19 +1200,22 @@ textarea.error {
         main {
             section {
                 padding: 5rem 0;
-
-                &:not(.sc04):not(.sc05) {
-                    .inner {
-                        width: 100%;
-                        max-height: 100vh;
-                        overflow: hidden;
-                        overflow-y: auto;
-                        padding: 8rem 1.5rem 16rem;
-                        -webkit-overflow-scrolling: touch;
-                    }
-                }
+                height: 100%;
+                // &:not(.sc04):not(.sc05) {
+                //     .inner {
+                //         width: 100%;
+                //         max-height: 100vh;
+                //         overflow: hidden;
+                //         overflow-y: auto;
+                //         padding: 8rem 1.5rem 16rem;
+                //         -webkit-overflow-scrolling: touch;
+                //     }
+                // }
 
                 .inner {
+                    max-height: 100%;
+                    padding: 5rem 1.5rem;
+
                     .titBox {
                         h2 {
                             font-size: 3rem;
@@ -1130,7 +1233,7 @@ textarea.error {
 
                 &.main {
                     .inner {
-                        padding: 0;
+                        padding: 10rem 0;
 
                         .titBox {
                             h2 {
@@ -1275,7 +1378,9 @@ textarea.error {
                 }
 
                 &.sc04 {
-                    background: url('../images/talkpoint_m.png') no-repeat center / cover;
+                    // background: url('../images/talkpoint_m.png') no-repeat center / cover;
+                    background-size: 100%;
+                    padding-top: 50%;
                 }
 
                 &.sc05 {

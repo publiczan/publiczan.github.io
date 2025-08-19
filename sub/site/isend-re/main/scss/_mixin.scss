@@ -221,22 +221,22 @@ $url-images: "../images/";
 }
 
 @mixin scrollbar {
-    width: 0;
-    height: .6rem;
+    width: 6px;
+    height: 6px;
     background: #fff;
 }
 
 @mixin scrollbar-thumb {
-    height: .6rem;
+    height: 6px;
     background: #d2d2d2;
-    border-radius: .6rem;
+    border-radius: 3px;
 }
 
 @mixin select-scrollbar {
-    width: .6rem;
-    height: .6rem;
+    width: 6px;
+    height: 6px;
     background: #fff;
-    border-left: .1rem solid transparent
+    border-left: 1px solid #9ba0a2
 }
 
 @mixin scrollbarA {
