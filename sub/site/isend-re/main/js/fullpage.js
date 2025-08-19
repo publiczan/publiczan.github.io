@@ -127,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('wheel', (e) => {
         if (document.querySelector('.mdBox.on')) return;
 
-        const scrollEl = e.target.closest('.scroll-area');
+        const scrollEl = e.target.closest('.inner');
 
         if (scrollEl) {
             const {
@@ -161,7 +161,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('touchmove', e => {
 
         if (document.querySelector('.mdBox.on')) return;
-        const scrollEl = e.target.closest('.scroll-area');
+        const scrollEl = e.target.closest('.inner');
         if (scrollEl) {
             const {
                 scrollTop,
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const endY = e.changedTouches[0].clientY;
         const delta = endY - startY;
 
-        const scrollEl = e.target.closest('.scroll-area');
+        const scrollEl = e.target.closest('.inner');
         if (scrollEl) {
             const {
                 scrollTop,
