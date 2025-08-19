@@ -32,7 +32,7 @@ var imgev = function () {
     $(function () {
         const $conBox = $('.step.sc07 .conBox .item ul');
         let html = '';
-        for (let i = 1; i <= 25; i++) {
+        for (let i = 1; i <= 20; i++) {
             html += `
             <li><picture><img src ="../images/pt_logo_${String(i).padStart(2, '0')}.png"alt =""></picture></li>
             `;
