@@ -128,10 +128,6 @@ textarea.error {
         @include flex($align:ct, $con:ct);
         gap: 1rem;
 
-        &.m {
-            display: none;
-        }
-
         i {
             width: 1.8rem;
             height: 1.8rem;
@@ -1098,10 +1094,6 @@ textarea.error {
             width: 100%;
             border-radius: 0;
             z-index: 9999;
-
-            &.m {
-                display: flex;
-            }
         }
 
         main {
@@ -1454,10 +1446,6 @@ textarea.error {
                                 a {
                                     display: contents;
                                 }
-                            }
-
-                            .btn-quick {
-                                display: none;
                             }
                         }
                     }

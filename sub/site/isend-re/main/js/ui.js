@@ -40,7 +40,32 @@ var imgev = function () {
         $conBox.html(html);
     });
 };
+var quickbtn = function () {
+    $(function () {
+
+        var $btn = $(".sc08 .inner .inputBox .btn-quick");
+        var $wrap = $(".wrap");
+
+        if ($btn.length && $wrap.length) {
+            if ($(window).width() <= 767) {
+                $wrap.append($btn);
+                $btn.css({
+                    position: "fixed",
+                    bottom: "0rem"
+                });
+            } else {
+                // PC이면 다시 원래 위치
+                $(".sc08 .inner .inputBox").append($btn);
+                $btn.css({
+                    position: "",
+                    bottom: ""
+                });
+            }
+        } else {}
+    });
+};
 $(function () {
     clickev()
     imgev()
+    quickbtn()
 });
