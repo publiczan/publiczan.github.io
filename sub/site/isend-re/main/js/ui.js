@@ -28,7 +28,6 @@ var clickev = function () {
                 $comboBox.find('input.cb-input').remove();
                 $('<input type="text" class="cb-input" placeholder="직접 입력">').insertAfter($comboBox.find('.cb-btn'));
             } else {
-                // ot 아닌 li 클릭 시 input 제거
                 $comboBox.find('input.cb-input').remove();
             }
         });
@@ -97,11 +96,9 @@ var quickbtn = function () {
 var scroll = function () {
     $(function () {
         var $btn = $('.btn-top');
-
         $(window).on('scroll', function () {
             $btn.toggle($(this).scrollTop() > 100);
         });
-
         $btn.on('click', function () {
             $('html, body').animate({
                 scrollTop: 0
@@ -120,13 +117,17 @@ var animation = function () {
                 const rect = $el[0].getBoundingClientRect();
                 const winHeight = window.innerHeight;
                 const contentHeight = rect.bottom - rect.top;
-                if (rect.top <= winHeight - (contentHeight * exposurePercentage / 100) && rect.bottom >= (contentHeight * exposurePercentage / 100)) {
+                if (rect.top <= winHeight - (contentHeight * exposurePercentage / 30) && rect.bottom >= (contentHeight * exposurePercentage / 30)) {
                     $el.addClass('on');
                 }
                 if (loop && (rect.bottom <= 0 || rect.top >= window.innerHeight)) {
                     $el.removeClass('on');
                 }
             });
+            $('.wrap').toggleClass(
+                'other',
+                $('.sc04').hasClass('on') || $('.sc05').hasClass('on')
+            );
         }).scroll();
     });
 }

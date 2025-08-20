@@ -36,22 +36,9 @@ textarea.error {
     width: 100vw;
 
     &.other {
-        header {
-            .inner {
-                h1 {
-                    a {
-                        background: url($url-images + "logo_mibI_wh.svg") no-repeat center / 100%
-                    }
-                }
-            }
-        }
-    }
 
-    @media screen and(max-width: 767px) {
-        &:not(.other) {
-            header {
-                background: rgba(255, 255, 255, 0.9);
-            }
+        header {
+            background: rgba(255, 255, 255, .9);
         }
     }
 
@@ -144,7 +131,7 @@ textarea.error {
 
         section {
             position: relative;
-            height: calc(1vh * 100);
+            height: auto;
             overflow: hidden;
             box-sizing: border-box;
             @include flex($align:ct);
@@ -154,6 +141,7 @@ textarea.error {
                 width: 100%;
                 max-width: 160rem;
                 margin: 0 auto;
+                padding: 15rem $ft-15;
 
                 .titBox {
                     position: relative;
@@ -588,10 +576,13 @@ textarea.error {
             }
 
             &.sc04 {
-                background: #000 url('../images/talkpoint.png') no-repeat center / 75%;
+                background: #000 url('../images/talkpoint.png') no-repeat center bottom / 75%;
+                padding-top: 50%;
             }
 
             &.sc05 {
+                padding: 0;
+
                 .inner {
                     .iframe {
                         @include flex($align:ct, $con:ct);
@@ -770,7 +761,7 @@ textarea.error {
                     @include flex($align:ct, $con:ev);
 
                     .inputBox {
-                        max-width: 80rem;
+                        max-width: 70rem;
 
                         .item {
                             @include flex($wrap:wr, $con:bt);
@@ -778,7 +769,7 @@ textarea.error {
 
 
                             >div {
-                                width: calc(100% / 2 - 7.5rem);
+                                width: calc(100% / 2 - 5rem);
 
                                 >div {
                                     &:nth-of-type(2) {
@@ -850,6 +841,7 @@ textarea.error {
                             .cb-dt {
                                 display: none;
                                 position: absolute;
+                                top: 4.5rem;
                                 width: 100%;
                                 background: #fff;
                                 border: .1rem solid $cr-gr03;
@@ -860,7 +852,6 @@ textarea.error {
                                         padding: 1rem;
                                         @include flex($align:ct);
                                         color: $cr-gr01;
-                                        background: #fff;
                                         font-size: $ft-16;
                                     }
                                 }
@@ -879,12 +870,9 @@ textarea.error {
 
                                     ul {
                                         li {
-                                            background: #fff;
-
                                             &.on {
                                                 background: #f6f6f6;
                                                 color: #000;
-
                                             }
 
                                             &:hover {
@@ -1165,6 +1153,7 @@ textarea.error {
                         }
 
                         .inputBox {
+
                             .item {
                                 >div {
                                     width: calc(100% / 2 - 1.5rem)
@@ -1200,7 +1189,6 @@ textarea.error {
         main {
             section {
                 padding: 5rem 0;
-                height: 100%;
                 // &:not(.sc04):not(.sc05) {
                 //     .inner {
                 //         width: 100%;
@@ -1233,8 +1221,6 @@ textarea.error {
 
                 &.main {
                     .inner {
-                        padding: 10rem 0;
-
                         .titBox {
                             h2 {
                                 font-size: 4.8rem;
@@ -1344,6 +1330,8 @@ textarea.error {
                                 }
 
                                 >div {
+                                    width: 100%;
+
                                     &:nth-of-type(2) {
                                         padding: 1rem 2rem;
                                         border-radius: 2.4rem;
@@ -1351,8 +1339,9 @@ textarea.error {
                                         ul {
                                             li {
                                                 i {
-                                                    width: 4rem;
-                                                    height: 4rem;
+                                                    width: 5rem;
+                                                    height: 5rem;
+                                                    margin: 0 auto
                                                 }
                                             }
                                         }
@@ -1367,7 +1356,7 @@ textarea.error {
 
                                         li {
                                             i {
-                                                @include svg("../images/ico_user.svg", auto, 3rem, $cr-gr01);
+                                                @include svg("../images/ico_user.svg", auto, 4rem, $cr-gr01);
                                             }
                                         }
                                     }
@@ -1384,14 +1373,17 @@ textarea.error {
                 }
 
                 &.sc05 {
-                    background: #000;
+                    // background: #000;
+                    padding-bottom: 0;
 
                     .inner {
-                        padding: 0;
+                        padding-bottom: 0;
 
                         .iframe {
+                            height: 52vw;
+
                             iframe {
-                                border-radius: 0;
+                                border-radius: 1rem;
                                 width: 100%;
                                 height: 100%;
                             }
@@ -1522,6 +1514,7 @@ textarea.error {
 
                         .inputBox {
                             max-width: 100%;
+                            width: 100%;
 
                             .item {
                                 flex-direction: column;
@@ -1566,6 +1559,7 @@ textarea.error {
             .titBox {
                 strong {
                     font-size: $ft-16;
+                    line-height: 3rem;
                 }
             }
 

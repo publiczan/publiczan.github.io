@@ -198,9 +198,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap { width: 100vw; }
 
-.wrap.other header .inner h1 a { background: url("../images/logo_mibI_wh.svg") no-repeat center/100%; }
-
-@media screen and (max-width: 767px) { .wrap:not(.other) header { background: rgba(255, 255, 255, 0.9); } }
+.wrap.other header { background: rgba(255, 255, 255, 0.9); }
 
 .wrap header { position: fixed; top: 0; left: 0; width: 100%; height: 10rem; z-index: 2; background: transparent; -webkit-transition: all 0.2s ease-in-out; transition: all 0.2s ease-in-out; }
 
@@ -222,9 +220,9 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main { overflow-x: hidden; width: 100%; position: relative; }
 
-.wrap main section { position: relative; height: calc(1vh * 100); overflow: hidden; -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.wrap main section { position: relative; height: auto; overflow: hidden; -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-.wrap main section .inner { position: relative; width: 100%; max-width: 160rem; margin: 0 auto; }
+.wrap main section .inner { position: relative; width: 100%; max-width: 160rem; margin: 0 auto; padding: 15rem 1.5rem; }
 
 .wrap main section .inner .titBox { position: relative; text-align: center; }
 
@@ -362,7 +360,9 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc03.on .inner .conBox .item .ico-arrow { -webkit-animation: ani 1s .5s ease-in forwards; animation: ani 1s .5s ease-in forwards; }
 
-.wrap main section.sc04 { background: #000 url("../images/talkpoint.png") no-repeat center/75%; }
+.wrap main section.sc04 { background: #000 url("../images/talkpoint.png") no-repeat center bottom/75%; padding-top: 50%; }
+
+.wrap main section.sc05 { padding: 0; }
 
 .wrap main section.sc05 .inner .iframe { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
@@ -430,11 +430,11 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc08 .inner { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: space-evenly; -ms-flex-pack: space-evenly; justify-content: space-evenly; }
 
-.wrap main section.sc08 .inner .inputBox { max-width: 80rem; }
+.wrap main section.sc08 .inner .inputBox { max-width: 70rem; }
 
 .wrap main section.sc08 .inner .inputBox .item { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; gap: 2rem; }
 
-.wrap main section.sc08 .inner .inputBox .item > div { width: calc(100% / 2 - 7.5rem); }
+.wrap main section.sc08 .inner .inputBox .item > div { width: calc(100% / 2 - 5rem); }
 
 .wrap main section.sc08 .inner .inputBox .item > div > div:nth-of-type(2) { margin-top: 2rem; }
 
@@ -458,15 +458,13 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 .wrap main section.sc08 .inner .inputBox .comboBox .cb-btn.on span { color: #8e8e8e; }
 
-.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt { display: none; position: absolute; width: 100%; background: #fff; border: 0.1rem solid #d5d5d5; }
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt { display: none; position: absolute; top: 4.5rem; width: 100%; background: #fff; border: 0.1rem solid #d5d5d5; }
 
-.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt ul li { height: 4rem; padding: 1rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: #8e8e8e; background: #fff; font-size: 1.6rem; }
+.wrap main section.sc08 .inner .inputBox .comboBox .cb-dt ul li { height: 4rem; padding: 1rem; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; color: #8e8e8e; font-size: 1.6rem; }
 
 .wrap main section.sc08 .inner .inputBox .comboBox.on .cb-btn { border-radius: .6rem .6rem 0 0; }
 
 .wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt { display: block; border-radius: 0 0 .6rem .6rem; }
-
-.wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt ul li { background: #fff; }
 
 .wrap main section.sc08 .inner .inputBox .comboBox.on .cb-dt ul li.on { background: #f6f6f6; color: #000; }
 
@@ -541,11 +539,10 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
 
 @media screen and (max-width: 767px) { .wrap .btn-top { bottom: 6rem; right: 1rem; width: 3rem; height: 3rem; }
   .wrap .btn-quick { position: fixed; bottom: 0; -webkit-transform: translateX(-50%); transform: translateX(-50%); left: 50%; width: 100%; border-radius: 0; z-index: 9999; }
-  .wrap main section { padding: 5rem 0; height: 100%; }
+  .wrap main section { padding: 5rem 0; }
   .wrap main section .inner { max-height: 100%; padding: 5rem 1.5rem; }
   .wrap main section .inner .titBox h2 { font-size: 3rem; line-height: 4rem; word-break: keep-all; }
   .wrap main section .inner .titBox p { padding: 1.2rem 0 4rem; font-size: 1.6rem; line-height: 2rem; }
-  .wrap main section.main .inner { padding: 10rem 0; }
   .wrap main section.main .inner .titBox h2 { font-size: 4.8rem; line-height: 4.8rem; }
   .wrap main section.main .inner .titBox h2 span { display: block; position: relative; }
   .wrap main section.main .inner .titBox h2 span::after { content: ""; position: absolute; display: inline-block; padding-left: 2rem; width: 5.8rem; height: 5.8rem; top: -2.5rem; background: url("../images/ico_talk_yl.svg") no-repeat center; }
@@ -563,14 +560,16 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
   .wrap main section.sc03 .inner .conBox .item { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; gap: 1rem; }
   .wrap main section.sc03 .inner .conBox .item strong { font-size: 1.6rem; }
   .wrap main section.sc03 .inner .conBox .item .ico-arrow { width: 2.3rem; height: 2.5rem; -webkit-transform: rotate(90deg); transform: rotate(90deg); }
+  .wrap main section.sc03 .inner .conBox .item > div { width: 100%; }
   .wrap main section.sc03 .inner .conBox .item > div:nth-of-type(2) { padding: 1rem 2rem; border-radius: 2.4rem; }
-  .wrap main section.sc03 .inner .conBox .item > div:nth-of-type(2) ul li i { width: 4rem; height: 4rem; }
+  .wrap main section.sc03 .inner .conBox .item > div:nth-of-type(2) ul li i { width: 5rem; height: 5rem; margin: 0 auto; }
   .wrap main section.sc03 .inner .conBox .item > div > p, .wrap main section.sc03 .inner .conBox .item > div span { font-size: 1.4rem; }
-  .wrap main section.sc03 .inner .conBox .item > div ul li i { width: auto; height: 3rem; background-color: #8e8e8e; -webkit-mask-image: url("../images/ico_user.svg"); mask-image: url("../images/ico_user.svg"); background-size: cover; -webkit-background-size: cover; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
+  .wrap main section.sc03 .inner .conBox .item > div ul li i { width: auto; height: 4rem; background-color: #8e8e8e; -webkit-mask-image: url("../images/ico_user.svg"); mask-image: url("../images/ico_user.svg"); background-size: cover; -webkit-background-size: cover; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: center; mask-position: center; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; }
   .wrap main section.sc04 { background-size: 100%; padding-top: 50%; }
-  .wrap main section.sc05 { background: #000; }
-  .wrap main section.sc05 .inner { padding: 0; }
-  .wrap main section.sc05 .inner .iframe iframe { border-radius: 0; width: 100%; height: 100%; }
+  .wrap main section.sc05 { padding-bottom: 0; }
+  .wrap main section.sc05 .inner { padding-bottom: 0; }
+  .wrap main section.sc05 .inner .iframe { height: 52vw; }
+  .wrap main section.sc05 .inner .iframe iframe { border-radius: 1rem; width: 100%; height: 100%; }
   .wrap main section.sc06 .inner { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   .wrap main section.sc06 .inner .titBox { text-align: center; }
   .wrap main section.sc06 .inner .conBox { width: 100%; }
@@ -590,7 +589,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
   .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(-n+3), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+7):nth-child(-n+9), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+13):nth-child(-n+15), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+19):nth-child(-n+21) { -webkit-animation: slideIn 30s 1s linear infinite !important; animation: slideIn 30s 1s linear infinite !important; }
   .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+4):nth-child(-n+6), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+10):nth-child(-n+12), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+16):nth-child(-n+18), .wrap main section.sc07.on .inner .conBox .item ul li:nth-child(n+22):nth-child(-n+25) { -webkit-animation: slideRe 25s 1s linear infinite !important; animation: slideRe 25s 1s linear infinite !important; }
   .wrap main section.sc08 .inner { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
-  .wrap main section.sc08 .inner .inputBox { max-width: 100%; }
+  .wrap main section.sc08 .inner .inputBox { max-width: 100%; width: 100%; }
   .wrap main section.sc08 .inner .inputBox .item { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; gap: 1rem; }
   .wrap main section.sc08 .inner .inputBox .item > div { width: 100%; }
   .wrap main section.sc08 .inner .inputBox .item > div > div:nth-of-type(2) { margin-top: 1rem; }
@@ -598,7 +597,7 @@ input[type="text"].error, input[type="password"].error, input[type="number"].err
   .wrap main section.sc08 .inner .inputBox .checkBox input[type="checkBox"] + label { font-size: 1.4rem; line-height: 1.2; }
   .wrap main section.sc08 .inner .inputBox .checkBox a { display: contents; }
   .mdBox .mdItem { max-width: 100%; padding: 1rem; }
-  .mdBox .mdItem .titBox strong { font-size: 1.6rem; }
+  .mdBox .mdItem .titBox strong { font-size: 1.6rem; line-height: 3rem; }
   .mdBox .mdItem .conBox { padding: 1rem; margin: 1rem auto; }
   .mdBox .mdItem .conBox > strong { font-size: 1.4rem; }
   .mdBox .mdItem .conBox > div { font-size: 1.3rem; line-height: 1.5; }
