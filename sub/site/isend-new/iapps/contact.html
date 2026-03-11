@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>문의하기</title>
+
+    <!-- 공통 -->
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+
+    <!-- 문의하기 -->
+    <link rel="stylesheet" href="./css/member.css">
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="contents contacat iapps">
+            <div class="form_wrap">
+                <h1 class="logo"><a href="/">아이앱스</a></h1>
+                <div class="form_box">
+                    <h2>문의하기</h2>
+                    <div class="input_box error">
+                        <p class="label required">회사명</p>
+                        <input type="text" placeholder="회사명을 입력해주세요." required>
+                        <p class="error_msg">필수 입력사항입니다.</p>
+                    </div>
+                    <div class="input_box">
+                        <p class="label required">이메일</p>
+                        <input type="email" placeholder="이메일을 입력해주세요." required>
+                        <p class="error_msg">필수 입력사항입니다.</p>
+                    </div>
+                    <div class="input_box">
+                        <p class="label required">담당자명</p>
+                        <input type="text" placeholder="담당자명을 입력해주세요." required>
+                        <p class="error_msg">필수 입력사항입니다.</p>
+                    </div>
+                    <div class="input_box">
+                        <p class="label required">연락처</p>
+                        <input type="number" placeholder="연락처를 입력해주세요." required>
+                        <p class="error_msg">필수 입력사항입니다.</p>
+                    </div>
+                    <div class="input_box">
+                        <p class="label">홈페이지 URL</p>
+                        <input type="text" placeholder="URL을 입력해주세요.">
+                    </div>
+                    <div class="text_box">
+                        <p class="label">문의 내용</p>
+                        <textarea placeholder="상세 문의 내용을 입력해주세요 (최대 1,000자)"></textarea>
+                        <span class="count">0/1000</span>
+                    </div>
+                    <div class="agree_box">
+                        <input type="checkbox" id="agree" hidden>
+                        <label for="agree">문의 응대를 위한 <span class="agree_show">개인정보 수집/이용</span>에 동의합니다. <span
+                                class="required">(필수)</span></label>
+                    </div>
+                    <div class="btn_box">
+                        <button type="button" class="prev_btn" disabled>이전</button>
+                        <button type="button" class="inquiry_btn">문의하기</button>
+                    </div>
+                </div>
+            </div>
+            <div class="complete_wrap" style="display: none;">
+                <h1 class="logo"><a href="/">아이앱스</a></h1>
+                <div class="complete_box">
+                    <p>문의가 접수되었습니다.<br>
+                        2~3 영업일 이내<br>
+                        담당자가 연락드릴 예정입니다.</p>
+                    <button type="button" class="home_btn">메인으로 가기</button>
+                </div>
+            </div>
+            <div class="img_wrap">
+                <img src="./images/common/img_introduce.png" alt="아이앱스">
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const formWrap = document.querySelector(".form_wrap");
+            const completeWrap = document.querySelector(".complete_wrap");
+            const inquiryBtn = document.querySelector(".inquiry_btn");
+            const homeBtn = document.querySelector(".home_btn");
+
+            inquiryBtn.addEventListener("click", () => {
+                formWrap.style.display = "none";
+                completeWrap.style.display = "block";
+            });
+        });
+    </script>
+
+</body>
+
+</html>

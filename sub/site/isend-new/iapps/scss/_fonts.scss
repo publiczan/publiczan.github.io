@@ -1,0 +1,39 @@
+@charset 'utf-8';
+@use "sass:string";
+
+$font-name: "Pretendard";
+$font-path : "../fonts/";
+
+@mixin font-face(
+  $font-name,
+  $style,
+  $weight: normal
+) {  
+  $file-name: $font-path + $font-name + "-" + $style;
+
+  @font-face {
+    font-family: string.quote($font-name);
+
+    // 공백을 하이픈 기호로 변경하는 폰트 이름
+    $space-to-hypened-font-name: str-replace($font-name, ' ', '-');
+    // 공백을 제거하는 폰트 이름
+    $removed-space-font-name: str-replace($font-name, ' ', '');
+
+    // local() + woff + woff2만 사용
+    src: local("#{$removed-space-font-name}"),
+         local("#{$font-name}"),
+         local("#{$space-to-hypened-font-name}"),
+         url("#{$file-name}.woff2") format("woff2"),
+         url("#{$file-name}.woff") format("woff");
+
+    font-style: $style;
+    font-weight: $weight;
+  }
+}
+
+@include font-face($font-name, "Regular", 400);
+@include font-face($font-name, "Medium",500);
+@include font-face($font-name, "SemiBold",600);
+@include font-face($font-name, "Bold",700);
+@include font-face($font-name, "ExtraBold",800);
+@include font-face($font-name, "Black",900);

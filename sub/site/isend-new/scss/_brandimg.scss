@@ -1,0 +1,30 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin img_brand_sc03_card_01 {
+    @include image($name:'img_sc03_card_01', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_sc03_card_02 {
+    @include image($name:'img_sc03_card_02', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_sc03_arrow {
+    @include image($name:'img_sc03_arrow', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_phone_top_m {
+    @include image($name:'img_main_phone_top_m', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_phone_bottom_m {
+    @include image($name:'img_main_phone_bottom_m', $folder:'brand');
+    background-size: 100%;
+}

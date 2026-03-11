@@ -1,0 +1,59 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin img_iapps_sc01_img_01 {
+    @include image($name:'img_iapps_sc01_img_01', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc01_img_02 {
+    @include image($name:'img_iapps_sc01_img_02', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_emoji {
+    @include image($name:'img_iapps_emoji', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc04_point_ico_01 {
+    @include image($name:'img_iapps_sc04_point_ico_01', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc04_point_ico_02 {
+    @include image($name:'img_iapps_sc04_point_ico_02', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc04_point_ico_03 {
+    @include image($name:'img_iapps_sc04_point_ico_03', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc04_coupon_ico {
+    @include image($name:'img_iapps_sc04_coupon_ico', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc07_ico_01 {
+    @include image($name:'img_iapps_sc07_ico_01', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc07_ico_02 {
+    @include image($name:'img_iapps_sc07_ico_02', $folder:'iapps');
+    background-size: 100%;
+}
+
+@mixin img_iapps_sc07_ico_03 {
+    @include image($name:'img_iapps_sc07_ico_03', $folder:'iapps');
+    background-size: 100%;
+}
+@mixin img_iapps_sc07_arrow {
+    @include image($name:'img_iapps_sc07_arrow', $folder:'iapps');
+    background-size: 100%;
+}

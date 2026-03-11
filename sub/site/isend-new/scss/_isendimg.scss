@@ -1,0 +1,60 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin img_send_sc01_bg {
+    @include image($name:'img_sc01_bg', $folder:'isend');
+    background-size: cover;
+}
+
+@mixin img_send_sc01_icon_01 {
+    @include image($name:'img_sc01_icon_01', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc01_icon_02 {
+    @include image($name:'img_sc01_icon_02', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc01_icon_03 {
+    @include image($name:'img_sc01_icon_03', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc03_bg {
+    @include image($name:'img_sc03_bg', $folder:'isend');
+    background-size: cover;
+}
+
+@mixin img_send_sc05_object_01 {
+    @include image($name:'img_sc05_object_01', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc05_object_02 {
+    @include image($name:'img_sc05_object_02', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc05_object_03 {
+    @include image($name:'img_sc05_object_03', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc05_object_04 {
+    @include image($name:'img_sc05_object_04', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc05_object_05 {
+    @include image($name:'img_sc05_object_05', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_sc05_new {
+    @include image($name:'img_sc05_new', $folder:'isend');
+    background-size: 100%;
+}

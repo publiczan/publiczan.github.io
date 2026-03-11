@@ -1,0 +1,407 @@
+@charset "utf-8";
+
+$font-name: "Pretendard",
+sans-serif;
+$base-rem-size: 10;
+
+// 단위 제거
+@function remove-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+// rem 계산
+@function rem($px) {
+    // $px이 20px이라면, (20px / 1px)은 순수 숫자 20이 됩니다.
+    $unitless-px: ($px / ($px * 0 + 1));
+    $unitless-base: ($base-rem-size / ($base-rem-size * 0 + 1));
+
+    @return ($unitless-px / $unitless-base) * 1rem;
+}
+
+@mixin ftR {
+    font-family: $font-name;
+    font-weight: 400;
+}
+
+@mixin ftM {
+    font-family: $font-name;
+    font-weight: 500;
+}
+
+@mixin ftSB {
+    font-family: $font-name;
+    font-weight: 600;
+}
+
+@mixin ftB {
+    font-family: $font-name;
+    font-weight: 700;
+}
+
+@mixin ftEB {
+    font-family: $font-name;
+    font-weight: 800;
+}
+
+@mixin ftBK {
+    font-family: $font-name;
+    font-weight: 900;
+}
+
+@mixin ellipsis($lines: 1) {
+    @if ($lines==1) {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+}
+
+/* layout */
+@mixin flex($align, $justify, $gap:0, $direction: row) {
+    display: flex;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    flex-direction: $direction;
+}
+
+@mixin centerX($type: absolute, $top: null, $bottom: null) {
+    @if($type==fixed or $type==absolute) {
+        position: $type;
+        left: 50%;
+        top: $top;
+        bottom: $bottom;
+        transform: translateX(-50%);
+    }
+}
+
+@mixin centerY($type: absolute, $left: null, $right: null) {
+    @if($type==fixed or $type==absolute) {
+        position: $type;
+        top: 50%;
+        left: $left;
+        right: $right;
+        transform: translateY(-50%);
+    }
+}
+
+@mixin centerXY($type: absolute) {
+    @if($type==fixed or $type==absolute) {
+        position: $type;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+
+@mixin flex-pos($d: flex, $fd: row, $jc: start, $ai: stretch, $g: normal, $fw: nowrap) {
+    display: $d;
+    flex-direction: $fd;
+    justify-content: $jc;
+    align-items: $ai;
+    gap: $g;
+    flex-wrap: $fw;
+}
+
+
+@mixin absolute($top: null, $left: null, $bottom: null, $right: null) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+}
+
+@mixin fixed($top: null, $left: null, $bottom: null, $right: null) {
+    position: fixed;
+    top: $top;
+    left: $left;
+    bottom: $bottom;
+    right: $right;
+}
+
+@mixin image-set($bs: cover, $bp: center) {
+    background-size: $bs;
+    background-repeat: no-repeat;
+    background-position: $bp;
+    background-color: transparent;
+}
+
+@mixin pos-center() {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin text-hide() {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 0;
+}
+
+@mixin content($display: inline-block) {
+    content: '';
+    display: $display;
+}
+
+@mixin scroll {
+    &::-webkit-scrollbar {
+        width: 5px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: #d8d8d8;
+        border-radius: 2.5px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+}
+
+@mixin button($width, $height, $radius) {
+    width: $width;
+    height: $height;
+    border-radius: $radius;
+    background: $point;
+    color: $white;
+    transition: all 0.3s ease-in-out;
+
+    &:hover {
+        background: #7a3eee;
+    }
+
+    &.gray {
+        background: #ececec;
+        color: $ft-sub-color2;
+
+        &:hover {
+            background: #d6d6d6;
+        }
+    }
+
+    &:disabled {
+        background: #d5d5d5;
+        color: $white;
+    }
+}
+
+@mixin select($width, $height) {
+    .select_btn {
+        position: relative;
+        width: $width;
+        height: $height;
+        border-radius: rem(8);
+        background: $white;
+        border: 1px solid #c9c9c9;
+        text-align: left;
+        padding: 0 rem(15);
+        @include ftR;
+        font-size: rem(14);
+        color: $ft-main-color;
+
+        &::after {
+            @include content;
+            @include img_dropdown;
+            width: rem(13);
+            height: rem(7);
+            @include centerY($right: rem(15));
+        }
+    }
+
+    .custom_select {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+
+        margin-top: rem(3);
+        @include absolute;
+        width: $width;
+        border-radius: rem(8);
+        background: $white;
+        border: 1px solid #c9c9c9;
+        box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.1);
+        z-index: 10;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #e9e9e9 transparent;
+
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #e9e9e9;
+            border-radius: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        li {
+            @include ftR;
+            font-size: rem(14);
+            color: $ft-main-color;
+            cursor: pointer;
+            background: $white;
+            padding: rem(10) rem(15);
+
+            &:first-of-type {
+                padding-top: rem(15);
+            }
+
+            &:last-of-type {
+                padding-bottom: rem(15);
+            }
+
+            &:hover {
+                background: rgba(0, 0, 0, 0.05);
+            }
+        }
+    }
+}
+
+@mixin fadeup {
+    transform: translateY(70px);
+    opacity: 0;
+    transition: 1s;
+}
+
+@mixin fadeupOn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+@mixin fadeupDelay {
+    transform: translateY(70px);
+    opacity: 0;
+    transition: 1.2s;
+    transition-delay: 0.6s;
+}
+
+@mixin fadedown {
+    transform: translateY(-70px);
+    opacity: 0;
+    transition: 1s;
+}
+
+@mixin fadedownOn {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+@mixin faderight {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1.2s;
+}
+
+@mixin faderightOn {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@mixin fadeleft {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: 1s;
+}
+
+@mixin fadeleftOn {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+@mixin scroll {
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #2f3542;
+        border-radius: 10px;
+    }
+}
+
+@mixin scroll_sm {
+    &::-webkit-scrollbar {
+        width: 3px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #b8b8b8;
+        border-radius: 30px;
+    }
+}
+
+@mixin checkBox {
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+    gap: 5px;
+    width: 100%;
+    padding-left: 2rem;
+
+    input {
+        &[type="checkbox"] {
+            +label {
+                cursor: pointer;
+                width: 100%;
+                max-width: 100%;
+                height: 40px;
+                margin: 0;
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                font-size: 16px;
+                cursor: pointer;
+                gap: 8px;
+
+                // @media screen and (max-width: 767px) {
+                //     align-items: flex-start;
+                //     font-size: $ft-14;
+                // }
+
+                &::before {
+                    //@include beforeIco;
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+                    background: url('./../images/common/ico_chk_off.png') no-repeat center / cover;
+                }
+            }
+
+            &:checked {
+                +label {
+                    &::before {
+                        background: url('./../images/common/ico_chk.png') no-repeat center / cover;
+
+                    }
+                }
+            }
+
+            &:disabled {
+                +label {
+                    &::before {
+                        background: url('./../images/common/ico_chk_off.png') no-repeat center / cover;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,463 @@
+@charset 'utf-8';
+
+.contents {
+    .sc01 {
+        background: $white;
+
+        .inner {
+            padding: rem(100) 0;
+            text-align: center;
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $ft-main-color;
+                text-align: center;
+                line-height: 1.2;
+                @include fadeup;
+
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+            }
+
+            .desc {
+                margin-top: rem(20);
+                @include ftR;
+                font-size: rem(40);
+                line-height: rem(52);
+                color: $ft-main-color;
+                @include fadeup;
+                transition-delay: 0.6s;
+
+                span {
+                    @include ftB;
+                }
+            }
+
+            .content_box {
+                margin-top: rem(60);
+                @include flex(center, center, rem(95));
+
+                li {
+                    transform-style: preserve-3d;
+                    transform: rotateY(90deg);
+                    opacity: 0;
+                    transition: transform 1s ease, opacity 0.7s ease;
+                    position: relative;
+
+                    img {
+                        width: rem(273);
+                        aspect-ratio: 323/580;
+                        object-fit: contain;
+                    }
+
+                    &:nth-child(1) {
+                        transition-delay: 1.0s;
+                    }
+
+                    &:nth-child(2) {
+                        transition-delay: 1.4s;
+                    }
+
+                    &:nth-child(3) {
+                        transition-delay: 1.8s;
+                    }
+                }
+            }
+
+            .sc01Swiper {
+                display: none;
+            }
+        }
+
+        &.on {
+            h2 {
+                @include fadeupOn;
+            }
+
+            .desc {
+                @include fadeupOn;
+            }
+
+            .content_box {
+                li {
+                    transform: rotateY(0);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .sc02 {
+        @include img_ireview_sc02_bg;
+
+        .inner {
+            padding: rem(200) 0;
+            text-align: center;
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $white;
+                text-align: center;
+                @include fadeup;
+                line-height: 1.2;
+
+                span {
+                    @include ftB;
+                    font-size: rem(60);
+                    color: $point;
+                }
+            }
+
+            .desc {
+                margin-top: rem(20);
+                @include ftR;
+                font-size: rem(40);
+                line-height: rem(52);
+                color: $white;
+                @include fadeup;
+                transition-delay: 0.6s;
+            }
+        }
+
+        &.on {
+            h2 {
+                @include fadeupOn;
+            }
+
+            .desc {
+                @include fadeupOn;
+            }
+        }
+    }
+
+    .sc03 {
+        background: $white;
+
+        .inner {
+            padding: rem(100) 0 0;
+            text-align: center;
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                line-height: 1.2;
+                color: $ft-main-color;
+                text-align: center;
+                @include fadeup;
+
+                span {
+                    color: #3f90ef;
+                }
+
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+            }
+
+            .desc {
+                margin-top: rem(20);
+                @include ftR;
+                font-size: rem(40);
+                line-height: rem(52);
+                color: $ft-main-color;
+                @include fadeup;
+                transition-delay: 0.6s;
+            }
+        }
+
+        &.on {
+            h2 {
+                @include fadeupOn;
+            }
+
+            .desc {
+                @include fadeupOn;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+
+    .contents {
+        .sc01 {
+            .inner {
+                h2 {
+                    font-size: rem(48);
+                    line-height: rem(66);
+                }
+
+                .desc {
+                    font-size: rem(30);
+                    line-height: rem(46);
+                }
+
+                .content_box {
+                    gap: rem(30);
+                }
+            }
+        }
+
+        .sc02 {
+            .inner {
+                h2 {
+                    font-size: rem(48);
+                    line-height: rem(66);
+
+                    span {
+                        font-size: rem(48);
+                    }
+                }
+
+                .desc {
+                    font-size: rem(30);
+                    line-height: rem(46);
+                }
+            }
+        }
+
+        .sc03 {
+            .inner {
+                h2 {
+                    font-size: rem(48);
+                    line-height: rem(66);
+                }
+
+                .desc {
+                    font-size: rem(30);
+                    line-height: rem(46);
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        .contents {
+            section {
+                &.main {
+                    .swiper {
+                        .swiper-wrapper {
+                            .swiper-slide {
+                                &.ireview {
+                                    .inner {
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        .txt_box {
+                                            @include flex(center, flex-start, 0, column);
+
+                                            .company {
+                                                order: 0;
+                                            }
+
+                                            .desc {
+                                                margin-top: rem(20);
+                                                font-size: rem(24);
+                                                order: 2;
+                                            }
+
+                                            h2 {
+                                                font-size: rem(32);
+                                                line-height: rem(40);
+                                                order: 1;
+                                            }
+
+                                            .more_btn {
+                                                order: 3;
+                                            }
+                                        }
+
+                                        .img_box {
+                                            width: 100%;
+                                            padding: 0 rem(10) rem(67);
+
+                                            .object {
+                                                width: 100%;
+                                                aspect-ratio: 339/208;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper_custom {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .sc01 {
+                .inner {
+                    padding: rem(50) 0;
+
+                    h2 {
+                        font-size: rem(24);
+                        line-height: rem(32);
+
+                        &::before {
+                            width: rem(40);
+                            margin-bottom: rem(30);
+                        }
+                    }
+
+                    .desc {
+                        font-size: rem(18);
+                        line-height: rem(26);
+                    }
+
+                    .content_box {
+                        display: none;
+                    }
+
+                    .sc01Swiper {
+                        position: relative;
+                        display: block;
+                        width: 100%;
+                        height: rem(400);
+                        overflow: visible;
+                        margin: rem(60) auto 0;
+                        @include fadedown;
+                        transition-delay: 1.2s;
+
+                        .swiper-wrapper {
+                            position: relative;
+                            @include flex(center, center);
+                            height: 100%;
+
+                            .swiper-slide {
+                                @include centerXY;
+                                margin: 0 auto;
+                                text-align: center;
+                                transition: all 0.5s ease-in-out;
+                                z-index: 0;
+
+                                &.active {
+                                    width: rem(210);
+                                    z-index: 3;
+                                    transform: translate(-50%, -50%)
+                                }
+
+                                &.prev {
+                                    width: rem(160);
+                                    transform: translate(calc(-50% - 85px), -50%);
+                                    z-index: 2;
+                                }
+
+                                &.next {
+                                    width: rem(160);
+                                    transform: translate(calc(-50% + 85px), -50%);
+                                    z-index: 2;
+                                }
+
+                                img {
+                                    width: 100%;
+                                    height: 100%;
+                                    aspect-ratio: 211/354;
+                                    object-fit: contain;
+                                }
+                            }
+                        }
+
+                        .custom_btn {
+                            @include centerXY;
+                            top: 45%;
+                            width: 100%;
+                            z-index: 5;
+
+                            button {
+                                width: rem(50);
+                                aspect-ratio: 1/1;
+
+                                &.prev_btn {
+                                    @include absolute($left: rem(15));
+                                    @include ico_arrow_left_circle;
+
+                                    &:disabled {
+                                        @include ico_arrow_left_circle_off;
+                                    }
+                                }
+
+                                &.next_btn {
+                                    @include absolute($right: rem(15));
+                                    @include ico_arrow_right_circle;
+
+                                    &:disabled {
+                                        @include ico_arrow_right_circle_off;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.on {
+                    .inner {
+                        .sc01Swiper {
+                            @include fadedownOn;
+                        }
+                    }
+
+                }
+            }
+
+            .sc02 {
+                .inner {
+                    padding: rem(50) 0;
+
+                    h2 {
+                        font-size: rem(24);
+                        line-height: rem(32);
+
+                        span {
+                            font-size: rem(24);
+                        }
+                    }
+
+                    .desc {
+                        font-size: rem(18);
+                        line-height: rem(26);
+                    }
+                }
+            }
+
+            .sc03 {
+                .inner {
+                    padding: rem(50) 0 rem(30);
+
+                    h2 {
+                        font-size: rem(24);
+                        line-height: rem(32);
+
+                        &::before {
+                            width: rem(40);
+                            margin-bottom: rem(30);
+                        }
+                    }
+
+                    .desc {
+                        font-size: rem(18);
+                        line-height: rem(26);
+                    }
+
+                }
+            }
+        }
+    }
+}

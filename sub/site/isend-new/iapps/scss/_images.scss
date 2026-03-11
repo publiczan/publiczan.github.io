@@ -1,0 +1,127 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+/* common */
+@mixin img_logo {
+    @include image($name:'img_logo', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin img_foot_logo {
+    @include image($name:'img_foot_logo', $folder:'common');
+    background-size: contain;
+}
+
+@mixin ico_arrow_down {
+    @include image($name:'ico_arrow_down', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_check {
+    @include image($name:'ico_check', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left {
+    @include image($name:'ico_arrow_left', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right {
+    @include image($name:'ico_arrow_right', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left_circle {
+    @include image($name:'ico_arrow_left_circle', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right_circle {
+    @include image($name:'ico_arrow_right_circle', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left_circle_off {
+    @include image($name:'ico_arrow_left_circle_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right_circle_off {
+    @include image($name:'ico_arrow_right_circle_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_select_btn {
+    @include image($name:'ico_select_btn', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_chk {
+    @include image($name:'ico_chk', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_chk_off {
+    @include image($name:'ico_chk_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin img_contact_bg {
+    @include image($name:'img_contact_bg', $folder:'common');
+    background-size: cover;
+}
+
+@mixin img_complete {
+    @include image($name:'img_complete', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_close {
+    @include image($name:'ico_close', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_contact {
+    @include image($name:'ico_contact', $folder:'common');
+    background-size: rem(46) rem(46);
+}
+
+@mixin ico_menu_contact {
+    @include image($name:'ico_menu_contact', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_send {
+    @include image($name:'ico_menu_send', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_brand {
+    @include image($name:'ico_menu_brand', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_point {
+    @include image($name:'ico_menu_point', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_iapps {
+    @include image($name:'ico_menu_iapps', $folder:'common');
+    background-size: 100%;
+}
+
+/* iapps */
+@mixin img_iapps_main_bg {
+    @include image($name:'img_iapps_main_bg', $folder:'iapps');
+    background-size: cover;
+}
+
+@mixin img_iapps_main_object {
+    @include image($name:'img_iapps_main_object', $folder:'iapps');
+    background-size: 100%;
+}

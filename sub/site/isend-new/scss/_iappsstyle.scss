@@ -1,0 +1,2167 @@
+.contents {
+    .sc01 {
+        .inner {
+            padding: rem(100) 0;
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $ft-main-color;
+                text-align: center;
+                @include fadeup;
+
+                &::after {
+                    @include content;
+                    @include img_iapps_emoji;
+                    width: rem(80);
+                    height: rem(84);
+                    margin-left: rem(10);
+                }
+            }
+
+            .graph_box {
+                margin-top: rem(30);
+
+                @include fadeupDelay;
+
+                .top {
+                    @include flex(center, center, rem(50));
+
+                    .object01 {
+                        @include img_iapps_sc01_img_01;
+                        width: rem(215);
+                        height: rem(215);
+                        background-size: rem(185);
+                    }
+
+                    .object02 {
+                        @include img_iapps_sc01_img_02;
+                        width: rem(215);
+                        height: rem(215);
+                    }
+
+                    p {
+                        @include ftB;
+                        font-size: rem(40);
+                        color: $ft-main-color;
+                    }
+                }
+
+                .graph {
+                    margin-top: rem(26);
+                    @include flex(center, center, rem(20), column);
+
+                    >div {
+                        position: relative;
+
+                        .tit {
+                            position: relative;
+                            width: rem(220);
+                            height: rem(90);
+                            border-radius: rem(20);
+                            box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.16);
+                            background: $white;
+                            @include ftB;
+                            font-size: rem(30);
+                            text-align: center;
+                            color: $ft-main-color;
+                            line-height: rem(90);
+                        }
+
+                        .left {
+                            @include centerY($right: rem(220));
+                            border-radius: rem(10) 0 0 rem(10);
+                            background: $white;
+                            height: rem(70);
+                            border: 1px solid #d2e3f7;
+
+                            &::before {
+                                @include centerY($right:0);
+                                @include content;
+                                background: #d2e3f7;
+                                border-radius: rem(10) 0 0 rem(10);
+                                height: 100%;
+                            }
+
+                            p {
+                                @include centerY($right : rem(15));
+                                @include flex(flex-end, flex-start);
+                                @include ftBK;
+                                font-size: rem(30);
+                                color: #6399d9;
+
+                                span {
+                                    @include ftR;
+                                    font-size: rem(20);
+                                    color: #6399d9;
+                                }
+                            }
+                        }
+
+                        .right {
+                            @include centerY($left: rem(220));
+                            border-radius: 0 rem(10) rem(10) 0;
+                            background: $point;
+                            height: rem(70);
+
+                            p {
+                                @include centerY($left : rem(15));
+                                @include flex(flex-end, flex-start);
+                                @include ftBK;
+                                font-size: rem(30);
+                                color: $white;
+
+                                span {
+                                    @include ftR;
+                                    font-size: rem(20);
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+
+                    .graph01 {
+                        .left {
+                            width: rem(345);
+
+                            &::before {
+                                width: rem(189);
+                            }
+                        }
+
+                        .right {
+                            width: rem(445);
+                        }
+                    }
+
+                    .graph02 {
+                        .left {
+                            width: rem(609);
+
+                            &::before {
+                                width: rem(124);
+                            }
+                        }
+
+                        .right {
+                            width: rem(645);
+                        }
+                    }
+
+                    .graph03 {
+                        .left {
+                            width: rem(467);
+
+                            &::before {
+                                width: rem(95);
+                            }
+                        }
+
+                        .right {
+                            width: rem(404);
+                        }
+                    }
+
+                    .txt {
+                        margin-top: rem(10);
+                        @include ftR;
+                        font-size: rem(20);
+                        line-height: rem(24);
+                        color: $ft-main-color;
+                    }
+
+                    strong {
+                        @include ftB;
+                        font-size: rem(40);
+                        line-height: rem(47);
+                        color: $ft-main-color;
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+
+                h2,
+                .graph_box {
+                    @include fadeupOn;
+                }
+            }
+        }
+    }
+
+    .sc02 {
+        background: #f4f8ff;
+
+        .inner {
+            padding: rem(120) 0 rem(50);
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $ft-main-color;
+                text-align: center;
+                @include fadeup;
+
+                span {
+                    @include ftB;
+                    font-size: rem(60);
+                    color: $white;
+                    text-align: center;
+                    background-color: $point;
+                    border-radius: rem(10);
+                    padding: rem(8) rem(10);
+                }
+
+                &::after {
+                    @include content;
+                    @include img_iapps_emoji;
+                    width: rem(80);
+                    height: rem(84);
+                    margin-left: rem(10);
+                }
+            }
+
+            .txt_box {
+                position: relative;
+                margin-top: rem(100);
+
+                li {
+                    position: relative;
+                    padding: rem(30) rem(40);
+                    width: rem(727);
+                    background: $white;
+                    border: 1px solid #d2e3f7;
+                    border-radius: rem(20);
+
+                    &::before {
+                        @include centerY;
+                        @include ftB;
+                        font-size: rem(150);
+                        color: $point;
+                        z-index: 0;
+                    }
+
+                    .tit {
+                        @include ftB;
+                        font-size: rem(40);
+                        color: $ft-main-color;
+                    }
+
+                    .desc {
+                        margin-top: rem(10);
+                        @include ftR;
+                        font-size: rem(30);
+                        line-height: rem(40);
+                        color: $ft-main-color;
+                    }
+
+                    &:first-of-type {
+                        margin-left: calc(100% - rem(727));
+                        @include fadeleft;
+                        transition-delay: 0.5s;
+
+                        &::before {
+                            left: rem(-150);
+                            content: '01';
+                        }
+                    }
+
+                    &:nth-of-type(2) {
+                        margin: rem(30) 0;
+                        @include faderight;
+                        transition-delay: 0.8s;
+
+                        &::before {
+                            right: rem(-170);
+                            content: '02';
+                        }
+                    }
+
+                    &:last-of-type {
+                        margin-left: calc(100% - rem(727));
+                        @include fadeleft;
+                        transition-delay: 1.1s;
+
+                        &::before {
+                            left: rem(-170);
+                            content: '03';
+                        }
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+                h2 {
+                    @include fadeupOn;
+                }
+
+                .txt_box {
+                    li {
+
+                        &:first-of-type {
+                            @include fadeleftOn;
+                        }
+
+                        &:nth-of-type(2) {
+                            @include faderightOn;
+                        }
+
+                        &:last-of-type {
+                            @include fadeleftOn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sc03 {
+        .inner {
+            padding: rem(100) 0 rem(30);
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $ft-main-color;
+                text-align: center;
+                @include fadeup;
+
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+            }
+
+            .benefit_box {
+                margin-top: rem(140);
+
+                ul {
+                    li {
+                        @include flex(flex-start, space-between);
+
+                        .txt {
+                            flex-shrink: 0;
+
+                            .num {
+                                @include ftBK;
+                                font-size: rem(40);
+                                text-align: center;
+                                color: $white;
+                                background: $point;
+                                border-radius: 50%;
+                                width: rem(76);
+                                height: rem(76);
+                                line-height: rem(76);
+                            }
+
+                            .tit {
+                                margin-top: rem(20);
+                                @include ftB;
+                                font-size: rem(40);
+                                line-height: rem(48);
+                                color: $ft-main-color;
+                            }
+
+                            .desc {
+                                margin-top: rem(20);
+                                @include ftR;
+                                font-size: rem(30);
+                                line-height: rem(40);
+                                color: $ft-main-color;
+                            }
+                        }
+
+                        &:first-of-type {
+                            @include fadeleft;
+                            transition-delay: 0.6s;
+
+                            img {
+                                width: rem(785);
+                                height: rem(482);
+                                object-fit: contain;
+                            }
+
+                            .txt {
+                                margin-top: rem(50);
+                            }
+                        }
+
+                        &:last-of-type {
+                            @include faderight;
+                            flex-direction: row-reverse;
+                            align-items: flex-end;
+                            transition-delay: 1s;
+
+                            img {
+                                width: rem(822);
+                                height: rem(766);
+                                object-fit: contain;
+                            }
+
+                            .txt {
+                                margin-bottom: rem(167);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+                h2 {
+                    @include fadeupOn;
+                }
+
+                .benefit_box {
+                    ul {
+                        li {
+                            &:first-of-type {
+                                @include fadeleftOn;
+                            }
+
+                            &:last-of-type {
+                                @include faderightOn;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sc04 {
+        background: #f4f8ff;
+
+        .inner {
+            padding: rem(100) 0 rem(150);
+
+            h2 {
+                @include ftB;
+                font-size: rem(60);
+                color: $ft-main-color;
+                text-align: center;
+                @include fadeup;
+
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+            }
+
+            .function_box {
+                margin-top: rem(100);
+
+                .top {
+                    @include flex(center, space-between);
+                    gap: rem(50);
+
+                    .txt {
+                        flex-shrink: 0;
+
+                        .sm_tit {
+                            @include ftB;
+                            color: $point;
+                            font-size: rem(30);
+                        }
+
+                        .tit {
+                            margin-top: rem(28);
+                            @include ftB;
+                            color: $ft-main-color;
+                            font-size: rem(40);
+                            line-height: rem(52);
+                        }
+
+                        .desc {
+                            margin-top: rem(35);
+                            @include ftR;
+                            color: $ft-main-color;
+                            font-size: rem(20);
+                            line-height: rem(28);
+                        }
+                    }
+
+                    img {
+                        width: rem(523);
+                        height: rem(449);
+                        object-fit: contain;
+                    }
+                }
+
+                .funtcion_list {
+                    margin-top: rem(50);
+                    @include flex(center, space-between, rem(30));
+
+                    li {
+                        position: relative;
+                        padding: rem(30) rem(40);
+                        background: $white;
+                        border: 1px solid #d2e3f7;
+                        border-radius: rem(20);
+                        text-align: left;
+                        width: 100%;
+
+                        .tit {
+                            @include ftB;
+                            font-size: rem(24);
+                            line-height: rem(28);
+                            color: $ft-main-color;
+
+                            &::before {
+                                @include content(block);
+                                width: rem(68);
+                                height: rem(68);
+                                margin-bottom: rem(20);
+                            }
+                        }
+
+                        .desc {
+                            margin-top: rem(20);
+                            @include ftR;
+                            font-size: rem(20);
+                            line-height: rem(28);
+                            color: $ft-main-color;
+                        }
+
+                        &.point01 {
+                            .tit {
+                                &::before {
+                                    @include img_iapps_sc04_point_ico_01;
+                                }
+                            }
+                        }
+
+                        &.point02 {
+                            .tit {
+                                &::before {
+                                    @include img_iapps_sc04_point_ico_02;
+                                }
+                            }
+                        }
+
+                        &.point03 {
+                            .tit {
+                                &::before {
+                                    @include img_iapps_sc04_point_ico_03;
+                                }
+                            }
+                        }
+
+                        &.coupon01 {
+                            .tit {
+                                &::before {
+                                    @include img_iapps_sc04_coupon_ico;
+                                }
+                            }
+                        }
+
+                        &.coupon02 {
+                            .tit {
+                                &::before {
+                                    @include img_iapps_sc04_point_ico_03;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:first-of-type {
+                    .top {
+                        @include fadedown;
+                        transition-delay: 0.3s;
+                    }
+
+                    .funtcion_list {
+                        li {
+                            transform-style: preserve-3d;
+                            transform: rotateY(90deg);
+                            opacity: 0;
+                            transition: transform 1s ease, opacity 0.7s ease;
+
+                            &.point01 {
+                                transition-delay: 0.7s;
+                            }
+
+                            &.point02 {
+                                transition-delay: 1.0s;
+                            }
+
+                            &.point03 {
+                                transition-delay: 1.3s;
+                            }
+                        }
+                    }
+                }
+
+                &:last-of-type {
+                    .top {
+                        @include fadedown;
+                        transition-delay: 1.6s;
+                    }
+
+                    .funtcion_list {
+                        flex-direction: row-reverse;
+
+                        li {
+                            transform-style: preserve-3d;
+                            transform: rotateY(90deg);
+                            opacity: 0;
+                            transition: transform 1s ease, opacity 0.7s ease;
+
+                            &.coupon01 {
+                                transition-delay: 2.0s;
+                            }
+
+                            &.coupon02 {
+                                transition-delay: 2.3s;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+                h2 {
+                    @include fadeupOn;
+                }
+
+                .function_box {
+                    .top {
+                        @include fadedownOn;
+                    }
+
+                    .funtcion_list {
+                        li {
+                            transform: rotateY(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sc05 {
+        .inner {
+            padding: rem(100) 0;
+
+            .txt_box {
+                h2 {
+                    @include ftB;
+                    font-size: rem(60);
+                    color: $ft-main-color;
+                    text-align: center;
+
+                    &::before {
+                        @include content(block);
+                        width: rem(80);
+                        height: 1px;
+                        background-color: $ft-main-color;
+                        margin: 0 auto rem(50);
+                    }
+
+                    @include fadeup;
+                }
+
+                .sub_txt {
+                    margin-top: rem(20);
+                    @include ftR;
+                    font-size: rem(40);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeupDelay;
+
+                    strong {
+                        @include ftB;
+                    }
+                }
+
+                .desc {
+                    margin-top: rem(20);
+                    @include ftR;
+                    font-size: rem(24);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeupDelay;
+                }
+            }
+
+            img {
+                margin-top: rem(50);
+                width: 100%;
+                aspect-ratio: 1319/771;
+                object-fit: contain;
+                @include fadedown;
+                transition-delay: 1.0s;
+            }
+        }
+
+        &.on {
+            .inner {
+
+                h2,
+                .sub_txt,
+                .desc {
+                    @include fadeupOn;
+                }
+
+                img {
+                    @include fadedownOn;
+                }
+            }
+        }
+    }
+
+    .sc06 {
+        background: #f7f7f7;
+
+        .inner {
+            padding: rem(100) 0;
+
+            .txt_box {
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+
+                h2 {
+                    @include ftB;
+                    font-size: rem(60);
+                    line-height: rem(80);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeupDelay;
+
+                    span {
+                        color: $point;
+                        @include ftB;
+                        font-size: rem(60);
+                    }
+                }
+
+                .desc {
+                    margin-bottom: rem(20);
+                    @include ftR;
+                    font-size: rem(30);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeup;
+                }
+            }
+
+            img {
+                margin-top: rem(50);
+                width: 100%;
+                aspect-ratio: 1318/560;
+                object-fit: contain;
+                @include fadedown;
+                transition-delay: 1.0s
+            }
+        }
+
+        &.on {
+            .inner {
+
+                h2,
+                .desc {
+                    @include fadeupOn;
+                }
+
+                img {
+                    @include fadedownOn;
+                }
+            }
+        }
+    }
+
+    .sc07 {
+        .inner {
+            max-width: 100% !important;
+
+            .sale_box {
+                @include flex(center, space-between);
+
+                .left {
+                    padding-left: rem(110);
+
+                    .num {
+                        display: inline-block;
+                        @include ftR;
+                        font-size: rem(30);
+                        color: $white;
+                        background: $point;
+                        border-radius: rem(40);
+                        padding: rem(20) rem(40);
+
+                        span {
+                            @include ftBK;
+                            font-size: rem(30);
+                        }
+                    }
+
+                    .tit {
+                        margin-top: rem(30);
+                        @include ftB;
+                        font-size: rem(60);
+                        color: $ft-main-color;
+                        line-height: rem(72);
+                    }
+
+                    .desc {
+                        margin-top: rem(30);
+                        @include ftR;
+                        font-size: rem(30);
+                        color: $ft-main-color;
+                        line-height: rem(42);
+                    }
+                }
+
+                .right {
+                    width: 50%;
+                    max-width: rem(938);
+                }
+
+                &.retarget {
+                    .left {
+                        @include fadeleft;
+                    }
+
+                    .right {
+                        @include fadedown;
+                        transition-delay: 0.6s;
+                        background: #daeafe;
+                        padding-top: rem(75);
+                        @include flex(center, flex-end, 0, column);
+
+                        >.tit {
+                            @include ftB;
+                            font-size: rem(48);
+                            color: $point;
+                            line-height: rem(56);
+                            text-align: center;
+                        }
+
+                        .retarget_list_box {
+                            margin-top: rem(30);
+                            @include flex(center, center, rem(54));
+
+                            li {
+                                @include ftB;
+                                font-size: rem(26);
+                                color: #222222;
+                                line-height: rem(30);
+                                text-align: center;
+
+                                &::before {
+                                    @include content(block);
+                                    width: rem(128);
+                                    height: rem(128);
+                                    margin: 0 auto rem(10);
+                                }
+
+                                &.cart {
+                                    &::before {
+                                        @include img_iapps_sc07_ico_01;
+                                    }
+                                }
+
+                                &.like {
+                                    &::before {
+                                        @include img_iapps_sc07_ico_02;
+                                    }
+                                }
+
+                                &.click {
+                                    &::before {
+                                        @include img_iapps_sc07_ico_03;
+                                    }
+                                }
+                            }
+                        }
+
+                        .example {
+                            margin-top: rem(25);
+                            padding: rem(52) rem(60) rem(40);
+                            background: $white;
+                            border-radius: rem(24) rem(24) 0 0;
+
+                            .tit {
+                                @include ftB;
+                                font-size: rem(38);
+                                letter-spacing: rem(-1.52);
+                                text-align: center;
+                                color: #2b332b;
+                            }
+
+                            .desc {
+                                margin-top: rem(15);
+                                @include ftR;
+                                font-size: rem(26);
+                                line-height: rem(30);
+                                text-align: center;
+                                letter-spacing: rem(-1.04);
+                                color: #2b332b;
+                            }
+
+                            ul {
+                                margin-top: rem(35);
+                                padding: 0 rem(60);
+
+                                li {
+                                    @include flex(center, space-between);
+
+                                    &+li {
+                                        margin-top: rem(20);
+                                    }
+
+                                    span {
+                                        &:first-of-type {
+                                            @include ftR;
+                                            font-size: rem(34);
+                                            letter-spacing: rem(-1.36);
+                                            color: $ft-main-color;
+                                        }
+
+                                        &:last-of-type {
+                                            @include ftB;
+                                            font-size: rem(32);
+                                            letter-spacing: rem(-1.26);
+                                            color: $ft-main-color;
+                                            text-align: right;
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        span {
+                                            &:last-of-type {
+                                                @include ftM;
+                                                color: $point;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .strong_box {
+                                margin-top: rem(25);
+                                width: rem(575);
+                                border-radius: rem(20);
+                                background: $point;
+                                padding: rem(15) 0;
+
+                                p {
+                                    @include ftSB;
+                                    font-size: rem(30);
+                                    color: #d6e9ff;
+                                    text-align: center;
+                                    letter-spacing: rem(-1.2);
+                                }
+
+                                strong {
+                                    margin-top: rem(10);
+                                    display: block;
+                                    @include ftB;
+                                    font-size: rem(52);
+                                    color: $white;
+                                    letter-spacing: rem(-2.08);
+                                    text-align: center;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.coupon {
+                    .left {
+                        @include fadedown;
+                        transition-delay: 1.5s;
+                    }
+
+                    .right {
+                        @include faderight;
+                        background: $point;
+                        width: 50%;
+                        padding: rem(50) rem(50) 0;
+                        transition-delay: 2.1s;
+
+                        .coupon_box {
+                            @include flex(center, space-between);
+
+                            .customer,
+                            .popup {
+                                img {
+                                    width: rem(354);
+                                    height: rem(269);
+                                    object-fit: contain;
+                                }
+
+                                p {
+                                    @include ftSB;
+                                    font-size: rem(23);
+                                    letter-spacing: rem(-0.92);
+                                    color: $white;
+                                    width: rem(224);
+                                    padding: rem(14) 0;
+                                    background: #025eb3;
+                                    border-radius: rem(30);
+                                    text-align: center;
+                                    margin: rem(15) auto 0;
+                                }
+                            }
+
+                            .arrow {
+                                @include img_iapps_sc07_arrow;
+                                width: rem(59);
+                                height: rem(61);
+                            }
+                        }
+
+                        .example {
+                            margin-top: rem(45);
+                            padding: rem(45) rem(45) 0;
+                            background: $white;
+                            border-radius: rem(24) rem(24) 0 0;
+
+                            .tit {
+                                @include ftB;
+                                font-size: rem(33);
+                                letter-spacing: rem(-1.32);
+                                color: #2b332b;
+                            }
+
+                            .desc {
+                                margin-top: rem(10);
+                                @include ftR;
+                                font-size: rem(24);
+                                line-height: rem(30);
+                                letter-spacing: rem(-0.96);
+                                color: #2b332b;
+                            }
+
+                            img {
+                                margin-top: rem(15);
+                                width: rem(741);
+                                aspect-ratio: 741/275;
+                                object-fit: contain;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+                .sale_box {
+                    &.retarget {
+                        .left {
+                            @include fadeleftOn;
+                        }
+
+                        .right {
+                            @include fadedownOn;
+                        }
+                    }
+
+                    &.coupon {
+                        .left {
+                            @include fadedownOn;
+                        }
+
+                        .right {
+                            @include faderightOn;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .sc08 {
+        background: #f4f8ff;
+
+        .inner {
+            padding: rem(100) 0;
+
+            .txt_box {
+                &::before {
+                    @include content(block);
+                    width: rem(80);
+                    height: 1px;
+                    background-color: $ft-main-color;
+                    margin: 0 auto rem(50);
+                }
+
+                h2 {
+                    @include ftB;
+                    font-size: rem(60);
+                    line-height: rem(80);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeup;
+                }
+
+                .desc {
+                    margin-top: rem(20);
+                    @include ftR;
+                    font-size: rem(30);
+                    color: $ft-main-color;
+                    text-align: center;
+                    @include fadeupDelay;
+                }
+            }
+
+            .partner_box {
+                margin: rem(90) auto 0;
+                text-align: center;
+                @include fadedown;
+                transition-delay: 1.2s;
+
+                ul {
+                    li {
+                        @include flex(center, space-between);
+                        border: 1px solid #d2e3f7;
+                        border-radius: rem(19);
+                        overflow: hidden;
+                        background: #d2e3f7;
+
+                        &+li {
+                            margin-top: rem(30);
+                        }
+
+                        .label {
+                            width: rem(190);
+                            @include ftB;
+                            font-size: rem(30);
+                            line-height: rem(42);
+                            text-align: center;
+                            color: #6399d9;
+                        }
+
+                        .logo {
+                            width: calc(100% - rem(190));
+                            background: $white;
+                            padding: rem(35) 0;
+                            margin: 0 auto;
+                            text-align: center;
+
+                            img {
+                                max-width: 95%;
+                                width: rem(1048);
+                            }
+                        }
+                    }
+                }
+
+                .download {
+                    margin-top: rem(50);
+                    display: inline-block;
+                    @include ftR;
+                    font-size: rem(40);
+                    color: $white;
+                    padding: rem(26) rem(58);
+                    border-radius: rem(20);
+                    border: 1px solid #d2e3f7;
+                    background: $point;
+
+                    span {
+                        @include ftB;
+                        font-size: rem(40);
+                        color: $white;
+                    }
+                }
+            }
+        }
+
+        &.on {
+            .inner {
+                .txt_box {
+
+                    h2,
+                    .desc {
+                        @include fadeupOn;
+                    }
+                }
+
+                .partner_box {
+                    @include fadedownOn;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 961px) and (max-width: 1200px) {
+    .contents {
+        .sc01 {
+            .inner {
+                .graph_box {
+                    .graph {
+
+                        .graph01,
+                        .graph02,
+                        .graph03 {
+                            transform: scale(0.8);
+                        }
+                    }
+                }
+            }
+        }
+
+        .sc04 {
+            background: #f4f8ff;
+
+            .inner {
+                .function_box {
+                    margin-top: rem(100);
+
+                    .top {
+                        gap: rem(25);
+
+                        .txt {
+                            .tit {
+                                max-width: rem(500);
+                                word-break: keep-all;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sc05 {
+            .inner {
+                text-align: center;
+
+                img {
+                    max-width: 80%;
+                    margin: rem(50) auto 0;
+                }
+            }
+        }
+
+        .sc06 {
+            .inner {
+                text-align: center;
+
+                img {
+                    max-width: 80%;
+                    margin: rem(50) auto 0;
+                }
+            }
+        }
+
+        .sc07 {
+            .inner {
+                .sale_box {
+                    flex-direction: column;
+
+                    .left {
+                        width: 100%;
+                        text-align: center;
+                        padding: rem(75) 0;
+                    }
+
+                    .right {
+                        width: 100%;
+                        max-width: 100%;
+                    }
+
+                    &.coupon {
+                        .right {
+                            width: 100%;
+                            max-width: 100%;
+                            padding: rem(50) rem(150) 0;
+
+                            .example {
+                                text-align: center;
+
+                                p {
+                                    text-align: left;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sc08 {
+            .inner {
+                .partner_box {
+                    ul {
+                        li {
+                            .logo {
+                                img {
+                                    width: 90%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 960px) {
+    .contents {
+        .sc01 {
+            .inner {
+                h2 {
+                    font-size: rem(48);
+                    line-height: rem(66);
+
+                    &::after {
+                        width: rem(60);
+                        height: rem(60);
+                    }
+                }
+
+                .graph_box {
+                    .graph {
+                        .graph01 {
+                            .left {
+                                width: 29rem;
+                            }
+
+                            .right {
+                                width: 29rem;
+                            }
+                        }
+
+                        .graph02 {
+                            .left {
+                                width: 35rem;
+                            }
+
+                            .right {
+                                width: 35rem;
+                            }
+                        }
+
+                        .graph03 {
+                            .left {
+                                width: 31rem;
+                            }
+
+                            .right {
+                                width: 25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .wrap {
+        .contents {
+            section {
+                &.main {
+                    //height: 100vh;
+                    .swiper {
+                        .swiper-wrapper {
+                            .swiper-slide {
+
+                                &.point,
+                                &.brand,
+                                &.isend {
+                                    display: none;
+                                }
+
+                                &.iapps {
+                                    // display: none;
+
+                                    // &.white {
+                                    //     display: block;
+                                    // }
+                                    .inner {
+                                        flex-direction: column;
+                                        align-items: center;
+                                        justify-content: center;
+
+                                        .txt_box {
+                                            .desc {
+                                                margin-top: rem(20);
+                                                font-size: rem(24);
+                                            }
+
+                                            h2 {
+                                                font-size: rem(32);
+                                                line-height: rem(40);
+                                            }
+                                        }
+
+                                        .img_box {
+                                            width: 100%;
+                                            padding: 0 rem(10);
+
+                                            .object {
+                                                width: 100%;
+                                                aspect-ratio: 339/208;
+                                            }
+                                        }
+
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper_custom {
+                            display: none;
+                        }
+                    }
+                }
+            }
+
+            .sc01 {
+                .inner {
+                    padding: rem(50) 0;
+
+                    h2 {
+                        font-size: rem(24);
+
+                        &::after {
+                            width: rem(36);
+                            height: rem(37);
+                            margin-left: rem(5);
+                            vertical-align: -5px;
+                        }
+                    }
+
+                    .graph_box {
+                        .top {
+                            @include flex(center, center, rem(30));
+
+                            .object01 {
+                                width: rem(107);
+                                height: rem(107);
+                                background-size: rem(90);
+                            }
+
+                            .object02 {
+                                width: rem(107);
+                                height: rem(107);
+                            }
+
+                            p {
+                                font-size: rem(16);
+                            }
+                        }
+
+                        .graph {
+                            margin-top: rem(15);
+                            gap: rem(10);
+
+                            >div {
+                                position: relative;
+
+                                .tit {
+                                    width: rem(82);
+                                    height: rem(40);
+                                    border-radius: rem(5);
+                                    font-size: rem(12);
+                                    line-height: rem(40);
+                                }
+
+                                .left {
+                                    right: rem(82);
+                                    border-radius: rem(5) 0 0 rem(5);
+                                    height: rem(30);
+
+                                    &::before {
+                                        border-radius: rem(5) 0 0 rem(5);
+                                    }
+
+                                    p {
+                                        @include centerY($right : rem(7));
+                                        font-size: rem(13);
+
+                                        span {
+                                            font-size: rem(10);
+                                        }
+                                    }
+                                }
+
+                                .right {
+                                    left: rem(82);
+                                    border-radius: 0 rem(5) rem(5) 0;
+                                    height: rem(30);
+
+                                    p {
+                                        left: rem(7);
+                                        font-size: rem(13);
+
+                                        span {
+                                            font-size: rem(10);
+                                        }
+                                    }
+                                }
+                            }
+
+                            .graph01 {
+                                .left {
+                                    width: rem(90);
+
+                                    &::before {
+                                        width: calc(100% - rem(30));
+                                    }
+                                }
+
+                                .right {
+                                    width: rem(108);
+                                }
+                            }
+
+                            .graph02 {
+                                .left {
+                                    width: rem(120);
+
+                                    &::before {
+                                        width: calc(100% - rem(64));
+                                    }
+                                }
+
+                                .right {
+                                    width: rem(120);
+                                }
+                            }
+
+                            .graph03 {
+                                .left {
+                                    width: rem(108);
+
+                                    &::before {
+                                        width: calc(100% - rem(64));
+                                    }
+                                }
+
+                                .right {
+                                    width: rem(75);
+                                }
+                            }
+
+                            .txt {
+                                margin-top: rem(20);
+                                font-size: rem(14);
+                            }
+
+                            strong {
+                                font-size: rem(20);
+                                line-height: rem(32);
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sc02 {
+                background: #f4f8ff;
+
+                .inner {
+                    padding: rem(50) 0 rem(30);
+
+                    h2 {
+                        font-size: rem(24);
+
+                        span {
+                            font-size: rem(24);
+                            border-radius: rem(5);
+                            padding: rem(3) rem(5);
+                        }
+
+                        &::after {
+                            width: rem(36);
+                            height: rem(37);
+                            margin-left: rem(5);
+                            vertical-align: -5px;
+                        }
+                    }
+
+                    .txt_box {
+                        margin-top: rem(20);
+                        padding: 0 rem(15);
+
+                        li {
+                            padding: rem(15) rem(15);
+                            width: 100%;
+                            border-radius: rem(10);
+
+                            &::before {
+                                position: relative;
+                                top: auto;
+                                left: auto;
+                                transform: none;
+                                font-size: rem(16);
+                            }
+
+                            .tit {
+                                margin-top: rem(10);
+                                font-size: rem(20);
+                            }
+
+                            .desc {
+                                font-size: rem(14);
+                                line-height: rem(18);
+                            }
+
+                            &:first-of-type {
+                                margin-left: 0;
+
+                                &::before {
+                                    left: auto;
+                                }
+                            }
+
+                            &:nth-of-type(2) {
+                                margin: rem(10) 0;
+
+                                &::before {
+                                    right: auto;
+                                }
+                            }
+
+                            &:last-of-type {
+                                margin-left: 0;
+
+                                &::before {
+                                    left: auto;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sc03 {
+                .inner {
+                    padding: rem(50) 0 rem(25);
+
+                    h2 {
+                        font-size: rem(24);
+
+                        &::before {
+                            width: rem(40);
+                            margin: 0 auto rem(30);
+                        }
+                    }
+
+                    .benefit_box {
+                        margin-top: rem(15);
+
+                        ul {
+                            padding: 0 rem(15);
+
+                            li {
+                                @include flex(center, center, rem(30), column);
+
+                                .txt {
+                                    text-align: center;
+
+                                    .num {
+                                        font-size: rem(20);
+                                        width: rem(38);
+                                        height: rem(38);
+                                        line-height: rem(38);
+                                        margin: 0 auto;
+                                    }
+
+                                    .tit {
+                                        margin-top: rem(10);
+                                        font-size: rem(20);
+                                        line-height: rem(24);
+                                    }
+
+                                    .desc {
+                                        margin-top: rem(10);
+                                        font-size: rem(16);
+                                        line-height: rem(22);
+                                    }
+                                }
+
+                                &:first-of-type {
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                        aspect-ratio: 341/210;
+                                    }
+
+                                    .txt {
+                                        margin-top: rem(15);
+                                    }
+                                }
+
+                                &:last-of-type {
+                                    @include flex(center, center, 0, column);
+
+                                    img {
+                                        width: 100%;
+                                        height: auto;
+                                        aspect-ratio: 480/448;
+                                        object-fit: cover;
+                                    }
+
+                                    .txt {
+                                        margin-bottom: rem(30);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sc04 {
+                .inner {
+                    padding: rem(55) rem(15) rem(30);
+
+                    h2 {
+                        font-size: rem(24);
+
+                        &::before {
+                            width: rem(40);
+                            margin: 0 auto rem(30);
+                        }
+                    }
+
+                    .function_box {
+                        margin-top: rem(20);
+
+                        &+.function_box {
+                            margin-top: rem(50);
+                        }
+
+                        .top {
+                            flex-direction: column;
+                            gap: rem(30);
+
+                            .txt {
+                                margin-top: rem(10);
+                                flex-shrink: 0;
+                                text-align: center;
+
+                                .sm_tit {
+                                    font-size: rem(16);
+                                }
+
+                                .tit {
+                                    margin-top: rem(10);
+                                    font-size: rem(20);
+                                    line-height: rem(28);
+                                }
+
+                                .desc {
+                                    margin-top: rem(20);
+                                    font-size: rem(16);
+                                    line-height: rem(23);
+
+                                    .pc_br {
+                                        display: none;
+                                    }
+                                }
+                            }
+
+                            img {
+                                width: 100%;
+                                height: auto;
+                                aspect-ratio: 330/281;
+                            }
+                        }
+
+                        .funtcion_list {
+                            margin-top: rem(30);
+                            gap: rem(15);
+                            flex-direction: column;
+                            flex-wrap: wrap;
+
+                            li {
+                                padding: rem(15) rem(15);
+                                border-radius: rem(10);
+
+                                .tit {
+                                    font-size: rem(18);
+                                    line-height: 1;
+
+                                    &::before {
+                                        width: rem(38);
+                                        height: rem(38);
+                                        margin-bottom: rem(10);
+                                    }
+                                }
+
+                                .desc {
+                                    margin-top: rem(10);
+                                    font-size: rem(14);
+                                    line-height: 1;
+                                }
+                            }
+                        }
+
+                            &:last-of-type {
+                                .funtcion_list {
+                                flex-direction: column-reverse;
+
+                                }
+                            }
+                    }
+                }
+            }
+
+            .sc05 {
+                .inner {
+                    padding: rem(30) rem(15);
+
+                    .txt_box {
+                        h2 {
+                            font-size: rem(24);
+                            line-height: rem(40);
+
+                            &::before {
+                                width: rem(40);
+                                margin-bottom: rem(30);
+                            }
+                        }
+
+                        .sub_txt {
+                            font-size: rem(20);
+                            line-height: rem(28);
+                        }
+
+                        .desc {
+                            font-size: rem(16);
+                            line-height: rem(22);
+                        }
+                    }
+
+                    img {
+                        margin-top: rem(20);
+                        aspect-ratio: 330/193;
+                    }
+                }
+            }
+
+            .sc06 {
+                .inner {
+                    padding: rem(50) rem(15) rem(30);
+
+                    .txt_box {
+                        &::before {
+                            width: rem(40);
+                            margin-bottom: rem(30);
+                        }
+
+                        h2 {
+                            font-size: rem(24);
+                            line-height: rem(31);
+
+                            span {
+                                font-size: rem(24);
+                                line-height: rem(31);
+
+                            }
+                        }
+
+                        .desc {
+                            font-size: rem(16);
+                            margin-bottom: rem(10);
+                        }
+                    }
+
+                    img {
+                        margin-top: rem(30);
+                        aspect-ratio: 331/140;
+                    }
+                }
+            }
+
+            .sc07 {
+                .inner {
+                    padding-top: rem(50);
+
+                    .sale_box {
+                        flex-direction: column;
+
+                        .left {
+                            padding-left: 0;
+                            text-align: center;
+                            width: 100%;
+
+                            .num {
+                                font-size: rem(16);
+                                border-radius: rem(17);
+                                padding: rem(8) rem(14);
+
+                                span {
+                                    font-size: rem(16);
+                                }
+                            }
+
+                            .tit {
+                                margin-top: rem(20);
+                                font-size: rem(24);
+                                line-height: rem(36);
+
+                                .pc_br {
+                                    display: none;
+                                }
+                            }
+
+                            .desc {
+                                margin-top: rem(10);
+                                font-size: rem(16);
+                                line-height: rem(23);
+                            }
+                        }
+
+                        .right {
+                            width: 100%;
+                            max-width: rem(938);
+                        }
+
+                        &.retarget {
+                            .left {
+                                padding: 0 rem(10) rem(20);
+                            }
+
+                            .right {
+                                padding-top: rem(30);
+
+                                >.tit {
+                                    font-size: rem(20);
+
+                                    .pc_br {
+                                        display: none;
+                                    }
+                                }
+
+                                .retarget_list_box {
+                                    margin-top: rem(30);
+                                    @include flex(center, center, rem(54));
+
+                                    li {
+                                        font-size: rem(12);
+                                        line-height: rem(14);
+
+                                        &::before {
+                                            width: rem(54);
+                                            height: rem(54);
+                                        }
+                                    }
+                                }
+
+                                .example {
+                                    margin-top: rem(20);
+                                    padding: rem(20) rem(20) rem(35);
+                                    border-radius: rem(10) rem(10) 0 0;
+
+                                    .tit {
+                                        font-size: rem(16);
+                                        letter-spacing: 0;
+                                    }
+
+                                    .desc {
+                                        margin-top: rem(6);
+                                        font-size: rem(12);
+                                        line-height: rem(14);
+                                        letter-spacing: 0;
+                                    }
+
+                                    ul {
+                                        margin-top: rem(10);
+                                        padding: 0 rem(30);
+
+                                        li {
+                                            &+li {
+                                                margin-top: rem(10);
+                                            }
+
+                                            span {
+                                                &:first-of-type {
+                                                    font-size: rem(12);
+                                                    letter-spacing: 0;
+                                                }
+
+                                                &:last-of-type {
+                                                    font-size: rem(12);
+                                                    letter-spacing: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .strong_box {
+                                        margin-top: rem(10);
+                                        width: auto;
+                                        border-radius: rem(10);
+                                        padding: rem(7) rem(35);
+
+                                        p {
+                                            font-size: rem(16);
+                                            letter-spacing: 0;
+                                        }
+
+                                        strong {
+                                            margin-top: rem(5);
+                                            font-size: rem(24);
+                                            letter-spacing: 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.coupon {
+                            .left {
+                                padding: rem(30) rem(10);
+                            }
+
+                            .right {
+                                width: 100%;
+                                padding: rem(12) rem(10) 0;
+
+                                .coupon_box {
+                                    @include flex(center, space-between);
+
+                                    .customer,
+                                    .popup {
+                                        img {
+                                            width: rem(151);
+                                            height: rem(114);
+                                        }
+
+                                        p {
+                                            font-size: rem(11);
+                                            letter-spacing: 0;
+                                            width: rem(97);
+                                            padding: rem(7) 0;
+                                            border-radius: rem(16);
+                                            margin: rem(8) auto 0;
+                                        }
+                                    }
+
+                                    .arrow {
+                                        width: rem(23);
+                                        height: rem(24);
+                                    }
+                                }
+
+                                .example {
+                                    margin-top: rem(12);
+                                    padding: 0;
+                                    border-radius: 0;
+                                    background: transparent;
+
+                                    .tit {
+                                        display: none;
+                                    }
+
+                                    .desc {
+                                        display: none;
+                                    }
+
+                                    img {
+                                        display: block;
+                                        width: 100%;
+                                        aspect-ratio: 337/156;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .sc08 {
+                .inner {
+                    padding: rem(30) rem(15);
+
+                    .txt_box {
+                        &::before {
+                            width: rem(40);
+                            margin-bottom: rem(30);
+                        }
+
+                        h2 {
+                            font-size: rem(24);
+                            line-height: rem(40);
+                        }
+
+                        .desc {
+                            margin-top: rem(15);
+                            font-size: rem(16);
+                        }
+                    }
+
+                    .partner_box {
+                        margin-top: rem(20);
+
+                        ul {
+                            li {
+                                border-radius: rem(5);
+                                flex-direction: column;
+
+                                &+li {
+                                    margin-top: rem(15);
+                                }
+
+                                .label {
+                                    width: 100%;
+                                    font-size: rem(14);
+                                    line-height: 1;
+                                    padding: rem(10) 0;
+
+                                    .pc_br {
+                                        display: none;
+                                    }
+                                }
+
+                                .logo {
+                                    width: 100%;
+                                    padding: rem(15) rem(10);
+
+                                    img {
+                                        width: 100%;
+                                        max-width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                        .download {
+                            margin-top: rem(20);
+                            font-size: rem(18);
+                            padding: rem(13) rem(32);
+                            border-radius: rem(10);
+
+                            span {
+                                font-size: rem(18);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

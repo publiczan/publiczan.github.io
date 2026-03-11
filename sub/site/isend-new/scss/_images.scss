@@ -1,0 +1,204 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+/* common */
+@mixin img_logo {
+    @include image($name:'img_logo', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin img_foot_logo {
+    @include image($name:'img_foot_logo', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_down {
+    @include image($name:'ico_arrow_down', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_check {
+    @include image($name:'ico_check', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left {
+    @include image($name:'ico_arrow_left', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right {
+    @include image($name:'ico_arrow_right', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left_circle {
+    @include image($name:'ico_arrow_left_circle', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right_circle {
+    @include image($name:'ico_arrow_right_circle', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_left_circle_off {
+    @include image($name:'ico_arrow_left_circle_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_arrow_right_circle_off {
+    @include image($name:'ico_arrow_right_circle_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_select_btn {
+    @include image($name:'ico_select_btn', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_chk {
+    @include image($name:'ico_chk', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_chk_off {
+    @include image($name:'ico_chk_off', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin img_contact_bg {
+    @include image($name:'img_contact_bg', $folder:'common');
+    background-size: cover;
+}
+
+@mixin img_complete {
+    @include image($name:'img_complete', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_close {
+    @include image($name:'ico_close', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_contact {
+    @include image($name:'ico_contact', $folder:'common');
+    background-size: rem(46) rem(46);
+}
+
+@mixin ico_menu_contact {
+    @include image($name:'ico_menu_contact', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_send {
+    @include image($name:'ico_menu_send', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_brand {
+    @include image($name:'ico_menu_brand', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_point {
+    @include image($name:'ico_menu_point', $folder:'common');
+    background-size: 100%;
+}
+
+@mixin ico_menu_iapps {
+    @include image($name:'ico_menu_iapps', $folder:'common');
+    background-size: 100%;
+}
+
+
+/* send */
+@mixin img_send_main_object_01 {
+    @include image($name:'img_main_object_01', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_main_object_02 {
+    @include image($name:'img_main_object_02', $folder:'isend');
+    background-size: 100%;
+}
+
+@mixin img_send_main_object_03 {
+    @include image($name:'img_main_object_03', $folder:'isend');
+    background-size: 100%;
+}
+
+
+/* brand */
+@mixin img_brand_main_phone_bottom {
+    @include image($name:'img_main_phone_bottom', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_phone_top {
+    @include image($name:'img_main_phone_top', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_object_01 {
+    @include image($name:'img_main_object_01', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_object_02 {
+    @include image($name:'img_main_object_02', $folder:'brand');
+    background-size: 100%;
+}
+
+@mixin img_brand_main_object_03 {
+    @include image($name:'img_main_object_03', $folder:'brand');
+    background-size: 100%;
+}
+
+/* talkpoint */
+@mixin img_point_main_phone_01 {
+    @include image($name:'img_main_phone_01', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_main_phone_02 {
+    @include image($name:'img_main_phone_02', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_main_phone_03 {
+    @include image($name:'img_main_phone_03', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_main_object  {
+    @include image($name:'img_main_object', $folder:'point');
+    background-size: 100%;
+}
+
+
+/* iapps */
+@mixin img_iapps_main_bg {
+    @include image($name:'img_iapps_main_bg', $folder:'iapps');
+    background-size: cover;
+}
+
+@mixin img_iapps_main_object {
+    @include image($name:'img_iapps_main_object', $folder:'iapps');
+    background-size: 100%;
+}
+
+/* ireview */
+@mixin img_ireview_main_object {
+    @include image($name:'img_ireview_main_object', $folder:'ireview');
+    background-size: 100%;
+}
+
+@mixin img_ireview_sc02_bg {
+    @include image($name:'img_ireview_sc02_bg', $folder:'ireview');
+    background-size: cover;
+}

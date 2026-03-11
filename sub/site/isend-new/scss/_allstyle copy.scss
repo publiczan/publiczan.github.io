@@ -1,0 +1,820 @@
+.wrap {
+    .contents {
+        .main {
+            &.all {
+                height: auto;
+                padding: 5rem 7%;
+
+                // container
+                .container {}
+
+                // scroll-trigger
+                .scroll-trigger {
+                    .swiper-wrap {
+                        //transition: $transition-littleslow;
+                        opacity: 1;
+                    }
+
+                    &.on {
+                        .swiper-wrap {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                // style
+                .scroll-trigger {
+                    .wswiper {
+                        border-radius: 20px;
+                        margin-bottom: 43px;
+                        overflow: hidden;
+                        touch-action: pan-y;
+
+                        .wswiper-wrapper {
+                            @include flex-pos();
+                            transform: translateX(-110px);
+
+                            .wswiper-slide {
+                                position: relative;
+                                width: 110px;
+                                height: 580px;
+                                flex-shrink: 0;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                transform: skew(-10deg);
+                                transition: 0.5s;
+
+                                &:nth-of-type(1) {
+                                    background-image: linear-gradient(137deg, #cbe2fd -1%, #f4f8ff 69%);
+                                }
+
+                                &:nth-of-type(2) {
+                                    background-image: linear-gradient(144deg, #fafae0 4%, #fbfff2 73%);
+                                }
+
+                                &:nth-of-type(3) {
+                                    background-image: linear-gradient(136deg, #f4dbd7 10%, #fffbf7 82%);
+                                }
+
+                                &:nth-of-type(4) {
+                                    background-image: linear-gradient(145deg, #dbd3fd 4%, #f7f4fc 74%);
+                                }
+
+                                .slide-item {
+                                    @include flex-pos($ai: center, $jc:start, $g: 50px);
+                                    height: 100%;
+                                    padding: 0;
+                                    transform: skew(10deg);
+
+                                    .deco-wrap {
+                                        width: 0;
+                                        height: 0;
+                                        overflow: hidden;
+                                        opacity: 0;
+                                        max-width: 454px;
+
+                                        .deco {
+                                            text-indent: 100%;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            @include image-set($bs: contain);
+                                            width: 100%;
+                                            padding-top: 63.7%;
+                                        }
+                                    }
+
+                                    .cont {
+                                        img {
+                                            display: none;
+                                            position: absolute;
+                                            right: 10%;
+                                            opacity: 0;
+                                            scale: 0;
+                                            max-width: 50rem;
+                                        }
+
+                                        .logo-wrap {
+                                            //@include pos-center();
+                                            transform: translate(-50%, -50%) rotate(-90deg);
+                                            position: absolute;
+                                            top: 50%;
+
+                                            .logo {
+                                                position: relative;
+                                                font-size: 3rem;
+                                                font-weight: 900;
+                                                width: max-content;
+                                            }
+
+                                            &.is {
+                                                //transform: translate(-50%, -50%) rotate(-90deg);
+
+                                                .logo {}
+                                            }
+
+                                            &.ia {
+                                                .logo {}
+                                            }
+
+                                            &.iz {
+
+                                                .logo {}
+                                            }
+
+                                            &.ir {
+                                                .logo {}
+                                            }
+
+
+                                        }
+
+                                        .desc {
+
+                                            font-size: 18px;
+                                            line-height: 1.17;
+                                            letter-spacing: -0.18px;
+                                            margin-bottom: 70px;
+                                            max-width: 320px;
+                                            min-width: 320px;
+                                            opacity: 0;
+
+                                            em {
+                                                font-weight: 900;
+                                                font-size: 4rem;
+                                                padding: 2rem 0;
+                                                display: block;
+                                            }
+
+                                            span {
+                                                display: block;
+                                                font-size: 2rem;
+                                                letter-spacing: -2.4px;
+                                                line-height: 1.5;
+                                            }
+                                        }
+
+                                        .link {
+
+                                            display: inline-block;
+                                            font-size: 16px;
+                                            line-height: 50px;
+                                            text-align: center;
+                                            width: 0;
+                                            height: 0;
+                                            overflow: hidden;
+                                            color: #000;
+                                            border-radius: 25px;
+                                            border: 1px solid #000;
+                                            opacity: 0;
+                                        }
+                                    }
+                                }
+
+                                &.active {
+                                    width: calc(100% - 60px - 19%);
+
+                                    .slide-item {
+                                        padding-left: 10%;
+
+                                        .deco-wrap {
+                                            display: none;
+                                        }
+
+                                        .cont {
+                                            display: block;
+
+                                            img {
+                                                display: block;
+                                                transition: all 0.7s ease;
+                                                transition-delay: 0.2s;
+                                                animation: 1s scale forwards,
+                                                    7s mainani infinite linear;
+                                                animation-delay: .2s;
+                                                opacity: 1;
+                                            }
+
+                                            .logo-wrap {
+                                                top: unset;
+                                                left: unset;
+                                                transform: translate(0, 0) rotate(0);
+                                                position: relative;
+                                                top: auto;
+                                                transition: transform 0.7s;
+
+                                                .logo {
+                                                    font-size: 3rem;
+                                                    font-weight: 700;
+
+
+                                                    &::before {
+                                                        content: "";
+                                                        position: relative;
+                                                        display: block;
+                                                        width: 5.2rem;
+                                                        height: 1px;
+                                                        background: #000;
+                                                        top: -2rem
+                                                    }
+                                                }
+
+                                            }
+
+                                            .desc {
+                                                opacity: 1;
+                                                transition-duration: 0.3s;
+                                                transition-delay: 0.3s;
+                                            }
+
+                                            .link {
+                                                opacity: 1;
+                                                transition-duration: 0.3s;
+                                                transition-delay: 0.3s;
+                                                transition-property: opacity;
+                                                width: 140px;
+                                                height: 50px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.first-view {
+                                    .slide-item {
+                                        padding-left: 15%;
+
+                                        .cont {
+                                            .logo-wrap {
+                                                transform: translate(calc(-50% + 74px), -50%) rotate(-90deg);
+                                            }
+                                        }
+                                    }
+                                }
+
+
+                                &.first-view {
+                                    width: 220px;
+
+                                    .slide-item {
+                                        .cont {
+                                            .logo-wrap {
+                                                transition: transform 0.7s;
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        width: calc(100% - 60px - 16%);
+
+                                        .slide-item {
+                                            .cont {
+                                                .logo-wrap {
+                                                    position: relative;
+                                                    top: unset;
+                                                    left: unset;
+                                                    transform: translate(0, 0) rotate(0);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .controls {
+                        .wswiper-pagination {
+                            @include flex-pos($jc: center, $g: 12px);
+
+                            .wswiper-pagination-bullet {
+                                width: 14px;
+                                height: 14px;
+                                background: #e2e2e2;
+                                border-radius: 100%;
+
+                                &.on {
+                                    background: #4780ed
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 1330px) {
+                    .scroll-trigger {
+                        .wswiper {
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    &.first-view {
+                                        &.active {
+                                            .slide-item {
+                                                padding-left: 20%;
+
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        .slide-item {
+                                            padding-left: 10%;
+
+                                            .cont {
+                                                img {
+                                                    position: absolute;
+                                                    bottom: 10%;
+                                                    right: 5%;
+                                                }
+
+                                                >div {
+                                                    position: absolute;
+                                                    top: 10%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+
+                    // style
+                    .scroll-trigger {
+                        .wswiper {
+                            border-radius: 14px;
+
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    border-radius: 7px;
+                                    transform: skew(-15deg);
+
+                                    .slide-item {
+                                        transform: skew(15deg);
+
+                                        .cont {
+                                            .logo-wrap {
+                                                top: auto;
+                                                bottom: 10%;
+                                                left: 0;
+
+                                                .logo {
+                                                    // transform: rotate(-90deg);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        width: calc(100% - 60px - 16%);
+
+                                        .cont {
+                                            .logo-wrap {
+                                                .logo {
+                                                    transform: rotate(0);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.first-view {
+                                        .slide-item {
+                                            .cont {
+                                                .logo-wrap {
+                                                    top: 50%;
+                                                    left: 40%;
+                                                    bottom: auto;
+
+                                                    .logo {
+                                                        // transform: rotate(-90deg);
+                                                    }
+                                                }
+                                            }
+                                        }
+
+                                        &.active {
+                                            width: calc(100% + 46px);
+
+                                            .slide-item {
+                                                padding-left: calc(110px + 30px);
+                                                padding-right: 30px;
+
+                                            }
+                                        }
+                                    }
+
+
+
+                                    &:nth-last-of-type(2) {
+                                        &.last-check {
+                                            width: 120px;
+
+                                            .slide-item {
+                                                .cont {
+                                                    .logo-wrap {
+                                                        transition: transform 0.7s;
+                                                        transform: translate(calc(-50% + 80px), calc(-50% - 250px)) rotate(0);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        &.first-view {
+                                            &.active {
+                                                width: calc(100% + 100px);
+
+                                                .slide-item {
+                                                    padding-right: calc(120px + 30px);
+                                                    padding-left: 19%;
+
+                                                    .cont {
+                                                        img {
+                                                            right: 28%;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+
+                @media screen and (max-width: 768px) {
+                    .scroll-trigger {
+                        .wswiper {
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    &.active {
+                                        .slide-item {
+                                            .cont {
+                                                img {
+                                                    max-width: 40%;
+                                                }
+
+                                                .logo-wrap {
+                                                    .logo {
+                                                        font-size: 2.4rem
+                                                    }
+                                                }
+
+                                                .desc {
+                                                    span {
+                                                        font-size: 1.4rem;
+                                                    }
+
+                                                    em {
+                                                        font-size: 2rem;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 400px) {
+
+                    .scroll-trigger {
+                        .wswiper {
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    .slide-item {
+                                        align-items: flex-start;
+
+                                        .cont {
+                                            .desc {
+                                                max-width: 230px;
+
+                                                span {}
+
+                                                em {
+                                                    font-size: 2rem
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        .slide-item {
+                                            align-items: flex-end;
+
+                                            .cont {
+                                                @include flex-pos($ai: flex-end, $fd: column);
+
+                                                .desc {
+                                                    text-align: right;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .sc01 {
+            background: url('./../images/all/geo_bg.png') no-repeat center / cover;
+
+            .inner {
+                padding: rem(135) 0;
+                @include flex(center, center, rem(160), column);
+
+                .txt_box {
+                    text-align: center;
+
+                    &::before {
+                        @include content;
+                        width: rem(60);
+                        height: 1px;
+                        background: $white;
+                        margin-bottom: rem(40);
+                    }
+
+                    h2 {
+                        @include ftB;
+                        font-size: rem(60);
+                        line-height: rem(78);
+                        color: $white;
+                        @include fadeup;
+
+                        span {
+                            color: $point;
+                            @include ftB;
+                            font-size: rem(60);
+                            line-height: rem(78);
+                        }
+                    }
+
+                    .desc {
+                        margin-top: rem(50);
+                        @include ftR;
+                        font-size: rem(40);
+                        line-height: rem(50);
+                        color: $white;
+                        @include fadeupDelay;
+
+                        span {
+                            font-weight: 900;
+                            color: #3f90ef
+                        }
+                    }
+                }
+            }
+
+            &.on {
+                .inner {
+                    .txt_box {
+
+                        h2,
+                        .desc {
+                            @include fadeupOn;
+                        }
+                    }
+
+                    .card_box {
+                        .card {
+                            transform: rotateY(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .inner {
+                    padding: rem(135) 0;
+                    @include flex(center, center, rem(160), column);
+
+                    .txt_box {
+                        text-align: center;
+
+                        &::before {
+                            @include content;
+                            width: rem(60);
+                            height: 1px;
+                            background: $white;
+                            margin-bottom: rem(40);
+                        }
+
+                        h2 {
+                            font-size: rem(30);
+                            line-height: rem(18);
+                        }
+
+                        .desc {
+                            margin-top: rem(20);
+                            font-size: rem(16);
+                            line-height: rem(16);
+                        }
+                    }
+                }
+            }
+        }
+
+        @for $i from 2 through 5 {
+            .sc0#{$i} {
+                >i {
+                    position: absolute;
+                    top: 5rem;
+                    opacity: 0;
+                }
+
+                .inner {
+                    height: 100vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 1rem;
+                    gap: 10%;
+
+                    .img_box {
+                        opacity: 0;
+
+                        img {
+                            max-width: 51em;
+                        }
+                    }
+
+                    .txt_box {
+                        opacity: 0;
+                        //flex-shrink: 0;
+                        min-width: 32em;
+
+                        p {
+                            font-size: 2.4rem;
+                            line-height: 1.46;
+                            padding: 2rem 0 3rem;
+                        }
+
+                        a {
+                            position: relative;
+                            display: block;
+                            z-index: 1;
+                            font-size: 16px;
+                            line-height: 5rem;
+                            text-align: center;
+                            width: 14rem;
+                            height: 5rem;
+                            overflow: hidden;
+                            color: #000;
+                            border-radius: 25px;
+                            border: 1px solid #000;
+
+                            &:hover {
+                                background: #000;
+                                color: #fff;
+                                transition: transform 0.7s;
+                            }
+                        }
+                    }
+                }
+
+                @if $i % 2==0 {
+                    >i {
+                        right: 0;
+                    }
+
+                    .inner .img_box {
+                        order: 2;
+                    }
+
+                    &.on {
+                        >i {
+                            animation: 1s leftslide2 forwards;
+                        }
+                    }
+                }
+
+                @else {
+
+                    >i {
+                        left: 0;
+                    }
+
+                    &.on {
+                        >i {
+                            animation: 1s rightslide2 forwards;
+                        }
+                    }
+                }
+
+                &.on {
+                    >i {
+                        transition: all 0.2s ease;
+                        transition-delay: 0.2s;
+                        animation-delay: .2s;
+                        opacity: 1;
+                    }
+
+                    .inner {
+
+                        .img_box {
+                            animation: 1s fade forwards;
+                            animation-delay: 0.5s;
+                        }
+
+                        .txt_box {
+                            animation: 1s fade forwards;
+                            animation-delay: 1s;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    >i {
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+
+                    .inner {
+                        height: auto;
+                        flex-direction: column;
+
+                        .img_box {
+                            order: 1 !important;
+                            text-align: center;
+                            padding-top: 10rem;
+
+                            img {
+                                max-width: 80%;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .txt_box {
+                            order: 2 !important;
+                            text-align: center;
+
+                            i {
+                                display: block;
+                                max-width: 12rem;
+                                margin: 2rem auto;
+
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+
+                            p {
+                                font-size: 1.8rem;
+                                line-height: 1.33;
+                                padding: 0 0 3rem;
+
+                                .mo_br {
+                                    display: none;
+                                }
+                            }
+
+                            a {
+                                text-align: center;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+
+                    @if $i % 2==0 {
+                        >i {
+                            right: 50%;
+                        }
+
+                        &.on {
+                            >i {
+                                animation: 1s centerslide1 forwards;
+                            }
+                        }
+                    }
+
+                    @else {
+
+                        >i {
+                            left: 50%;
+                        }
+
+                        &.on {
+                            >i {
+                                animation: 1s centerslide2 forwards;
+                            }
+                        }
+                    }
+
+                    &.sc05 {
+                        padding-bottom: 10rem;
+                    }
+                }
+            }
+        }
+    }
+}

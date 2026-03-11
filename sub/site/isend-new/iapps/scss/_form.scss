@@ -1,0 +1,689 @@
+@charset 'utf-8';
+
+.wrap {
+    position: relative;
+    background: $white;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contents {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: $white;
+    height: 100%;
+    overflow: hidden;
+    @include flex(center, space-between);
+
+    &.contacat {
+        .form_wrap {
+            position: relative;
+            width: 720px;
+            max-height: 100dvh;
+            height: 100%;
+            overflow-y: auto;
+            @include scroll;
+
+            // .logo {
+            //     @include absolute(rem(20), rem(22));
+
+            //     a {
+            //         display: block;
+            //         @include img_logo;
+            //         width: rem(76);
+            //         height: rem(34);
+            //         font-size: 0;
+            //     }
+            // }
+
+            .logo {
+                @include absolute(rem(20), rem(22));
+
+                a {
+                    display: block;
+                    @include ftB;
+                    font-size: rem(24);
+                    color: $ft-main-color;
+                }
+            }
+
+            .form_box {
+                width: 100%;
+                padding: rem(80) rem(110) rem(30);
+
+                h2 {
+                    @include ftB;
+                    font-size: rem(24);
+                    color: $input-ft-color;
+                    margin-bottom: rem(40);
+                }
+
+                .input_box {
+                    position: relative;
+                    @include flex(center, space-between);
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.text_box {
+                        margin-top: rem(25);
+                    }
+
+                    .label {
+                        width: rem(100);
+                        @include ftM;
+                        font-size: rem(16);
+                        color: $label-color;
+                        line-height: rem(19);
+
+                        &.required {
+                            &::after {
+                                @include content;
+                                @include absolute;
+                                margin-left: 2px;
+                                width: rem(5);
+                                height: rem(5);
+                                background: $point;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    input {
+                        width: calc(100% - rem(100));
+                        height: rem(48);
+                        border-radius: rem(8);
+                        background: $white;
+                        border: 1px solid $input-bd-color;
+                        padding: rem(14) rem(15);
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $input-ft-color;
+                        transition: all 0.3s ease-in-out;
+
+                        &::placeholder {
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            color: $input-ph-color;
+                        }
+
+                        &:focus {
+                            border: 1px solid $point;
+                        }
+                    }
+
+                    .error_msg {
+                        @include absolute($left: rem(100), $bottom:rem(-16));
+                        display: none;
+                        width: 100%;
+                        @include ftR;
+                        font-size: rem(13);
+                        color: #ef5454;
+                    }
+
+                    &.error {
+                        input {
+                            border: 1px solid #ef5454;
+                        }
+
+                        .error_msg {
+                            display: block;
+                        }
+                    }
+                }
+
+                .text_box {
+                    position: relative;
+                    @include flex(flex-start, space-between);
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.text_box {
+                        margin-top: rem(25);
+                    }
+                    .label {
+                        margin-top: rem(14);
+                        width: rem(100);
+                        @include ftM;
+                        font-size: rem(16);
+                        color: $label-color;
+                        line-height: rem(19);
+
+                        &.required {
+                            &::after {
+                                @include content;
+                                @include absolute;
+                                margin-left: 2px;
+                                width: rem(5);
+                                height: rem(5);
+                                background: $point;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    textarea {
+                        width: calc(100% - rem(100));
+                        height: rem(100);
+                        border-radius: rem(8);
+                        background: $white;
+                        border: 1px solid $input-bd-color;
+                        padding: rem(14) rem(15);
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $input-ft-color;
+                        transition: all 0.3s ease-in-out;
+                        outline: none;
+                        resize: none;
+                        overflow-y: auto;
+                        @include scroll_sm;
+
+                        &::placeholder {
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            color: $input-ph-color;
+                        }
+
+                        &:focus {
+                            border: 1px solid $point;
+                        }
+                    }
+
+                    .count {
+                        @include absolute($bottom: 2px, $right: rem(15));
+                        @include ftR;
+                        text-align: right;
+                        font-size: rem(13);
+                        color: $input-ph-color;
+                        background-color: $white;
+                        padding-bottom: rem(14);
+                    }
+                }
+
+                .agree_box {
+                    margin: rem(40) auto rem(20);
+                    text-align: center;
+
+                    input[type=checkbox] {
+                        display: none;
+
+                        &+label {
+                            @include ftR;
+                            font-size: rem(16);
+                            color: $label-color;
+                            line-height: rem(19);
+                            cursor: pointer;
+                            word-break: keep-all;
+
+                            .agree_show {
+                                @include ftSB;
+                                font-size: rem(16);
+                                line-height: rem(19);
+                                text-decoration: underline;
+                                color: $input-ft-color;
+                            }
+
+                            .required {
+                                @include ftR;
+                                font-size: rem(14);
+                                color: $point;
+                            }
+
+                            &::before {
+                                @include content;
+                                width: rem(22);
+                                height: rem(22);
+                                @include ico_chk_off;
+                                vertical-align: rem(-6);
+                                margin-right: rem(8);
+                            }
+                        }
+
+                        &:checked+label {
+                            &::before {
+                                @include ico_chk;
+                            }
+                        }
+                    }
+                }
+
+                .btn_box {
+                    @include flex(center, center, rem(20));
+
+                    button {
+                        width: rem(150);
+                        height: rem(52);
+                        border-radius: rem(8);
+                        @include ftSB;
+                        font-size: rem(17);
+
+
+                        &.prev_btn {
+                            border: 1px solid $input-bd-color;
+                            color: $label-color;
+                            background: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $input-bd-color;
+                            }
+                        }
+
+                        &.inquiry_btn {
+                            background: $point;
+                            border: 1px solid $point;
+                            color: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $white;
+                                border: 1px solid $point;
+                                color: $point;
+                            }
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            border: 1px solid $disabled-color;
+                            color: $label-color;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .row {
+                    margin: rem(25) 0;
+                    width: 100%;
+                    @include flex(flex-end, flex-end, rem(15), column);
+                }
+            }
+        }
+
+        .complete_wrap {
+            position: relative;
+            width: 720px;
+            min-height: 100dvh;
+            height: 100%;
+            overflow: hidden;
+
+            .logo {
+                @include absolute(rem(20), rem(22));
+
+                // a {
+                //     display: block;
+                //     @include img_logo;
+                //     width: rem(76);
+                //     height: rem(34);
+                //     font-size: 0;
+                // }
+
+                a {
+                    display: block;
+                    @include ftB;
+                    font-size: rem(24);
+                    color: $ft-main-color;
+                }
+            }
+
+            .complete_box {
+                width: 100%;
+                @include centerXY;
+                text-align: center;
+
+                p {
+                    @include ftB;
+                    font-size: rem(28);
+                    text-align: center;
+                    color: $input-ft-color;
+                    line-height: rem(44);
+
+                    &::before {
+                        @include content(block);
+                        width: rem(52);
+                        height: rem(52);
+                        @include img_complete;
+                        margin: 0 auto rem(50);
+                    }
+                }
+
+                .home_btn {
+                    margin: rem(50) auto 0;
+                    width: rem(440);
+                    height: rem(60);
+                    border-radius: rem(8);
+                    @include ftSB;
+                    font-size: rem(20);
+                    color: $white;
+                    background: $point;
+                    border: 1px solid $point;
+                    transition: all 0.3s ease-in-out;
+                    text-align: center;
+                    line-height: rem(60);
+
+                    &:hover {
+                        background: $white;
+                        color: $point;
+                    }
+                }
+            }
+        }
+
+        .img_wrap {
+            position: relative;
+            width: calc(100% - 720px);
+            height: 100vh;
+            overflow: hidden;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .contents {
+        .img_wrap {
+            display: none;
+        }
+
+        &.contacat {
+            display: block;
+
+            .form_wrap {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            .complete_wrap {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:620px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                padding: rem(20) rem(30) rem(30);
+
+                .logo {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+
+                    a {
+                        font-size: rem(20);
+                    }
+                }
+
+                .form_box {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: rem(20);
+
+                    h2 {
+                        font-size: rem(18);
+                        margin-bottom: rem(20);
+                    }
+
+                    .input_box {
+                        flex-wrap: wrap;
+
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.text_box {
+                            margin-top: rem(15);
+                        }
+                        .label {
+                            font-size: rem(14);
+                            line-height: rem(16);
+                        }
+
+                        input {
+                            width: calc(100% - rem(100));
+                            height: rem(40);
+                            padding: rem(12) rem(16);
+                            font-size: rem(14);
+
+                            &::placeholder {
+                                font-size: rem(14);
+                            }
+                        }
+
+                        .error_msg {
+                            position: relative;
+                            bottom: auto;
+                            left: auto;
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                            margin: rem(6) 0 0 rem(100);
+                        }
+                    }
+
+                    .text_box {
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.text_box {
+                            margin-top: rem(15);
+                        }
+
+                        .label {
+                            font-size: rem(14);
+                            line-height: rem(16);
+                        }
+
+                        textarea {
+                            height: rem(100);
+                            padding: rem(12) rem(16);
+                            font-size: rem(14);
+
+                            &::placeholder {
+                                font-size: rem(14);
+                            }
+
+                            &:focus {
+                                border: 1px solid $point;
+                            }
+                        }
+
+                        .count {
+                            @include absolute($bottom: rem(2), $right: rem(10));
+                            font-size: rem(11);
+                            padding-bottom: rem(8);
+                        }
+                    }
+
+                    .agree_box {
+                        input[type=checkbox] {
+                            &+label {
+                                font-size: rem(14);
+                                line-height: rem(16);
+
+                                .agree_show {
+                                    font-size: rem(14);
+                                    line-height: rem(16);
+                                }
+
+                                .required {
+                                    font-size: rem(12);
+                                }
+
+                                &::before {
+                                    width: rem(18);
+                                    height: rem(18);
+                                    vertical-align: rem(-5);
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        gap: rem(10);
+
+                        button {
+                            width: rem(132);
+                            height: rem(46);
+                            font-size: rem(15);
+                        }
+                    }
+
+                    .row {
+                        margin: rem(15) 0;
+                        width: 100%;
+                        @include flex(flex-end, flex-end, rem(10), column);
+                    }
+                }
+            }
+
+            .complete_wrap {
+                padding: rem(20) rem(30) rem(30);
+                height: calc(100% - rem(50));
+
+                .logo {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+
+                .complete_box {
+                    p {
+                        font-size: rem(20);
+                        line-height: rem(30);
+
+                        &::before {
+                            margin-bottom: rem(30);
+                        }
+
+                    }
+
+                    .home_btn {
+                        margin-top: rem(30);
+                        width: rem(440);
+                        max-width: 80%;
+                        height: rem(48);
+                        line-height: rem(48);
+                        font-size: rem(16);
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                padding: rem(20) rem(20) rem(30);
+
+                .form_box {
+                    .input_box {
+                        .label {
+                            width: rem(85);
+                        }
+
+                        input {
+                            width: calc(100% - rem(85));
+                        }
+
+                        .error_msg {
+                            margin-left: rem(85);
+                        }
+                    }
+
+                    .text_box {
+                        .label {
+                            width: rem(85);
+                        }
+
+                        textarea {
+                            width: calc(100% - rem(85));
+                        }
+                    }
+
+                    .agree_box {
+                        input[type=checkbox] {
+                            &+label {
+                                font-size: rem(13);
+                                line-height: rem(16);
+
+                                &::before {
+                                    width: rem(16);
+                                    height: rem(16);
+                                    vertical-align: rem(-4);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .complete_wrap {
+                padding: rem(20) rem(20) rem(30);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:340px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                .form_box {
+                    .input_box {
+                        display: block;
+
+                        .label {
+                            margin-bottom: rem(6);
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+
+                        .error_msg {
+                            margin-left: 0;
+                        }
+                    }
+
+                    .text_box {
+                        display: block;
+
+                        .label {
+                            margin-bottom: rem(6);
+                        }
+
+                        textarea {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

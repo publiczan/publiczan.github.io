@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>브랜드메시지</title>
+
+    <!-- 공통 -->
+    <link rel="icon" type="image/png" href="./images/favicon.ico">
+    <link rel="stylesheet" href="./css/reset.css">
+
+    <!-- send/brand/point 공통 -->
+    <script src="./js/common.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+    <!-- brand -->
+    <link rel="stylesheet" href="./css/all.css">
+    <script src="./js/all.js"></script>
+    <script src="./js/swiper.js"></script>
+</head>
+
+<body>
+    <div class="wrap">
+        <header>
+            <div class="inner">
+                <h1 class="logo" onclick="utils.moveUrl('/')">
+                    <a hef="/">모비아이</a>
+                </h1>
+                <nav class="gnb">
+                    <ul>
+                        <li class="has-sub">
+                            <span class="arrow"></span>
+                            <a href="/">아이센드</a>
+                            <ul class="sub">
+                                <li>
+                                    <a href="/talkpoint">톡포인트</a>
+                                </li>
+                                <li>
+                                    <a href="/brand" class="active">브랜드 메시지</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://www.i-apps.ai">아이앱스</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="https://tune720.com">아이젠트</a>
+                        </li>
+                        <li>
+                            <a target="_blank" href="">아이리뷰</a>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- <div class="header_link">
+                    <a href="/login" class="login_btn">로그인</a>
+                    <a href="/join" class="join_btn">회원가입</a>
+                </div> -->
+                <!-- 클릭 시 on 클래스 제어 -->
+                <div class="mo_nav_btn">
+                    <div class="line"></div>
+                    <div class="line"></div>
+                    <div class="line"></div>
+                </div>
+            </div>
+        </header>
+        <div class="contents">
+            <section class="main all">
+                <div class="scroll-trigger">
+                    <div class="swiper-wrap">
+                        <div class="wswiper wswiper1">
+                            <div class="wswiper-wrapper">
+                                <div class="wswiper-slide first-view active">
+                                    <div class="slide-item">
+                                        <div class="deco-wrap is">
+                                            <div class="deco">아이센드</div>
+                                        </div>
+                                        <div class="cont">
+                                            <img src="./images/all/banner_isend_img.png">
+                                            <div>
+                                                <div class="logo-wrap is">
+                                                    <div class="logo">아이센드</div>
+                                                </div>
+                                                <p class="desc">
+                                                    <em>필요한 메시지를</br>필요한 순간에</em>
+                                                    <span>
+                                                        타겟팅부터 발송까지, CRM데이터를 기반으로<br>
+                                                        광고 효율을 높여줄 메시징 솔루션 입니다.
+                                                    </span>
+                                                </p>
+                                                <button type="button" class="more_btn">
+                                                    <p>자세히보기</p>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wswiper-slide">
+                                    <div class="slide-item">
+                                        <div class="deco-wrap ia">
+                                            <div class="deco">아이앱스</div>
+                                        </div>
+                                        <div class="cont">
+                                            <img src="./images/all/banner_iapps_img.png">
+                                            <div>
+                                                <div class="logo-wrap ia">
+                                                    <div class="logo">아이앱스</div>
+                                                </div>
+                                                <p class="desc">
+                                                    <em>하나로 연결한</br>원스톱 CRM 통합 플랫폼</em>
+                                                    <span>
+                                                        앱 제작부터 메시징 · 리뷰 / 리워드 · 데이터 분석까지
+                                                    </span>
+                                                </p>
+                                                <button type="button" class="more_btn">
+                                                    <p>자세히보기</p>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wswiper-slide">
+                                    <div class="slide-item">
+                                        <div class="deco-wrap iz">
+                                            <div class="deco">아이젠트</div>
+                                        </div>
+                                        <div class="cont">
+                                            <img src="./images/all/banner_gent_img.png">
+                                            <div>
+                                                <div class="logo-wrap iz">
+                                                    <div class="logo">아이젠트</div>
+                                                </div>
+                                                <p class="desc">
+                                                    <em>복잡한 데이터도<br>알아서 분석하고 답을 찾아줍니다.</em>
+                                                    <span>
+                                                        누구나 쉽게 묻고, AI 어드바이저가 답합니다.
+                                                    </span>
+                                                </p>
+                                                <button type="button" class="more_btn">
+                                                    <p>자세히보기</p>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="wswiper-slide last-view">
+                                    <div class="slide-item">
+                                        <div class="deco-wrap ir">
+                                            <div class="deco">아이리뷰</div>
+                                        </div>
+                                        <div class="cont">
+                                            <img src="./images/all/banner_review_img.png">
+                                            <div>
+                                                <div class="logo-wrap ir">
+                                                    <div class="logo">아이리뷰</div>
+                                                </div>
+                                                <p class="desc">
+                                                    <em>리뷰를 콘텐츠로<br>콘텐츠를 매출로</em>
+                                                    <span>
+                                                        쇼핑몰을 위한 SNS형 리뷰 플랫폼입니다.
+                                                    </span>
+                                                </p>
+                                                <button type="button" class="more_btn">
+                                                    <p>자세히보기</p>
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="controls">
+                            <div class="wswiper-pagination"></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="sc01">
+                <div class="inner">
+                    <div class="txt_box">
+                        <h2>모비아이</h2>
+                        <p class="desc"><span>고객 행동 데이터를 수집·분석</span> 한 후 타겟을 세분화 하여<br><br class="mo_br">
+                            개인화 메시지, APP푸시, GEO 등을 통해<br><br class="mo_br">
+                            <span>효과적인 매출 성장을 견인</span>합니다.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="sc02">
+                <i><img src="./images/all/isend_logo_bg.svg"></i>
+                <div class="inner">
+                    <div class="img_box">
+
+                        <img src="./images/all/banner_isend_img.png">
+                    </div>
+                    <div class="txt_box">
+                        <i><img src="./images/common/isend_logo.svg"></i>
+
+                        <p class="desc">
+                            유저의 행동 데이터를 기반으로<br><br class="mo_br">
+                            정교하게 세그먼트화하여<br><br class="mo_br">
+                            적합한 메시지를 자동 발송 및<br><br class="mo_br">
+                            최적화 할 수 있는 CRM메시징 솔루션
+                        </p>
+                        <button type="button" class="more_btn">
+                            <p>자세히보기</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="sc03">
+                <i><img src="./images/all/iapps_logo_bg.svg"></i>
+                <div class="inner">
+                    <div class="img_box">
+
+                        <img src="./images/all/banner_iapps_img.png">
+                    </div>
+                    <div class="txt_box">
+                        <i><img src="./images/common/iapps_logo.svg"></i>
+
+                        <p class="desc">
+                            쇼핑몰 전용 APP 제작 · 운영 · 푸시<br><br class="mo_br">
+                            발송까지 하나로 연결한<br><br class="mo_br">
+                            원스톱 CRM 통합 플랫폼
+                        </p>
+                        <button type="button" class="more_btn">
+                            <p>자세히보기</p>
+                        </button>
+                    </div>
+
+                </div>
+            </section>
+            <section class="sc04">
+                <i><img src="./images/all/igent_logo_bg.svg"></i>
+                <div class="inner">
+                    <div class="img_box">
+
+                        <img src="./images/all/banner_gent_img.png">
+                    </div>
+                    <div class="txt_box">
+                        <i><img src="./images/common/igent_logo.svg"></i>
+
+                        <p class="desc">
+                            데이터 수집부터 고객 분석, AI 전략 제안,<br><br class="mo_br">
+                            GEO 최적화 실행까지 이어주는<br><br class="mo_br">
+                            올인원 마케팅 AI 플랫폼
+                        </p>
+                        <button type="button" class="more_btn">
+                            <p>자세히보기</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="sc05">
+                <i><img src="./images/all/ireview_logo_bg.svg"></i>
+                <div class="inner">
+                    <div class="img_box">
+
+                        <img src="./images/all/banner_review_img.png">
+                    </div>
+                    <div class="txt_box">
+                        <i><img src="./images/common/ireview_logo.svg"></i>
+
+                        <p class="desc">
+                            리뷰 증대와 구매 전환을 넘어,<br><br class="mo_br">
+                            GEO 노출까지 완성하는<br><br class="mo_br">
+                            리뷰 마케팅 플랫폼
+                        </p>
+                        <button type="button" class="more_btn">
+                            <p>자세히보기</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="contact">
+                <div class="inner">
+                    <h2>복잡한 시스템의 경계를 하나로 연결하는<br class="mo_br"><br>
+                        사용자 중심의 AI 마케팅 모비아이로 시작하세요.
+                    </h2>
+                    <div class="btn_box">
+                        <button class="contact_btn">
+                            <p>문의하기</p>
+                        </button>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <footer>
+            <div class="inner">
+                <div class="footer_logo">모비아이</div>
+                <div class="footer_info">
+                    <ul class="info_link">
+                        <li><a href="https://www.enliple.com/company/introduce" target="_blank">회사소개</a></li>
+                        <li>이용약관</li>
+                        <li>개인정보처리방침</li>
+                    </ul>
+                    <div class="info_details">
+                        <p>(주) 인라이플</p>
+                        <ul>
+                            <li><span>대표이사 : </span>한경훈, 이근옥</li>
+                            <li><span>사업자 등록번호 : </span>113-86-60934</li>
+                            <li><span>통신판매업번호 : </span>제2013-서울구로-0691호</li>
+                            <li><span>주소 : </span>서울시 구로구 디지털로 272 한신아이티타워 501호~504호 (우)08389</li>
+                            <li><span>E-MAIL : </span><a href="mailto:mob-i@enliple.com">mob-i@enliple.com</a></li>
+                            <li><span>TEL : </span><a href="tel:070-7705-7839">070-7705-7839</a></li>
+                        </ul>
+                    </div>
+                    <p class="copyright">Copyright(c) ENLIPLE All rights reserved.</p>
+                </div>
+                <div class="familysite">
+                    <button type="button" class="site_btn">Family site</button>
+                    <ul>
+                        <li>
+                            <a href="https://enliple.com/" target="_blank">인라이플</a>
+                        </li>
+                        <li>
+                            <a href="https://mobon.net/main/m2/" target="_blank">모비온</a>
+                        </li>
+                        <li>
+                            <a href="http://tune720.com/" target="_blank">TUNE720</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+        <div class="floating">
+            <a href="" class="contact_btn">문의하기</a>
+        </div>
+    </div>
+    <script>
+        window.addEventListener('load', () => {
+
+            const swiper1 = new Wswiper('.wswiper1', {
+                spaceBetween: 15,
+                slidesPerView: 4,
+                speed: 500,
+
+                pagination: {
+                    el: '.wswiper-pagination',
+                    tagName: 'button',
+                },
+                dragMode: 'snap',
+                addClass: {
+                    'first-view': -2,
+                    'last-view': 1,
+                },
+                setPosX: 110,
+                slideMoveStartIdx: 4,
+                slideMoveLastIdx: document.querySelectorAll('.wswiper1 .wswiper-slide').length,
+                slideMoveSize: 110,
+                breakpoints: {
+                    1400: {
+                        spaceBetween: 15,
+                        slideMoveStartIdx: 3,
+                        slidesPerView: 3,
+                        addClass: {
+                            'first-view': -1,
+                            'last-view': 1,
+                        },
+                    },
+
+                    768: {
+                        spaceBetween: 10,
+                        slideMoveStartIdx: 2,
+                        slidesPerView: 2,
+                        addClass: {
+                            'first-view': 0,
+                            'last-check': -1,
+                            'last-view': 1,
+                        },
+                    },
+                },
+            });
+
+        });
+    </script>
+</body>
+
+</html>

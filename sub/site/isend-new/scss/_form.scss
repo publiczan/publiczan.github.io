@@ -1,0 +1,3222 @@
+@charset 'utf-8';
+
+.wrap {
+    position: relative;
+    background: $white;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.contents {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: $white;
+    height: 100%;
+    overflow: hidden;
+    @include flex(center, space-between);
+
+    .slide_wrap {
+        position: relative;
+        width: calc(100% - 720px);
+        height: 100vh;
+        overflow: hidden;
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            inset: 0;
+            opacity: 0;
+            animation: imgfade 24s infinite;
+
+            &:nth-child(1) {
+                animation-delay: 0s;
+            }
+
+            &:nth-child(2) {
+                animation-delay: 6s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: 12s;
+            }
+
+            &:nth-child(4) {
+                animation-delay: 18s;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+
+    &.contacat {
+        .form_wrap {
+            position: relative;
+            width: 720px;
+            max-height: 100dvh;
+            height: 100%;
+            overflow-y: auto;
+            @include scroll;
+
+            .logo {
+                @include absolute(rem(20), rem(22));
+
+                a {
+                    display: block;
+                    @include img_logo;
+                    width: rem(76);
+                    height: rem(34);
+                    font-size: 0;
+                }
+            }
+
+            .form_box {
+                width: 100%;
+                padding: rem(80) rem(110) rem(30);
+
+                h2 {
+                    @include ftB;
+                    font-size: rem(24);
+                    color: $input-ft-color;
+                    margin-bottom: rem(40);
+                }
+
+                input {
+                    &[type="checkbox"] {
+                        display: none;
+
+                        +label {
+                            font-size: 15px;
+                            vertical-align: middle;
+
+                            &:last-of-type {
+                                margin-right: 0;
+                            }
+
+                            &::before {
+                                content: "";
+                                display: block;
+                                vertical-align: middle;
+                            }
+                        }
+
+                        &:checked {
+                            +label {
+                                &::before {
+                                    content: "";
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .checkBox {
+                    @include checkBox;
+                }
+
+                .input_box {
+                    position: relative;
+                    @include flex(center, space-between);
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.text_bpx {
+                        margin-top: rem(25);
+                    }
+
+                    &+.select_box {
+                        margin-top: rem(25);
+                    }
+
+                    .label {
+                        width: rem(100);
+                        @include ftM;
+                        font-size: rem(16);
+                        color: $label-color;
+                        line-height: rem(19);
+
+                        &.required {
+                            &::after {
+                                @include content;
+                                @include absolute;
+                                margin-left: 2px;
+                                width: rem(5);
+                                height: rem(5);
+                                background: $point;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    input {
+                        width: calc(100% - 10rem);
+                        height: rem(48);
+                        border-radius: rem(8);
+                        background: $white;
+                        border: 1px solid $input-bd-color;
+                        padding: rem(14) rem(15);
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $input-ft-color;
+                        transition: all 0.3s ease-in-out;
+
+                        &::placeholder {
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            color: $input-ph-color;
+                        }
+
+                        &:focus {
+                            border: 1px solid $point;
+                        }
+                    }
+
+                    .error_msg {
+                        @include absolute($left: rem(100), $bottom:rem(-16));
+                        display: none;
+                        width: 100%;
+                        @include ftR;
+                        font-size: rem(13);
+                        color: #ef5454;
+                    }
+
+                    &.error {
+                        input {
+                            border: 1px solid #ef5454;
+                        }
+
+                        .error_msg {
+                            display: block;
+                        }
+                    }
+                }
+
+                .text_box {
+                    position: relative;
+                    @include flex(flex-start, space-between);
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.text_bpx {
+                        margin-top: rem(25);
+                    }
+
+                    &+.select_box {
+                        margin-top: rem(25);
+                    }
+
+                    .label {
+                        margin-top: rem(14);
+                        width: rem(100);
+                        @include ftM;
+                        font-size: rem(16);
+                        color: $label-color;
+                        line-height: rem(19);
+
+                        &.required {
+                            &::after {
+                                @include content;
+                                @include absolute;
+                                margin-left: 2px;
+                                width: rem(5);
+                                height: rem(5);
+                                background: $point;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    textarea {
+                        width: calc(100% - rem(100));
+                        height: rem(100);
+                        border-radius: rem(8);
+                        background: $white;
+                        border: 1px solid $input-bd-color;
+                        padding: rem(14) rem(15);
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $input-ft-color;
+                        transition: all 0.3s ease-in-out;
+                        outline: none;
+                        resize: none;
+                        overflow-y: auto;
+                        @include scroll_sm;
+
+                        &::placeholder {
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            color: $input-ph-color;
+                        }
+
+                        &:focus {
+                            border: 1px solid $point;
+                        }
+                    }
+
+                    .count {
+                        @include absolute($bottom: 2px, $right: rem(15));
+                        @include ftR;
+                        text-align: right;
+                        font-size: rem(13);
+                        color: $input-ph-color;
+                        background-color: $white;
+                        padding-bottom: rem(14);
+                    }
+                }
+
+                .select_box {
+                    position: relative;
+                    @include flex(center, space-between);
+                    width: 100%;
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.text_box {
+                        margin-top: rem(25);
+                    }
+
+                    &+.select_box {
+                        margin-top: rem(25);
+                    }
+
+                    .label {
+                        width: rem(100);
+                        @include ftM;
+                        font-size: rem(16);
+                        color: $label-color;
+                        line-height: rem(19);
+
+                        &.required {
+                            &::after {
+                                @include content;
+                                @include absolute;
+                                margin-left: 2px;
+                                width: rem(5);
+                                height: rem(5);
+                                background: $point;
+                                border-radius: 50%;
+                            }
+                        }
+                    }
+
+                    .custom_select {
+                        position: relative;
+                        width: calc(100% - rem(100));
+
+                        .select_btn {
+                            width: 100%;
+                            height: rem(48);
+                            border-radius: rem(8);
+                            background: $white;
+                            border: 1px solid $input-bd-color;
+                            padding: rem(14) rem(15);
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                            transition: all 0.3s ease-in-out;
+                            text-align: left;
+
+                            &::after {
+                                @include content;
+                                @include ico_select_btn;
+                                width: rem(24);
+                                height: rem(24);
+                                @include centerY($right: rem(15));
+                                transition: rotate 0.3s ease-in-out;
+                            }
+
+                            &.choice {
+                                @include ftM;
+                                color: $input-ft-color;
+                            }
+                        }
+
+                        ul {
+                            position: absolute;
+                            z-index: 1;
+                            top: 45px;
+                            overflow: hidden;
+                            max-height: 0;
+                            opacity: 0;
+                            width: 100%;
+                            background: $white;
+                            padding: 0;
+                            border: 0;
+                            transition:
+                                max-height 0.35s ease,
+                                opacity 0.35s ease,
+                                padding 0.35s ease;
+
+                            li {
+                                cursor: pointer;
+                                padding: rem(12) rem(14);
+                                @include ftR;
+                                font-size: rem(16);
+                                color: $input-ph-color;
+                                transform: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: #f1f7ff;
+                                    color: $input-ft-color;
+                                    @include ftR;
+                                }
+                            }
+
+                        }
+
+                        &.active {
+                            .select_btn {
+                                &::after {
+                                    transform: translateY(-50%) rotate(180deg);
+                                }
+
+                                border-bottom: 0;
+                                border-radius: rem(8) rem(8) 0 0;
+                            }
+
+                            ul {
+                                opacity: 1;
+                                max-height: 500px;
+                                padding: rem(20) 0 rem(6);
+                                border-radius: 0 0 rem(8) rem(8);
+                                border: 1px solid $input-bd-color;
+                                border-top: 0;
+                            }
+                        }
+                    }
+                }
+
+                .agree_box {
+                    margin: rem(40) auto rem(20);
+                    text-align: center;
+
+                    input[type=checkbox] {
+                        display: none;
+
+                        &+label {
+                            @include ftR;
+                            font-size: rem(16);
+                            color: $label-color;
+                            line-height: rem(19);
+                            cursor: pointer;
+                            word-break: keep-all;
+
+                            .agree_show {
+                                @include ftSB;
+                                font-size: rem(16);
+                                line-height: rem(19);
+                                text-decoration: underline;
+                                color: $input-ft-color;
+                            }
+
+                            .required {
+                                @include ftR;
+                                font-size: rem(14);
+                                color: $point;
+                            }
+
+                            &::before {
+                                @include content;
+                                width: rem(22);
+                                height: rem(22);
+                                @include ico_chk_off;
+                                vertical-align: rem(-6);
+                                margin-right: rem(8);
+                            }
+                        }
+
+                        &:checked+label {
+                            &::before {
+                                @include ico_chk;
+                            }
+                        }
+                    }
+                }
+
+                .btn_box {
+                    @include flex(center, center, rem(20));
+
+                    button {
+                        width: rem(150);
+                        height: rem(52);
+                        border-radius: rem(8);
+                        @include ftSB;
+                        font-size: rem(17);
+
+
+                        &.prev_btn {
+                            border: 1px solid $input-bd-color;
+                            color: $label-color;
+                            background: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $input-bd-color;
+                            }
+                        }
+
+                        &.inquiry_btn {
+                            background: $point;
+                            border: 1px solid $point;
+                            color: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $white;
+                                border: 1px solid $point;
+                                color: $point;
+                            }
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            border: 1px solid $disabled-color;
+                            color: $label-color;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                .row {
+                    margin: rem(25) 0;
+                    width: 100%;
+                    @include flex(flex-end, flex-end, rem(15), column);
+
+                    .select_box {
+                        .error_msg {
+                            @include absolute($left: rem(100), $bottom:rem(-16));
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                        }
+
+                        &.error {
+                            input {
+                                border: 1px solid #ef5454;
+                            }
+
+                            .custom_select {
+                                .select_btn {
+                                    border: 1px solid #ef5454;
+                                }
+
+                                ul {
+                                    border-color: #ef5454;
+                                }
+                            }
+
+                            .error_msg {
+                                display: block;
+                            }
+
+                            &+.input_box {
+                                margin-top: rem(10);
+                            }
+                        }
+
+                        &+.input_box {
+                            margin-top: 0;
+                            width: calc(100% - rem(100));
+
+                            input {
+                                width: 100%;
+                            }
+
+                            &.hide {
+                                display: none;
+                            }
+
+                            .error_msg {
+                                left: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .complete_wrap {
+            position: relative;
+            width: 720px;
+            min-height: 100dvh;
+            height: 100%;
+            overflow: hidden;
+
+            .logo {
+                @include absolute(rem(20), rem(22));
+
+                a {
+                    display: block;
+                    @include img_logo;
+                    width: rem(76);
+                    height: rem(34);
+                    font-size: 0;
+                }
+            }
+
+            .complete_box {
+                width: 100%;
+                @include centerXY;
+                text-align: center;
+
+                p {
+                    @include ftB;
+                    font-size: rem(28);
+                    text-align: center;
+                    color: $input-ft-color;
+                    line-height: rem(44);
+
+                    &::before {
+                        @include content(block);
+                        width: rem(52);
+                        height: rem(52);
+                        @include img_complete;
+                        margin: 0 auto rem(50);
+                    }
+                }
+
+                .home_btn {
+                    margin: rem(50) auto 0;
+                    width: rem(440);
+                    height: rem(60);
+                    border-radius: rem(8);
+                    @include ftSB;
+                    font-size: rem(20);
+                    color: $white;
+                    background: $point;
+                    border: 1px solid $point;
+                    transition: all 0.3s ease-in-out;
+                    text-align: center;
+                    line-height: rem(60);
+
+                    &:hover {
+                        background: $white;
+                        color: $point;
+                    }
+                }
+            }
+        }
+
+        &.iapps {
+            .logo {
+                display: none;
+            }
+
+            .img_wrap {
+                position: relative;
+                width: calc(100% - 720px);
+                height: 100vh;
+                overflow: hidden;
+
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+
+    &.login {
+        .login_wrap {
+            position: relative;
+            width: 720px;
+            min-height: 100dvh;
+            height: 100%;
+            overflow: hidden;
+            @include flex(center, center, 0, column);
+
+            .logo {
+                a {
+                    display: block;
+                    @include img_logo;
+                    width: rem(140);
+                    height: rem(63);
+                    font-size: 0;
+                }
+            }
+
+            h2 {
+                margin-top: rem(30);
+                @include ftB;
+                font-size: rem(24);
+                color: $input-ft-color;
+                line-height: rem(34);
+                text-align: center;
+            }
+
+            .login_box {
+                position: relative;
+                margin-top: rem(35);
+                width: rem(440);
+                max-width: 80%;
+
+                .input_box {
+                    position: relative;
+                    width: 100%;
+
+                    &+.input_box {
+                        margin-top: rem(25);
+                    }
+
+                    input {
+                        width: 100%;
+                        height: rem(48);
+                        border-radius: rem(8);
+                        background: $white;
+                        border: 1px solid $input-bd-color;
+                        padding: rem(14) rem(15);
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $input-ft-color;
+                        transition: all 0.3s ease-in-out;
+
+                        &::placeholder {
+                            @include ftR;
+                            font-size: rem(17);
+                            color: $input-ph-color;
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            color: $input-ph-color;
+                        }
+
+                        &:focus {
+                            border: 1px solid $point;
+                        }
+                    }
+
+                    .error_msg {
+                        display: none;
+                        width: 100%;
+                        @include ftR;
+                        font-size: rem(13);
+                        color: #ef5454;
+                    }
+
+                    &.error {
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        input {
+                            border: 1px solid #ef5454;
+                        }
+
+                        .error_msg {
+                            display: block;
+                            margin-top: rem(6);
+                        }
+                    }
+                }
+
+                button,
+                >a {
+                    display: block;
+                    width: 100%;
+                    height: rem(60);
+                    border-radius: rem(8);
+                    @include ftSB;
+                    font-size: rem(20);
+                    line-height: rem(60);
+                    text-align: center;
+
+                    &.login_btn {
+                        margin-top: rem(25);
+                        background: $point;
+                        border: 1px solid $point;
+                        color: $white;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover {
+                            background: $white;
+                            border: 1px solid $point;
+                            color: $point;
+                        }
+                    }
+
+                    &.join_btn {
+                        margin-top: rem(15);
+                        border: 1px solid #cfe4ff;
+                        color: #0d57c1;
+                        background: #cfe4ff;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover {
+                            background: $white;
+                            border: 1px solid #0d57c1;
+                        }
+                    }
+
+                    &:disabled {
+                        background: $disabled-color;
+                        border: 1px solid $disabled-color;
+                        color: $label-color;
+                        pointer-events: none;
+                    }
+                }
+
+                .find_btn {
+                    margin-top: rem(25);
+                    width: 100%;
+                    @include flex(center, space-between);
+
+                    a {
+                        @include ftM;
+                        font-size: rem(17);
+                        color: $label-color;
+                        text-decoration: underline;
+                        transition: color 0.3s ease-in-out;
+
+                        &:hover {
+                            color: $point;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.join {
+        .join_wrap {
+            position: relative;
+            width: 720px;
+            height: 100dvh;
+            overflow-y: auto;
+            @include scroll;
+
+            .logo {
+                @include absolute($left:rem(22), $top:rem(20));
+
+                a {
+                    display: block;
+                    @include img_logo;
+                    width: rem(76);
+                    height: rem(34);
+                    font-size: 0;
+                }
+            }
+
+            .join_box {
+                position: relative;
+                width: 100%;
+                padding: rem(80) rem(110) rem(30);
+
+                .top {
+                    @include flex(center, space-between);
+                    width: 100%;
+                    margin-bottom: rem(50);
+
+                    h2 {
+                        @include ftB;
+                        font-size: rem(24);
+                        color: $input-ft-color;
+                    }
+
+                    .step {
+                        @include flex(center, flex-end, rem(10));
+
+                        div {
+                            @include flex(center, flex-start, rem(6));
+                            width: rem(32);
+                            height: rem(32);
+                            overflow: hidden;
+
+                            span {
+                                flex-shrink: 0;
+                                width: rem(32);
+                                height: rem(32);
+                                border-radius: 50%;
+                                background: #c3d6f1;
+                                text-align: center;
+                                line-height: rem(32);
+                                @include ftEB;
+                                color: $white;
+                                font-size: rem(16);
+                            }
+
+                            &.active {
+                                span {
+                                    background: $point;
+                                }
+
+                                width: rem(102);
+                                @include ftSB;
+                                color: $point;
+                                font-size: rem(17);
+                            }
+                        }
+                    }
+                }
+
+                .btn_box {
+                    @include centerX($bottom:rem(60));
+                    @include flex(center, center, rem(20));
+                    width: 100%;
+
+                    button {
+                        width: rem(150);
+                        height: rem(52);
+                        border-radius: rem(8);
+                        @include ftSB;
+                        font-size: rem(17);
+
+                        &.prev_btn {
+                            border: 1px solid $input-bd-color;
+                            color: $label-color;
+                            background: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $input-bd-color;
+                            }
+                        }
+
+                        &.next_btn,
+                        &.join_btn {
+                            background: $point;
+                            border: 1px solid $point;
+                            color: $white;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                background: $white;
+                                border: 1px solid $point;
+                                color: $point;
+                            }
+                        }
+
+                        &:disabled {
+                            background: $disabled-color;
+                            border: 1px solid $disabled-color;
+                            color: $label-color;
+                            pointer-events: none;
+                        }
+                    }
+                }
+
+                &.step01 {
+                    height: 100%;
+
+                    .agree_wrap {
+                        .checkbox {
+                            @include flex(center, space-between);
+
+                            &+.checkbox {
+                                margin-top: rem(20);
+                            }
+
+                            input[type=checkbox] {
+                                display: none;
+
+                                &+label {
+                                    @include flex(center, flex-start);
+                                    cursor: pointer;
+
+                                    .txt {
+                                        @include ftM;
+                                        font-size: rem(18);
+                                        color: #383b40;
+                                        text-decoration: underline;
+
+                                        &+span {
+                                            text-decoration: none;
+                                            @include ftR;
+                                            margin-left: rem(4);
+                                            color: #4d5157;
+                                            font-size: rem(14);
+
+                                            &.required {
+                                                color: $point;
+                                            }
+                                        }
+                                    }
+
+                                    &::before {
+                                        @include content;
+                                        width: rem(28);
+                                        height: rem(28);
+                                        @include ico_chk_off;
+                                        margin-right: rem(10);
+                                    }
+                                }
+
+                                &:checked+label {
+                                    &::before {
+                                        @include ico_chk;
+                                    }
+                                }
+                            }
+
+                            &:first-of-type {
+                                padding-bottom: rem(22);
+                                border-bottom: 1px solid #f4f5f9;
+
+                                input[type=checkbox] {
+                                    &+label {
+                                        .txt {
+                                            @include ftSB;
+                                            font-size: rem(18);
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                            }
+
+                            &:nth-of-type(6),
+                            &:nth-of-type(7) {
+                                input[type=checkbox] {
+                                    &+label {
+                                        margin-left: rem(38);
+
+                                        .txt {
+                                            text-decoration: none;
+                                        }
+                                    }
+                                }
+                            }
+
+                            .more_btn {
+                                @include ftR;
+                                font-size: rem(13);
+                                padding: 4px 8px;
+                                background: #f2f2f2;
+                                border-radius: 4px;
+                                color: $label-color;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: #e1e1e1;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    min-height: 100dvh;
+
+                    .info_wrap {
+                        .input_box {
+                            position: relative;
+                            @include flex(center, space-between);
+
+                            &+.input_box {
+                                margin-top: rem(25);
+                            }
+
+                            &.btn {
+                                justify-content: flex-start;
+
+                                button {
+                                    width: rem(150);
+                                    height: rem(48);
+                                    border-radius: rem(8);
+                                    @include ftSB;
+                                    font-size: rem(17);
+                                    background: $point;
+                                    border: 1px solid $point;
+                                    color: $white;
+                                    transition: all 0.3s ease-in-out;
+
+                                    &:hover {
+                                        background: $white;
+                                        border: 1px solid $point;
+                                        color: $point;
+                                    }
+                                }
+                            }
+
+                            .label {
+                                width: rem(100);
+                                @include ftM;
+                                font-size: rem(16);
+                                color: $label-color;
+                                line-height: rem(19);
+                            }
+
+                            input {
+                                width: calc(100% - rem(100));
+                                height: rem(48);
+                                border-radius: rem(8);
+                                background: $white;
+                                border: 1px solid $input-bd-color;
+                                padding: rem(14) rem(15);
+                                @include ftM;
+                                font-size: rem(17);
+                                color: $input-ft-color;
+                                transition: all 0.3s ease-in-out;
+
+                                &::placeholder {
+                                    @include ftR;
+                                    font-size: rem(17);
+                                    color: $input-ph-color;
+                                }
+
+                                &:disabled {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:read-only {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:focus {
+                                    border: 1px solid $point;
+                                }
+                            }
+
+                            .error_msg {
+                                @include absolute($left: rem(100), $bottom:rem(-16));
+                                display: none;
+                                width: 100%;
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                            }
+
+                            &.error {
+                                input {
+                                    border: 1px solid #ef5454;
+                                }
+
+                                .error_msg {
+                                    display: block;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &.step03 {
+                    height: 100%;
+
+                    .top {
+                        margin-bottom: 0;
+                    }
+
+                    .complete_box {
+                        width: 100%;
+                        @include centerXY;
+                        text-align: center;
+
+                        p {
+                            @include ftB;
+                            font-size: rem(28);
+                            text-align: center;
+                            color: $input-ft-color;
+                            line-height: rem(44);
+
+                            &::before {
+                                @include content(block);
+                                width: rem(52);
+                                height: rem(52);
+                                @include img_complete;
+                                margin: 0 auto rem(50);
+                            }
+                        }
+
+                        .login_btn {
+                            margin: rem(50) auto 0;
+                            width: rem(440);
+                            height: rem(60);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(20);
+                            color: $white;
+                            background: $point;
+                            border: 1px solid $point;
+                            transition: all 0.3s ease-in-out;
+                            text-align: center;
+                            line-height: rem(60);
+
+                            &:hover {
+                                background: $white;
+                                color: $point;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    &.find {
+        .find_wrap {
+            position: relative;
+            width: 720px;
+            min-height: 100dvh;
+            height: 100%;
+            overflow: hidden;
+            @include flex(flex-start, flex-start, 0, column);
+
+            .logo {
+                z-index: 10;
+                @include absolute(rem(20), rem(22));
+
+                a {
+                    display: block;
+                    @include img_logo;
+                    width: rem(76);
+                    height: rem(34);
+                    font-size: 0;
+                }
+            }
+
+            .find_id_box {
+                position: relative;
+                width: 100%;
+                padding: rem(260) rem(110) 0;
+
+                h2 {
+                    @include ftB;
+                    font-size: rem(24);
+                    color: $input-ft-color;
+                    margin-bottom: rem(50);
+                }
+
+                &.step01 {
+                    .input_box {
+                        position: relative;
+                        @include flex(center, space-between);
+
+                        &+.input_box {
+                            margin-top: rem(25);
+                        }
+
+                        .label {
+                            width: rem(100);
+                            @include ftM;
+                            font-size: rem(16);
+                            color: $label-color;
+                            line-height: rem(19);
+                        }
+
+                        .row {
+                            position: relative;
+                            width: calc(100% - rem(100));
+
+                            input {
+                                width: 100%;
+                                height: rem(48);
+                                border-radius: rem(8);
+                                background: $white;
+                                border: 1px solid $input-bd-color;
+                                padding: rem(14) rem(15);
+                                @include ftM;
+                                font-size: rem(17);
+                                color: $input-ft-color;
+                                transition: all 0.3s ease-in-out;
+
+                                &::placeholder {
+                                    @include ftR;
+                                    font-size: rem(17);
+                                    color: $input-ph-color;
+                                }
+
+                                &:disabled {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:read-only {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:focus {
+                                    border: 1px solid $point;
+                                }
+                            }
+
+                            .send_btn {
+                                @include centerY($right:rem(5));
+                                width: rem(140);
+                                height: rem(38);
+                                border-radius: rem(8);
+                                @include ftM;
+                                font-size: rem(16);
+                                color: $white;
+                                background: $point;
+                                border: 1px solid $point;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+
+                                &:disabled {
+                                    background: $disabled-color;
+                                    border: 1px solid $disabled-color;
+                                    color: $label-color;
+                                    pointer-events: none;
+                                }
+                            }
+
+                            .time {
+                                @include centerY($right:rem(12));
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                                text-align: right;
+                                background: $white;
+                            }
+                        }
+
+                        .error_msg {
+                            @include absolute($left: rem(100), $bottom:rem(-16));
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                        }
+
+                        &.error {
+                            input {
+                                border: 1px solid #ef5454;
+                            }
+
+                            .error_msg {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .txt {
+                        margin-top: rem(25);
+                        color: $label-color;
+                        @include ftM;
+                        font-size: rem(16);
+                        line-height: rem(19);
+                        word-break: keep-all;
+                    }
+
+                    .contact_info {
+                        margin-top: rem(10);
+                        @include flex(center, flex-start, rem(20));
+
+                        p {
+                            @include ftR;
+                            font-size: rem(16);
+                            color: $input-ph-color;
+
+                            a {
+                                @include ftR;
+                                font-size: rem(16);
+                                color: $input-ph-color;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        margin-top: rem(180);
+                        @include flex(center, center, rem(20));
+                        width: 100%;
+
+                        button {
+                            width: rem(150);
+                            height: rem(52);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(17);
+
+                            &.prev_btn {
+                                border: 1px solid $input-bd-color;
+                                color: $label-color;
+                                background: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $input-bd-color;
+                                }
+                            }
+
+                            &.next_btn {
+                                background: $point;
+                                border: 1px solid $point;
+                                color: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+                            }
+
+                            &:disabled {
+                                background: $disabled-color;
+                                border: 1px solid $disabled-color;
+                                color: $label-color;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    .id_find_wrap {
+                        @include flex(center, center, rem(40), column);
+
+                        p {
+                            @include ftB;
+                            font-size: rem(24);
+                            color: $input-ft-color;
+                            line-height: rem(34);
+                            text-align: center;
+                        }
+
+                        .id_box {
+                            max-width: rem(440);
+                            width: 100%;
+                            height: 100%;
+                            max-height: rem(160);
+                            border-radius: rem(8);
+                            padding: rem(20);
+                            background: #f1f7ff;
+                            @include scroll_sm;
+                            overflow-y: auto;
+
+                            ul {
+                                @include flex(center, center, rem(5), column);
+
+                                li {
+                                    @include ftSB;
+                                    font-size: rem(17);
+                                    color: $label-color;
+                                    text-align: center;
+                                    line-height: rem(20);
+                                }
+                            }
+                        }
+
+                        button,
+                        >a {
+                            display: block;
+                            width: 100%;
+                            max-width: rem(440);
+                            height: rem(60);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(20);
+                            line-height: rem(60);
+                            text-align: center;
+                            margin: 0 auto;
+
+                            &.login_btn {
+                                background: $point;
+                                border: 1px solid $point;
+                                color: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .find_pw_box {
+                position: relative;
+                width: 100%;
+                padding: rem(260) rem(110) 0;
+
+                .top {
+                    @include flex(center, space-between);
+                    width: 100%;
+                    margin-bottom: rem(50);
+
+                    h2 {
+                        @include ftB;
+                        font-size: rem(24);
+                        color: $input-ft-color;
+                    }
+
+                    .step {
+                        @include flex(center, flex-end, rem(10));
+
+                        div {
+                            @include flex(center, flex-start, rem(6));
+                            width: rem(32);
+                            height: rem(32);
+                            overflow: hidden;
+
+                            span {
+                                flex-shrink: 0;
+                                width: rem(32);
+                                height: rem(32);
+                                border-radius: 50%;
+                                background: #c3d6f1;
+                                text-align: center;
+                                line-height: rem(32);
+                                @include ftEB;
+                                color: $white;
+                                font-size: rem(16);
+                            }
+
+                            &.active {
+                                span {
+                                    background: $point;
+                                }
+
+                                width: auto;
+                                @include ftSB;
+                                color: $point;
+                                font-size: rem(17);
+                            }
+                        }
+                    }
+                }
+
+                &.step01 {
+                    .input_box {
+                        position: relative;
+                        @include flex(center, space-between);
+
+                        &+.input_box {
+                            margin-top: rem(25);
+                        }
+
+                        .label {
+                            width: rem(100);
+                            @include ftM;
+                            font-size: rem(16);
+                            color: $label-color;
+                            line-height: rem(19);
+                        }
+
+                        .row {
+                            position: relative;
+                            width: calc(100% - rem(100));
+
+                            input {
+                                width: 100%;
+                                height: rem(48);
+                                border-radius: rem(8);
+                                background: $white;
+                                border: 1px solid $input-bd-color;
+                                padding: rem(14) rem(15);
+                                @include ftM;
+                                font-size: rem(17);
+                                color: $input-ft-color;
+                                transition: all 0.3s ease-in-out;
+
+                                &::placeholder {
+                                    @include ftR;
+                                    font-size: rem(17);
+                                    color: $input-ph-color;
+                                }
+
+                                &:disabled {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:read-only {
+                                    background: $disabled-color;
+                                    color: $input-ph-color;
+                                }
+
+                                &:focus {
+                                    border: 1px solid $point;
+                                }
+                            }
+
+                            .send_btn {
+                                @include centerY($right:rem(5));
+                                width: rem(140);
+                                height: rem(38);
+                                border-radius: rem(8);
+                                @include ftM;
+                                font-size: rem(16);
+                                color: $white;
+                                background: $point;
+                                border: 1px solid $point;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+
+                                &:disabled {
+                                    background: $disabled-color;
+                                    border: 1px solid $disabled-color;
+                                    color: $label-color;
+                                    pointer-events: none;
+                                }
+                            }
+
+                            .time {
+                                @include centerY($right:rem(12));
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                                text-align: right;
+                            }
+                        }
+
+                        .error_msg {
+                            @include absolute($left: rem(100), $bottom:rem(-16));
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                        }
+
+                        &.error {
+                            input {
+                                border: 1px solid #ef5454;
+                            }
+
+                            .error_msg {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .txt {
+                        margin-top: rem(25);
+                        color: $label-color;
+                        @include ftM;
+                        font-size: rem(16);
+                        line-height: rem(19);
+                        word-break: keep-all;
+                    }
+
+                    .contact_info {
+                        margin-top: rem(10);
+                        @include flex(center, flex-start, rem(20));
+
+                        p {
+                            @include ftR;
+                            font-size: rem(16);
+                            color: $input-ph-color;
+
+                            a {
+                                @include ftR;
+                                font-size: rem(16);
+                                color: $input-ph-color;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        margin-top: rem(180);
+                        @include flex(center, center, rem(20));
+                        width: 100%;
+
+                        button {
+                            width: rem(150);
+                            height: rem(52);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(17);
+
+                            &.prev_btn {
+                                border: 1px solid $input-bd-color;
+                                color: $label-color;
+                                background: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $input-bd-color;
+                                }
+                            }
+
+                            &.next_btn {
+                                background: $point;
+                                border: 1px solid $point;
+                                color: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+                            }
+
+                            &:disabled {
+                                background: $disabled-color;
+                                border: 1px solid $disabled-color;
+                                color: $label-color;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
+
+                &.step02 {
+                    .input_box {
+                        position: relative;
+                        @include flex(center, space-between);
+
+                        &+.input_box {
+                            margin-top: rem(25);
+                        }
+
+                        .label {
+                            width: rem(115);
+                            @include ftM;
+                            font-size: rem(16);
+                            color: $label-color;
+                            line-height: rem(19);
+                        }
+
+                        input {
+                            width: calc(100% - rem(115));
+                            height: rem(48);
+                            border-radius: rem(8);
+                            background: $white;
+                            border: 1px solid $input-bd-color;
+                            padding: rem(14) rem(15);
+                            @include ftM;
+                            font-size: rem(17);
+                            color: $input-ft-color;
+                            transition: all 0.3s ease-in-out;
+
+                            &::placeholder {
+                                @include ftR;
+                                font-size: rem(17);
+                                color: $input-ph-color;
+                            }
+
+                            &:disabled {
+                                background: $disabled-color;
+                                color: $input-ph-color;
+                            }
+
+                            &:read-only {
+                                background: $disabled-color;
+                                color: $input-ph-color;
+                            }
+
+                            &:focus {
+                                border: 1px solid $point;
+                            }
+                        }
+
+                        .error_msg {
+                            @include absolute($left: rem(115), $bottom:rem(-16));
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                        }
+
+                        &.error {
+                            input {
+                                border: 1px solid #ef5454;
+                            }
+
+                            .error_msg {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        margin-top: rem(322);
+                        @include flex(center, center, rem(20));
+                        width: 100%;
+
+                        button {
+                            width: rem(150);
+                            height: rem(52);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(17);
+
+                            &.prev_btn {
+                                border: 1px solid $input-bd-color;
+                                color: $label-color;
+                                background: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $input-bd-color;
+                                }
+                            }
+
+                            &.next_btn {
+                                background: $point;
+                                border: 1px solid $point;
+                                color: $white;
+                                transition: all 0.3s ease-in-out;
+
+                                &:hover {
+                                    background: $white;
+                                    border: 1px solid $point;
+                                    color: $point;
+                                }
+                            }
+
+                            &:disabled {
+                                background: $disabled-color;
+                                border: 1px solid $disabled-color;
+                                color: $label-color;
+                                pointer-events: none;
+                            }
+                        }
+                    }
+                }
+
+                &.step03 {
+                    position: relative;
+                    width: 100%;
+                    padding-top: rem(130);
+                    min-height: 100dvh;
+
+                    .top {
+                        margin-bottom: 0;
+                    }
+
+                    .complete_box {
+                        width: 100%;
+                        @include centerXY;
+                        text-align: center;
+
+                        p {
+                            @include ftB;
+                            font-size: rem(28);
+                            text-align: center;
+                            color: $input-ft-color;
+                            line-height: rem(44);
+
+                            &::before {
+                                @include content(block);
+                                width: rem(52);
+                                height: rem(52);
+                                @include img_complete;
+                                margin: 0 auto rem(50);
+                            }
+                        }
+
+                        .login_btn {
+                            margin: rem(50) auto 0;
+                            width: rem(440);
+                            height: rem(60);
+                            border-radius: rem(8);
+                            @include ftSB;
+                            font-size: rem(20);
+                            color: $white;
+                            background: $point;
+                            border: 1px solid $point;
+                            transition: all 0.3s ease-in-out;
+                            text-align: center;
+                            line-height: rem(60);
+
+                            &:hover {
+                                background: $white;
+                                color: $point;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height:900px) {
+    .contents {
+        &.join {
+            .join_wrap {
+                .join_box {
+                    &.step02 {
+                        .btn_box {
+                            position: relative;
+                            margin-top: rem(50);
+                            bottom: auto;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1200px) {
+    .contents {
+        .slide_wrap {
+            display: none;
+        }
+
+        .img_wrap {
+            display: none;
+        }
+
+        &.contacat {
+            display: block;
+
+            .form_wrap {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            .complete_wrap {
+                width: 100%;
+            }
+        }
+
+        &.login {
+            display: block;
+
+            .login_wrap {
+                width: 100%;
+            }
+        }
+
+        &.join {
+            display: block;
+
+            .join_wrap {
+                width: 100%;
+            }
+        }
+
+        &.find {
+            display: block;
+
+            .find_wrap {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:620px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                padding: rem(20) rem(30) rem(30);
+
+                .logo {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+
+                .form_box {
+                    width: 100%;
+                    padding: 0;
+                    margin-top: rem(20);
+
+                    h2 {
+                        font-size: rem(18);
+                        margin-bottom: rem(20);
+                    }
+
+                    .input_box {
+                        flex-wrap: wrap;
+
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.text_bpx {
+                            margin-top: rem(15);
+                        }
+
+                        &+.select_box {
+                            margin-top: rem(15);
+                        }
+
+                        .label {
+                            font-size: rem(14);
+                            line-height: rem(16);
+                        }
+
+                        input {
+                            width: calc(100% - rem(100));
+                            height: rem(40);
+                            padding: rem(12) rem(16);
+                            font-size: rem(14);
+
+                            &::placeholder {
+                                font-size: rem(14);
+                            }
+                        }
+
+                        .error_msg {
+                            position: relative;
+                            bottom: auto;
+                            left: auto;
+                            display: none;
+                            width: 100%;
+                            @include ftR;
+                            font-size: rem(13);
+                            color: #ef5454;
+                            margin: rem(6) 0 0 rem(100);
+                        }
+                    }
+
+                    .text_box {
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.text_bpx {
+                            margin-top: rem(15);
+                        }
+
+                        &+.select_box {
+                            margin-top: rem(15);
+                        }
+
+                        .label {
+                            font-size: rem(14);
+                            line-height: rem(16);
+                        }
+
+                        textarea {
+                            height: rem(100);
+                            padding: rem(12) rem(16);
+                            font-size: rem(14);
+
+                            &::placeholder {
+                                font-size: rem(14);
+                            }
+
+                            &:focus {
+                                border: 1px solid $point;
+                            }
+                        }
+
+                        .count {
+                            @include absolute($bottom: rem(2), $right: rem(10));
+                            font-size: rem(11);
+                            padding-bottom: rem(8);
+                        }
+                    }
+
+                    .select_box {
+                        &+.input_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.text_box {
+                            margin-top: rem(15);
+                        }
+
+                        &+.select_box {
+                            margin-top: rem(15);
+                        }
+
+                        .label {
+                            font-size: rem(14);
+                            line-height: rem(16);
+                        }
+
+                        .custom_select {
+                            position: relative;
+                            width: calc(100% - rem(100));
+
+                            .select_btn {
+                                height: rem(40);
+                                padding: rem(12) rem(16);
+                                font-size: rem(14);
+
+                                &::after {
+                                    @include centerY($right: rem(16));
+                                }
+                            }
+
+                            ul {
+                                position: absolute;
+                                z-index: 1;
+                                top: 39px;
+
+                                li {
+                                    padding: rem(12) rem(14);
+                                    font-size: rem(14);
+                                }
+
+                            }
+
+                            &.active {
+                                .select_btn {
+                                    &::after {
+                                        transform: translateY(-50%) rotate(180deg);
+                                    }
+
+                                    border-bottom: 0;
+                                    border-radius: rem(8) rem(8) 0 0;
+                                }
+
+                                ul {
+                                    padding: rem(14) 0 rem(6);
+                                }
+                            }
+                        }
+                    }
+
+                    .agree_box {
+                        input[type=checkbox] {
+                            &+label {
+                                font-size: rem(14);
+                                line-height: rem(16);
+
+                                .agree_show {
+                                    font-size: rem(14);
+                                    line-height: rem(16);
+                                }
+
+                                .required {
+                                    font-size: rem(12);
+                                }
+
+                                &::before {
+                                    width: rem(18);
+                                    height: rem(18);
+                                    vertical-align: rem(-5);
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        gap: rem(10);
+
+                        button {
+                            width: rem(132);
+                            height: rem(46);
+                            font-size: rem(15);
+                        }
+                    }
+
+                    .row {
+                        margin: rem(15) 0;
+                        width: 100%;
+                        @include flex(flex-end, flex-end, rem(10), column);
+
+                        .select_box {
+                            flex-wrap: wrap;
+
+                            .error_msg {
+                                position: relative;
+                                bottom: auto;
+                                left: auto;
+                                font-size: rem(13);
+                                margin: rem(6) 0 0 rem(100);
+                            }
+
+                            &.error {
+                                &+.input_box {
+                                    margin-top: 0;
+                                }
+                            }
+
+                            &+.input_box {
+                                .error_msg {
+                                    left: 0;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .complete_wrap {
+                padding: rem(20) rem(30) rem(30);
+                height: calc(100% - rem(50));
+
+                .logo {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+
+                .complete_box {
+                    p {
+                        font-size: rem(20);
+                        line-height: rem(30);
+
+                        &::before {
+                            margin-bottom: rem(30);
+                        }
+
+                    }
+
+                    .home_btn {
+                        margin-top: rem(30);
+                        width: rem(440);
+                        max-width: 80%;
+                        height: rem(48);
+                        line-height: rem(48);
+                        font-size: rem(16);
+                    }
+                }
+            }
+        }
+
+        &.login {
+            .login_wrap {
+                .login_box {
+                    .input_box {
+                        &+.input_box {
+                            margin-top: rem(20);
+                        }
+
+                        input {
+                            padding: rem(12) rem(16);
+                            font-size: rem(14);
+
+                            &::placeholder {
+                                font-size: rem(14);
+                            }
+                        }
+
+                        .error_msg {
+                            font-size: rem(13);
+                        }
+                    }
+
+                    button,
+                    >a {
+                        height: rem(50);
+                        font-size: rem(17);
+                        line-height: rem(50);
+                    }
+
+                    .find_btn {
+                        a {
+                            font-size: rem(15);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.join {
+            .join_wrap {
+                padding: rem(20) rem(30) rem(30);
+
+                .logo {
+                    position: relative;
+                    top: auto;
+                    left: auto;
+                }
+
+                .join_box {
+                    margin-top: rem(20);
+                    padding: 0;
+
+                    .top {
+                        margin-bottom: rem(20);
+
+                        h2 {
+                            font-size: rem(18);
+                        }
+
+                        .step {
+                            div {
+                                width: rem(20);
+
+                                span {
+                                    width: rem(20);
+                                    height: rem(20);
+                                    font-size: rem(11);
+                                    line-height: rem(20);
+                                }
+
+                                &.active {
+                                    width: rem(75);
+                                    font-size: rem(12);
+                                }
+                            }
+                        }
+                    }
+
+                    .btn_box {
+                        gap: rem(10);
+
+                        button {
+                            width: rem(132);
+                            height: rem(46);
+                            font-size: rem(15);
+                        }
+                    }
+
+                    &.step01 {
+                        height: auto;
+                        min-height: calc(100dvh - rem(50) - rem(34) - rem(20));
+
+                        .agree_wrap {
+                            .checkbox {
+                                &+.checkbox {
+                                    margin-top: rem(15);
+                                }
+
+                                input[type=checkbox] {
+                                    &+label {
+                                        .txt {
+                                            font-size: rem(14);
+
+                                            &+span {
+                                                font-size: rem(12);
+                                            }
+                                        }
+
+                                        &::before {
+                                            width: rem(18);
+                                            height: rem(18);
+                                        }
+                                    }
+                                }
+
+                                &:first-of-type {
+                                    input[type=checkbox] {
+                                        &+label {
+                                            .txt {
+                                                font-size: rem(16);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:nth-of-type(6),
+                                &:nth-of-type(7) {
+                                    input[type=checkbox] {
+                                        &+label {
+                                            margin-left: rem(28);
+
+                                            .txt {
+                                                text-decoration: none;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                .more_btn {
+                                    font-size: rem(12);
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        height: auto;
+                        min-height: calc(100dvh - rem(50) - rem(34) - rem(20));
+
+                        .info_wrap {
+                            .input_box {
+                                flex-wrap: wrap;
+
+                                &.btn {
+                                    button {
+                                        width: rem(132);
+                                        height: rem(42);
+                                        font-size: rem(14);
+                                    }
+                                }
+
+                                &+.input_box {
+                                    margin-top: rem(15);
+                                }
+
+                                .label {
+                                    font-size: rem(14);
+                                    line-height: rem(16);
+                                }
+
+                                input {
+                                    width: calc(100% - rem(100));
+                                    height: rem(40);
+                                    padding: rem(12) rem(16);
+                                    font-size: rem(14);
+
+                                    &::placeholder {
+                                        font-size: rem(14);
+                                    }
+                                }
+
+                                .error_msg {
+                                    position: relative;
+                                    bottom: auto;
+                                    left: auto;
+                                    display: none;
+                                    width: 100%;
+                                    @include ftR;
+                                    font-size: rem(13);
+                                    color: #ef5454;
+                                    margin: rem(6) 0 0 rem(100);
+                                }
+                            }
+                        }
+                    }
+
+                    &.step03 {
+                        height: auto;
+                        min-height: calc(100dvh - rem(50) - rem(34) - rem(20));
+
+                        .complete_box {
+                            p {
+                                font-size: rem(20);
+                                line-height: rem(30);
+
+                                &::before {
+                                    margin-bottom: rem(30);
+                                }
+
+                                .mo_br {
+                                    display: block;
+                                }
+                            }
+
+                            .login_btn {
+                                margin-top: rem(30);
+                                max-width: rem(440);
+                                width: 80%;
+                                height: rem(48);
+                                line-height: rem(48);
+                                font-size: rem(16);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.find {
+            .find_wrap {
+                height: 100dvh;
+                padding: rem(20) rem(30) rem(30);
+                display: block;
+                overflow: hidden;
+
+                .logo {
+                    position: relative;
+                    left: auto;
+                    top: auto;
+                    margin-bottom: 0;
+                }
+
+                .find_id_box {
+                    margin-top: rem(20);
+                    min-height: calc(100dvh - rem(50) - rem(34) - rem(20));
+                    padding: 0;
+
+                    h2 {
+                        font-size: rem(18);
+                        margin-bottom: rem(20);
+                    }
+
+                    &.step01 {
+                        display: block;
+                        width: 100%;
+
+                        .input_box {
+                            display: block;
+                            width: 100%;
+
+                            &+.input_box {
+                                margin-top: rem(15);
+                            }
+
+                            .label {
+                                font-size: rem(14);
+                                line-height: rem(16);
+                                margin-bottom: rem(6);
+                            }
+
+                            .row {
+                                width: 100%;
+
+                                input {
+                                    height: rem(40);
+                                    padding: rem(12) rem(16);
+                                    font-size: rem(14);
+
+                                    &::placeholder {
+                                        font-size: rem(14);
+                                    }
+                                }
+
+                                .send_btn {
+                                    width: rem(120);
+                                    height: rem(32);
+                                    font-size: rem(14);
+                                }
+                            }
+
+                            .error_msg {
+                                position: relative;
+                                bottom: auto;
+                                left: auto;
+                                display: none;
+                                width: 100%;
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                                margin: rem(6) 0 0 0;
+                            }
+                        }
+
+                        .txt {
+                            text-align: center;
+                            font-size: rem(14);
+                            line-height: rem(18);
+
+                            .mo_br {
+                                display: block;
+                            }
+                        }
+
+                        .contact_info {
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: rem(10);
+
+                            p {
+                                font-size: rem(14);
+
+                                a {
+                                    font-size: rem(14);
+                                }
+                            }
+                        }
+
+                        .btn_box {
+                            margin-top: 0;
+                            @include centerX($bottom:0);
+                            gap: rem(10);
+
+                            button {
+                                width: rem(132);
+                                height: rem(46);
+                                font-size: rem(15);
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        display: block;
+                        width: 100%;
+
+                        .id_find_wrap {
+                            @include centerXY;
+                            width: 100%;
+                            display: block;
+
+                            p {
+                                font-size: rem(20);
+                                line-height: rem(30);
+                            }
+
+                            .id_box {
+                                margin: rem(30) auto 0;
+
+                                ul {
+                                    li {
+                                        font-size: rem(15);
+                                    }
+                                }
+                            }
+
+                            .login_btn {
+                                margin-top: rem(30);
+                                width: 100%;
+                                max-width: rem(440);
+                                height: rem(48);
+                                line-height: rem(48);
+                                font-size: rem(16);
+                            }
+                        }
+                    }
+                }
+
+                .find_pw_box {
+                    margin-top: rem(20);
+                    min-height: calc(100dvh - rem(50) - rem(34) - rem(20));
+                    padding: 0;
+
+                    .top {
+                        margin-bottom: rem(20);
+
+                        h2 {
+                            font-size: rem(18);
+                        }
+
+                        .step {
+                            div {
+                                width: rem(20);
+
+                                span {
+                                    width: rem(20);
+                                    height: rem(20);
+                                    font-size: rem(11);
+                                    line-height: rem(20);
+                                }
+
+                                &.active {
+                                    width: auto;
+                                    font-size: rem(12);
+                                }
+                            }
+                        }
+                    }
+
+                    &.step01 {
+                        display: block;
+                        width: 100%;
+
+                        .input_box {
+                            display: block;
+                            width: 100%;
+
+                            &+.input_box {
+                                margin-top: rem(15);
+                            }
+
+                            .label {
+                                font-size: rem(14);
+                                line-height: rem(16);
+                                margin-bottom: rem(6);
+                            }
+
+                            .row {
+                                width: 100%;
+
+                                input {
+                                    height: rem(40);
+                                    padding: rem(12) rem(16);
+                                    font-size: rem(14);
+
+                                    &::placeholder {
+                                        font-size: rem(14);
+                                    }
+                                }
+
+                                .send_btn {
+                                    width: rem(120);
+                                    height: rem(32);
+                                    font-size: rem(14);
+                                }
+                            }
+
+                            .error_msg {
+                                position: relative;
+                                bottom: auto;
+                                left: auto;
+                                display: none;
+                                width: 100%;
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                                margin: rem(6) 0 0 0;
+                            }
+                        }
+
+                        .txt {
+                            text-align: center;
+                            font-size: rem(14);
+                            line-height: rem(18);
+
+                            .mo_br {
+                                display: block;
+                            }
+                        }
+
+                        .contact_info {
+                            justify-content: center;
+                            flex-wrap: wrap;
+                            gap: rem(10);
+
+                            p {
+                                font-size: rem(14);
+
+                                a {
+                                    font-size: rem(14);
+                                }
+                            }
+                        }
+
+                        .btn_box {
+                            margin-top: 0;
+                            @include centerX($bottom:0);
+                            gap: rem(10);
+
+                            button {
+                                width: rem(132);
+                                height: rem(46);
+                                font-size: rem(15);
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        display: block;
+                        width: 100%;
+
+                        .input_box {
+                            display: block;
+                            width: 100%;
+
+                            &+.input_box {
+                                margin-top: rem(15);
+                            }
+
+                            .label {
+                                font-size: rem(14);
+                                line-height: rem(16);
+                                margin-bottom: rem(6);
+                            }
+
+                            input {
+                                width: 100%;
+                                height: rem(40);
+                                padding: rem(12) rem(16);
+                                font-size: rem(14);
+
+                                &::placeholder {
+                                    font-size: rem(14);
+                                }
+                            }
+
+                            .error_msg {
+                                position: relative;
+                                bottom: auto;
+                                left: auto;
+                                display: none;
+                                width: 100%;
+                                @include ftR;
+                                font-size: rem(13);
+                                color: #ef5454;
+                                margin: rem(6) 0 0 0;
+                            }
+                        }
+
+                        .btn_box {
+                            margin-top: 0;
+                            @include centerX($bottom:0);
+                            gap: rem(10);
+
+                            button {
+                                width: rem(132);
+                                height: rem(46);
+                                font-size: rem(15);
+                            }
+                        }
+                    }
+
+                    &.step03 {
+                        padding-top: rem(0);
+                        min-height: 100%;
+
+                        .top {
+                            margin-bottom: 0;
+                        }
+
+                        .complete_box {
+                            p {
+                                font-size: rem(20);
+                                line-height: rem(30);
+
+                                &::before {
+                                    margin-bottom: rem(30);
+                                }
+
+                                .mo_br {
+                                    display: block;
+                                }
+                            }
+
+                            .login_btn {
+                                margin-top: rem(30);
+                                width: rem(440);
+                                max-width: 80%;
+                                height: rem(48);
+                                line-height: rem(48);
+                                font-size: rem(16);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:400px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                padding: rem(20) rem(20) rem(30);
+
+                .form_box {
+                    .input_box {
+                        .label {
+                            width: rem(85);
+                        }
+
+                        input {
+                            width: calc(100% - rem(85));
+                        }
+
+                        .error_msg {
+                            margin-left: rem(85);
+                        }
+                    }
+
+                    .text_box {
+                        .label {
+                            width: rem(85);
+                        }
+
+                        textarea {
+                            width: calc(100% - rem(85));
+                        }
+                    }
+
+                    .select_box {
+                        .label {
+                            width: rem(85);
+                        }
+
+                        .custom_select {
+                            width: calc(100% - rem(85));
+                        }
+                    }
+
+                    .agree_box {
+                        input[type=checkbox] {
+                            &+label {
+                                font-size: rem(13);
+                                line-height: rem(16);
+
+                                &::before {
+                                    width: rem(16);
+                                    height: rem(16);
+                                    vertical-align: rem(-4);
+                                }
+                            }
+                        }
+                    }
+
+                    .row {
+                        .select_box {
+                            .error_msg {
+                                margin-left: rem(85);
+                            }
+
+                            &+.input_box {
+                                width: calc(100% - rem(85));
+
+                                .error_msg {
+                                    left: 0;
+                                    margin-left: 0;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .complete_wrap {
+                padding: rem(20) rem(20) rem(30);
+            }
+        }
+
+        &.join {
+            .join_wrap {
+                padding: rem(20) rem(20) rem(30);
+
+                .join_box {
+                    &.step01 {
+                        .agree_wrap {
+                            .checkbox {
+                                input[type=checkbox] {
+                                    &+label {
+                                        &::before {
+                                            width: rem(16);
+                                            height: rem(16);
+                                        }
+                                    }
+                                }
+
+                                &:first-of-type {
+                                    input[type=checkbox] {
+                                        &+label {
+                                            .txt {
+                                                font-size: rem(15);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:nth-of-type(6),
+                                &:nth-of-type(7) {
+                                    input[type=checkbox] {
+                                        &+label {
+                                            margin-left: rem(26);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        margin-top: rem(30) !important;
+                        padding-bottom: 0;
+
+                        .info_wrap {
+                            .input_box {
+                                .label {
+                                    width: rem(85);
+                                }
+
+                                input {
+                                    width: calc(100% - rem(85));
+
+                                    &::placeholder {
+                                        font-size: rem(13);
+                                    }
+                                }
+
+                                .error_msg {
+                                    margin-left: rem(85);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.find {
+            .find_wrap {
+                padding: rem(20) rem(20) rem(30);
+
+                .find_id_box {
+                    h2 {
+                        font-size: rem(18);
+                        margin-bottom: rem(20);
+                    }
+
+                    &.step01 {
+                        .input_box {
+                            .row {
+                                input {
+                                    &::placeholder {
+                                        font-size: rem(13);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .id_find_wrap {
+                            p {
+                                font-size: rem(20);
+                                line-height: rem(30);
+                            }
+
+                            .id_box {
+                                ul {
+                                    li {
+                                        font-size: rem(15);
+                                    }
+                                }
+                            }
+
+                            .login_btn {
+                                margin-top: rem(30);
+                                width: 100%;
+                                height: rem(48);
+                                line-height: rem(48);
+                                font-size: rem(16);
+                            }
+
+                        }
+                    }
+                }
+
+                .find_pw_box {
+                    &.step01 {
+                        .input_box {
+                            .row {
+                                input {
+                                    &::placeholder {
+                                        font-size: rem(13);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .input_box {
+                            input {
+                                &::placeholder {
+                                    font-size: rem(13);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@media screen and (max-width:340px) {
+    .contents {
+        &.contacat {
+            .form_wrap {
+                .form_box {
+                    .input_box {
+                        display: block;
+
+                        .label {
+                            margin-bottom: rem(6);
+                        }
+
+                        input {
+                            width: 100%;
+                        }
+
+                        .error_msg {
+                            margin-left: 0;
+                        }
+                    }
+
+                    .text_box {
+                        display: block;
+
+                        .label {
+                            margin-bottom: rem(6);
+                        }
+
+                        textarea {
+                            width: 100%;
+                        }
+                    }
+
+                    .select_box {
+                        display: block;
+
+                        .label {
+                            margin-bottom: rem(6);
+                        }
+
+                        .custom_select {
+                            width: 100%;
+                        }
+                    }
+
+                    .row {
+                        .select_box {
+                            .error_msg {
+                                margin-left: 0;
+                            }
+
+                            &+.input_box {
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.login {
+            .login_wrap {
+                h2 {
+                    font-size: rem(20);
+                    line-height: rem(28);
+                }
+
+                .login_box {
+                    max-width: 90%;
+
+                    .input_box {
+                        input {
+                            padding: rem(10) rem(14);
+                        }
+                    }
+
+                    button,
+                    >a {
+                        height: rem(50);
+                        font-size: rem(15);
+                        line-height: rem(50);
+                    }
+
+                    .find_btn {
+                        a {
+                            font-size: rem(14);
+                        }
+                    }
+                }
+            }
+        }
+
+        &.join {
+            .join_wrap {
+                .join_box {
+                    &.step01 {
+                        .agree_wrap {
+                            .checkbox {
+                                &:first-of-type {
+                                    input[type=checkbox] {
+                                        &+label {
+                                            .txt {
+                                                word-break: keep-all;
+                                                line-height: rem(19);
+
+                                                &+span {
+                                                    flex-shrink: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.step02 {
+                        .info_wrap {
+                            .input_box {
+                                display: block;
+
+                                .label {
+                                    margin-bottom: rem(6);
+                                }
+
+                                input {
+                                    width: 100%;
+                                }
+
+                                .error_msg {
+                                    margin-left: 0;
+                                }
+                            }
+
+                            .text_box {
+                                display: block;
+
+                                .label {
+                                    margin-bottom: rem(6);
+                                }
+
+                                textarea {
+                                    width: 100%;
+                                }
+                            }
+
+                            .select_box {
+                                display: block;
+
+                                .label {
+                                    margin-bottom: rem(6);
+                                }
+
+                                .custom_select {
+                                    width: 100%;
+                                }
+                            }
+
+                            .row {
+                                .select_box {
+                                    .error_msg {
+                                        margin-left: 0;
+                                    }
+
+                                    &+.input_box {
+                                        width: 100%;
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+
+                    &.step03 {
+                        .complete_box {
+                            p {
+                                word-break: keep-all;
+                                max-width: 90%;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        &.find {
+            .find_wrap {
+                .find_id_box {
+                    &.step01 {
+                        .input_box {
+                            .row {
+                                .send_btn {
+                                    width: rem(90);
+                                    font-size: rem(13);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .find_pw_box {
+                    &.step01 {
+                        .input_box {
+                            .row {
+                                .send_btn {
+                                    width: rem(90);
+                                    font-size: rem(13);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

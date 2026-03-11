@@ -1,0 +1,75 @@
+@charset 'utf-8';
+
+@mixin image($name, $path: "../images", $format:"png", $bgXY:center, $bg:'',$folder:'') {
+    background: #{$bg} url("#{$path}/#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin img_point_sc01_object {
+    @include image($name:'img_sc01_object', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc02_bg {
+    @include image($name:'img_sc02_bg', $folder:'point');
+    background-size: cover;
+}
+
+@mixin img_point_sc02_object_01 {
+    @include image($name:'img_sc02_object_01', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc02_object_02 {
+    @include image($name:'img_sc02_object_02', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc02_object_03 {
+    @include image($name:'img_sc02_object_03', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc03_object_01 {
+    @include image($name:'img_sc03_object_01', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc03_object_02 {
+    @include image($name:'img_sc03_object_02', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc03_object_03 {
+    @include image($name:'img_sc03_object_03', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_sc06_step01 {
+    @include image($name:'img_sc06_step_01', $folder:'point');
+    background-size: contain;
+}
+
+@mixin img_point_sc06_step02 {
+    @include image($name:'img_sc06_step_02', $folder:'point');
+    background-size: contain;
+}
+
+@mixin img_point_sc06_step03 {
+    @include image($name:'img_sc06_step_03', $folder:'point');
+    background-size: contain;
+}
+
+@mixin img_point_sc06_step04 {
+    @include image($name:'img_sc06_step_04', $folder:'point');
+    background-size: contain;
+}
+
+@mixin img_point_sc06_arrow {
+    @include image($name:'img_sc06_arrow', $folder:'point');
+    background-size: 100%;
+}
+
+@mixin img_point_main_phone_m {
+    @include image($name:'img_main_phone_m', $folder:'point');
+    background-size: 100%;
+}

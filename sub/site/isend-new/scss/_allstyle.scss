@@ -1,0 +1,882 @@
+.wrap {
+    .contents {
+        .more_btn {
+            margin-top: rem(60);
+            position: relative;
+            width: rem(140);
+            height: rem(50);
+            border-radius: rem(40);
+            border: 1px solid $ft-main-color;
+            line-height: rem(50);
+            animation: cubic-bezier(0.4, 0, 0.2, 1) both;
+            overflow: hidden;
+            transform-style: preserve-3d;
+
+            p {
+                position: relative;
+                z-index: 1;
+                @include ftR;
+                font-size: rem(16);
+                text-align: center;
+                transition: all 0.3s ease-in-out;
+                color: $ft-main-color;
+            }
+
+            &::after {
+                @include content;
+                @include centerX($top:0);
+                width: 0;
+                height: 100%;
+                transform: translate(-50%, 0);
+                transition: width 0.5s;
+            }
+
+            &:hover {
+                &::after {
+                    width: 100%;
+                    background: $ft-main-color;
+                }
+
+                p {
+                    color: $white;
+                }
+            }
+        }
+
+        .main {
+            &.all {
+                height: auto;
+                padding: 5rem 7%;
+
+                // container
+                .container {}
+
+                // scroll-trigger
+                .scroll-trigger {
+                    .swiper-wrap {
+                        //transition: $transition-littleslow;
+                        opacity: 1;
+                    }
+
+                    &.on {
+                        .swiper-wrap {
+                            opacity: 1;
+                        }
+                    }
+                }
+
+                // style
+                .scroll-trigger {
+                    .wswiper {
+                        border-radius: 20px;
+                        margin-bottom: 43px;
+                        overflow: hidden;
+                        touch-action: pan-y;
+
+                        .wswiper-wrapper {
+                            @include flex-pos();
+                            transform: translateX(-110px);
+
+                            .wswiper-slide {
+                                position: relative;
+                                width: 110px;
+                                height: 580px;
+                                flex-shrink: 0;
+                                border-radius: 20px;
+                                overflow: hidden;
+                                transform: skew(-10deg);
+                                transition: 0.5s;
+                                cursor: pointer;
+
+                                &:nth-of-type(1) {
+                                    background-image: linear-gradient(137deg, #cbe2fd -1%, #f4f8ff 69%);
+                                }
+
+                                &:nth-of-type(2) {
+                                    background-image: linear-gradient(144deg, #fafae0 4%, #fbfff2 73%);
+                                }
+
+                                &:nth-of-type(3) {
+                                    background-image: linear-gradient(136deg, #f4dbd7 10%, #fffbf7 82%);
+                                }
+
+                                &:nth-of-type(4) {
+                                    background-image: linear-gradient(145deg, #dbd3fd 4%, #f7f4fc 74%);
+                                }
+
+                                .slide-item {
+                                    @include flex-pos($ai: center, $jc: start, $g: 50px);
+                                    height: 100%;
+                                    padding: 0;
+                                    transform: skew(10deg);
+
+                                    .deco-wrap {
+                                        width: 0;
+                                        height: 0;
+                                        overflow: hidden;
+                                        opacity: 0;
+                                        max-width: 454px;
+
+                                        .deco {
+                                            text-indent: 100%;
+                                            white-space: nowrap;
+                                            overflow: hidden;
+                                            @include image-set($bs: contain);
+                                            width: 100%;
+                                            padding-top: 63.7%;
+                                        }
+                                    }
+
+                                    .cont {
+                                        display: flex;
+                                        align-items: center;
+                                        justify-content: space-around;
+                                        width: 100%;
+
+                                        img {
+                                            display: none;
+                                            opacity: 0;
+                                            scale: 0;
+                                            max-width: 50%;
+                                            order: 1
+                                        }
+
+                                        .logo-wrap {
+                                            //@include pos-center();
+                                            transform: translate(-50%, -50%) rotate(-90deg);
+                                            position: absolute;
+                                            top: 50%;
+                                            left: 50%;
+                                            transform-style: inherit;
+
+                                            .logo {
+                                                position: relative;
+                                                font-size: 3rem;
+                                                font-weight: 900;
+                                                width: max-content;
+                                            }
+                                        }
+
+                                        .desc {
+                                            font-size: 18px;
+                                            line-height: 1.17;
+                                            letter-spacing: -0.18px;
+                                            margin-bottom: 70px;
+                                            max-width: 320px;
+                                            min-width: 320px;
+                                            opacity: 0;
+
+                                            em {
+                                                font-weight: 900;
+                                                font-size: 4rem;
+                                                padding: 2rem 0;
+                                                display: block;
+                                            }
+
+                                            span {
+                                                display: block;
+                                                font-size: 2rem;
+                                                letter-spacing: -2.4px;
+                                                line-height: 1.5;
+                                            }
+                                        }
+
+                                        .more_btn {
+                                            display: none;
+                                        }
+                                    }
+                                }
+
+                                &.active {
+                                    width: calc(100% - 60px - 330px);
+                                    cursor: inherit;
+
+                                    .slide-item {
+                                        padding-left: 10%;
+
+                                        .deco-wrap {
+                                            display: none;
+                                        }
+
+                                        .cont {
+                                            display: flex;
+
+                                            img {
+                                                display: block;
+                                                transition: all 0.7s ease;
+                                                transition-delay: 0.2s;
+                                                animation: 1s scale forwards,
+                                                    7s mainani infinite linear;
+                                                animation-delay: .2s;
+                                                opacity: 1;
+                                            }
+
+                                            .logo-wrap {
+                                                top: unset;
+                                                left: unset;
+                                                transform: translate(0, 0) rotate(0);
+                                                position: relative;
+                                                top: auto;
+                                                transition: transform 0.7s;
+
+                                                .logo {
+                                                    font-size: 3rem;
+                                                    font-weight: 700;
+
+
+                                                    &::before {
+                                                        content: "";
+                                                        position: relative;
+                                                        display: block;
+                                                        width: 5.2rem;
+                                                        height: 1px;
+                                                        background: #000;
+                                                        top: -2rem
+                                                    }
+                                                }
+
+                                            }
+
+                                            .desc {
+                                                opacity: 1;
+                                                transition-duration: 0.3s;
+                                                transition-delay: 0.3s;
+                                            }
+
+                                            .more_btn {
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.first-view {
+                                    .slide-item {
+                                        padding-left: 160px;
+
+                                        .cont {
+                                            .logo-wrap {
+                                                transform: translate(calc(-50% + 55px), -50%) rotate(-90deg);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.last-view {
+                                    .slide-item {
+                                        padding-right: 110px;
+
+                                        .cont {
+                                            .logo-wrap {
+                                                transform: translate(calc(-50% - 55px), -50%) rotate(-90deg);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &.first-view,
+                                &.last-view {
+                                    width: 220px;
+
+                                    .slide-item {
+                                        .cont {
+                                            .logo-wrap {
+                                                transition: transform 0.7s;
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        width: calc(100% - 0px - 330px);
+
+                                        .slide-item {
+                                            .cont {
+                                                .logo-wrap {
+                                                    position: relative;
+                                                    top: unset;
+                                                    left: unset;
+                                                    transform: translate(0, 0) rotate(0);
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    .controls {
+                        .wswiper-pagination {
+                            @include flex-pos($jc: center, $g: 12px);
+
+                            .wswiper-pagination-bullet {
+                                width: 14px;
+                                height: 14px;
+                                background: #e2e2e2;
+                                border-radius: 100%;
+
+                                &.on {
+                                    background: #4780ed;
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 1400px) {
+                        .wswiper {
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    &.active {
+                                        width: calc(100% - 30px - 220px);
+                                    }
+
+                                    &.first-view,
+                                    &.last-view {
+                                        &.active {
+                                            width: calc(100% - 30px - 110px);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 1200px) {
+                        .wswiper {
+                            margin-bottom: 25px;
+
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    height: 660px;
+
+                                    .slide-item {
+                                        @include flex-pos($ai: center, $jc: center, $fd: column, $g: 35px);
+
+                                        .cont {
+                                            .logo-wrap {
+                                                .logo {
+                                                    height: 28px;
+                                                }
+                                            }
+
+                                            .desc {
+                                                margin-bottom: 20px;
+                                                max-width: 320px;
+                                                min-width: unset;
+                                            }
+
+                                            .link {
+                                                line-height: 44px;
+                                                border-radius: 21px;
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        .slide-item {
+                                            align-items: flex-start;
+                                            padding-left: 0;
+
+                                            .cont {
+                                                flex-direction: column;
+
+                                                .logo-wrap {
+                                                    margin-bottom: 14px;
+                                                }
+
+                                                .link {
+                                                    width: 130px;
+                                                    height: 44px;
+                                                }
+
+                                                img {
+                                                    // position: absolute;
+                                                    // bottom: 5%;
+                                                    // right: 15%;
+                                                    // max-width: 75%;
+                                                    order: 1;
+                                                    max-width: 50em;
+                                                }
+
+                                                >div {
+                                                    //position: absolute;
+                                                }
+                                            }
+                                        }
+
+                                        &.first-view {
+                                            .slide-item {
+                                                padding-left: 0;
+
+                                                .cont {
+                                                    img {
+                                                        padding-left: 10%;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 768px) {
+                        .wswiper {
+                            border-radius: 14px;
+
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+                                    border-radius: 7px;
+                                    transform: skew(-15deg);
+
+
+                                    .slide-item {
+                                        transform: skew(15deg);
+
+                                        .cont {
+                                            .logo-wrap {
+                                                .logo {
+                                                    transform: rotate(-90deg);
+                                                    font-size: 2.4rem;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.active {
+                                        .slide-item {
+                                            justify-content: space-between;
+                                            align-items: baseline;
+
+
+                                            .cont {
+                                                //justify-content: space-between;
+                                                height: 100%;
+
+                                                .logo-wrap {
+                                                    .logo {
+                                                        transform: rotate(0);
+                                                        font-size: 2.4rem;
+                                                    }
+                                                }
+
+                                                img {
+                                                    max-width: 21em;
+                                                }
+
+                                                >div {
+                                                    order: 2;
+                                                }
+
+                                                .desc {
+                                                    span {
+                                                        font-size: 1.6rem;
+                                                    }
+
+                                                    em {
+                                                        padding: 1rem 0;
+                                                        font-size: 2rem;
+                                                    }
+                                                }
+
+                                                .more_btn {
+                                                    margin-top: 3rem;
+                                                }
+                                            }
+                                        }
+
+                                        &.first-view {
+                                            .slide-item {
+                                                .cont {
+                                                    img {
+                                                        // right: 25%;
+                                                        // max-width: 60%;
+                                                        padding-left: 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.first-view {
+                                        &.active {
+                                            width: calc(100% + 90px);
+
+                                            .slide-item {
+                                                padding-left: calc(110px + 10px);
+                                                padding-right: 50px;
+                                            }
+                                        }
+                                    }
+
+                                    &.last-view {
+                                        .slide-item {
+                                            .cont {
+                                                .logo-wrap {
+                                                    transform: translate(calc(-50% - 130px), calc(-50% + 250px)) rotate(0);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:nth-last-of-type(2) {
+                                        &.last-check {
+                                            width: 120px;
+
+                                            .slide-item {
+                                                .cont {
+                                                    .logo-wrap {
+                                                        transition: transform 0.7s;
+                                                        transform: translate(calc(-50% + 80px), calc(-50% - 250px)) rotate(0);
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &:last-of-type {
+                                        &.first-view {
+                                            &.active {
+                                                width: calc(100% + 100px);
+
+                                                .slide-item {
+                                                    padding-right: calc(120px + 30px);
+                                                    padding-left: 10%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    @media screen and (max-width: 500px) {
+                        .wswiper {
+                            .wswiper-wrapper {
+                                .wswiper-slide {
+
+
+                                    .slide-item {
+                                        .cont {
+                                            .logo-wrap {
+                                                // top: auto;
+                                                // bottom: 58%
+                                            }
+
+
+                                        }
+                                    }
+
+                                    &.active {
+                                        .slide-item {
+                                            .cont {
+                                                img {
+                                                    max-width: 32em;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .sc01 {
+            background: url('./../images/all/geo_bg.png') no-repeat center / cover;
+
+            .inner {
+                padding: rem(135) 0;
+                @include flex(center, center, rem(160), column);
+
+                .txt_box {
+                    text-align: center;
+
+                    &::before {
+                        @include content;
+                        width: rem(60);
+                        height: 1px;
+                        background: $white;
+                        margin-bottom: rem(40);
+                    }
+
+                    h2 {
+                        @include ftB;
+                        font-size: rem(60);
+                        line-height: rem(78);
+                        color: $white;
+                        @include fadeup;
+
+                        span {
+                            color: $point;
+                            @include ftB;
+                            font-size: rem(60);
+                            line-height: rem(78);
+                        }
+                    }
+
+                    .desc {
+                        margin-top: rem(50);
+                        @include ftR;
+                        font-size: rem(40);
+                        line-height: rem(50);
+                        color: $white;
+                        @include fadeupDelay;
+
+                        span {
+                            font-weight: 900;
+                            color: #3f90ef
+                        }
+                    }
+                }
+            }
+
+            &.on {
+                .inner {
+                    .txt_box {
+
+                        h2,
+                        .desc {
+                            @include fadeupOn;
+                        }
+                    }
+
+                    .card_box {
+                        .card {
+                            transform: rotateY(0);
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+
+            @media screen and (max-width: 768px) {
+                .inner {
+                    padding: rem(135) 0;
+                    @include flex(center, center, rem(160), column);
+
+                    .txt_box {
+                        text-align: center;
+
+                        &::before {
+                            @include content;
+                            width: rem(60);
+                            height: 1px;
+                            background: $white;
+                            margin-bottom: rem(40);
+                        }
+
+                        h2 {
+                            font-size: rem(30);
+                            line-height: rem(18);
+                        }
+
+                        .desc {
+                            margin-top: rem(20);
+                            font-size: rem(16);
+                            line-height: rem(16);
+                        }
+                    }
+                }
+            }
+        }
+
+        @for $i from 2 through 5 {
+            .sc0#{$i} {
+                >i {
+                    position: absolute;
+                    top: 5rem;
+                    opacity: 0;
+                }
+
+                .inner {
+                    height: 80vh;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0 1rem;
+                    gap: 10%;
+
+                    .img_box {
+                        opacity: 0;
+
+                        img {
+                            max-width: 51em;
+                        }
+                    }
+
+                    .txt_box {
+                        opacity: 0;
+                        //flex-shrink: 0;
+                        min-width: 32em;
+
+                        >p {
+                            font-size: 2.4rem;
+                            line-height: 1.46;
+                            padding: 2rem 0 3rem;
+                        }
+
+                        a {
+                            position: relative;
+                            display: block;
+                            z-index: 1;
+                            font-size: 16px;
+                            line-height: 5rem;
+                            text-align: center;
+                            width: 14rem;
+                            height: 5rem;
+                            overflow: hidden;
+                            color: #000;
+                            border-radius: 25px;
+                            border: 1px solid #000;
+
+                            &:hover {
+                                background: #000;
+                                color: #fff;
+                                transition: transform 0.7s;
+                            }
+                        }
+                    }
+                }
+
+                @if $i % 2==0 {
+                    >i {
+                        right: 0;
+                    }
+
+                    .inner .img_box {
+                        order: 2;
+                    }
+
+                    &.on {
+                        >i {
+                            animation: 1s leftslide2 forwards;
+                        }
+                    }
+                }
+
+                @else {
+
+                    >i {
+                        left: 0;
+                    }
+
+                    &.on {
+                        >i {
+                            animation: 1s rightslide2 forwards;
+                        }
+                    }
+                }
+
+                &.on {
+                    >i {
+                        transition: all 0.2s ease;
+                        transition-delay: 0.2s;
+                        animation-delay: .2s;
+                        opacity: 1;
+                    }
+
+                    .inner {
+
+                        .img_box {
+                            animation: 1s fade forwards;
+                            animation-delay: 0.5s;
+                        }
+
+                        .txt_box {
+                            animation: 1s fade forwards;
+                            animation-delay: 1s;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    >i {
+                        img {
+                            max-width: 100%;
+                        }
+                    }
+
+                    .inner {
+                        height: auto;
+                        flex-direction: column;
+
+                        .img_box {
+                            order: 1 !important;
+                            text-align: center;
+                            padding-top: 10rem;
+
+                            img {
+                                max-width: 80%;
+                                margin: 0 auto;
+                            }
+                        }
+
+                        .txt_box {
+                            order: 2 !important;
+                            text-align: center;
+
+                            i {
+                                display: block;
+                                max-width: 12rem;
+                                margin: 2rem auto;
+
+                                img {
+                                    max-width: 100%;
+                                }
+                            }
+
+                            >p {
+                                font-size: 1.8rem;
+                                line-height: 1.33;
+                                padding: 0 0 3rem;
+
+                                .mo_br {
+                                    display: none;
+                                }
+                            }
+
+                            a {
+                                text-align: center;
+                                margin: 0 auto;
+                            }
+                        }
+                    }
+
+                    @if $i % 2==0 {
+                        >i {
+                            right: 50%;
+                        }
+
+                        &.on {
+                            >i {
+                                animation: 1s centerslide1 forwards;
+                            }
+                        }
+                    }
+
+                    @else {
+
+                        >i {
+                            left: 50%;
+                        }
+
+                        &.on {
+                            >i {
+                                animation: 1s centerslide2 forwards;
+                            }
+                        }
+                    }
+
+                    &.sc05 {
+                        padding-bottom: 10rem;
+                    }
+                }
+            }
+        }
+    }
+}
