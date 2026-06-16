@@ -24,98 +24,95 @@ var nav = function () {
     })
 }
 var content = function () {
-    $(document).ready(function () {
-        open_menu();
+    $('article .con.active').css({
+        'overflow-y': 'auto',
+        'height': '100vh'
+    });
 
-        function windowsc() {
-            var headerTop = $(".header").offset().top;
+    document.addEventListener('scroll', function (e) {
+        if (e.target === document) return;
 
-            if (headerTop > 100) {
+        var $target = $(e.target);
+        if ($target.hasClass('con') || $target.closest('.con').length > 0) {
+            var currentScroll = $target.scrollTop();
+
+            console.log("🔥 강제 포착된 스크롤:", currentScroll);
+
+            if (currentScroll > 50) {
                 $(".header").addClass("other");
             } else {
                 $(".header").removeClass("other");
             }
         }
-        $(window).on('scroll', function () {
-            windowsc();
-        });
-        $(window).resize(function () {
-            open_menu();
-        });
+    }, true);
+    $(window).resize(function () {
+        open_menu();
+    });
 
-        function open_menu() {
-            var windowWidth = $(window).width();
-            if (windowWidth < 768) {
-                // 768px 이하일 때
-                $('.tab-hd').hide(); // 기존 버튼 숨기기
-                // 새로운 셀렉트 메뉴 추가
-                $('.tab-sct').remove();
-                if (!$('.tab-sct').length) {
-                    var selectMenu = $('<select class="tab-sct"></select>');
+    function open_menu() {
+        var windowWidth = $(window).width();
+        if (windowWidth < 768) {
+            $('.tab-hd').hide();
+            $('.tab-sct').remove();
 
-                    // 각 버튼의 데이터를 옵션으로 추가
-                    $('.tab-hd button').each(function () {
-                        var option = $('<option></option>')
-                            .text($(this).text())
-                            .attr('value', $(this).data('ft'));
+            if (!$('.tab-sct').length) {
+                var selectMenu = $('<select class="tab-sct"></select>');
 
-                        if ($(this).hasClass('active')) {
-                            option.attr('selected', 'selected');
-                        }
+                $('.tab-hd button').each(function () {
+                    var option = $('<option></option>')
+                        .text($(this).text())
+                        .attr('value', $(this).data('ft'));
 
-                        selectMenu.append(option);
-                    });
-                    $('.tab-hd').after(selectMenu);
-                    selectMenu.change(function () {
-                        var selectedValue = $(this).val();
-                        $('.tab-hd button').removeClass('active');
-                        $('.tab-hd button[data-ft="' + selectedValue + '"]').addClass('active');
+                    if ($(this).hasClass('active')) {
+                        option.attr('selected', 'selected');
+                    }
+                    selectMenu.append(option);
+                });
 
-                        tabmenu(selectedValue);
-                    });
-                }
-            } else {
-                // 768px 이상일 때
-                $('.tab-hd').show(); // 기존 버튼 보이기
-                $('.tab-sct').remove(); // 셀렉트 메뉴 제거
+                $('.tab-hd').after(selectMenu);
+
+                selectMenu.change(function () {
+                    var selectedValue = $(this).val();
+                    $('.tab-hd button').removeClass('active');
+                    $('.tab-hd button[data-ft="' + selectedValue + '"]').addClass('active');
+                    tabmenu(selectedValue);
+                });
             }
-
-            function tabmenu(value) {
-                if (value == 'all') {
-                    $('.tab-con li').show('1000');
-                } else {
-                    $('.tab-con li').not('.' + value).hide('1000');
-                    $('.tab-con li').filter('.' + value).show('1000');
-                }
-            }
-            $('.tab-hd button, .tab-hd select').on('click change', function () {
-                var value = $(this).hasClass('tab-sct') ? $(this).val() : $(this).data('ft');
-
-                $('.tab-hd button').removeClass('active');
-                $('.tab-hd button[data-ft="' + value + '"]').addClass('active');
-
-                tabmenu(value);
-            });
+        } else {
+            $('.tab-hd').show();
+            $('.tab-sct').remove();
         }
-    })
+    }
+
+    function tabmenu(value) {
+        if (value == 'all') {
+            $('.tab-con li').show(1000);
+        } else {
+            $('.tab-con li').not('.' + value).hide(1000);
+            $('.tab-con li').filter('.' + value).show(1000);
+        }
+    }
+
+    $('.tab-hd button, .tab-hd select').on('click change', function () {
+        var value = $(this).hasClass('tab-sct') ? $(this).val() : $(this).data('ft');
+        $('.tab-hd button').removeClass('active');
+        $('.tab-hd button[data-ft="' + value + '"]').addClass('active');
+        tabmenu(value);
+    });
+
     $('.step03 .tab-hd button').on('click', function () {
         $(this).addClass('active').siblings().removeClass('active');
         const value = $(this).attr('data-ft');
         if (value == 'all') {
-            $('.tab-con li').show('1000');
+            $('.tab-con li').show(1000);
         } else {
-            $('.tab-con li').not('.' + value).hide('1000')
-            $('.tab-con li').filter('.' + value).show('1000')
+            $('.tab-con li').not('.' + value).hide(1000);
+            $('.tab-con li').filter('.' + value).show(1000);
         }
-    })
-    $('.step .txtBox > div').each(function (index) {
-        $(this).delay($(this).data('delay')).queue(function () {
-            $(this).addClass('animate-in');
-        });
     });
+
     $('body').on('click', '.step03 .tab-con li button', function () {
         const closestLi = $(this).closest('li');
-
         if (!$(this).attr('onclick') && !closestLi.hasClass('wp')) {
             const imgsrc = $(this).closest('figcaption').siblings('img').attr('src');
             const modifiedImgsrc = imgsrc.replace(/(\.jpg|\.png|\.gif)$/, '_b$1');
@@ -124,12 +121,20 @@ var content = function () {
                 "<div class='ppview'><div><button type='button' class='iconone'>close</button><img src='" + modifiedImgsrc + "'></div></div>"
             );
         }
-    })
+    });
 
-    $('body').on('click', '.iconone,.ppview', function () {
-        $(this).closest('.ppview').remove()
-    })
-}
+    $('body').on('click', '.iconone, .ppview', function () {
+        $(this).closest('.ppview').remove();
+    });
+
+    $('.step .txtBox > div').each(function () {
+        $(this).delay($(this).data('delay')).queue(function () {
+            $(this).addClass('animate-in');
+        });
+    });
+
+    open_menu();
+};
 
 $(function () {
     nav()

@@ -13,7 +13,7 @@
         height: 12rem;
 
         &.other {
-            background: #fff;
+            background: $pointColor;
         }
 
         h1 {
@@ -540,6 +540,7 @@
                             top: 16rem;
                             width: 100%;
                             margin: 0 auto;
+                            background: #fff;
 
                             .tab-hd {
                                 @include flex($con:ct, $align:ct);
@@ -590,16 +591,16 @@
                                         left: 50%;
                                         background: rgba(255, 255, 255, 0.95);
                                         color: #222;
+                                        text-align: center;
 
                                         strong {
                                             font-size: 3rem;
-                                            line-height: 10rem;
                                             font-weight: bold;
                                         }
 
                                         p {
                                             font-size: 2rem;
-                                            line-height: 4rem;
+                                            padding: 1rem 0
                                         }
 
                                         span {
@@ -671,6 +672,7 @@
                     display: block;
                     width: 100%;
                     height: 100vh;
+                    overflow-y: auto;
 
                     &.step01 {
                         background: #f5f5f5;
