@@ -54,6 +54,13 @@
             h1 {
                 transform: translateY(-50%);
                 top: 50%;
+                left: 1rem;
+            }
+
+            .btn-close {
+                &.active {
+                    right: 1rem
+                }
             }
         }
 
