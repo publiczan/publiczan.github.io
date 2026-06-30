@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="../01.dashboard/01.dashboad_chart.html"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="../06.oneclick_cam/06.oneclick_cam.html"><i></i><span>원클릭 캠페인</span><i
+                            class="ico-new"></i><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="../06.oneclick_cam/06.oneclick_cam.html"><span>원클릭 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.recom_cam.html"><span>추천 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.rfm_cam.html"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../08.product_promotion/08.product_promotion.html"><i></i><span>상품 프로모션</span><i
+                            class="ico-new"></i></a>
+                </li>
+            </ul>
+
+            <strong>온사이트 캠페인</strong>
+            <ul>
+                <li>
+                    <a href="../11.onsite/11.onsite_board.html"><i></i><span>온사이트보드</span></a>
+                </li>
+                <li>
+                    <a href="../11.onsite/11.onsite_report.html"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div class="inner oneck">
+                <section class="sec-hd type-st">
+                    <strong>원클릭 캠페인</strong>
+                    <span>다양한 캠페인을 버튼 하나로 간편하게 발송하는 원클릭 캠페인</span>
+                </section>
+                <!--//sec-hd-->
+                <section class="sec-con">
+                    <div class="con-hd">
+                        <div>
+                            <strong>전체 캠페인 <span>10</span>개</strong>
+                            <p class="on">
+                                ON<span>8</span>
+                            </p>
+                            <p class="off">
+                                OFF <span>8</span>
+                            </p>
+                        </div>
+                        <div class="searchBox">
+                            <button type="submit"><i class="ico-search"></i></button>
+                            <input type="text" placeholder="검색어를 입력해주세요">
+                        </div>
+                    </div>
+
+                    <div class="con-row">
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch" checked>
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>즉시 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>예약 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>즉시 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>예약 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>즉시 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                        <div class="item">
+                            <div class="top">
+                                <strong>
+                                    <i></i>
+                                    <span>
+                                        [원클릭] 2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매
+                                        유도2회 이상 구매 고객 재구매 유도2회 이상 구매 고객 재구매 유도
+                                    </span>
+                                </strong>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                            <div class="bt">
+                                <span>예약 발송중</span>
+                                <div class="btnBox">
+                                    <button type="button" class="mdBtn" data-md="test-send">
+                                        <i></i><span>테스트 발송</span>
+                                    </button>
+                                    <button type="button"><i></i><span>리포트</span></button>
+                                    <button type="button" class="mdBtn" data-md="cam-term">
+                                        <i></i><span>캠페인조건</span>
+                                    </button>
+                                    <button type="button" class="mdBtn" data-md="cam-set">
+                                        <i></i><span>캠페인 설정</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//item-->
+                    </div>
+                </section>
+                <!--//sec-con-->
+            </div>
+            <!--//inner-->
+        </article>
+        <!--//article-->
+    </div>
+</body>
+
+</html>

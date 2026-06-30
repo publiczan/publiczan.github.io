@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="../01.dashboard/01.dashboad_chart.html"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="../06.oneclick_cam/06.oneclick_cam.html"><i></i><span>원클릭 캠페인</span><i
+                            class="ico-new"></i><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="../06.oneclick_cam/06.oneclick_cam.html"><span>원클릭 캠페인</span></a>
+                        </li>
+                          <li>
+                              <a href="../06.oneclick_cam/06.recom_cam.html"><span>추천 캠페인</span></a>
+                          </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.rfm_cam.html"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../08.product_promotion/08.product_promotion.html"><i></i><span>상품 프로모션</span><i
+                            class="ico-new"></i></a>
+                </li>
+            </ul>
+
+            <strong>온사이트 캠페인</strong>
+            <ul>
+                <li>
+                    <a href="../11.onsite/11.onsite_board.html"><i></i><span>온사이트보드</span></a>
+                </li>
+                <li>
+                    <a href="../11.onsite/11.onsite_report.html"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div class="inner recom">
+                <section class="sec-hd type-st">
+                    <strong>추천 캠페인</strong>
+                    <span>캠페인 데이터는 하루에 한 번 업데이트됩니다.</span>
+                </section>
+                <!--//sec-hd-->
+                <section class="sec-con">
+                    <div class="con-row">
+                        <div class="con-hd"><i></i>전환율 높은 캠페인</div>
+                        <div class="swiper mySwiper1">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>1. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>2. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss" disabled>예약발송중</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>3. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>4. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>5. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>6. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>7. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>8. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>9. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>10. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="con-row">
+                        <div class="con-hd"><i></i>신상품 매출이 높은 캠페인</div>
+                        <div class="swiper mySwiper2">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>1. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>2. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>3. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>4. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>5. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>6. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>7. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>8. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>9. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>10. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="con-row">
+                        <div class="con-hd"><i></i>이벤트/프로모션 고효율 캠페인</div>
+                        <div class="swiper mySwiper3">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>1. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>2. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>3. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>4. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>5. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>6. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>7. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>8. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>9. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>10. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                    <div class="con-row">
+                        <div class="con-hd"><i></i>이번달 최고의 매출 캠페인</div>
+                        <div class="swiper mySwiper4">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>1. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>2. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>3. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>4. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>5. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="swiper-slide">
+                                    <ul>
+                                        <li>
+                                            <p><em>6. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>7. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>8. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>9. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <p><em>10. 최근 한 달 동안</em> <span>장바구니에 상품을 담은 유저</span></p>
+                                            <div class="btnBox">
+                                                <button type="button" class="btn-ss mdBtn btn-term" data-md="cam-term">
+                                                    캠페인 조건
+                                                </button>
+                                                <button type="button" class="btn-ss btn-apply">적용하기</button>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+                        </div>
+                    </div>
+                </section>
+                <!--//sec-con-->
+            </div>
+            <!--//inner-->
+        </article>
+        <!--//article-->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+        function initSwiper(className) {
+            return new Swiper(className, {
+                spaceBetween: 20,
+                effect: "fade",
+                speed: 100,
+                navigation: {
+                    nextEl: className + " .swiper-button-next",
+                    prevEl: className + " .swiper-button-prev",
+                },
+                pagination: {
+                    el: className + " .swiper-pagination",
+                    clickable: true,
+                },
+            });
+        }
+
+        var swiper1 = initSwiper(".mySwiper1");
+        var swiper2 = initSwiper(".mySwiper2");
+        var swiper3 = initSwiper(".mySwiper3");
+        var swiper4 = initSwiper(".mySwiper4");
+    </script>
+</body>
+
+</html>

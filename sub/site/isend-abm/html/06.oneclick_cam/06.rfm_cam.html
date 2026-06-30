@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="../01.dashboard/01.dashboad_chart.html"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="../06.oneclick_cam/06.oneclick_cam.html"><i></i><span>원클릭 캠페인</span><i
+                            class="ico-new"></i><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="../06.oneclick_cam/06.oneclick_cam.html"><span>원클릭 캠페인</span></a>
+                        </li>
+                          <li>
+                              <a href="../06.oneclick_cam/06.recom_cam.html"><span>추천 캠페인</span></a>
+                          </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.rfm_cam.html"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../08.product_promotion/08.product_promotion.html"><i></i><span>상품 프로모션</span><i
+                            class="ico-new"></i></a>
+                </li>
+            </ul>
+
+            <strong>온사이트 캠페인</strong>
+            <ul>
+                <li>
+                    <a href="../11.onsite/11.onsite_board.html"><i></i><span>온사이트보드</span></a>
+                </li>
+                <li>
+                    <a href="../11.onsite/11.onsite_report.html"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+        </nav>
+        <article class="artRfm">
+            <div class="inner rfm">
+                <section class="sec-hd type-st">
+                    <strong>RFM 캠페인</strong>
+                </section>
+                <!--//sec-hd-->
+                <section class="sec-con">
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>이탈한 VIP</strong>
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                            </ul>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>뜸한 VIP</strong>
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                            </ul>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>VIP</strong>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row on">
+                        <div class="top">
+                            <strong>이탈한 잠재 VIP</strong>
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                            </ul>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>신경써야 할 고객</strong>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>잠재 VIP</strong>
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                            </ul>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>이탈한 고객</strong>
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                            </ul>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>이탈 우려</strong>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>지금 잡아야 할 고객</strong>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                    <div class="con-row">
+                        <div class="top">
+                            <strong>신규 고객</strong>
+                        </div>
+                        <div class="bt">
+                            <ul>
+                                <li class="flx">예상 타겟 수</li>
+                                <li class="flx"><span>716</span>명</li>
+                                <li class="flx">증감률</li>
+                                <li class="flx">+<span>1.92</span>%</li>
+                                <li>마지막 방문</li>
+                                <li><span>35.9</span>일전</li>
+                                <li>방문 빈도</li>
+                                <li>주 <span>1.11</span>회</li>
+                                <li>평균 구매 금액</li>
+                                <li><span>239,000</span>원</li>
+                            </ul>
+                        </div>
+                        <button type="button"><i class="ico-send"></i>타겟 발송하기</button>
+                    </div>
+                </section>
+                <!--//sec-con-->
+            </div>
+            <!--//inner-->
+        </article>
+        <!--//article-->
+    </div>
+</body>
+
+</html>

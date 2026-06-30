@@ -1,0 +1,1174 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <link type="text/css" href="../../css/funnel.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <script type="text/javascript" src="../../js/ui_chart.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="../01.dashboard/01.dashboad_chart.html"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="../06.oneclick_cam/06.oneclick_cam.html"><i></i><span>원클릭 캠페인</span><i
+                            class="ico-new"></i><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="../06.oneclick_cam/06.oneclick_cam.html"><span>원클릭 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.recom_cam.html"><span>추천 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.rfm_cam.html"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../08.product_promotion/08.product_promotion.html"><i></i><span>상품 프로모션</span><i
+                            class="ico-new"></i></a>
+                </li>
+            </ul>
+
+            <strong>온사이트 캠페인</strong>
+            <ul>
+                <li>
+                    <a href="../11.onsite/11.onsite_board.html"><i></i><span>온사이트보드</span></a>
+                </li>
+                <li>
+                    <a href="../11.onsite/11.onsite_report.html"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div class="inner dashboard">
+                <section class="sec-hd type-st">
+                    <strong>대시보드</strong>
+                </section>
+                <!--//sec-hd-->
+                <section class="sec-con">
+                    <div class="con-row">
+                        <div class="con-hd">
+                            <strong>유저 퍼널 분석 캠페인</strong>
+                            <div>
+                                <div class="calendarBox" id="datePicker">
+                                    <i></i>
+                                    <input type="text" id="df-input" name="df-input" value="" readonly="">
+                                </div>
+                                <button type="button" class="btn-s btn-bu search">검색</button>
+                                <div class="switchbox type01">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch">Deep Funnel</label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//con-hd-->
+                        <section class="sec_analysis">
+                            <div class="box_personalAnalysis">
+                                <div class="cont">
+                                    <div class="tabView">
+                                        <!-- 자사 전체 -->
+                                        <!-- dataNoneArea 추가 위치 > 데이터가 충분하지 않아 제공할 수 없습니다.-->
+                                        <div class="tabViewList show">
+                                            <div class="dataNone">
+                                                <p>최근 7일동안 데이터가 충분하지 않아 제공할 수 없습니다.</p>
+                                            </div>
+                                            <!-- toastOn 추가로 toast메시지 나타나게 함 -->
+                                            <!-- tst_alert은 toast끼리 구분하기 위해 추가하였음 
+                                          현재는 toast가 한개라 css로는 추가하지 않음 -->
+                                            <div class="toastWrap tst_alert">
+                                                <p>이전 기간 데이터가 충분하지 않아 증감률을 표시할 수 없습니다(1).</p>
+                                            </div>
+                                            <div class="chartArea">
+                                                <div class="box">
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+
+                                                                <div class="chartIn">
+                                                                    <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                    <div class="chart">
+                                                                        <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                                class="ico-ar-bu"></i>
+                                                                        </button>
+                                                                        <div class="bubbleOpen"
+                                                                            data-popBubbleName="bw_userStats0">
+                                                                            <div class="bubbleWrap bw_userStats"
+                                                                                data-popBubbleWrapName="bw_userStats0">
+                                                                                <div class="bubbleContainer">
+                                                                                    <div class="bubbleTitle">
+                                                                                        <p>조회</p>
+                                                                                        <button type="button"
+                                                                                            class="bubbleClose"><i
+                                                                                                class="ico-close-gy"></i></button>
+                                                                                    </div>
+                                                                                    <div class="bubbleContent">
+                                                                                        <section>
+                                                                                            <div class="box_guide">
+                                                                                                <p>- 분석기간 :
+                                                                                                    2025-07-05~2025-08-04
+                                                                                                    <b>:
+                                                                                                        8,025명(24.6%)</b>
+                                                                                                </p>
+
+                                                                                            </div>
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <div class="bubbleFooter">
+                                                                                        <div>
+                                                                                            <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                            <button type="button"
+                                                                                                class="create"><i
+                                                                                                    class="ico-send"></i>메세지
+                                                                                                보내기</button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>보완 상품 추천</p>
+                                                                                            <button type="button"
+                                                                                                class="create"><i
+                                                                                                    class="ico-send"></i>메세지
+                                                                                                보내기</button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="bubbleDim"></div> -->
+                                                                            </div>
+                                                                            <!-- // bubbleWrap end -->
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>방문</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                                <div class="box">
+                                                    <!-- <div class="bg">
+                                                    <div>
+                                                        <span>21.5%</span><span>120,000명</span>
+                                                    </div>
+                                                </div> -->
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+                                                                <div class="chartOut">
+                                                                    <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                            class="ico-ar-bu"></i>
+                                                                    </button>
+                                                                    <div class="bubbleOpen"
+                                                                        data-popBubbleName="bw_userStats1_1">
+                                                                        <div class="bubbleWrap bw_userStats"
+                                                                            data-popBubbleWrapName="bw_userStats1_1">
+                                                                            <div class="bubbleContainer">
+                                                                                <div class="bubbleTitle">
+                                                                                    <p>조회</p>
+                                                                                    <button type="button"
+                                                                                        class="bubbleClose"><i
+                                                                                            class="ico-close-gy"></i></button>
+                                                                                </div>
+                                                                                <div class="bubbleContent">
+                                                                                    <section>
+                                                                                        <div class="box_guide">
+                                                                                            <p>- 분석기간 :
+                                                                                                2025-07-05~2025-08-04
+                                                                                                <b>: 8,025명(24.6%)</b>
+                                                                                            </p>
+
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                                <div class="bubbleFooter">
+                                                                                    <div>
+                                                                                        <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <p>보완 상품 추천</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="bubbleDim"></div> -->
+                                                                        </div>
+                                                                        <!-- // bubbleWrap end -->
+                                                                    </div>
+                                                                    <p>31.7%</p>
+                                                                    <p>398,662명</p>
+                                                                </div>
+                                                                <div class="chartIn">
+                                                                    <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                    <div class="chart">
+                                                                        <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                                class="ico-ar-bu"></i>
+                                                                        </button>
+                                                                        <div class="bubbleOpen"
+                                                                            data-popBubbleName="bw_userStats1_2">
+                                                                            <div class="bubbleWrap bw_userStats"
+                                                                                data-popBubbleWrapName="bw_userStats1_2">
+                                                                                <div class="bubbleContainer">
+                                                                                    <div class="bubbleTitle">
+                                                                                        <p>조회</p>
+                                                                                        <button type="button"
+                                                                                            class="bubbleClose"><i
+                                                                                                class="ico-close-gy"></i></button>
+                                                                                    </div>
+                                                                                    <div class="bubbleContent">
+                                                                                        <section>
+                                                                                            <div class="box_guide">
+                                                                                                <p>- 분석기간 :
+                                                                                                    2025-07-05~2025-08-04
+                                                                                                    <b>:
+                                                                                                        8,025명(24.6%)</b>
+                                                                                                </p>
+
+                                                                                            </div>
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <div class="bubbleFooter">
+                                                                                        <div>
+                                                                                            <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>보완 상품 추천</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="bubbleDim"></div> -->
+                                                                            </div>
+                                                                            <!-- // bubbleWrap end -->
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>조회</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                                <div class="box">
+                                                    <!-- <div class="bg">
+                                                    <div>
+                                                        <span>21.5%</span><span>120,000명</span>
+                                                    </div>
+                                                    <div><span>29.5%</span><span>120,000명</span></div>
+                                                </div> -->
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+                                                                <div class="chartOut">
+
+                                                                    <p>31.7%</p>
+                                                                    <p>398,662명</p>
+                                                                    <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                            class="ico-ar-bu"></i>
+                                                                    </button>
+                                                                    <div class="bubbleOpen"
+                                                                        data-popBubbleName="bw_userStats2_1">
+                                                                        <div class="bubbleWrap bw_userStats"
+                                                                            data-popBubbleWrapName="bw_userStats2_1">
+                                                                            <div class="bubbleContainer">
+                                                                                <div class="bubbleTitle">
+                                                                                    <p>조회</p>
+                                                                                    <button type="button"
+                                                                                        class="bubbleClose"><i
+                                                                                            class="ico-close-gy"></i></button>
+                                                                                </div>
+                                                                                <div class="bubbleContent">
+                                                                                    <section>
+                                                                                        <div class="box_guide">
+                                                                                            <p>- 분석기간 :
+                                                                                                2025-07-05~2025-08-04
+                                                                                                <b>: 8,025명(24.6%)</b>
+                                                                                            </p>
+
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                                <div class="bubbleFooter">
+                                                                                    <div>
+                                                                                        <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <p>보완 상품 추천</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="bubbleDim"></div> -->
+                                                                        </div>
+                                                                        <!-- // bubbleWrap end -->
+                                                                    </div>
+                                                                </div>
+                                                                <div class="chartIn">
+                                                                    <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                    <div class="chart">
+                                                                        <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                                class="ico-ar-bu"></i>
+                                                                        </button>
+                                                                        <div class="bubbleOpen"
+                                                                            data-popBubbleName="bw_userStats2_2">
+                                                                            <div class="bubbleWrap bw_userStats"
+                                                                                data-popBubbleWrapName="bw_userStats2_2">
+                                                                                <div class="bubbleContainer">
+                                                                                    <div class="bubbleTitle">
+                                                                                        <p>조회</p>
+                                                                                        <button type="button"
+                                                                                            class="bubbleClose"><i
+                                                                                                class="ico-close-gy"></i></button>
+                                                                                    </div>
+                                                                                    <div class="bubbleContent">
+                                                                                        <section>
+                                                                                            <div class="box_guide">
+                                                                                                <p>- 분석기간 :
+                                                                                                    2025-07-05~2025-08-04
+                                                                                                    <b>:
+                                                                                                        8,025명(24.6%)</b>
+                                                                                                </p>
+
+                                                                                            </div>
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <div class="bubbleFooter">
+                                                                                        <div>
+                                                                                            <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>보완 상품 추천</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="bubbleDim"></div> -->
+                                                                            </div>
+                                                                            <!-- // bubbleWrap end -->
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>장바구니</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                    <div class="chart">
+                                                                        <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                                class="ico-ar-bu"></i>
+                                                                        </button>
+                                                                        <div class="bubbleOpen"
+                                                                            data-popBubbleName="bw_userStats2_3">
+                                                                            <div class="bubbleWrap bw_userStats"
+                                                                                data-popBubbleWrapName="bw_userStats2_3">
+                                                                                <div class="bubbleContainer">
+                                                                                    <div class="bubbleTitle">
+                                                                                        <p>조회</p>
+                                                                                        <button type="button"
+                                                                                            class="bubbleClose"><i
+                                                                                                class="ico-close-gy"></i></button>
+                                                                                    </div>
+                                                                                    <div class="bubbleContent">
+                                                                                        <section>
+                                                                                            <div class="box_guide">
+                                                                                                <p>- 분석기간 :
+                                                                                                    2025-07-05~2025-08-04
+                                                                                                    <b>:
+                                                                                                        8,025명(24.6%)</b>
+                                                                                                </p>
+
+                                                                                            </div>
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <div class="bubbleFooter">
+                                                                                        <div>
+                                                                                            <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>보완 상품 추천</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="bubbleDim"></div> -->
+                                                                            </div>
+                                                                            <!-- // bubbleWrap end -->
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>바로결제</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                                <div class="box">
+                                                    <!-- <div class="bg">
+                                                    <div><span>21.5%</span><span>120,000명</span></div>
+                                                    </div> -->
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+                                                                <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                <div class="chartOut">
+                                                                    <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                            class="ico-ar-bu"></i>
+                                                                    </button>
+                                                                    <p>61.8%</p>
+                                                                    <p>398,662명</p>
+                                                                    <!-- bubble 위치 -->
+                                                                </div>
+                                                                <div class="chartIn">
+                                                                    <div class="chart">
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>결제</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                                <div class="box">
+                                                    <!-- <div class="bg">
+                                                    <div><span>21.5%</span><span>120,000명</span></div>
+                                                    <div><span>29.5%</span><span>120,000명</span></div>
+                                                 </div> -->
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+                                                                <div class="chartOut">
+                                                                    <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                            class="ico-ar-bu"></i>
+                                                                    </button>
+                                                                    <p>4.6%</p>
+                                                                    <p>398,662명 </p>
+                                                                    <!-- bubble 위치 -->
+                                                                </div>
+                                                                <div class="chartIn">
+                                                                    <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                    <div class="chart">
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>구매완료</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                                <div class="box">
+                                                    <!-- chartBox chart wrap 개념-->
+                                                    <div class="chartBox">
+                                                        <!-- chartBlock : chartGroup 두개 들어갈 수 있게 높이값 50%로 지정 -->
+                                                        <div class="chartBlock">
+                                                            <!-- chartGroup : chart의 높이를 지정 -->
+                                                            <div class="chartGroup">
+
+                                                                <div class="chartOut">
+                                                                    <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                            class="ico-ar-bu"></i>
+                                                                    </button>
+                                                                    <div class="bubbleOpen"
+                                                                        data-popBubbleName="bw_userStats6_1">
+                                                                        <div class="bubbleWrap bw_userStats"
+                                                                            data-popBubbleWrapName="bw_userStats6_1">
+                                                                            <div class="bubbleContainer">
+                                                                                <div class="bubbleTitle">
+                                                                                    <p>조회</p>
+                                                                                    <button type="button"
+                                                                                        class="bubbleClose"><i
+                                                                                            class="ico-close-gy"></i></button>
+                                                                                </div>
+                                                                                <div class="bubbleContent">
+                                                                                    <section>
+                                                                                        <div class="box_guide">
+                                                                                            <p>- 분석기간 :
+                                                                                                2025-07-05~2025-08-04
+                                                                                                <b>: 8,025명(24.6%)</b>
+                                                                                            </p>
+
+                                                                                        </div>
+                                                                                    </section>
+                                                                                </div>
+                                                                                <div class="bubbleFooter">
+                                                                                    <div>
+                                                                                        <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div>
+                                                                                        <p>보완 상품 추천</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                            <!-- <div class="bubbleDim"></div> -->
+                                                                        </div>
+                                                                        <!-- // bubbleWrap end -->
+                                                                    </div>
+                                                                    <p>6.6%</p>
+                                                                    <p>398,662명 </p>
+                                                                    <!-- bubble 위치 -->
+
+                                                                </div>
+                                                                <div class="chartIn">
+                                                                    <!-- chart가 두개 이상 들어갈 수 있음 -->
+                                                                    <div class="chart">
+                                                                        <button type="button" class="btn-hv">클릭하여 상세보기<i
+                                                                                class="ico-ar-bu"></i>
+                                                                        </button>
+                                                                        <div class="bubbleOpen"
+                                                                            data-popBubbleName="bw_userStats6_2">
+                                                                            <div class="bubbleWrap bw_userStats"
+                                                                                data-popBubbleWrapName="bw_userStats6_2">
+                                                                                <div class="bubbleContainer">
+                                                                                    <div class="bubbleTitle">
+                                                                                        <p>조회</p>
+                                                                                        <button type="button"
+                                                                                            class="create">
+                                                                                            <i class="ico-send"></i>
+                                                                                            메세지 보내기
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div class="bubbleContent">
+                                                                                        <section>
+                                                                                            <div class="box_guide">
+                                                                                                <p>- 분석기간 :
+                                                                                                    2025-07-05~2025-08-04
+                                                                                                    <b>:
+                                                                                                        8,025명(24.6%)</b>
+                                                                                                </p>
+
+                                                                                            </div>
+                                                                                        </section>
+                                                                                    </div>
+                                                                                    <div class="bubbleFooter">
+                                                                                        <div>
+                                                                                            <p>조회 상품의 유사상품 추천 발송</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                        <div>
+                                                                                            <p>보완 상품 추천</p>
+                                                                                            <button type="button"
+                                                                                                class="create">
+                                                                                                <i class="ico-send"></i>
+                                                                                                메세지 보내기
+                                                                                            </button>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <!-- <div class="bubbleDim"></div> -->
+                                                                            </div>
+                                                                            <!-- // bubbleWrap end -->
+                                                                        </div>
+                                                                        <div class="info">
+                                                                            <div class="txt">
+                                                                                <p>
+                                                                                    100%
+                                                                                </p>
+                                                                            </div>
+                                                                            <div class="txt2">
+                                                                                <p>리텐션</p>
+                                                                                <p>300,000명</p>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <!-- chart end -->
+                                                                </div>
+                                                            </div>
+                                                            <!-- chartGroup end -->
+                                                        </div>
+                                                        <!-- chartBlock end -->
+                                                    </div>
+                                                    <!-- chartBox end-->
+                                                </div>
+                                                <!-- box end -->
+                                            </div>
+                                            <!--// chartArea end -->
+                                        </div>
+                                        <!-- 자사 신규/ 재방문 -->
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                    <div class="con-row">
+                        <div class="con-hd">
+                            <strong>구매 후 이동 퍼널 분석(리텐션 흐름)</strong>
+                            <div>
+                                <p>· 분석기간</p>
+                                <button type="button" class="btn-s btn-bu">최근 30일</button>
+                                <!--선택시 btn-gy>btn-bu로 교체-->
+                                <button type="button" class="btn-s btn-gy">3개월 전</button>
+                            </div>
+                        </div>
+                        <section class="sec_moveAnalysis">
+                            <div class="box_moveAnalysis">
+                                <div class="cont">
+                                    <div class="graphArea">
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user1">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>구매완료</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user2">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>재방문</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user3">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>조회</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user4">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>장바구니</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user5">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>결제</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user6">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>구매완료</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="bubbleWrap bw_userStats" data-popBubbleWrapName="bw_user7">
+                                            <div class="bubbleContainer">
+                                                <div class="bubbleTitle">
+                                                    <p>이탈</p>
+                                                    <button type="button" class="bubbleClose"><i
+                                                            class="ico-close-gy"></i></button>
+                                                </div>
+                                                <div class="bubbleContent">
+                                                    <section>
+                                                        <div class="box_guide">
+                                                            <p>- 분석기간 :
+                                                                2025-07-05~2025-08-04
+                                                                <b>:
+                                                                    8,025명(24.6%)</b>
+                                                            </p>
+
+                                                        </div>
+                                                    </section>
+                                                </div>
+                                                <div class="bubbleFooter">
+                                                    <div>
+                                                        <p>최근 본 상품</p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                    <div>
+                                                        <p>관심 상품 리마인드 </p>
+                                                        <button type="button" class="create">
+                                                            <i class="ico-send"></i>
+                                                            메세지 보내기
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- <div class="bubbleDim"></div> -->
+                                        </div>
+                                        <div class="graph">
+                                            <ul>
+                                                <li class="fir bubbleOpen" data-popBubbleName="bw_user1">
+                                                    <div class="info">
+                                                        <div class="txt bubbleOpen" data-popBubbleName="bw_user1">
+                                                            <span>구매완료</span>
+                                                            <span>100%(5,400명)</span>
+                                                        </div>
+                                                        <div class="line">
+                                                            <svg class="graph-svg bubbleOpen"
+                                                                data-popBubbleName="bw_user2">
+
+                                                            </svg>
+                                                            <svg class="graph-svg bubbleOpen"
+                                                                data-popBubbleName="bw_user7">
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <ul>
+                                                        <li style="height:80%" class="bubbleOpen"
+                                                            data-popBubbleName="bw_user2">
+                                                            <div class="info">
+                                                                <div class="txt bubbleOpen"
+                                                                    data-popBubbleName="bw_user3">
+                                                                    <span>재방문</span><span>100%(5,400명)</span>
+
+                                                                </div>
+                                                                <div class="line">
+                                                                    <svg class="graph-svg bubbleOpen"
+                                                                        data-popBubbleName="bw_user3">
+
+                                                                    </svg>
+                                                                    <svg class="graph-svg bubbleOpen"
+                                                                        data-popBubbleName="bw_user4">
+                                                                    </svg>
+                                                                    <svg class="graph-svg bubbleOpen"
+                                                                        data-popBubbleName="bw_user5">
+                                                                    </svg>
+                                                                    <svg class="graph-svg bubbleOpen"
+                                                                        data-popBubbleName="bw_user6">
+                                                                    </svg>
+                                                                </div>
+                                                            </div>
+                                                            <ul>
+                                                                <li style="height:35%" class="bubbleOpen"
+                                                                    data-popBubbleName="bw_user3">
+                                                                    <div class="info">
+                                                                        <div class="txt bubbleOpen"
+                                                                            data-popBubbleName="bw_user3">
+                                                                            <span>조회</span><span>100%(5,400명)</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </li>
+                                                                <li style="height:30%" class="bubbleOpen"
+                                                                    data-popBubbleName="bw_user4">
+                                                                    <div class="info">
+                                                                        <div class="txt bubbleOpen"
+                                                                            data-popBubbleName="bw_user4">
+                                                                            <span>장바구니</span><span>100%(5,400명)</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </li>
+                                                                <li style="height:20%" class="bubbleOpen"
+                                                                    data-popBubbleName="bw_user5">
+                                                                    <div class="info">
+                                                                        <div class="txt bubbleOpen"
+                                                                            data-popBubbleName="bw_user5">
+                                                                            <span>결제</span><span>100%(5,400명)</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </li>
+                                                                <li style="height:15%" class="bubbleOpen"
+                                                                    data-popBubbleName="bw_user6">
+                                                                    <div class="info">
+                                                                        <div class="txt bubbleOpen"
+                                                                            data-popBubbleName="bw_user6">
+                                                                            <span>구매완료</span><span>100%(5,400명)</span>
+
+                                                                        </div>
+
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </li>
+                                                        <li style="height:20%" class="bubbleOpen"
+                                                            data-popBubbleName="bw_user7">
+                                                            <div class="info">
+                                                                <div class="txt bubbleOpen"
+                                                                    data-popBubbleName="bw_user7">
+                                                                    <span>이탈</span><span>100%(5,400명)</span>
+
+                                                                </div>
+
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+                <!--//sec-con-->
+            </div>
+            <!--//inner-->
+        </article>
+        <!--//article-->
+    </div>
+</body>
+
+</html>

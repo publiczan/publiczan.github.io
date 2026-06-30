@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+    <g data-name="사각형 96" style="fill:rgba(0,0,0,.15);stroke:#fff">
+        <rect width="24" height="24" rx="4" style="stroke:none"/>
+        <rect x=".5" y=".5" width="23" height="23" rx="3.5" style="fill:none"/>
+    </g>
+    <path data-name="패스 36" d="m657.386 328.294 4.543 4.543 7.235-7.235" transform="translate(-651.275 -317.22)" style="fill:none"/>
+</svg>

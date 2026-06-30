@@ -1,0 +1,1669 @@
+#Wrap {
+    article {
+        &.on {
+            .inner {
+                &.promo {
+                    .sec-con {
+                        .con-row {
+                            &:not(.top) {
+                                ul {
+                                    li {
+                                        width: calc(100% / 5 - 85px);
+
+                                        &.on {
+                                            &::before {
+                                                width: 230px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .inner {
+            .con-hd {
+                font-size: 20px;
+                font-family: $ft-b;
+            }
+
+            .sec-con {
+                margin-top: 10px;
+            }
+
+            &.promo {
+                .sec-con {
+                    padding: 10px 0;
+                    margin-top: 0;
+
+                    &::after {
+                        content: "";
+                        position: fixed;
+                        z-index: 1;
+                        bottom: 0;
+                        width: 100%;
+                        height: 100px;
+                        background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #fff);
+                    }
+
+                    .con-row {
+                        &.top {
+                            @include flex($align:ct, $con:bt);
+                            padding-bottom: 20px;
+
+                            .flx-btnBox {
+                                @include flex($align:ct, $con:st);
+                                gap: 8px;
+
+                                button {
+                                    width: auto;
+                                    height: 36px;
+                                    padding: 0 12px;
+                                    border-radius: 40px;
+                                    background: #fff;
+                                    border: 1px solid $gray-Cr01;
+                                    color: $txtCr02;
+
+                                    &:hover {
+                                        background: #f2f4f6;
+                                    }
+                                }
+                            }
+
+                            .comboBox {
+                                min-width: 140px;
+                            }
+
+                            .btn-msg {
+                                width: 480px;
+                                height: 48px;
+                                border-radius: 24px;
+                                background: $mainCr;
+                                color: #fff;
+                                position: fixed;
+                                z-index: 2;
+                                bottom: 20px;
+                                left: 50%;
+                                font-size: $ft-18;
+                                font-family: $ft-m;
+                                @include flex($align:ct, $con:ct);
+                                gap: 10px;
+                            }
+                        }
+
+                        &:not(.top) {
+                            @include flex($align:st, $con:st);
+                            gap: 95px;
+
+                            //padding: 24px 0 0;
+
+                            .con-hd {
+                                flex-shrink: 0;
+                                min-width: 140px;
+
+                                strong {
+                                    padding: 21px 0;
+                                }
+
+                                .label {
+                                    height: 36px;
+                                    padding: 0 $ft-12;
+                                    border-radius: 8px;
+                                    font-family: $ft-b;
+                                    font-size: $ft-16;
+
+                                    i {
+                                        width: $ft-16;
+                                        height: $ft-16;
+                                    }
+                                }
+
+                                .btnBox {
+                                    padding: 32px 0;
+                                    @include flex($wrap:wr);
+                                    gap: 4px;
+
+                                    button {
+                                        width: calc(100% / 2 - 2px);
+                                        height: 28px;
+                                        border-radius: 20px;
+
+                                        &:nth-of-type(1) {
+                                            background: #ffeced;
+                                        }
+
+                                        &:nth-of-type(2) {
+                                            background: #fff9e2;
+                                        }
+
+                                        &:nth-of-type(3) {
+                                            background: #f8eadd;
+                                        }
+
+                                        &:nth-of-type(4) {
+                                            background: #e2f6fc;
+                                        }
+                                    }
+                                }
+                            }
+
+                            ul {
+                                @include flex($wrap:wr);
+                                gap: 20px 65px;
+
+                                li {
+                                    position: relative;
+                                    width: calc(100% / 5 - 52px);
+                                    cursor: pointer;
+                                    padding: 16px;
+                                    margin: 0 auto;
+
+                                    &.on {
+                                        &::before {
+                                            content: "";
+                                            position: absolute;
+                                            width: 216px;
+                                            height: 100%;
+                                            border: 1px solid $mainCr;
+                                            border-radius: 16px;
+                                            transform: translate(-50%, -50%);
+                                            top: 50%;
+                                            left: 50%
+                                        }
+                                    }
+
+                                    >div {
+                                        width: 178px;
+                                    }
+
+                                    .img {
+                                        position: relative;
+
+                                        .label,
+                                        .checkBox {
+                                            position: absolute;
+                                            z-index: 1;
+                                            top: 2px;
+                                        }
+
+                                        .checkBox {
+                                            right: 2px;
+                                        }
+
+                                        picture {
+                                            width: 178px;
+                                            height: 178px;
+                                            max-width: max-content;
+                                            overflow: hidden;
+                                        }
+
+                                        .label {
+                                            left: 2px;
+                                            font-size: $ft-12;
+                                            font-family: $ft-m;
+                                            border-radius: 12px;
+                                            height: 24px;
+                                            padding: 0 8px;
+
+                                            i {
+                                                width: $ft-12;
+                                                height: $ft-12;
+                                            }
+                                        }
+                                    }
+
+                                    .txt {
+                                        padding: 12px 0 0;
+
+                                        a,
+                                        span {
+                                            @include ellipsis(1);
+                                        }
+
+                                        a {
+                                            font-size: $ft-14;
+                                            font-family: $ft-m;
+                                            line-height: 1.5;
+
+                                            &:hover {
+                                                color: $txtCr03;
+                                            }
+                                        }
+
+                                        >span {
+                                            color: $txtCr02;
+                                            font-size: $ft-13;
+                                            line-height: 1.3;
+                                        }
+
+                                        p {
+                                            color: $mainCr;
+                                            font-size: $ft-14;
+                                            font-family: $ft-m;
+                                            line-height: 1.8;
+
+                                            span {
+                                                display: contents;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .btn-more {
+                                margin: 20px auto;
+                                border-radius: 24px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.oneck {
+                .sec-con {
+                    background: #f9fafb;
+                    border-radius: 20px;
+                    padding: 36px 32px;
+
+                    .con-hd {
+                        @include flex($align:ct, $con:bt);
+
+                        >div {
+                            &:not([class]) {
+                                @include flex($align:ct, $con:st);
+
+
+                                * {
+                                    @include flex($align:ct, $con:st);
+                                }
+
+                                strong {
+                                    font-size: 20px;
+                                    font-family: $ft-b;
+                                    margin-right: 10px;
+                                }
+
+                                p {
+                                    font-size: 12px;
+                                    height: 24px;
+                                    border-radius: 12px;
+                                    padding: 0 8px;
+                                    margin: 0 3px;
+                                    gap: 3px;
+
+                                    span {
+                                        font-family: $ft-m;
+                                        font-size: $ft-14;
+                                    }
+
+                                    &.on {
+                                        background: #e1ffed;
+                                        color: #14c76d
+                                    }
+
+                                    &.off {
+                                        background: #ffeeee;
+                                        color: #f04452
+                                    }
+                                }
+                            }
+                        }
+
+                        .searchBox {
+                            max-width: 280px;
+                        }
+                    }
+
+                    .con-row {
+                        @include flex($wrap:wr);
+                        gap: 24px;
+                        padding: 36px 0;
+
+                        .item {
+                            position: relative;
+                            @include flex($dir:col, $con:bt);
+                            width: calc(100% / 3 - 16px);
+                            height: 168px;
+                            background: #fff;
+                            border-radius: 20px;
+                            padding: 32px 24px;
+                            cursor: pointer;
+
+                            &.on {
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    border: 1px solid $mainCr;
+                                    border-radius: 16px;
+                                    transform: translate(-50%, -50%);
+                                    top: 50%;
+                                    left: 50%
+                                }
+                            }
+
+                            >div {
+
+                                &.top {
+                                    @include flex($align:st, $con:bt);
+                                    gap: 20px;
+
+                                    strong {
+                                        @include flex($align:st, $con:st);
+                                        gap: 5px;
+                                        line-height: 1.4;
+
+                                        i {
+                                            width: 24px;
+                                            height: 24px;
+                                            background: url($url-img-com + "ico_talk.svg") no-repeat center / 100%;
+                                            flex-shrink: 0;
+                                        }
+
+                                        span {
+                                            @include ellipsis(2)
+                                        }
+                                    }
+                                }
+
+                                &.bt {
+
+                                    >span {
+                                        position: absolute;
+                                        color: $txtCr02;
+                                        font-size: $ft-12;
+                                        @include flex($align:ct, $con:ct);
+                                        gap: 5px;
+                                        border: 1px solid $gray-Cr01;
+                                        background: #fff;
+                                        height: 24px;
+                                        border-radius: $ft-12;
+                                        padding: 0 8px;
+
+                                        &::before {
+                                            content: "";
+                                            display: block;
+                                            position: relative;
+                                            width: 4px;
+                                            height: 4px;
+                                            background: #f04452;
+                                            border-radius: 100%;
+                                        }
+                                    }
+
+                                    .btnBox {
+                                        @include flex($align:ct, $con:en);
+                                        gap: 16px;
+
+                                        button {
+                                            position: relative;
+                                            width: 24px;
+                                            height: 24px;
+                                            @include transition;
+
+                                            span {
+                                                display: none;
+                                                position: absolute;
+                                                background: $mainCr;
+                                                overflow: visible;
+                                                z-index: 1;
+                                                width: max-content;
+                                                padding: 0 8px;
+                                                height: 24px;
+                                                border-radius: 6px;
+                                                color: #fff;
+                                                transform: translateX(-50%);
+                                                left: 50%;
+                                                top: 40px;
+
+                                                &::after {
+                                                    content: '';
+                                                    position: absolute;
+                                                    transform: translateX(-50%);
+                                                    left: 50%;
+                                                    top: -17px;
+                                                    border-top: 10px solid transparent;
+                                                    border-right: 10px solid transparent;
+                                                    border-bottom: 10px solid $mainCr;
+                                                    border-left: 10px solid transparent;
+                                                }
+                                            }
+
+                                            &:nth-of-type(1) {
+                                                i {
+                                                    @include svg($url-img-com +"ico_send.svg", 24px, 24px, #bed7fe);
+
+
+                                                }
+                                            }
+
+                                            &:nth-of-type(2) {
+                                                i {
+                                                    @include svg($url-img-com +"ico_report.svg", 24px, 24px, #bed7fe);
+                                                }
+                                            }
+
+                                            &:nth-of-type(3) {
+                                                i {
+                                                    @include svg($url-img-com +"ico_terms.svg", 24px, 24px, #bed7fe);
+                                                }
+                                            }
+
+                                            &:nth-of-type(4) {
+                                                i {
+                                                    @include svg($url-img-com +"ico_setting.svg", 24px, 24px, #bed7fe);
+                                                }
+                                            }
+
+                                            @for $i from 1 through 4 {
+                                                &:nth-of-type(#{$i}) {
+                                                    &:hover {
+                                                        i {
+                                                            background-color: $mainCr;
+                                                        }
+
+                                                        span {
+                                                            @include flex($align:ct, $con:ct);
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.recom {
+                .sec-con {
+                    @include flex($wrap:wr);
+                    gap: 20px;
+
+                    .con-row {
+                        width: calc(100% / 2 - 14px);
+                        border-radius: 20px;
+                        padding: 22px;
+
+                        .con-hd {
+                            @include flex($align:ct, $con:ct);
+                            gap: 5px;
+                            padding-bottom: $ft-16;
+                        }
+
+                        @for $i from 1 through 4 {
+                            &:nth-of-type(#{$i}) {
+                                .con-hd {
+                                    i {
+                                        width: 20px;
+                                        height: 20px;
+                                        background-image: url($url-img + 'page/ico_recom_0#{$i}.png');
+                                    }
+                                }
+                            }
+                        }
+
+                        .swiper {
+                            .swiper-slide {
+                                padding: 0 50px;
+
+                                ul {
+                                    li {
+                                        @include flex($align:ct, $con:bt);
+                                        gap: 30px;
+                                        border-bottom: 1px solid;
+                                        padding: 12px 0;
+
+                                        * {
+                                            @include flex($align:ct, $con:st);
+
+                                        }
+
+                                        p {
+                                            gap: 5px;
+                                            font-size: $ft-14;
+
+                                            em {
+                                                font-family: $ft-b
+                                            }
+
+                                            span {
+                                                @include ellipsis(1);
+                                            }
+                                        }
+
+                                        .btnBox {
+                                            flex-shrink: 0;
+                                            justify-content: flex-end;
+                                            gap: 10px;
+
+                                            button {
+                                                flex-shrink: 0;
+                                                max-width: 88px;
+                                                justify-content: center;
+
+                                                &.btn-apply {
+                                                    color: #fff
+                                                }
+
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .swiper-button-next,
+                            .swiper-button-prev {
+                                width: 40px;
+                                height: 40px;
+
+                                &::after {
+                                    font-size: $ft-14;
+                                    font-weight: bold;
+                                }
+                            }
+
+                            .swiper-button-next {
+                                right: 0;
+                            }
+
+                            .swiper-button-prev {
+                                left: 0;
+                            }
+                        }
+
+                        $con-row-themes: (1: (bg: #f1f8ff,
+                                border: rgba(49, 130, 246, 0.2),
+                                btn-term-bg: rgba(49, 130, 246, 0.2),
+                                btn-term-color: $mainCr,
+                                btn-apply-bg: $mainCr,
+                                nav-color: null),
+                            2: (bg: #fff9f1,
+                                border: rgba(253, 181, 74, 0.2),
+                                btn-term-bg: rgba(253, 181, 74, 0.2),
+                                btn-term-color: #f89400,
+                                btn-apply-bg: #fdb54a,
+                                nav-color: #fdb54a),
+                            3: (bg: #f9f8ff,
+                                border: rgba(144, 107, 248, 0.15),
+                                btn-term-bg: rgba(144, 107, 248, 0.15),
+                                btn-term-color: #7c4eff,
+                                btn-apply-bg: #9874ff,
+                                nav-color: #9874ff),
+                            4: (bg: #f3fff9,
+                                border: rgba(31, 204, 140, 0.15),
+                                btn-term-bg: rgba(31, 204, 140, 0.15),
+                                btn-term-color: #00b270,
+                                btn-apply-bg: #1fcc8c,
+                                nav-color: #1fcc8c));
+
+                        @each $i,
+                        $theme in $con-row-themes {
+                            &:nth-of-type(#{$i}) {
+                                background: map-get($theme, bg);
+
+                                .swiper {
+                                    .swiper-slide {
+                                        background: map-get($theme, bg);
+
+                                        ul li {
+                                            border-color: map-get($theme, border);
+
+                                            .btnBox button {
+                                                &.btn-term {
+                                                    background: map-get($theme, btn-term-bg);
+                                                    color: map-get($theme, btn-term-color);
+                                                }
+
+                                                &.btn-apply {
+                                                    background: map-get($theme, btn-apply-bg);
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    .swiper-button-next,
+                                    .swiper-button-prev {
+                                        @if map-get($theme, nav-color) {
+                                            &::after {
+                                                color: map-get($theme, nav-color);
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.rfm {
+                $con-row-bg: #edf1f4,
+                    #3182f6,
+                    #7cb3f4,
+                    #172d5f,
+                    #a2afdf,
+                    #204ce0,
+                    #73c2fb,
+                    #cddcf9,
+                    #225688,
+                    #edf1f4;
+
+                .sec-con {
+                    display: grid;
+                    grid-template-areas:
+                        "item01 item01 item01 item01 item02 item02 item02 item02 item03 item03"
+                        "item01 item01 item01 item01 item02 item02 item02 item02 item03 item03"
+                        "item01 item01 item01 item01 item02 item02 item02 item02 item03 item03"
+                        "item04 item04 item04 item04 item02 item02 item02 item02 item03 item03"
+                        "item04 item04 item04 item04 item05 item05 item06 item06 item06 item06"
+                        "item04 item04 item04 item04 item05 item05 item06 item06 item06 item06"
+                        "item04 item04 item04 item04 item05 item05 item06 item06 item06 item06"
+                        "item07 item07 item07 item07 item08 item08 item06 item06 item06 item06"
+                        "item07 item07 item07 item07 item08 item08 item09 item09 item10 item10"
+                        "item07 item07 item07 item07 item08 item08 item09 item09 item10 item10"
+                        "item07 item07 item07 item07 item08 item08 item09 item09 item10 item10";
+                    grid-gap: 8px;
+                    grid-template-columns: repeat(10, 1fr);
+                    grid-template-rows: repeat(11, 2fr);
+
+                    .con-row {
+                        position: relative;
+                        padding: 23px;
+                        border-radius: 12px;
+                        //color: #fff;
+                        cursor: pointer;
+                        color: #fff;
+                        display: flex;
+                        flex-direction: column;
+                        overflow: hidden;
+
+                        &::before {
+                            content: '';
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            width: 1px;
+                            height: 1px;
+                            z-index: 1;
+                            background-color: rgba(255, 255, 255, 0.1);
+                            -webkit-transition: all 0.3s;
+                            transition: all 0.3s;
+                            opacity: 0;
+                        }
+
+                        &:hover {
+                            &::before {
+                                opacity: 1;
+                                -webkit-transform: scale(1, 1);
+                                -ms-transform: scale(1, 1);
+                                transform: scale(1, 1);
+                                width: 100%;
+                                height: 100%;
+                                top: 0;
+                                left: 0;
+                            }
+                        }
+
+                        @for $i from 1 through length($con-row-bg) {
+                            &:nth-of-type(#{$i}) {
+                                background: nth($con-row-bg, $i);
+
+                                grid-area: item#{if($i < 10, '0#{$i}', $i)};
+&.on {
+                                    //box-shadow: -1px 10px 29px 0px nth($con-row-bg, $i);
+                                    $bg: nth($con-row-bg, $i);
+                                    background: darken($bg, 1%);
+                                    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+                                        inset -2px -2px 6px rgba(255, 255, 255, 0.2);
+                                    transition: all 200ms ease-in;
+                                }
+
+                            }
+                        }
+
+                        &:nth-of-type(1),
+                        &:nth-of-type(8),
+                        &:nth-of-type(10) {
+                            color: $txtCr01;
+                        }
+
+                        &.on {
+                            >button {
+                                animation: btn .5s 0.001s ease-in forwards;
+                            }
+
+                            ul {
+                                li {
+                                    &:not(.flx) {
+                                        display: flex;
+                                        opacity: 1;
+                                    }
+                                }
+                            }
+                        }
+
+                        ul {
+                            @include flex($wrap:wr, $con:bt, $align:en);
+                            gap: 8px;
+
+                            li {
+                                width: calc(100% / 2 - 4px);
+                                min-width: 60px;
+
+                                &:nth-of-type(odd) {
+                                    font-family: $ft-l;
+                                }
+
+                                &:nth-of-type(even) {
+                                    @include flex($align:ct, $con:en);
+                                    font-family: $ft-sb;
+
+                                }
+
+                                &:not(.flx) {
+                                    display: none;
+                                    opacity: 0;
+                                }
+
+                            }
+                        }
+
+                        .top {
+                            @include flex($align:st, $con:bt);
+                            flex: 0;
+                            min-height: 46px;
+
+                            strong {
+                                font-size: 20px;
+                                font-family: $ft-b;
+                            }
+                        }
+
+                        .bt {
+                            width: 100%;
+                            margin-top: auto;
+                            min-height: 112px;
+                            @include flex($dir:col, $align:bt, $con:en);
+                        }
+
+                        >button {
+                            // display: none;
+                            overflow: hidden;
+                            position: absolute;
+                            width: 100%;
+                            background: rgba(0, 0, 0, 0.5);
+                            color: #fff;
+                            z-index: 1;
+                            left: 0;
+                            bottom: 0;
+                            height: 50px;
+                            border-radius: 0 0 12px 12px;
+                            font-size: 20px;
+                            font-family: $ft-m;
+                            opacity: 0;
+                            @include flex($align:ct, $con:ct);
+                            gap: 10px;
+
+                        }
+
+                    }
+                }
+
+
+            }
+
+            &.dashboard {
+                .sec-con {
+                    .con-row {
+                        &:nth-of-type(2) {
+                            .con-hd {
+                                padding-bottom: 80px;
+                                flex-direction: column;
+                                align-items: flex-start;
+
+                                >div {
+                                    //width: auto;
+                                    justify-content: flex-start;
+                                    padding: 30px 0 0;
+
+                                    p {
+                                        flex-shrink: 0;
+                                        font-size: $ft-16;
+                                        padding-right: 10px;
+                                    }
+                                }
+                            }
+                        }
+
+                        padding: 30px;
+                        box-shadow: 0 3px 7px #00000026,
+                        inset 0 0 30px #ffffff1a;
+                        background: #fff;
+                        border-radius: 15px;
+
+                        .con-hd {
+                            @include flex($align:ct, $con:bt);
+
+
+
+                            >div {
+                                @include flex($align:ct, $con:en);
+                                gap: 10px;
+                                width: 50%;
+
+                                button {
+                                    border-radius: 36px;
+                                    max-width: 100px;
+                                }
+
+                                .calendarBox {
+                                    max-width: 250px;
+                                    margin-left: auto;
+                                }
+                            }
+                        }
+
+
+                        &:not(:first-of-type) {
+                            margin-top: 30px;
+                        }
+
+
+
+                        $steps: (1: (h: 260px, c: #0e369e),
+                            2: (h: 225px, c: #406ad9),
+                            3: (h: 170px, c: #638af2),
+                            4: (h: 200px, c: #3ca3fd),
+                            5: (h: 110px, c: #3cc2fd));
+
+                        $angle-w: 40px;
+                        $header-h: 35px;
+                        $skew-deg: 15deg;
+
+                        .funnelBox {
+                            display: flex;
+                            align-items: flex-end;
+                            width: 100%;
+                            padding: 25px 0;
+                            overflow: hidden;
+                            max-height: 620px;
+                            min-height: 250px;
+
+                            .item {
+                                flex: 1;
+                                position: relative;
+                                margin-right: -#{$angle-w + 2px};
+                                max-height: 620px;
+                                min-height: 250px;
+                                @include flex($align:en);
+
+                                &:first-of-type {
+                                    .itemCon {
+                                        .item-con {
+                                            padding: 15px 20px 15px 25px;
+
+                                            >strong {
+                                                left: 25%;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                @each $num,
+                                $data in $steps {
+                                    $class-num: if($num < 10, "0#{$num}", "#{$num}");
+
+                                    &.item#{$class-num} {
+                                        z-index: #{20 - $num};
+
+                                        .itemCon {
+                                            position: relative;
+                                            width: 100%;
+
+                                            transform: skewX(#{$skew-deg});
+                                            transform-origin: bottom left;
+
+                                            @if $num==1 {
+                                                &::before {
+                                                    content: '';
+                                                    position: absolute;
+                                                    top: 0;
+                                                    left: -#{$angle-w * 2};
+                                                    width: #{$angle-w * 2};
+                                                    height: 100%;
+                                                    background: map-get($data, c);
+                                                    transform: skewX(#{$skew-deg});
+                                                    transform-origin: bottom right;
+                                                }
+                                            }
+
+                                            .item-hd {
+                                                height: $header-h;
+                                                background-color: #f4f4f4;
+                                                padding-left: if($num==1, 15px, 55px);
+                                            }
+
+                                            .item-con {
+                                                background-color: map-get($data, c);
+                                                height: map-get($data, h);
+                                            }
+                                        }
+                                    }
+                                }
+
+                                &:last-child {
+                                    margin-right: 0;
+                                    overflow: hidden;
+                                    clip-path: inset(0 0 0 0);
+                                }
+                            }
+
+                            .itemCon {
+                                width: 100%;
+                                cursor: pointer;
+
+                                >div {
+                                    >* {
+                                        transform: skewX(-25deg);
+
+
+                                    }
+                                }
+
+
+
+                            }
+
+                            .item-hd {
+                                height: $header-h;
+                                background-color: #f4f4f4;
+                                @include flex($align: st, $con: bt);
+                                padding: 10px 15px 0px ($angle-w - -1px);
+                                padding-left: 40px;
+                                border: 1px solid #eee;
+
+                                &:hover {
+                                    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+                                        inset -2px -2px 6px rgba(255, 255, 255, 0.2);
+                                }
+
+                                span {
+                                    &:nth-of-type(2) {
+                                        font-size: $ft-14;
+                                    }
+                                }
+                            }
+
+                            .item-con {
+                                position: relative;
+                                @include flex($dir: col, $con: en);
+                                padding: 15px 20px 15px 58px;
+                                color: #fff;
+
+                                &:hover {
+                                    box-shadow: inset 2px 2px 6px rgba(0, 0, 0, 0.25),
+                                        inset -2px -2px 6px rgba(255, 255, 255, 0.2);
+                                }
+
+                                >strong {
+                                    position: absolute;
+                                    top: 20px;
+                                    left: 20%;
+                                }
+
+                                .bt {
+                                    @include flex($align: ct, $con: bt);
+
+                                    span {
+                                        font-size: $ft-14;
+                                    }
+                                }
+                            }
+                        }
+
+                        .sankeyBox {
+                            position: relative;
+                            margin-top: 25px;
+
+                            .tooltipCk {
+                                left: 130px;
+                            }
+
+                            .item {
+                                position: relative;
+                                height: 400px;
+
+                                ul {
+                                    @include flex($dir:col, $con:bt, $align:st);
+                                    gap: 10px;
+                                    flex-grow: 1;
+                                    height: 100%;
+
+                                    li {
+                                        flex-grow: 1;
+                                        width: 100%;
+                                        @include flex($align:ct, $con:st);
+                                        gap: 10px;
+                                        position: relative;
+
+                                        &.on {
+                                            &::before {
+                                                @include transition;
+                                                opacity: .7;
+                                            }
+                                        }
+
+                                        &:before {
+                                            content: "";
+                                            position: relative;
+                                            display: inline-block;
+                                            border-radius: 30px;
+                                            width: 40px;
+                                            min-height: 30px;
+                                            height: -webkit-fill-available;
+                                            z-index: 1;
+                                        }
+
+                                        // --- [1단계 배경색 정리] ---
+                                        $depth1_colors: (#3cc2fd, #489eff, #b4b4b4);
+
+                                        @each $color in $depth1_colors {
+                                            $i: index($depth1_colors, $color);
+
+                                            &:nth-child(#{$i}):before {
+                                                background-color: $color;
+                                            }
+                                        }
+
+                                        .info {
+                                            position: relative;
+                                            flex-grow: 1;
+                                            width: 100%;
+                                            height: 100%;
+                                            cursor: pointer;
+
+                                            .txt {
+                                                position: relative;
+                                                display: inline-block;
+                                                flex-grow: 1;
+
+                                                strong {
+                                                    font-family: $ft-b;
+                                                    line-height: 1.8;
+                                                    font-size: 18px;
+                                                }
+
+                                                span {
+                                                    color: #777
+                                                }
+                                            }
+
+                                            .line {
+                                                position: absolute;
+                                                inset: 0;
+                                                height: 100%;
+
+                                                div {
+                                                    width: 100%;
+                                                    height: 30px;
+                                                    opacity: 0.4;
+                                                }
+                                            }
+                                        }
+
+                                        /* 1 depth 비율 설정 유지 */
+                                        >.info {
+                                            flex: 1 1 30%;
+
+                                            .txt {
+                                                top: 30%;
+                                            }
+                                        }
+
+                                        >ul {
+                                            flex: 2 1 70%;
+
+                                            >li {
+                                                &:nth-of-type(1) {
+                                                    .info {
+                                                        .txt {
+                                                            top: 10%
+                                                        }
+                                                    }
+                                                }
+
+                                                .info {
+                                                    flex: 2 1 70%;
+
+                                                    .line {
+                                                        div {
+                                                            position: absolute;
+
+                                                            &:nth-child(1) {
+                                                                top: 25%;
+                                                                transform: rotate(-8deg);
+                                                                background-color: #7277ff;
+                                                            }
+
+                                                            &:nth-child(2) {
+                                                                top: 28%;
+                                                                transform: rotate(-2deg);
+                                                                background-color: #6c9dfe;
+                                                            }
+
+                                                            &:nth-child(3) {
+                                                                top: 31%;
+                                                                transform: rotate(0deg);
+                                                                background-color: #72beff;
+                                                            }
+
+                                                            &:nth-child(4) {
+                                                                top: 34%;
+                                                                transform: rotate(10deg);
+                                                                background-color: #72e7ff;
+                                                            }
+
+                                                            &:nth-child(5) {
+                                                                top: 37%;
+                                                                transform: rotate(10deg);
+                                                                background-color: #6bfbf1;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+
+                                                // --- [2단계 배경색 정리] ---
+                                                $depth2_colors: (#489eff, #b4b4b4);
+
+                                                @each $color in $depth2_colors {
+                                                    $i: index($depth2_colors, $color);
+
+                                                    &:nth-child(#{$i}):before {
+                                                        background-color: $color;
+                                                    }
+                                                }
+
+                                                >ul {
+                                                    flex: 1 1 30%;
+
+                                                    >li {
+                                                        // --- [3단계 배경색 정리] ---
+                                                        $depth3_colors: (#7277ff, #6c9dfe, #72beff, #72e7ff, #6bfbf1);
+
+                                                        @each $color in $depth3_colors {
+                                                            $i: index($depth3_colors, $color);
+
+                                                            &:nth-child(#{$i}):before {
+                                                                background-color: $color;
+                                                            }
+                                                        }
+
+                                                        .info {}
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.onsite {
+
+                .sec-con {
+                    .con-row {
+                        @include flex($align:ct, $con:bt);
+                        gap: 20px;
+
+
+
+                        &.top {
+                            .cardBox {
+                                position: relative;
+
+                                i {
+                                    &.ico-alert {
+                                        position: absolute;
+                                        left: -15px;
+                                        top: -15px;
+                                    }
+                                }
+
+                                .txt {
+                                    @include flex($align:ct, $con:bt);
+
+                                    p {
+                                        &:not([class]) {
+                                            color: #6b7684;
+                                            font-size: $ft-12;
+
+                                            span {
+                                                display: contents;
+                                                font-size: $ft-16;
+                                            }
+                                        }
+
+                                        &.sort {
+                                            @include flex($align:bl, $con:st);
+                                            gap: 3px;
+                                            font-family: $ft-sb;
+
+                                            &:before {
+                                                content: "▲";
+                                                font-size: 10px;
+                                                font-family: $ft-sb;
+                                            }
+
+                                            &.down {
+                                                color: #0084fd;
+
+                                                &::before {
+                                                    transform: rotate(-180deg);
+                                                }
+                                            }
+
+                                            &.up {
+                                                color: #f14452
+                                            }
+                                        }
+                                    }
+                                }
+
+                                strong {
+                                    font-size: 24px;
+                                    font-family: $ft-b;
+                                    padding-top: $ft-16;
+                                }
+
+
+                                div {
+                                    &.mdBtn {
+                                        position: absolute;
+                                        width: 72px;
+                                        height: 32px;
+                                        right: 28px;
+                                        bottom: 22px;
+
+                                        >button {
+                                            position: absolute;
+                                            background: #e8f3ff;
+                                            color: $mainCr;
+
+                                            &:hover {
+                                                background: #cae1ff;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:not(.top) {
+                            margin-top: 30px;
+
+                            .cardBox {
+                                height: 588px;
+
+                                .con-hd {
+                                    @include flex($align:ct, $con:bt);
+
+                                    strong {
+                                        @include flex($align:ct, $con:st);
+                                        gap: 5px;
+
+                                        span {
+                                            font-size: $ft-16;
+                                            font-family: $ft-r;
+                                        }
+                                    }
+
+                                    button {
+                                        @include flex($align:ct, $con:ct);
+                                        gap: 10px;
+
+                                        i {
+                                            width: 18px;
+                                            height: 19px;
+                                            background: url($url-img-com + "ico_btnreport.svg") no-repeat center / 100%;
+                                        }
+                                    }
+                                }
+
+                                .nodata {
+                                    margin: 28px auto;
+                                    background: #f9fafb;
+                                    @include flex($align:ct, $con:ct, $dir:col);
+                                    gap: 30px;
+                                    height: 464px;
+                                    border-radius: 20px;
+
+                                    p {
+                                        color: #6b7684;
+                                        font-size: $ft-18;
+                                        font-family: $ft-m;
+                                    }
+                                }
+
+                                .itemBox {
+                                    .item {
+                                        @include flex($align:ct, $con:bt);
+                                        background: #f9fafb;
+                                        border-radius: 20px;
+                                        padding: 0 24px;
+                                        height: 136px;
+                                        margin-top: 28px;
+                                        @include level;
+                                        gap: 24px;
+
+                                        .nodata {
+                                            background: transparent;
+                                            flex-direction: row;
+                                            gap: 10px;
+                                            height: auto;
+                                            flex: 2;
+                                            font-size: $ft-18;
+
+                                            color: #6b7684;
+
+                                            i {
+                                                width: 20px;
+                                                height: 20px;
+                                                background: url($url-img-com + "ico_error.svg") no-repeat center / 100%;
+                                            }
+                                        }
+
+                                        .txt {
+                                            &:nth-of-type(1) {
+                                                flex: 2;
+                                            }
+
+                                            &:nth-of-type(2) {
+                                                flex: 1;
+                                            }
+
+                                            em {
+                                                font-family: $ft-sb;
+                                                font-size: $ft-18;
+                                            }
+
+                                            p {
+                                                padding-top: $ft-12;
+                                                font-family: $ft-b;
+                                                font-size: $ft-18;
+                                            }
+
+                                            >span {
+                                                font-size: $ft-14;
+                                                color: $txtCr02
+                                            }
+
+                                            strong {
+                                                padding-top: 8px;
+                                                @include flex($align:ct, $con:st);
+
+                                                >span {
+                                                    font-size: 24px;
+                                                    font-family: $ft-b;
+                                                }
+                                            }
+                                        }
+
+                                        button {
+                                            flex-shrink: 0;
+                                        }
+                                    }
+                                }
+
+                                .tableBox {
+
+                                    margin-top: 28px;
+
+                                    table {
+                                        thead {
+                                            th {
+                                                &.type-ct {
+                                                    gap: 3px;
+                                                }
+                                            }
+                                        }
+
+                                        tbody {
+                                            height: 427px;
+                                            overflow: visible;
+
+                                            p {
+                                                @include ellipsis(1);
+                                                font-size: $ft-14;
+                                            }
+
+                                            span {
+                                                display: contents;
+
+                                                &.txt-bu {
+                                                    font-family: $ft-b;
+                                                }
+                                            }
+
+                                            >button {}
+
+                                            .bar {
+                                                position: relative;
+                                                width: 130px;
+                                                height: 8px;
+                                                border-radius: 10px;
+                                                background: #e8f3ff;
+                                                cursor: pointer;
+
+                                                &:hover {
+                                                    .bubbleBox {
+                                                        display: block;
+                                                        @include transition;
+                                                    }
+                                                }
+
+                                                .bubbleBox {
+                                                    display: none;
+                                                    top: -50px;
+                                                    z-index: 2;
+                                                    right: 0;
+                                                }
+
+                                                span {
+                                                    position: absolute;
+                                                    left: 0;
+                                                    top: 0;
+                                                    background: $mainCr;
+                                                    height: 8px;
+                                                    border-radius: 10px;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            &.onsite_report {
+                .sec-con {
+                    .con-row {
+                        &.top {
+                            @include flex($align:ct, $con:bt);
+                            gap: 28px;
+
+                            .cardBox {
+                                @include flex($align:ct, $con:bt);
+                                padding: 12px 28px;
+
+                                .txt {
+                                    p {
+                                        color: #6b7684
+                                    }
+
+                                    strong {
+                                        font-size: 28px;
+                                        font-family: $ft-b;
+                                        padding-top: $ft-16;
+                                    }
+                                }
+
+                                i {
+                                    flex-shrink: 0;
+                                }
+
+                                @for $i from 1 through 3 {
+                                    &:nth-of-type(#{$i}) {
+                                        i {
+                                            width: 100px;
+                                            height: 100px;
+                                            background-image: url($url-img + 'page/ico_report_0#{$i}.png');
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:not(.top) {
+                            margin-top: 30px;
+
+                            .con-hd {
+                                padding-bottom: 30px;
+                            }
+
+                            .con-con {
+                                @include flex($align:st, $con:bt);
+                                gap: 50px;
+
+                                >div {
+                                    width: calc(100%/2);
+                                }
+
+                                .calendarBox {
+                                    width: 283px;
+                                    margin-bottom: 15px;
+                                }
+
+                                .tableBox {
+
+
+                                    table {
+                                        border-radius: 0;
+                                        border-left: 0;
+                                        border-right: 0;
+
+                                        tbody {
+                                            tr {
+                                                td {
+                                                    button {
+                                                        &.btn-ss {
+                                                            max-width: 85px;
+                                                            margin: 0 auto;
+
+                                                            &:hover {
+                                                                @include btn($color:btnbu);
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.yType {
+                                        table {
+                                            tbody {
+                                                height: 290px;
+
+                                                tr {
+                                                    td {
+                                                        &:first-of-type {
+                                                            color: #6b7684
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(2) {
+                            .con-con {
+                                .tableBox {
+                                    &:not(.yType) {
+                                        table {
+                                            tbody {
+                                                tr {
+                                                    @include level;
+
+                                                    &:not(:last-of-type) {
+                                                        td {
+                                                            border-bottom: 1px solid #e5e8eb;
+                                                        }
+                                                    }
+
+                                                    td {
+                                                        height: 115px;
+                                                        font-family: $ft-b;
+                                                        font-size: $ft-16;
+
+                                                        &.level {
+                                                            @include flex($align:ct, $con:ct);
+                                                            gap: 10px;
+
+                                                            i {
+                                                                width: 20px;
+                                                                height: 20px;
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:nth-of-type(3) {
+                            .con-con {
+                                .txtBox {
+                                    strong {
+                                        font-size: $ft-18;
+                                        font-family: $ft-b;
+                                    }
+
+                                    p {
+                                        padding: 20px 0;
+                                        line-height: 1.56;
+                                        font-size: $ft-18;
+
+                                        span {
+                                            display: contents;
+                                            font-family: $ft-b;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}

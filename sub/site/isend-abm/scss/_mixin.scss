@@ -1,0 +1,820 @@
+@charset 'utf-8';
+
+/********** common **********/
+$mainCr: #3182f6;
+$mainCr02:#FFAA00;
+$mainCr03:#FFF5E9;
+
+$txtCr01:#333d4b;
+$txtCr02: #4e5968;
+$txtCr03: #b0b8c1;
+$gray-Cr01:#e5e8eb;
+$gray-color02:#c6c6c6;
+$gray-color03:#eaeaea;
+$ft-12:12px;
+$ft-13:13px;
+$ft-14:14px;
+$ft-15:15px;
+$ft-16:16px;
+$ft-17:17px;
+$ft-18:18px;
+$ft-l:'Pretendard-Light';
+$ft-m:'Pretendard-Medium';
+$ft-b:'Pretendard-Bold';
+$ft-eb:'Pretendard-ExtraBold';
+$ft-bb:'Pretendard-Black';
+$ft-r:'Pretendard-Regular';
+$ft-sb:'Pretendard-SemiBold';
+$url-img-com: "../images/common/";
+$url-img: "../images/";
+
+@mixin transition {
+    transition: all 0.2s ease-in-out;
+}
+
+@keyframes modal {
+    0% {
+        transform: scale(.5);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes btn {
+    from {
+        opacity: 0;
+        bottom: -50%;
+    }
+
+    to {
+        opacity: 1;
+        bottom: 0;
+    }
+
+    /* 0~9까지 */
+}
+
+@mixin dim {
+    display: none;
+    top: 0;
+    left: 0;
+    width: 100%;
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    height: 100vh;
+    background: rgba(0, 0, 0, 3);
+}
+
+@mixin scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+}
+
+@mixin scrollbar-thumb {
+    height: 6px;
+    background: #d2d2d2;
+    border-radius: 3px;
+}
+
+@mixin select-scrollbar {
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-left: 1px solid #9ba0a2
+}
+
+/*flex*/
+@mixin flex($dir:null, $wrap:null, $align:null, $con:null) {
+    display: flex;
+
+    @if($dir==row) {
+        flex-direction: row;
+    }
+
+    @if($dir==col) {
+        flex-direction: column;
+    }
+
+    @if($wrap==wr) {
+        flex-wrap: wrap;
+    }
+
+    @if($wrap==nwr) {
+        flex-wrap: nowrap;
+    }
+
+    @if($align==st) {
+        align-items: flex-start;
+    }
+
+    @if($align==ct) {
+        align-items: center;
+    }
+
+    @if($align==en) {
+        align-items: flex-end;
+    }
+
+    @if($align==bl) {
+        align-items: baseline;
+    }
+
+    @if($align==stc) {
+        align-items: stretch;
+    }
+
+    @if($con==bt) {
+        justify-content: space-between;
+    }
+
+    @if($con==st) {
+        justify-content: flex-start;
+    }
+
+    @if($con==ct) {
+        justify-content: center;
+    }
+
+    @if($con==en) {
+        justify-content: flex-end;
+    }
+
+    @if($con==ar) {
+        justify-content: space-around;
+    }
+
+    @if($con==ev) {
+        justify-content: space-evenly;
+    }
+}
+
+@mixin beforeIco {
+    content: "";
+    display: block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100%;
+
+}
+
+@mixin svg($path, $width, $height, $color) {
+    width: $width;
+    height: $height;
+    background-color: $color;
+    -webkit-mask-image: url($path);
+    mask-image: url($path);
+    background-size: cover;
+    -webkit-background-size: cover;
+    mask-size: contain;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+}
+
+@mixin ellipsis($lines: 1) {
+    @if ($lines==1) {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+    }
+
+    @else {
+        display: -webkit-box;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: $lines;
+        -webkit-box-orient: vertical;
+        text-align: left;
+        white-space: normal;
+        word-break: break-all;
+    }
+}
+
+@mixin validation($ps:null) {
+    display: block;
+    position: $ps;
+    font-size: $ft-13;
+    line-height: 2px;
+    color: $errorColor;
+    font-family: $ft-r;
+}
+
+@mixin checkbox {
+    input {
+        &[type="checkBox"] {
+            +label {
+                margin: 0;
+                @include flex($con:st, $align:ct);
+                font-size: $ft-16;
+                cursor: pointer;
+                gap: 8px;
+
+                // @media screen and(max-width: 767px) {
+                //     align-items: flex-start;
+                //     font-size: $ft-14;
+                // }
+
+                &::before {
+                    @include beforeIco;
+                    width: 24px;
+                    height: 24px;
+                    flex-shrink: 0;
+                    border-radius: 4px;
+                    border: 1px solid #d1d6db;
+                    //background: url($url-img-com + 'ico_checkbox_off.svg') no-repeat;
+                }
+            }
+
+            &:checked {
+                +label {
+                    &::before {
+                        background: $mainCr url($url-img-com + 'ico_checkbox_on.svg') no-repeat center/ cover;
+
+                    }
+                }
+            }
+
+            &:disabled {
+                +label {
+                    &::before {}
+                }
+            }
+        }
+    }
+}
+
+@mixin circle-ck {
+    input[type="checkbox"]+label:before {
+        width: 22px;
+        height: 22px;
+        background-image: url($url-img +"/member/ico_checkbox_offsvg");
+    }
+
+    input[type="checkbox"]:checked+label:before {
+        background-image: url($url-img +"/member/ico_checkbox_onsvg");
+    }
+}
+
+@mixin radiobox {
+    input {
+        &[type="radio"] {
+            +label {
+                @include flex($con:ct, $align:ct);
+                font-size: $ft-16;
+                cursor: pointer;
+                gap: 8px;
+                flex-shrink: 0;
+
+                &::before {
+                    //@include beforeIco;
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 100%;
+                    border: 1px solid $gray-Cr01;
+                }
+            }
+
+            &:checked {
+                +label {
+                    &::before {
+                        background: #fff;
+                        box-shadow: inset 0 0 0 6px $mainCr;
+                    }
+                }
+            }
+
+            &:disabled {
+                +label {
+                    &::before {
+                        background: #eaeaea;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin selectBox($wh:null) {
+    width: 100%;
+    max-width: $wh;
+    display: inline-block;
+    vertical-align: middle;
+    height: 32px;
+    padding: 0 $ft-12;
+    font-size: $ft-14;
+    line-height: 32px;
+    color: #000;
+    border-radius: 8px;
+    border: 1px solid $gray-Cr01;
+    box-shadow: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    background: #fff url($url-img-com + "ico_ar_gy.svg") no-repeat right 13px center/13px;
+
+    &:disabled {
+        color: #bbb;
+        border: 1px solid #d0d0d0;
+        background-color: #f8f8f8;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+@mixin comboBox($mw:null, $hvcol:null) {
+    position: relative;
+    width: 100%;
+    max-width: $mw;
+    color: $txtCr02;
+    font-size: $ft-14;
+
+    .cb-btn {
+        width: 100%;
+        max-width: $mw;
+        height: 36px;
+        padding: 0 12px;
+        @include flex($align:ct, $con:bt);
+        border-radius: 8px;
+        border: 1px solid $gray-Cr01;
+        cursor: pointer;
+
+
+        i {
+            @include transition();
+            @include ico_ar_gy($wh:13px, $he:13px, $col:$txtCr03);
+        }
+    }
+
+    .cb-dt {
+        display: none;
+        position: absolute;
+        z-index: 3;
+        top: 42px;
+        width: 100%;
+        background: #fff;
+        border-radius: 8px;
+
+        ul {
+            width: 100%;
+            border: 1px solid $gray-Cr01;
+            box-shadow: 0 2px 12px 0 rgba(52, 58, 67, 0.15);
+            background: #fff;
+            border-radius: 8px;
+            height: 196px;
+            overflow: hidden;
+            overflow-y: auto;
+
+            li {
+                padding: 0 12px;
+                line-height: 32px;
+                cursor: pointer;
+
+                &:hover {
+                    color: $mainCr
+                }
+            }
+        }
+    }
+
+    &.on {
+        .cb-btn {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+
+        .cb-dt {
+            display: block;
+        }
+    }
+
+    &.txtType01 {
+        .cb-btn {
+            width: 100%;
+            height: 48px;
+            padding: 0 2px;
+            @include flex($align:ct, $con:bt);
+            border-radius: 08px;
+            border: 1px solid $gray-color02;
+            cursor: pointer;
+
+            span {
+                font-size: $ft-16;
+            }
+        }
+
+        .cb-detail {
+            position: absolute;
+            z-index: 1;
+            top: 45px;
+            width: 100%;
+            background: #fff;
+
+            ul {
+                width: 100%;
+                border: 1px solid $gray-color02;
+                border-radius: 0 0 08px 08px;
+
+                li {
+                    padding: 0 2px;
+                    font-size: $ft-16;
+                    line-height: 48px;
+                    cursor: pointer;
+
+                    &:not(:last-of-type) {
+                        border-bottom: 1px solid $gray-color02;
+                    }
+
+                    &:hover {
+                        background: $hvcol;
+                        color: #fff
+                    }
+                }
+            }
+        }
+    }
+}
+
+@mixin moreBox($wh) {
+    position: relative;
+    width: 100%;
+
+    ul {
+        width: 100%;
+        @include flex($align:ct, $wrap:wr);
+
+
+        li {
+            display: none;
+            width: $wh;
+        }
+    }
+}
+
+@mixin searchBox($mw:null) {
+    position: relative;
+    @include flex($align:ct, $con:st);
+    height: 32px;
+    width: 100%;
+    min-width: 280px;
+    border-radius: 8px;
+    border: 1px solid $gray-Cr01;
+    padding: 0 10px;
+    background: #fff;
+
+    input {
+        border: 0;
+        padding: 0 5px;
+
+        &:focus {
+            border: none
+        }
+    }
+
+}
+
+@mixin text-ck {
+    @include flex($align:ct, $con:st);
+    gap: 1px;
+
+    input {
+
+        &[type="checkbox"],
+        &[type="radio"] {
+            &:disabled {
+                +label {
+                    opacity: .5;
+                }
+            }
+
+            +label {
+                cursor: pointer;
+                width: 100%;
+                max-width: 100px;
+                min-width: 8px;
+                height: 36px;
+                @include flex($con:ct, $align:ct);
+                font-size: $ft-14;
+                font-family: $ft-m;
+                flex-shrink: inherit;
+                border: 1px solid $gray-Cr01;
+                border-right: 0;
+                margin-left: -1px;
+                color: $txtCr02;
+
+                &:last-of-type {
+                    border-right: 1px solid $gray-Cr01;
+                    border-radius: 0 8px 8px 0;
+                }
+
+                &:first-of-type {
+                    border-right: 1px solid $gray-Cr01;
+                    border-radius: 8px 0 0 8px;
+                }
+
+                &:not(:last-of-type) {
+                    border-right: 1px solid $gray-Cr01;
+                }
+
+                &::before {
+                    display: none;
+                }
+            }
+
+            &:checked {
+                +label {
+                    background: $mainCr;
+                    color: #fff;
+                    border-color: $mainCr;
+                }
+            }
+        }
+    }
+}
+
+@mixin calendar {
+    cursor: pointer;
+    width: 100%;
+
+    .calendar {
+        position: relative;
+        width: 100%;
+        height: 40px;
+        background-color: #fff;
+        border: 1px solid #dedede;
+        border-radius: 5px;
+        @include flex($con:ct, $align:ct);
+
+        i {
+            position: r;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+            background-image: url($url-img-com + 'ico_calendarsvg');
+        }
+
+        input {
+            width: 120px;
+            height: 40px;
+            text-align: center;
+            border: none;
+            cursor: pointer;
+            background: transparent
+        }
+
+        .dateChoice {
+            width: 100%;
+            @include flex($align:ct);
+
+            input {
+                text-align: left;
+                min-width: 100%;
+                z-index: 1;
+                padding-left: 35px;
+            }
+        }
+    }
+
+    .checkBox {
+        display: inline-block;
+    }
+}
+
+@mixin funnel {
+
+    $funnel-settings: (1: (h: 100%, in-h: 100%, z: 6, c: #0e369e, g: #5369a2),
+            2: (h: 100%, in-h: 270px, z: 5, c: #406ad9, g: #7994dc),
+            3: (h: 270px, in-h: 170px, z: 4, c: #638af2, g: #94adf1),
+            4: (h: 170px, in-h: 140px, z: 3, c: #3ca3fd, g: #73baf8),
+            5: (h: 140px, in-h: 110px, z: 2, c: #3cc2fd, g: #7acff5),
+            6: (h: 110px, in-h: 70px, z: 1, c: #57dbdf, g: #87e2e5));
+
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    min-height: 300px;
+    max-height: 620px;
+    margin: 20px 0 0 0;
+    overflow: hidden;
+
+    .item {
+        position: relative;
+        width: 100%;
+        height: -webkit-fill-available;
+
+        // 공통 레이아웃
+        .itemChart {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            width: 100%;
+            height: 100%;
+
+            .itemBlock {
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                width: 100%;
+                flex-grow: 1;
+
+                .itemGroup {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    width: 100%;
+                    position: relative;
+
+                    // 기울기 효과 (only-child일 때 평행사변형 형태)
+                    &:only-child {
+                        position: absolute;
+                        bottom: 0;
+                        transform: skewX(15deg);
+
+                        .itemIn {
+                            transform: skewX(-15deg);
+                        }
+
+                        // 내부 텍스트 역보정
+                    }
+
+                    .itemOut {
+                        display: flex;
+                        justify-content: space-between;
+                        padding: 6px 20px;
+                        background-color: #f6f6f6;
+                        border: 1px solid #e6e6e6;
+
+                        p {
+                            color: #999999;
+                            font-size: 14px;
+                        }
+                    }
+
+                    .itemIn {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        width: 100%;
+
+                        .itemInfo {
+                            padding: 15px 20px;
+                            min-height: 80px;
+
+                            .txt {
+                                p {
+                                    font-size: 20px;
+                                    color: #fff;
+                                    font-family: "NotoSansM";
+                                }
+
+                                span {
+                                    font-size: 16px;
+                                    color: rgba(255, 255, 255, 0.8);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        // 2. 루프를 이용한 nth-child 스타일 배분
+        @each $i,
+        $set in $funnel-settings {
+            &:nth-child(#{$i}) {
+
+                // 높이 및 우선순위
+                .itemBlock .itemGroup {
+                    height: map-get($set, h);
+                    z-index: map-get($set, z);
+                }
+
+                .itemIn {
+                    height: map-get($set, in-h);
+                    max-height: map-get($set, in-h);
+                }
+
+                // [색상 적용]
+                // Case A: 단독 블록일 때
+                .itemBlock:only-child .itemGroup {
+                    background-color: map-get($set, c);
+
+                    &:nth-last-child(2) {
+                        background-color: #9e83f8;
+                    }
+                }
+
+                // Case B: 비교 그룹일 때 (상단 블록)
+                .itemBlock:nth-last-child(2) .itemGroup {
+                    background-color: map-get($set, g);
+
+                    &:nth-last-child(2) {
+                        background-color: #BFACFF;
+                    }
+                }
+
+                // Case C: 두 번째 블록 (비교군 하단)
+                .itemBlock:nth-child(2) .itemGroup {
+                    background-color: map-get($set, c);
+
+                    .itemOut {
+                        order: 2;
+                    }
+
+                    // 텍스트 위치 반전
+                }
+            }
+        }
+
+
+        // 첫 번째 아이템 특수 처리 (기울기 방향 등)
+        .item:first-child {
+            .itemGroup:only-child {
+                width: 120%;
+                transform: skew(-15deg);
+
+                .itemIn {
+                    transform: skew(15deg);
+                    left: 20%;
+                }
+            }
+        }
+    }
+}
+
+$btn-sizes: (l: (height: 60px, font-size: $ft-18, font-family: $ft-sb),
+    m: (height: 44px, font-size: $ft-16, font-family: $ft-sb),
+    s: (height: 40px, font-size: $ft-16, font-family: $ft-m),
+    ss: (height: 32px, font-size: $ft-14, font-family: $ft-m));
+
+$btn-colors: (btnwgy: (color: #4e5968, border: 1px solid #e5e8eb, background: #fff),
+    btngy:(color:#4e5968, background: #f0f2f4, border:1px solid #f0f2f4),
+    btnskbu:(color:$mainCr, background:#e8f3ff),
+    btngr:(color:#fff, background:#3fd596),
+    btnyl:(color:#fff, background:#ffb868),
+    btnbu:(color:#fff, background:$mainCr));
+
+@mixin btn($size:null, $color:null, $mw:null) {
+    @include flex($con:ct, $align:ct);
+    width: 100%;
+    max-width: $mw;
+    border-radius: 8px;
+
+    @if $size !=null and map-has-key($btn-sizes, $size) {
+        $s: map-get($btn-sizes, $size);
+        height: map-get($s, height);
+        font-size: map-get($s, font-size);
+        font-family: map-get($s, font-family);
+    }
+
+    @if $color !=null and map-has-key($btn-colors, $color) {
+        $c: map-get($btn-colors, $color);
+        color: map-get($c, color);
+        background: map-get($c, background);
+        border: map-get($c, border);
+    }
+}
+
+@mixin ico_ar_gy($wh:null, $he:null, $col:null) {
+    @include svg($url-img-com +"ico_ar_gy.svg", $wh, $he, $col);
+}
+
+@mixin ico_send($wh:null, $he:null, $col:null) {
+    @include svg($url-img-com +"ico_send.svg", $wh, $he, $col);
+}
+
+@mixin ico_search_gy($wh:null, $he:null, $col:null) {
+    @include svg($url-img-com +"ico_search.svg", $wh, $he, $col);
+}
+
+@mixin ico_close_gy($wh:null, $he:null, $col:null) {
+    @include svg($url-img-com +"ico_close.svg", $wh, $he, $col);
+}
+
+@mixin level {
+    @for $i from 1 through 3 {
+        &:nth-of-type(#{$i}) {
+            i {
+                width: 32px;
+                height: 32px;
+                background: url($url-img-com + "ico_grade_0#{$i}.svg") no-repeat center / 100%;
+                flex-shrink: 0;
+            }
+        }
+    }
+}

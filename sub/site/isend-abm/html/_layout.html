@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="sample" />
+    <meta name="keywords" content="sample" />
+    <meta name="author" content="sample" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>sample</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../js/ui.js"></script>
+    <!--날짜선택관련-->
+    <link type="text/css" href="../css/lib/daterangepicker_popup.css" rel="stylesheet" />
+    <script type="text/javascript" src="../js/lib/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/lib/moment.min.js"></script>
+    <script type="text/javascript" src="../js/lib/daterangepicker_popup.js"></script>
+    <script type="text/javascript" src="../js/datapicker_custorm.js"></script>
+    <!--//날짜선택관련-->
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>리포트</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>템플릿 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>템플릿등록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>템플릿 리스트</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>캠페인 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 등록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 집행 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 보관함</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>타깃 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>CDP 캠페인 생성</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>CDP 캠페인 리스트</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>주소록 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>수신거부 대상</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>원클릭 캠페인</span><i class="ico-new"></i><i
+                            class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>원클릭 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>추천 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>상품 프로모션</span><i class="ico-new"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>AI 어드바이저</span><i class="ico-new"></i></a>
+                </li>
+            </ul>
+            <strong>톡포인트</strong>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>미션관리</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>충전</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>충전현황</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>충전하기</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>정기결제</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>직접이체</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>톡포인트 관리</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>설정</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>계정정보</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>발신 정보 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>부 계정 목록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>부 계정 접속 로그</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div class="inner">
+                <section class="sec-hd type-bt">
+                    <div>
+                        <strong><span>인라이플(센드수정)</span> 회원님, 환영합니다.</strong>
+                    </div>
+                    <div class="calendarBox" id="datePicker">
+                        <div class="icon"></div>
+                        <div class="calendar">
+                            <input type="text" id="df-input" name="df-input" value="" readonly>
+                        </div>
+                    </div>
+                </section>
+                <section class="sec-con">
+                    <div class="row">
+                        <strong>체크박스<br><br></strong>
+                        <div class="checkBox type-st">
+                            <input type="checkbox" name="df-ck" id="df-ckall" value="00" data-check-all=".df-ck">
+                            <label for="df-ckall">all</label>
+                            <input type="checkbox" class="df-ck" name="df-ck" id="df-ck00" value="01">
+                            <label for="df-ck00">df-ck</label>
+                            <input type="checkbox" class="df-ck" name="df-ck" id="df-ck01" value="12">
+                            <label for="df-ck01">df-ck</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>텍스트체크박스<br><br></strong>
+                        <div class="textcheckBox type-st">
+                            <input type="checkbox" name="txt-ck" id="txt-ckall" value="00" data-check-all=".txt-ck">
+                            <label for="txt-ckall">all</label>
+                            <input type="checkbox" class="txt-ck" name="txt-ck" id="txt-ck00" value="01">
+                            <label for="txt-ck00">txt-ck</label>
+                            <input type="checkbox" class="txt-ck" name="txt-ck" id="txt-ck01" value="02">
+                            <label for="txt-ck01">txt-ck</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>라디오박스<br><br></strong>
+                        <div class="radioBox type-st">
+                            <input type="radio" name="df-radio" id="df-radio00" value="00" checked>
+                            <label for="df-radio00">24px</label>
+                            <input type="radio" name="df-radio" id="df-radio01" value="01">
+                            <label for="df-radio01">ip_radio_l</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>스위치박스<br><br></strong>
+                        <div class="switchbox type-st">
+                            <input type="checkBox" name="switch" id="switch">
+                            <label for="switch"></label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>select 기본<br><br></strong>
+                        <div class="selectBox">
+                            <select>
+                                <option value="1" selected>기본</option>
+                                <option value="2">투데이카트매칭</option>
+                                <option value="3">위클리카트매칭</option>
+                                <option value="4">투데이본상품매칭</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>select 커스텀<br><br></strong>
+                        <div class="comboBox">
+                            <div class="cb-btn">
+                                <span>유입경로를 선택해주세요</span><i></i>
+                            </div>
+                            <div class="cb-dt">
+                                <ul>
+                                    <li><a href="javascript:void(0);">네이버</a></li>
+                                    <li><a href="javascript:void(0);">구글</a></li>
+                                    <li><a href="javascript:void(0);">다음</a></li>
+                                    <li><a href="javascript:void(0);">SNS(페이스북/인스타그램)</a></li>
+                                    <li class="ot"><a href="javascript:void(0);">기타</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>tabBox<br><br></strong>
+                        <div class="tabBox">
+                            <div class="tab-hd">
+                                <ul>
+                                    <li class="on">1</li>
+                                    <li>2</li>
+                                    <li>3</li>
+                                </ul>
+                            </div>
+                            <div class="tab-con">
+                                <div class="on">
+                                    1
+                                </div>
+                                <div>
+                                    2
+                                </div>
+                                <div>
+                                    3
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>tabBox<br><br></strong>
+                        <div class="tableBox">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>1</th>
+                                        <th>2</th>
+                                        <th>3</th>
+                                        <th>4</th>
+                                        <th>5</th>
+                                        <th>6</th>
+                                        <th>7</th>
+                                        <th>8</th>
+                                        <th>9</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                    </tr>
+                                </thead>
+                                <tboyd>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2</td>
+                                        <td>3</td>
+                                        <td>4</td>
+                                        <td>5</td>
+                                        <td>6</td>
+                                        <td>7</td>
+                                        <td>8</td>
+                                        <td>9</td>
+                                        <td>10</td>
+                                        <td>11</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>14</td>
+                                        <td>15</td>
+                                    </tr>
+                                </tboyd>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <strong><br><br>+더보기<br><br></strong>
+                        <div class="moreBox">
+                            <ul>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                                <li>리스트</li>
+                            </ul>
+                            <button class="btn-more">더보기</button>
+                        </div>
+                    </div>
+                    <div class="row" style="max-width: 760px;">
+                        <strong><br><br>flex 왼쪽정렬<br><br></strong>
+                        <div class="type-st">
+                            <p>1</p>
+                            <p>1</p>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="row" style="max-width: 760px;">
+                        <strong><br><br>flex 중앙정렬<br><br></strong>
+                        <div class="type-ct">
+                            <p>1</p>
+                            <p>1</p>
+                        </div>
+                    </div>
+                    <div class="row" style="max-width: 760px;">
+                        <strong><br><br>flex 양쪽정렬<br><br></strong>
+                        <div class="type-bt">
+                            <p>1</p>
+                            <p>1</p>
+                            <p>1</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </article>
+    </div>
+</body>
+
+</html>

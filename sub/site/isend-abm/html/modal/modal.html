@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>리포트</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>템플릿 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>템플릿등록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>템플릿 리스트</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>캠페인 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 등록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 집행 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>캠페인 보관함</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>타깃 관리</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>CDP 캠페인 생성</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>CDP 캠페인 리스트</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>주소록 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>수신거부 대상</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>원클릭 캠페인</span><i class="ico-new"></i><i
+                            class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>원클릭 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>추천 캠페인</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>상품 프로모션</span><i class="ico-new"></i></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>AI 어드바이저</span><i class="ico-new"></i></a>
+                </li>
+            </ul>
+            <strong>톡포인트</strong>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>미션관리</span></a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+            <strong>관리</strong>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>충전</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>충전현황</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>충전하기</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>정기결제</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>직접이체</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>톡포인트 관리</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="javascript:void(0);"><i></i><span>설정</span><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="javascript:void(0);"><span>계정정보</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>발신 정보 관리</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>부 계정 목록</span></a>
+                        </li>
+                        <li>
+                            <a href="javascript:void(0);"><span>부 계정 접속 로그</span></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <article>
+            <div class="inner">
+                <h1>원클릭캠페인페이지 아이콘 모달</h1>
+                <br>
+                <!--캠페인 설정 모달-->
+                <button type="button" class="mdBtn" data-md="cam-set">캠페인 설정</button>
+                <!--테스트 발송 모달-->
+                <button type="button" class="mdBtn" data-md="test-send">테스트발송</button>
+                <!--캠페인 조건 모달-->
+                <button type="button" class="mdBtn" data-md="cam-term">캠페인 조건</button>
+                <br><br><br>
+                <h1>캠페인 설정모달 > 모달</h1>
+                <br>
+                <!--캠페인 설정(타입) 모달-->
+                <button type="button" class="mdBtn" data-md="cam-type">캠페인 설정(타입)</button>
+                <!--쿠폰 선택 모달-->
+                <button type="button" class="mdBtn" data-md="coupon-sel">쿠폰선택</button>
+                <!--상품 개인화 추천 모달-->
+                <button type="button" class="mdBtn" data-md="product-rec">상품 개인화 추천</button>
+                <br><br><br>
+                <h1>온사이트보드 > 모달</h1>
+                <br>
+                <!--캠페인 설정 모달-->
+                <button type="button" class="mdBtn" data-md="oncam-set">캠페인 관리</button>
+                <button type="button" class="mdBtn" data-md="view-report">리포트 보기</button>
+                <button type="button" class="mdBtn" data-md="kakao-ch">카카오 채널 추가 URL 입력 방법</button>
+                <br><br><br>
+                <h1>alert 모달</h1>
+                <br>
+                <button type="button" class="mdBtn" data-md="sendsch-alert">발송 스케줄 alert</button>
+                <button type="button" class="mdBtn" data-md="sendstop-alert">발송 중단 alert</button>
+            </div>
+        </article>
+    </div>
+
+    <!--캠페인 설정 모달-->
+    <div class="mdBox" id="cam-set">
+        <div class="mditem type-l">
+            <div class="conBox camSet">
+                <div class="md-hd">
+                    <strong>캠페인 설정</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <div class="md-con">
+                    <div class="viewBox">
+                        <div class="top">
+                            <div class="left">
+                                <p>이미지 꾸미기</p>
+                                <div class="tooltipBox">
+                                    <i></i>
+                                    <div>
+                                        <p>
+                                            이미지 꾸미기는 선택한 디자인에 맞게 상품 썸네일을 자동으로 꾸며주는 기능입니다.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="right">
+                                <button type="button" class="btn-gy mdBtn" data-md="cam-type">설정</button>
+                                <div class="switchbox">
+                                    <input type="checkBox" name="switch" id="switch">
+                                    <label for="switch"></label>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//top-->
+                        <div class="num">
+                            <ul class="sortable">
+                                <li class="on">1</li>
+                                <li>2</li>
+                                <li>3</li>
+                                <li>4</li>
+                                <li>5</li>
+                            </ul>
+                        </div>
+                        <!--//num-->
+                        <div class="view">
+                            <!--개발화면-->
+                        </div>
+                        <!--//view-->
+                        <div class="bt">
+                            <button type="button"><i class="ico-emoji"></i></button>
+                            <button type="button" class="variable"><i class="ico-sharp"></i></button>
+                        </div>
+                        <div class="variableBox">
+                            <strong>변수설정</strong>
+                            <p>수신자 별로 달라지는 부분을 변수로 설정할 수 있습니다.</p>
+                            <div class="btnBox">
+                                <button type="button" data-copy="이름"><span>이름</span></button>
+                                <button type="button" data-copy="이메일"><span>이메일</span></button>
+                                <button type="button" data-copy="전화번호"><span>전화번호</span></button>
+                                <button type="button" data-copy="변수3"><span>변수3</span></button>
+                                <button type="button" data-copy="변수4"><span>변수4</span></button>
+                                <button type="button" data-copy="변수5"><span>변수5</span></button>
+                                <button type="button" data-copy="변수6"><span>변수6</span></button>
+                                <button type="button" data-copy="변수7"><span>변수7</span></button>
+                                <button type="button" data-copy="변수8"><span>변수8</span></button>
+                            </div>
+                            <span>* 사용하시려는 변수 클릭 시 복사됩니다.</span>
+                        </div>
+                        <!--//bt-->
+                    </div>
+                    <!--//viewBox-->
+                    <div class="detailBox">
+                        <!--상품프로모션화면 -->
+                        <div class="left">
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>캠페인명</strong>
+                                </div>
+                                <!--//titBox-->
+                                <div class="inputBox">
+                                    <input type="text" placeholder="캠페인명을 입력해주세요.">
+                                </div>
+                                <!--//inputBox-->
+                            </div>
+                            <!--//row-->
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>구매 고객 추천</strong>
+                                    <div class="tooltipBox">
+                                        <i></i>
+                                        <div>
+                                            <p>
+                                                고객 추천 시스템은 고객에게 맞춤형 카테고리별 상품을 제안하고
+                                                구매 가능성이 높은 고객을 타겟팅 할 수 있는 조건을 제공합니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <!--//tooltipBox-->
+                                </div>
+                                <!--//titBox-->
+                                <div class="checkBox">
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset00" value="00">
+                                        <label for="camset00">요즘 뜸한 VIP</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset01" value="01">
+                                        <label for="camset01">VVIP</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset02" value="02">
+                                        <label for="camset02">VIP</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset03" value="03">
+                                        <label for="camset03">잠재적 VIP</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset04" value="04">
+                                        <label for="camset04">유망 고객</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset05" value="05">
+                                        <label for="camset05">아이쇼핑 고객</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset06" value="06">
+                                        <label for="camset06">활동 기대 고객</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                    <div>
+                                        <input type="checkbox" name="camset" id="camset07" value="07">
+                                        <label for="camset07">신규 고객</label>
+                                        <p class="label">10000명</p>
+                                    </div>
+                                    <!--//div-->
+                                </div>
+                                <!--//checkBox-->
+                            </div>
+                            <!--//row-->
+                        </div>
+                        <!--//div-->
+                        <!--템플릿선택화면 상품프로모션제외 화면 -->
+                        <div class="left temp" style="display: none;">
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>템플릿 선택</strong>
+                                </div>
+                                <!--//titBox-->
+                                <div class="tempBox">
+                                    <div class="item">
+                                        <picture>
+                                            <img src="../../images/page/temp_01.png">
+                                        </picture>
+                                        <dl>
+                                            <dt>이미지형</dt>
+                                            <dd>기본형 메시지 입니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <!--//item-->
+                                    <div class="item">
+                                        <picture>
+                                            <img src="../../images/page/temp_02.png">
+                                        </picture>
+                                        <dl>
+                                            <dt>와이드형</dt>
+                                            <dd>이미지를 강조할 수 있습니다.</dd>
+                                        </dl>
+                                    </div>
+                                    <!--//item-->
+                                    <div class="item">
+                                        <picture>
+                                            <img src="../../images/page/temp_03.png">
+                                        </picture>
+                                        <dl>
+                                            <dt>캐러셀 피드형<span>BEST</span></dt>
+                                            <dd>
+                                                다수의 이미지를 피드 형태로
+                                                보여줄 수 있습니다.
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                    <!--//item-->
+                                </div>
+                                <!--//tempBox-->
+                            </div>
+                            <!--//row-->
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>상품 개인화 추천</strong>
+                                </div>
+                                <div class="indbtnBox">
+                                    <button type="button" class="btn-bu mdBtn" data-md="product-rec">상품 개인화 추천</button>
+                                    <button type="button" class="btn-gy">취소</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//left-->
+                        <div class="right">
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>쿠폰제공</strong>
+                                    <div class="switchbox">
+                                        <input type="checkBox" name="switch" id="switch">
+                                        <label for="switch"></label>
+                                    </div>
+                                </div>
+                                <!--//titABox-->
+                                <div class="infoBox">
+                                    <div>
+                                        <p>쿠폰 선택</p>
+                                        <button type="button" class="btn-s btn-w-gy mdBtn"
+                                            data-md="coupon-sel">쿠폰선택</button>
+                                    </div>
+                                    <!--쿠폰선택시 나오는 화면-->
+                                    <div>
+                                        <p>선택 쿠폰</p>
+                                        <strong>신상품 10% 할인쿠폰</strong>
+                                    </div>
+                                </div>
+                                <!--//infoBox-->
+                            </div>
+                            <!--//row-->
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>발송 스케줄</strong>
+                                </div>
+                                <!--//titABox-->
+                                <div class="tabBox type">
+                                    <div class="tab-hd">
+                                        <ul>
+                                            <li class="on">예약발송</li>
+                                            <li>즉시발송</li>
+                                            <li>정기발송</li>
+                                        </ul>
+                                    </div>
+                                    <!--//tab-hd-->
+                                    <div class="tab-con">
+                                        <div class="on">
+                                            <div class="infoBox">
+                                                <div>
+                                                    <p>발송 일자</p>
+                                                    <div class="calendarBox" id="datePicker">
+                                                        <i></i>
+                                                        <input type="text" id="df-input" name="df-input" value=""
+                                                            readonly>
+                                                    </div>
+                                                    <!--//"calendarBox-->
+                                                </div>
+                                                <!--//div-->
+                                                <div>
+                                                    <p>발송 시간</p>
+                                                    <div class="comboBox">
+                                                        <div class="cb-btn">
+                                                            <span>08:00</span><i></i>
+                                                        </div>
+                                                        <div class="cb-dt">
+                                                            <ul>
+                                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                                            </ul>
+                                                        </div>
+                                                        <span>* 발송 시간은 08시~20시 까지만 설정 가능합니다.</span>
+                                                    </div>
+                                                    <!--//comboBox-->
+                                                </div>
+                                                <!--//div-->
+                                            </div>
+                                            <!--//infoBox-->
+                                        </div>
+                                        <!--//div-->
+                                        <div>
+                                            <p class="textBox">
+                                                집행하는 즉시 발송됩니다.
+                                            </p>
+                                        </div>
+                                        <!--//div-->
+                                        <div>
+                                            <div class="infoBox fix">
+                                                <div>
+                                                    <p>시작일</p>
+                                                    <div class="calendarBox" id="datePicker">
+                                                        <i></i>
+                                                        <input type="text" id="df-input" name="df-input" value=""
+                                                            readonly>
+                                                    </div>
+                                                    <!--//"calendarBox-->
+                                                    <div class="comboBox">
+                                                        <div class="cb-btn">
+                                                            <span>08:00</span><i></i>
+                                                        </div>
+                                                        <div class="cb-dt">
+                                                            <ul>
+                                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <!--//comboBox-->
+                                                </div>
+                                                <!--//div-->
+                                                <div>
+                                                    <p>종료일</p>
+                                                    <div class="calendarBox" id="datePicker">
+                                                        <i></i>
+                                                        <input type="text" id="df-input" name="df-input" value=""
+                                                            readonly>
+                                                    </div>
+                                                    <!--//"calendarBox-->
+                                                    <div class="checkBox">
+                                                        <input type="checkbox" name="day" id="day" value="day">
+                                                        <label for="day">무기한</label>
+                                                    </div>
+                                                    <!--//comboBox-->
+                                                </div>
+                                                <!--//div-->
+                                                <div class="tabBox">
+                                                    <div class="tab-hd">
+                                                        <ul>
+                                                            <li class="on">매일</li>
+                                                            <li>매주</li>
+                                                            <li>매월</li>
+                                                        </ul>
+                                                    </div>
+                                                    <!--//tab-con-->
+                                                    <div class="tab-con">
+                                                        <div class="on">
+                                                            <!--.disablde 추가시 비활성화 css적용-->
+                                                            <div class="checkBox disabled">
+                                                                <input type="checkbox" name="everyday" id="everyday"
+                                                                    value="everyday">
+                                                                <label for="everyday"></label>
+                                                                <input type="number" disabled>
+                                                                <span>일 간격으로 반복</span>
+                                                            </div>
+                                                        </div>
+                                                        <!--//div-->
+                                                        <div>
+                                                            <div class="textcheckBox">
+                                                                <input type="checkbox" name="week" id="week00"
+                                                                    value="00" disabled>
+                                                                <label for="week00">일</label>
+                                                                <input type="checkbox" name="week" id="week01"
+                                                                    value="01" disabled>
+                                                                <label for="week01">월</label>
+                                                                <input type="checkbox" name="week" id="week02"
+                                                                    value="02" disabled>
+                                                                <label for="week02">화</label>
+                                                                <input type="checkbox" name="week" id="week03"
+                                                                    value="03" disabled>
+                                                                <label for="week03">수</label>
+                                                                <input type="checkbox" name="week" id="week04"
+                                                                    value="04" disabled>
+                                                                <label for="week04">목</label>
+                                                                <input type="checkbox" name="week" id="week05"
+                                                                    value="05" disabled>
+                                                                <label for="week05">금</label>
+                                                                <input type="checkbox" name="week" id="week06"
+                                                                    value="06" disabled>
+                                                                <label for="week06">토</label>
+                                                            </div>
+                                                            <div class="checkBox disabled">
+                                                                <input type="checkbox" name="everyweek" id="everyweek"
+                                                                    value="everyweek">
+                                                                <label for="everyweek"></label>
+                                                                <input type="number" disabled>
+                                                                <span>주 간격으로 반복</span>
+                                                            </div>
+                                                        </div>
+                                                        <!--//div-->
+                                                        <div>
+                                                            <div class="radioBox disabled">
+                                                                <input type="radio" name="everymonth" id="everymonth00"
+                                                                    value="01">
+                                                                <label for="everymonth00"></label>
+                                                                <input type="number" disabled>
+                                                                <span>일 간격으로 반복</span>
+                                                            </div>
+                                                            <div class="radioBox disabled">
+                                                                <input type="radio" name="everymonth" id="everymonth01"
+                                                                    value="01">
+                                                                <label for="everymonth01"></label>
+                                                                <input type="number" disabled>
+                                                                <span>째주 반복</span>
+                                                            </div>
+                                                            <div class="textcheckBox disabled">
+                                                                <input type="checkbox" name="week" id="week100"
+                                                                    value="00" disabled>
+                                                                <label for="week100">일</label>
+                                                                <input type="checkbox" name="week" id="week101"
+                                                                    value="01" disabled>
+                                                                <label for="week101">월</label>
+                                                                <input type="checkbox" name="week" id="week102"
+                                                                    value="02" disabled>
+                                                                <label for="week102">화</label>
+                                                                <input type="checkbox" name="week" id="week103"
+                                                                    value="03" disabled>
+                                                                <label for="week103">수</label>
+                                                                <input type="checkbox" name="week" id="week104"
+                                                                    value="04" disabled>
+                                                                <label for="week104">목</label>
+                                                                <input type="checkbox" name="week" id="week105"
+                                                                    value="05" disabled>
+                                                                <label for="week105">금</label>
+                                                                <input type="checkbox" name="week" id="week106"
+                                                                    value="06" disabled>
+                                                                <label for="week106">토</label>
+                                                            </div>
+                                                            <div class="radioBox disabled">
+                                                                <input type="radio" name="everymonth" id="everymonth02"
+                                                                    value="02">
+                                                                <label for="everymonth02">매월 말일에 반복</label>
+                                                            </div>
+                                                        </div>
+                                                        <!--//div-->
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--//infoBox-->
+                                        </div>
+                                        <!--//div-->
+                                    </div>
+                                    <!--//tab-con-->
+                                </div>
+                                <!--//tabBox-->
+                            </div>
+                            <!--//row-->
+                            <div class="row">
+                                <div class="titBox">
+                                    <strong>예산확인</strong>
+                                </div>
+                                <ul class="budList">
+                                    <li>사용가능 금액</li>
+                                    <li><em>10,000,000</em>원</li>
+                                    <li>예상 발송 인원</li>
+                                    <li><em>100,000</em>원</li>
+                                    <li>예상 발송 단가<span>건당</span></li>
+                                    <li><em>12.5</em>원</li>
+                                    <li>발송 예상</li>
+                                    <li><em>10,000,000</em>원</li>
+                                </ul>
+                                <!--//budList-->
+                            </div>
+                            <!--//row-->
+                        </div>
+                        <!--//div-->
+                    </div>
+                    <!--//detailBox-->
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-skbu btn-close">확인</button>
+                <button type="button" class="btn-s btn-bu btn-close">발송</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//mdItem-->
+    </div>
+    <!--//mdBox-->
+    <script type="text/javascript">
+        $(function () {
+            $('.sortable').sortable({
+                opacity: 0.7,
+                animation: 350,
+                scroll: true,
+                scrollSensitivity: 100,
+                disabled: false,
+                containment: "parent",
+                cursor: 'move',
+                axis: 'x'
+            });
+        });
+    </script>
+    <!--//캠페인 설정 모달-->
+
+    <!--테스트 발송 모달-->
+    <div class="mdBox" id="test-send">
+        <div class="mditem type-m">
+            <div class="conBox testsend">
+                <div class="md-hd">
+                    <strong>캠페인 설정</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <strong>전화번호 입력</strong>
+                    </div>
+                    <!--//titBox-->
+                    <div class="inputBox">
+                        <input type="number" placeholder="테트스 발송 수신할 번호를 입력해 주세요.">
+                    </div>
+                    <span>* 해당 프로필을 차단하였을 경우 메시지가 발송되지 않습니다.</span>
+                    <span>*전화번호 테스트 발송 시 소재에 사용된 변수는 임의 변수값으로 노출됩니다.</span>
+                    <!--//inputBox-->
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-bu btn-close">발송</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//테스트 발송 모달-->
+
+    <!--캠페인설정(타입) 모달-->
+    <div class="mdBox" id="cam-type">
+        <div class="mditem type-m">
+            <div class="conBox camtype">
+                <div class="md-hd">
+                    <strong>캠페인 설정</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <strong>타입</strong>
+                    </div>
+                    <!--//titBox-->
+                    <div class="imgtypeBox">
+                        <div class="radioBox">
+                            <input type="radio" name="camtype" id="camtype00" value="01" checked>
+                            <label for="camtype00">MD PICK</label>
+                            <input type="radio" name="camtype" id="camtype01" value="02">
+                            <label for="camtype01">오늘마감</label>
+                            <input type="radio" name="camtype" id="camtype02" value="03">
+                            <label for="camtype02">NEW</label>
+                            <input type="radio" name="camtype" id="camtype03" value="04">
+                            <label for="camtype03">HOT</label>
+                            <input type="radio" name="camtype" id="camtype04" value="05">
+                            <label for="camtype04">BEST</label>
+                        </div>
+                        <picture>
+                            <span class="tag"><img src="../../images/page/badge_01.png"></span>
+                            <img src="../../images/common/sample01.png">
+                        </picture>
+                    </div>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-bu btn-close">저장</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//캠페인설정(타입) 모달-->
+
+    <!--쿠폰 선택 모달-->
+    <div class="mdBox" id="coupon-sel">
+        <div class="mditem type-ml">
+            <div class="conBox cpSel">
+                <div class="md-hd">
+                    <strong>쿠폰 선택</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <strong>쿠폰 검색</strong>
+                        <div class="searchBox">
+                            <button type="submit"><i class="ico-search"></i></button>
+                            <input type="text" placeholder="검색어를 입력해주세요">
+                        </div>
+                    </div>
+                    <!--//titBox-->
+                    <div class="tableBox hover">
+                        <table>
+                            <colgroup>
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="20%">
+                                <col width="40%">
+                            </colgroup>
+                            <!--//colgroup-->
+                            <thead>
+                                <tr>
+                                    <th>쿠폰 번호</th>
+                                    <th>쿠폰명</th>
+                                    <th>제한 조건</th>
+                                    <th>주폰 혜택</th>
+                                </tr>
+                            </thead>
+                            <!--//thead-->
+                            <tbody>
+                                <tr class="on">
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6082704736300000925</td>
+                                    <td>신규회원 웰컴 쿠폰 5%</td>
+                                    <td>발급일로부터 30일 이내</td>
+                                    <td>
+                                        <p>
+                                            10.0% 할인, 절사안함, 최대할인 금액 500....10.0% 할인, 절사안함, 최대할인 금액 500....
+                                        </p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                            <!--//tbody-->
+                        </table>
+                        <!--//table-->
+                    </div>
+                    <!--//tableBox-->
+                    <div class="pagingBox">
+                        <ul>
+                            <li class="allpv"><a href="javascript:pageLink(1);"><i></i></a></li>
+                            <li class="prev"><a href="javascript:pageLink(1);"><i></i></a></li>
+                            <li class="on"><a href="javascript:pageLink(1);">1</a></li>
+                            <li><a href="javascript:pageLink(2);">2</a></li>
+                            <li><a href="javascript:pageLink(3);">3</a></li>
+                            <li><a href="javascript:pageLink(4);">4</a></li>
+                            <li><a href="javascript:pageLink(5);">5</a></li>
+                            <li><a href="javascript:pageLink(6);">6</a></li>
+                            <li><a href="javascript:pageLink(7);">7</a></li>
+                            <li><a href="javascript:pageLink(8);">8</a></li>
+                            <li><a href="javascript:pageLink(9);">9</a></li>
+                            <li><a href="javascript:pageLink(10);">10</a></li>
+                            <li class="next"><a href="javascript:pageLink(2);"><i></i></a></li>
+                            <li class="allnt"><a href="javascript:pageLink(10);"><i></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+        </div>
+        <!--//mdItem-->
+    </div>
+    <!--//mdBox-->
+    <!--//쿠폰 선택 모달-->
+
+    <!--상품 개인화 추천 모달-->
+    <div class="mdBox" id="product-rec">
+        <div class="mditem type-mm">
+            <div class="conBox productrec">
+                <div class="md-hd">
+                    <strong>상품 맞춤 추천</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <!--//titBox-->
+                    <div class="producttypeBox">
+                        <div>
+                            <dl>
+                                <dt>
+                                    보완재
+                                    <div class="tooltipBox">
+                                        <i></i>
+                                        <div>
+                                            <p>
+                                                함께 사용 시 가치 상승<br>(예: 반팔→반바지)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="radioBox">
+                                    <input type="radio" name="prorec" id="prorec00" value="00" checked>
+                                    <label for="prorec00">구매완료</label>
+                                    <input type="radio" name="prorec" id="prorec01" value="01" checked>
+                                    <label for="prorec01">본상품</label>
+                                    <input type="radio" name="prorec" id="prorec02" value="02" checked>
+                                    <label for="prorec02">장바구니</label>
+                                    <input type="radio" name="prorec" id="prorec03" value="03" checked>
+                                    <label for="prorec03">환불</label>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>
+                                    대체재
+                                    <div class="tooltipBox">
+                                        <i></i>
+                                        <div>
+                                            <p>
+                                                서로 대신 사용가능한 상품<br>(예: 기본 반팔↔프린팅 반팔)
+                                            </p>
+                                        </div>
+                                    </div>
+                                </dt>
+                                <dd class="radioBox">
+                                    <input type="radio" name="prorec" id="prorec100" value="00" checked>
+                                    <label for="prorec100">구매완료</label>
+                                    <input type="radio" name="prorec" id="prorec101" value="01" checked>
+                                    <label for="prorec101">본상품</label>
+                                    <input type="radio" name="prorec" id="prorec102" value="02" checked>
+                                    <label for="prorec102">장바구니</label>
+                                    <input type="radio" name="prorec" id="prorec103" value="03" checked>
+                                    <label for="prorec103">환불</label>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div>
+                            <dl>
+                                <dt>인기재(Top 100)</dt>
+                                <dd class="radioBox">
+                                    <input type="radio" name="prorec" id="prorec200" value="00" checked>
+                                    <label for="prorec200"></label>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <!--//producttypeBox-->
+                    <span>
+                        * 해당 캠페인 모수 대상으로 맞춤 추천 타을 선택하여 자사 상품을 추천할 수 있습니다.<br>
+                        * 선택한 추천 상품이 없을 경우, 인기재(Top) 상품으로 자동 추천됩니다.
+                    </span>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-bu btn-close">등록</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//상품 게인화 추천 모달-->
+
+    <!--캠페인 조건 모달-->
+    <div class="mdBox" id="cam-term">
+        <div class="mditem type-m">
+            <div class="conBox camTerm">
+                <div class="md-hd">
+                    <strong>캠페인 설정</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <p>
+                            원클릭캠페인은 조건에 맞는 모든 고객에게 맞춤형 문안과 최적의 상품을
+                            추천하여 브랜드 관심도를 높이고 즉각적인 구매를 유도합니다.
+                        </p>
+                    </div>
+                    <!--//titBox-->
+                    <div class="textBox">
+                        <div>
+                            <strong>캠페인명</strong>
+                            <div>
+                                <p>[원클릭]2회 이상 구매 고객 재구매 유도</p>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>캠페인 조건</strong>
+                            <div>
+                                <p>(포함) 장바구니 담은 기간 : 최근30일 동안 장바구니에 담음</p>
+                                <p>(포함) 장바구니 상품수 : 1건 이상 담음</p>
+                                <p>(제외) 구매기간 : 최근 14일 동안</p>
+                                <p>(제외) 구매건수 : 1건 이상 구매</p>
+                                <p>(포함) 장바구니 담은 기간 : 최근30일 동안 장바구니에 담음</p>
+                                <p>(포함) 장바구니 상품수 : 1건 이상 담음</p>
+                                <p>(제외) 구매기간 : 최근 14일 동안</p>
+                                <p>(제외) 구매건수 : 1건 이상 구매</p>
+                                <p>(제외) 구매기간 : 최근 14일 동안</p>
+                                <p>(제외) 구매건수 : 1건 이상 구매</p>
+                            </div>
+                        </div>
+                        <div>
+                            <strong>모수(명)</strong>
+                            <div>
+                                <p>1,123,123명(2025-08-11 00:00:00 기준)</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!--//textBox-->
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-bu btn-close">발송</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//테스트 발송 모달-->
+
+    <!--캠페인 발송 스케줄 얼럿 모달-->
+    <div class="mdBox" id="sendsch-alert">
+        <div class="mditem type-s">
+            <div class="conBox alert">
+                <div class="md-hd">
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <div class="md-con">
+                    <p>
+                        캠페인 발송 스케줄을 설정해 주세요.
+                    </p>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-bu btn-close">확인</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//캠페인 발송 스케줄 얼럿 모달-->
+
+    <!--캠페인 발송 스케줄 얼럿 모달-->
+    <div class="mdBox" id="sendstop-alert">
+        <div class="mditem type-s">
+            <div class="conBox alert">
+                <div class="md-hd">
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <div class="md-con">
+                    <p>
+                        캠페인 발송을 중단 하시겠습니까?
+                    </p>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-bu btn-close">확인</button>
+            </div>
+            <!--//btnBox-->
+        </div>
+        <!--//md-item-->
+    </div>
+    <!--//mdBox-->
+    <!--//캠페인 발송 스케줄 얼럿 모달-->
+    <div class="mdBox" id="oncam-set">
+        <div class="mditem type-xl">
+            <div class="conBox oncamSet">
+                <div class="md-hd">
+                    <strong>캠페인 관리</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <div class="md-con">
+                    <div class="infoBox">
+                        <div class="step">
+                            <div class="lavelBox">
+                                <div class="row">
+                                    <strong class="level"><i></i>1등급 조건 설정</strong>
+                                    <div class="inputBox">
+                                        <label>
+                                            최근 <input type="number"> 일 이내 신규 가입한 비동의 회원
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <strong class="level"><i></i>2등급 조건 설정</strong>
+                                    <div class="inputBox">
+                                        <label>
+                                            비동의 변경한 지 <input type="number"> 일 이상 지난 회원
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <strong class="level"><i></i>3등급 조건 설정</strong>
+                                    <div class="inputBox">
+                                        <label>
+                                            최근 <input type="number"> 일 이내 신규 가입한 비동의 회원
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row pop Lpop">
+                                <strong>팝업 레이아웃 설정</strong>
+                                <div>
+                                    <button type="button" data-type=".df" class="on"><i></i>기본형</button>
+                                    <button type="button" data-type=".mini"><i></i>미니</button>
+                                </div>
+                            </div>
+                            <div class="row pop Ppop">
+                                <strong>노출 방식</strong>
+                                <div>
+                                    <button type="button" data-class="st" class="on"><i></i>상단</button>
+                                    <button type="button" data-class="ct"><i></i>중단</button>
+                                    <button type="button" data-class="bt"><i></i>하단</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="step">
+                            <div class="row st1">
+                                <strong>배너이미지</strong>
+                                <div class="fileBox">
+                                    <div>
+                                        <input type="file" id="file" name="file" accept="image/*">
+                                        <label for="file">파일 선택</label>
+                                    </div>
+                                    <ul>
+                                        <li>· 최대 2MB</li>
+                                        <li>· 최소 320px * 180px</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <!--//row-->
+                            <div class="row st2">
+                                <strong>제목</strong>
+                                <div class="inputBox">
+                                    <input type="text" class="txtcont" maxlength="40">
+                                    <div class="count"><span class="now">0</span>40</div>
+                                </div>
+                            </div>
+                            <!--//row-->
+                            <div class="row st3">
+                                <strong>본문</strong>
+                                <div class="textarea">
+                                    <textarea class="txtcont" maxlength="40" placeholder="본문을 입력하세요"></textarea>
+                                    <div class="count"><span class="now">0</span>40</div>
+                                </div>
+                            </div>
+                            <!--//row-->
+                            <div class="row st4">
+                                <strong>버튼</strong>
+                                <div class="radioBox">
+                                    <input type="radio" name="oncambtn" id="oncambtn00" value="01" checked="">
+                                    <label for="oncambtn00">카톡 채널 추가</label>
+                                    <input type="radio" name="oncambtn" id="oncambtn01" value="02">
+                                    <label for="oncambtn01">링크 있음</label>
+                                    <input type="radio" name="oncambtn" id="oncambtn02" value="03">
+                                    <label for="oncambtn02">링크 없음</label>
+                                </div>
+                                <!--//radioBox-->
+                                <div class="inputBox linkInput">
+                                    <input type="text" placeholder="링크 입력">
+                                    <button type="button" class="btn-input mdBtn" data-md="kakao-ch">💡 입력 방법</button>
+                                </div>
+                                <div class="inputBox">
+                                    <input type="text" class="txtcont" maxlength="19" placeholder="버튼명 입력">
+                                    <div class="count"><span class="now">0</span>19</div>
+                                </div>
+                                <!--//inputBox-->
+                                <div class="colorBox">
+                                    <div>
+                                        <p>버튼컬러</p>
+                                        <div>
+                                            <!--컬러코드넣는곳-->
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <p>버튼컬러</p>
+                                        <div>
+                                            <!--컬러코드넣는곳-->
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--//clolrBox-->
+                            </div>
+                            <!--//row-->
+                        </div>
+                        <!--//step-->
+                        <div class="step">
+                            <div class="row st5">
+                                <strong>노출일자</strong>
+                                <div class="dataBox">
+                                    <p>시작일</p>
+                                    <div class="calendarBox" id="datePicker">
+                                        <i></i>
+                                        <input type="text" id="df-input" name="df-input" value="" readonly="">
+                                    </div>
+                                    <!--//"calendarBox-->
+                                    <div class="comboBox">
+                                        <div class="cb-btn">
+                                            <span>08:00</span><i></i>
+                                        </div>
+                                        <div class="cb-dt">
+                                            <ul>
+                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--//comboBox-->
+                                    <div class="comboBox">
+                                        <div class="cb-btn">
+                                            <span>08:00</span><i></i>
+                                        </div>
+                                        <div class="cb-dt">
+                                            <ul>
+                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--//comboBox-->
+                                </div>
+                                <!--//div-->
+                                <div>
+                                    <p>종료일</p>
+                                    <div class="calendarBox" id="datePicker">
+                                        <i></i>
+                                        <input type="text" id="df-input" name="df-input" value="" readonly="">
+                                    </div>
+                                    <!--//"calendarBox-->
+                                    <div class="comboBox">
+                                        <div class="cb-btn">
+                                            <span>08:00</span><i></i>
+                                        </div>
+                                        <div class="cb-dt">
+                                            <ul>
+                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--//comboBox-->
+                                    <div class="comboBox">
+                                        <div class="cb-btn">
+                                            <span>08:00</span><i></i>
+                                        </div>
+                                        <div class="cb-dt">
+                                            <ul>
+                                                <li><a href="javascript:void(0);">08:00</a></li>
+                                                <li><a href="javascript:void(0);">08:05</a></li>
+                                                <li><a href="javascript:void(0);">08:10</a></li>
+                                                <li><a href="javascript:void(0);">08:15</a></li>
+                                                <li><a href="javascript:void(0);">08:20</a></li>
+                                                <li><a href="javascript:void(0);">08:25</a></li>
+                                                <li><a href="javascript:void(0);">08:30</a></li>
+                                                <li><a href="javascript:void(0);">08:35</a></li>
+                                                <li><a href="javascript:void(0);">08:40</a></li>
+                                                <li><a href="javascript:void(0);">08:45</a></li>
+                                                <li><a href="javascript:void(0);">08:50</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--//comboBox-->
+                                </div>
+                                <!--//div-->
+                            </div>
+                            <!--//row-->
+                            <div class="row st6">
+                                <strong>노출 횟수 제한</strong>
+                                <div>
+                                    <p>동일한 사용자에게</p>
+                                    <div class="inputBox">
+                                        <label>
+                                            <input type="number"><span>일</span>
+                                        </label>
+                                    </div>
+                                    <p>일 동안 이 캠페인을</p>
+                                    <div class="inputBox">
+                                        <label>
+                                            <input type="number"><span>번</span>
+                                        </label>
+                                    </div>
+                                    <p> 만 노출</p>
+                                </div>
+
+                            </div>
+                            <!--//row-->
+                            <div class="row st7">
+                                <strong>노출 페이지</strong>
+                                <div class="checkBox">
+                                    <input type="checkbox" name="oncampg" id="oncampg00" value="00">
+                                    <label for="oncampg00">메인화면</label>
+                                    <input type="checkbox" name="oncampg" id="oncampg01" value="01">
+                                    <label for="oncampg01">장바구니</label>
+                                    <input type="checkbox" name="oncampg" id="oncampg02" value="02">
+                                    <label for="oncampg02">상품상세</label>
+                                    <input type="checkbox" name="oncampg" id="oncampg03" value="03">
+                                    <label for="oncampg03">구매완료</label>
+                                </div>
+                            </div>
+                            <!--//row-->
+                            <div class="row banner">
+                                <p>
+                                    다음날에 반영될 1등급 조건은
+                                    <span class="txt-bu">'최근 2일 이내 신규 가입한 비동의 회원'</span>
+                                </p>
+                            </div>
+                        </div>
+                        <!--//step-->
+                    </div>
+                    <!--//infoBox-->
+                    <div class="previewBox tabBox type01">
+                        <div class="titBox">
+                            <strong>미리보기</strong>
+                            <div class="tab-hd">
+                                <ul>
+                                    <li class="on">모바일</li>
+                                    <li>데스크탑</li>
+                                </ul>
+                                <span class="bg"></span>
+                            </div>
+                        </div>
+                        <!--//titBox-->
+                        <div class="tab-con">
+                            <div class="mo on">
+                                <div class="device">
+                                    <div class="bar">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                </div>
+                                <div class="popupBox mini st" style="display: none;">
+                                    <div class="bodyBox">
+                                        <picture>
+                                            <img src="../../images/page/img_banner.png">
+                                        </picture>
+                                        <div class="txtBox">
+                                            <strong>제목 영역 입니다.</strong>
+                                            <p>본문을 입력하는 항목입니다. 본문을 입력하는 항목입니다. 본문을 입력하는 항목입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popupBox df st">
+                                    <div class="top">
+                                        <p>오늘 하루 보지 않기</p>
+                                        <i class="ico-close-wh"></i>
+                                    </div>
+                                    <picture>
+                                        <img src="../../images/page/img_banner.png">
+                                    </picture>
+                                    <div class="bodyBox">
+                                        <div class="txtBox">
+                                            <strong>제목 영역 입니다.</strong>
+                                            <p>본문 영역 입니다.</p>
+                                        </div>
+                                        <div class="popbtnBox">
+                                            <button type="button">버튼 영역 입니다.</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="pc">
+                                <div class="device">
+                                    <div class="bar">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </div>
+                                </div>
+                                <div class="popupBox mini st" style="display: none;">
+                                    <div class="bodyBox">
+                                        <picture>
+                                            <img src="../../images/page/img_banner.png">
+                                        </picture>
+                                        <div class="txtBox">
+                                            <strong>제목 영역 입니다.</strong>
+                                            <p>본문을 입력하는 항목입니다. 본문을 입력하는 항목입니다. 본문을 입력하는 항목입니다.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popupBox df st">
+                                    <div class="top">
+                                        <p>오늘 하루 보지 않기</p>
+                                        <i class="ico-close-wh"></i>
+                                    </div>
+                                    <picture>
+                                        <img src="../../images/page/img_banner.png">
+                                    </picture>
+                                    <div class="bodyBox">
+                                        <div class="txtBox">
+                                            <strong>제목 영역 입니다.</strong>
+                                            <p>본문 영역 입니다.</p>
+                                        </div>
+                                        <div class="popbtnBox">
+                                            <button type="button">버튼 영역 입니다.</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--//tab-con-->
+                    </div>
+                    <!--//previewBox-->
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-gy btn-close">취소</button>
+                <button type="button" class="btn-s btn-skbu btn-close">확인</button>
+            </div>
+        </div>
+        <!--//mditem-->
+    </div>
+    <!--//mdBox-->
+
+    <!--리포트 보기 모달-->
+    <div class="mdBox" id="view-report">
+        <div class="mditem type-ml">
+            <div class="conBox viewreport">
+                <div class="md-hd">
+                    <strong>1등급 일자별 리포트</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <div class="calendarBox" id="datePicker">
+                            <i></i>
+                            <input type="text" id="df-input" name="df-input" value="" readonly="">
+                        </div>
+                    </div>
+
+                    <!--//titBox-->
+                    <div class="tableBox yType">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>날짜</th>
+                                    <th>조건</th>
+                                    <th>노출수</th>
+                                    <th>클릭수</th>
+                                    <th>클릭률</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+                                <tr>
+                                    <td>2026-01-08(목)</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123</td>
+                                    <td>1,123%</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!--//tableBox-->
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+            <div class="btnBox type-ct ">
+                <button type="button" class="btn-s btn-bu btn-close">확인</button>
+            </div>
+        </div>
+        <!--//mdItem-->
+    </div>
+    <!--//mdBox-->
+    <!--//리포트 보기 모달-->
+
+    <!--카카오 채널 추가 URL 입력 방법-->
+    <div class="mdBox" id="kakao-ch">
+        <div class="mditem type-mml">
+            <div class="conBox kakaoch">
+                <div class="md-hd">
+                    <strong>카카오 채널 추가 URL 입력 방법</strong>
+                    <button type="button" class="btn-close"><i class="ico-close-gy"></i></button>
+                </div>
+                <!--//md-hd-->
+                <div class="md-con">
+                    <div class="titBox">
+                        <p>
+                            아래 두 가지 방법 중 편한 방식으로 <span>채널 URL을 확인한 뒤 복사하여 붙여 넣어주세요.</span><br>
+                            이렇게 입력한 URL을 클릭하면 카카오 채널 추가 페이지로 이동합니다.<br>
+                            (입력예시 : http://pf.kakao.com/_xiBVJxj)
+                        </p>
+                    </div>
+                    <div class="guideBox">
+                        <dl>
+                            <dt>1. 카카오 채널 홈 > 우측 상단 더보기 버튼 클릭 > URL 복사하기 버튼 클릭</dt>
+                            <dd>
+                                <img src="../../images/page/img_guide_01.png">
+                            </dd>
+                        </dl>
+                        <dl>
+                            <dt>1. 카카오 비즈니스 파트너 센터 > 채널 > 채널 정보 > 채널URL 복사하여 붙여넣기</dt>
+                            <dd>
+                                <img src="../../images/page/img_guide_02.png">
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <!--//md-con-->
+            </div>
+            <!--//conBox-->
+        </div>
+        <!--//mdItem-->
+    </div>
+    <!--//mdBox-->
+    <!--//카카오 채널 추가 URL 입력 방법-->
+</body>
+
+</html>

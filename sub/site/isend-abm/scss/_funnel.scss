@@ -1,0 +1,1563 @@
+@charset "UTF-8";
+
+$mainColor: #3c71fd;
+$ftColor: #222222;
+$subFtColor:#999;
+$borderColor: #e6e6e6;
+$bgColor: #f6f6f6;
+
+// pointColor
+$pointColor: $mainColor;
+
+//* button */
+// main 
+$btnMain_ftColor: #ffffff;
+$btnMain_bgColor: $pointColor;
+
+// off
+$btnOff_ftColor: #ffffff;
+$btnOff_BorderColor: #c1c8db;
+$btnOff_BgColor: #c1c8db;
+
+// disabled 
+$btnDis_ftColor: #c4c4c4;
+$btnDis_BorderColor: #eceff1;
+$btnDis_bgColor: #eceff1;
+
+//* bubble */
+$bubbleBorderColor: $borderColor;
+$bubbleBgColor: #ffffff;
+$bubbleShadow: 0 5px 10px 0 rgba(34, 34, 34, 0.1);
+
+
+//* box layout */
+$boxBorderColor: $borderColor;
+$boxShadow: none;
+$boxBgColor: #ffffff;
+
+
+// 공통 이미지 경로 (이미지 지정 전용)
+@mixin img($folder, $name, $format:"svg", $bgXY:center, $path:"../image/", ) {
+    background: url("#{$path}#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+@mixin mask($folder, $name, $format:"svg", $bgXY:center, $path:"../image/") {
+    mask: url("#{$path}#{$folder}/#{$name}.#{$format}") no-repeat $bgXY;
+}
+
+// 사용방법 : 
+// @include imgSize(mask, 13px, 13px, 13px, 13px);
+// @include imgSize(bg, 13px, 13px, 13px, 13px);
+// type: bg 또는 mask 
+@mixin imgSize($t: bg, $w: null, $h: null, $x: null, $y: null, $s: null, $bgc:null) {
+    @if $w !=null {
+        width: $w;
+    }
+
+    @if $h !=null {
+        height: $h;
+    }
+
+    // mask 전용
+    @if $t==mask {
+        @if $x !=null and $y !=null {
+            mask-size: $x $y;
+            -webkit-mask-size: $x $y;
+        }
+
+        @else if $s !=null {
+            mask-size: $s;
+            -webkit-mask-size: $s;
+        }
+    }
+
+    // background 전용
+    @else {
+        @if $x !=null and $y !=null {
+            background-size: $x $y;
+        }
+
+        @else if $s !=null {
+            background-size: $s;
+        }
+    }
+}
+
+
+@mixin ico_close {
+    @include img('component', 'ico_close');
+}
+
+//* font */
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+//* flex */
+@mixin flexBox($f:flex, $fw:null, $d:initial, $j:space-between, $a:center, $g:10px) {
+    display: $f;
+    flex-wrap: $fw;
+    flex-direction: $d;
+    justify-content: $j;
+    align-items: $a;
+    gap: $g;
+}
+
+
+// 버튼 공통
+@mixin btn($d:null, $br:2px, $w:null, $minw:null, $h:null, $minh:null, $pd:null, $fs:null) {
+
+    position: relative;
+    display: $d;
+    width: $w;
+    min-width: $minw;
+    height: $h;
+    min-height: $minh;
+    padding: $pd;
+    font-size: $fs;
+    text-align: center;
+    border-radius: $br;
+    cursor: pointer;
+
+    &:disabled {
+        @include btn_disabled;
+    }
+}
+
+
+
+// on 1
+@mixin btn_main ($w:null, $minw:null, $h:null, $minh:null, $pd:null) {
+    width: $w;
+    min-width: $minw;
+    height: $h;
+    min-height: $minh;
+    padding: $pd;
+    color: $btnMain_ftColor;
+    border: 2px solid $btnMain_bgColor;
+    background-color: $btnMain_bgColor;
+    box-shadow: none;
+}
+
+// off 1
+@mixin btn_off {
+    color: $btnOff_ftColor;
+    border: 2px solid $btnOff_BorderColor;
+    background-color: $btnOff_BgColor;
+    box-shadow: none;
+
+    &:disabled {
+        @include btn_disabled;
+    }
+}
+
+// disabled 
+@mixin btn_disabled {
+    color: $btnDis_ftColor;
+    border-color: $btnDis_BorderColor;
+    background-color: $btnDis_bgColor;
+    box-shadow: none;
+    cursor: default;
+}
+
+
+
+// 탭버튼(라디오)
+// 추가 위치
+// input[type="radio"] {}
+// 추가 방법 
+/* 
+@input[type="radio"] {
+@include radioButton
+}
+*/
+@mixin radioButton($minw:90px, $h:30px, $m:0px 0 0 5px, $pd:null, $fs:13px, $br:4px) {
+    display: none;
+
+    &+label {
+        @include flexBox($d:inline-flex, $j:center);
+        @include btn;
+        @include btn_off;
+        min-width: $minw;
+        padding: $pd;
+        height: $h;
+        font-size: $fs;
+        border-radius: $br;
+
+        &:nth-of-type(n+2) {
+            margin: $m;
+        }
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:checked+label {
+        @include btn_main;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    &:disabled+label {
+        @include btn_disabled();
+    }
+}
+
+
+// tab
+// show 클래스 추가
+// 추가 위치 : tabView > tabViewList 
+/* 추가방법
+ tabViewList{ 
+ @include tabViewList;
+ }
+*/
+@mixin tabViewList($d: block) {
+    display: none;
+
+    &.show {
+        display: $d;
+    }
+}
+
+
+//* 테이블이 아닌 태그에서 데이터가 없음이 필요할 떄 */
+// dataNoneArea 커스텀 > dataNone과 형제인 div,ul은 display: none
+/* 추가방법 
+ &.dataNoneArea {
+           @include dataNoneArea;
+         }
+*/
+//  $ipt2:'!important'
+@mixin dataNoneArea($d:block, $ipt1: null, $h:-webkit-fill-available, $h2:100%, $minh: 300px, $s:'>div') {
+    $imp1: if($ipt1 !=null, ' !important', '');
+    display: $d #{$ipt1};
+    height: $h;
+
+    #{$s} {
+        &:not(.dataNone) {
+            display: none;
+        }
+    }
+
+    .dataNone {
+        position: absolute;
+        height: $h2;
+        width: 100%;
+        min-height: $minh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.8);
+        z-index: 100;
+
+        >p {
+            display: block;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+    }
+}
+
+
+
+//기본 박스
+@mixin boxLayout($pd:0, $of:null, $br: 5px) {
+    position: relative;
+    padding: $pd;
+    border-radius: $br;
+    box-shadow: $boxShadow;
+    background-color: $boxBgColor;
+}
+
+//bubble.scss
+@mixin bubbleOpen($p: absolute, $d: block, $w: 100%, $h: 100%) {
+    position: $p;
+    display: $d;
+    width: $w;
+    height: $h;
+    z-index: 1;
+    cursor: pointer;
+}
+
+@mixin bubbleWrap($w:360px, $minw:200px, $l:-26px, $minh:70px, $br: 5px) {
+    position: absolute;
+    display: none;
+
+    .bubbleContainer {
+
+        position: relative;
+        width: $w;
+        min-width: $minw;
+        height: auto;
+        min-height: $minh;
+        padding: 15px;
+        // color: var(--ftColor);
+        font-size: 13px;
+        text-align: left;
+        font-style: normal;
+        line-height: 18px;
+        white-space: normal;
+        border-radius: $br;
+        border: 1px solid $bubbleBorderColor;
+        background-color: $bubbleBgColor;
+        box-shadow: $bubbleShadow;
+        z-index: 999;
+
+        .bubbleTitle {
+            min-height: 30px;
+            padding: 0;
+            font-size: 18px;
+
+            p {
+                font-family: $ft-b;
+                display: inline-block;
+                padding: 2px 0 0 0;
+                font-size: 13px;
+            }
+
+            button {
+                position: relative;
+                float: right;
+                right: -2px;
+                padding: 0;
+
+                .ico-close-gy {
+                    width: 13px;
+                    height: 13px
+                }
+
+                &.close {
+                    @include ico_close;
+                    font-size: 0;
+                    // width: 13px;
+                    // height: 13px;
+                    // background:url(../image/component/ico_close.svg) no-repeat center;
+                    // background-size: 13px 13px;
+                    @include imgSize(bg, 13px, 13px, 13px, 13px);
+                }
+            }
+        }
+
+        .bubbleContent {
+            position: relative;
+            width: 100%;
+            height: auto;
+            overflow-y: auto;
+
+            .box_guide {
+                p {
+                    text-align: center;
+
+                    b {
+                        display: block;
+                        font-size: $ft-16;
+                    }
+                }
+            }
+        }
+
+        .bubbleFooter {
+            margin-top: 10px;
+            text-align: center;
+            @include flex($align:st, $con:bt);
+            gap: 10px;
+
+            button {
+                @include btn;
+                @include btn_main;
+                width: 100%;
+                height: 36px;
+                border-radius: 6px;
+                @include flex($align:ct, $con:ct);
+                gap: 5px;
+                margin-top: 8px;
+
+                &:only-child {
+                    margin: 8px auto;
+                }
+            }
+
+            >div {
+                width: calc(100% / 2 - 8px);
+            }
+        }
+    }
+
+    .bubbleDim {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: #000000;
+        opacity: 0.5;
+        z-index: 998;
+    }
+
+    &.pos-top {
+        // 버튼 간격 
+        margin-bottom: 10px;
+    }
+
+    &.pos-bottom {
+        // 버튼 간격 
+        margin-top: 10px;
+    }
+}
+
+// w, minw, minh, maxh: 전체크기
+// w2, h2, minh2, max2: 컨텐츠값
+@mixin bubbleSize($w:371px, $minw:200px, $minh:70px, $maxh:null, $w2:null, $h2:null, $minh2:null, $maxh2:null) {
+    // width: $w;
+    // height: $h;
+
+    .bubbleContainer {
+        width: $w;
+        min-width: $minw;
+        height: auto;
+        min-height: $minh;
+        max-height: $maxh;
+
+        .bubbleTitle {}
+
+        .bubbleContent {
+            // width: calc(#{$w} - 20px);
+            width: $w2;
+            height: $h2;
+            min-height: $minh2;
+            max-height: $maxh2;
+        }
+
+        .bubbleFooter {}
+    }
+}
+
+.dataNone {
+    display: none;
+}
+
+//* 버블 사용 */
+
+
+//* 공통 */
+.bubbleOpen {
+    @include bubbleOpen;
+}
+
+//* 공통 */
+.bubbleWrap {
+    @include bubbleWrap;
+}
+
+//* 개별 */
+// 클릭영역 수정
+.bubbleOpen {
+    &[data-popbubblename*="bw_userStats"] {
+        transform: translate(-20px, -14px);
+    }
+}
+
+//* bubble 개별 CSS */
+.bubbleWrap {
+
+    //* 유저퍼널분석, 구매후 이동퍼널 분석 공통 */
+    &.bw_userStats,
+    &.bw_moveAnalysis {
+
+        // 모달 나타나는 위치 css로 조절
+        &.pos-top {
+            transform: translate(-25px, -30px)
+        }
+
+        // 모달 나타나는 위치 css로 조절
+        &.pos-bottom {
+            // transform: translate(-25px, -250px)
+        }
+
+        .bubbleContainer {
+            width: 300px;
+            height: 200px;
+
+            .bubbleTitle {}
+
+            .bubbleContent {
+                height: 90px;
+
+                >div {
+                    text-align: center;
+
+                    p {
+                        font-size: 13px;
+                        line-height: 18px;
+                    }
+
+                    b {
+                        font-family: $ft-b;
+                    }
+                }
+            }
+        }
+    }
+
+    // 유저퍼널영역 그래프 툴팁 사이즈
+    &.bw_userStats {
+        @include bubbleSize($minh:200px, $maxh:270px, $h2:auto, $minh2:60px, $maxh2:160px);
+    }
+}
+
+
+@mixin graph {
+    @include flexBox($g:0);
+    $bgc: (#0e369e, #406ad9, #638af2, #3ca3fd, #3cc2fd, #57dbdf);
+    $bgc2: (#5369a2, #7994dc, #94adf1, #73baf8, #7acff5, #87E2E5);
+    $bgchv: (#001f5c, #2563eb, #2d56c4, #0074d6, #0091cc, #00a8ad);
+    $h: (100%, 100%, 270px, 170px, 140px, 110px); // 그래프 높이값
+    $h_in: (100%, 270px, 170px, 140px, 110px, 70px);
+    $z: (6, 5, 4, 3, 2, 1);
+    // $h: (300px, 300px, 300px, 300px, 300px, 300px);
+
+    @for $i from 1 through length($bgc) {
+        .box:nth-child(#{$i}) .chartBlock .chartGroup {
+            .chartOut {
+                +.chartIn {
+                    position: relative;
+                    max-height: nth($h_in, $i);
+                    height: nth($h_in, $i);
+
+                    @if $i==6 {
+                        min-height: 74px;
+
+                        .chart {
+                            min-height: 60px;
+                        }
+                    }
+                }
+            }
+
+            .chartOut {
+                @include flexBox($a:start);
+                position: relative;
+                flex-grow: 1;
+                width: 100%;
+                height: auto;
+                min-height: 30px;
+                padding: 6px 20px;
+                background-color: #f6f6f6;
+                border: 1px solid #e6e6e6;
+                @include transition;
+
+                &:hover {
+                    background: rgba(0, 0, 0, 0.1);
+
+                    p {
+                        // color: #fff;
+                        color: rgba(0, 0, 0, 0.9);
+                    }
+                }
+
+                @if $i==5 or $i==6 {
+
+
+                    @if $i==6 {
+                        padding: 9px 20px;
+                    }
+                }
+
+                p {
+                    color: $ftColor;
+                    color: $subFtColor;
+                    line-height: normal;
+                }
+            }
+        }
+
+        .box:nth-child(#{$i}) .chartBlock .chartGroup {
+            .chartIn .chart {
+                &:hover {
+                    background-color: nth($bgchv, $i) !important;
+                }
+            }
+        }
+
+        // 차트가 한줄일때
+        .box:nth-child(#{$i}) .chartBlock:only-child {
+            .chartGroup {
+                position: relative;
+                height: nth($h, $i);
+                z-index: nth($z, $i);
+
+                .chart {
+                    &:last-child {
+                        background-color: nth($bgc, $i);
+                    }
+
+                    &:nth-last-child(2) {
+                        background-color: #9e83f8;
+
+                        &:hover {
+                            background-color: #6c49e2 !important;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        // 차트가 두줄일때 첫번째 줄
+        .box:nth-child(#{$i}) .chartBlock:nth-last-child(2) {
+            .chartGroup {
+                position: relative;
+                height: nth($h, $i);
+                z-index: nth($z, $i);
+
+                .chart {
+                    &:last-child {
+                        background-color: nth($bgc2, $i);
+                    }
+
+                    &:nth-last-child(2) {
+                        background-color: #9e83f8;
+                        background-color: #BFACFF;
+                    }
+                }
+            }
+        }
+    }
+
+    // 차트가 두줄일때 두번째 줄
+    @for $i from 1 through length($bgc2) {
+        .box:nth-child(#{$i}) .chartBlock:nth-child(2) {
+            .chartGroup {
+                position: relative;
+                height: nth($h, $i);
+                z-index: nth($z, $i);
+
+                .chartOut {
+                    order: 2;
+
+                    +.chartIn {}
+                }
+
+                .chart {
+
+                    &:last-child {
+                        background-color: nth($bgc, $i);
+                    }
+
+                    &:nth-last-child(2) {
+                        background-color: #638af2;
+                    }
+
+                    &:nth-child(2) {
+                        background-color: #9e83f8;
+                    }
+
+                    .info {
+                        >.txt2 {
+                            &:only-child {
+                                margin-top: auto;
+                                height: auto;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 회색 박스
+    .box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        // padding:5px;
+        height: -webkit-fill-available;
+
+        &:nth-child(n+2) {
+            .bg {
+                margin: 0 0 0 5px;
+            }
+        }
+
+        &:nth-child(4) {
+            .chartBox {
+                .chartGroup {
+                    .chart {
+                        padding-left: 25px;
+                    }
+                }
+            }
+        }
+
+        .bg {
+            @include flexBox($d:column, $g:0);
+            position: relative;
+            height: -webkit-fill-available;
+            // margin: 0px 5px 0px 0;
+            padding: 15px;
+            border: 1px solid $borderColor;
+            background-color: $bgColor;
+
+            // bubbleOpen 되었을때 on 클래스 추가
+            &.on {
+                background-color: $ftColor;
+            }
+
+            >div {
+                @include flexBox;
+                position: relative;
+                width: 100%;
+                height: 300px;
+                color: $subFtColor;
+
+                &:first-child {
+                    align-items: start;
+                }
+
+                &:nth-child(2) {
+                    align-items: end;
+                }
+            }
+        }
+
+        .chartBox {
+            @include flexBox($d:column, $g:0, $a:start);
+            // position: absolute;
+            width: 100%;
+            height: 100%;
+            bottom: 0;
+
+            .chartBlock {
+                @include flexBox($d:column, $a:end, $j:end, $g:0);
+                position: relative;
+                flex-grow: 1;
+                width: 100%;
+                height: 50%;
+                height: 300px;
+
+                &:only-child {
+                    height: 100%;
+                }
+            }
+
+            .chartGroup {
+                @include flexBox($d:column, $a:end, $j:end, $g:0);
+                width: 100%;
+                width: -webkit-fill-available;
+                min-height: 80px;
+                height: 50%;
+                font-size: 14px;
+
+                .btn-hv {
+                    display: none;
+                    position: absolute;
+                    z-index: 1;
+                    width: 160px;
+                    height: 30px;
+                    border-radius: 8px;
+                    background: #fff;
+                    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+                    border: solid 1px #3c71fd;
+                    transform: skewX(-15deg) translate(-50%, -50%);
+                    top: 50%;
+                    left: 50%;
+                    color: $mainCr;
+                    font-size: $ft-14;
+                    font-family: $ft-sb;
+                    letter-spacing: -1px;
+                    @include transition;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 5px;
+                    line-height: 1.5;
+
+                    i {
+                        transform: rotate(-90deg);
+                        width: 12px;
+                        height: 12px;
+                    }
+                }
+
+                .chartOut {
+                    &:hover {
+                        .btn-hv {
+                            display: flex;
+                        }
+                    }
+                }
+
+                .chartIn {
+
+                    .chart {
+                        &:hover {
+                            .btn-hv {
+                                display: flex;
+
+
+                            }
+                        }
+                    }
+                }
+
+
+                .chartOut {
+                    position: relative;
+                    width: 100%;
+                    min-height: 30px;
+                    padding: 8px 20px;
+                }
+
+                .chartIn {
+                    @include flexBox($d:column, $a:end, $j:end, $g:0);
+                    flex-grow: 1;
+                    width: 100%;
+                    width: -webkit-fill-available;
+                    min-height: 70px;
+                    height: 50%;
+                }
+
+                .chart {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    min-height: 70px;
+                    padding: 15px 20px;
+                    @include transition;
+
+                    .info {
+                        @include flexBox($d:column, $g:0, $a:start);
+                        height: 100%;
+                    }
+
+                    .txt,
+                    .txt2 {
+                        span {
+
+                            &.up,
+                            &.down {
+                                @include flexBox($f:inline-flex, $j:center, $g:2px);
+                                vertical-align: top;
+                                font-size: 12px;
+                            }
+
+                            &.up {
+                                min-width: 60px;
+                                min-height: 20px;
+                                font-size: 12px;
+                                color: #ff3636;
+                                border: 1px solid #ff3636;
+                                border-radius: 20px;
+                                background-color: #ffb5b5;
+
+                                &:before {
+                                    content: "▲";
+                                    position: relative;
+                                    display: inline-block;
+                                    margin: 0 2px 0 0;
+                                }
+                            }
+
+                            &.down {
+                                min-width: 60px;
+                                min-height: 20px;
+                                font-size: 12px;
+                                color: #0038ce;
+                                border: 1px solid #0038ce;
+                                border-radius: 20px;
+                                background-color: #bdcae9;
+
+                                &:before {
+                                    content: "▼";
+                                    position: relative;
+                                    display: inline-block;
+                                    margin: 0 2px 0 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .txt {
+                        width: 100%;
+
+                        p {
+                            font-family: $ft-m;
+                            font-size: 20px;
+                            color: #ffffff;
+                        }
+                    }
+
+                    .txt2 {
+                        width: 100%;
+                        @include flexBox($a:end);
+
+                        p {
+                            &:nth-child(1) {
+                                @include flex($align:ct, $con:ct);
+                                gap: 3px;
+                                font-family: $ft-m;
+                                font-size: 18px;
+
+                                span {
+                                    font-family: $ft-m;
+                                    font-size: 20px;
+                                    margin: 0 0 0 4px;
+                                }
+                            }
+
+                            &:nth-child(2) {
+                                font-family: $ft-l;
+                            }
+                        }
+                    }
+
+                    .txt2:only-child {
+                        align-items: end;
+                        height: 100%;
+                    }
+                }
+
+                // 차트가 하나일 떄
+                &:only-child {
+                    position: absolute;
+                    bottom: 0;
+                    transform: skewX(15deg);
+
+                    .chart {
+                        bottom: 0;
+                    }
+
+                    p {
+                        // transform: skew(-15deg);
+                        color: #ffffff;
+                        transform: skewX(-15deg);
+                        /* 역보정 */
+                    }
+                }
+            }
+        }
+
+        // 차트 하나일때 > 첫번째 자식의 텍스트
+        &:first-child {
+            .chartBlock {
+
+                .chartGroup {
+                    position: absolute;
+                    width: 120%;
+
+                    .chart {
+
+                        .info {
+                            position: relative;
+                            width: 100%;
+                            left: 20%;
+
+                            p {
+                                transform: skew(0deg);
+                            }
+
+                            .txt {
+                                width: 75%;
+                            }
+                        }
+                    }
+                }
+
+                &:only-child,
+                &:nth-last-child(2) {
+                    .chartGroup {
+                        .chart {
+                            align-items: end;
+
+                            &:hover {
+                                background: #1645c1;
+                            }
+
+                            .info {
+                                transform: skew(-15deg);
+                            }
+
+                            .txt,
+                            .txt2 {
+                                padding: 0;
+                                margin: 0;
+                                justify-content: space-between;
+                                align-items: end;
+                            }
+
+                            .txt {
+                                width: 75%;
+                            }
+                        }
+                    }
+                }
+
+                &:nth-child(2) {
+
+                    .chartGroup {
+                        .chart {
+                            .info {
+                                transform: skew(15deg);
+
+                                .txt {
+                                    width: 90%;
+                                }
+
+                                .txt2 {
+                                    width: 75%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .chartBlock {
+                .chartGroup {
+                    .chart {
+                        .txt {
+                            justify-content: space-between;
+                            width: 65%;
+                            right: 0;
+                            margin: 0;
+                            padding: 0;
+                        }
+
+                        .txt2 {
+                            width: 90%;
+                            padding: 0;
+                        }
+                    }
+                }
+            }
+        }
+
+        // 5번째 
+        &:last-child {
+            .bg {
+                margin-right: 0;
+            }
+
+            .chartBox {
+                .chartBlock {
+                    .chartGroup {
+                        position: absolute;
+                        width: 92%;
+                        left: 0;
+                    }
+                }
+            }
+        }
+
+        // 그래프 두개씩 나오는 거
+        .chartBox {
+            .chartBlock {
+
+                // 첫번째 줄
+                &:nth-last-child(2) {
+
+                    .chart {
+                        .info {
+                            .txt {
+                                p {
+                                    &:nth-child(2) {
+                                        margin: 10px 0 0 0;
+                                        font-size: 18px;
+
+                                        span {
+                                            font-size: 12px;
+                                            margin: 0 0 0 4px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .txt2 {
+                            @include flexBox();
+                        }
+                    }
+                }
+
+                // 두번째줄 
+                &:nth-child(2) {
+                    .chartGroup {
+                        position: absolute;
+                        top: 0;
+                        -webkit-transform: skew(-15deg);
+                        transform: skew(-15deg);
+
+                        .chartOut {
+                            align-items: end;
+                        }
+
+                        .chart {
+                            .info {
+                                .txt {
+                                    @include flexBox();
+
+                                    p {
+                                        &:nth-child(1) {
+                                            font-size: 12px;
+                                        }
+
+                                        &:nth-child(2) {
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+
+                                .txt2 {
+                                    font-family: $ft-m;
+                                    display: block;
+                                    font-size: 20px;
+
+                                    p {
+                                        &:nth-child(2) {
+                                            margin: 10px 0 0 0;
+                                        }
+
+                                        span {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                }
+                            }
+
+                            p {
+                                color: #ffffff;
+                            }
+                        }
+
+                        p {
+                            transform: skew(15deg);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 다이어그램 > 구매 후 이동 퍼널 분석(ui_chart.js추가)
+@mixin graph2 {
+    ul {
+        @include flexBox($a: start, $d: column);
+        flex-grow: 1;
+        height: 100%;
+
+        li {
+            flex-grow: 1;
+            width: 100%;
+
+            .info {
+                position: relative;
+                height: 100%;
+                flex-grow: 1;
+
+                .txt {
+                    flex-grow: 1;
+                    position: relative;
+                    display: inline-block;
+                    left: 20px;
+                }
+
+                .line {
+                    position: absolute;
+                    display: inline-block;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                }
+            }
+        }
+    }
+
+    // 1단
+    >ul {
+        li {
+            @include flexBox($j: start);
+            position: relative;
+
+            &:before {
+                content: "";
+                position: relative;
+                display: inline-block;
+                border-radius: 30px;
+                width: 40px;
+                height: -webkit-fill-available;
+                min-height: 30px;
+                left: 0;
+                z-index: 99;
+                @include transition
+            }
+
+            &.is-target-hover {
+                &::before {
+                    opacity: 1;
+                }
+
+
+            }
+
+            // &:hover {
+            //     &::before {
+            //         opacity: 1;
+            //     }
+            // }
+        }
+
+        // ✅ 1단 색상 배열
+        $step1-colors: (#3cc2fd, #489eff, #b4b4b4);
+
+        >li {
+            flex-grow: 1;
+            width: 100%;
+
+            // 1단 색상 자동 적용
+            @for $i from 1 through length($step1-colors) {
+                &:nth-child(#{$i}):before {
+                    background-color: nth($step1-colors, $i);
+
+                }
+            }
+
+            >.info {
+                position: relative;
+                flex: 1 1 30%;
+
+                .txt {
+                    top: 0;
+
+                    // 텍스트 1,2
+                    // span {
+                    //   display: block;
+
+                    //   &:first-child {
+                    //     font-family: $ft-b;
+                    //     font-size: 18px;
+                    //   }
+
+                    //   &:nth-child(2) {
+                    //     
+                    //     margin-top: 8px;
+                    //     color: $subFtColor);
+                    //     font-size: 14px;
+                    //   }
+                    // }
+                }
+
+                .line {
+                    div {
+                        width: 100%;
+                        height: 30px;
+                        opacity: 0.4;
+                    }
+                }
+            }
+
+            // 2단
+            >ul {
+                flex: 2 1 70%;
+
+                >li {
+                    >.info {
+                        position: relative;
+                        flex: 2 1 70%;
+
+                        .txt {
+                            top: 0;
+
+                        }
+
+                        // ✅ 2단 연결선 자동 생성
+                        .line {
+                            div {
+                                position: absolute;
+                                display: inline-block;
+                                width: 100%;
+                                height: 30px;
+                                opacity: 0.4;
+
+                                // 2단 라인 스타일 배열 (top%, rotate, color)
+                                $line-styles: ((25%, -8deg, #7277ff),
+                                        (28%, -2deg, #6c9dfe),
+                                        (31%, 0deg, #72beff),
+                                        (34%, 10deg, #72e7ff),
+                                        (37%, 10deg, #6bfbf1));
+
+                                @for $i from 1 through length($line-styles) {
+                                    &:nth-child(#{$i}) {
+                                        $style: nth($line-styles, $i);
+                                        top: nth($style, 1);
+                                        transform: rotate(nth($style, 2));
+                                        background-color: nth($style, 3);
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    // ✅ 2단 색상 자동화
+                    $step2-colors: (#489eff, #b4b4b4);
+
+                    @for $i from 1 through length($step2-colors) {
+                        &:nth-child(#{$i}):before {
+                            background-color: nth($step2-colors, $i);
+                        }
+                    }
+
+                    // 3단
+                    >ul {
+                        flex: 1 1 30%;
+
+                        >li {
+                            >.info {
+                                .txt {
+                                    @include flexBox($fw:wrap, $g:8px);
+                                    // top: 20%;
+                                    // border: 1px solid #f00;
+                                    min-height: 20px;
+                                    height: -webkit-fill-available;
+                                    justify-content: flex-start;
+
+                                    &.bubbleOpen {
+                                        @include bubbleOpen($p: relative, $d: inline-flex, $w: auto, $h: -webkit-fill-available);
+                                        // border:1px solid #f00;
+                                    }
+
+                                    span {
+                                        display: inline-block;
+                                        font-size: 16px;
+
+                                        &:nth-child(1) {
+                                            min-width: 70px;
+                                        }
+
+                                        &:nth-child(2) {
+                                            margin: 0;
+
+                                        }
+                                    }
+                                }
+                            }
+
+                            // ✅ 3단 색상 자동화
+                            $step3-colors: (#7277ff, #6c9dfe, #72beff, #72e7ff, #6bfbf1);
+
+                            @for $i from 1 through length($step3-colors) {
+                                &:nth-child(#{$i}):before {
+                                    background-color: nth($step3-colors, $i);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//test.scss
+
+
+/* 그래프 영역  */
+
+section {
+
+    /* 유저 퍼널 분석 */
+    &.sec_analysis {
+        @include boxLayout;
+        max-height: 800px;
+
+        .box_personalAnalysis {
+            width: 100%;
+
+            .tit {}
+
+            .cont {
+                margin: 20px 0 0 0;
+
+                .optionBox {
+                    @include flexBox($j:start, $g:40px);
+                    position: relative;
+
+                    .tab {
+                        ul {
+                            @include flexBox($j:start);
+                        }
+
+                        input[type="radio"] {
+                            @include radioButton($minw: 120px, $h: 36px, $m: 0 0 0 10px, $pd: 0 20px, $br: 30px);
+                        }
+                    }
+
+                    >div {
+                        @include flexBox($j:start);
+
+                        >p {
+                            font-family: $ft-m;
+                            margin: 0 10px 0 0;
+                            font-size: 15px;
+                        }
+                    }
+                }
+
+                .tabView {
+                    position: relative;
+
+                    .tabViewList {
+                        @include tabViewList;
+
+                        &.dataNoneArea {
+                            @include dataNoneArea($d:'null', $s:'null');
+                        }
+                    }
+
+                    .chartArea {
+                        @include graph;
+                        position: relative;
+                        min-height: 300px;
+                        max-height: 620px;
+                        margin: 20px 0 0 0;
+                        overflow: hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    /* 구매 후 이동 퍼널 분석 */
+    &.sec_moveAnalysis {
+        @include boxLayout;
+
+        .box_moveAnalysis {
+
+            .cont {
+                .optionBox {
+                    @include flexBox($j:start);
+                    position: relative;
+
+                    .tab {
+                        flex-grow: 1;
+
+                        ul {
+                            li {
+                                display: inline-block;
+
+                                &:nth-child(n+2) {
+                                    margin: 0 0 0 10px;
+                                }
+                            }
+                        }
+
+                        input[type="radio"] {
+                            @include radioButton($minw: 120px, $h: 36px, $m: 0 0 0 10px, $pd: 0 20px, $br: 30px);
+                        }
+                    }
+                }
+
+                .graphArea {
+                    position: relative;
+
+                    .graph {
+                        @include graph2;
+                        position: relative;
+                        height: 380px;
+
+                        ul {
+                            li {
+                                flex-grow: 1;
+                                width: 100%;
+
+                                .info {
+                                    // overflow: hidden;
+
+                                    .txt {
+                                        &.bubbleOpen {
+                                            @include bubbleOpen($p: relative, $d: inline-block, $w: auto, $h: auto);
+                                        }
+
+                                        span {
+                                            display: block;
+
+                                            &:first-child {
+                                                font-family: $ft-b;
+                                                font-size: 18px;
+                                            }
+
+                                            &:nth-child(2) {
+
+                                                margin-top: 8px;
+                                                color: #999;
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+//tost.scss
+@mixin toast {
+    display: none;
+    z-index: 1101;
+
+    &.toastOn {
+        display: block;
+    }
+}
+
+@mixin toastPosition {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+}
+
+@mixin toastWrap {
+    padding: 20px;
+    border-radius: 10px;
+    color: #ffffff;
+    background-color: #ff6767;
+    animation: fadeOut 2.0s forwards;
+    animation-delay: 3s;
+    cursor: default;
+}
+
+//* 토스트 메시지 사용 */
+.alertToast {
+    position: relative;
+}
+
+.toastWrap {
+    @include toast;
+    @include toastPosition;
+    @include toastWrap;
+}
+
+//* 토스트 개별 사용 */
+.toastWrap {
+    &.tst_alert {}
+}

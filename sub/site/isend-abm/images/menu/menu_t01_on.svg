@@ -1,0 +1,21 @@
+<svg id="ico_LNB_tp_dashboad_off" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #d1d6db;
+        opacity: 0;
+      }
+
+      .cls-2 {
+        fill: #3182f6;
+      }
+
+      .cls-3 {
+        fill: #cddcf9;
+      }
+    </style>
+  </defs>
+  <rect id="사각형_24" data-name="사각형 24" class="cls-1" width="16" height="16"/>
+  <rect id="사각형_136" data-name="사각형 136" class="cls-2" width="10" height="10" transform="translate(2 2)"/>
+  <path id="패스_11" data-name="패스 11" class="cls-3" d="M12.4,1.333l4,4V16.54a.794.794,0,0,1-.795.793H2.795A.8.8,0,0,1,2,16.54V2.127a.794.794,0,0,1,.795-.793Zm-4,4v8H10v-8H8.4Zm3.2,3.2v4.8h1.6v-4.8Zm-6.4,1.6v3.2H6.8v-3.2H5.2Z" transform="translate(-1.2 -1.333)"/>
+</svg>

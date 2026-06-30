@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+    <meta name="description" content="MOB-I ABM" />
+    <meta name="keywords" content="MOB-I ABM" />
+    <meta name="author" content="MOB-I ABM" />
+    <link rel="shortcut icon" href="/images/favicon/favicon.ico" type="image/ico">
+    <title>MOB-I ABM</title>
+
+    <!-- 기본 CSS, JS -->
+    <link type="text/css" href="../../css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="../../js/ui.js"></script>
+    <!--sortable,droppable js-->
+    <script type="text/javascript" src="../../js/lib/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.2/jquery.ui.touch-punch.min.js">
+    </script>
+    <!--//sortable,droppable js-->
+</head>
+
+<body>
+    <div id="Wrap">
+        <header>
+            <h1><a href="javascript:void(0);">MOB-I ABM</a></h1>
+            <div>
+                <div class="user">
+                    <i class="ico-user"></i>
+                    <p>인라이플(센드수정)</p>
+                </div>
+                <button type="button"><i class="ico-logout"></i><span>로그아웃</span></button>
+            </div>
+        </header>
+        <nav>
+            <h2>
+                <span>모비아이 관리자센터</span>
+                <button type="button" class="btn-wide"><i></i></button>
+            </h2>
+            <strong>아이센드</strong>
+            <ul>
+                <li>
+                    <a href="../01.dashboard/01.dashboad_chart.html"><i></i><span>대시보드</span></a>
+                </li>
+                <li>
+                    <a href="../06.oneclick_cam/06.oneclick_cam.html"><i></i><span>원클릭 캠페인</span><i
+                            class="ico-new"></i><i class="ico-ar-gy"></i></a>
+                    <ul>
+                        <li>
+                            <a href="../06.oneclick_cam/06.oneclick_cam.html"><span>원클릭 캠페인</span></a>
+                        </li>
+                         <li>
+                             <a href="../06.oneclick_cam/06.recom_cam.html"><span>추천 캠페인</span></a>
+                         </li>
+                        <li>
+                            <a href="../06.oneclick_cam/06.rfm_cam.html"><span>RFM 캠페인</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="../08.product_promotion/08.product_promotion.html"><i></i><span>상품 프로모션</span><i
+                            class="ico-new"></i></a>
+                </li>
+            </ul>
+
+            <strong>온사이트 캠페인</strong>
+            <ul>
+                <li>
+                    <a href="../11.onsite/11.onsite_board.html"><i></i><span>온사이트보드</span></a>
+                </li>
+                <li>
+                    <a href="../11.onsite/11.onsite_report.html"><i></i><span>리포트</span></a>
+                </li>
+            </ul>
+        </nav>
+        <article class="Type01">
+            <div class="inner onsite">
+                <section class="sec-hd type-st">
+                    <strong>온사이트 보드</strong>
+                    <span>마지막 업데이트 2025.12.01 09:00</span>
+                </section>
+                <!--//sec-hd-->
+                <section class="sec-con">
+                    <div class="con-row top">
+                        <div class="cardBox">
+                            <div class="txt">
+                                <p><span>총 회원</span>(명)</p>
+                                <p class="sort up">123</p>
+                            </div>
+                            <strong>2,800,970</strong>
+                        </div>
+                        <div class="cardBox">
+                            <div class="txt">
+                                <p><span>채널 친구</span>(명)</p>
+                                <p class="sort down">123</p>
+                            </div>
+                            <strong>2,800,970</strong>
+                            <div class="mdBtn" data-md="ch-dt">
+                                <button type="button" class="btn-ss">채널상세</button>
+                                <div class="mdBox fxnone" id="ch-dt">
+                                    <div class="mditem type-m">
+                                        <div class="conBox chdt">
+                                            <div class="md-hd">
+                                                <strong>채널별 상세보기</strong>
+                                                <button type="button" class="btn-close"><i
+                                                        class="ico-close-gy"></i></button>
+                                            </div>
+                                            <!--//md-hd-->
+                                            <div class="md-con">
+                                                <div class="adBox">
+                                                    <div>
+                                                        <strong>A 광고주</strong>
+                                                        <div>
+                                                            <div class="txt">
+                                                                <p><span>총 회원</span>(명)</p>
+                                                                <p class="sort up">123</p>
+                                                            </div>
+                                                            <strong>2,800,970</strong>
+                                                        </div>
+                                                    </div>
+                                                    <!--//div-->
+                                                    <div>
+                                                        <strong>B 광고주</strong>
+                                                        <div>
+                                                            <div class="txt">
+                                                                <p><span>총 회원</span>(명)</p>
+                                                                <p class="sort down">123</p>
+                                                            </div>
+                                                            <strong>2,800,970</strong>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <strong>C 광고주</strong>
+                                                        <div>
+                                                            <div class="txt">
+                                                                <p><span>총 회원</span>(명)</p>
+                                                                <p class="sort up">123</p>
+                                                            </div>
+                                                            <strong>2,800,970</strong>
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <strong>D 광고주</strong>
+                                                        <div>
+                                                            <div class="txt">
+                                                                <p><span>총 회원</span>(명)</p>
+                                                                <p class="sort up">123</p>
+                                                            </div>
+                                                            <strong>2,800,970</strong>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--//md-con-->
+                                        </div>
+                                        <!--//conBox-->
+                                    </div>
+                                    <!--//md-item-->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="cardBox">
+                            <div class="txt">
+                                <p><span>마수동 동의 회원</span>(명)</p>
+                                <p class="sort down">123</p>
+                            </div>
+                            <strong>2,800,970</strong>
+                        </div>
+                        <div class="cardBox">
+                            <i class="ico-alert"></i>
+                            <div class="txt">
+                                <p><span>마수동 비동의 회원</span>(명)</p>
+                                <p class="sort down">123</p>
+                            </div>
+                            <strong>2,800,970</strong>
+                        </div>
+                        <div class="cardBox">
+                            <div class="txt">
+                                <p><span>누적 동의 전환 회원</span>(명)</p>
+                                <p class="sort down">123</p>
+                            </div>
+                            <strong>2,800,970</strong>
+                        </div>
+                    </div>
+                    <!--//con-row-->
+                    <div class="con-row">
+                        <div class="cardBox">
+                            <div class="con-hd">
+                                <strong>
+                                    마케팅 수신 동의 전환 캠페인
+                                    <span>(*마수동 비동의 회원)</span>
+                                    <div class="tooltipBox">
+                                        <i></i>
+                                        <div style="display: none;">
+                                            <p>
+                                                조건에 따른 비동의 회원 정보는 다음 날에 반영됩니다.
+                                            </p>
+                                        </div>
+                                    </div>
+                                </strong>
+                                <button type="button" class="btn-s btn-w-gy"><i></i>리포트</button>
+                            </div>
+                            <!--내용없을때-->
+                            <div class="nodata" style="display: none;">
+                                <i class="ico-error"></i>
+                                <p>
+                                    캠페인 설정이 필요합니다.
+                                </p>
+                            </div>
+                            <div class="itemBox">
+                                <div class="item">
+                                    <div class="level"><i></i></div>
+                                    <div class="txt">
+                                        <em>1등급 잠재 전환형</em>
+                                        <p>최근 2일 이내 신규 가입한 비동의 회원</p>
+                                    </div>
+                                    <div class="txt">
+                                        <span>비동의 회원</span>
+                                        <strong><span>4,000,000</span>명</strong>
+                                    </div>
+                                    <button type="button" class="btn-s btn-bu">캠페인 관리</button>
+                                </div>
+                                <div class="item">
+                                    <div class="level"><i></i></div>
+                                    <div class="txt">
+                                        <em>2등급 중립형</em>
+                                        <p>비동의 변경한 지 1일 이상 지난 회원</p>
+                                    </div>
+                                    <div class="txt">
+                                        <span>비동의 회원</span>
+                                        <strong><span>4,000,000</span>명</strong>
+                                    </div>
+                                    <button type="button" class="btn-s btn-gr">캠페인 관리</button>
+                                </div>
+                                <div class="item">
+                                    <div class="level"><i></i></div>
+                                    <div class="txt">
+                                        <em>3등급 강성 거부형</em>
+                                        <!-- <p>10일 이상 자사몰에 로그인 안한 비동의 회원</p> -->
+                                    </div>
+                                    <!--등급미설정일때-->
+                                    <div class="nodata">
+                                        <i class="ico-error"></i>
+                                        캠페인 설정이 필요합니다
+                                    </div>
+                                    <div class="txt" style="display: none;">
+                                        <span>비동의 회원</span>
+                                        <strong><span>4,000,000</span>명</strong>
+                                    </div>
+                                    <button type="button" class="btn-s btn-yl">캠페인 관리</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cardBox">
+                            <div class="con-hd">
+                                <strong>
+                                    카카오톡 채널 친구 전환 유도 캠페인
+                                </strong>
+                                <button type="button" class="btn-s btn-bu">캠페인 관리</button>
+                            </div>
+                            <div class="tableBox yType">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th>캠페인명</th>
+                                            <th>발송현황</th>
+                                            <th class="type-ct">
+                                                비친구인원(예상)
+                                                <div class="tooltipBox">
+                                                    <i></i>
+                                                    <div style="display: none;">
+                                                        <p>
+                                                            채널 비친구 인원 중, 마수동 동의 인원입니다.
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </th>
+                                            <th>관리</th>
+                                            <th>발송결과</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 30%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s" disabled>메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 40%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                -
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 50%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 60%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 70%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 80%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 90%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 10%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 20%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>
+                                                <p>최근 1년 방문, 10일 미최근 1년 방문, 10일 미</p>
+                                            </td>
+                                            <td>
+                                                <div class="bar">
+                                                    <span style="width: 30%;"></span>
+                                                    <!--hover시화면-->
+                                                    <div class="bubbleBox">
+                                                        실패 : 10,000명
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                100,000명
+                                            </td>
+                                            <td>
+                                                <button type="button" class="btn-s btn-skbu">메시지 발송</button>
+                                            </td>
+                                            <td>
+                                                <span class="txt-bu">100,000</span>명
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!--//sec-con-->
+            </div>
+            <!--//inner-->
+        </article>
+        <!--//article-->
+    </div>
+</body>
+
+</html>
